@@ -8,13 +8,10 @@
     Author: Allen Vanderlinde
 */
 
+#include "../grepster.h"
+
 #include "CAppEntry.h"
 #include "CAppFrame.h"
-
-#include "../version.h"
-
-/* Frame globals. */
-wxString       g_Frame_Title("grepster v");
 
 /*  CAppEntry::OnInit
 

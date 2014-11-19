@@ -23,12 +23,12 @@
 
 1412627643 c:\wxwidgets-3.0.2\include\wx\msw\rcdefs.h
 
-1415990955 source:c:\grepster\app\cappentry.cpp
+1416439486 source:c:\grepster\app\cappentry.cpp
+	"../grepster.h"
 	"CAppEntry.h"
 	"CAppFrame.h"
-	"../version.h"
 
-1415990955 c:\grepster\app\cappentry.h
+1416439098 c:\grepster\app\cappentry.h
 	<wx/wx.h>
 	"CAppFrame.h"
 
@@ -2951,7 +2951,7 @@
 1412627642 c:\wxwidgets-3.0.2\include\wx\cocoa\mdi.h
 	"wx/frame.h"
 
-1416347538 c:\grepster\app\cappframe.h
+1416439616 c:\grepster\app\cappframe.h
 	<wx/wx.h>
 	<wx/aui/framemanager.h>
 	<wx/aui/dockart.h>
@@ -2959,13 +2959,17 @@
 	<wx/treectrl.h>
 	"CFrameMenu.h"
 
-1416345416 source:c:\grepster\app\cappframe.cpp
+1416439302 source:c:\grepster\app\cappframe.cpp
+	"../grepster.h"
+	"CAppEntry.h"
 	"CAppFrame.h"
 
-1415990955 c:\grepster\grepster.h
+1416439524 c:\grepster\grepster.h
+	<wx/wx.h>
+	"version.h"
 
-1415990955 source:c:\grepster\grepster.cpp
-	"grepster.h"
+1416439514 source:c:\grepster\grepster.cpp
+	<wx/wx.h>
 	"app/CAppEntry.h"
 
 1412627643 c:\wxwidgets-3.0.2\include\wx\richtext\richtextctrl.h
@@ -3069,13 +3073,13 @@
 	<os2.h>
 	<pmstddlg.h>
 
-1415990955 c:\grepster\app\cframemenu.h
+1416424096 c:\grepster\app\cframemenu.h
 	<wx/wx.h>
 
-1415990955 source:c:\grepster\app\cframemenu.cpp
+1416424172 source:c:\grepster\app\cframemenu.cpp
 	"CFrameMenu.h"
 
-1416347539 c:\grepster\version.h
+1416439618 c:\grepster\version.h
 
 1412627642 c:\wxwidgets-3.0.2\include\wx\aui\framemanager.h
 	"wx/defs.h"

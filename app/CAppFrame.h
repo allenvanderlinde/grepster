@@ -21,7 +21,9 @@
 
 /* Frame settings. */
 #define FRAME_WIDTH                 960
-#define FRAME_HEIGHT                512
+#define FRAME_HEIGHT                600
+
+#define FRAME_TITLE
 
 #define CONSOLE_ID                  1000
 #define CONSOLE_NAME                "the_con"
@@ -40,7 +42,7 @@
 /* Frame control visibility globals. */
 #define IS_DOCKABLE                 false
 
-#define BG_COLOR                    "#000000"//"#e1e6f6"
+#define BG_COLOR                    "#e1e6f6"
 #define BUTTON_BG_COLOR             "#566275"
 
 #define WXCOLOR_LT_BLUE             wxColor(174,188,225)
@@ -86,10 +88,8 @@ private:
 
     void TestPutty(wxCommandEvent& event);
 
-    void OnExit(wxCommandEvent& event);
-
-
     void OnAbout(wxCommandEvent& event);
+    void OnExit(wxCommandEvent& event);
 
     wxDECLARE_EVENT_TABLE();
 };

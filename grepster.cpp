@@ -11,7 +11,11 @@
 /* NOTES */
 // MAKE CONFIG FILE WITH PATH TO PUTTY DIRECTORY!!
 
-#include "grepster.h"
+#include <wx/wx.h>
+
+/* Frame globals definitions. */
+wxString g_Frame_Title("grepster v");
+
 #include "app/CAppEntry.h"
 
 wxIMPLEMENT_APP(CAppEntry);

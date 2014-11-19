@@ -8,12 +8,15 @@
     Author: Allen Vanderlinde
 */
 
+#include "../grepster.h"
+
+#include "CAppEntry.h"
 #include "CAppFrame.h"
 
 /*  wxWidgets frame event table. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::OnExit)
-    //EVT_MENU(wxID_ABOUT, CAppFrame::OnAbout)
+    EVT_MENU(MENU_FUNCTION_ID_HELP_ABOUT, CAppFrame::OnAbout)
 
     EVT_BUTTON(ButtonID_Grep, CAppFrame::TestPutty)
 wxEND_EVENT_TABLE()
@@ -105,19 +108,6 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     art->SetColour(wxAUI_DOCKART_INACTIVE_CAPTION_GRADIENT_COLOUR, WXCOLOR_DK_BLUE);
 
     m_aui->Update();
-
-    /*
-    wxAuiPaneInfo frameInf; // Used to configure the tree control's display
-    frameInf.PaneBorder(true);
-    frameInf.BestSize(220, 400);
-    frameInf.Name("frame");
-    frameInf.Caption("File Cabinet");
-    frameInf.CaptionVisible();
-    frameInf.Left();
-    frameInf.CloseButton(true);
-    frameInf.Dockable(true);
-    frameInf.Show(true);
-    */
 }
 
 /*  CAppFrame::~CAppFrame
@@ -165,5 +155,5 @@ void CAppFrame::OnExit(wxCommandEvent& event) {
 
     Desc: Displays standard About dialog box. */
 void CAppFrame::OnAbout(wxCommandEvent& event) {
-    wxMessageBox("This is a wxWidgets' Hello world sample", "About Hello World", wxOK | wxICON_INFORMATION);
+    wxMessageBox("PLACEHOLDER DIALOG FOR grepster about", g_Frame_Title, wxOK | wxICON_INFORMATION);
 }

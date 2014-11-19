@@ -11,6 +11,11 @@
 #ifndef _GREPSTER_H_
 #define _GREPSTER_H_
 
+#include <wx/wx.h>
 
+#include "version.h"
+
+/* Frame globals. */
+extern wxString g_Frame_Title;
 
 #endif
