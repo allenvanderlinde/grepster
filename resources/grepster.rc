@@ -1,0 +1,16 @@
+/*
+    Copyright (C) 2014 by Allen Vanderlinde.
+    grepster and its source code is licensed under the GNU General Public License (GPL)
+    and is subject to the terms and conditions provided in LICENSE.txt.
+*/
+/* grepster's resource ID paths for Windows OS. */
+#include <afxres.h>
+#include "grepster_rc.h"
+
+/* Include Windows specific GUI features in executable. */
+#include <wx/msw/wx.rc>
+
+/* This resource is required to be defined first in order to correctly display Songbird's title bar icon. */
+//aaaaappicon                         ICON        "icon.ico"
+
+//RESID_PNG_CHIRP                     RCDATA      "Icons/16x16/chirp.png"
