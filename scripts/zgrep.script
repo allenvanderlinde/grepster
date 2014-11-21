@@ -1,3 +1,0 @@
-echo Grepster is grepping those app servers!
-grep 'NullPointerException' /tmp/advlog.log > /tmp/app01_adv_httpdlog.txt
-sleep 2
