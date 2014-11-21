@@ -16,8 +16,8 @@
 #include "CAppFrame.h"
 
 /* Application entry settings. */
-#define DISPLAY_SPLASH                  false
-#define SPLASH_DURATION                 2000
+#define DISPLAY_SPLASH                  true
+#define SPLASH_DURATION                 1000
 
 /*  CAppEntry
 

@@ -17,7 +17,7 @@
 
     Desc: Constructor for text control class. */
 CConsole::CConsole(wxWindow* parentFrame)
-    : wxTextCtrl(parentFrame, CONSOLE_ID, "butt balls banana", wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE | wxTE_RICH2 | wxTE_READONLY) {
+    : wxTextCtrl(parentFrame, CONSOLE_ID, g_Frame_Title + " initialized successfully.\nReady to grep.", wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE | wxTE_RICH2 | wxTE_READONLY) {
     /* Configure console's display settings. */
     m_consoleInf.PaneBorder(true);
     m_consoleInf.BestSize(FRAME_WIDTH, CONSOLE_DEFAULT_HEIGHT);

@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1416551167 source:c:\grepster\app\cappentry.cpp
+1416582321 source:c:\grepster\app\cappentry.cpp
 	"../grepster.h"
 	"../resources/grepster_rc.h"
 	"CAppEntry.h"
 	"CAppFrame.h"
 	<wx/splash.h>
 
-1416556868 c:\grepster\grepster.h
+1416582321 c:\grepster\grepster.h
 	<wx/wx.h>
 	"app/CConsole.h"
 	"app/CClientList.h"
@@ -2931,7 +2931,7 @@
 1412627642 c:\wxwidgets-3.0.2\include\wx\cocoa\mdi.h
 	"wx/frame.h"
 
-1416556407 c:\grepster\app\cconsole.h
+1416582321 c:\grepster\app\cconsole.h
 	<wx/wx.h>
 	<wx/aui/aui.h>
 
@@ -3096,7 +3096,7 @@
 	"wx/icon.h"
 	"wx/aui/auibook.h"
 
-1416556413 c:\grepster\app\cclientlist.h
+1416582321 c:\grepster\app\cclientlist.h
 	<wx/wx.h>
 	<wx/treectrl.h>
 	<wx/aui/aui.h>
@@ -3133,20 +3133,20 @@
 	"wx/treebase.h"
 	"wx/hashmap.h"
 
-1416566175 c:\grepster\version.h
+1416602747 c:\grepster\version.h
 
-1416553078 c:\grepster\app\cappentry.h
+1416602402 c:\grepster\app\cappentry.h
 	<wx/wx.h>
 	"CAppFrame.h"
 
-1416566100 c:\grepster\app\cappframe.h
+1416602627 c:\grepster\app\cappframe.h
 	<wx/wx.h>
 	<wx/aui/framemanager.h>
 	<wx/aui/auibook.h>
 	"../grepster.h"
 	"CFrameMenubar.h"
 
-1416557444 c:\grepster\app\cframemenubar.h
+1416582321 c:\grepster\app\cframemenubar.h
 	<wx/wx.h>
 
 1412627643 c:\wxwidgets-3.0.2\include\wx\splash.h
@@ -3158,33 +3158,33 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1416566174 source:c:\grepster\app\cappframe.cpp
+1416602632 source:c:\grepster\app\cappframe.cpp
 	"../grepster.h"
 	"../resources/grepster_rc.h"
 	"CAppFrame.h"
 	<wx/aui/dockart.h>
 
-1416556598 source:c:\grepster\app\cclientlist.cpp
+1416582321 source:c:\grepster\app\cclientlist.cpp
 	"../grepster.h"
 	"CAppFrame.h"
 	"CClientList.h"
 
-1416556603 source:c:\grepster\app\cconsole.cpp
+1416582321 source:c:\grepster\app\cconsole.cpp
 	"../grepster.h"
 	"CAppFrame.h"
 	"CConsole.h"
 
-1416562459 source:c:\grepster\app\cframemenubar.cpp
+1416582321 source:c:\grepster\app\cframemenubar.cpp
 	"CFrameMenubar.h"
 
-1416551859 source:c:\grepster\grepster.cpp
+1416582321 source:c:\grepster\grepster.cpp
 	<wx/wx.h>
 	"grepster.h"
 	"app/CAppEntry.h"
 
-1416562998 c:\grepster\resources\grepster_rc.h
+1416582321 c:\grepster\resources\grepster_rc.h
 
-1416563015 source:c:\grepster\resources\grepster.rc
+1416582321 source:c:\grepster\resources\grepster.rc
 	<afxres.h>
 	"grepster_rc.h"
 	<wx/msw/wx.rc>
