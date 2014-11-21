@@ -87,8 +87,13 @@
 		<Unit filename="app/CAppEntry.h" />
 		<Unit filename="app/CAppFrame.cpp" />
 		<Unit filename="app/CAppFrame.h" />
-		<Unit filename="app/CFrameMenu.cpp" />
-		<Unit filename="app/CFrameMenu.h" />
+		<Unit filename="app/CClientList.cpp" />
+		<Unit filename="app/CClientList.h" />
+		<Unit filename="app/CConsole.cpp" />
+		<Unit filename="app/CConsole.h" />
+		<Unit filename="app/CFrameMenubar.cpp" />
+		<Unit filename="app/CFrameMenubar.h" />
+		<Unit filename="app/CGrepNotebook.h" />
 		<Unit filename="grepster.cpp" />
 		<Unit filename="grepster.h" />
 		<Unit filename="resources/grepster.rc">

@@ -15,12 +15,18 @@
 
 #include "CAppFrame.h"
 
+/* Application entry settings. */
+#define DISPLAY_SPLASH                  false
+#define SPLASH_DURATION                 2000
+
 /*  CAppEntry
 
     Desc: wxWidgets application class definition. */
 class CAppEntry : public wxApp {
 public:
     virtual bool OnInit();
+
+    bool ShowSplash(int resource_id);
 
 private:
     CAppFrame* m_grepster_frame;

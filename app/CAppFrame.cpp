@@ -9,16 +9,18 @@
 */
 
 #include "../grepster.h"
-
-#include "CAppEntry.h"
+#include "../resources/grepster_rc.h"
 #include "CAppFrame.h"
+
+#include <wx/aui/dockart.h>
 
 /*  wxWidgets frame event table. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::OnExit)
+    EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
+    EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_DOCKABLE, CAppFrame::ToggleFloating)
     EVT_MENU(MENU_FUNCTION_ID_HELP_ABOUT, CAppFrame::OnAbout)
 
-    EVT_BUTTON(ButtonID_Grep, CAppFrame::TestPutty)
 wxEND_EVENT_TABLE()
 
 /*  CAppFrame::CAppFrame
@@ -30,7 +32,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     SetBackgroundColour(BG_COLOR);
 
     /* Create menu bar. */
-    m_menubar = new CFrameMenu;
+    m_menubar = new CFrameMenubar;
     SetMenuBar(m_menubar);
 
     /* Configure and initialize status bar. */
@@ -40,42 +42,9 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     SetStatusBar(m_statusbar);
     SetStatusText(STATUSBAR_WELCOME);
 
-    /* Console control creation. */
-    m_console = new wxTextCtrl(this,
-                               CONSOLE_ID,
-                               "grep",
-                               wxDefaultPosition,
-                               wxDefaultSize,
-                               wxTE_MULTILINE | wxTE_RICH2 | wxTE_READONLY);  // Multi-line, rich-text text control for the console
-
-    /* Configure console's display settings. */
-    consoleInf.PaneBorder(true);
-    consoleInf.BestSize(FRAME_WIDTH, CONSOLE_DEFAULT_HEIGHT);
-    consoleInf.Name(CONSOLE_NAME);
-    consoleInf.Caption(CONSOLE_CTRL_TITLE);
-    consoleInf.CaptionVisible();
-    consoleInf.Bottom();
-    consoleInf.CloseButton(false);
-    consoleInf.Dockable(IS_DOCKABLE);
-    consoleInf.Show(true);
-
-    /* Client list tree control creation. */
-    m_client_list = new wxTreeCtrl(this,
-                                   CLIENT_LIST_ID,
-                                   wxDefaultPosition,
-                                   wxDefaultSize,
-                                   wxTR_DEFAULT_STYLE | wxTR_HIDE_ROOT);
-
-    /* Configure console's display settings. */
-    clientListInf.PaneBorder(true);
-    clientListInf.BestSize(CLIENT_LIST_DEFAULT_WIDTH, FRAME_HEIGHT);
-    clientListInf.Name(CLIENT_LIST_NAME);
-    clientListInf.Caption(CLIENT_LIST_CTRL_TITLE);
-    clientListInf.CaptionVisible();
-    clientListInf.Left();
-    clientListInf.CloseButton(false);
-    clientListInf.Dockable(IS_DOCKABLE);
-    clientListInf.Show(true);
+    /* Create and initialize primary frame controls. */
+    Console = new CConsole(this);
+    ClientList = new CClientList(this);
 
     /* Grep notebook control creation. */
     m_grep_notebook = new wxAuiNotebook(this, GREP_NOTEBOOK_ID);
@@ -88,16 +57,16 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     grepNotebookInf.CaptionVisible();
     grepNotebookInf.Center();
     grepNotebookInf.CloseButton(false);
-    grepNotebookInf.Dockable(IS_DOCKABLE);
+    grepNotebookInf.Floatable(USE_FLOATABLE);
     grepNotebookInf.Show(true);
 
     /* Create wxWidgets AUI object for managing frame controls. */
     m_aui = new wxAuiManager(this);
     // Set AUI flags for display
-    m_aui->SetFlags(wxAUI_MGR_ALLOW_ACTIVE_PANE | wxAUI_MGR_LIVE_RESIZE);// | wxAUI_MGR_ALLOW_FLOATING | wxAUI_MGR_VENETIAN_BLINDS_HINT);
+    m_aui->SetFlags(wxAUI_MGR_ALLOW_ACTIVE_PANE | wxAUI_MGR_LIVE_RESIZE | wxAUI_MGR_ALLOW_FLOATING | wxAUI_MGR_VENETIAN_BLINDS_HINT);
 
-    m_aui->AddPane(m_console, consoleInf);
-    m_aui->AddPane(m_client_list, clientListInf);
+    m_aui->AddPane(Console, Console->getPaneInfo());
+    m_aui->AddPane(ClientList, ClientList->getPaneInfo());
     m_aui->AddPane(m_grep_notebook, grepNotebookInf);
 
     // Set pane colors for controls
@@ -117,8 +86,23 @@ CAppFrame::~CAppFrame() {
     m_aui->UnInit();
 }
 
+/*  CAppFrame::ToggleFloating
+
+    Desc: Toggles whether the frame's controls can float. */
+void CAppFrame::ToggleFloating(wxCommandEvent& event) {
+    if(!isFloating) {
+        m_aui->GetPane(Console).Floatable(true);
+        isFloating = true;
+    } else if(isFloating) {
+        m_aui->GetPane(Console).Floatable(false);
+        isFloating = false;
+    }
+
+    //m_aui->Update();
+}
+
 /*  CAppFrame::TestPutty */
-void CAppFrame::TestPutty(wxCommandEvent& event ) {
+void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
     STARTUPINFO si;
     PROCESS_INFORMATION pi;
 
@@ -155,5 +139,24 @@ void CAppFrame::OnExit(wxCommandEvent& event) {
 
     Desc: Displays standard About dialog box. */
 void CAppFrame::OnAbout(wxCommandEvent& event) {
-    wxMessageBox("PLACEHOLDER DIALOG FOR grepster about", g_Frame_Title, wxOK | wxICON_INFORMATION);
+    wxDialog* dialog = new wxDialog(this, wxID_ANY, g_Frame_Title, wxDefaultPosition, wxSize(340, 374));
+    wxBoxSizer* dialog_sizer = new wxBoxSizer(wxVERTICAL);
+    wxStaticBoxSizer* dialog_static_sizer = new wxStaticBoxSizer(wxVERTICAL, dialog, "About grepster");
+
+    wxStaticBitmap* banner = new wxStaticBitmap(dialog, wxID_ANY, wxBitmap(RESOURCE_ID_TO_STRING(RESID_PNG_ABOUT), wxBITMAP_TYPE_PNG_RESOURCE), wxDefaultPosition, wxDefaultSize);
+    wxTextCtrl* about_text = new wxTextCtrl(dialog, wxID_ANY, ABOUT_INFORMATION, wxDefaultPosition, wxSize(wxDefaultSize.GetWidth(), 120), wxTE_MULTILINE | wxTE_READONLY);
+
+    wxButton* button_ok = new wxButton(dialog, wxID_OK, "OK", wxPoint(5, 5), wxDefaultSize);
+    button_ok->SetDefault();
+
+    /* Arrange dialog's controls. */
+    dialog_static_sizer->Add(about_text, wxSizerFlags().Expand().Center().Border(wxALL, 5));
+    dialog_sizer->Add(banner, 0);
+    dialog_sizer->Add(dialog_static_sizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
+    dialog_sizer->Add(button_ok, wxSizerFlags().Center());
+
+    dialog->SetSizer(dialog_sizer);
+    dialog->Center();
+    if(dialog->ShowModal() == wxID_OK)
+        dialog->Destroy();
 }

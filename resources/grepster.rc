@@ -10,7 +10,8 @@
 /* Include Windows specific GUI features in executable. */
 #include <wx/msw/wx.rc>
 
-/* This resource is required to be defined first in order to correctly display Songbird's title bar icon. */
-//aaaaappicon                         ICON        "icon.ico"
+/* This resource is required to be defined first in order to correctly display title bar icon. */
+aaaaappicon                         ICON        "grepster.ico"
 
-//RESID_PNG_CHIRP                     RCDATA      "Icons/16x16/chirp.png"
+RESID_PNG_SPLASH                    RCDATA      "splash.png"
+RESID_PNG_ABOUT                     RCDATA      "about.png"

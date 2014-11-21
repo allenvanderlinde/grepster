@@ -12,10 +12,16 @@
 // MAKE CONFIG FILE WITH PATH TO PUTTY DIRECTORY!!
 
 #include <wx/wx.h>
+#include "grepster.h"
 
 /* Frame globals definitions. */
-wxString g_Frame_Title("grepster v");
+wxString            g_Frame_Title("grepster v");
+/* Frame control definitions. */
+CConsole*           Console;
+CClientList*        ClientList;
+
+/* Utility function definitions. */
+wxString RESOURCE_ID_TO_STRING(int id) { return wxString::Format("#%i", id); }
 
 #include "app/CAppEntry.h"
-
 wxIMPLEMENT_APP(CAppEntry);

@@ -13,50 +13,41 @@
 
 #include <wx/wx.h>
 #include <wx/aui/framemanager.h>
-#include <wx/aui/dockart.h>
-#include <wx/aui/auibook.h>
-#include <wx/treectrl.h>
 
-#include "CFrameMenu.h"
+#include <wx/aui/auibook.h>
+
+#include "../grepster.h"
+#include "CFrameMenubar.h"
 
 /* Frame settings. */
 #define FRAME_WIDTH                 960
 #define FRAME_HEIGHT                600
 
-#define FRAME_TITLE
-
-#define CONSOLE_ID                  1000
-#define CONSOLE_NAME                "the_con"
-#define CONSOLE_CTRL_TITLE          "Console"
-#define CONSOLE_DEFAULT_HEIGHT      140
-
-#define CLIENT_LIST_ID              1001
-#define CLIENT_LIST_NAME            "client_tree"
-#define CLIENT_LIST_CTRL_TITLE      "Client List"
-#define CLIENT_LIST_DEFAULT_WIDTH   200
-
 #define GREP_NOTEBOOK_ID            1002
 #define GREP_NOTEBOOK_NAME          "grepbook"
 #define GREP_NOTEBOOK_CTRL_TITLE    "Grepbook"
 
-/* Frame control visibility globals. */
-#define IS_DOCKABLE                 false
 
 #define BG_COLOR                    "#e1e6f6"
 #define BUTTON_BG_COLOR             "#566275"
 
-#define WXCOLOR_LT_BLUE             wxColor(174,188,225)
-#define WXCOLOR_DK_BLUE             wxColor(112,146,190)
-#define WXCOLOR_INACTIVE            wxColor(225,230,246)
-
-/* Button IDs. */
-enum {
-    ButtonID_Grep = 0
-};
+#define WXCOLOR_LT_BLUE             wxColor(143,163,174)
+#define WXCOLOR_DK_BLUE             wxColor(104,129,142)
+//#define WXCOLOR_INACTIVE            wxColor(225,230,246)
 
 /* Status bar settings. */
 #define STATUSBAR_WELCOME           "Can we grep yet, user?"
 #define STATUSBAR_NOTE_WIDTH        120  // Width of right-most status bar pane width for notes
+
+/* About dialog information text. */
+#define ABOUT_INFORMATION           "Written by Allen Vanderlinde, 2014.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster allows Blackboard TSMs immediate and dynamic access to client servers for grepping various logs en masse.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.\n\nPuTTY and its companion tools are copyright 1997-2013 Simon Tatham."
+
+/* Floating controls toggle. */
+static bool isFloating = USE_FLOATABLE;
+
+/* Button IDs. */
+enum e_ButtonIDs {
+};
 
 /*  CAppFrame
 
@@ -68,13 +59,10 @@ public:
 
 private:
     // Menu bar
-    CFrameMenu* m_menubar;
+    CFrameMenubar* m_menubar;
     // Status bar
     wxStatusBar* m_statusbar;
-    // Console
-    wxTextCtrl* m_console;
-    // Client list tree control
-    wxTreeCtrl* m_client_list;
+
     // Grep notebook
     wxAuiNotebook* m_grep_notebook;
 
@@ -82,12 +70,15 @@ private:
     wxAuiManager* m_aui;
 
     // AUI info structures
-    wxAuiPaneInfo consoleInf;
-    wxAuiPaneInfo clientListInf;
     wxAuiPaneInfo grepNotebookInf;
 
-    void TestPutty(wxCommandEvent& event);
+    /* Control command functions. */
+    void ToggleFloating(wxCommandEvent& event);
 
+    /* Tools functions */
+    void LaunchPuTTY(wxCommandEvent& event);
+
+    /* Standard frame functions. */
     void OnAbout(wxCommandEvent& event);
     void OnExit(wxCommandEvent& event);
 

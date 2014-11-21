@@ -1,0 +1,5 @@
+[grepster Design Acknowledgements]
+
+Thank you to the original creator of the stock icon used.
+
+Without Socrates Maura's ZGREP-UTILITY's design and scripting, this project would have never come to be.
