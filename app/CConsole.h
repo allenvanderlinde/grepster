@@ -21,6 +21,7 @@ class CConsole : public wxTextCtrl {
 public:
     CConsole(wxWindow* parentFrame);
 
+    /* Return control's pane information. */
     wxAuiPaneInfo getPaneInfo() { return m_consoleInf; }
 
 private:

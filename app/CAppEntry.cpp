@@ -12,9 +12,9 @@
 #include "../resources/grepster_rc.h"
 
 #include "CAppEntry.h"
-#include "CAppFrame.h"
 
 #include <wx/splash.h>
+#include <wx/icon.h>
 
 /*  CAppEntry::OnInit
 
@@ -35,6 +35,9 @@ bool CAppEntry::OnInit() {
     }
 
     m_grepster_frame = new CAppFrame(g_Frame_Title, wxPoint(50, 50), wxSize(FRAME_WIDTH, FRAME_HEIGHT));
+    /* Set grepster's window icon. */
+    m_grepster_frame->SetIcon(wxICON(aaaaappicon));
+    SetTopWindow(m_grepster_frame);
     m_grepster_frame->Show(true);
 
     return true;

@@ -15,6 +15,7 @@
 
 #include "app/CConsole.h"
 #include "app/CClientList.h"
+#include "app/CGrepNotebook.h"
 
 #include "version.h"
 
@@ -23,6 +24,7 @@ extern wxString         g_Frame_Title;
 
 extern CConsole*        Console;
 extern CClientList*     ClientList;
+extern CGrepNotebook*   GrepNotebook;
 
 /* Utility functions. */
 wxString RESOURCE_ID_TO_STRING(int id);
@@ -41,5 +43,14 @@ wxString RESOURCE_ID_TO_STRING(int id);
 #define CLIENT_LIST_NAME            "client_tree"
 #define CLIENT_LIST_CTRL_TITLE      "Client List"
 #define CLIENT_LIST_DEFAULT_WIDTH   200
+
+/* Grep Notebook control settings. */
+#define GREP_NOTEBOOK_ID            1002
+#define GREP_NOTEBOOK_NAME          "grep_notebook"
+#define GREP_NOTEBOOK_CTRL_TITLE    "Grep Notebook"
+
+/* Browser/web viewer control settings. */
+#define BROWSER_ID             1003
+#define BROWSER_NAME           "browser"
 
 #endif

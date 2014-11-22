@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1416582321 source:c:\grepster\app\cappentry.cpp
+1416678855 source:c:\grepster\app\cappframe.cpp
 	"../grepster.h"
 	"../resources/grepster_rc.h"
-	"CAppEntry.h"
 	"CAppFrame.h"
-	<wx/splash.h>
+	<wx/aui/dockart.h>
 
-1416582321 c:\grepster\grepster.h
+1416675210 c:\grepster\grepster.h
 	<wx/wx.h>
 	"app/CConsole.h"
 	"app/CClientList.h"
+	"app/CGrepNotebook.h"
 	"version.h"
 
 1412627643 c:\wxwidgets-3.0.2\include\wx\wx.h
@@ -2931,7 +2931,7 @@
 1412627642 c:\wxwidgets-3.0.2\include\wx\cocoa\mdi.h
 	"wx/frame.h"
 
-1416582321 c:\grepster\app\cconsole.h
+1416674382 c:\grepster\app\cconsole.h
 	<wx/wx.h>
 	<wx/aui/aui.h>
 
@@ -3096,7 +3096,7 @@
 	"wx/icon.h"
 	"wx/aui/auibook.h"
 
-1416582321 c:\grepster\app\cclientlist.h
+1416674378 c:\grepster\app\cclientlist.h
 	<wx/wx.h>
 	<wx/treectrl.h>
 	<wx/aui/aui.h>
@@ -3133,58 +3133,100 @@
 	"wx/treebase.h"
 	"wx/hashmap.h"
 
-1416602747 c:\grepster\version.h
-
-1416602402 c:\grepster\app\cappentry.h
+1416686675 c:\grepster\app\cgrepnotebook.h
 	<wx/wx.h>
-	"CAppFrame.h"
+	<wx/aui/aui.h>
+	<wx/aui/auibook.h>
+	"../webviewer/CWebViewer.h"
 
-1416602627 c:\grepster\app\cappframe.h
+1416677787 c:\grepster\webviewer\cwebviewer.h
+	<wx/wx.h>
+	<wx/webview.h>
+	<wx/wfstream.h>
+	"../grepster.h"
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\webview.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/event.h"
+	"wx/sstream.h"
+	"wx/sharedptr.h"
+	"wx/vector.h"
+	"wx/osx/webviewhistoryitem_webkit.h"
+	"wx/gtk/webviewhistoryitem_webkit.h"
+	"wx/msw/webviewhistoryitem_ie.h"
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\sstream.h
+	"wx/stream.h"
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\osx\webviewhistoryitem_webkit.h
+	"wx/setup.h"
+	"wx/osx/core/objcid.h"
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\osx\core\objcid.h
+
+1412627642 c:\wxwidgets-3.0.2\include\wx\gtk\webviewhistoryitem_webkit.h
+	"wx/setup.h"
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\msw\webviewhistoryitem_ie.h
+	"wx/setup.h"
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\wfstream.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/stream.h"
+	"wx/file.h"
+	"wx/ffile.h"
+
+1412627642 c:\wxwidgets-3.0.2\include\wx\ffile.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/filefn.h"
+	"wx/convauto.h"
+	<stdio.h>
+
+1416686681 c:\grepster\version.h
+
+1416617873 c:\grepster\resources\grepster_rc.h
+
+1416675177 c:\grepster\app\cappframe.h
 	<wx/wx.h>
 	<wx/aui/framemanager.h>
 	<wx/aui/auibook.h>
 	"../grepster.h"
 	"CFrameMenubar.h"
 
-1416582321 c:\grepster\app\cframemenubar.h
+1416617872 c:\grepster\app\cframemenubar.h
 	<wx/wx.h>
 
-1412627643 c:\wxwidgets-3.0.2\include\wx\splash.h
-	"wx/generic/splash.h"
-
-1412627642 c:\wxwidgets-3.0.2\include\wx\generic\splash.h
-	"wx/bitmap.h"
-	"wx/eventfilter.h"
-	"wx/frame.h"
-	"wx/timer.h"
-
-1416602632 source:c:\grepster\app\cappframe.cpp
-	"../grepster.h"
-	"../resources/grepster_rc.h"
-	"CAppFrame.h"
-	<wx/aui/dockart.h>
-
-1416582321 source:c:\grepster\app\cclientlist.cpp
+1416617872 source:c:\grepster\app\cclientlist.cpp
 	"../grepster.h"
 	"CAppFrame.h"
 	"CClientList.h"
 
-1416582321 source:c:\grepster\app\cconsole.cpp
+1416672116 source:c:\grepster\app\cconsole.cpp
 	"../grepster.h"
 	"CAppFrame.h"
 	"CConsole.h"
 
-1416582321 source:c:\grepster\app\cframemenubar.cpp
+1416617872 source:c:\grepster\app\cframemenubar.cpp
 	"CFrameMenubar.h"
 
-1416582321 source:c:\grepster\grepster.cpp
+1416683098 source:c:\grepster\app\cgrepnotebook.cpp
+	"../grepster.h"
+	"CGrepNotebook.h"
+
+1416673946 source:c:\grepster\grepster.cpp
 	<wx/wx.h>
 	"grepster.h"
 	"app/CAppEntry.h"
 
-1416582321 c:\grepster\resources\grepster_rc.h
+1416670134 c:\grepster\app\cappentry.h
+	<wx/wx.h>
+	"CAppFrame.h"
 
-1416582321 source:c:\grepster\resources\grepster.rc
+1416617873 source:c:\grepster\resources\grepster.rc
 	<afxres.h>
 	"grepster_rc.h"
 	<wx/msw/wx.rc>
@@ -3205,4 +3247,23 @@
 	<aygshell.h>
 
 1412627643 c:\wxwidgets-3.0.2\include\wx\msw\rcdefs.h
+
+1416677850 source:c:\grepster\webviewer\cwebviewer.cpp
+	"CWebViewer.h"
+
+1416685296 source:c:\grepster\app\cappentry.cpp
+	"../grepster.h"
+	"../resources/grepster_rc.h"
+	"CAppEntry.h"
+	<wx/splash.h>
+	<wx/icon.h>
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\splash.h
+	"wx/generic/splash.h"
+
+1412627642 c:\wxwidgets-3.0.2\include\wx\generic\splash.h
+	"wx/bitmap.h"
+	"wx/eventfilter.h"
+	"wx/frame.h"
+	"wx/timer.h"
 

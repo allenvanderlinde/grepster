@@ -28,4 +28,9 @@ CConsole::CConsole(wxWindow* parentFrame)
     m_consoleInf.CloseButton(false);
     m_consoleInf.Floatable(USE_FLOATABLE);
     m_consoleInf.Show(true);
+
+    /* Set the console's font. */
+    //SetFont(wxFont(10, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false));
+    //font(wxFontInfo(12).FaceName("Helvetica").Italic());
+    SetFont(wxFont(wxFontInfo(8).FaceName("Lucida Console")));
 }

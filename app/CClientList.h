@@ -22,6 +22,7 @@ class CClientList : public wxTreeCtrl {
 public:
     CClientList(wxWindow* parentFrame);
 
+    /* Return control's pane information. */
     wxAuiPaneInfo getPaneInfo() { return m_clientListInf; }
 
 private:

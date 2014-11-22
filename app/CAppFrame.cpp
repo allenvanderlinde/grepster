@@ -45,20 +45,8 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     /* Create and initialize primary frame controls. */
     Console = new CConsole(this);
     ClientList = new CClientList(this);
-
-    /* Grep notebook control creation. */
-    m_grep_notebook = new wxAuiNotebook(this, GREP_NOTEBOOK_ID);
-
-    /* Configure console's display settings. */
-    grepNotebookInf.PaneBorder(true);
-    //grepNotebookInf.BestSize(CLIENT_LIST_DEFAULT_WIDTH, FRAME_HEIGHT);
-    grepNotebookInf.Name(GREP_NOTEBOOK_NAME);
-    grepNotebookInf.Caption(GREP_NOTEBOOK_CTRL_TITLE);
-    grepNotebookInf.CaptionVisible();
-    grepNotebookInf.Center();
-    grepNotebookInf.CloseButton(false);
-    grepNotebookInf.Floatable(USE_FLOATABLE);
-    grepNotebookInf.Show(true);
+    GrepNotebook = new CGrepNotebook(this);
+    GrepNotebook->OpenWelcomePage();
 
     /* Create wxWidgets AUI object for managing frame controls. */
     m_aui = new wxAuiManager(this);
@@ -67,7 +55,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
 
     m_aui->AddPane(Console, Console->getPaneInfo());
     m_aui->AddPane(ClientList, ClientList->getPaneInfo());
-    m_aui->AddPane(m_grep_notebook, grepNotebookInf);
+    m_aui->AddPane(GrepNotebook, GrepNotebook->getPaneInfo());
 
     // Set pane colors for controls
     wxAuiDockArt* art = m_aui->GetArtProvider();
@@ -92,9 +80,13 @@ CAppFrame::~CAppFrame() {
 void CAppFrame::ToggleFloating(wxCommandEvent& event) {
     if(!isFloating) {
         m_aui->GetPane(Console).Floatable(true);
+        m_aui->GetPane(ClientList).Floatable(true);
+        m_aui->GetPane(GrepNotebook).Floatable(true);
         isFloating = true;
     } else if(isFloating) {
         m_aui->GetPane(Console).Floatable(false);
+        m_aui->GetPane(ClientList).Floatable(false);
+        m_aui->GetPane(GrepNotebook).Floatable(false);
         isFloating = false;
     }
 

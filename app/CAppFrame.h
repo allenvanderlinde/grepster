@@ -23,11 +23,6 @@
 #define FRAME_WIDTH                 960
 #define FRAME_HEIGHT                600
 
-#define GREP_NOTEBOOK_ID            1002
-#define GREP_NOTEBOOK_NAME          "grepbook"
-#define GREP_NOTEBOOK_CTRL_TITLE    "Grepbook"
-
-
 #define BG_COLOR                    "#e1e6f6"
 #define BUTTON_BG_COLOR             "#566275"
 
@@ -63,14 +58,8 @@ private:
     // Status bar
     wxStatusBar* m_statusbar;
 
-    // Grep notebook
-    wxAuiNotebook* m_grep_notebook;
-
     // wxWidgets Advanced UI Manager
     wxAuiManager* m_aui;
-
-    // AUI info structures
-    wxAuiPaneInfo grepNotebookInf;
 
     /* Control command functions. */
     void ToggleFloating(wxCommandEvent& event);

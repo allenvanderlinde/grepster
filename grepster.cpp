@@ -19,6 +19,7 @@ wxString            g_Frame_Title("grepster v");
 /* Frame control definitions. */
 CConsole*           Console;
 CClientList*        ClientList;
+CGrepNotebook*      GrepNotebook;
 
 /* Utility function definitions. */
 wxString RESOURCE_ID_TO_STRING(int id) { return wxString::Format("#%i", id); }
