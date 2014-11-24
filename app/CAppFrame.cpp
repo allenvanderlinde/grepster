@@ -18,7 +18,7 @@
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::OnExit)
     EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
-    EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_DOCKABLE, CAppFrame::ToggleFloating)
+    EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, CAppFrame::ToggleFloating)
     EVT_MENU(MENU_FUNCTION_ID_HELP_ABOUT, CAppFrame::OnAbout)
 
 wxEND_EVENT_TABLE()
@@ -30,6 +30,9 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     : wxFrame(NULL, wxID_ANY, title, position, size) {
     // Set background color
     SetBackgroundColour(BG_COLOR);
+
+    /* Toggle control settings. */
+    isFloating = configuration.bUseFloatable;
 
     /* Create menu bar. */
     m_menubar = new CFrameMenubar;
@@ -79,18 +82,18 @@ CAppFrame::~CAppFrame() {
     Desc: Toggles whether the frame's controls can float. */
 void CAppFrame::ToggleFloating(wxCommandEvent& event) {
     if(!isFloating) {
-        m_aui->GetPane(Console).Floatable(true);
-        m_aui->GetPane(ClientList).Floatable(true);
-        m_aui->GetPane(GrepNotebook).Floatable(true);
-        isFloating = true;
+        configuration.bUseFloatable = true;
+        isFloating = configuration.bUseFloatable;
+        m_aui->GetPane(Console).Floatable(configuration.bUseFloatable);
+        m_aui->GetPane(ClientList).Floatable(configuration.bUseFloatable);
+        m_aui->GetPane(GrepNotebook).Floatable(configuration.bUseFloatable);
     } else if(isFloating) {
-        m_aui->GetPane(Console).Floatable(false);
-        m_aui->GetPane(ClientList).Floatable(false);
-        m_aui->GetPane(GrepNotebook).Floatable(false);
-        isFloating = false;
+        configuration.bUseFloatable = false;
+        isFloating = configuration.bUseFloatable;
+        m_aui->GetPane(Console).Floatable(configuration.bUseFloatable);
+        m_aui->GetPane(ClientList).Floatable(configuration.bUseFloatable);
+        m_aui->GetPane(GrepNotebook).Floatable(configuration.bUseFloatable);
     }
-
-    //m_aui->Update();
 }
 
 /*  CAppFrame::TestPutty */

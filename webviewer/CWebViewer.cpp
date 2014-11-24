@@ -8,6 +8,8 @@
     Author: Allen Vanderlinde
 */
 
+#include "../grepster.h"
+
 #include "CWebViewer.h"
 
 /*  CWebViewer::CWebViewer

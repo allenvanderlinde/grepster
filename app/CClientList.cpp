@@ -26,6 +26,6 @@ CClientList::CClientList(wxWindow* parentFrame)
     m_clientListInf.CaptionVisible();
     m_clientListInf.Left();
     m_clientListInf.CloseButton(false);
-    m_clientListInf.Floatable(USE_FLOATABLE);
+    m_clientListInf.Floatable(configuration.bUseFloatable);
     m_clientListInf.Show(true);
 }

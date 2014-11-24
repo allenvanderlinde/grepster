@@ -26,7 +26,7 @@ CConsole::CConsole(wxWindow* parentFrame)
     m_consoleInf.CaptionVisible();
     m_consoleInf.Bottom();
     m_consoleInf.CloseButton(false);
-    m_consoleInf.Floatable(USE_FLOATABLE);
+    m_consoleInf.Floatable(configuration.bUseFloatable);
     m_consoleInf.Show(true);
 
     /* Set the console's font. */

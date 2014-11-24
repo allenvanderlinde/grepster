@@ -20,17 +20,22 @@ CFrameMenubar::CFrameMenubar()
     m_file_menu->Append(MENU_FUNCTION_ID_FILE_QUIT,
                         FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_QUIT],
                         FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_QUIT]);
+
     // Tools menu
     m_tools_menu = new wxMenu;
     m_tools_menu->Append(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY,
                          FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_LAUNCH_PUTTY],
                          FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_LAUNCH_PUTTY]);
+
     // Options menu
     m_options_menu = new wxMenu;
-    m_options_menu->Append(MENU_FUNCTION_ID_OPTIONS_TOGGLE_DOCKABLE,
+    m_options_menu->Append(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE,
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_TOGGLE_DOCKABLE],
                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_TOGGLE_DOCKABLE],
                            wxITEM_CHECK);
+    /* Check activated items set from configuration. */
+    m_options_menu->Check(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, configuration.bUseFloatable);
+
     // Help menu
     m_help_menu = new wxMenu;
     m_help_menu->Append(MENU_FUNCTION_ID_HELP_ABOUT,

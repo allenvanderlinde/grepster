@@ -11,6 +11,8 @@
 #ifndef _CFRAMEMENUBAR_H_
 #define _CFRAMEMENUBAR_H_
 
+#include "../grepster.h"
+
 #include <wx/wx.h>
 
 /* Strings array. */
@@ -59,7 +61,7 @@ enum e_StatusbarStringIDs {
 enum e_MenuFunctionIDs {
     MENU_FUNCTION_ID_FILE_QUIT = 9000,
     MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY,
-    MENU_FUNCTION_ID_OPTIONS_TOGGLE_DOCKABLE,
+    MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE,
     MENU_FUNCTION_ID_HELP_ABOUT
 };
 

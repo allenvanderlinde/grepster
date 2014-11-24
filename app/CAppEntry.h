@@ -26,10 +26,14 @@ class CAppEntry : public wxApp {
 public:
     virtual bool OnInit();
 
+    // Show grepster's splash screen
     bool ShowSplash(int resource_id);
 
 private:
     CAppFrame* m_grepster_frame;
+
+    // Load grepster's configuration from file
+    void LoadConfiguration();
 };
 
 #endif

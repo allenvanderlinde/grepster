@@ -26,11 +26,18 @@ extern CConsole*        Console;
 extern CClientList*     ClientList;
 extern CGrepNotebook*   GrepNotebook;
 
+/* grepster configuration structure. */
+struct grepsterConfig_t {
+    bool    bUseFloatable;
+};
+
+extern grepsterConfig_t configuration;
+
 /* Utility functions. */
 wxString RESOURCE_ID_TO_STRING(int id);
 
 /* Frame definitions. */
-#define USE_FLOATABLE                false
+//#define USE_FLOATABLE                false
 
 /* Console control settings. */
 #define CONSOLE_ID                  1000

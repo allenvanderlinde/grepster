@@ -21,6 +21,9 @@ CConsole*           Console;
 CClientList*        ClientList;
 CGrepNotebook*      GrepNotebook;
 
+/* grepster configuration global structure. */
+grepsterConfig_t    configuration;
+
 /* Utility function definitions. */
 wxString RESOURCE_ID_TO_STRING(int id) { return wxString::Format("#%i", id); }
 

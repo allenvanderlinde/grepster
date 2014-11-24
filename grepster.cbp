@@ -49,9 +49,9 @@
 					<Add option="-s" />
 					<Add library="libwxmsw30ud_aui.a" />
 					<Add library="libwxmsw30u_adv.a" />
-					<Add library="libwxmsw30ud_webview.a" />
 					<Add library="libwxmsw30u_core.a" />
 					<Add library="libwxbase30u.a" />
+					<Add library="libwxmsw30ud_webview.a" />
 					<Add library="libwxpng.a" />
 					<Add directory="C:/wxWidgets-3.0.0/lib/gcc_lib" />
 				</Linker>

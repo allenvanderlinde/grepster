@@ -34,6 +34,9 @@ bool CAppEntry::OnInit() {
         while((clock() - start) < SPLASH_DURATION) {}   // Use predefined timeout for splash screen
     }
 
+    /* Load grepster's configuration. */
+    LoadConfiguration();
+
     m_grepster_frame = new CAppFrame(g_Frame_Title, wxPoint(50, 50), wxSize(FRAME_WIDTH, FRAME_HEIGHT));
     /* Set grepster's window icon. */
     m_grepster_frame->SetIcon(wxICON(aaaaappicon));
@@ -64,4 +67,11 @@ bool CAppEntry::ShowSplash(int resource_id) {
         return true;
     }
     else return false;
+}
+
+/*  CAppEntry::LoadConfiguration
+
+    Desc: Load grepster's configuration from file. */
+void CAppEntry::LoadConfiguration() {
+    configuration.bUseFloatable = false;
 }
