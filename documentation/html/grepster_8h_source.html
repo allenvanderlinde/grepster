@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,9 +100,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;wx/wx.h&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;app/CConsole.h&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;app/CClientList.h&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;app/CGrepNotebook.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_c_console_8h.html">app/CConsole.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_c_client_list_8h.html">app/CClientList.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_c_grep_notebook_8h.html">app/CGrepNotebook.h</a>&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;version.h&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
@@ -147,14 +148,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define BROWSER_NAME           &quot;browser&quot;</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_c_grep_notebook_html"><div class="ttname"><a href="class_c_grep_notebook.html">CGrepNotebook</a></div><div class="ttdef"><b>Definition:</b> CGrepNotebook.h:28</div></div>
+<div class="ttc" id="_c_grep_notebook_8h_html"><div class="ttname"><a href="_c_grep_notebook_8h.html">CGrepNotebook.h</a></div><div class="ttdoc">wxWidgets AUI notebook control class definition. </div></div>
+<div class="ttc" id="class_c_grep_notebook_html"><div class="ttname"><a href="class_c_grep_notebook.html">CGrepNotebook</a></div><div class="ttdoc">Class definition for grepster&#39;s notebook control. </div><div class="ttdef"><b>Definition:</b> CGrepNotebook.h:35</div></div>
 <div class="ttc" id="structgrepster_config__t_html"><div class="ttname"><a href="structgrepster_config__t.html">grepsterConfig_t</a></div><div class="ttdef"><b>Definition:</b> grepster.h:30</div></div>
-<div class="ttc" id="class_c_client_list_html"><div class="ttname"><a href="class_c_client_list.html">CClientList</a></div><div class="ttdef"><b>Definition:</b> CClientList.h:21</div></div>
-<div class="ttc" id="class_c_console_html"><div class="ttname"><a href="class_c_console.html">CConsole</a></div><div class="ttdef"><b>Definition:</b> CConsole.h:20</div></div>
+<div class="ttc" id="class_c_client_list_html"><div class="ttname"><a href="class_c_client_list.html">CClientList</a></div><div class="ttdoc">Class definition for grepster&#39;s client list. </div><div class="ttdef"><b>Definition:</b> CClientList.h:26</div></div>
+<div class="ttc" id="class_c_console_html"><div class="ttname"><a href="class_c_console.html">CConsole</a></div><div class="ttdoc">Class definition for grepster&#39;s console. </div><div class="ttdef"><b>Definition:</b> CConsole.h:25</div></div>
+<div class="ttc" id="_c_console_8h_html"><div class="ttname"><a href="_c_console_8h.html">CConsole.h</a></div><div class="ttdoc">wxWidgets read-only text control class definition used as grepster&#39;s console. </div></div>
+<div class="ttc" id="_c_client_list_8h_html"><div class="ttname"><a href="_c_client_list_8h.html">CClientList.h</a></div><div class="ttdoc">wxWidgets tree control class definition. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 14:15:48 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 26 2014 09:13:56 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

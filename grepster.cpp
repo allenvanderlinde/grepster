@@ -1,11 +1,15 @@
 /*
-    Project: grepster
-    File: grepster.cpp
+    File:       grepster.cpp
+    Version:    Alpha
+    Author:     Allen Vanderlinde
 
-    Desc: Source file for grepster's execution.
+    Desc:       Source file for grepster's execution.
 
-    Date: 11/2/14
-    Author: Allen Vanderlinde
+    Created:    11/2/14
+
+    Copyright (C) 2014 by Allen Vanderlinde.
+    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 /* NOTES */

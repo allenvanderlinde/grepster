@@ -1,11 +1,15 @@
 /*
-    Project: grepster
-    File: CAppEntry.cpp
+    File:       CAppEntry.cpp
+    Version:    Alpha
+    Author:     Allen Vanderlinde
 
-    Desc: wxWidgets application execution functions.
+    Desc:       wxWidgets application execution class methods.
 
-    Date: 11/2/14
-    Author: Allen Vanderlinde
+    Created:    11/2/14
+
+    Copyright (C) 2014 by Allen Vanderlinde.
+    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #include "../grepster.h"
@@ -16,9 +20,9 @@
 #include <wx/splash.h>
 #include <wx/icon.h>
 
-/*  CAppEntry::OnInit
-
-    Desc: Initializes the wxWidgets application back-end. */
+/*
+    CAppEntry::OnInit
+*/
 bool CAppEntry::OnInit() {
     /* Initial set-up. */
     wxLog::SetLogLevel(0);  // Suppress wxWidgets from reporting color profile errors for certain image media
@@ -46,9 +50,9 @@ bool CAppEntry::OnInit() {
     return true;
 }
 
-/*  CAppEntry::ShowSplash
-
-    Desc: Initializes the wxWidgets application back-end. */
+/*
+    CAppEntry::ShowSplash(int)
+*/
 bool CAppEntry::ShowSplash(int resource_id) {
     wxBitmap png;
     wxSplashScreen* splash_screen = NULL;
@@ -56,11 +60,11 @@ bool CAppEntry::ShowSplash(int resource_id) {
     if(png.LoadFile(RESOURCE_ID_TO_STRING(resource_id), wxBITMAP_TYPE_PNG_RESOURCE)) {
         if((splash_screen = new wxSplashScreen(png,
                                                wxSPLASH_CENTRE_ON_SCREEN | wxSPLASH_TIMEOUT,
-                                               SPLASH_DURATION,    // Display splash for a number of milliseconds
+                                               SPLASH_DURATION,     // Display splash for a number of milliseconds
                                                NULL,
                                                -1,
                                                wxDefaultPosition,
-                                               wxDefaultSize,        // Splash will automatically fit to size of bitmap being used
+                                               wxDefaultSize,       // Splash will automatically fit to size of bitmap being used
                                                wxBORDER_NONE)) == NULL) {
             return false;
         }
@@ -69,9 +73,9 @@ bool CAppEntry::ShowSplash(int resource_id) {
     else return false;
 }
 
-/*  CAppEntry::LoadConfiguration
-
-    Desc: Load grepster's configuration from file. */
+/*
+    CAppEntry::LoadConfiguration
+*/
 void CAppEntry::LoadConfiguration() {
     configuration.bUseFloatable = false;
 }

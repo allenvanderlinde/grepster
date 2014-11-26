@@ -1,11 +1,13 @@
+/**
+ * @file    CWebViewer.h
+ * @author  Allen Vanderlinde
+ * @date    November 22, 2014
+ * @brief   wxWidgets web viewer control class definition.
+ */
 /*
-    Project: grepster
-    File: CWebViewer.h
-
-    Desc: grepster's http browser. wxWidgets web viewer control for grepster's home page.
-
-    Date: 11/22/14
-    Author: Allen Vanderlinde
+    Copyright (C) 2014 by Allen Vanderlinde.
+    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #ifndef _CWEBVIEWER_H_
@@ -15,18 +17,30 @@
 #include <wx/webview.h>
 #include <wx/wfstream.h>
 
-/* Default home page URL. */
+/** Default home page URL. */
 #define HOME_PAGE   "file:///C:/grepster/welcome.html"
 
+/**
+ * This object creates grepster's browser for the welcome page.
+ *
+ * @class   CWebViewer
+ * @brief   Class definition for grepster's browser. Note: The default back-end HTML renderer is Internet Explorer.
+ */
 class CWebViewer {
 public:
+    /**
+     * @brief       Default constructor which produces the frame.
+     * @param[in]   parentFrame The primary frame to which this control belongs.
+     */
     CWebViewer(wxWindow* parentFrame);
 
-    /* Return the http browser control. */
+    /**
+     * @brief       Get the web viewer object.
+     */
     wxWebView* getBrowser() { return m_browser; }
 
 private:
-    /* grepster's http browser/web viewer. */
+    /** grepster's wxWidgets web viewer. */
     wxWebView* m_browser;
 };
 

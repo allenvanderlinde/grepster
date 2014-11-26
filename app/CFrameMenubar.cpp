@@ -1,18 +1,22 @@
 /*
-    Project: grepster
-    File: CFrameMenu.cpp
+    File:       CFrameMenubar.cpp
+    Version:    Alpha
+    Author:     Allen Vanderlinde
 
-    Desc: wxWidgets main frame menu bar.
+    Desc:       wxWidgets menu bar control class initialization and methods.
 
-    Date: 11/5/14
-    Author: Allen Vanderlinde
+    Created:    11/5/14
+
+    Copyright (C) 2014 by Allen Vanderlinde.
+    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #include "CFrameMenubar.h"
 
-/*  CAppFrame::CAppFrame
-
-    Desc: Constructor for frame class. */
+/*
+    CAppFrame::CAppFrame
+*/
 CFrameMenubar::CFrameMenubar()
     : wxMenuBar() {
     // File menu

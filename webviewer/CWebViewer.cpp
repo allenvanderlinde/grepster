@@ -1,20 +1,24 @@
 /*
-    Project: grepster
-    File: CWebViewer.cpp
+    File:       CWebViewer.cpp
+    Version:    Alpha
+    Author:     Allen Vanderlinde
 
-    Desc: wxWidgets web viewer control for grepster's home page.
+    Desc:       wxWidgets web viewer control class initialization and methods.
 
-    Date: 11/22/14
-    Author: Allen Vanderlinde
+    Created:    11/22/14
+
+    Copyright (C) 2014 by Allen Vanderlinde.
+    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #include "../grepster.h"
 
 #include "CWebViewer.h"
 
-/*  CWebViewer::CWebViewer
-
-    Desc: Constructor for grepster's browser for the welcome page. */
+/*
+    CWebViewer::CWebViewer(wxWindow)
+*/
 CWebViewer::CWebViewer(wxWindow* parentFrame) {
     /* Initialize the browser. */
     m_browser = wxWebView::New(parentFrame,

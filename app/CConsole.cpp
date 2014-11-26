@@ -1,11 +1,15 @@
 /*
-    Project: grepster
-    File: CConsole.cpp
+    File:       CWebViewer.cpp
+    Version:    Alpha
+    Author:     Allen Vanderlinde
 
-    Desc: wxWidgets text control functions for console.
+    Desc:       wxWidgets read-only text control class initialization and methods. Note: This is used as grepster's console.
 
-    Date: 11/20/14
-    Author: Allen Vanderlinde
+    Created:    11/20/14
+
+    Copyright (C) 2014 by Allen Vanderlinde.
+    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #include "../grepster.h"
@@ -13,9 +17,9 @@
 
 #include "CConsole.h"
 
-/*  CConsole::CConsole
-
-    Desc: Constructor for text control class. */
+/*
+    CConsole::CConsole(wxWindow*)
+*/
 CConsole::CConsole(wxWindow* parentFrame)
     : wxTextCtrl(parentFrame, CONSOLE_ID, g_Frame_Title + " initialized successfully.\nReady to grep.", wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE | wxTE_RICH2 | wxTE_READONLY) {
     /* Configure console's display settings. */
@@ -30,7 +34,5 @@ CConsole::CConsole(wxWindow* parentFrame)
     m_consoleInf.Show(true);
 
     /* Set the console's font. */
-    //SetFont(wxFont(10, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false));
-    //font(wxFontInfo(12).FaceName("Helvetica").Italic());
     SetFont(wxFont(wxFontInfo(8).FaceName("Lucida Console")));
 }

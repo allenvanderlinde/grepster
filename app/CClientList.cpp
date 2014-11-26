@@ -13,9 +13,9 @@
 
 #include "CClientList.h"
 
-/*  CClientList::CClientList
-
-    Desc: Constructor for tree control class. */
+/*
+    CClientList::CClientList(wxWindow*)
+*/
 CClientList::CClientList(wxWindow* parentFrame)
     : wxTreeCtrl(parentFrame, CLIENT_LIST_ID, wxDefaultPosition, wxDefaultSize, wxTR_DEFAULT_STYLE | wxTR_HIDE_ROOT) {
     /* Configure client list's display settings. */

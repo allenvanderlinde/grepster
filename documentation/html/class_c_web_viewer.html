@@ -64,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,16 +90,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">CWebViewer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class definition for grepster's browser. Note: The default back-end HTML renderer is Internet Explorer.  
+ <a href="class_c_web_viewer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_c_web_viewer_8h_source.html">CWebViewer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae0a7b1fec636891b9485d6278e6a2c1e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0a7b1fec636891b9485d6278e6a2c1e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CWebViewer</b> (wxWindow *parentFrame)</td></tr>
+<tr class="memitem:ae0a7b1fec636891b9485d6278e6a2c1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_web_viewer.html#ae0a7b1fec636891b9485d6278e6a2c1e">CWebViewer</a> (wxWindow *parentFrame)</td></tr>
+<tr class="memdesc:ae0a7b1fec636891b9485d6278e6a2c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which produces the frame.  <a href="#ae0a7b1fec636891b9485d6278e6a2c1e">More...</a><br /></td></tr>
 <tr class="separator:ae0a7b1fec636891b9485d6278e6a2c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2fab7569774817658d2dbc12f6b32b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2fab7569774817658d2dbc12f6b32b4"></a>
-wxWebView *&#160;</td><td class="memItemRight" valign="bottom"><b>getBrowser</b> ()</td></tr>
+wxWebView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_web_viewer.html#ac2fab7569774817658d2dbc12f6b32b4">getBrowser</a> ()</td></tr>
+<tr class="memdesc:ac2fab7569774817658d2dbc12f6b32b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the web viewer object. <br /></td></tr>
 <tr class="separator:ac2fab7569774817658d2dbc12f6b32b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class definition for grepster's browser. Note: The default back-end HTML renderer is Internet Explorer. </p>
+<p>This object creates grepster's browser for the welcome page. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ae0a7b1fec636891b9485d6278e6a2c1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CWebViewer::CWebViewer </td>
+          <td>(</td>
+          <td class="paramtype">wxWindow *&#160;</td>
+          <td class="paramname"><em>parentFrame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default constructor which produces the frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">parentFrame</td><td>The primary frame to which this control belongs. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/grepster/webviewer/<a class="el" href="_c_web_viewer_8h_source.html">CWebViewer.h</a></li>
 <li>C:/grepster/webviewer/CWebViewer.cpp</li>
@@ -106,7 +141,7 @@ wxWebView *&#160;</td><td class="memItemRight" valign="bottom"><b>getBrowser</b>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 14:15:48 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 26 2014 09:13:56 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -64,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,6 +90,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">CGrepNotebook Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class definition for grepster's notebook control.  
+ <a href="class_c_grep_notebook.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_c_grep_notebook_8h_source.html">CGrepNotebook.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CGrepNotebook:</div>
 <div class="dyncontent">
@@ -100,16 +106,83 @@ Inheritance diagram for CGrepNotebook:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa9fa53784a193a92c8ccf929dcf4a175"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9fa53784a193a92c8ccf929dcf4a175"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CGrepNotebook</b> (wxWindow *parentFrame)</td></tr>
+<tr class="memitem:aa9fa53784a193a92c8ccf929dcf4a175"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_grep_notebook.html#aa9fa53784a193a92c8ccf929dcf4a175">CGrepNotebook</a> (wxWindow *parentFrame)</td></tr>
+<tr class="memdesc:aa9fa53784a193a92c8ccf929dcf4a175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which produces the notebook.  <a href="#aa9fa53784a193a92c8ccf929dcf4a175">More...</a><br /></td></tr>
 <tr class="separator:aa9fa53784a193a92c8ccf929dcf4a175"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99b517c0ad125d174abb511fd99ca247"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99b517c0ad125d174abb511fd99ca247"></a>
-wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><b>getPaneInfo</b> ()</td></tr>
+<tr class="memitem:a99b517c0ad125d174abb511fd99ca247"><td class="memItemLeft" align="right" valign="top">wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_grep_notebook.html#a99b517c0ad125d174abb511fd99ca247">getPaneInfo</a> ()</td></tr>
 <tr class="separator:a99b517c0ad125d174abb511fd99ca247"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a667e148623bbb9b4ec89ab44ce802835"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a667e148623bbb9b4ec89ab44ce802835"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OpenWelcomePage</b> ()</td></tr>
+<tr class="memitem:a667e148623bbb9b4ec89ab44ce802835"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_grep_notebook.html#a667e148623bbb9b4ec89ab44ce802835">OpenWelcomePage</a> ()</td></tr>
 <tr class="separator:a667e148623bbb9b4ec89ab44ce802835"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class definition for grepster's notebook control. </p>
+<p>This object creates grepster's grep job notebook for data entry, search terms and command execution. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aa9fa53784a193a92c8ccf929dcf4a175"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CGrepNotebook::CGrepNotebook </td>
+          <td>(</td>
+          <td class="paramtype">wxWindow *&#160;</td>
+          <td class="paramname"><em>parentFrame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default constructor which produces the notebook. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">parentFrame</td><td>The primary frame to which this control belongs. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a99b517c0ad125d174abb511fd99ca247"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxAuiPaneInfo CGrepNotebook::getPaneInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Return control's pane information. </p>
+
+</div>
+</div>
+<a class="anchor" id="a667e148623bbb9b4ec89ab44ce802835"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CGrepNotebook::OpenWelcomePage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Launch browser for welcome page. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/grepster/app/<a class="el" href="_c_grep_notebook_8h_source.html">CGrepNotebook.h</a></li>
 <li>C:/grepster/app/CGrepNotebook.cpp</li>
@@ -117,7 +190,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>OpenWelcomePage</b> (
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 14:15:48 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 26 2014 09:13:56 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

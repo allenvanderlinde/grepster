@@ -1,11 +1,13 @@
+/**
+ * @file    CAppEntry.h
+ * @author  Allen Vanderlinde
+ * @date    November 2, 2014
+ * @brief   wxWidgets application execution class definition.
+ */
 /*
-    Project: grepster
-    File: CAppEntry.h
-
-    Desc: Class definition for grepster's wxWidgets application execution.
-
-    Date: 11/2/14
-    Author: Allen Vanderlinde
+    Copyright (C) 2014 by Allen Vanderlinde.
+    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #ifndef _CAPPENTRY_H_
@@ -15,25 +17,29 @@
 
 #include "CAppFrame.h"
 
-/* Application entry settings. */
+/** Option to display the splash screen. */
 #define DISPLAY_SPLASH                  false
+/** Splash screen duration in milliseconds. */
 #define SPLASH_DURATION                 1700
 
-/*  CAppEntry
-
-    Desc: wxWidgets application class definition. */
+/**
+ * This object registers the application with the OS and executes the application's primary frame.
+ * @class   CAppEntry
+ * @brief   Class definition for grepster's application execution.
+ */
 class CAppEntry : public wxApp {
 public:
+    /** Initializes the wxWidgets application back-end. */
     virtual bool OnInit();
-
-    // Show grepster's splash screen
+    /** Display grepster's splash screen. */
     bool ShowSplash(int resource_id);
 
 private:
+    /** grepster's primary frame. */
     CAppFrame* m_grepster_frame;
 
-    // Load grepster's configuration from file
+    /** Load grepster's configuration from file. */
     void LoadConfiguration();
 };
 
-#endif
+#endif  // _CAPPENTRY_H_

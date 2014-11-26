@@ -64,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,6 +90,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">CConsole Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class definition for grepster's console.  
+ <a href="class_c_console.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_c_console_8h_source.html">CConsole.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CConsole:</div>
 <div class="dyncontent">
@@ -100,13 +106,65 @@ Inheritance diagram for CConsole:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1ebcde58e8445b9a3f1e378c201fd9ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ebcde58e8445b9a3f1e378c201fd9ce"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CConsole</b> (wxWindow *parentFrame)</td></tr>
+<tr class="memitem:a1ebcde58e8445b9a3f1e378c201fd9ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_console.html#a1ebcde58e8445b9a3f1e378c201fd9ce">CConsole</a> (wxWindow *parentFrame)</td></tr>
+<tr class="memdesc:a1ebcde58e8445b9a3f1e378c201fd9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which creates the text control console.  <a href="#a1ebcde58e8445b9a3f1e378c201fd9ce">More...</a><br /></td></tr>
 <tr class="separator:a1ebcde58e8445b9a3f1e378c201fd9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5532027582274143636d13cc234ff6c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5532027582274143636d13cc234ff6c"></a>
-wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><b>getPaneInfo</b> ()</td></tr>
+<tr class="memitem:ab5532027582274143636d13cc234ff6c"><td class="memItemLeft" align="right" valign="top">wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_console.html#ab5532027582274143636d13cc234ff6c">getPaneInfo</a> ()</td></tr>
 <tr class="separator:ab5532027582274143636d13cc234ff6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class definition for grepster's console. </p>
+<p>This object creates a wxTextCtrl which represents grepster's console for logging progress and returning results. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a1ebcde58e8445b9a3f1e378c201fd9ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CConsole::CConsole </td>
+          <td>(</td>
+          <td class="paramtype">wxWindow *&#160;</td>
+          <td class="paramname"><em>parentFrame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default constructor which creates the text control console. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">parentFrame</td><td>The primary frame to which this control belongs. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab5532027582274143636d13cc234ff6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxAuiPaneInfo CConsole::getPaneInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Return control's pane information. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/grepster/app/<a class="el" href="_c_console_8h_source.html">CConsole.h</a></li>
 <li>C:/grepster/app/CConsole.cpp</li>
@@ -114,7 +172,7 @@ wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><b>getPaneInfo<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 14:15:48 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 26 2014 09:13:56 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
