@@ -47,6 +47,7 @@ extern grepsterConfig_t configuration;
 wxString RESOURCE_ID_TO_STRING(int id);
 
 /* Console control settings. */
+/** grepster's console's wxWidgets control ID. */
 #define CONSOLE_ID                  1000
 #define CONSOLE_NAME                "the_con"
 #define CONSOLE_CTRL_TITLE          "Console"

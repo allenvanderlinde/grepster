@@ -138,7 +138,7 @@ void CAppFrame::OnExit(wxCommandEvent& event) {
     CAppFrame::OnAbout
 */
 void CAppFrame::OnAbout(wxCommandEvent& event) {
-    wxDialog* dialog = new wxDialog(this, wxID_ANY, g_Frame_Title, wxDefaultPosition, wxSize(340, 374));
+    wxDialog* dialog = new wxDialog(this, wxID_ANY, g_Frame_Title, wxDefaultPosition, wxSize(400, 374));
     wxBoxSizer* dialog_sizer = new wxBoxSizer(wxVERTICAL);
     wxStaticBoxSizer* dialog_static_sizer = new wxStaticBoxSizer(wxVERTICAL, dialog, "About grepster");
 
