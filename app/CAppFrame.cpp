@@ -1,11 +1,13 @@
+/**
+ * @file    CAppFrame.cpp
+ * @author  Allen Vanderlinde
+ * @date    November 2, 2014
+ * @brief   wxWidgets frame object methods.
+ */
 /*
-    Project: grepster
-    File: CAppFrame.cpp
-
-    Desc: wxWidgets frame functions.
-
-    Date: 11/2/14
-    Author: Allen Vanderlinde
+    Copyright (C) 2014 by Allen Vanderlinde.
+    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #include "../grepster.h"
@@ -23,9 +25,9 @@ wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
 
 wxEND_EVENT_TABLE()
 
-/*  CAppFrame::CAppFrame
-
-    Desc: Constructor for frame class. */
+/*
+    CAppFrame::CAppFrame
+*/
 CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSize& size)
     : wxFrame(NULL, wxID_ANY, title, position, size) {
     // Set background color
@@ -70,16 +72,16 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     m_aui->Update();
 }
 
-/*  CAppFrame::~CAppFrame
-
-    Desc: Destructor for frame class. */
+/*
+    CAppFrame::~CAppFrame
+*/
 CAppFrame::~CAppFrame() {
     m_aui->UnInit();
 }
 
-/*  CAppFrame::ToggleFloating
-
-    Desc: Toggles whether the frame's controls can float. */
+/*
+    CAppFrame::ToggleFloating
+*/
 void CAppFrame::ToggleFloating(wxCommandEvent& event) {
     if(!isFloating) {
         configuration.bUseFloatable = true;
@@ -96,7 +98,9 @@ void CAppFrame::ToggleFloating(wxCommandEvent& event) {
     }
 }
 
-/*  CAppFrame::TestPutty */
+/*
+    CAppFrame::TestPutty
+*/
 void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
     STARTUPINFO si;
     PROCESS_INFORMATION pi;
@@ -122,17 +126,17 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
     CloseHandle(pi.hThread);
 }
 
-/*  CAppFrame::OnExit
-
-    Desc: Sends exit signal to primary frame. */
+/*
+    CAppFrame::OnExit
+*/
 void CAppFrame::OnExit(wxCommandEvent& event) {
     Destroy();
     Close(true);
 }
 
-/*  CAppFrame::OnAbout
-
-    Desc: Displays standard About dialog box. */
+/*
+    CAppFrame::OnAbout
+*/
 void CAppFrame::OnAbout(wxCommandEvent& event) {
     wxDialog* dialog = new wxDialog(this, wxID_ANY, g_Frame_Title, wxDefaultPosition, wxSize(340, 374));
     wxBoxSizer* dialog_sizer = new wxBoxSizer(wxVERTICAL);

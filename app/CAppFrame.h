@@ -79,12 +79,19 @@ private:
      * @brief       Toggle floating controls for user's current session and configuration.
      */
     void ToggleFloating(wxCommandEvent& event);
-
-    /* Tools functions */
+    /**
+     * @brief       Launch PuTTY from within grepster.
+     */
     void LaunchPuTTY(wxCommandEvent& event);
 
     /* Standard frame functions. */
+    /**
+     * @brief       Display simple about dialog box.
+     */
     void OnAbout(wxCommandEvent& event);
+    /**
+     * @brief       Exit grepster.
+     */
     void OnExit(wxCommandEvent& event);
 
     wxDECLARE_EVENT_TABLE();

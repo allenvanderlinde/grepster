@@ -19,25 +19,32 @@
 
 #include "version.h"
 
-/* Frame globals. */
+/** grepster's frame globals. */
 extern wxString         g_Frame_Title;
 
 extern CConsole*        Console;
 extern CClientList*     ClientList;
 extern CGrepNotebook*   GrepNotebook;
 
-/* grepster configuration structure. */
+/**
+ * This structure contains each of grepster's configuration settings which are saved automatically file upon change.
+ *
+ * @brief     grepster's configuration structure.
+ */
 struct grepsterConfig_t {
+    /** Set grepster's primary frame controls to float. */
     bool    bUseFloatable;
 };
 
 extern grepsterConfig_t configuration;
 
 /* Utility functions. */
+/**
+ * @brief       Translate a resource integer ID into a wxWidgets readable string for calling resources.
+ *
+ * @param[in]   id The resource's integer ID as found in grepster_rc.h.
+ */
 wxString RESOURCE_ID_TO_STRING(int id);
-
-/* Frame definitions. */
-//#define USE_FLOATABLE                false
 
 /* Console control settings. */
 #define CONSOLE_ID                  1000
