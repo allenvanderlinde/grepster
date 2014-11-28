@@ -25,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">grepster
    </div>
-   <div id="projectbrief">A streamlined grep utility for Blackboard(TM) TSMs</div>
+   <div id="projectbrief">A streamlined grep utility for System Administrators</div>
   </td>
  </tr>
  </tbody>
@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -113,21 +113,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1">ShowSplash</a>(<span class="keywordtype">int</span> resource_id);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_c_app_frame.html">CAppFrame</a>* m_grepster_frame;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_c_app_entry.html#a14120918e36852fcddd10563c92a6392">   39</a></span>&#160;    <a class="code" href="class_c_app_frame.html">CAppFrame</a>* <a class="code" href="class_c_app_entry.html#a14120918e36852fcddd10563c92a6392">m_grepster_frame</a>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> LoadConfiguration();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif  // _CAPPENTRY_H_</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_app_entry.html#a42effb726d8010e801a9e17237d73cff">LoadConfiguration</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif  // _CAPPENTRY_H_</span></div>
 <div class="ttc" id="_c_app_frame_8h_html"><div class="ttname"><a href="_c_app_frame_8h.html">CAppFrame.h</a></div><div class="ttdoc">wxWidgets frame object which houses grepster. </div></div>
+<div class="ttc" id="class_c_app_entry_html_a14120918e36852fcddd10563c92a6392"><div class="ttname"><a href="class_c_app_entry.html#a14120918e36852fcddd10563c92a6392">CAppEntry::m_grepster_frame</a></div><div class="ttdeci">CAppFrame * m_grepster_frame</div><div class="ttdef"><b>Definition:</b> CAppEntry.h:39</div></div>
+<div class="ttc" id="class_c_app_entry_html_a42effb726d8010e801a9e17237d73cff"><div class="ttname"><a href="class_c_app_entry.html#a42effb726d8010e801a9e17237d73cff">CAppEntry::LoadConfiguration</a></div><div class="ttdeci">bool LoadConfiguration()</div><div class="ttdoc">Load grepster&#39;s configuration from file. </div><div class="ttdef"><b>Definition:</b> CAppEntry.cpp:82</div></div>
 <div class="ttc" id="class_c_app_frame_html"><div class="ttname"><a href="class_c_app_frame.html">CAppFrame</a></div><div class="ttdoc">Class definition for grepster&#39;s primary frame. </div><div class="ttdef"><b>Definition:</b> CAppFrame.h:50</div></div>
-<div class="ttc" id="class_c_app_entry_html_a5a0fb76d45455bc6d173e9667d9260e1"><div class="ttname"><a href="class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1">CAppEntry::ShowSplash</a></div><div class="ttdeci">bool ShowSplash(int resource_id)</div><div class="ttdef"><b>Definition:</b> CAppEntry.cpp:56</div></div>
+<div class="ttc" id="class_c_app_entry_html_a5a0fb76d45455bc6d173e9667d9260e1"><div class="ttname"><a href="class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1">CAppEntry::ShowSplash</a></div><div class="ttdeci">bool ShowSplash(int resource_id)</div><div class="ttdef"><b>Definition:</b> CAppEntry.cpp:59</div></div>
 <div class="ttc" id="class_c_app_entry_html"><div class="ttname"><a href="class_c_app_entry.html">CAppEntry</a></div><div class="ttdoc">Class definition for grepster&#39;s application execution. </div><div class="ttdef"><b>Definition:</b> CAppEntry.h:30</div></div>
 <div class="ttc" id="class_c_app_entry_html_a578cfd4a02e24ce7ceee08dba0e9fed2"><div class="ttname"><a href="class_c_app_entry.html#a578cfd4a02e24ce7ceee08dba0e9fed2">CAppEntry::OnInit</a></div><div class="ttdeci">virtual bool OnInit()</div><div class="ttdef"><b>Definition:</b> CAppEntry.cpp:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 28 2014 09:22:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 18:48:09 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

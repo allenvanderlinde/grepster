@@ -25,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">grepster
    </div>
-   <div id="projectbrief">A streamlined grep utility for Blackboard(TM) TSMs</div>
+   <div id="projectbrief">A streamlined grep utility for System Administrators</div>
   </td>
  </tr>
  </tbody>
@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,27 +105,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_c_app_init.html#a9d0827f6b41a56fed151a780011ac12e">CAppInit</a>();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_c_app_init.html#a4922735b5115da7467347b265c46c740">   35</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_app_init.html#a4922735b5115da7467347b265c46c740">success</a>() { <span class="keywordflow">return</span> m_bConfigurationLoadedSuccessfully; }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">/* Configuration session flags/settings. */</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_c_app_init.html#a0cc6b234885facdf9c3f07ad88ac2017">   39</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_app_init.html#a0cc6b234885facdf9c3f07ad88ac2017">bToggleFloating</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classpugi_1_1xml__document.html">pugi::xml_document</a> m_xml_file;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> m_bConfigurationLoadedSuccessfully;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif // _CAPPINIT_H_</span></div>
-<div class="ttc" id="class_c_app_init_html_a4922735b5115da7467347b265c46c740"><div class="ttname"><a href="class_c_app_init.html#a4922735b5115da7467347b265c46c740">CAppInit::success</a></div><div class="ttdeci">bool success()</div><div class="ttdoc">Query successful loading of configuration. </div><div class="ttdef"><b>Definition:</b> CAppInit.h:35</div></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_app_init.html#ae48984d9e7a263d651bc68466c6f3e7e">WriteXMLData</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366">   41</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366">Success</a>() { <span class="keywordflow">return</span> <a class="code" href="class_c_app_init.html#a64d2a758646b43d34dd2c986f0854d13">m_bConfigurationLoadedSuccessfully</a>; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">/* Configuration session flags/settings. */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_c_app_init.html#a0cc6b234885facdf9c3f07ad88ac2017">   45</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_app_init.html#a0cc6b234885facdf9c3f07ad88ac2017">bToggleFloating</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_app_init.html#a752bc94a59515fee8effef75d3ceb281">ApplyXMLData</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_c_app_init.html#a10f6a513346808f5189dad11abdcf8c1">   55</a></span>&#160;    pugi::xml_document <a class="code" href="class_c_app_init.html#a10f6a513346808f5189dad11abdcf8c1">m_XMLFile</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_c_app_init.html#ad938844a3a5f4c332de8f82981e85967">   57</a></span>&#160;    pugi::xml_node <a class="code" href="class_c_app_init.html#ad938844a3a5f4c332de8f82981e85967">m_XMLSettings</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_c_app_init.html#a64d2a758646b43d34dd2c986f0854d13">   60</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_app_init.html#a64d2a758646b43d34dd2c986f0854d13">m_bConfigurationLoadedSuccessfully</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif // _CAPPINIT_H_</span></div>
 <div class="ttc" id="class_c_app_init_html_a9d0827f6b41a56fed151a780011ac12e"><div class="ttname"><a href="class_c_app_init.html#a9d0827f6b41a56fed151a780011ac12e">CAppInit::CAppInit</a></div><div class="ttdeci">CAppInit()</div><div class="ttdoc">Default constructor loads grepster&#39;s configuration from file and populates the configuration structur...</div><div class="ttdef"><b>Definition:</b> CAppInit.cpp:21</div></div>
+<div class="ttc" id="class_c_app_init_html_ad7d1fe4cce9b2da9ff9041444ad84366"><div class="ttname"><a href="class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366">CAppInit::Success</a></div><div class="ttdeci">bool Success()</div><div class="ttdoc">Query successful loading of configuration. </div><div class="ttdef"><b>Definition:</b> CAppInit.h:41</div></div>
 <div class="ttc" id="class_c_app_init_html"><div class="ttname"><a href="class_c_app_init.html">CAppInit</a></div><div class="ttdoc">Class definition for grepster&#39;s configuration. </div><div class="ttdef"><b>Definition:</b> CAppInit.h:25</div></div>
-<div class="ttc" id="classpugi_1_1xml__document_html"><div class="ttname"><a href="classpugi_1_1xml__document.html">pugi::xml_document</a></div><div class="ttdef"><b>Definition:</b> pugixml.hpp:918</div></div>
-<div class="ttc" id="class_c_app_init_html_a0cc6b234885facdf9c3f07ad88ac2017"><div class="ttname"><a href="class_c_app_init.html#a0cc6b234885facdf9c3f07ad88ac2017">CAppInit::bToggleFloating</a></div><div class="ttdeci">bool bToggleFloating</div><div class="ttdef"><b>Definition:</b> CAppInit.h:39</div></div>
+<div class="ttc" id="class_c_app_init_html_ae48984d9e7a263d651bc68466c6f3e7e"><div class="ttname"><a href="class_c_app_init.html#ae48984d9e7a263d651bc68466c6f3e7e">CAppInit::WriteXMLData</a></div><div class="ttdeci">void WriteXMLData()</div><div class="ttdoc">Writes XML data to file from any configuration changes. </div><div class="ttdef"><b>Definition:</b> CAppInit.cpp:55</div></div>
+<div class="ttc" id="class_c_app_init_html_a0cc6b234885facdf9c3f07ad88ac2017"><div class="ttname"><a href="class_c_app_init.html#a0cc6b234885facdf9c3f07ad88ac2017">CAppInit::bToggleFloating</a></div><div class="ttdeci">bool bToggleFloating</div><div class="ttdef"><b>Definition:</b> CAppInit.h:45</div></div>
+<div class="ttc" id="class_c_app_init_html_ad938844a3a5f4c332de8f82981e85967"><div class="ttname"><a href="class_c_app_init.html#ad938844a3a5f4c332de8f82981e85967">CAppInit::m_XMLSettings</a></div><div class="ttdeci">pugi::xml_node m_XMLSettings</div><div class="ttdef"><b>Definition:</b> CAppInit.h:57</div></div>
+<div class="ttc" id="class_c_app_init_html_a752bc94a59515fee8effef75d3ceb281"><div class="ttname"><a href="class_c_app_init.html#a752bc94a59515fee8effef75d3ceb281">CAppInit::ApplyXMLData</a></div><div class="ttdeci">void ApplyXMLData()</div><div class="ttdoc">Reads XML data from file and applies its values to this class&#39;s members. </div><div class="ttdef"><b>Definition:</b> CAppInit.cpp:42</div></div>
+<div class="ttc" id="class_c_app_init_html_a10f6a513346808f5189dad11abdcf8c1"><div class="ttname"><a href="class_c_app_init.html#a10f6a513346808f5189dad11abdcf8c1">CAppInit::m_XMLFile</a></div><div class="ttdeci">pugi::xml_document m_XMLFile</div><div class="ttdef"><b>Definition:</b> CAppInit.h:55</div></div>
+<div class="ttc" id="class_c_app_init_html_a64d2a758646b43d34dd2c986f0854d13"><div class="ttname"><a href="class_c_app_init.html#a64d2a758646b43d34dd2c986f0854d13">CAppInit::m_bConfigurationLoadedSuccessfully</a></div><div class="ttdeci">bool m_bConfigurationLoadedSuccessfully</div><div class="ttdef"><b>Definition:</b> CAppInit.h:60</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 28 2014 09:22:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 18:48:09 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

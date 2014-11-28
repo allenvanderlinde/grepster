@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['showsplash',['ShowSplash',['../class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1',1,'CAppEntry']]],
-  ['splash_5fduration',['SPLASH_DURATION',['../_c_app_entry_8h.html#acbfc704b0fe136fd8de9d48da09f5b28',1,'CAppEntry.h']]],
-  ['statusbar_5fnote_5fwidth',['STATUSBAR_NOTE_WIDTH',['../_c_app_frame_8h.html#a6873edc266d9a65580a0cbc4228d6135',1,'CAppFrame.h']]],
-  ['statusbar_5fwelcome',['STATUSBAR_WELCOME',['../_c_app_frame_8h.html#a7eaedd0a5a26a658a7b9f3362c60e122',1,'CAppFrame.h']]],
-  ['strconv_5fattribute_5fimpl',['strconv_attribute_impl',['../structstrconv__attribute__impl.html',1,'']]],
-  ['strconv_5fpcdata_5fimpl',['strconv_pcdata_impl',['../structstrconv__pcdata__impl.html',1,'']]],
-  ['success',['success',['../class_c_app_init.html#a4922735b5115da7467347b265c46c740',1,'CAppInit']]]
+  ['refreshconfiguration',['RefreshConfiguration',['../class_c_app_frame.html#ad564731060174c0a7fa267221c17637d',1,'CAppFrame']]],
+  ['resid_5fpng_5fabout',['RESID_PNG_ABOUT',['../grepster__rc_8h.html#af17a2755e08232ebacc78edf545d5448',1,'grepster_rc.h']]],
+  ['resid_5fpng_5fsplash',['RESID_PNG_SPLASH',['../grepster__rc_8h.html#a806b6e806a03c79e28cb5245e5401eec',1,'grepster_rc.h']]],
+  ['resource_5fid_5fto_5fstring',['RESOURCE_ID_TO_STRING',['../grepster_8cpp.html#a667b72a706bfbbfb8789a5ec7f0882ce',1,'RESOURCE_ID_TO_STRING(int id):&#160;grepster.cpp'],['../grepster_8h.html#a667b72a706bfbbfb8789a5ec7f0882ce',1,'RESOURCE_ID_TO_STRING(int id):&#160;grepster.cpp']]]
 ];

@@ -25,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">grepster
    </div>
-   <div id="projectbrief">A streamlined grep utility for Blackboard(TM) TSMs</div>
+   <div id="projectbrief">A streamlined grep utility for System Administrators</div>
   </td>
  </tr>
  </tbody>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,6 +86,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_c_app_init-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CAppInit Class Reference</div>  </div>
@@ -99,24 +101,128 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9d0827f6b41a56fed151a780011ac12e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d0827f6b41a56fed151a780011ac12e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a9d0827f6b41a56fed151a780011ac12e">CAppInit</a> ()</td></tr>
-<tr class="memdesc:a9d0827f6b41a56fed151a780011ac12e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor loads grepster's configuration from file and populates the configuration structure with its settings. <br /></td></tr>
+<tr class="memitem:a9d0827f6b41a56fed151a780011ac12e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a9d0827f6b41a56fed151a780011ac12e">CAppInit</a> ()</td></tr>
+<tr class="memdesc:a9d0827f6b41a56fed151a780011ac12e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor loads grepster's configuration from file and populates the configuration structure with its settings.  <a href="#a9d0827f6b41a56fed151a780011ac12e">More...</a><br /></td></tr>
 <tr class="separator:a9d0827f6b41a56fed151a780011ac12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4922735b5115da7467347b265c46c740"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4922735b5115da7467347b265c46c740"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a4922735b5115da7467347b265c46c740">success</a> ()</td></tr>
-<tr class="memdesc:a4922735b5115da7467347b265c46c740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query successful loading of configuration. <br /></td></tr>
-<tr class="separator:a4922735b5115da7467347b265c46c740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48984d9e7a263d651bc68466c6f3e7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#ae48984d9e7a263d651bc68466c6f3e7e">WriteXMLData</a> ()</td></tr>
+<tr class="memdesc:ae48984d9e7a263d651bc68466c6f3e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes XML data to file from any configuration changes.  <a href="#ae48984d9e7a263d651bc68466c6f3e7e">More...</a><br /></td></tr>
+<tr class="separator:ae48984d9e7a263d651bc68466c6f3e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d1fe4cce9b2da9ff9041444ad84366"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366">Success</a> ()</td></tr>
+<tr class="memdesc:ad7d1fe4cce9b2da9ff9041444ad84366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query successful loading of configuration.  <a href="#ad7d1fe4cce9b2da9ff9041444ad84366">More...</a><br /></td></tr>
+<tr class="separator:ad7d1fe4cce9b2da9ff9041444ad84366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0cc6b234885facdf9c3f07ad88ac2017"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a0cc6b234885facdf9c3f07ad88ac2017">bToggleFloating</a></td></tr>
 <tr class="separator:a0cc6b234885facdf9c3f07ad88ac2017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a752bc94a59515fee8effef75d3ceb281"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a752bc94a59515fee8effef75d3ceb281">ApplyXMLData</a> ()</td></tr>
+<tr class="memdesc:a752bc94a59515fee8effef75d3ceb281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads XML data from file and applies its values to this class's members.  <a href="#a752bc94a59515fee8effef75d3ceb281">More...</a><br /></td></tr>
+<tr class="separator:a752bc94a59515fee8effef75d3ceb281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a10f6a513346808f5189dad11abdcf8c1"><td class="memItemLeft" align="right" valign="top">pugi::xml_document&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a10f6a513346808f5189dad11abdcf8c1">m_XMLFile</a></td></tr>
+<tr class="separator:a10f6a513346808f5189dad11abdcf8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad938844a3a5f4c332de8f82981e85967"><td class="memItemLeft" align="right" valign="top">pugi::xml_node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#ad938844a3a5f4c332de8f82981e85967">m_XMLSettings</a></td></tr>
+<tr class="separator:ad938844a3a5f4c332de8f82981e85967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d2a758646b43d34dd2c986f0854d13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a64d2a758646b43d34dd2c986f0854d13">m_bConfigurationLoadedSuccessfully</a></td></tr>
+<tr class="separator:a64d2a758646b43d34dd2c986f0854d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for grepster's configuration. </p>
 <p>This object opens grepster's XML configuration and populates the configuration structure with its settings. Variables which control grepster's current usage are public within this class so that they can be easily modified by other grepster objects. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a9d0827f6b41a56fed151a780011ac12e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CAppInit::CAppInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default constructor loads grepster's configuration from file and populates the configuration structure with its settings. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a752bc94a59515fee8effef75d3ceb281"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppInit::ApplyXMLData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads XML data from file and applies its values to this class's members. </p>
+<p>Note: The order in which elements are parsed and settings applied must not be changed. This processing order is hard-coded. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad7d1fe4cce9b2da9ff9041444ad84366"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CAppInit::Success </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Query successful loading of configuration. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae48984d9e7a263d651bc68466c6f3e7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppInit::WriteXMLData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes XML data to file from any configuration changes. </p>
+<p>Note: The order in which configuration settings are written to file must not be changed. This processing order is hard-coded. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a0cc6b234885facdf9c3f07ad88ac2017"></a>
 <div class="memitem">
 <div class="memproto">
@@ -130,14 +236,77 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a64d2a758646b43d34dd2c986f0854d13"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CAppInit::m_bConfigurationLoadedSuccessfully</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Flag for successful loading of configuration. </p>
+
+</div>
+</div>
+<a class="anchor" id="a10f6a513346808f5189dad11abdcf8c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pugi::xml_document CAppInit::m_XMLFile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>XML file handle. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad938844a3a5f4c332de8f82981e85967"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pugi::xml_node CAppInit::m_XMLSettings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>pugixml's parsing node used to read XML data. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/grepster/app/<a class="el" href="_c_app_init_8h_source.html">CAppInit.h</a></li>
-<li>C:/grepster/app/CAppInit.cpp</li>
+<li>C:/grepster/app/<a class="el" href="_c_app_init_8cpp.html">CAppInit.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 28 2014 09:22:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 18:48:09 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

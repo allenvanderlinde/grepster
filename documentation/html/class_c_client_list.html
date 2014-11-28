@@ -25,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">grepster
    </div>
-   <div id="projectbrief">A streamlined grep utility for Blackboard(TM) TSMs</div>
+   <div id="projectbrief">A streamlined grep utility for System Administrators</div>
   </td>
  </tr>
  </tbody>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_c_client_list-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CClientList Class Reference</div>  </div>
@@ -111,6 +112,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a318d3ae0e3fa7fb78bde367131a952f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9c7cb48c75d517da7064e4e1a7c9de0"><td class="memItemLeft" align="right" valign="top">wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_client_list.html#af9c7cb48c75d517da7064e4e1a7c9de0">getPaneInfo</a> ()</td></tr>
 <tr class="separator:af9c7cb48c75d517da7064e4e1a7c9de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af350e97ccf0ed844386757344e15018d"><td class="memItemLeft" align="right" valign="top">wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_client_list.html#af350e97ccf0ed844386757344e15018d">m_clientListInf</a></td></tr>
+<tr class="separator:af350e97ccf0ed844386757344e15018d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for grepster's client list. </p>
@@ -165,14 +171,36 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="af350e97ccf0ed844386757344e15018d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxAuiPaneInfo CClientList::m_clientListInf</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>AUI pane settings structure. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/grepster/app/<a class="el" href="_c_client_list_8h_source.html">CClientList.h</a></li>
-<li>C:/grepster/app/CClientList.cpp</li>
+<li>C:/grepster/app/<a class="el" href="_c_client_list_8cpp.html">CClientList.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 28 2014 09:22:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 18:48:09 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

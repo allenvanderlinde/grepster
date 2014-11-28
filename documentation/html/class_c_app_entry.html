@@ -25,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">grepster
    </div>
-   <div id="projectbrief">A streamlined grep utility for Blackboard(TM) TSMs</div>
+   <div id="projectbrief">A streamlined grep utility for System Administrators</div>
   </td>
  </tr>
  </tbody>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,6 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_c_app_entry-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CAppEntry Class Reference</div>  </div>
@@ -110,11 +112,53 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a578cfd4a02e24ce7ceee08dba0e9fed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a0fb76d45455bc6d173e9667d9260e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1">ShowSplash</a> (int resource_id)</td></tr>
 <tr class="separator:a5a0fb76d45455bc6d173e9667d9260e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a42effb726d8010e801a9e17237d73cff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_entry.html#a42effb726d8010e801a9e17237d73cff">LoadConfiguration</a> ()</td></tr>
+<tr class="memdesc:a42effb726d8010e801a9e17237d73cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load grepster's configuration from file.  <a href="#a42effb726d8010e801a9e17237d73cff">More...</a><br /></td></tr>
+<tr class="separator:a42effb726d8010e801a9e17237d73cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a14120918e36852fcddd10563c92a6392"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_app_frame.html">CAppFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_entry.html#a14120918e36852fcddd10563c92a6392">m_grepster_frame</a></td></tr>
+<tr class="separator:a14120918e36852fcddd10563c92a6392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for grepster's application execution. </p>
 <p>This object registers the application with the OS and executes the application's primary frame. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a42effb726d8010e801a9e17237d73cff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CAppEntry::LoadConfiguration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load grepster's configuration from file. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">bool</td><td>Returns true if configuration was loaded successfully. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a578cfd4a02e24ce7ceee08dba0e9fed2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -156,14 +200,36 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a14120918e36852fcddd10563c92a6392"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_app_frame.html">CAppFrame</a>* CAppEntry::m_grepster_frame</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>grepster's primary frame. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/grepster/app/<a class="el" href="_c_app_entry_8h_source.html">CAppEntry.h</a></li>
-<li>C:/grepster/app/CAppEntry.cpp</li>
+<li>C:/grepster/app/<a class="el" href="_c_app_entry_8cpp.html">CAppEntry.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 28 2014 09:22:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 18:48:09 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

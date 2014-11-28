@@ -25,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">grepster
    </div>
-   <div id="projectbrief">A streamlined grep utility for Blackboard(TM) TSMs</div>
+   <div id="projectbrief">A streamlined grep utility for System Administrators</div>
   </td>
  </tr>
  </tbody>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,6 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_c_app_frame-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CAppFrame Class Reference</div>  </div>
@@ -109,10 +111,39 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2fc146905ed09967d872e330f494d37b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a2fc146905ed09967d872e330f494d37b">CAppFrame</a> (const wxString &amp;title, const wxPoint &amp;position, const wxSize &amp;size)</td></tr>
 <tr class="memdesc:a2fc146905ed09967d872e330f494d37b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which creates grepster's primary frame.  <a href="#a2fc146905ed09967d872e330f494d37b">More...</a><br /></td></tr>
 <tr class="separator:a2fc146905ed09967d872e330f494d37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7656741c72ceb3574ba9d66da65c6c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7656741c72ceb3574ba9d66da65c6c9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#af7656741c72ceb3574ba9d66da65c6c9">~CAppFrame</a> ()</td></tr>
-<tr class="memdesc:af7656741c72ceb3574ba9d66da65c6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default class destructor. <br /></td></tr>
+<tr class="memitem:af7656741c72ceb3574ba9d66da65c6c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#af7656741c72ceb3574ba9d66da65c6c9">~CAppFrame</a> ()</td></tr>
+<tr class="memdesc:af7656741c72ceb3574ba9d66da65c6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default class destructor.  <a href="#af7656741c72ceb3574ba9d66da65c6c9">More...</a><br /></td></tr>
 <tr class="separator:af7656741c72ceb3574ba9d66da65c6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad564731060174c0a7fa267221c17637d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#ad564731060174c0a7fa267221c17637d">RefreshConfiguration</a> ()</td></tr>
+<tr class="memdesc:ad564731060174c0a7fa267221c17637d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes grepster's configuration when any change is made to update user's interface.  <a href="#ad564731060174c0a7fa267221c17637d">More...</a><br /></td></tr>
+<tr class="separator:ad564731060174c0a7fa267221c17637d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ec58b11a1645bd2679924486da86c93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a3ec58b11a1645bd2679924486da86c93">ToggleFloating</a> (wxCommandEvent &amp;event)</td></tr>
+<tr class="memdesc:a3ec58b11a1645bd2679924486da86c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle floating controls for user's current session and configuration.  <a href="#a3ec58b11a1645bd2679924486da86c93">More...</a><br /></td></tr>
+<tr class="separator:a3ec58b11a1645bd2679924486da86c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac19147712aadc47f1bf06930833c69eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#ac19147712aadc47f1bf06930833c69eb">LaunchPuTTY</a> (wxCommandEvent &amp;event)</td></tr>
+<tr class="memdesc:ac19147712aadc47f1bf06930833c69eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launch PuTTY from within grepster.  <a href="#ac19147712aadc47f1bf06930833c69eb">More...</a><br /></td></tr>
+<tr class="separator:ac19147712aadc47f1bf06930833c69eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa48a100858c263b6cc998ecd096f3338"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#aa48a100858c263b6cc998ecd096f3338">OnAbout</a> (wxCommandEvent &amp;event)</td></tr>
+<tr class="memdesc:aa48a100858c263b6cc998ecd096f3338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display simple about dialog box.  <a href="#aa48a100858c263b6cc998ecd096f3338">More...</a><br /></td></tr>
+<tr class="separator:aa48a100858c263b6cc998ecd096f3338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c37c05c17ff2ef0d4ac3c1385c7b7af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a4c37c05c17ff2ef0d4ac3c1385c7b7af">OnExit</a> (wxCommandEvent &amp;event)</td></tr>
+<tr class="memdesc:a4c37c05c17ff2ef0d4ac3c1385c7b7af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exit grepster.  <a href="#a4c37c05c17ff2ef0d4ac3c1385c7b7af">More...</a><br /></td></tr>
+<tr class="separator:a4c37c05c17ff2ef0d4ac3c1385c7b7af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65bda3db59444d6ff73b4bbca62a2dd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a65bda3db59444d6ff73b4bbca62a2dd9">wxDECLARE_EVENT_TABLE</a> ()</td></tr>
+<tr class="memdesc:a65bda3db59444d6ff73b4bbca62a2dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize and call the primary frame's event handler.  <a href="#a65bda3db59444d6ff73b4bbca62a2dd9">More...</a><br /></td></tr>
+<tr class="separator:a65bda3db59444d6ff73b4bbca62a2dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3ad18226d26aa0549204ced834567c57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_frame_menubar.html">CFrameMenubar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a3ad18226d26aa0549204ced834567c57">m_menubar</a></td></tr>
+<tr class="separator:a3ad18226d26aa0549204ced834567c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48331188e5abf63e667bd12cfd7eaeb0"><td class="memItemLeft" align="right" valign="top">wxStatusBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a48331188e5abf63e667bd12cfd7eaeb0">m_statusbar</a></td></tr>
+<tr class="separator:a48331188e5abf63e667bd12cfd7eaeb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a025518e3c18e54a86282e54c0d8279ae"><td class="memItemLeft" align="right" valign="top">wxAuiManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a025518e3c18e54a86282e54c0d8279ae">m_aui</a></td></tr>
+<tr class="separator:a025518e3c18e54a86282e54c0d8279ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for grepster's primary frame. </p>
@@ -160,6 +191,242 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af7656741c72ceb3574ba9d66da65c6c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CAppFrame::~CAppFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default class destructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac19147712aadc47f1bf06930833c69eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppFrame::LaunchPuTTY </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Launch PuTTY from within grepster. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa48a100858c263b6cc998ecd096f3338"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppFrame::OnAbout </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Display simple about dialog box. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4c37c05c17ff2ef0d4ac3c1385c7b7af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppFrame::OnExit </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exit grepster. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad564731060174c0a7fa267221c17637d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppFrame::RefreshConfiguration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refreshes grepster's configuration when any change is made to update user's interface. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3ec58b11a1645bd2679924486da86c93"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppFrame::ToggleFloating </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Toggle floating controls for user's current session and configuration. </p>
+
+</div>
+</div>
+<a class="anchor" id="a65bda3db59444d6ff73b4bbca62a2dd9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CAppFrame::wxDECLARE_EVENT_TABLE </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize and call the primary frame's event handler. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a025518e3c18e54a86282e54c0d8279ae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxAuiManager* CAppFrame::m_aui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>wxWidgets Advanced UI Manager. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3ad18226d26aa0549204ced834567c57"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_frame_menubar.html">CFrameMenubar</a>* CAppFrame::m_menubar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Frame's menu bar. </p>
+
+</div>
+</div>
+<a class="anchor" id="a48331188e5abf63e667bd12cfd7eaeb0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxStatusBar* CAppFrame::m_statusbar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Frame's status bar. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/grepster/app/<a class="el" href="_c_app_frame_8h_source.html">CAppFrame.h</a></li>
 <li>C:/grepster/app/<a class="el" href="_c_app_frame_8cpp.html">CAppFrame.cpp</a></li>
@@ -167,7 +434,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 28 2014 09:22:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 18:48:09 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

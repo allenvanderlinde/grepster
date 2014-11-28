@@ -21,9 +21,9 @@
 #include <wx/aui/auibook.h>
 
 /** Frame width (pixels). */
-#define FRAME_WIDTH                 960
+#define FRAME_WIDTH                 1024
 /** Frame height (pixels). */
-#define FRAME_HEIGHT                600
+#define FRAME_HEIGHT                680
 
 /** Default frame background color. */
 #define BG_COLOR                    "#e1e6f6"
@@ -39,7 +39,7 @@
 #define STATUSBAR_NOTE_WIDTH        120
 
 /** About grepster information string. */
-#define ABOUT_INFORMATION           "Written by Allen Vanderlinde, 2014.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster allows Blackboard TSMs immediate and dynamic access to client servers for grepping various logs en masse.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.\n\nPuTTY and its companion tools are copyright 1997-2013 Simon Tatham."
+#define ABOUT_INFORMATION           "Written by Allen Vanderlinde, 2014.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster allows System Administrators immediate and dynamic access to client servers for grepping various logs en masse.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.\n\nPuTTY and its companion tools are copyright 1997-2013 Simon Tatham."
 
 /**
  * This object creates a wxWidgets frame which houses the grepster application.
@@ -75,10 +75,13 @@ private:
      */
     void RefreshConfiguration();
 
+    /* Options menu methods. */
     /**
      * @brief       Toggle floating controls for user's current session and configuration.
      */
     void ToggleFloating(wxCommandEvent& event);
+
+    /* Tools menu methods. */
     /**
      * @brief       Launch PuTTY from within grepster.
      */

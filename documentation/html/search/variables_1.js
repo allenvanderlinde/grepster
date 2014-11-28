@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['first_5fattribute',['first_attribute',['../structpugi_1_1xml__node__struct.html#a482d2daf97ce0745661cb2c57d8f6fb3',1,'pugi::xml_node_struct']]],
-  ['first_5fchild',['first_child',['../structpugi_1_1xml__node__struct.html#af72c49a0f81928ef664d9d2f0260f23d',1,'pugi::xml_node_struct']]]
+  ['clientlist',['ClientList',['../grepster_8cpp.html#a5d1aa0726749bd3cf9086ef534dee2d7',1,'ClientList():&#160;grepster.cpp'],['../grepster_8h.html#a5d1aa0726749bd3cf9086ef534dee2d7',1,'ClientList():&#160;grepster.cpp']]],
+  ['configuration',['Configuration',['../grepster_8cpp.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp'],['../grepster_8h.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp']]],
+  ['console',['Console',['../grepster_8cpp.html#a034ab9689fbe23cc500e603f1c0cf19d',1,'Console():&#160;grepster.cpp'],['../grepster_8h.html#a034ab9689fbe23cc500e603f1c0cf19d',1,'Console():&#160;grepster.cpp']]]
 ];

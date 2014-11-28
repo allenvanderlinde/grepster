@@ -38,8 +38,11 @@ private:
     /** grepster's primary frame. */
     CAppFrame* m_grepster_frame;
 
-    /** Load grepster's configuration from file. */
-    void LoadConfiguration();
+    /**
+     * @brief       Load grepster's configuration from file.
+     * @retval      bool Returns true if configuration was loaded successfully.
+     */
+    bool LoadConfiguration();
 };
 
 #endif  // _CAPPENTRY_H_

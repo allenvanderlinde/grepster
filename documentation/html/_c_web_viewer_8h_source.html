@@ -25,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">grepster
    </div>
-   <div id="projectbrief">A streamlined grep utility for Blackboard(TM) TSMs</div>
+   <div id="projectbrief">A streamlined grep utility for System Administrators</div>
   </td>
  </tr>
  </tbody>
@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,20 +110,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_c_web_viewer.html#ae0a7b1fec636891b9485d6278e6a2c1e">CWebViewer</a>(wxWindow* parentFrame);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_c_web_viewer.html#ac2fab7569774817658d2dbc12f6b32b4">   40</a></span>&#160;    wxWebView* <a class="code" href="class_c_web_viewer.html#ac2fab7569774817658d2dbc12f6b32b4">getBrowser</a>() { <span class="keywordflow">return</span> m_browser; }</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_c_web_viewer.html#ac2fab7569774817658d2dbc12f6b32b4">   40</a></span>&#160;    wxWebView* <a class="code" href="class_c_web_viewer.html#ac2fab7569774817658d2dbc12f6b32b4">getBrowser</a>() { <span class="keywordflow">return</span> <a class="code" href="class_c_web_viewer.html#a76c35b6ce08aecb539b080a619ea7dd9">m_browser</a>; }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    wxWebView* m_browser;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_c_web_viewer.html#a76c35b6ce08aecb539b080a619ea7dd9">   44</a></span>&#160;    wxWebView* <a class="code" href="class_c_web_viewer.html#a76c35b6ce08aecb539b080a619ea7dd9">m_browser</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif // _CWEBVIEWER_H_</span></div>
 <div class="ttc" id="class_c_web_viewer_html"><div class="ttname"><a href="class_c_web_viewer.html">CWebViewer</a></div><div class="ttdoc">Class definition for grepster&#39;s browser. Note: The default back-end HTML renderer is Internet Explore...</div><div class="ttdef"><b>Definition:</b> CWebViewer.h:29</div></div>
+<div class="ttc" id="class_c_web_viewer_html_a76c35b6ce08aecb539b080a619ea7dd9"><div class="ttname"><a href="class_c_web_viewer.html#a76c35b6ce08aecb539b080a619ea7dd9">CWebViewer::m_browser</a></div><div class="ttdeci">wxWebView * m_browser</div><div class="ttdef"><b>Definition:</b> CWebViewer.h:44</div></div>
 <div class="ttc" id="class_c_web_viewer_html_ae0a7b1fec636891b9485d6278e6a2c1e"><div class="ttname"><a href="class_c_web_viewer.html#ae0a7b1fec636891b9485d6278e6a2c1e">CWebViewer::CWebViewer</a></div><div class="ttdeci">CWebViewer(wxWindow *parentFrame)</div><div class="ttdoc">Default constructor which produces the frame. </div><div class="ttdef"><b>Definition:</b> CWebViewer.cpp:22</div></div>
 <div class="ttc" id="class_c_web_viewer_html_ac2fab7569774817658d2dbc12f6b32b4"><div class="ttname"><a href="class_c_web_viewer.html#ac2fab7569774817658d2dbc12f6b32b4">CWebViewer::getBrowser</a></div><div class="ttdeci">wxWebView * getBrowser()</div><div class="ttdoc">Get the web viewer object. </div><div class="ttdef"><b>Definition:</b> CWebViewer.h:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 28 2014 09:22:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 18:48:09 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

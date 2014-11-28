@@ -25,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">grepster
    </div>
-   <div id="projectbrief">A streamlined grep utility for Blackboard(TM) TSMs</div>
+   <div id="projectbrief">A streamlined grep utility for System Administrators</div>
   </td>
  </tr>
  </tbody>
@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,22 +106,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_c_console.html#a1ebcde58e8445b9a3f1e378c201fd9ce">CConsole</a>(wxWindow* parentFrame);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_c_console.html#ab5532027582274143636d13cc234ff6c">   34</a></span>&#160;    wxAuiPaneInfo <a class="code" href="class_c_console.html#ab5532027582274143636d13cc234ff6c">getPaneInfo</a>() { <span class="keywordflow">return</span> m_consoleInf; }</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_c_console.html#ab5532027582274143636d13cc234ff6c">   34</a></span>&#160;    wxAuiPaneInfo <a class="code" href="class_c_console.html#ab5532027582274143636d13cc234ff6c">getPaneInfo</a>() { <span class="keywordflow">return</span> <a class="code" href="class_c_console.html#a20f41d201e9659926bda715f32aa8e88">m_consoleInf</a>; }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    wxAuiPaneInfo m_consoleInf;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_c_console.html#a20f41d201e9659926bda715f32aa8e88">   38</a></span>&#160;    wxAuiPaneInfo <a class="code" href="class_c_console.html#a20f41d201e9659926bda715f32aa8e88">m_consoleInf</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">//wxDECLARE_EVENT_TABLE();</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_c_console_html_a20f41d201e9659926bda715f32aa8e88"><div class="ttname"><a href="class_c_console.html#a20f41d201e9659926bda715f32aa8e88">CConsole::m_consoleInf</a></div><div class="ttdeci">wxAuiPaneInfo m_consoleInf</div><div class="ttdef"><b>Definition:</b> CConsole.h:38</div></div>
 <div class="ttc" id="class_c_console_html_ab5532027582274143636d13cc234ff6c"><div class="ttname"><a href="class_c_console.html#ab5532027582274143636d13cc234ff6c">CConsole::getPaneInfo</a></div><div class="ttdeci">wxAuiPaneInfo getPaneInfo()</div><div class="ttdef"><b>Definition:</b> CConsole.h:34</div></div>
 <div class="ttc" id="class_c_console_html_a1ebcde58e8445b9a3f1e378c201fd9ce"><div class="ttname"><a href="class_c_console.html#a1ebcde58e8445b9a3f1e378c201fd9ce">CConsole::CConsole</a></div><div class="ttdeci">CConsole(wxWindow *parentFrame)</div><div class="ttdoc">Default constructor which creates the text control console. </div><div class="ttdef"><b>Definition:</b> CConsole.cpp:22</div></div>
 <div class="ttc" id="class_c_console_html"><div class="ttname"><a href="class_c_console.html">CConsole</a></div><div class="ttdoc">Class definition for grepster&#39;s console. </div><div class="ttdef"><b>Definition:</b> CConsole.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 28 2014 09:22:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 18:48:09 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

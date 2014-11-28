@@ -29,7 +29,7 @@ extern wxString         g_Frame_Title;
  */
 extern CConsole*        Console;
 /**
- * This object holds the server IP list of Blackboard's Managed Hosting clients.
+ * This object holds the list of client's servers.
  * @brief       grepster's Client List.
  */
 extern CClientList*     ClientList;
@@ -53,6 +53,11 @@ extern CAppInit*        Configuration;
  * @param[in]   id The resource's integer ID as found in grepster_rc.h.
  */
 wxString RESOURCE_ID_TO_STRING(int id);
+
+/**
+ * @brief       Casts a variable's identifier as a wxString for debugging/console reporting.
+ */
+#define _cast(v) wxString(#v)
 
 /** grepster's configuration file path. */
 #define CONFIGURATION_FILE_PATH     "grepster.xml"

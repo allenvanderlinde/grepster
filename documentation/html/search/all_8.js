@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['latin1_5fwriter',['latin1_writer',['../structlatin1__writer.html',1,'']]],
-  ['less',['less',['../structless.html',1,'']]],
-  ['less_5fequal',['less_equal',['../structless__equal.html',1,'']]]
+  ['home_5fpage',['HOME_PAGE',['../_c_web_viewer_8h.html#ab5815260a10f9f45ad5fda420cd0f5f8',1,'CWebViewer.h']]]
 ];

@@ -15,6 +15,8 @@
 #include "../grepster.h"
 #include "CGrepNotebook.h"
 
+#include "CAppFrame.h"
+
 /*
     CGrepNotebook::CGrepNotebook(wxWindow*)
 */
@@ -30,6 +32,12 @@ CGrepNotebook::CGrepNotebook(wxWindow* parentFrame)
     m_grepNotebookInf.CloseButton(false);
     //m_grepNotebookInf.Floatable(Configuration->bToggleFloating);
     m_grepNotebookInf.Show(true);
+
+    /* Customize the notebook's color. */
+    wxAuiGenericTabArt* art = new wxAuiGenericTabArt();
+    art->SetColour(WXCOLOR_LT_BLUE);
+    art->SetActiveColour(WXCOLOR_LT_BLUE);
+    SetArtProvider(art);
 }
 
 /*

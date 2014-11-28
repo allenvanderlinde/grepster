@@ -30,17 +30,31 @@ public:
     CAppInit();
 
     /**
+     * Note: The order in which configuration settings are written to file must not be changed. This processing order is hard-coded.
+     * @brief       Writes XML data to file from any configuration changes.
+     */
+    void WriteXMLData();
+
+    /**
      * @brief       Query successful loading of configuration.
      */
-    bool success() { return m_bConfigurationLoadedSuccessfully; }
+    bool Success() { return m_bConfigurationLoadedSuccessfully; }
 
     /* Configuration session flags/settings. */
     /** Toggle floating controls. */
     bool bToggleFloating;
 
 private:
-    /** grepster's XML configuration document object. */
-    pugi::xml_document m_xml_file;
+    /**
+     * Note: The order in which elements are parsed and settings applied must not be changed. This processing order is hard-coded.
+     * @brief       Reads XML data from file and applies its values to this class's members.
+     */
+    void ApplyXMLData();
+
+    /** XML file handle. */
+    pugi::xml_document m_XMLFile;
+    /** pugixml's parsing node used to read XML data. */
+    pugi::xml_node m_XMLSettings;
 
     /** Flag for successful loading of configuration. */
     bool m_bConfigurationLoadedSuccessfully;

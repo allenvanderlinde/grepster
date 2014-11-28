@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['parent',['parent',['../structpugi_1_1xml__node__struct.html#af692c222bcc5a9f61108cb3ae0b7b5ea',1,'pugi::xml_node_struct']]],
-  ['prev_5fattribute_5fc',['prev_attribute_c',['../structpugi_1_1xml__attribute__struct.html#a0e3a022235b316e4cfc1034ceb7d7862',1,'pugi::xml_attribute_struct']]],
-  ['prev_5fsibling_5fc',['prev_sibling_c',['../structpugi_1_1xml__node__struct.html#a74e62128c88c422c0ed969633bbb2d4e',1,'pugi::xml_node_struct']]]
+  ['onabout',['OnAbout',['../class_c_app_frame.html#aa48a100858c263b6cc998ecd096f3338',1,'CAppFrame']]],
+  ['onexit',['OnExit',['../class_c_app_frame.html#a4c37c05c17ff2ef0d4ac3c1385c7b7af',1,'CAppFrame']]],
+  ['oninit',['OnInit',['../class_c_app_entry.html#a578cfd4a02e24ce7ceee08dba0e9fed2',1,'CAppEntry']]],
+  ['openwelcomepage',['OpenWelcomePage',['../class_c_grep_notebook.html#a667e148623bbb9b4ec89ab44ce802835',1,'CGrepNotebook']]]
 ];

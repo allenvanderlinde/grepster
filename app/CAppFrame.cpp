@@ -81,23 +81,23 @@ CAppFrame::~CAppFrame() {
 }
 
 /*
-    CAppFrame::LoadConfiguration
+    CAppFrame::RefreshConfiguration
 */
 void CAppFrame::RefreshConfiguration() {
-    /* Update grepster's main controls' settings. */
+    // Floating controls
     m_aui->GetPane(Console).Floatable(Configuration->bToggleFloating);
     m_aui->GetPane(ClientList).Floatable(Configuration->bToggleFloating);
     m_aui->GetPane(GrepNotebook).Floatable(Configuration->bToggleFloating);
+
+    /* Write configuration changes to file. */
+    Configuration->WriteXMLData();
 }
 
 /*
     CAppFrame::ToggleFloating
 */
 void CAppFrame::ToggleFloating(wxCommandEvent& event) {
-    if(Configuration->bToggleFloating)
-        Configuration->bToggleFloating = false;
-    else if(!Configuration->bToggleFloating)
-        Configuration->bToggleFloating = true;
+    (Configuration->bToggleFloating) ? Configuration->bToggleFloating = false : Configuration->bToggleFloating = true;
 
     /* Refresh grepster's configuration to reflect local changes. */
     RefreshConfiguration();

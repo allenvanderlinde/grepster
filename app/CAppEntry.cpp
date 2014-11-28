@@ -39,7 +39,10 @@ bool CAppEntry::OnInit() {
     }
 
     /* Load grepster's configuration. */
-    LoadConfiguration();
+    if(!LoadConfiguration()) {
+        wxMessageBox("grepster's configuration was unable to be loaded. Verify grepster.xml exists and its elements are intact.", "Using default configuration", wxICON_WARNING | wxOK);
+        // Write default configuration method to call here
+    }
 
     m_grepster_frame = new CAppFrame(g_Frame_Title, wxPoint(50, 50), wxSize(FRAME_WIDTH, FRAME_HEIGHT));
     /* Set grepster's window icon. */
@@ -76,7 +79,9 @@ bool CAppEntry::ShowSplash(int resource_id) {
 /*
     CAppEntry::LoadConfiguration
 */
-void CAppEntry::LoadConfiguration() {
+bool CAppEntry::LoadConfiguration() {
     //wxMessageBox("about to load config", "about", wxOK);
+    // MAKE SURE TO UPDATE CONSOLE AFTER APPENTRY SUCCEEDS
     Configuration = new CAppInit();
+    return Configuration->Success();
 }
