@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['busefloatable',['bUseFloatable',['../structgrepster_config__t.html#a34b792ecd2f2472b97c8f927d9d62dca',1,'grepsterConfig_t']]]
+  ['btogglefloating',['bToggleFloating',['../class_c_app_init.html#a0cc6b234885facdf9c3f07ad88ac2017',1,'CAppInit']]]
 ];

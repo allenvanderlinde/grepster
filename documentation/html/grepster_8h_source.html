@@ -103,50 +103,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_c_console_8h.html">app/CConsole.h</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_c_client_list_8h.html">app/CClientList.h</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_c_grep_notebook_8h.html">app/CGrepNotebook.h</a>&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;version.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span> wxString         g_Frame_Title;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_c_console.html">CConsole</a>*        Console;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_c_client_list.html">CClientList</a>*     ClientList;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_c_grep_notebook.html">CGrepNotebook</a>*   GrepNotebook;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structgrepster_config__t.html">   34</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structgrepster_config__t.html">grepsterConfig_t</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structgrepster_config__t.html#a34b792ecd2f2472b97c8f927d9d62dca">   36</a></span>&#160;    <span class="keywordtype">bool</span>    <a class="code" href="structgrepster_config__t.html#a34b792ecd2f2472b97c8f927d9d62dca">bUseFloatable</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <a class="code" href="structgrepster_config__t.html">grepsterConfig_t</a> configuration;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/* Utility functions. */</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;wxString RESOURCE_ID_TO_STRING(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_c_app_init_8h.html">app/CAppInit.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;version.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span> wxString         g_Frame_Title;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_c_console.html">CConsole</a>*        Console;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_c_client_list.html">CClientList</a>*     ClientList;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_c_grep_notebook.html">CGrepNotebook</a>*   GrepNotebook;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_c_app_init.html">CAppInit</a>*        Configuration;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/* Console control settings. */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define CONSOLE_ID                  1000</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#define CONSOLE_NAME                &quot;the_con&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define CONSOLE_CTRL_TITLE          &quot;Console&quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define CONSOLE_DEFAULT_HEIGHT      140</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/* Client list control settings. */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define CLIENT_LIST_ID              1001</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define CLIENT_LIST_NAME            &quot;client_tree&quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define CLIENT_LIST_CTRL_TITLE      &quot;Client List&quot;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define CLIENT_LIST_DEFAULT_WIDTH   200</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/* Grep Notebook control settings. */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_ID            1002</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_NAME          &quot;grep_notebook&quot;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_CTRL_TITLE    &quot;Grep Notebook&quot;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/* Browser/web viewer control settings. */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define BROWSER_ID             1003</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define BROWSER_NAME           &quot;browser&quot;</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/* Utility functions. */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;wxString RESOURCE_ID_TO_STRING(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define CONFIGURATION_FILE_PATH     &quot;grepster.xml&quot;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/* Console control settings. */</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#define CONSOLE_ID                  1000</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define CONSOLE_NAME                &quot;the_con&quot;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#define CONSOLE_CTRL_TITLE          &quot;Console&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define CONSOLE_DEFAULT_HEIGHT      140</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/* Client list control settings. */</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#define CLIENT_LIST_ID              1001</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define CLIENT_LIST_NAME            &quot;client_tree&quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#define CLIENT_LIST_CTRL_TITLE      &quot;Client List&quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define CLIENT_LIST_DEFAULT_WIDTH   200</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">/* Grep Notebook control settings. */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_ID            1002</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_NAME          &quot;grep_notebook&quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_CTRL_TITLE    &quot;Grep Notebook&quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/* Browser/web viewer control settings. */</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#define BROWSER_ID             1003</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define BROWSER_NAME           &quot;browser&quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="_c_grep_notebook_8h_html"><div class="ttname"><a href="_c_grep_notebook_8h.html">CGrepNotebook.h</a></div><div class="ttdoc">wxWidgets AUI notebook control class definition. </div></div>
-<div class="ttc" id="structgrepster_config__t_html_a34b792ecd2f2472b97c8f927d9d62dca"><div class="ttname"><a href="structgrepster_config__t.html#a34b792ecd2f2472b97c8f927d9d62dca">grepsterConfig_t::bUseFloatable</a></div><div class="ttdeci">bool bUseFloatable</div><div class="ttdef"><b>Definition:</b> grepster.h:36</div></div>
+<div class="ttc" id="_c_app_init_8h_html"><div class="ttname"><a href="_c_app_init_8h.html">CAppInit.h</a></div><div class="ttdoc">This object loads and populates grepster&#39;s configuration settings. </div></div>
+<div class="ttc" id="class_c_app_init_html"><div class="ttname"><a href="class_c_app_init.html">CAppInit</a></div><div class="ttdoc">Class definition for grepster&#39;s configuration. </div><div class="ttdef"><b>Definition:</b> CAppInit.h:25</div></div>
 <div class="ttc" id="class_c_grep_notebook_html"><div class="ttname"><a href="class_c_grep_notebook.html">CGrepNotebook</a></div><div class="ttdoc">Class definition for grepster&#39;s notebook control. </div><div class="ttdef"><b>Definition:</b> CGrepNotebook.h:35</div></div>
-<div class="ttc" id="structgrepster_config__t_html"><div class="ttname"><a href="structgrepster_config__t.html">grepsterConfig_t</a></div><div class="ttdoc">grepster&#39;s configuration structure. </div><div class="ttdef"><b>Definition:</b> grepster.h:34</div></div>
 <div class="ttc" id="class_c_client_list_html"><div class="ttname"><a href="class_c_client_list.html">CClientList</a></div><div class="ttdoc">Class definition for grepster&#39;s client list. </div><div class="ttdef"><b>Definition:</b> CClientList.h:26</div></div>
 <div class="ttc" id="class_c_console_html"><div class="ttname"><a href="class_c_console.html">CConsole</a></div><div class="ttdoc">Class definition for grepster&#39;s console. </div><div class="ttdef"><b>Definition:</b> CConsole.h:25</div></div>
 <div class="ttc" id="_c_console_8h_html"><div class="ttname"><a href="_c_console_8h.html">CConsole.h</a></div><div class="ttdoc">wxWidgets read-only text control class definition used as grepster&#39;s console. </div></div>
@@ -154,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2014 21:47:14 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 09:22:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -81,11 +81,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>In most, if not all, of grepster's control methods you'll often see only a single argument being passed: <code>wxCommandEvent&amp; event</code>. This is a reference to the wxWidgets command input structure. It is a record of the state of the method's parent frame at the time the event was triggered (i.e., which key on the keyboard was pressed; which button in the frame was clicked).</p>
 <p>Some methods will have their own command event structure depending upon the type of wxWindow triggers the event.</p>
-<p>As these are always required parameters for custom control methods, they are not individually documented within the source code for the sake of preventing redundant documentation. </p>
+<p>As these are always required parameters for custom control methods, they are not individually documented within the source code for the sake of preventing redundant documentation.</p>
+<p>Note: CAppFrame::LoadConfiguration is always called after a user changes one of grepster's control's options (such as setting a control to float). Essentially this saves all new changes to grepster's interface and configuration in real-time. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2014 21:47:14 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 09:22:44 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

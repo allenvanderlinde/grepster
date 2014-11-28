@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['wxbegin_5fevent_5ftable',['wxBEGIN_EVENT_TABLE',['../_c_app_frame_8cpp.html#a8f32e8173d0f0b9564e9ca6b5e890c7c',1,'CAppFrame.cpp']]],
-  ['wxcolor_5fdk_5fblue',['WXCOLOR_DK_BLUE',['../_c_app_frame_8h.html#a73c35d44b785120b041ec4fdb0f043df',1,'CAppFrame.h']]],
-  ['wxcolor_5flt_5fblue',['WXCOLOR_LT_BLUE',['../_c_app_frame_8h.html#a3e77f6f3954a14a71b47770b9f1d9f67',1,'CAppFrame.h']]]
+  ['name',['name',['../structpugi_1_1xml__attribute__struct.html#aa886c4aae23a132e1704717721ee2c19',1,'pugi::xml_attribute_struct::name()'],['../structpugi_1_1xml__node__struct.html#ae2324fdbd1e307fb12007d1d0f957a0b',1,'pugi::xml_node_struct::name()']]],
+  ['namespace_5furi_5fpredicate',['namespace_uri_predicate',['../structnamespace__uri__predicate.html',1,'']]],
+  ['next_5fattribute',['next_attribute',['../structpugi_1_1xml__attribute__struct.html#a9860c0eb7fa72dc9b69ee9b0575f9efc',1,'pugi::xml_attribute_struct']]],
+  ['next_5fsibling',['next_sibling',['../structpugi_1_1xml__node__struct.html#acf0867e3a77871e37132046d97398a6d',1,'pugi::xml_node_struct']]],
+  ['not_5fequal_5fto',['not_equal_to',['../structnot__equal__to.html',1,'']]]
 ];

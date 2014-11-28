@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['oninit',['OnInit',['../class_c_app_entry.html#a578cfd4a02e24ce7ceee08dba0e9fed2',1,'CAppEntry']]],
-  ['openwelcomepage',['OpenWelcomePage',['../class_c_grep_notebook.html#a667e148623bbb9b4ec89ab44ce802835',1,'CGrepNotebook']]]
+  ['home_5fpage',['HOME_PAGE',['../_c_web_viewer_8h.html#ab5815260a10f9f45ad5fda420cd0f5f8',1,'CWebViewer.h']]]
 ];

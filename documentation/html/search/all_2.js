@@ -5,6 +5,8 @@ var searchData=
   ['cappframe',['CAppFrame',['../class_c_app_frame.html',1,'CAppFrame'],['../class_c_app_frame.html#a2fc146905ed09967d872e330f494d37b',1,'CAppFrame::CAppFrame()']]],
   ['cappframe_2ecpp',['CAppFrame.cpp',['../_c_app_frame_8cpp.html',1,'']]],
   ['cappframe_2eh',['CAppFrame.h',['../_c_app_frame_8h.html',1,'']]],
+  ['cappinit',['CAppInit',['../class_c_app_init.html',1,'CAppInit'],['../class_c_app_init.html#a9d0827f6b41a56fed151a780011ac12e',1,'CAppInit::CAppInit()']]],
+  ['cappinit_2eh',['CAppInit.h',['../_c_app_init_8h.html',1,'']]],
   ['cclientlist',['CClientList',['../class_c_client_list.html',1,'CClientList'],['../class_c_client_list.html#a318d3ae0e3fa7fb78bde367131a952f8',1,'CClientList::CClientList()']]],
   ['cclientlist_2eh',['CClientList.h',['../_c_client_list_8h.html',1,'']]],
   ['cconsole',['CConsole',['../class_c_console.html',1,'CConsole'],['../class_c_console.html#a1ebcde58e8445b9a3f1e378c201fd9ce',1,'CConsole::CConsole()']]],
