@@ -10,7 +10,6 @@
 
 #include "../grepster.h"
 #include "CAppFrame.h"
-
 #include "CClientList.h"
 
 /*
@@ -26,6 +25,6 @@ CClientList::CClientList(wxWindow* parentFrame)
     m_clientListInf.CaptionVisible();
     m_clientListInf.Left();
     m_clientListInf.CloseButton(false);
-    m_clientListInf.Floatable(configuration.bUseFloatable);
+    //m_clientListInf.Floatable(Configuration->bToggleFloating);
     m_clientListInf.Show(true);
 }

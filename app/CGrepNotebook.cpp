@@ -13,7 +13,6 @@
 */
 
 #include "../grepster.h"
-
 #include "CGrepNotebook.h"
 
 /*
@@ -29,7 +28,7 @@ CGrepNotebook::CGrepNotebook(wxWindow* parentFrame)
     m_grepNotebookInf.CaptionVisible();
     m_grepNotebookInf.Center();
     m_grepNotebookInf.CloseButton(false);
-    m_grepNotebookInf.Floatable(true);
+    //m_grepNotebookInf.Floatable(Configuration->bToggleFloating);
     m_grepNotebookInf.Show(true);
 }
 

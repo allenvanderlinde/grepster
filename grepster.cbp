@@ -89,6 +89,8 @@
 		<Unit filename="app/CAppEntry.h" />
 		<Unit filename="app/CAppFrame.cpp" />
 		<Unit filename="app/CAppFrame.h" />
+		<Unit filename="app/CAppInit.cpp" />
+		<Unit filename="app/CAppInit.h" />
 		<Unit filename="app/CClientList.cpp" />
 		<Unit filename="app/CClientList.h" />
 		<Unit filename="app/CConsole.cpp" />
@@ -99,6 +101,9 @@
 		<Unit filename="app/CGrepNotebook.h" />
 		<Unit filename="grepster.cpp" />
 		<Unit filename="grepster.h" />
+		<Unit filename="pugixml-1.4/pugiconfig.hpp" />
+		<Unit filename="pugixml-1.4/pugixml.cpp" />
+		<Unit filename="pugixml-1.4/pugixml.hpp" />
 		<Unit filename="resources/grepster.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>

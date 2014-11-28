@@ -15,18 +15,19 @@
 /* NOTES */
 // MAKE CONFIG FILE WITH PATH TO PUTTY DIRECTORY!!
 
-#include <wx/wx.h>
 #include "grepster.h"
+
+#include <wx/wx.h>
 
 /* Frame globals definitions. */
 wxString            g_Frame_Title("grepster v");
-/* Frame control definitions. */
+/* Frame control definitions. These are global. */
 CConsole*           Console;
 CClientList*        ClientList;
 CGrepNotebook*      GrepNotebook;
 
-/* grepster configuration global structure. */
-grepsterConfig_t    configuration;
+/* grepster configuration object. This is global. */
+CAppInit*           Configuration;
 
 /* Utility function definitions. */
 wxString RESOURCE_ID_TO_STRING(int id) { return wxString::Format("#%i", id); }

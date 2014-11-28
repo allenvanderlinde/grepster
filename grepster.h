@@ -16,27 +16,35 @@
 #include "app/CConsole.h"
 #include "app/CClientList.h"
 #include "app/CGrepNotebook.h"
+#include "app/CAppInit.h"
 
 #include "version.h"
 
 /** grepster's frame globals. */
 extern wxString         g_Frame_Title;
 
+/**
+ * This object reports grepster's activity to a central text control for the user.
+ * @brief       grepster's console.
+ */
 extern CConsole*        Console;
+/**
+ * This object holds the server IP list of Blackboard's Managed Hosting clients.
+ * @brief       grepster's Client List.
+ */
 extern CClientList*     ClientList;
+/**
+ * This object holds the user's book of grep session pages.
+ * @brief       grepster's grep Session Notebook.
+ */
 extern CGrepNotebook*   GrepNotebook;
 
 /**
  * This structure contains each of grepster's configuration settings which are saved automatically file upon change.
  *
- * @brief     grepster's configuration structure.
+ * @brief       grepster's configuration object.
  */
-struct grepsterConfig_t {
-    /** Set grepster's primary frame controls to float. */
-    bool    bUseFloatable;
-};
-
-extern grepsterConfig_t configuration;
+extern CAppInit*        Configuration;
 
 /* Utility functions. */
 /**
@@ -46,26 +54,41 @@ extern grepsterConfig_t configuration;
  */
 wxString RESOURCE_ID_TO_STRING(int id);
 
+/** grepster's configuration file path. */
+#define CONFIGURATION_FILE_PATH     "grepster.xml"
+
 /* Console control settings. */
-/** grepster's console's wxWidgets control ID. */
+/** grepster's console control ID. */
 #define CONSOLE_ID                  1000
+/** grepster's console's local name for wxWidgets. */
 #define CONSOLE_NAME                "the_con"
+/** grepster's console's control title. */
 #define CONSOLE_CTRL_TITLE          "Console"
+/** Default height (pixels) of grepster's console control used when floating. */
 #define CONSOLE_DEFAULT_HEIGHT      140
 
 /* Client list control settings. */
+/** grepster's client list control ID. */
 #define CLIENT_LIST_ID              1001
+/** grepster's client list's local name for wxWidgets. */
 #define CLIENT_LIST_NAME            "client_tree"
+/** grepster's client list's control title. */
 #define CLIENT_LIST_CTRL_TITLE      "Client List"
+/** Default width (pixels) of grepster's console control used when floating. */
 #define CLIENT_LIST_DEFAULT_WIDTH   200
 
 /* Grep Notebook control settings. */
+/** grepster's AUI notebook control ID. */
 #define GREP_NOTEBOOK_ID            1002
+/** grepster's notebook's local name for wxWidgets. */
 #define GREP_NOTEBOOK_NAME          "grep_notebook"
+/** grepster's notebook control title. */
 #define GREP_NOTEBOOK_CTRL_TITLE    "Grep Notebook"
 
 /* Browser/web viewer control settings. */
+/** grepster's browser control ID. */
 #define BROWSER_ID             1003
+/** grepster's browser's local name for wxWidgets. */
 #define BROWSER_NAME           "browser"
 
 #endif

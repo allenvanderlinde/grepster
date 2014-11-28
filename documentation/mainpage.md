@@ -3,3 +3,5 @@ In most, if not all, of grepster's control methods you'll often see only a singl
 Some methods will have their own command event structure depending upon the type of wxWindow triggers the event.
 
 As these are always required parameters for custom control methods, they are not individually documented within the source code for the sake of preventing redundant documentation.
+
+Note: CAppFrame::LoadConfiguration is always called after a user changes one of grepster's control's options (such as setting a control to float). Essentially this saves all new changes to grepster's interface and configuration in real-time.

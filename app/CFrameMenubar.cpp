@@ -12,6 +12,7 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
+#include "../grepster.h"
 #include "CFrameMenubar.h"
 
 /*
@@ -38,7 +39,7 @@ CFrameMenubar::CFrameMenubar()
                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_TOGGLE_DOCKABLE],
                            wxITEM_CHECK);
     /* Check activated items set from configuration. */
-    m_options_menu->Check(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, configuration.bUseFloatable);
+    m_options_menu->Check(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, Configuration->bToggleFloating);
 
     // Help menu
     m_help_menu = new wxMenu;

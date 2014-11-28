@@ -1,16 +1,17 @@
 # depslib dependency file v1.0
-1416767499 source:c:\grepster\app\cappentry.cpp
+1417159590 source:c:\grepster\app\cappentry.cpp
 	"../grepster.h"
 	"../resources/grepster_rc.h"
 	"CAppEntry.h"
 	<wx/splash.h>
 	<wx/icon.h>
 
-1416766737 c:\grepster\grepster.h
+1417182808 c:\grepster\grepster.h
 	<wx/wx.h>
 	"app/CConsole.h"
 	"app/CClientList.h"
 	"app/CGrepNotebook.h"
+	"app/CAppInit.h"
 	"version.h"
 
 1412627643 c:\wxwidgets-3.0.2\include\wx\wx.h
@@ -2932,7 +2933,7 @@
 1412627642 c:\wxwidgets-3.0.2\include\wx\cocoa\mdi.h
 	"wx/frame.h"
 
-1416674382 c:\grepster\app\cconsole.h
+1417150039 c:\grepster\app\cconsole.h
 	<wx/wx.h>
 	<wx/aui/aui.h>
 
@@ -3097,7 +3098,7 @@
 	"wx/icon.h"
 	"wx/aui/auibook.h"
 
-1416674378 c:\grepster\app\cclientlist.h
+1417010637 c:\grepster\app\cclientlist.h
 	<wx/wx.h>
 	<wx/treectrl.h>
 	<wx/aui/aui.h>
@@ -3134,7 +3135,7 @@
 	"wx/treebase.h"
 	"wx/hashmap.h"
 
-1417009149 c:\grepster\app\cgrepnotebook.h
+1417009653 c:\grepster\app\cgrepnotebook.h
 	<wx/wx.h>
 	<wx/aui/aui.h>
 	<wx/aui/auibook.h>
@@ -3186,23 +3187,21 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1417009472 c:\grepster\version.h
+1417183945 c:\grepster\version.h
 
-1416617873 c:\grepster\resources\grepster_rc.h
+1417096884 c:\grepster\resources\grepster_rc.h
 
-1416767058 c:\grepster\app\cappentry.h
+1417148987 c:\grepster\app\cappentry.h
 	<wx/wx.h>
 	"CAppFrame.h"
 
-1416768956 c:\grepster\app\cappframe.h
+1417182256 c:\grepster\app\cappframe.h
+	"CFrameMenubar.h"
 	<wx/wx.h>
 	<wx/aui/framemanager.h>
 	<wx/aui/auibook.h>
-	"../grepster.h"
-	"CFrameMenubar.h"
 
-1417009352 c:\grepster\app\cframemenubar.h
-	"../grepster.h"
+1417153767 c:\grepster\app\cframemenubar.h
 	<wx/wx.h>
 
 1412627643 c:\wxwidgets-3.0.2\include\wx\splash.h
@@ -3214,32 +3213,33 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1416769102 source:c:\grepster\app\cappframe.cpp
+1417182412 source:c:\grepster\app\cappframe.cpp
 	"../grepster.h"
 	"../resources/grepster_rc.h"
 	"CAppFrame.h"
 	<wx/aui/dockart.h>
 
-1416766792 source:c:\grepster\app\cclientlist.cpp
+1417157794 source:c:\grepster\app\cclientlist.cpp
 	"../grepster.h"
 	"CAppFrame.h"
 	"CClientList.h"
 
-1416766820 source:c:\grepster\app\cconsole.cpp
+1417182128 source:c:\grepster\app\cconsole.cpp
 	"../grepster.h"
 	"CAppFrame.h"
 	"CConsole.h"
 
-1416767960 source:c:\grepster\app\cframemenubar.cpp
+1417182846 source:c:\grepster\app\cframemenubar.cpp
+	"../grepster.h"
 	"CFrameMenubar.h"
 
-1416765659 source:c:\grepster\app\cgrepnotebook.cpp
+1417157877 source:c:\grepster\app\cgrepnotebook.cpp
 	"../grepster.h"
 	"CGrepNotebook.h"
 
-1416766597 source:c:\grepster\grepster.cpp
-	<wx/wx.h>
+1417158137 source:c:\grepster\grepster.cpp
 	"grepster.h"
+	<wx/wx.h>
 	"app/CAppEntry.h"
 
 1416617873 source:c:\grepster\resources\grepster.rc
@@ -3264,7 +3264,40 @@
 
 1412627643 c:\wxwidgets-3.0.2\include\wx\msw\rcdefs.h
 
-1416765402 source:c:\grepster\webviewer\cwebviewer.cpp
+1417007504 source:c:\grepster\webviewer\cwebviewer.cpp
 	"../grepster.h"
 	"CWebViewer.h"
+
+1403804245 c:\grepster\pugixml-1.4\pugixml.hpp
+	"pugiconfig.hpp"
+	<stddef.h>
+	<exception>
+	<iterator>
+	<iosfwd>
+	<string>
+
+1403804245 c:\grepster\pugixml-1.4\pugiconfig.hpp
+
+1403804245 source:c:\grepster\pugixml-1.4\pugixml.cpp
+	"pugixml.hpp"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<assert.h>
+	<wchar.h>
+	<math.h>
+	<float.h>
+	<setjmp.h>
+	<istream>
+	<ostream>
+	<string>
+	<new>
+	<stdint.h>
+
+1417159529 c:\grepster\app\cappinit.h
+	"../pugixml-1.4/pugixml.hpp"
+
+1417156580 source:c:\grepster\app\cappinit.cpp
+	"../grepster.h"
+	"CAppInit.h"
 

@@ -13,13 +13,12 @@
 #ifndef _CAPPFRAME_H_
 #define _CAPPFRAME_H_
 
+#include "CFrameMenubar.h"
+
 #include <wx/wx.h>
 #include <wx/aui/framemanager.h>
 
 #include <wx/aui/auibook.h>
-
-#include "../grepster.h"
-#include "CFrameMenubar.h"
 
 /** Frame width (pixels). */
 #define FRAME_WIDTH                 960
@@ -41,10 +40,6 @@
 
 /** About grepster information string. */
 #define ABOUT_INFORMATION           "Written by Allen Vanderlinde, 2014.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster allows Blackboard TSMs immediate and dynamic access to client servers for grepping various logs en masse.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.\n\nPuTTY and its companion tools are copyright 1997-2013 Simon Tatham."
-
-/* Session options. These are immediately noticeable settings by grepster's user. */
-/** Floating controls toggle. */
-static bool isFloating;
 
 /**
  * This object creates a wxWidgets frame which houses the grepster application.
@@ -76,6 +71,11 @@ private:
     wxAuiManager* m_aui;
 
     /**
+     * @brief       Refreshes grepster's configuration when any change is made to update user's interface.
+     */
+    void RefreshConfiguration();
+
+    /**
      * @brief       Toggle floating controls for user's current session and configuration.
      */
     void ToggleFloating(wxCommandEvent& event);
@@ -94,6 +94,9 @@ private:
      */
     void OnExit(wxCommandEvent& event);
 
+    /**
+     * @brief       Initialize and call the primary frame's event handler.
+     */
     wxDECLARE_EVENT_TABLE();
 };
 

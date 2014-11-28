@@ -77,5 +77,6 @@ bool CAppEntry::ShowSplash(int resource_id) {
     CAppEntry::LoadConfiguration
 */
 void CAppEntry::LoadConfiguration() {
-    configuration.bUseFloatable = false;
+    //wxMessageBox("about to load config", "about", wxOK);
+    Configuration = new CAppInit();
 }

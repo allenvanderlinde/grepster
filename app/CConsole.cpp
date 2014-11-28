@@ -1,5 +1,5 @@
 /*
-    File:       CWebViewer.cpp
+    File:       CConsole.cpp
     Version:    Alpha
     Author:     Allen Vanderlinde
 
@@ -14,7 +14,6 @@
 
 #include "../grepster.h"
 #include "CAppFrame.h"
-
 #include "CConsole.h"
 
 /*
@@ -30,7 +29,7 @@ CConsole::CConsole(wxWindow* parentFrame)
     m_consoleInf.CaptionVisible();
     m_consoleInf.Bottom();
     m_consoleInf.CloseButton(false);
-    m_consoleInf.Floatable(configuration.bUseFloatable);
+    m_consoleInf.Floatable(Configuration->bToggleFloating);
     m_consoleInf.Show(true);
 
     /* Set the console's font. */

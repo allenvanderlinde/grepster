@@ -18,7 +18,7 @@
 #include "CAppFrame.h"
 
 /** Option to display the splash screen. */
-#define DISPLAY_SPLASH                  true
+#define DISPLAY_SPLASH                  false
 /** Splash screen duration in milliseconds. */
 #define SPLASH_DURATION                 1700
 

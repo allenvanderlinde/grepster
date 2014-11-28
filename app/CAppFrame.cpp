@@ -12,11 +12,12 @@
 
 #include "../grepster.h"
 #include "../resources/grepster_rc.h"
+
 #include "CAppFrame.h"
 
 #include <wx/aui/dockart.h>
 
-/*  wxWidgets frame event table. */
+/** grepster's primary frame's event handler calls. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::OnExit)
     EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
@@ -33,9 +34,6 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     // Set background color
     SetBackgroundColour(BG_COLOR);
 
-    /* Toggle control settings. */
-    isFloating = configuration.bUseFloatable;
-
     /* Create menu bar. */
     m_menubar = new CFrameMenubar;
     SetMenuBar(m_menubar);
@@ -47,7 +45,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     SetStatusBar(m_statusbar);
     SetStatusText(STATUSBAR_WELCOME);
 
-    /* Create and initialize primary frame controls. */
+    /* Create and initialize primary frame cont                                                                                                                                                                                                                                                                                                                                               rols. */
     Console = new CConsole(this);
     ClientList = new CClientList(this);
     GrepNotebook = new CGrepNotebook(this);
@@ -70,6 +68,9 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     art->SetColour(wxAUI_DOCKART_INACTIVE_CAPTION_GRADIENT_COLOUR, WXCOLOR_DK_BLUE);
 
     m_aui->Update();
+
+    /* Set grepster's initial configuration. */
+    RefreshConfiguration();
 }
 
 /*
@@ -80,22 +81,26 @@ CAppFrame::~CAppFrame() {
 }
 
 /*
+    CAppFrame::LoadConfiguration
+*/
+void CAppFrame::RefreshConfiguration() {
+    /* Update grepster's main controls' settings. */
+    m_aui->GetPane(Console).Floatable(Configuration->bToggleFloating);
+    m_aui->GetPane(ClientList).Floatable(Configuration->bToggleFloating);
+    m_aui->GetPane(GrepNotebook).Floatable(Configuration->bToggleFloating);
+}
+
+/*
     CAppFrame::ToggleFloating
 */
 void CAppFrame::ToggleFloating(wxCommandEvent& event) {
-    if(!isFloating) {
-        configuration.bUseFloatable = true;
-        isFloating = configuration.bUseFloatable;
-        m_aui->GetPane(Console).Floatable(configuration.bUseFloatable);
-        m_aui->GetPane(ClientList).Floatable(configuration.bUseFloatable);
-        m_aui->GetPane(GrepNotebook).Floatable(configuration.bUseFloatable);
-    } else if(isFloating) {
-        configuration.bUseFloatable = false;
-        isFloating = configuration.bUseFloatable;
-        m_aui->GetPane(Console).Floatable(configuration.bUseFloatable);
-        m_aui->GetPane(ClientList).Floatable(configuration.bUseFloatable);
-        m_aui->GetPane(GrepNotebook).Floatable(configuration.bUseFloatable);
-    }
+    if(Configuration->bToggleFloating)
+        Configuration->bToggleFloating = false;
+    else if(!Configuration->bToggleFloating)
+        Configuration->bToggleFloating = true;
+
+    /* Refresh grepster's configuration to reflect local changes. */
+    RefreshConfiguration();
 }
 
 /*

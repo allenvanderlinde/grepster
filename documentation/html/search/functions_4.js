@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7ecappframe',['~CAppFrame',['../class_c_app_frame.html#af7656741c72ceb3574ba9d66da65c6c9',1,'CAppFrame']]]
+  ['wxbegin_5fevent_5ftable',['wxBEGIN_EVENT_TABLE',['../_c_app_frame_8cpp.html#a8f32e8173d0f0b9564e9ca6b5e890c7c',1,'CAppFrame.cpp']]]
 ];
