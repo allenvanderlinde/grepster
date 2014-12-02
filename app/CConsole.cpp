@@ -8,7 +8,7 @@
     Created:    11/20/14
 
     Copyright (C) 2014 by Allen Vanderlinde.
-    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -34,4 +34,7 @@ CConsole::CConsole(wxWindow* parentFrame)
 
     /* Set the console's font. */
     SetFont(wxFont(wxFontInfo(8).FaceName("Lucida Console")));
+
+    /* Setup the output stream. */
+    //std::ostream stream(this);
 }

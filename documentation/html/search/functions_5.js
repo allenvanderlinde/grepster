@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['refreshconfiguration',['RefreshConfiguration',['../class_c_app_frame.html#ad564731060174c0a7fa267221c17637d',1,'CAppFrame']]],
-  ['resource_5fid_5fto_5fstring',['RESOURCE_ID_TO_STRING',['../grepster_8cpp.html#a667b72a706bfbbfb8789a5ec7f0882ce',1,'RESOURCE_ID_TO_STRING(int id):&#160;grepster.cpp'],['../grepster_8h.html#a667b72a706bfbbfb8789a5ec7f0882ce',1,'RESOURCE_ID_TO_STRING(int id):&#160;grepster.cpp']]]
+  ['launchputty',['LaunchPuTTY',['../class_c_app_frame.html#ac19147712aadc47f1bf06930833c69eb',1,'CAppFrame']]],
+  ['loadconfiguration',['LoadConfiguration',['../class_c_app_entry.html#a42effb726d8010e801a9e17237d73cff',1,'CAppEntry']]]
 ];

@@ -8,7 +8,7 @@
     Created:    11/5/14
 
     Copyright (C) 2014 by Allen Vanderlinde.
-    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -22,6 +22,10 @@ CFrameMenubar::CFrameMenubar()
     : wxMenuBar() {
     // File menu
     m_file_menu = new wxMenu;
+    m_file_menu->Append(MENU_FUNCTION_ID_FILE_NEW,
+                        FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_NEW],
+                        FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_NEW]);
+    m_file_menu->AppendSeparator();
     m_file_menu->Append(MENU_FUNCTION_ID_FILE_QUIT,
                         FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_QUIT],
                         FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_QUIT]);

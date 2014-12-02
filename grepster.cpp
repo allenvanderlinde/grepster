@@ -8,7 +8,7 @@
     Created:    11/2/14
 
     Copyright (C) 2014 by Allen Vanderlinde.
-    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -23,7 +23,7 @@
 wxString            g_Frame_Title("grepster v");
 /* Frame control definitions. These are global. */
 CConsole*           Console;
-CClientList*        ClientList;
+CServerStack*       ServerStack;
 CGrepNotebook*      GrepNotebook;
 
 /* grepster configuration object. This is global. */

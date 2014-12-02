@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['showsplash',['ShowSplash',['../class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1',1,'CAppEntry']]],
-  ['success',['Success',['../class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366',1,'CAppInit']]]
+  ['newadministratoraccount',['NewAdministratorAccount',['../class_c_app_frame.html#a58b0fe59d6580c60cc0adc22f8897e35',1,'CAppFrame']]]
 ];

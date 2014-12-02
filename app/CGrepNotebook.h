@@ -44,6 +44,8 @@ public:
     wxAuiPaneInfo getPaneInfo() { return m_grepNotebookInf; }
     /** Launch browser for welcome page. */
     void OpenWelcomePage();
+    /** Open the welcome page when the user has closed all other open tabs. */
+    void EmptyPage(wxAuiNotebookEvent& event);
 
 private:
     /** grepster's welcome page browser. */
@@ -51,7 +53,7 @@ private:
     /** AUI pane settings structure. */
     wxAuiPaneInfo m_grepNotebookInf;
 
-    //wxDECLARE_EVENT_TABLE();
+    wxDECLARE_EVENT_TABLE();
 };
 
 #endif

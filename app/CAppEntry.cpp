@@ -8,7 +8,7 @@
     Created:    11/2/14
 
     Copyright (C) 2014 by Allen Vanderlinde.
-    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -40,7 +40,7 @@ bool CAppEntry::OnInit() {
 
     /* Load grepster's configuration. */
     if(!LoadConfiguration()) {
-        wxMessageBox("grepster's configuration was unable to be loaded. Verify grepster.xml exists and its elements are intact.", "Using default configuration", wxICON_WARNING | wxOK);
+        wxMessageBox("grepster's configuration was unable to be loaded. Verify grepster.xml exists and its elements are intact.", "Using Default Configuration", wxICON_WARNING | wxOK);
         // Write default configuration method to call here
     }
 
@@ -80,7 +80,6 @@ bool CAppEntry::ShowSplash(int resource_id) {
     CAppEntry::LoadConfiguration
 */
 bool CAppEntry::LoadConfiguration() {
-    //wxMessageBox("about to load config", "about", wxOK);
     // MAKE SURE TO UPDATE CONSOLE AFTER APPENTRY SUCCEEDS
     Configuration = new CAppInit();
     return Configuration->Success();

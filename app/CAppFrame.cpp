@@ -6,7 +6,7 @@
  */
 /*
     Copyright (C) 2014 by Allen Vanderlinde.
-    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -19,6 +19,7 @@
 
 /** grepster's primary frame's event handler calls. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
+    EVT_MENU(MENU_FUNCTION_ID_FILE_NEW, CAppFrame::NewAdministratorAccount)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::OnExit)
     EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
     EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, CAppFrame::ToggleFloating)
@@ -47,7 +48,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
 
     /* Create and initialize primary frame cont                                                                                                                                                                                                                                                                                                                                               rols. */
     Console = new CConsole(this);
-    ClientList = new CClientList(this);
+    ServerStack = new CServerStack(this);
     GrepNotebook = new CGrepNotebook(this);
     GrepNotebook->OpenWelcomePage();
 
@@ -57,7 +58,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     m_aui->SetFlags(wxAUI_MGR_ALLOW_ACTIVE_PANE | wxAUI_MGR_LIVE_RESIZE | wxAUI_MGR_ALLOW_FLOATING | wxAUI_MGR_VENETIAN_BLINDS_HINT);
 
     m_aui->AddPane(Console, Console->getPaneInfo());
-    m_aui->AddPane(ClientList, ClientList->getPaneInfo());
+    m_aui->AddPane(ServerStack, ServerStack->getPaneInfo());
     m_aui->AddPane(GrepNotebook, GrepNotebook->getPaneInfo());
 
     // Set pane colors for controls
@@ -81,16 +82,14 @@ CAppFrame::~CAppFrame() {
 }
 
 /*
-    CAppFrame::RefreshConfiguration
+    CAppFrame::NewAdministratorAccount
 */
-void CAppFrame::RefreshConfiguration() {
-    // Floating controls
-    m_aui->GetPane(Console).Floatable(Configuration->bToggleFloating);
-    m_aui->GetPane(ClientList).Floatable(Configuration->bToggleFloating);
-    m_aui->GetPane(GrepNotebook).Floatable(Configuration->bToggleFloating);
-
-    /* Write configuration changes to file. */
-    Configuration->WriteXMLData();
+void CAppFrame::NewAdministratorAccount(wxCommandEvent& event) {
+    wxPanel* panel = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxDefaultSize);
+    GrepNotebook->AddPage(panel, "New Admin Account");
+    /* Update notebook's page count. */
+    size_t nNewPageIndex = GrepNotebook->GetPageCount();
+    GrepNotebook->SetSelection(nNewPageIndex - 1);
 }
 
 /*
@@ -129,6 +128,22 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
 
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
+}
+
+/*
+    CAppFrame::RefreshConfiguration
+*/
+void CAppFrame::RefreshConfiguration() {
+    // Floating controls
+    m_aui->GetPane(Console).Floatable(Configuration->bToggleFloating);
+    m_aui->GetPane(ServerStack).Floatable(Configuration->bToggleFloating);
+    m_aui->GetPane(GrepNotebook).Floatable(Configuration->bToggleFloating);
+
+    /* Write configuration changes to file. */
+    Configuration->WriteXMLData();
+    Console->BlueText();
+    *Console << "\nSaved configuration: \"grepster.xml\"";
+    Console->BlackText();
 }
 
 /*

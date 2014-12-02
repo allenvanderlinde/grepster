@@ -1,11 +1,13 @@
+/**
+ * @file    grepster.h
+ * @author  Allen Vanderlinde
+ * @date    November 2, 2014
+ * @brief   grepster's global definitions, main classes, and variables.
+ */
 /*
-    Project: grepster
-    File: grepster.h
-
-    Desc: grepster's global definitions, main classes, and variables.
-
-    Date: 11/2/14
-    Author: Allen Vanderlinde
+    Copyright (C) 2014 by Allen Vanderlinde.
+    grepster and its source code is licensed under the GNU General Public License (GPL)
+    and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #ifndef _GREPSTER_H_
@@ -14,7 +16,7 @@
 #include <wx/wx.h>
 
 #include "app/CConsole.h"
-#include "app/CClientList.h"
+#include "app/CServerStack.h"
 #include "app/CGrepNotebook.h"
 #include "app/CAppInit.h"
 
@@ -29,10 +31,10 @@ extern wxString         g_Frame_Title;
  */
 extern CConsole*        Console;
 /**
- * This object holds the list of client's servers.
- * @brief       grepster's Client List.
+ * This object holds the list of server's configured for grepping.
+ * @brief       grepster's Server Stack.
  */
-extern CClientList*     ClientList;
+extern CServerStack*     ServerStack;
 /**
  * This object holds the user's book of grep session pages.
  * @brief       grepster's grep Session Notebook.
@@ -72,15 +74,15 @@ wxString RESOURCE_ID_TO_STRING(int id);
 /** Default height (pixels) of grepster's console control used when floating. */
 #define CONSOLE_DEFAULT_HEIGHT      140
 
-/* Client list control settings. */
-/** grepster's client list control ID. */
-#define CLIENT_LIST_ID              1001
-/** grepster's client list's local name for wxWidgets. */
-#define CLIENT_LIST_NAME            "client_tree"
-/** grepster's client list's control title. */
-#define CLIENT_LIST_CTRL_TITLE      "Client List"
-/** Default width (pixels) of grepster's console control used when floating. */
-#define CLIENT_LIST_DEFAULT_WIDTH   200
+/* Server stack control settings. */
+/** grepster's server stack's control ID. */
+#define SERVER_STACK_ID              1001
+/** grepster's server stack's local name for wxWidgets. */
+#define SERVER_STACK_NAME            "server_stack"
+/** grepster's server stack's control title. */
+#define SERVER_STACK_CTRL_TITLE      "Server Stacks"
+/** Default width (pixels) of grepster's tree list control used when floating. */
+#define SERVER_STACK_DEFAULT_WIDTH   200
 
 /* Grep Notebook control settings. */
 /** grepster's AUI notebook control ID. */

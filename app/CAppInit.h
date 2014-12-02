@@ -6,7 +6,7 @@
  */
 /*
     Copyright (C) 2014 by Allen Vanderlinde.
-    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -14,6 +14,12 @@
 #define _CAPPINIT_H_
 
 #include "../pugixml-1.4/pugixml.hpp"
+
+/** XML global definitions. */
+#define XML_CONFIGURATION_NODE_LABEL        L"grepster"
+#define XML_ELEMENT_LABEL                   L"setting"
+#define XML_ID_LABEL                        L"id"
+#define XML_VALUE_LABEL                     L"value"
 
 /**
  * This object opens grepster's XML configuration and populates the configuration structure with its settings.
@@ -51,9 +57,11 @@ private:
      */
     void ApplyXMLData();
 
-    /** XML file handle. */
+    /** XML file handle for reading. */
     pugi::xml_document m_XMLFile;
-    /** pugixml's parsing node used to read XML data. */
+    /** XML file handle for writing. */
+    pugi::xml_document m_XMLSaveFile;
+    /** A pugixml parsing node used to read XML data. */
     pugi::xml_node m_XMLSettings;
 
     /** Flag for successful loading of configuration. */

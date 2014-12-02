@@ -110,6 +110,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ebcde58e8445b9a3f1e378c201fd9ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_console.html#a1ebcde58e8445b9a3f1e378c201fd9ce">CConsole</a> (wxWindow *parentFrame)</td></tr>
 <tr class="memdesc:a1ebcde58e8445b9a3f1e378c201fd9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which creates the text control console.  <a href="#a1ebcde58e8445b9a3f1e378c201fd9ce">More...</a><br /></td></tr>
 <tr class="separator:a1ebcde58e8445b9a3f1e378c201fd9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b2284812826833da3f11b51dfa9eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_console.html#a41b2284812826833da3f11b51dfa9eac">BlueText</a> ()</td></tr>
+<tr class="memdesc:a41b2284812826833da3f11b51dfa9eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the text color to blue.  <a href="#a41b2284812826833da3f11b51dfa9eac">More...</a><br /></td></tr>
+<tr class="separator:a41b2284812826833da3f11b51dfa9eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b4642332d18daa2288f97658f85c02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_console.html#ae7b4642332d18daa2288f97658f85c02">BlackText</a> ()</td></tr>
+<tr class="memdesc:ae7b4642332d18daa2288f97658f85c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the text color to default black.  <a href="#ae7b4642332d18daa2288f97658f85c02">More...</a><br /></td></tr>
+<tr class="separator:ae7b4642332d18daa2288f97658f85c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5532027582274143636d13cc234ff6c"><td class="memItemLeft" align="right" valign="top">wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_console.html#ab5532027582274143636d13cc234ff6c">getPaneInfo</a> ()</td></tr>
 <tr class="separator:ab5532027582274143636d13cc234ff6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -120,8 +126,8 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for grepster's console. </p>
-<p>This object creates a wxTextCtrl which represents grepster's console for logging progress and returning results. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p>This object creates a wxTextCtrl which represents grepster's console for logging progress and returning results. Due to wxTextCtrl's flexibility, you can use this like a standard iostream object by referencing its pointer. </p><div class="fragment"><div class="line">*<a class="code" href="grepster_8cpp.html#a034ab9689fbe23cc500e603f1c0cf19d">Console</a> &lt;&lt; <span class="stringliteral">&quot;\nHello, world!&quot;</span>;</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a1ebcde58e8445b9a3f1e378c201fd9ce"></a>
 <div class="memitem">
 <div class="memproto">
@@ -147,6 +153,56 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae7b4642332d18daa2288f97658f85c02"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CConsole::BlackText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the text color to default black. </p>
+
+</div>
+</div>
+<a class="anchor" id="a41b2284812826833da3f11b51dfa9eac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CConsole::BlueText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the text color to blue. </p>
+
+</div>
+</div>
 <a class="anchor" id="ab5532027582274143636d13cc234ff6c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -200,7 +256,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 28 2014 18:48:09 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 09:29:42 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

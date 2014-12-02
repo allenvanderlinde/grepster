@@ -8,7 +8,7 @@
     Created:    11/21/14
 
     Copyright (C) 2014 by Allen Vanderlinde.
-    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -16,6 +16,11 @@
 #include "CGrepNotebook.h"
 
 #include "CAppFrame.h"
+
+/* Construct the Grep Notebook's event table. */
+wxBEGIN_EVENT_TABLE(CGrepNotebook, wxAuiNotebook)
+    EVT_AUINOTEBOOK_PAGE_CLOSED(wxID_ANY, CGrepNotebook::EmptyPage)
+wxEND_EVENT_TABLE()
 
 /*
     CGrepNotebook::CGrepNotebook(wxWindow*)
@@ -38,6 +43,13 @@ CGrepNotebook::CGrepNotebook(wxWindow* parentFrame)
     art->SetColour(WXCOLOR_LT_BLUE);
     art->SetActiveColour(WXCOLOR_LT_BLUE);
     SetArtProvider(art);
+}
+
+/*
+    CGrepNotebook::EmptyPage(wxCommandEvent&)
+*/
+void CGrepNotebook::EmptyPage(wxAuiNotebookEvent& event) {
+    if(GetPageCount() < 1) OpenWelcomePage();
 }
 
 /*

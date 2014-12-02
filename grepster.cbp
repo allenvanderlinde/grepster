@@ -91,14 +91,14 @@
 		<Unit filename="app/CAppFrame.h" />
 		<Unit filename="app/CAppInit.cpp" />
 		<Unit filename="app/CAppInit.h" />
-		<Unit filename="app/CClientList.cpp" />
-		<Unit filename="app/CClientList.h" />
 		<Unit filename="app/CConsole.cpp" />
 		<Unit filename="app/CConsole.h" />
 		<Unit filename="app/CFrameMenubar.cpp" />
 		<Unit filename="app/CFrameMenubar.h" />
 		<Unit filename="app/CGrepNotebook.cpp" />
 		<Unit filename="app/CGrepNotebook.h" />
+		<Unit filename="app/CServerStack.cpp" />
+		<Unit filename="app/CServerStack.h" />
 		<Unit filename="grepster.cpp" />
 		<Unit filename="grepster.h" />
 		<Unit filename="pugixml-1.4/pugiconfig.hpp" />
@@ -108,6 +108,7 @@
 			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Unit filename="resources/grepster_rc.h" />
+		<Unit filename="session/CAdminAccount.h" />
 		<Unit filename="version.h" />
 		<Unit filename="webviewer/CWebViewer.cpp" />
 		<Unit filename="webviewer/CWebViewer.h" />

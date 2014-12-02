@@ -6,7 +6,7 @@
  */
 /*
     Copyright (C) 2014 by Allen Vanderlinde.
-    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -75,17 +75,23 @@ private:
      */
     void RefreshConfiguration();
 
-    /* Options menu methods. */
+    /* File menu methods. */
     /**
-     * @brief       Toggle floating controls for user's current session and configuration.
+     * @brief       Create a new administrator account.
      */
-    void ToggleFloating(wxCommandEvent& event);
+    void NewAdministratorAccount(wxCommandEvent& event);
 
     /* Tools menu methods. */
     /**
      * @brief       Launch PuTTY from within grepster.
      */
     void LaunchPuTTY(wxCommandEvent& event);
+
+    /* Options menu methods. */
+    /**
+     * @brief       Toggle floating controls for user's current session and configuration.
+     */
+    void ToggleFloating(wxCommandEvent& event);
 
     /* Standard frame functions. */
     /**

@@ -1,2 +1,4 @@
 <?xml version="1.0"?>
-<setting id="bToggleFloating" value="true" />
+<grepster>
+	<setting id="bToggleFloating" value="false" />
+</grepster>

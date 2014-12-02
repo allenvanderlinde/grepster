@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['showsplash',['ShowSplash',['../class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1',1,'CAppEntry']]],
-  ['splash_5fduration',['SPLASH_DURATION',['../_c_app_entry_8h.html#acbfc704b0fe136fd8de9d48da09f5b28',1,'CAppEntry.h']]],
-  ['statusbar_5fnote_5fwidth',['STATUSBAR_NOTE_WIDTH',['../_c_app_frame_8h.html#a6873edc266d9a65580a0cbc4228d6135',1,'CAppFrame.h']]],
-  ['statusbar_5fstring_5fid_5fabout',['STATUSBAR_STRING_ID_ABOUT',['../_c_frame_menubar_8h.html#a3bbfca883d79d914555bb24ad73d83bcaed28136accb0c1d641b49ca407037556',1,'CFrameMenubar.h']]],
-  ['statusbar_5fstring_5fid_5flaunch_5fputty',['STATUSBAR_STRING_ID_LAUNCH_PUTTY',['../_c_frame_menubar_8h.html#a3bbfca883d79d914555bb24ad73d83bca97e10f31d6a99fb325a27a9fb4aaf3bd',1,'CFrameMenubar.h']]],
-  ['statusbar_5fstring_5fid_5fquit',['STATUSBAR_STRING_ID_QUIT',['../_c_frame_menubar_8h.html#a3bbfca883d79d914555bb24ad73d83bca6a467bd350ba76d5f8e0b0da52be591b',1,'CFrameMenubar.h']]],
-  ['statusbar_5fstring_5fid_5ftoggle_5fdockable',['STATUSBAR_STRING_ID_TOGGLE_DOCKABLE',['../_c_frame_menubar_8h.html#a3bbfca883d79d914555bb24ad73d83bca0883f5e1a510ac8e3192182bbafd9291',1,'CFrameMenubar.h']]],
-  ['statusbar_5fwelcome',['STATUSBAR_WELCOME',['../_c_app_frame_8h.html#a7eaedd0a5a26a658a7b9f3362c60e122',1,'CAppFrame.h']]],
-  ['success',['Success',['../class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366',1,'CAppInit']]]
+  ['refreshconfiguration',['RefreshConfiguration',['../class_c_app_frame.html#ad564731060174c0a7fa267221c17637d',1,'CAppFrame']]],
+  ['resid_5fpng_5fabout',['RESID_PNG_ABOUT',['../grepster__rc_8h.html#af17a2755e08232ebacc78edf545d5448',1,'grepster_rc.h']]],
+  ['resid_5fpng_5fsplash',['RESID_PNG_SPLASH',['../grepster__rc_8h.html#a806b6e806a03c79e28cb5245e5401eec',1,'grepster_rc.h']]],
+  ['resource_5fid_5fto_5fstring',['RESOURCE_ID_TO_STRING',['../grepster_8cpp.html#a667b72a706bfbbfb8789a5ec7f0882ce',1,'RESOURCE_ID_TO_STRING(int id):&#160;grepster.cpp'],['../grepster_8h.html#a667b72a706bfbbfb8789a5ec7f0882ce',1,'RESOURCE_ID_TO_STRING(int id):&#160;grepster.cpp']]]
 ];

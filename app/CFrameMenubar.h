@@ -6,7 +6,7 @@
  */
 /*
     Copyright (C) 2014 by Allen Vanderlinde.
-    Songbird and its source code is licensed under the GNU General Public License (GPL)
+    grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -22,14 +22,16 @@ const wxString FRAME_MENUBAR_STRINGS[]      = {"&File",
                                                "&Options",
                                                "&Help"};
 /** Menu bar menu item strings. */
-const wxString FRAME_MENU_STRINGS[]         = {"&Quit\tCtrl+Q",
+const wxString FRAME_MENU_STRINGS[]         = {"&New Administrator Account...\tCtrl+Shift+N",
+                                               "&Quit\tCtrl+Q",
                                                "&Launch PuTTY\tCtrl+P",
                                                "Toggle Floating Controls",
                                                "About grepster..."};
 /** Status bar strings. These are the labels displayed for each menu item. */
-const wxString FRAME_STATUSBAR_STRINGS[]    = {"Quit grepster.",
+const wxString FRAME_STATUSBAR_STRINGS[]    = {"Create a new administrator account so that you can store your server stacks for easy access.",
+                                               "Quit grepster.",
                                                "Launch PuTTY.",
-                                               "Allow the client list, console, and notebook to be un-docked from grepster.",
+                                               "Allow the server stack and console to be un-docked from grepster.",
                                                "About grepster."};
 
 /** GUI frame menu string IDs. */
@@ -42,7 +44,8 @@ enum e_FrameMenuStringIDs {
 
 /** GUI frame menu item string IDs. */
 enum e_MenuItemStringIDs {
-    FRAME_MENU_STRING_ID_QUIT = 0,
+    FRAME_MENU_STRING_ID_NEW = 0,
+    FRAME_MENU_STRING_ID_QUIT,
     FRAME_MENU_STRING_ID_LAUNCH_PUTTY,
     FRAME_MENU_STRING_ID_TOGGLE_DOCKABLE,
     FRAME_MENU_STRING_ID_ABOUT
@@ -50,7 +53,8 @@ enum e_MenuItemStringIDs {
 
 /** Status bar string IDs. */
 enum e_StatusbarStringIDs {
-    STATUSBAR_STRING_ID_QUIT = 0,
+    STATUSBAR_STRING_ID_NEW = 0,
+    STATUSBAR_STRING_ID_QUIT,
     STATUSBAR_STRING_ID_LAUNCH_PUTTY,
     STATUSBAR_STRING_ID_TOGGLE_DOCKABLE,
     STATUSBAR_STRING_ID_ABOUT
@@ -60,7 +64,8 @@ enum e_StatusbarStringIDs {
 
 /** Menu bar item IDs */
 enum e_MenuFunctionIDs {
-    MENU_FUNCTION_ID_FILE_QUIT = 9000,
+    MENU_FUNCTION_ID_FILE_NEW = 9000,
+    MENU_FUNCTION_ID_FILE_QUIT,
     MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY,
     MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE,
     MENU_FUNCTION_ID_HELP_ABOUT
