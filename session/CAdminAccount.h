@@ -13,6 +13,25 @@
 #ifndef _CADMINACCOUNT_H_
 #define _CADMINACCOUNT_H_
 
+#include <wx/wx.h>
 
+/**
+ * This object represents an administrator's user account which houses the user-defined server stacks for each grepping session.
+ * Administrator account information is written/read from a single representative XML file.
+ *
+ * @class   CAdminAccount
+ * @brief   Class definition for grepster's administrator accounts.
+ */
+ class CAdminAccount {
+ public:
+    /**
+     * @brief       Default constructor which creates administrator account object.
+     * @param[in]   path The path used to load the administrator's account information from file. This is passed from grepster's configuration.
+     */
+     CAdminAccount(wxString path);
+
+ private:
+
+ };
 
 #endif // _CADMINACCOUNT_H_

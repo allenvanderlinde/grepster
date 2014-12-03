@@ -21,39 +21,39 @@
 CFrameMenubar::CFrameMenubar()
     : wxMenuBar() {
     // File menu
-    m_file_menu = new wxMenu;
-    m_file_menu->Append(MENU_FUNCTION_ID_FILE_NEW,
+    m_pMenuFile = new wxMenu;
+    m_pMenuFile->Append(MENU_FUNCTION_ID_FILE_NEW,
                         FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_NEW],
                         FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_NEW]);
-    m_file_menu->AppendSeparator();
-    m_file_menu->Append(MENU_FUNCTION_ID_FILE_QUIT,
+    m_pMenuFile->AppendSeparator();
+    m_pMenuFile->Append(MENU_FUNCTION_ID_FILE_QUIT,
                         FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_QUIT],
                         FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_QUIT]);
 
     // Tools menu
-    m_tools_menu = new wxMenu;
-    m_tools_menu->Append(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY,
+    m_pMenuTools = new wxMenu;
+    m_pMenuTools->Append(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY,
                          FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_LAUNCH_PUTTY],
                          FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_LAUNCH_PUTTY]);
 
     // Options menu
-    m_options_menu = new wxMenu;
-    m_options_menu->Append(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE,
+    m_pMenuOptions = new wxMenu;
+    m_pMenuOptions->Append(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE,
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_TOGGLE_DOCKABLE],
                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_TOGGLE_DOCKABLE],
                            wxITEM_CHECK);
     /* Check activated items set from configuration. */
-    m_options_menu->Check(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, Configuration->bToggleFloating);
+    m_pMenuOptions->Check(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, Configuration->bToggleFloating);
 
     // Help menu
-    m_help_menu = new wxMenu;
-    m_help_menu->Append(MENU_FUNCTION_ID_HELP_ABOUT,
+    m_pMenuHelp = new wxMenu;
+    m_pMenuHelp->Append(MENU_FUNCTION_ID_HELP_ABOUT,
                         FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_ABOUT],
                         FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_ABOUT]);
 
     // Add menus to menu bar
-    Append(m_file_menu, FRAME_MENUBAR_STRINGS[FRAME_ID_FILE_MENU]);
-    Append(m_tools_menu, FRAME_MENUBAR_STRINGS[FRAME_ID_TOOLS_MENU]);
-    Append(m_options_menu, FRAME_MENUBAR_STRINGS[FRAME_ID_OPTIONS_MENU]);
-    Append(m_help_menu, FRAME_MENUBAR_STRINGS[FRAME_ID_HELP_MENU]);
+    Append(m_pMenuFile, FRAME_MENUBAR_STRINGS[FRAME_ID_FILE_MENU]);
+    Append(m_pMenuTools, FRAME_MENUBAR_STRINGS[FRAME_ID_TOOLS_MENU]);
+    Append(m_pMenuOptions, FRAME_MENUBAR_STRINGS[FRAME_ID_OPTIONS_MENU]);
+    Append(m_pMenuHelp, FRAME_MENUBAR_STRINGS[FRAME_ID_HELP_MENU]);
 }

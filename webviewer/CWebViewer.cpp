@@ -21,13 +21,12 @@
 */
 CWebViewer::CWebViewer(wxWindow* parentFrame) {
     /* Initialize the browser. */
-    m_browser = wxWebView::New(parentFrame,
-                               BROWSER_ID,
-                               "file:///C:/grepster/welcome.html",
-                               wxDefaultPosition,
-                               wxDefaultSize,
-                               wxWebViewBackendIE, // This uses the Microsoft Internet Explorer browser back-end
-                               0,
-                               wxWebViewNameStr);
-
+    m_pBrowser = wxWebView::New(parentFrame,
+                                BROWSER_ID,
+                                "file:///C:/grepster/welcome.html",
+                                wxDefaultPosition,
+                                wxDefaultSize,
+                                wxWebViewBackendIE, // This uses the Microsoft Internet Explorer browser back-end
+                                0,
+                                wxWebViewNameStr);
 }

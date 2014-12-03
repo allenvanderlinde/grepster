@@ -86,13 +86,13 @@ public:
 
 private:
     /** File menu. */
-    wxMenu* m_file_menu;
+    wxMenu* m_pMenuFile;
     /** Tools menu. */
-    wxMenu* m_tools_menu;
+    wxMenu* m_pMenuTools;
     /** Options menu. */
-    wxMenu* m_options_menu;
+    wxMenu* m_pMenuOptions;
     /** Help menu. */
-    wxMenu* m_help_menu;
+    wxMenu* m_pMenuHelp;
 };
 
 #endif

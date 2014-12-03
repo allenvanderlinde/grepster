@@ -23,7 +23,7 @@
 #include "version.h"
 
 /** grepster's frame globals. */
-extern wxString         g_Frame_Title;
+extern wxString         g_szFrameTitle;
 
 /**
  * This object reports grepster's activity to a central text control for the user.

@@ -36,14 +36,14 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     SetBackgroundColour(BG_COLOR);
 
     /* Create menu bar. */
-    m_menubar = new CFrameMenubar;
-    SetMenuBar(m_menubar);
+    m_pMenubar = new CFrameMenubar;
+    SetMenuBar(m_pMenubar);
 
     /* Configure and initialize status bar. */
     int iPaneWidths[]   =   { wxDefaultSize.GetWidth(), STATUSBAR_NOTE_WIDTH };
-    m_statusbar = new wxStatusBar(this);
-    m_statusbar->SetFieldsCount((sizeof(iPaneWidths) / sizeof(int)), iPaneWidths);
-    SetStatusBar(m_statusbar);
+    m_pStatusbar = new wxStatusBar(this);
+    m_pStatusbar->SetFieldsCount((sizeof(iPaneWidths) / sizeof(int)), iPaneWidths);
+    SetStatusBar(m_pStatusbar);
     SetStatusText(STATUSBAR_WELCOME);
 
     /* Create and initialize primary frame cont                                                                                                                                                                                                                                                                                                                                               rols. */
@@ -53,22 +53,22 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     GrepNotebook->OpenWelcomePage();
 
     /* Create wxWidgets AUI object for managing frame controls. */
-    m_aui = new wxAuiManager(this);
+    m_pAui = new wxAuiManager(this);
     // Set AUI flags for display
-    m_aui->SetFlags(wxAUI_MGR_ALLOW_ACTIVE_PANE | wxAUI_MGR_LIVE_RESIZE | wxAUI_MGR_ALLOW_FLOATING | wxAUI_MGR_VENETIAN_BLINDS_HINT);
+    m_pAui->SetFlags(wxAUI_MGR_ALLOW_ACTIVE_PANE | wxAUI_MGR_LIVE_RESIZE | wxAUI_MGR_ALLOW_FLOATING | wxAUI_MGR_VENETIAN_BLINDS_HINT);
 
-    m_aui->AddPane(Console, Console->getPaneInfo());
-    m_aui->AddPane(ServerStack, ServerStack->getPaneInfo());
-    m_aui->AddPane(GrepNotebook, GrepNotebook->getPaneInfo());
+    m_pAui->AddPane(Console, Console->getPaneInfo());
+    m_pAui->AddPane(ServerStack, ServerStack->getPaneInfo());
+    m_pAui->AddPane(GrepNotebook, GrepNotebook->getPaneInfo());
 
     // Set pane colors for controls
-    wxAuiDockArt* art = m_aui->GetArtProvider();
+    wxAuiDockArt* art = m_pAui->GetArtProvider();
     art->SetColour(wxAUI_DOCKART_ACTIVE_CAPTION_COLOUR, WXCOLOR_LT_BLUE);
     art->SetColour(wxAUI_DOCKART_ACTIVE_CAPTION_GRADIENT_COLOUR, WXCOLOR_DK_BLUE);
     art->SetColour(wxAUI_DOCKART_INACTIVE_CAPTION_COLOUR, WXCOLOR_LT_BLUE);
     art->SetColour(wxAUI_DOCKART_INACTIVE_CAPTION_GRADIENT_COLOUR, WXCOLOR_DK_BLUE);
 
-    m_aui->Update();
+    m_pAui->Update();
 
     /* Set grepster's initial configuration. */
     RefreshConfiguration();
@@ -78,7 +78,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     CAppFrame::~CAppFrame
 */
 CAppFrame::~CAppFrame() {
-    m_aui->UnInit();
+    m_pAui->UnInit();
 }
 
 /*
@@ -135,9 +135,9 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
 */
 void CAppFrame::RefreshConfiguration() {
     // Floating controls
-    m_aui->GetPane(Console).Floatable(Configuration->bToggleFloating);
-    m_aui->GetPane(ServerStack).Floatable(Configuration->bToggleFloating);
-    m_aui->GetPane(GrepNotebook).Floatable(Configuration->bToggleFloating);
+    m_pAui->GetPane(Console).Floatable(Configuration->bToggleFloating);
+    m_pAui->GetPane(ServerStack).Floatable(Configuration->bToggleFloating);
+    m_pAui->GetPane(GrepNotebook).Floatable(Configuration->bToggleFloating);
 
     /* Write configuration changes to file. */
     Configuration->WriteXMLData();
@@ -158,7 +158,7 @@ void CAppFrame::OnExit(wxCommandEvent& event) {
     CAppFrame::OnAbout
 */
 void CAppFrame::OnAbout(wxCommandEvent& event) {
-    wxDialog* dialog = new wxDialog(this, wxID_ANY, g_Frame_Title, wxDefaultPosition, wxSize(400, 374));
+    wxDialog* dialog = new wxDialog(this, wxID_ANY, g_szFrameTitle, wxDefaultPosition, wxSize(400, 374));
     wxBoxSizer* dialog_sizer = new wxBoxSizer(wxVERTICAL);
     wxStaticBoxSizer* dialog_static_sizer = new wxStaticBoxSizer(wxVERTICAL, dialog, "About grepster");
 

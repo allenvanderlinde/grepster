@@ -20,21 +20,18 @@
     CConsole::CConsole(wxWindow*)
 */
 CConsole::CConsole(wxWindow* parentFrame)
-    : wxTextCtrl(parentFrame, CONSOLE_ID, g_Frame_Title + " initialized successfully.\nReady to grep.", wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE | wxTE_RICH2 | wxTE_READONLY) {
+    : wxTextCtrl(parentFrame, CONSOLE_ID, g_szFrameTitle + " initialized successfully.\nReady to grep.", wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE | wxTE_RICH2 | wxTE_READONLY) {
     /* Configure console's display settings. */
-    m_consoleInf.PaneBorder(true);
-    m_consoleInf.BestSize(FRAME_WIDTH, CONSOLE_DEFAULT_HEIGHT);
-    m_consoleInf.Name(CONSOLE_NAME);
-    m_consoleInf.Caption(CONSOLE_CTRL_TITLE);
-    m_consoleInf.CaptionVisible();
-    m_consoleInf.Bottom();
-    m_consoleInf.CloseButton(false);
-    m_consoleInf.Floatable(Configuration->bToggleFloating);
-    m_consoleInf.Show(true);
+    m_consoleInf_t.PaneBorder(true);
+    m_consoleInf_t.BestSize(FRAME_WIDTH, CONSOLE_DEFAULT_HEIGHT);
+    m_consoleInf_t.Name(CONSOLE_NAME);
+    m_consoleInf_t.Caption(CONSOLE_CTRL_TITLE);
+    m_consoleInf_t.CaptionVisible();
+    m_consoleInf_t.Bottom();
+    m_consoleInf_t.CloseButton(false);
+    m_consoleInf_t.Floatable(Configuration->bToggleFloating);
+    m_consoleInf_t.Show(true);
 
     /* Set the console's font. */
     SetFont(wxFont(wxFontInfo(8).FaceName("Lucida Console")));
-
-    /* Setup the output stream. */
-    //std::ostream stream(this);
 }

@@ -43,11 +43,11 @@ public:
     void BlackText() { SetDefaultStyle(wxTextAttr(*wxBLACK)); }
 
     /** Return control's pane information. */
-    wxAuiPaneInfo getPaneInfo() { return m_consoleInf; }
+    wxAuiPaneInfo getPaneInfo() { return m_consoleInf_t; }
 
 private:
     /** AUI pane settings structure. */
-    wxAuiPaneInfo m_consoleInf;
+    wxAuiPaneInfo m_consoleInf_t;
 
     //wxDECLARE_EVENT_TABLE();
 };

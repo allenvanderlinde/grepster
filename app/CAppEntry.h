@@ -36,7 +36,7 @@ public:
 
 private:
     /** grepster's primary frame. */
-    CAppFrame* m_grepster_frame;
+    CAppFrame* m_pGrepsterFrame;
 
     /**
      * @brief       Load grepster's configuration from file.

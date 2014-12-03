@@ -15,6 +15,8 @@
 
 #include "../pugixml-1.4/pugixml.hpp"
 
+#include "../session/CAdminAccount.h"
+
 /** XML global definitions. */
 #define XML_CONFIGURATION_NODE_LABEL        L"grepster"
 #define XML_ELEMENT_LABEL                   L"setting"
@@ -57,12 +59,18 @@ private:
      */
     void ApplyXMLData();
 
+    /** Administrator account loaded upon entry. */
+    CAdminAccount* m_pAdministrator;
+
     /** XML file handle for reading. */
     pugi::xml_document m_XMLFile;
     /** XML file handle for writing. */
     pugi::xml_document m_XMLSaveFile;
     /** A pugixml parsing node used to read XML data. */
     pugi::xml_node m_XMLSettings;
+
+    /** Path to administrator account XML file. */
+    wxString m_szPathToAdminAccount;
 
     /** Flag for successful loading of configuration. */
     bool m_bConfigurationLoadedSuccessfully;

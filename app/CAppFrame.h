@@ -63,12 +63,12 @@ public:
 
 private:
     /** Frame's menu bar. */
-    CFrameMenubar* m_menubar;
+    CFrameMenubar* m_pMenubar;
     /** Frame's status bar. */
-    wxStatusBar* m_statusbar;
+    wxStatusBar* m_pStatusbar;
 
     /** wxWidgets Advanced UI Manager. */
-    wxAuiManager* m_aui;
+    wxAuiManager* m_pAui;
 
     /**
      * @brief       Refreshes grepster's configuration when any change is made to update user's interface.

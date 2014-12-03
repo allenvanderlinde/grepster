@@ -22,17 +22,17 @@
 CServerStack::CServerStack(wxWindow* parentFrame)
     : wxTreeCtrl(parentFrame, SERVER_STACK_ID, wxDefaultPosition, wxDefaultSize, wxTR_DEFAULT_STYLE | wxTR_HIDE_ROOT) {
     /* Configure server stack's display settings. */
-    m_serverStackInf.PaneBorder(true);
-    m_serverStackInf.BestSize(SERVER_STACK_DEFAULT_WIDTH, FRAME_HEIGHT);
-    m_serverStackInf.Name(SERVER_STACK_NAME);
-    m_serverStackInf.Caption(SERVER_STACK_CTRL_TITLE);
-    m_serverStackInf.CaptionVisible();
-    m_serverStackInf.Left();
-    m_serverStackInf.CloseButton(false);
-    m_serverStackInf.Floatable(Configuration->bToggleFloating);
-    m_serverStackInf.Show(true);
+    m_serverStackInf_t.PaneBorder(true);
+    m_serverStackInf_t.BestSize(SERVER_STACK_DEFAULT_WIDTH, FRAME_HEIGHT);
+    m_serverStackInf_t.Name(SERVER_STACK_NAME);
+    m_serverStackInf_t.Caption(SERVER_STACK_CTRL_TITLE);
+    m_serverStackInf_t.CaptionVisible();
+    m_serverStackInf_t.Left();
+    m_serverStackInf_t.CloseButton(false);
+    m_serverStackInf_t.Floatable(Configuration->bToggleFloating);
+    m_serverStackInf_t.Show(true);
 
     /* Initialize server stack from administrator account. */
-    m_root = AddRoot(wxEmptyString);
-    m_admin_item = AppendItem(m_root, SERVER_STACK_DEFAULT_LABEL);
+    m_treeRoot = AddRoot(wxEmptyString);
+    m_treeAdminItem = AppendItem(m_treeRoot, SERVER_STACK_DEFAULT_LABEL);
 }

@@ -35,15 +35,15 @@ public:
     CServerStack(wxWindow* parentFrame);
 
     /** Return control's pane information. */
-    wxAuiPaneInfo getPaneInfo() { return m_serverStackInf; }
+    wxAuiPaneInfo getPaneInfo() { return m_serverStackInf_t; }
 
 private:
     /** wxTreeCtrl root item. */
-    wxTreeItemId m_root;
+    wxTreeItemId m_treeRoot;
     /** wxTreeCtrl administrator item populated with the user's server stacks. */
-    wxTreeItemId m_admin_item;
+    wxTreeItemId m_treeAdminItem;
     /** AUI pane settings structure. */
-    wxAuiPaneInfo m_serverStackInf;
+    wxAuiPaneInfo m_serverStackInf_t;
 
     //wxDECLARE_EVENT_TABLE();
 };

@@ -108,6 +108,7 @@
 			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Unit filename="resources/grepster_rc.h" />
+		<Unit filename="session/CAdminAccount.cpp" />
 		<Unit filename="session/CAdminAccount.h" />
 		<Unit filename="version.h" />
 		<Unit filename="webviewer/CWebViewer.cpp" />

@@ -37,11 +37,11 @@ public:
     /**
      * @brief       Get the web viewer object.
      */
-    wxWebView* getBrowser() { return m_browser; }
+    wxWebView* getBrowser() { return m_pBrowser; }
 
 private:
     /** grepster's wxWidgets web viewer. */
-    wxWebView* m_browser;
+    wxWebView* m_pBrowser;
 };
 
 #endif // _CWEBVIEWER_H_

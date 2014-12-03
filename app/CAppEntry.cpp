@@ -27,7 +27,7 @@ bool CAppEntry::OnInit() {
     /* Initial set-up. */
     wxLog::SetLogLevel(0);  // Suppress wxWidgets from reporting color profile errors for certain image media
     wxImage::AddHandler(new wxPNGHandler);  // Enable wxWidget's bitmap-as-PNG capability
-    g_Frame_Title += AutoVersion::FULLVERSION_STRING;
+    g_szFrameTitle += AutoVersion::FULLVERSION_STRING;
 
     /* Run splash screen. */
     if(DISPLAY_SPLASH) {
@@ -44,11 +44,11 @@ bool CAppEntry::OnInit() {
         // Write default configuration method to call here
     }
 
-    m_grepster_frame = new CAppFrame(g_Frame_Title, wxPoint(50, 50), wxSize(FRAME_WIDTH, FRAME_HEIGHT));
+    m_pGrepsterFrame = new CAppFrame(g_szFrameTitle, wxPoint(50, 50), wxSize(FRAME_WIDTH, FRAME_HEIGHT));
     /* Set grepster's window icon. */
-    m_grepster_frame->SetIcon(wxICON(aaaaappicon));
-    SetTopWindow(m_grepster_frame);
-    m_grepster_frame->Show(true);
+    m_pGrepsterFrame->SetIcon(wxICON(aaaaappicon));
+    SetTopWindow(m_pGrepsterFrame);
+    m_pGrepsterFrame->Show(true);
 
     return true;
 }

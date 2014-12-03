@@ -41,7 +41,7 @@ public:
     CGrepNotebook(wxWindow* parentFrame);
 
     /** Return control's pane information. */
-    wxAuiPaneInfo getPaneInfo() { return m_grepNotebookInf; }
+    wxAuiPaneInfo getPaneInfo() { return m_grepNotebookInf_t; }
     /** Launch browser for welcome page. */
     void OpenWelcomePage();
     /** Open the welcome page when the user has closed all other open tabs. */
@@ -49,9 +49,9 @@ public:
 
 private:
     /** grepster's welcome page browser. */
-    CWebViewer* m_browser;
+    CWebViewer* m_pBrowser;
     /** AUI pane settings structure. */
-    wxAuiPaneInfo m_grepNotebookInf;
+    wxAuiPaneInfo m_grepNotebookInf_t;
 
     wxDECLARE_EVENT_TABLE();
 };
