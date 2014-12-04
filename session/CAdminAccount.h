@@ -23,15 +23,21 @@
  * @brief   Class definition for grepster's administrator accounts.
  */
  class CAdminAccount {
- public:
+ public:'
     /**
      * @brief       Default constructor which creates administrator account object.
      * @param[in]   path The path used to load the administrator's account information from file. This is passed from grepster's configuration.
      */
-     CAdminAccount(wxString path);
+    CAdminAccount(wxString path);
+
+    /**
+      * @brief      Return the path to the XML configuration file for the administrator account.
+      */
+    wzString
 
  private:
-
+    /** Path to the user's administrator account configuration for initialization. */
+    wxString m_szPath;
  };
 
 #endif // _CADMINACCOUNT_H_

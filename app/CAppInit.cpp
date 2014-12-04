@@ -34,6 +34,8 @@ CAppInit::CAppInit() {
 
     /* Apply grepster's XML configuration to application. */
     ApplyXMLData();
+
+    m_pAdministrator = new CAdminAccount(m_szPathToAdminAccount);
 }
 
 /*
@@ -43,6 +45,12 @@ void CAppInit::ApplyXMLData() {
     /* Crawl through configuration file and populate CAppInit's member settings and flags with values. */
     // id and value are used for each element data read from file
     wxString id, value;
+
+    // Administrator account
+    id = m_XMLSettings.attribute(L"id").value();
+    value = m_XMLSettings.attribute(L"value").value();
+    m_szPathToAdminAccount = value;
+    m_XMLSettings = m_XMLSettings.next_sibling();
 
     // Floating control
     id = m_XMLSettings.attribute(L"id").value();
@@ -59,10 +67,15 @@ void CAppInit::ApplyXMLData() {
 void CAppInit::WriteXMLData() {
     // Reset the file
     m_XMLSaveFile.reset();
+    pugi::xml_node param;   // XML node used to declare configuration parameters (elements)
 
-    // Add the configuration node
+    // Append grepster's configuration element label
     pugi::xml_node node = m_XMLSaveFile.append_child(XML_CONFIGURATION_NODE_LABEL);
-    pugi::xml_node param;
+
+    // Write the administrator account info
+    param = node.append_child(XML_ELEMENT_LABEL);
+    param.append_attribute(XML_ID_LABEL) = L"admin.config.path";
+    param.append_attribute(XML_VALUE_LABEL) = m_pAdministrator->
 
     // Floating controls
     param = node.append_child(XML_ELEMENT_LABEL);
