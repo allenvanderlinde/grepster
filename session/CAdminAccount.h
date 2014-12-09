@@ -15,6 +15,8 @@
 
 #include <wx/wx.h>
 
+#include "../pugixml-1.4/pugixml.hpp"
+
 /**
  * This object represents an administrator's user account which houses the user-defined server stacks for each grepping session.
  * Administrator account information is written/read from a single representative XML file.
@@ -23,21 +25,18 @@
  * @brief   Class definition for grepster's administrator accounts.
  */
  class CAdminAccount {
- public:'
+ public:
     /**
      * @brief       Default constructor which creates administrator account object.
      * @param[in]   path The path used to load the administrator's account information from file. This is passed from grepster's configuration.
      */
     CAdminAccount(wxString path);
 
-    /**
-      * @brief      Return the path to the XML configuration file for the administrator account.
-      */
-    wzString
-
  private:
     /** Path to the user's administrator account configuration for initialization. */
-    wxString m_szPath;
+    wxString m_pszPath;
+    /** XML file handle for reading. */
+    pugi::xml_document m_XMLFile;
  };
 
 #endif // _CADMINACCOUNT_H_

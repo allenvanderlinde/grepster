@@ -99,9 +99,13 @@ private:
      */
     void OnAbout(wxCommandEvent& event);
     /**
+     * @brief       Close the primary frame.
+     */
+    void CloseFrame(wxCommandEvent& event);
+    /**
      * @brief       Exit grepster.
      */
-    void OnExit(wxCommandEvent& event);
+    void OnExit(wxCloseEvent& event);
 
     /**
      * @brief       Initialize and call the primary frame's event handler.

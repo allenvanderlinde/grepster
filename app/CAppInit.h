@@ -70,7 +70,7 @@ private:
     pugi::xml_node m_XMLSettings;
 
     /** Path to administrator account XML file. */
-    wxString m_szPathToAdminAccount;
+    wxString m_pszPathToAdminAccount;
 
     /** Flag for successful loading of configuration. */
     bool m_bConfigurationLoadedSuccessfully;

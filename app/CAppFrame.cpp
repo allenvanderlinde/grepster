@@ -20,11 +20,12 @@
 /** grepster's primary frame's event handler calls. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
     EVT_MENU(MENU_FUNCTION_ID_FILE_NEW, CAppFrame::NewAdministratorAccount)
-    EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::OnExit)
+    EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::CloseFrame)
     EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
     EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, CAppFrame::ToggleFloating)
     EVT_MENU(MENU_FUNCTION_ID_HELP_ABOUT, CAppFrame::OnAbout)
 
+    EVT_CLOSE(CAppFrame::OnExit)
 wxEND_EVENT_TABLE()
 
 /*
@@ -140,18 +141,10 @@ void CAppFrame::RefreshConfiguration() {
     m_pAui->GetPane(GrepNotebook).Floatable(Configuration->bToggleFloating);
 
     /* Write configuration changes to file. */
-    Configuration->WriteXMLData();
+    //Configuration->WriteXMLData();
     Console->BlueText();
-    *Console << "\nSaved configuration: \"grepster.xml\"";
+    *Console << "\nConfiguration changed.";
     Console->BlackText();
-}
-
-/*
-    CAppFrame::OnExit
-*/
-void CAppFrame::OnExit(wxCommandEvent& event) {
-    Destroy();
-    Close(true);
 }
 
 /*
@@ -178,4 +171,19 @@ void CAppFrame::OnAbout(wxCommandEvent& event) {
     dialog->Center();
     if(dialog->ShowModal() == wxID_OK)
         dialog->Destroy();
+}
+
+/*
+    CAppFrame::CloseFrame
+*/
+void CAppFrame::CloseFrame(wxCommandEvent& event) {
+    AddPendingEvent(wxCloseEvent(wxEVT_CLOSE_WINDOW, wxID_ANY));
+}
+
+/*
+    CAppFrame::OnExit
+*/
+void CAppFrame::OnExit(wxCloseEvent& event) {
+    Configuration->WriteXMLData();
+    Destroy();
 }

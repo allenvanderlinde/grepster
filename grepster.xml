@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <grepster>
-	<setting id="admin.config.path" value="admin/default.xml" />
-	<setting id="bToggleFloating" value="true" />
+	<setting id="AdminConfigurationPath" value="admin/default.xml" />
+	<setting id="bToggleFloating" value="false" />
 </grepster>

@@ -19,5 +19,5 @@
 */
 CAdminAccount::CAdminAccount(wxString path) {
     m_pszPath = path;
-    wxMessageBox(m_szPath, "path to admin file", wxICON_INFORMATION);
+    wxMessageBox(m_pszPath, "path to admin file", wxICON_INFORMATION);
 }
