@@ -17,7 +17,7 @@
 
 #include <wx/aui/dockart.h>
 
-/** grepster's primary frame's event handler calls. */
+/* grepster's primary frame's event handler calls. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
     EVT_MENU(MENU_FUNCTION_ID_FILE_NEW, CAppFrame::NewAdministratorAccount)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::CloseFrame)
@@ -186,4 +186,5 @@ void CAppFrame::CloseFrame(wxCommandEvent& event) {
 void CAppFrame::OnExit(wxCloseEvent& event) {
     Configuration->WriteXMLData();
     Destroy();
+    /* NOTE: Do not call wxFrame::Close() here! It's called before CAppInit::WriteXMLData() is called. */
 }

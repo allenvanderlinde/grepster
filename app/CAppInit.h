@@ -64,8 +64,6 @@ private:
 
     /** XML file handle for reading. */
     pugi::xml_document m_XMLFile;
-    /** XML file handle for writing. */
-    pugi::xml_document m_XMLSaveFile;
     /** A pugixml parsing node used to read XML data. */
     pugi::xml_node m_XMLSettings;
 
