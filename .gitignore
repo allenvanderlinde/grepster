@@ -44,9 +44,4 @@ Temporary Items
 .apdisk
 
 # Private files
-media/
-scripts/
-admin/
-bin/
-obj/
 design.txt
