@@ -115,12 +115,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a5444360c8708f2746819ef0f72200ef9"><td class="memItemLeft" align="right" valign="top">wxTreeItemId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stack.html#a5444360c8708f2746819ef0f72200ef9">m_root</a></td></tr>
-<tr class="separator:a5444360c8708f2746819ef0f72200ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d15673086c5f52274b3692b31bac941"><td class="memItemLeft" align="right" valign="top">wxTreeItemId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stack.html#a1d15673086c5f52274b3692b31bac941">m_admin_item</a></td></tr>
-<tr class="separator:a1d15673086c5f52274b3692b31bac941"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecb6a46c1f777b603b400c598c5d2181"><td class="memItemLeft" align="right" valign="top">wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stack.html#aecb6a46c1f777b603b400c598c5d2181">m_serverStackInf</a></td></tr>
-<tr class="separator:aecb6a46c1f777b603b400c598c5d2181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca2c9e6eb5bd4560ea0fc1d7b7b4cd01"><td class="memItemLeft" align="right" valign="top">wxTreeItemId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stack.html#aca2c9e6eb5bd4560ea0fc1d7b7b4cd01">m_treeRoot</a></td></tr>
+<tr class="separator:aca2c9e6eb5bd4560ea0fc1d7b7b4cd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a838ed5c5af6d8fb2375b085217eaf30d"><td class="memItemLeft" align="right" valign="top">wxTreeItemId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stack.html#a838ed5c5af6d8fb2375b085217eaf30d">m_treeAdminItem</a></td></tr>
+<tr class="separator:a838ed5c5af6d8fb2375b085217eaf30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78ef464f875b62d2be0fc8a60bd48792"><td class="memItemLeft" align="right" valign="top">wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stack.html#a78ef464f875b62d2be0fc8a60bd48792">m_serverStackInf_t</a></td></tr>
+<tr class="separator:a78ef464f875b62d2be0fc8a60bd48792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for grepster's server stack. </p>
@@ -176,7 +176,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a1d15673086c5f52274b3692b31bac941"></a>
+<a class="anchor" id="a78ef464f875b62d2be0fc8a60bd48792"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -184,49 +184,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">wxTreeItemId CServerStack::m_admin_item</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>wxTreeCtrl administrator item populated with the user's server stacks. </p>
-
-</div>
-</div>
-<a class="anchor" id="a5444360c8708f2746819ef0f72200ef9"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">wxTreeItemId CServerStack::m_root</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>wxTreeCtrl root item. </p>
-
-</div>
-</div>
-<a class="anchor" id="aecb6a46c1f777b603b400c598c5d2181"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">wxAuiPaneInfo CServerStack::m_serverStackInf</td>
+          <td class="memname">wxAuiPaneInfo CServerStack::m_serverStackInf_t</td>
         </tr>
       </table>
   </td>
@@ -239,6 +197,48 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a838ed5c5af6d8fb2375b085217eaf30d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxTreeItemId CServerStack::m_treeAdminItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>wxTreeCtrl administrator item populated with the user's server stacks. </p>
+
+</div>
+</div>
+<a class="anchor" id="aca2c9e6eb5bd4560ea0fc1d7b7b4cd01"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxTreeItemId CServerStack::m_treeRoot</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>wxTreeCtrl root item. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/grepster/app/<a class="el" href="_c_server_stack_8h_source.html">CServerStack.h</a></li>
 <li>C:/grepster/app/<a class="el" href="_c_server_stack_8cpp.html">CServerStack.cpp</a></li>
@@ -246,7 +246,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 09:29:42 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 29 2014 23:51:46 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

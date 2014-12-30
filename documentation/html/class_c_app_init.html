@@ -121,15 +121,20 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a752bc94a59515fee8effef75d3ceb281"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a752bc94a59515fee8effef75d3ceb281">ApplyXMLData</a> ()</td></tr>
 <tr class="memdesc:a752bc94a59515fee8effef75d3ceb281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads XML data from file and applies its values to this class's members.  <a href="#a752bc94a59515fee8effef75d3ceb281">More...</a><br /></td></tr>
 <tr class="separator:a752bc94a59515fee8effef75d3ceb281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4c84bdaff18c30206ec81481b866ca9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#aa4c84bdaff18c30206ec81481b866ca9">WriteDefaultAdminConfiguration</a> ()</td></tr>
+<tr class="memdesc:aa4c84bdaff18c30206ec81481b866ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write's grepster's default admin configuration file.  <a href="#aa4c84bdaff18c30206ec81481b866ca9">More...</a><br /></td></tr>
+<tr class="separator:aa4c84bdaff18c30206ec81481b866ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a10ad1620c5f77c3d359c9399f92fe34a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_admin_account.html">CAdminAccount</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a10ad1620c5f77c3d359c9399f92fe34a">m_pAdministrator</a></td></tr>
+<tr class="separator:a10ad1620c5f77c3d359c9399f92fe34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10f6a513346808f5189dad11abdcf8c1"><td class="memItemLeft" align="right" valign="top">pugi::xml_document&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a10f6a513346808f5189dad11abdcf8c1">m_XMLFile</a></td></tr>
 <tr class="separator:a10f6a513346808f5189dad11abdcf8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cbdbdacd403ef581e1d54ce5f8f2ec4"><td class="memItemLeft" align="right" valign="top">pugi::xml_document&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a0cbdbdacd403ef581e1d54ce5f8f2ec4">m_XMLSaveFile</a></td></tr>
-<tr class="separator:a0cbdbdacd403ef581e1d54ce5f8f2ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad938844a3a5f4c332de8f82981e85967"><td class="memItemLeft" align="right" valign="top">pugi::xml_node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#ad938844a3a5f4c332de8f82981e85967">m_XMLSettings</a></td></tr>
 <tr class="separator:ad938844a3a5f4c332de8f82981e85967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb7b17afb7aa03618f36fc9e52e981c6"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#afb7b17afb7aa03618f36fc9e52e981c6">m_pszPathToAdminAccount</a></td></tr>
+<tr class="separator:afb7b17afb7aa03618f36fc9e52e981c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64d2a758646b43d34dd2c986f0854d13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a64d2a758646b43d34dd2c986f0854d13">m_bConfigurationLoadedSuccessfully</a></td></tr>
 <tr class="separator:a64d2a758646b43d34dd2c986f0854d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -206,6 +211,31 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa4c84bdaff18c30206ec81481b866ca9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppInit::WriteDefaultAdminConfiguration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write's grepster's default admin configuration file. </p>
+
+</div>
+</div>
 <a class="anchor" id="ae48984d9e7a263d651bc68466c6f3e7e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -259,6 +289,48 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a10ad1620c5f77c3d359c9399f92fe34a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_admin_account.html">CAdminAccount</a>* CAppInit::m_pAdministrator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Administrator account loaded upon entry. </p>
+
+</div>
+</div>
+<a class="anchor" id="afb7b17afb7aa03618f36fc9e52e981c6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString CAppInit::m_pszPathToAdminAccount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Path to administrator account XML file. </p>
+
+</div>
+</div>
 <a class="anchor" id="a10f6a513346808f5189dad11abdcf8c1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -277,27 +349,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>XML file handle for reading. </p>
-
-</div>
-</div>
-<a class="anchor" id="a0cbdbdacd403ef581e1d54ce5f8f2ec4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">pugi::xml_document CAppInit::m_XMLSaveFile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>XML file handle for writing. </p>
 
 </div>
 </div>
@@ -329,7 +380,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 09:29:42 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 29 2014 23:51:46 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

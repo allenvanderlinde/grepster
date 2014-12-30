@@ -141,7 +141,7 @@ void CAppFrame::RefreshConfiguration() {
     m_pAui->GetPane(GrepNotebook).Floatable(Configuration->bToggleFloating);
 
     /* Write configuration changes to file. */
-    //Configuration->WriteXMLData();
+    Configuration->WriteXMLData();
     Console->BlueText();
     *Console << "\nConfiguration changed.";
     Console->BlackText();

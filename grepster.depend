@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1417743357 source:c:\grepster\app\cappentry.cpp
+1419913340 source:c:\grepster\app\cappentry.cpp
 	"../grepster.h"
 	"../resources/grepster_rc.h"
 	"CAppEntry.h"
@@ -3187,11 +3187,11 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1418099205 c:\grepster\version.h
+1419914484 c:\grepster\version.h
 
 1417743357 c:\grepster\resources\grepster_rc.h
 
-1417743357 c:\grepster\app\cappentry.h
+1419910731 c:\grepster\app\cappentry.h
 	<wx/wx.h>
 	"CAppFrame.h"
 
@@ -3213,7 +3213,7 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1418098068 source:c:\grepster\app\cappframe.cpp
+1419907638 source:c:\grepster\app\cappframe.cpp
 	"../grepster.h"
 	"../resources/grepster_rc.h"
 	"CAppFrame.h"
@@ -3295,11 +3295,11 @@
 	<new>
 	<stdint.h>
 
-1417744671 c:\grepster\app\cappinit.h
+1419911447 c:\grepster\app\cappinit.h
 	"../pugixml-1.4/pugixml.hpp"
 	"../session/CAdminAccount.h"
 
-1418095935 source:c:\grepster\app\cappinit.cpp
+1419103815 source:c:\grepster\app\cappinit.cpp
 	"../grepster.h"
 	"CAppInit.h"
 
@@ -3313,10 +3313,10 @@
 	"CAppFrame.h"
 	"CServerStack.h"
 
-1418095626 c:\grepster\session\cadminaccount.h
+1419911287 c:\grepster\session\cadminaccount.h
 	<wx/wx.h>
 	"../pugixml-1.4/pugixml.hpp"
 
-1418095622 source:c:\grepster\session\cadminaccount.cpp
+1419911831 source:c:\grepster\session\cadminaccount.cpp
 	"CAdminAccount.h"
 

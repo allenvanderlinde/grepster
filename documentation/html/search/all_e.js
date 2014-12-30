@@ -15,5 +15,5 @@ var searchData=
   ['statusbar_5fstring_5fid_5fquit',['STATUSBAR_STRING_ID_QUIT',['../_c_frame_menubar_8h.html#a3bbfca883d79d914555bb24ad73d83bca6a467bd350ba76d5f8e0b0da52be591b',1,'CFrameMenubar.h']]],
   ['statusbar_5fstring_5fid_5ftoggle_5fdockable',['STATUSBAR_STRING_ID_TOGGLE_DOCKABLE',['../_c_frame_menubar_8h.html#a3bbfca883d79d914555bb24ad73d83bca0883f5e1a510ac8e3192182bbafd9291',1,'CFrameMenubar.h']]],
   ['statusbar_5fwelcome',['STATUSBAR_WELCOME',['../_c_app_frame_8h.html#a7eaedd0a5a26a658a7b9f3362c60e122',1,'CAppFrame.h']]],
-  ['success',['Success',['../class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366',1,'CAppInit']]]
+  ['success',['Success',['../class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366',1,'CAppInit::Success()'],['../class_c_admin_account.html#ad8867089e16cc2a4b0abe29ef5f9a392',1,'CAdminAccount::Success()']]]
 ];

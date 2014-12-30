@@ -79,7 +79,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">grepster Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>In most, if not all, of grepster's control methods you'll often see only a single argument being passed: <code>wxCommandEvent&amp; event</code>. This is a reference to the wxWidgets command input structure. It is a record of the state of the method's parent frame at the time the event was triggered (i.e., which key on the keyboard was pressed; which button in the frame was clicked).</p>
+<div class="textblock"><p><b>Acknowledgements</b></p>
+<p>grepster's XML methods are built on the pugixml backbone. Please visit <a href="http://pugixml.org">http://pugixml.org</a> for more information. The license is included in pugixml-1.4/readme.txt.</p>
+<h1>Design Notes </h1>
+<p>In most, if not all, of grepster's control methods you'll often see only a single argument being passed: <code>wxCommandEvent&amp; event</code>. This is a reference to the wxWidgets command input structure. It is a record of the state of the method's parent frame at the time the event was triggered (i.e., which key on the keyboard was pressed; which button in the frame was clicked).</p>
 <p>Some methods will have their own command event structure depending upon the type of wxWindow triggers the event.</p>
 <p>As these are always required parameters for custom control methods, they are not individually documented within the source code for the sake of preventing redundant documentation.</p>
 <h1>Source Code Notes </h1>
@@ -96,7 +99,7 @@ grepster's configuration methods <a class="el" href="class_c_app_init.html#a752b
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 09:29:42 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 29 2014 23:51:46 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

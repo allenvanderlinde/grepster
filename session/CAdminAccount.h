@@ -32,11 +32,21 @@
      */
     CAdminAccount(wxString path);
 
+    /**
+     * @brief       Query successful loading of configuration.
+     */
+    bool Success() { return m_bConfigurationLoadedSuccessfully; }
+
  private:
     /** Path to the user's administrator account configuration for initialization. */
     wxString m_pszPath;
     /** XML file handle for reading. */
     pugi::xml_document m_XMLFile;
+    /** A pugixml parsing node used to read XML data. */
+    pugi::xml_node m_XMLSettings;
+
+    /** Flag for successful loading of configuration. */
+    bool m_bConfigurationLoadedSuccessfully;
  };
 
 #endif // _CADMINACCOUNT_H_

@@ -40,9 +40,12 @@ private:
 
     /**
      * @brief       Load grepster's configuration from file.
-     * @retval      bool Returns true if configuration was loaded successfully.
      */
-    bool LoadConfiguration();
+    void LoadConfiguration();
+    /**
+     * @brief       Write's grepster's default configuration file.
+     */
+    void WriteDefaultConfiguration();
 };
 
 #endif  // _CAPPENTRY_H_

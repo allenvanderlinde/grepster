@@ -72,6 +72,11 @@ private:
 
     /** Flag for successful loading of configuration. */
     bool m_bConfigurationLoadedSuccessfully;
+
+    /**
+     * @brief       Write's grepster's default admin configuration file.
+     */
+    void WriteDefaultAdminConfiguration();
 };
 
 #endif // _CAPPINIT_H_

@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['cadminaccount',['CAdminAccount',['../class_c_admin_account.html',1,'CAdminAccount'],['../class_c_admin_account.html#aee4ea86e554bf050814999a280f8c07c',1,'CAdminAccount::CAdminAccount()']]],
+  ['cadminaccount_2ecpp',['CAdminAccount.cpp',['../_c_admin_account_8cpp.html',1,'']]],
   ['cadminaccount_2eh',['CAdminAccount.h',['../_c_admin_account_8h.html',1,'']]],
   ['cappentry',['CAppEntry',['../class_c_app_entry.html',1,'']]],
   ['cappentry_2ecpp',['CAppEntry.cpp',['../_c_app_entry_8cpp.html',1,'']]],
@@ -19,6 +21,7 @@ var searchData=
   ['cgrepnotebook',['CGrepNotebook',['../class_c_grep_notebook.html',1,'CGrepNotebook'],['../class_c_grep_notebook.html#aa9fa53784a193a92c8ccf929dcf4a175',1,'CGrepNotebook::CGrepNotebook()']]],
   ['cgrepnotebook_2ecpp',['CGrepNotebook.cpp',['../_c_grep_notebook_8cpp.html',1,'']]],
   ['cgrepnotebook_2eh',['CGrepNotebook.h',['../_c_grep_notebook_8h.html',1,'']]],
+  ['closeframe',['CloseFrame',['../class_c_app_frame.html#a93b72eec6388f6c004de1f8ff4e4f8e8',1,'CAppFrame']]],
   ['configuration',['Configuration',['../grepster_8cpp.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp'],['../grepster_8h.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp']]],
   ['configuration_5ffile_5fpath',['CONFIGURATION_FILE_PATH',['../grepster_8h.html#a966421e8beed081c502732bce8066eb6',1,'grepster.h']]],
   ['console',['Console',['../grepster_8cpp.html#a034ab9689fbe23cc500e603f1c0cf19d',1,'Console():&#160;grepster.cpp'],['../grepster_8h.html#a034ab9689fbe23cc500e603f1c0cf19d',1,'Console():&#160;grepster.cpp']]],

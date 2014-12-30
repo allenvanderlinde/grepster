@@ -30,13 +30,26 @@ CAppInit::CAppInit() {
         m_XMLSettings = m_XMLFile.child(L"grepster").child(L"setting");    // Note: Do not change. Every grepster configuration element is labeled "setting"
         if(m_XMLSettings == NULL)   // Element not intact and/or invalid character found
             m_bConfigurationLoadedSuccessfully = false;
+        else {
+            /* Apply grepster's XML configuration to application. */
+            ApplyXMLData();
+
+            wxMessageBox(m_pszPathToAdminAccount, "path", wxOK);
+
+            /* Create new session and open the administrator's account. */
+            m_pAdministrator = new CAdminAccount(m_pszPathToAdminAccount);
+            if(!m_pAdministrator->Success()) {
+                wxMessageBox("grepster's default administrator configuration could not be found.", "Using Default Configuration", wxICON_WARNING | wxOK);
+                // Write default configuration method to call here, create admin/default.xml
+                // WriteDefaultAdminConfiguration();
+                // delete m_pAdministrator;
+                // m_pszPathToAdminAccount = "admin/default.xml";   (in WriteDefaultAdminConfiguration())
+                // m_pAdministrator = new CAdminAccount(m_pszPathToAdminAccount);
+
+                // NOTE: m_pAdministrator must now exist and be correct.
+            }
+        }
     }
-
-    /* Apply grepster's XML configuration to application. */
-    ApplyXMLData();
-
-    /* Create new session and open the administrator's account. */
-    m_pAdministrator = new CAdminAccount(m_pszPathToAdminAccount);
 }
 
 /*
@@ -81,7 +94,7 @@ void CAppInit::WriteXMLData() {
 
     // Floating controls
     param = node.append_child(XML_ELEMENT_LABEL);
-    param.append_attribute(XML_ID_LABEL) = L"bToggleFloating";
+    param.append_attribute(XML_ID_LABEL) = L"ToggleFloating";
     param.append_attribute(XML_VALUE_LABEL) = bToggleFloating;
 
     // Save XML document to configuration file
