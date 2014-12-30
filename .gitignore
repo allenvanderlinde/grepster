@@ -44,4 +44,6 @@ Temporary Items
 .apdisk
 
 # Private files
-info/exclude
+media/
+scripts/
+design.txt
