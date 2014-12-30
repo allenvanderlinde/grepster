@@ -45,3 +45,7 @@ Temporary Items
 
 # Private files
 design.txt
+media/
+scripts/
+bin/
+obj/
