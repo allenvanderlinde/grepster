@@ -44,4 +44,4 @@ Temporary Items
 .apdisk
 
 # Private files
-$GIT_DIR/info/exclude
+info/exclude
