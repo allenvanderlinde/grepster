@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['g_5fszframetitle',['g_szFrameTitle',['../grepster_8h.html#a9d3817a89291d52180e5e4b5291e9628',1,'g_szFrameTitle():&#160;grepster.h'],['../grepster_8cpp.html#aa2158216a844f600a543b27cc12ff87d',1,'g_szFrameTitle(&quot;grepster v&quot;):&#160;grepster.cpp']]],
+  ['g_5fszframetitle',['g_szFrameTitle',['../grepster_8h.html#a9d3817a89291d52180e5e4b5291e9628',1,'g_szFrameTitle():&#160;grepster.h'],['../grepster_8cpp.html#add6f3412b235e66c81186a095832c927',1,'g_szFrameTitle(&quot;grepster alpha v&quot;):&#160;grepster.cpp']]],
   ['getbrowser',['getBrowser',['../class_c_web_viewer.html#ac2fab7569774817658d2dbc12f6b32b4',1,'CWebViewer']]],
   ['getpaneinfo',['getPaneInfo',['../class_c_console.html#ab5532027582274143636d13cc234ff6c',1,'CConsole::getPaneInfo()'],['../class_c_grep_notebook.html#a99b517c0ad125d174abb511fd99ca247',1,'CGrepNotebook::getPaneInfo()'],['../class_c_server_stack.html#a70132d9baf695df0f17053c3fc3d2d20',1,'CServerStack::getPaneInfo()']]],
   ['grep_5fnotebook_5fctrl_5ftitle',['GREP_NOTEBOOK_CTRL_TITLE',['../grepster_8h.html#af3e5d57b661c402c7861ff8a2914aba7',1,'grepster.h']]],

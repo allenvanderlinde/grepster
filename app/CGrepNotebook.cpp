@@ -31,8 +31,10 @@ CGrepNotebook::CGrepNotebook(wxWindow* parentFrame)
     m_grepNotebookInf_t.PaneBorder(true);
     m_grepNotebookInf_t.BestSize(GREP_NOTEBOOK_DEFAULT_WIDTH, GREP_NOTEBOOK_DEFAULT_HEIGHT);
     m_grepNotebookInf_t.Name(GREP_NOTEBOOK_NAME);
-    m_grepNotebookInf_t.Caption(GREP_NOTEBOOK_CTRL_TITLE);
-    m_grepNotebookInf_t.CaptionVisible();
+    /* wxWidgets does not yet allow notebook controls to float,
+    so there is no need for it to have a title bar. */
+    //m_grepNotebookInf_t.Caption(GREP_NOTEBOOK_CTRL_TITLE);
+    m_grepNotebookInf_t.CaptionVisible(false);
     m_grepNotebookInf_t.Center();
     m_grepNotebookInf_t.CloseButton(false);
     //m_grepNotebookInf_t.Floatable(Configuration->bToggleFloating);

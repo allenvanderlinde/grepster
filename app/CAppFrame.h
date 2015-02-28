@@ -77,9 +77,14 @@ private:
 
     /* File menu methods. */
     /**
-     * @brief       Create a new administrator account.
+     * @brief       Change the administrator's credentials.
      */
-    void NewAdministratorAccount(wxCommandEvent& event);
+    void ChangeAdminCredentials(wxCommandEvent& event);
+    /**
+     * @brief       Create new administrator XML configuration file. This will ask for the new admin's username only.
+     *              Passwords will need to be entered with each new session.
+     */
+    void CreateAdminXMLConfiguration();
 
     /* Tools menu methods. */
     /**
@@ -106,6 +111,10 @@ private:
      * @brief       Exit grepster.
      */
     void OnExit(wxCloseEvent& event);
+
+    /* Dialog event handlers. */
+    /** Event handler for CAppFrame::ChangeAdminCredentials. */
+    void updateUsername(wxCommandEvent& event);
 
     /**
      * @brief       Initialize and call the primary frame's event handler.

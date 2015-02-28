@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cadminaccount',['CAdminAccount',['../class_c_admin_account.html',1,'CAdminAccount'],['../class_c_admin_account.html#aee4ea86e554bf050814999a280f8c07c',1,'CAdminAccount::CAdminAccount()']]],
+  ['cadminaccount',['CAdminAccount',['../class_c_admin_account.html',1,'CAdminAccount'],['../class_c_admin_account.html#a4cf2c2c1517e66216fd5127fef2e3c8e',1,'CAdminAccount::CAdminAccount()']]],
   ['cadminaccount_2ecpp',['CAdminAccount.cpp',['../_c_admin_account_8cpp.html',1,'']]],
   ['cadminaccount_2eh',['CAdminAccount.h',['../_c_admin_account_8h.html',1,'']]],
   ['cappentry',['CAppEntry',['../class_c_app_entry.html',1,'']]],
@@ -21,6 +21,8 @@ var searchData=
   ['cgrepnotebook',['CGrepNotebook',['../class_c_grep_notebook.html',1,'CGrepNotebook'],['../class_c_grep_notebook.html#aa9fa53784a193a92c8ccf929dcf4a175',1,'CGrepNotebook::CGrepNotebook()']]],
   ['cgrepnotebook_2ecpp',['CGrepNotebook.cpp',['../_c_grep_notebook_8cpp.html',1,'']]],
   ['cgrepnotebook_2eh',['CGrepNotebook.h',['../_c_grep_notebook_8h.html',1,'']]],
+  ['changeadmincredentials',['ChangeAdminCredentials',['../class_c_app_frame.html#afbbda63a34906b1694f7c0751eb4560e',1,'CAppFrame']]],
+  ['changeusername',['ChangeUsername',['../class_c_app_init.html#a3008c3e72c95052f9c862a629ace2016',1,'CAppInit::ChangeUsername()'],['../class_c_admin_account.html#afb5bc90485598a97cde0dccba4a07a6b',1,'CAdminAccount::ChangeUsername()']]],
   ['closeframe',['CloseFrame',['../class_c_app_frame.html#a93b72eec6388f6c004de1f8ff4e4f8e8',1,'CAppFrame']]],
   ['configuration',['Configuration',['../grepster_8cpp.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp'],['../grepster_8h.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp']]],
   ['configuration_5ffile_5fpath',['CONFIGURATION_FILE_PATH',['../grepster_8h.html#a966421e8beed081c502732bce8066eb6',1,'grepster.h']]],
@@ -29,6 +31,7 @@ var searchData=
   ['console_5fdefault_5fheight',['CONSOLE_DEFAULT_HEIGHT',['../grepster_8h.html#ace37b2df2eebf832ed80faec7fd9a8db',1,'grepster.h']]],
   ['console_5fid',['CONSOLE_ID',['../grepster_8h.html#af50d3a3a5589e846dca652a4fdbb51eb',1,'grepster.h']]],
   ['console_5fname',['CONSOLE_NAME',['../grepster_8h.html#a1a50575d63bd0b03f886042abd532ef5',1,'grepster.h']]],
+  ['createadminxmlconfiguration',['CreateAdminXMLConfiguration',['../class_c_app_frame.html#ad7eef5c8a99e0166451b1b6c6cd4e686',1,'CAppFrame']]],
   ['cserverstack',['CServerStack',['../class_c_server_stack.html',1,'CServerStack'],['../class_c_server_stack.html#ab3690a2ae614051341bdcffeeb217a19',1,'CServerStack::CServerStack()']]],
   ['cserverstack_2ecpp',['CServerStack.cpp',['../_c_server_stack_8cpp.html',1,'']]],
   ['cserverstack_2eh',['CServerStack.h',['../_c_server_stack_8h.html',1,'']]],

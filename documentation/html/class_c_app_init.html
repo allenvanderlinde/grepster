@@ -110,6 +110,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad7d1fe4cce9b2da9ff9041444ad84366"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366">Success</a> ()</td></tr>
 <tr class="memdesc:ad7d1fe4cce9b2da9ff9041444ad84366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query successful loading of configuration.  <a href="#ad7d1fe4cce9b2da9ff9041444ad84366">More...</a><br /></td></tr>
 <tr class="separator:ad7d1fe4cce9b2da9ff9041444ad84366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4a968bec9b00d91f36c5a846f727da1"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#ac4a968bec9b00d91f36c5a846f727da1">Username</a> ()</td></tr>
+<tr class="memdesc:ac4a968bec9b00d91f36c5a846f727da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query administrator's username.  <a href="#ac4a968bec9b00d91f36c5a846f727da1">More...</a><br /></td></tr>
+<tr class="separator:ac4a968bec9b00d91f36c5a846f727da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3008c3e72c95052f9c862a629ace2016"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a3008c3e72c95052f9c862a629ace2016">ChangeUsername</a> (wxString username)</td></tr>
+<tr class="memdesc:a3008c3e72c95052f9c862a629ace2016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the administrator's username.  <a href="#a3008c3e72c95052f9c862a629ace2016">More...</a><br /></td></tr>
+<tr class="separator:a3008c3e72c95052f9c862a629ace2016"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -133,8 +139,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a10f6a513346808f5189dad11abdcf8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad938844a3a5f4c332de8f82981e85967"><td class="memItemLeft" align="right" valign="top">pugi::xml_node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#ad938844a3a5f4c332de8f82981e85967">m_XMLSettings</a></td></tr>
 <tr class="separator:ad938844a3a5f4c332de8f82981e85967"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb7b17afb7aa03618f36fc9e52e981c6"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#afb7b17afb7aa03618f36fc9e52e981c6">m_pszPathToAdminAccount</a></td></tr>
-<tr class="separator:afb7b17afb7aa03618f36fc9e52e981c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64d2a758646b43d34dd2c986f0854d13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_init.html#a64d2a758646b43d34dd2c986f0854d13">m_bConfigurationLoadedSuccessfully</a></td></tr>
 <tr class="separator:a64d2a758646b43d34dd2c986f0854d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -186,6 +190,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3008c3e72c95052f9c862a629ace2016"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppInit::ChangeUsername </td>
+          <td>(</td>
+          <td class="paramtype">wxString&#160;</td>
+          <td class="paramname"><em>username</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change the administrator's username. </p>
+
+</div>
+</div>
 <a class="anchor" id="ad7d1fe4cce9b2da9ff9041444ad84366"></a>
 <div class="memitem">
 <div class="memproto">
@@ -208,6 +238,43 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Query successful loading of configuration. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">bool</td><td>Returns true if XML configuration loaded successfully. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac4a968bec9b00d91f36c5a846f727da1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString CAppInit::Username </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Query administrator's username. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">wxString</td><td>This is the administrator's username credential. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -310,27 +377,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afb7b17afb7aa03618f36fc9e52e981c6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">wxString CAppInit::m_pszPathToAdminAccount</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Path to administrator account XML file. </p>
-
-</div>
-</div>
 <a class="anchor" id="a10f6a513346808f5189dad11abdcf8c1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -380,7 +426,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 29 2014 23:51:46 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 27 2015 23:39:31 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

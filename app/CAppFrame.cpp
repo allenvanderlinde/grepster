@@ -19,7 +19,7 @@
 
 /* grepster's primary frame's event handler calls. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
-    EVT_MENU(MENU_FUNCTION_ID_FILE_NEW, CAppFrame::NewAdministratorAccount)
+    EVT_MENU(MENU_FUNCTION_ID_FILE_CHANGE_CREDENTIALS, CAppFrame::ChangeAdminCredentials)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::CloseFrame)
     EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
     EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, CAppFrame::ToggleFloating)
@@ -47,7 +47,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     SetStatusBar(m_pStatusbar);
     SetStatusText(STATUSBAR_WELCOME);
 
-    /* Create and initialize primary frame cont                                                                                                                                                                                                                                                                                                                                               rols. */
+    /* Create and initialize primary frame controls. */
     Console = new CConsole(this);
     ServerStack = new CServerStack(this);
     GrepNotebook = new CGrepNotebook(this);
@@ -83,14 +83,47 @@ CAppFrame::~CAppFrame() {
 }
 
 /*
-    CAppFrame::NewAdministratorAccount
+    CAppFrame::ChangeAdminCredentials
 */
-void CAppFrame::NewAdministratorAccount(wxCommandEvent& event) {
-    wxPanel* panel = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxDefaultSize);
-    GrepNotebook->AddPage(panel, "New Admin Account");
+void CAppFrame::ChangeAdminCredentials(wxCommandEvent& event) {
+    /* Dialog's main controls and sizers. */
+    wxDialog* dialog = new wxDialog(this, wxID_ANY, L"Change Administrator Credentials", wxDefaultPosition, wxSize(400, 180));
+    wxBoxSizer* dialog_sizer = new wxBoxSizer(wxVERTICAL);
+
+    /* Dialogs inputs. */
+    wxTextCtrl *textbox_username = new wxTextCtrl(dialog, wxID_ANY, Configuration->Username(), wxDefaultPosition, wxDefaultSize);
+
+    /* Dialog's buttons. */
+    wxButton* button_ok = new wxButton(dialog, wxID_ANY, L"OK", wxPoint(0, 0), wxDefaultSize);
+    //button_ok->Bind(wxEVT_BUTTON, wxCommandEventHandler(/* */));
+    button_ok->SetDefault();
+
+    /* Arrange dialog's controls. */
+    dialog_sizer->Add(textbox_username, wxSizerFlags().Center());
+    dialog_sizer->Add(button_ok, wxSizerFlags().Center());
+
+    dialog->SetSizer(dialog_sizer);
+
+    /*
+    if(button_ok->Press() == true) {
+        Configuration->ChangeUsername(textbox_username->GetLineText(0));
+        *Console << "\n\nChanging administrator's username to " + textbox_username->GetLineText(0) + ".";
+        RefreshConfiguration();
+    }
+    */
+    if(dialog->ShowModal() == wxID_OK)
+        dialog->Destroy();
+
+    //wxPanel* panel = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxDefaultSize);
+    //GrepNotebook->AddPage(panel, "New Admin Account");
     /* Update notebook's page count. */
-    size_t nNewPageIndex = GrepNotebook->GetPageCount();
-    GrepNotebook->SetSelection(nNewPageIndex - 1);
+    //size_t nNewPageIndex = GrepNotebook->GetPageCount();
+    //GrepNotebook->SetSelection(nNewPageIndex - 1);
+}
+
+/* Event Handler : CAppFrame::updateUsername */
+void CAppFrame::updateUsername(wxCommandEvent& event) {
+    /* Update administrator's username in configuration. */
 }
 
 /*
@@ -104,7 +137,7 @@ void CAppFrame::ToggleFloating(wxCommandEvent& event) {
 }
 
 /*
-    CAppFrame::TestPutty
+    CAppFrame::LaunchPuTTY
 */
 void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
     STARTUPINFO si;
@@ -143,7 +176,7 @@ void CAppFrame::RefreshConfiguration() {
     /* Write configuration changes to file. */
     Configuration->WriteXMLData();
     Console->BlueText();
-    *Console << "\nConfiguration changed.";
+    *Console << "\nConfiguration saved.";
     Console->BlackText();
 }
 
@@ -151,6 +184,7 @@ void CAppFrame::RefreshConfiguration() {
     CAppFrame::OnAbout
 */
 void CAppFrame::OnAbout(wxCommandEvent& event) {
+    /* Dialog's main controls and sizers. */
     wxDialog* dialog = new wxDialog(this, wxID_ANY, g_szFrameTitle, wxDefaultPosition, wxSize(400, 374));
     wxBoxSizer* dialog_sizer = new wxBoxSizer(wxVERTICAL);
     wxStaticBoxSizer* dialog_static_sizer = new wxStaticBoxSizer(wxVERTICAL, dialog, "About grepster");
@@ -158,7 +192,8 @@ void CAppFrame::OnAbout(wxCommandEvent& event) {
     wxStaticBitmap* banner = new wxStaticBitmap(dialog, wxID_ANY, wxBitmap(RESOURCE_ID_TO_STRING(RESID_PNG_ABOUT), wxBITMAP_TYPE_PNG_RESOURCE), wxDefaultPosition, wxDefaultSize);
     wxTextCtrl* about_text = new wxTextCtrl(dialog, wxID_ANY, ABOUT_INFORMATION, wxDefaultPosition, wxSize(wxDefaultSize.GetWidth(), 120), wxTE_MULTILINE | wxTE_READONLY);
 
-    wxButton* button_ok = new wxButton(dialog, wxID_OK, "OK", wxPoint(5, 5), wxDefaultSize);
+    /* Dialog's buttons. */
+    wxButton* button_ok = new wxButton(dialog, wxID_OK, "OK", wxPoint(0, 0), wxDefaultSize);
     button_ok->SetDefault();
 
     /* Arrange dialog's controls. */

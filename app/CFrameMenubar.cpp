@@ -22,9 +22,9 @@ CFrameMenubar::CFrameMenubar()
     : wxMenuBar() {
     // File menu
     m_pMenuFile = new wxMenu;
-    m_pMenuFile->Append(MENU_FUNCTION_ID_FILE_NEW,
-                        FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_NEW],
-                        FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_NEW]);
+    m_pMenuFile->Append(MENU_FUNCTION_ID_FILE_CHANGE_CREDENTIALS,
+                        FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_CHANGE_CREDENTIALS],
+                        FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_CHANGE_CREDENTIALS]);
     m_pMenuFile->AppendSeparator();
     m_pMenuFile->Append(MENU_FUNCTION_ID_FILE_QUIT,
                         FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_QUIT],

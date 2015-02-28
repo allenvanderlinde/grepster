@@ -27,27 +27,15 @@ CAppInit::CAppInit() {
     if(!result) // XML file does not exist
         m_bConfigurationLoadedSuccessfully = false;
     else {
-        m_XMLSettings = m_XMLFile.child(L"grepster").child(L"setting");    // Note: Do not change. Every grepster configuration element is labeled "setting"
+        /* Initialize a new administrator class for the session. */
+        m_XMLSettings = m_XMLFile.child(XML_CONFIGURATION_NODE_LABEL).child(XML_ELEMENT_LABEL);
         if(m_XMLSettings == NULL)   // Element not intact and/or invalid character found
             m_bConfigurationLoadedSuccessfully = false;
         else {
+            /* Note: Pass username as argument to CAdminAccount's instantiation. */
+            m_pAdministrator = new CAdminAccount(m_XMLSettings.attribute(XML_VALUE_LABEL).value());
             /* Apply grepster's XML configuration to application. */
             ApplyXMLData();
-
-            wxMessageBox(m_pszPathToAdminAccount, "path", wxOK);
-
-            /* Create new session and open the administrator's account. */
-            m_pAdministrator = new CAdminAccount(m_pszPathToAdminAccount);
-            if(!m_pAdministrator->Success()) {
-                wxMessageBox("grepster's default administrator configuration could not be found.", "Using Default Configuration", wxICON_WARNING | wxOK);
-                // Write default configuration method to call here, create admin/default.xml
-                // WriteDefaultAdminConfiguration();
-                // delete m_pAdministrator;
-                // m_pszPathToAdminAccount = "admin/default.xml";   (in WriteDefaultAdminConfiguration())
-                // m_pAdministrator = new CAdminAccount(m_pszPathToAdminAccount);
-
-                // NOTE: m_pAdministrator must now exist and be correct.
-            }
         }
     }
 }
@@ -57,18 +45,15 @@ CAppInit::CAppInit() {
 */
 void CAppInit::ApplyXMLData() {
     /* Crawl through configuration file and populate CAppInit's member settings and flags with values. */
-    // id and value are used for each element data read from file
+    // id and value are used for each element data read from file, they are used for attribute checking (if needed) as grepster grows in future releases
     wxString id, value;
 
-    // Administrator account
-    id = m_XMLSettings.attribute(L"id").value();
-    value = m_XMLSettings.attribute(L"value").value();
-    m_pszPathToAdminAccount = value;
+    // Step to first application configuration element
     m_XMLSettings = m_XMLSettings.next_sibling();
 
     // Floating control
-    id = m_XMLSettings.attribute(L"id").value();
-    value = m_XMLSettings.attribute(L"value").value();
+    id = m_XMLSettings.attribute(XML_ID_LABEL).value();
+    value = m_XMLSettings.attribute(XML_VALUE_LABEL).value();
     (value.IsSameAs("true")) ? bToggleFloating = true : bToggleFloating = false;
     m_XMLSettings = m_XMLSettings.next_sibling();
 
@@ -82,15 +67,12 @@ void CAppInit::WriteXMLData() {
     // Reset the file
     m_XMLFile.reset();
     pugi::xml_node param;   // XML node used to declare configuration parameters (elements)
+    pugi::xml_node node = m_XMLFile.append_child(XML_CONFIGURATION_NODE_LABEL); // Append grepster's configuration element label
 
-    // Append grepster's configuration element label
-    pugi::xml_node node = m_XMLFile.append_child(XML_CONFIGURATION_NODE_LABEL);
-
-    // Write the administrator account info
+    // Append administrator's credentials
     param = node.append_child(XML_ELEMENT_LABEL);
-    param.append_attribute(XML_ID_LABEL) = L"AdminConfigurationPath";
-    std::wstring path = m_pszPathToAdminAccount.ToStdWstring();
-    param.append_attribute(XML_VALUE_LABEL) = path.c_str();
+    param.append_attribute(XML_ID_LABEL) = L"username";
+    param.append_attribute(XML_VALUE_LABEL) = m_pAdministrator->Username().wchar_str();
 
     // Floating controls
     param = node.append_child(XML_ELEMENT_LABEL);

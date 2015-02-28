@@ -20,7 +20,7 @@
 #include <wx/wx.h>
 
 /* Frame globals definitions. */
-wxString            g_szFrameTitle("grepster v");
+wxString            g_szFrameTitle("grepster alpha v");
 /* Frame control definitions. These are global. */
 CConsole*           Console;
 CServerStack*       ServerStack;

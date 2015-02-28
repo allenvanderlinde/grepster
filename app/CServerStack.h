@@ -34,7 +34,10 @@ public:
      */
     CServerStack(wxWindow* parentFrame);
 
-    /** Return control's pane information. */
+    /**
+     * @brief       Get the server stacks control's pane information.
+     * @retval      wxAuiPaneInfo This is the tree control's display configuration object.
+     */
     wxAuiPaneInfo getPaneInfo() { return m_serverStackInf_t; }
 
 private:
@@ -42,9 +45,10 @@ private:
     wxTreeItemId m_treeRoot;
     /** wxTreeCtrl administrator item populated with the user's server stacks. */
     wxTreeItemId m_treeAdminItem;
-    /** AUI pane settings structure. */
+    /** AUI pane settings object. */
     wxAuiPaneInfo m_serverStackInf_t;
 
+    /* Declare the wxWidgets event-handling table for this control. */
     //wxDECLARE_EVENT_TABLE();
 };
 

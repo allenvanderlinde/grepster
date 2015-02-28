@@ -34,5 +34,7 @@ CServerStack::CServerStack(wxWindow* parentFrame)
 
     /* Initialize server stack from administrator account. */
     m_treeRoot = AddRoot(wxEmptyString);
-    m_treeAdminItem = AppendItem(m_treeRoot, SERVER_STACK_DEFAULT_LABEL);
+    m_treeAdminItem = AppendItem(m_treeRoot, Configuration->Username());//SERVER_STACK_DEFAULT_LABEL);
+
+    wxTreeItemId item = AppendItem(m_treeAdminItem, "blackboard-grepper");
 }

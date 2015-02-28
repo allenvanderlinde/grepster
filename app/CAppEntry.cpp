@@ -27,6 +27,9 @@ bool CAppEntry::OnInit() {
     /* Initial set-up. */
     wxLog::SetLogLevel(0);  // Suppress wxWidgets from reporting color profile errors for certain image media
     wxImage::AddHandler(new wxPNGHandler);  // Enable wxWidget's bitmap-as-PNG capability
+
+    /* Set the window's title.
+    Note: This global is first defined in grepster.cpp. */
     g_szFrameTitle += AutoVersion::FULLVERSION_STRING;
 
     /* Run splash screen. */

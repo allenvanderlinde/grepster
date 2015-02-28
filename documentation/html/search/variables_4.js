@@ -13,11 +13,10 @@ var searchData=
   ['m_5fpmenuoptions',['m_pMenuOptions',['../class_c_frame_menubar.html#a7e359e1e46c859c46daae9d9751d1af9',1,'CFrameMenubar']]],
   ['m_5fpmenutools',['m_pMenuTools',['../class_c_frame_menubar.html#a0ebeec67539798708025540e869a941c',1,'CFrameMenubar']]],
   ['m_5fpstatusbar',['m_pStatusbar',['../class_c_app_frame.html#a215d9068460b42a395d050e68074312f',1,'CAppFrame']]],
-  ['m_5fpszpath',['m_pszPath',['../class_c_admin_account.html#ab69b46612d77153ef2b852f65a186cb0',1,'CAdminAccount']]],
-  ['m_5fpszpathtoadminaccount',['m_pszPathToAdminAccount',['../class_c_app_init.html#afb7b17afb7aa03618f36fc9e52e981c6',1,'CAppInit']]],
   ['m_5fserverstackinf_5ft',['m_serverStackInf_t',['../class_c_server_stack.html#a78ef464f875b62d2be0fc8a60bd48792',1,'CServerStack']]],
+  ['m_5fszusername',['m_szUsername',['../class_c_admin_account.html#a323e1d8f1df5d487ad037df8c4b5ac41',1,'CAdminAccount']]],
   ['m_5ftreeadminitem',['m_treeAdminItem',['../class_c_server_stack.html#a838ed5c5af6d8fb2375b085217eaf30d',1,'CServerStack']]],
   ['m_5ftreeroot',['m_treeRoot',['../class_c_server_stack.html#aca2c9e6eb5bd4560ea0fc1d7b7b4cd01',1,'CServerStack']]],
-  ['m_5fxmlfile',['m_XMLFile',['../class_c_app_init.html#a10f6a513346808f5189dad11abdcf8c1',1,'CAppInit::m_XMLFile()'],['../class_c_admin_account.html#abdd779c2ce08e825025104697e516035',1,'CAdminAccount::m_XMLFile()']]],
-  ['m_5fxmlsettings',['m_XMLSettings',['../class_c_app_init.html#ad938844a3a5f4c332de8f82981e85967',1,'CAppInit::m_XMLSettings()'],['../class_c_admin_account.html#ac8b56a668a10214e68c713ff983e1782',1,'CAdminAccount::m_XMLSettings()']]]
+  ['m_5fxmlfile',['m_XMLFile',['../class_c_app_init.html#a10f6a513346808f5189dad11abdcf8c1',1,'CAppInit']]],
+  ['m_5fxmlsettings',['m_XMLSettings',['../class_c_app_init.html#ad938844a3a5f4c332de8f82981e85967',1,'CAppInit']]]
 ];

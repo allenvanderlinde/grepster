@@ -2,7 +2,7 @@
  * @file    CAdminAccount.h
  * @author  Allen Vanderlinde
  * @date    December 1, 2014
- * @brief   grepster's administrator account which loads user's workspace and server stacks for a new session.
+ * @brief   grepster's administrator account which loads user's credentials and server stacks for a new session.
  */
 /*
     Copyright (C) 2014 by Allen Vanderlinde.
@@ -17,36 +17,39 @@
 
 #include "../pugixml-1.4/pugixml.hpp"
 
+/* Note: Should I store the administrator's user_id and passwd locally in a plain-text file with passwd SHA-2 encrypted? Is there such an API? */
+
 /**
- * This object represents an administrator's user account which houses the user-defined server stacks for each grepping session.
- * Administrator account information is written/read from a single representative XML file.
- *
- * @class   CAdminAccount
- * @brief   Class definition for grepster's administrator accounts.
- */
- class CAdminAccount {
- public:
+* This object represents an administrator's user account which houses the user-defined server stacks for each grepping session.
+* Administrator account information is written/read from a single representative XML file.
+*
+* @class   CAdminAccount
+* @brief   Class definition for grepster's administrator accounts.
+*/
+class CAdminAccount {
+public:
     /**
      * @brief       Default constructor which creates administrator account object.
-     * @param[in]   path The path used to load the administrator's account information from file. This is passed from grepster's configuration.
+     * @param[in]   username Administrator's username credential required to access servers for the current session.
      */
-    CAdminAccount(wxString path);
+    CAdminAccount(wxString username);
 
     /**
-     * @brief       Query successful loading of configuration.
+     * @brief       Query administrator's username.
+     * @retval      wxString This is the current session's administrator's username credential.
      */
-    bool Success() { return m_bConfigurationLoadedSuccessfully; }
+    wxString Username() { return m_szUsername; }
+    /**
+     * @brief       Change the administrator's username.
+     */
+    void ChangeUsername(wxString username) { m_szUsername = username; }
 
- private:
-    /** Path to the user's administrator account configuration for initialization. */
-    wxString m_pszPath;
-    /** XML file handle for reading. */
-    pugi::xml_document m_XMLFile;
-    /** A pugixml parsing node used to read XML data. */
-    pugi::xml_node m_XMLSettings;
-
+private:
     /** Flag for successful loading of configuration. */
     bool m_bConfigurationLoadedSuccessfully;
+
+    /** Administrator's username for the current session. */
+    wxString m_szUsername;
  };
 
 #endif // _CADMINACCOUNT_H_

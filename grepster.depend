@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1419913340 source:c:\grepster\app\cappentry.cpp
+1425085241 source:c:\grepster\app\cappentry.cpp
 	"../grepster.h"
 	"../resources/grepster_rc.h"
 	"CAppEntry.h"
 	<wx/splash.h>
 	<wx/icon.h>
 
-1417743357 c:\grepster\grepster.h
+1424478114 c:\grepster\grepster.h
 	<wx/wx.h>
 	"app/CConsole.h"
 	"app/CServerStack.h"
@@ -2933,7 +2933,7 @@
 1412627642 c:\wxwidgets-3.0.2\include\wx\cocoa\mdi.h
 	"wx/frame.h"
 
-1417743357 c:\grepster\app\cconsole.h
+1425089343 c:\grepster\app\cconsole.h
 	<wx/wx.h>
 	<wx/aui/aui.h>
 
@@ -3135,7 +3135,7 @@
 	"wx/treebase.h"
 	"wx/hashmap.h"
 
-1417743357 c:\grepster\app\cgrepnotebook.h
+1425089343 c:\grepster\app\cgrepnotebook.h
 	<wx/wx.h>
 	<wx/aui/aui.h>
 	<wx/aui/auibook.h>
@@ -3187,21 +3187,21 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1419914484 c:\grepster\version.h
+1425096468 c:\grepster\version.h
 
 1417743357 c:\grepster\resources\grepster_rc.h
 
-1419910731 c:\grepster\app\cappentry.h
+1421684864 c:\grepster\app\cappentry.h
 	<wx/wx.h>
 	"CAppFrame.h"
 
-1418097858 c:\grepster\app\cappframe.h
+1425090571 c:\grepster\app\cappframe.h
 	"CFrameMenubar.h"
 	<wx/wx.h>
 	<wx/aui/framemanager.h>
 	<wx/aui/auibook.h>
 
-1418099085 c:\grepster\app\cframemenubar.h
+1425090428 c:\grepster\app\cframemenubar.h
 	<wx/wx.h>
 
 1412627643 c:\wxwidgets-3.0.2\include\wx\splash.h
@@ -3213,7 +3213,7 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1419907638 source:c:\grepster\app\cappframe.cpp
+1425096382 source:c:\grepster\app\cappframe.cpp
 	"../grepster.h"
 	"../resources/grepster_rc.h"
 	"CAppFrame.h"
@@ -3229,16 +3229,16 @@
 	"CAppFrame.h"
 	"CConsole.h"
 
-1417743357 source:c:\grepster\app\cframemenubar.cpp
+1425090454 source:c:\grepster\app\cframemenubar.cpp
 	"../grepster.h"
 	"CFrameMenubar.h"
 
-1417743357 source:c:\grepster\app\cgrepnotebook.cpp
+1421687914 source:c:\grepster\app\cgrepnotebook.cpp
 	"../grepster.h"
 	"CGrepNotebook.h"
 	"CAppFrame.h"
 
-1417743357 source:c:\grepster\grepster.cpp
+1425085180 source:c:\grepster\grepster.cpp
 	"grepster.h"
 	<wx/wx.h>
 	"app/CAppEntry.h"
@@ -3295,28 +3295,28 @@
 	<new>
 	<stdint.h>
 
-1419911447 c:\grepster\app\cappinit.h
+1425094972 c:\grepster\app\cappinit.h
 	"../pugixml-1.4/pugixml.hpp"
 	"../session/CAdminAccount.h"
 
-1419103815 source:c:\grepster\app\cappinit.cpp
+1425088130 source:c:\grepster\app\cappinit.cpp
 	"../grepster.h"
 	"CAppInit.h"
 
-1417743357 c:\grepster\app\cserverstack.h
+1425089347 c:\grepster\app\cserverstack.h
 	<wx/wx.h>
 	<wx/treectrl.h>
 	<wx/aui/aui.h>
 
-1417743357 source:c:\grepster\app\cserverstack.cpp
+1425095023 source:c:\grepster\app\cserverstack.cpp
 	"../grepster.h"
 	"CAppFrame.h"
 	"CServerStack.h"
 
-1419911287 c:\grepster\session\cadminaccount.h
+1425094062 c:\grepster\session\cadminaccount.h
 	<wx/wx.h>
 	"../pugixml-1.4/pugixml.hpp"
 
-1419911831 source:c:\grepster\session\cadminaccount.cpp
+1425086120 source:c:\grepster\session\cadminaccount.cpp
 	"CAdminAccount.h"
 

@@ -40,7 +40,10 @@ public:
      */
     CGrepNotebook(wxWindow* parentFrame);
 
-    /** Return control's pane information. */
+    /**
+     * @brief   Get notebook control's pane information.
+     * @retval  wxAuiPaneInfo This is the notebook control's display configuration object.
+     */
     wxAuiPaneInfo getPaneInfo() { return m_grepNotebookInf_t; }
     /** Launch browser for welcome page. */
     void OpenWelcomePage();
@@ -50,9 +53,10 @@ public:
 private:
     /** grepster's welcome page browser. */
     CWebViewer* m_pBrowser;
-    /** AUI pane settings structure. */
+    /** AUI pane settings object. */
     wxAuiPaneInfo m_grepNotebookInf_t;
 
+    /* Declare the wxWidgets event-handling table for this control. */
     wxDECLARE_EVENT_TABLE();
 };
 

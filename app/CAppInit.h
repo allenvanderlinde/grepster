@@ -45,10 +45,21 @@ public:
 
     /**
      * @brief       Query successful loading of configuration.
+     * @retval      bool Returns true if XML configuration loaded successfully.
      */
     bool Success() { return m_bConfigurationLoadedSuccessfully; }
 
-    /* Configuration session flags/settings. */
+    /**
+     * @brief       Query administrator's username.
+     * @retval      wxString This is the administrator's username credential.
+     */
+    wxString Username() { return m_pAdministrator->Username(); }
+    /**
+     * @brief       Change the administrator's username.
+     */
+    void ChangeUsername(wxString username) { m_pAdministrator->ChangeUsername(username); }
+
+    /* Session configuration flags/settings. */
     /** Toggle floating controls. */
     bool bToggleFloating;
 
@@ -66,9 +77,6 @@ private:
     pugi::xml_document m_XMLFile;
     /** A pugixml parsing node used to read XML data. */
     pugi::xml_node m_XMLSettings;
-
-    /** Path to administrator account XML file. */
-    wxString m_pszPathToAdminAccount;
 
     /** Flag for successful loading of configuration. */
     bool m_bConfigurationLoadedSuccessfully;

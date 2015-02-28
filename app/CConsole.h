@@ -42,13 +42,17 @@ public:
      */
     void BlackText() { SetDefaultStyle(wxTextAttr(*wxBLACK)); }
 
-    /** Return control's pane information. */
+    /**
+     * @brief       Get the console control's pane information.
+     * @retval      wxAuiPaneInfo This is the text control's display configuration object.
+     */
     wxAuiPaneInfo getPaneInfo() { return m_consoleInf_t; }
 
 private:
-    /** AUI pane settings structure. */
+    /** AUI pane settings object. */
     wxAuiPaneInfo m_consoleInf_t;
 
+    /* Declare the wxWidgets event-handling table for this control. */
     //wxDECLARE_EVENT_TABLE();
 };
 
