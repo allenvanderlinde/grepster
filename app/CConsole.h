@@ -5,7 +5,7 @@
  * @brief   wxWidgets read-only text control class definition used as grepster's console.
  */
 /*
-    Copyright (C) 2014 by Allen Vanderlinde.
+    Copyright (C) 2014-2015 by Allen Vanderlinde.
     grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
@@ -52,7 +52,9 @@ private:
     /** AUI pane settings object. */
     wxAuiPaneInfo m_consoleInf_t;
 
-    /* Declare the wxWidgets event-handling table for this control. */
+    /**
+     * @brief       Initialize and call the primary object's event handler.
+     */
     //wxDECLARE_EVENT_TABLE();
 };
 

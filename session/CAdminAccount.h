@@ -5,7 +5,7 @@
  * @brief   grepster's administrator account which loads user's credentials and server stacks for a new session.
  */
 /*
-    Copyright (C) 2014 by Allen Vanderlinde.
+    Copyright (C) 2014-2015 by Allen Vanderlinde.
     grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */

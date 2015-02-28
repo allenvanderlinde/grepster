@@ -7,7 +7,7 @@
 
     Created:    11/28/14
 
-    Copyright (C) 2014 by Allen Vanderlinde.
+    Copyright (C) 2014-2015 by Allen Vanderlinde.
     grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
@@ -81,4 +81,9 @@ void CAppInit::WriteXMLData() {
 
     // Save XML document to configuration file
     m_XMLFile.save_file(CONFIGURATION_FILE_PATH);
+
+    /* Write configuration changes to file. */
+    Console->BlueText();
+    *Console << "\nConfiguration saved.";
+    Console->BlackText();
 }

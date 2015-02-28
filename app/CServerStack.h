@@ -5,7 +5,7 @@
  * @brief   wxWidgets tree control class definition which displays user's server stacks.
  */
 /*
-    Copyright (C) 2014 by Allen Vanderlinde.
+    Copyright (C) 2014-2015 by Allen Vanderlinde.
     grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
@@ -42,13 +42,15 @@ public:
 
 private:
     /** wxTreeCtrl root item. */
-    wxTreeItemId m_treeRoot;
+    wxTreeItemId    m_treeRoot;
     /** wxTreeCtrl administrator item populated with the user's server stacks. */
-    wxTreeItemId m_treeAdminItem;
+    wxTreeItemId    m_treeAdminItem;
     /** AUI pane settings object. */
-    wxAuiPaneInfo m_serverStackInf_t;
+    wxAuiPaneInfo   m_serverStackInf_t;
 
-    /* Declare the wxWidgets event-handling table for this control. */
+    /**
+     * @brief       Initialize and call the primary object's event handler.
+     */
     //wxDECLARE_EVENT_TABLE();
 };
 

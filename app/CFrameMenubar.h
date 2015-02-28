@@ -5,7 +5,7 @@
  * @brief   wxWidgets menu bar control class definition.
  */
 /*
-    Copyright (C) 2014 by Allen Vanderlinde.
+    Copyright (C) 2014-2015 by Allen Vanderlinde.
     grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
@@ -22,7 +22,7 @@ const wxString FRAME_MENUBAR_STRINGS[]      = {"&File",
                                                "&Options",
                                                "&Help"};
 /** Menu bar menu item strings. */
-const wxString FRAME_MENU_STRINGS[]         = {"&Configure Administrator Credentials...\tCtrl+Shift+N",
+const wxString FRAME_MENU_STRINGS[]         = {"&Change Administrator Credentials...\tCtrl+Shift+N",
                                                "&Quit\tCtrl+Q",
                                                "&Launch PuTTY\tCtrl+P",
                                                "Toggle Floating Controls",

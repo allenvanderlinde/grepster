@@ -5,7 +5,7 @@
  * @brief   wxWidgets AUI notebook control class definition.
  */
 /*
-    Copyright (C) 2014 by Allen Vanderlinde.
+    Copyright (C) 2014-2015 by Allen Vanderlinde.
     Songbird and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
@@ -52,11 +52,13 @@ public:
 
 private:
     /** grepster's welcome page browser. */
-    CWebViewer* m_pBrowser;
+    CWebViewer*     m_pBrowser;
     /** AUI pane settings object. */
-    wxAuiPaneInfo m_grepNotebookInf_t;
+    wxAuiPaneInfo   m_grepNotebookInf_t;
 
-    /* Declare the wxWidgets event-handling table for this control. */
+    /**
+     * @brief       Initialize and call the primary object's event handler.
+     */
     wxDECLARE_EVENT_TABLE();
 };
 

@@ -5,7 +5,7 @@
  * @brief   wxWidgets frame object methods.
  */
 /*
-    Copyright (C) 2014 by Allen Vanderlinde.
+    Copyright (C) 2014-2015 by Allen Vanderlinde.
     grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
@@ -86,43 +86,12 @@ CAppFrame::~CAppFrame() {
     CAppFrame::ChangeAdminCredentials
 */
 void CAppFrame::ChangeAdminCredentials(wxCommandEvent& event) {
-    /* Dialog's main controls and sizers. */
-    wxDialog* dialog = new wxDialog(this, wxID_ANY, L"Change Administrator Credentials", wxDefaultPosition, wxSize(400, 180));
-    wxBoxSizer* dialog_sizer = new wxBoxSizer(wxVERTICAL);
-
-    /* Dialogs inputs. */
-    wxTextCtrl *textbox_username = new wxTextCtrl(dialog, wxID_ANY, Configuration->Username(), wxDefaultPosition, wxDefaultSize);
-
-    /* Dialog's buttons. */
-    wxButton* button_ok = new wxButton(dialog, wxID_ANY, L"OK", wxPoint(0, 0), wxDefaultSize);
-    //button_ok->Bind(wxEVT_BUTTON, wxCommandEventHandler(/* */));
-    button_ok->SetDefault();
-
-    /* Arrange dialog's controls. */
-    dialog_sizer->Add(textbox_username, wxSizerFlags().Center());
-    dialog_sizer->Add(button_ok, wxSizerFlags().Center());
-
-    dialog->SetSizer(dialog_sizer);
-
-    /*
-    if(button_ok->Press() == true) {
-        Configuration->ChangeUsername(textbox_username->GetLineText(0));
-        *Console << "\n\nChanging administrator's username to " + textbox_username->GetLineText(0) + ".";
-        RefreshConfiguration();
-    }
-    */
-    if(dialog->ShowModal() == wxID_OK)
-        dialog->Destroy();
-
-    //wxPanel* panel = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxDefaultSize);
-    //GrepNotebook->AddPage(panel, "New Admin Account");
-    /* Update notebook's page count. */
-    //size_t nNewPageIndex = GrepNotebook->GetPageCount();
-    //GrepNotebook->SetSelection(nNewPageIndex - 1);
+    CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this);
 }
 
 /* Event Handler : CAppFrame::updateUsername */
 void CAppFrame::updateUsername(wxCommandEvent& event) {
+    wxMessageBox("button", "clicked", wxOK);
     /* Update administrator's username in configuration. */
 }
 
@@ -134,6 +103,7 @@ void CAppFrame::ToggleFloating(wxCommandEvent& event) {
 
     /* Refresh grepster's configuration to reflect local changes. */
     RefreshConfiguration();
+    Configuration->WriteXMLData();
 }
 
 /*
@@ -172,12 +142,6 @@ void CAppFrame::RefreshConfiguration() {
     m_pAui->GetPane(Console).Floatable(Configuration->bToggleFloating);
     m_pAui->GetPane(ServerStack).Floatable(Configuration->bToggleFloating);
     m_pAui->GetPane(GrepNotebook).Floatable(Configuration->bToggleFloating);
-
-    /* Write configuration changes to file. */
-    Configuration->WriteXMLData();
-    Console->BlueText();
-    *Console << "\nConfiguration saved.";
-    Console->BlackText();
 }
 
 /*

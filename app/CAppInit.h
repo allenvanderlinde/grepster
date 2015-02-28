@@ -5,7 +5,7 @@
  * @brief   This object loads and populates grepster's configuration settings.
  */
 /*
-    Copyright (C) 2014 by Allen Vanderlinde.
+    Copyright (C) 2014-2015 by Allen Vanderlinde.
     grepster and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
@@ -71,12 +71,12 @@ private:
     void ApplyXMLData();
 
     /** Administrator account loaded upon entry. */
-    CAdminAccount* m_pAdministrator;
+    CAdminAccount*      m_pAdministrator;
 
     /** XML file handle for reading. */
-    pugi::xml_document m_XMLFile;
+    pugi::xml_document  m_XMLFile;
     /** A pugixml parsing node used to read XML data. */
-    pugi::xml_node m_XMLSettings;
+    pugi::xml_node      m_XMLSettings;
 
     /** Flag for successful loading of configuration. */
     bool m_bConfigurationLoadedSuccessfully;
