@@ -29,7 +29,11 @@ CGrepNotebook*      GrepNotebook;
 /* grepster configuration object. This is global. */
 CAppInit*           Configuration;
 
+
 /* Utility function definitions. */
+/*
+    RESOURCE_ID_TO_STRING
+*/
 wxString RESOURCE_ID_TO_STRING(int id) { return wxString::Format("#%i", id); }
 
 /*
