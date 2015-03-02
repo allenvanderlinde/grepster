@@ -12,18 +12,16 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
-/* NOTES */
-// MAKE CONFIG FILE WITH PATH TO PUTTY DIRECTORY!!
+#include <wx/wx.h>
 
 #include "grepster.h"
 
-#include <wx/wx.h>
 
 /* Frame globals definitions. */
 wxString            g_szFrameTitle("grepster alpha v");
 /* Frame control definitions. These are global. */
 CConsole*           Console;
-CServerStack*       ServerStack;
+CServerStacks*      ServerStacks;
 CGrepNotebook*      GrepNotebook;
 
 /* grepster configuration object. This is global. */

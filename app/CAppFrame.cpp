@@ -13,13 +13,18 @@
 #include "../grepster.h"
 #include "../resources/grepster_rc.h"
 
+#include <wx/aui/dockart.h>
+
 #include "CAppFrame.h"
 
-#include <wx/aui/dockart.h>
+#include <iostream>
+using namespace std;
+
 
 /* grepster's primary frame's event handler calls. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
-    EVT_MENU(MENU_FUNCTION_ID_FILE_CHANGE_CREDENTIALS, CAppFrame::ChangeAdminCredentials)
+    //EVT_MENU(MENU_FUNCTION_ID_FILE_NEW_JOB, //CAppFrame::ChangeDefaultCredentials)
+    EVT_MENU(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS, CAppFrame::ChangeDefaultCredentials)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::CloseFrame)
     EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
     EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, CAppFrame::ToggleFloating)
@@ -27,6 +32,7 @@ wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
 
     EVT_CLOSE(CAppFrame::OnExit)
 wxEND_EVENT_TABLE()
+
 
 /*
     CAppFrame::CAppFrame
@@ -37,7 +43,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     SetBackgroundColour(BG_COLOR);
 
     /* Create menu bar. */
-    m_pMenubar = new CFrameMenubar;
+    m_pMenubar = new CAppMenubar;
     SetMenuBar(m_pMenubar);
 
     /* Configure and initialize status bar. */
@@ -49,7 +55,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
 
     /* Create and initialize primary frame controls. */
     Console = new CConsole(this);
-    ServerStack = new CServerStack(this);
+    ServerStacks = new CServerStacks(this);
     GrepNotebook = new CGrepNotebook(this);
     GrepNotebook->OpenWelcomePage();
 
@@ -59,7 +65,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     m_pAui->SetFlags(wxAUI_MGR_ALLOW_ACTIVE_PANE | wxAUI_MGR_LIVE_RESIZE | wxAUI_MGR_ALLOW_FLOATING | wxAUI_MGR_VENETIAN_BLINDS_HINT);
 
     m_pAui->AddPane(Console, Console->getPaneInfo());
-    m_pAui->AddPane(ServerStack, ServerStack->getPaneInfo());
+    m_pAui->AddPane(ServerStacks, ServerStacks->getPaneInfo());
     m_pAui->AddPane(GrepNotebook, GrepNotebook->getPaneInfo());
 
     // Set pane colors for controls
@@ -83,16 +89,12 @@ CAppFrame::~CAppFrame() {
 }
 
 /*
-    CAppFrame::ChangeAdminCredentials
+    CAppFrame::ChangeDefaultCredentials
 */
-void CAppFrame::ChangeAdminCredentials(wxCommandEvent& event) {
+void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
     CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this);
-}
-
-/* Event Handler : CAppFrame::updateUsername */
-void CAppFrame::updateUsername(wxCommandEvent& event) {
-    wxMessageBox("button", "clicked", wxOK);
-    /* Update administrator's username in configuration. */
+    if(Dialog->ShowModal() == BUTTON_OK)
+        Dialog->Destroy();
 }
 
 /*
@@ -110,28 +112,102 @@ void CAppFrame::ToggleFloating(wxCommandEvent& event) {
     CAppFrame::LaunchPuTTY
 */
 void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
+    HANDLE hPSFTP_Read, hPSFTP_Write;
     STARTUPINFO si;
     PROCESS_INFORMATION pi;
 
-    ZeroMemory(&si, sizeof(si));
-    si.cb = sizeof(si);
-    ZeroMemory(&pi, sizeof(pi));
+    /* Build handle to child process to capture stdout from. */
+    SECURITY_ATTRIBUTES sa;
+    sa.nLength = sizeof(SECURITY_ATTRIBUTES);
+    sa.bInheritHandle = true;
+    sa.lpSecurityDescriptor = NULL;
 
-    LPCWSTR path = L"C:\\Program Files (x86)\\PuTTY\\putty.exe";
-    LPWSTR args = L"-ssh -pw Elementbox9 avanderlinde@172.24.37.191 -m \"cmds\\zgrep.gcmd\"";
-    CreateProcess(path,
-                  L"",
-                  NULL,
-                  NULL,
-                  false,
-                  CREATE_NO_WINDOW,
-                  NULL,
-                  NULL,
-                  &si,
-                  &pi);
+    /* Create pipe to child process. */
+    if(!CreatePipe(&hPSFTP_Read, &hPSFTP_Write, &sa, 0)) {
+        wxMessageBox("Unable to create pipe!", "Error", wxOK | wxICON_EXCLAMATION);
+    } else if(!SetHandleInformation(hPSFTP_Read, HANDLE_FLAG_INHERIT, 0)) {
+        wxMessageBox("Unable to set handle information!", "Error", wxOK | wxICON_EXCLAMATION);
+    }
+
+    /* Build the command line arguments string. */
+    wxString szArgs(L"psftp.exe "); // Build new string to use as arguments list
+    wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\script1.grep\""); // Call a user-saved grepster script to run on the server
+    szArgs += Configuration->Username() + L"@" + L"172.24.52.150" + L" -pw " + Configuration->Password() + L" -b " + szScriptPath;
+
+
+    // REPLACE THE BELOW STRING LITERAL WITH WITH SAVED PATH TO PSFTP.EXE IN XML CONFIG, ALONG WITH PUTTY.EXE AND PLINK.EXE
+    // CREATE A SETTING IN XML CONFIG, TOO, THAT IS THE STARTING DIRECTORY FOR GREPSTER FOR LOADING SCRIPTS
+    // ^^^^^BE ABLE TO EDIT THE ABOVE AS A GUI setting
+
+    LPCWSTR pszPath = L"C:\\Program Files (x86)\\PuTTY\\psftp.exe";    // Path to psftp.exe which extends secured FTP downloading capabilities to grepster
+    //LPWSTR pszArgs = L"psftp.exe avanderlinde@172.24.52.150 -pw Coolsolid9 -b \"C:\\grepster\\user\\scripts\\script1.grep\"";
+
+
+    /* Execute child process and establish link to its handle to capture stdout. */
+
+    ZeroMemory(&si, sizeof(STARTUPINFO));
+    ZeroMemory(&pi, sizeof(PROCESS_INFORMATION));
+    si.cb = sizeof(STARTUPINFO);
+    si.hStdOutput = hPSFTP_Write;
+    si.dwFlags |= STARTF_USESTDHANDLES;
+
+    CreateProcessW(pszPath,
+                   szArgs.wchar_str(),
+                   NULL,
+                   NULL,
+                   true,
+                   CREATE_NO_WINDOW,
+                   NULL,
+                   NULL,
+                   &si,
+                   &pi);
+    CloseHandle(hPSFTP_Write);
+
+
+    /* Read from child process's stdout. */
+    DWORD dwRead;
+    CHAR chBuf[4096];
+    bool bSuccess = false;
+    std::string out = "";
+
+    for(;;) {
+        bSuccess = ReadFile(hPSFTP_Read, chBuf, 4096, &dwRead, NULL);
+        if(!bSuccess || dwRead == 0) break;
+
+        std:string s(chBuf, dwRead);
+        *Console << "\n\npsftp.exe:\n" << s;
+        out += s;
+    }
+    //*Console << "psftp: \n" << out;
+
+    /* */
+
 
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
+
+    /* *** TRY READCONSOLEOUTPUT HERE AND print to CONSOLE to see what it grabs. Trying to be able to report to user when external processes succeed/fail. *** ^^^ ++ */
+    /*
+    bool move_rect(
+    int x,     int y,
+    int new_x, int new_y,
+    int width, int height
+    ) {
+    HANDLE     hStdOut      = GetStdHandle( STD_OUTPUT_HANDLE );
+    PCHAR_INFO buffer       = new CHAR_INFO[ width * height ];
+    COORD      buffer_size  = { width, height };
+    COORD      buffer_index = { 0, 0 };  // read/write rectangle has upper-right corner at upper-right corner of buffer
+    SMALL_RECT read_rect    = { x,     y,     x     + width - 1, y     + height - 1 };
+    SMALL_RECT write_rect   = { new_x, new_y, new_x + width - 1, new_y + height - 1 };
+
+    bool result = ReadConsoleOutput(  hStdOut, buffer, buffer_size, buffer_index, &read_rect )
+        && WriteConsoleOutput( hStdOut, buffer, buffer_size, buffer_index, &write_rect );
+
+    delete [] buffer;
+
+    return result;
+    }
+    */
 }
 
 /*
@@ -140,7 +216,7 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
 void CAppFrame::RefreshConfiguration() {
     // Floating controls
     m_pAui->GetPane(Console).Floatable(Configuration->bToggleFloating);
-    m_pAui->GetPane(ServerStack).Floatable(Configuration->bToggleFloating);
+    m_pAui->GetPane(ServerStacks).Floatable(Configuration->bToggleFloating);
     m_pAui->GetPane(GrepNotebook).Floatable(Configuration->bToggleFloating);
 }
 
@@ -149,27 +225,27 @@ void CAppFrame::RefreshConfiguration() {
 */
 void CAppFrame::OnAbout(wxCommandEvent& event) {
     /* Dialog's main controls and sizers. */
-    wxDialog* dialog = new wxDialog(this, wxID_ANY, g_szFrameTitle, wxDefaultPosition, wxSize(400, 374));
-    wxBoxSizer* dialog_sizer = new wxBoxSizer(wxVERTICAL);
-    wxStaticBoxSizer* dialog_static_sizer = new wxStaticBoxSizer(wxVERTICAL, dialog, "About grepster");
+    wxDialog* Dialog = new wxDialog(this, wxID_ANY, g_szFrameTitle, wxDefaultPosition, wxSize(400, 374));
+    wxBoxSizer* dialogSizer = new wxBoxSizer(wxVERTICAL);
+    wxStaticBoxSizer* dialogStaticSizer = new wxStaticBoxSizer(wxVERTICAL, Dialog, L"About " + g_szFrameTitle);
 
-    wxStaticBitmap* banner = new wxStaticBitmap(dialog, wxID_ANY, wxBitmap(RESOURCE_ID_TO_STRING(RESID_PNG_ABOUT), wxBITMAP_TYPE_PNG_RESOURCE), wxDefaultPosition, wxDefaultSize);
-    wxTextCtrl* about_text = new wxTextCtrl(dialog, wxID_ANY, ABOUT_INFORMATION, wxDefaultPosition, wxSize(wxDefaultSize.GetWidth(), 120), wxTE_MULTILINE | wxTE_READONLY);
+    wxStaticBitmap* bannerImg = new wxStaticBitmap(Dialog, wxID_ANY, wxBitmap(RESOURCE_ID_TO_STRING(RESID_PNG_ABOUT), wxBITMAP_TYPE_PNG_RESOURCE), wxDefaultPosition, wxDefaultSize);
+    wxTextCtrl* textAbout = new wxTextCtrl(Dialog, wxID_ANY, ABOUT_INFORMATION, wxDefaultPosition, wxSize(wxDefaultSize.GetWidth(), 120), wxTE_MULTILINE | wxTE_READONLY);
 
     /* Dialog's buttons. */
-    wxButton* button_ok = new wxButton(dialog, wxID_OK, "OK", wxPoint(0, 0), wxDefaultSize);
-    button_ok->SetDefault();
+    wxButton* pButtonOK = new wxButton(Dialog, wxID_OK, L"OK", wxPoint(0, 0), wxDefaultSize);
+    pButtonOK->SetDefault();
 
     /* Arrange dialog's controls. */
-    dialog_static_sizer->Add(about_text, wxSizerFlags().Expand().Center().Border(wxALL, 5));
-    dialog_sizer->Add(banner, 0);
-    dialog_sizer->Add(dialog_static_sizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
-    dialog_sizer->Add(button_ok, wxSizerFlags().Center());
+    dialogStaticSizer->Add(textAbout, wxSizerFlags().Expand().Center().Border(wxALL, 5));
+    dialogSizer->Add(bannerImg, 0);
+    dialogSizer->Add(dialogStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
+    dialogSizer->Add(pButtonOK, wxSizerFlags().Center());
 
-    dialog->SetSizer(dialog_sizer);
-    dialog->Center();
-    if(dialog->ShowModal() == wxID_OK)
-        dialog->Destroy();
+    Dialog->SetSizer(dialogSizer);
+    Dialog->Center();
+    if(Dialog->ShowModal() == wxID_OK)
+        Dialog->Destroy();
 }
 
 /*

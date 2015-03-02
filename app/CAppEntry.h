@@ -17,10 +17,12 @@
 
 #include "CAppFrame.h"
 
+
 /** Option to display the splash screen. */
 #define DISPLAY_SPLASH                  false
 /** Splash screen duration in milliseconds. */
 #define SPLASH_DURATION                 1700
+
 
 /**
  * This object registers the application with the OS and executes the application's primary frame.

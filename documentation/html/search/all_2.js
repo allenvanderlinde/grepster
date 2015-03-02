@@ -5,5 +5,6 @@ var searchData=
   ['bluetext',['BlueText',['../class_c_console.html#a41b2284812826833da3f11b51dfa9eac',1,'CConsole']]],
   ['browser_5fid',['BROWSER_ID',['../grepster_8h.html#a927b43beb141a266bc6631f99b5e2074',1,'grepster.h']]],
   ['browser_5fname',['BROWSER_NAME',['../grepster_8h.html#a574cfb7bb87e59e8b2ca1518f2efdf67',1,'grepster.h']]],
-  ['btogglefloating',['bToggleFloating',['../class_c_app_init.html#a0cc6b234885facdf9c3f07ad88ac2017',1,'CAppInit']]]
+  ['btogglefloating',['bToggleFloating',['../class_c_app_init.html#a0cc6b234885facdf9c3f07ad88ac2017',1,'CAppInit']]],
+  ['button_5fok',['BUTTON_OK',['../_c_dialog_change_credentials_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba3534e510a800f1a3975a255756f0246d',1,'CDialogChangeCredentials.h']]]
 ];

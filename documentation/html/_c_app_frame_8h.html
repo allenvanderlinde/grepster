@@ -95,10 +95,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>wxWidgets frame object which houses grepster.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_c_frame_menubar_8h_source.html">CFrameMenubar.h</a>&quot;</code><br />
-<code>#include &lt;wx/wx.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;wx/wx.h&gt;</code><br />
 <code>#include &lt;wx/aui/framemanager.h&gt;</code><br />
 <code>#include &lt;wx/aui/auibook.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_c_app_menubar_8h_source.html">CAppMenubar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_c_dialog_change_credentials_8h_source.html">../dialogs/CDialogChangeCredentials.h</a>&quot;</code><br />
 </div>
 <p><a href="_c_app_frame_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -124,8 +125,10 @@ Macros</h2></td></tr>
 <tr class="separator:a7eaedd0a5a26a658a7b9f3362c60e122"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6873edc266d9a65580a0cbc4228d6135"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#a6873edc266d9a65580a0cbc4228d6135">STATUSBAR_NOTE_WIDTH</a>&#160;&#160;&#160;120</td></tr>
 <tr class="separator:a6873edc266d9a65580a0cbc4228d6135"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5048d2447c9dcbe465cfb22755418d5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#a5048d2447c9dcbe465cfb22755418d5f">ABOUT_INFORMATION</a>&#160;&#160;&#160;&quot;Written by Allen Vanderlinde, 2014.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster allows System Administrators immediate and dynamic access to client servers for grepping various logs en masse.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.\n\nPuTTY and its companion tools are copyright 1997-2013 Simon Tatham.&quot;</td></tr>
+<tr class="memitem:a5048d2447c9dcbe465cfb22755418d5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#a5048d2447c9dcbe465cfb22755418d5f">ABOUT_INFORMATION</a>&#160;&#160;&#160;&quot;Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster allows System Administrators immediate and dynamic access to client servers for grepping various logs en masse.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.\n\nPuTTY and its companion tools are copyright 1997-2013 Simon Tatham.&quot;</td></tr>
 <tr class="separator:a5048d2447c9dcbe465cfb22755418d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff87402edbb190b3cd20e2731bb944e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#aff87402edbb190b3cd20e2731bb944e6">DIALOG_ID_CHANGE_CREDENTIALS</a>&#160;&#160;&#160;2001</td></tr>
+<tr class="separator:aff87402edbb190b3cd20e2731bb944e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>wxWidgets frame object which houses grepster. </p>
@@ -137,7 +140,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ABOUT_INFORMATION&#160;&#160;&#160;&quot;Written by Allen Vanderlinde, 2014.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster allows System Administrators immediate and dynamic access to client servers for grepping various logs en masse.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.\n\nPuTTY and its companion tools are copyright 1997-2013 Simon Tatham.&quot;</td>
+          <td class="memname">#define ABOUT_INFORMATION&#160;&#160;&#160;&quot;Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster allows System Administrators immediate and dynamic access to client servers for grepping various logs en masse.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.\n\nPuTTY and its companion tools are copyright 1997-2013 Simon Tatham.&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -155,6 +158,18 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Default frame background color. </p>
+
+</div>
+</div>
+<a class="anchor" id="aff87402edbb190b3cd20e2731bb944e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DIALOG_ID_CHANGE_CREDENTIALS&#160;&#160;&#160;2001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -239,7 +254,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 27 2015 23:39:31 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 2 2015 08:35:35 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

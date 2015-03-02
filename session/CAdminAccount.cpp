@@ -14,10 +14,12 @@
 
 #include "CAdminAccount.h"
 
+
 /*
     CAdminAccount::CAdminAccount
 */
 CAdminAccount::CAdminAccount(wxString username) {
     /* Set basic administrator authentication information. */
     m_szUsername = username;
+    m_szPassword = wxEmptyString;
 }

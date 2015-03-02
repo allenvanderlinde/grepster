@@ -19,12 +19,14 @@
 
 #include "../webviewer/CWebViewer.h"
 
-/* Grep Notebook configuration definitions. */
+
+/* CGrepNotebook configuration definitions. */
 /** @brief  These are defined here but not actually relevant because of a wxWidgets limitation being that wxAuiNotebook controls cannot yet float. */
 /** grepster's default notebook width. */
 #define GREP_NOTEBOOK_DEFAULT_WIDTH         500
 /** grepster's default notebook height. */
 #define GREP_NOTEBOOK_DEFAULT_HEIGHT        540
+
 
 /**
  * This object creates grepster's grep job notebook for data entry, search terms and command execution.

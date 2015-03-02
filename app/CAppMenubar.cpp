@@ -1,5 +1,5 @@
 /*
-    File:       CFrameMenubar.cpp
+    File:       CAppMenubar.cpp
     Version:    Alpha
     Author:     Allen Vanderlinde
 
@@ -13,22 +13,29 @@
 */
 
 #include "../grepster.h"
-#include "CFrameMenubar.h"
+#include "CAppMenubar.h"
+
 
 /*
     CAppFrame::CAppFrame
 */
-CFrameMenubar::CFrameMenubar()
+CAppMenubar::CAppMenubar()
     : wxMenuBar() {
     // File menu
     m_pMenuFile = new wxMenu;
-    m_pMenuFile->Append(MENU_FUNCTION_ID_FILE_CHANGE_CREDENTIALS,
-                        FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_CHANGE_CREDENTIALS],
-                        FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_CHANGE_CREDENTIALS]);
+    m_pMenuFile->Append(MENU_FUNCTION_ID_FILE_NEW_JOB,
+                        FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_NEW_JOB],
+                        FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_NEW_JOB]);
     m_pMenuFile->AppendSeparator();
     m_pMenuFile->Append(MENU_FUNCTION_ID_FILE_QUIT,
                         FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_QUIT],
                         FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_QUIT]);
+
+    // Session menu
+    m_pMenuSession = new wxMenu;
+    m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS,
+                           FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_DEFAULT_CREDENTIALS],
+                           FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_DEFAULT_CREDENTIALS]);
 
     // Tools menu
     m_pMenuTools = new wxMenu;
@@ -53,7 +60,9 @@ CFrameMenubar::CFrameMenubar()
 
     // Add menus to menu bar
     Append(m_pMenuFile, FRAME_MENUBAR_STRINGS[FRAME_ID_FILE_MENU]);
+    Append(m_pMenuSession, FRAME_MENUBAR_STRINGS[FRAME_ID_SESSION_MENU]);
     Append(m_pMenuTools, FRAME_MENUBAR_STRINGS[FRAME_ID_TOOLS_MENU]);
+
     Append(m_pMenuOptions, FRAME_MENUBAR_STRINGS[FRAME_ID_OPTIONS_MENU]);
     Append(m_pMenuHelp, FRAME_MENUBAR_STRINGS[FRAME_ID_HELP_MENU]);
 }

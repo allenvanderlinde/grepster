@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['launchputty',['LaunchPuTTY',['../class_c_app_frame.html#ac19147712aadc47f1bf06930833c69eb',1,'CAppFrame']]],
-  ['loadconfiguration',['LoadConfiguration',['../class_c_app_entry.html#a93c8506ec79939fe9ea0b0e4522c2f6b',1,'CAppEntry']]]
+  ['input_5fpassword',['INPUT_PASSWORD',['../_c_dialog_change_credentials_8h.html#a06fc87d81c62e9abb8790b6e5713c55bafb0aeee6604bd8bddce9b2c089af7b97',1,'CDialogChangeCredentials.h']]],
+  ['input_5fusername',['INPUT_USERNAME',['../_c_dialog_change_credentials_8h.html#a06fc87d81c62e9abb8790b6e5713c55baa5dcfd8a3b8568750001c5df3fe057d7',1,'CDialogChangeCredentials.h']]]
 ];

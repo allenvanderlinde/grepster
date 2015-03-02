@@ -105,9 +105,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a38c90def046e7275688ec50189dbbd55"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_account.html#a38c90def046e7275688ec50189dbbd55">Username</a> ()</td></tr>
 <tr class="memdesc:a38c90def046e7275688ec50189dbbd55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query administrator's username.  <a href="#a38c90def046e7275688ec50189dbbd55">More...</a><br /></td></tr>
 <tr class="separator:a38c90def046e7275688ec50189dbbd55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb5bc90485598a97cde0dccba4a07a6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_account.html#afb5bc90485598a97cde0dccba4a07a6b">ChangeUsername</a> (wxString username)</td></tr>
-<tr class="memdesc:afb5bc90485598a97cde0dccba4a07a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the administrator's username.  <a href="#afb5bc90485598a97cde0dccba4a07a6b">More...</a><br /></td></tr>
-<tr class="separator:afb5bc90485598a97cde0dccba4a07a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b441d7de4de5591d050cd7212aea2b"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_account.html#aa1b441d7de4de5591d050cd7212aea2b">Password</a> ()</td></tr>
+<tr class="memdesc:aa1b441d7de4de5591d050cd7212aea2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query administrator's password. Note: This is a plaintext password and is saved only in memory until the user quits grepster.  <a href="#aa1b441d7de4de5591d050cd7212aea2b">More...</a><br /></td></tr>
+<tr class="separator:aa1b441d7de4de5591d050cd7212aea2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4750a6a41701204ac847bb389ecda2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_account.html#ab4750a6a41701204ac847bb389ecda2e">ChangeCredentials</a> (wxString username, wxString password)</td></tr>
+<tr class="memdesc:ab4750a6a41701204ac847bb389ecda2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the administrator's credentials.  <a href="#ab4750a6a41701204ac847bb389ecda2e">More...</a><br /></td></tr>
+<tr class="separator:ab4750a6a41701204ac847bb389ecda2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -115,6 +118,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a29ef9103a45cfdfb971ff1a2e14c97d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a323e1d8f1df5d487ad037df8c4b5ac41"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_account.html#a323e1d8f1df5d487ad037df8c4b5ac41">m_szUsername</a></td></tr>
 <tr class="separator:a323e1d8f1df5d487ad037df8c4b5ac41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad67cfac543812cc5f09c7510cd8848d4"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_account.html#ad67cfac543812cc5f09c7510cd8848d4">m_szPassword</a></td></tr>
+<tr class="separator:ad67cfac543812cc5f09c7510cd8848d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for grepster's administrator accounts. </p>
@@ -145,7 +150,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="afb5bc90485598a97cde0dccba4a07a6b"></a>
+<a class="anchor" id="ab4750a6a41701204ac847bb389ecda2e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -153,10 +158,45 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CAdminAccount::ChangeUsername </td>
+          <td class="memname">void CAdminAccount::ChangeCredentials </td>
           <td>(</td>
           <td class="paramtype">wxString&#160;</td>
-          <td class="paramname"><em>username</em></td><td>)</td>
+          <td class="paramname"><em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">wxString&#160;</td>
+          <td class="paramname"><em>password</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change the administrator's credentials. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa1b441d7de4de5591d050cd7212aea2b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString CAdminAccount::Password </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -167,7 +207,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Change the administrator's username. </p>
+<p>Query administrator's password. Note: This is a plaintext password and is saved only in memory until the user quits grepster. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">wxString</td><td>This is the current session's administrator's password credential in plaintext. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -224,6 +270,27 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad67cfac543812cc5f09c7510cd8848d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString CAdminAccount::m_szPassword</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Administrator's password for the current job. </p>
+
+</div>
+</div>
 <a class="anchor" id="a323e1d8f1df5d487ad037df8c4b5ac41"></a>
 <div class="memitem">
 <div class="memproto">
@@ -241,7 +308,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Administrator's username for the current session. </p>
+<p>Administrator's username for the current job. </p>
 
 </div>
 </div>
@@ -252,7 +319,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 27 2015 23:39:31 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 2 2015 08:35:35 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

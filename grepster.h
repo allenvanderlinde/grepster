@@ -16,11 +16,12 @@
 #include <wx/wx.h>
 
 #include "app/CConsole.h"
-#include "app/CServerStack.h"
+#include "app/CServerStacks.h"
 #include "app/CGrepNotebook.h"
 #include "app/CAppInit.h"
 
 #include "version.h"
+
 
 /** grepster's frame globals. */
 extern wxString         g_szFrameTitle;
@@ -31,10 +32,10 @@ extern wxString         g_szFrameTitle;
  */
 extern CConsole*        Console;
 /**
- * This object holds the list of server's configured for grepping.
+ * This object holds the list of servers configured for grepping.
  * @brief       grepster's Server Stack.
  */
-extern CServerStack*     ServerStack;
+extern CServerStacks*     ServerStacks;
 /**
  * This object holds the user's book of grep session pages.
  * @brief       grepster's grep Session Notebook.
@@ -51,10 +52,27 @@ extern CAppInit*        Configuration;
 /* Utility functions. */
 /**
  * @brief       Translate a resource integer ID into a wxWidgets readable string for calling resources.
- *
  * @param[in]   id The resource's integer ID as found in grepster_rc.h.
  */
 wxString RESOURCE_ID_TO_STRING(int id);
+
+/**
+ * @brief       Creates a child process and sends it an argument list for remote commands. SpawnAndRun also records the child's stdout to grepster's console.
+ * @param[in]   path Local directory path to external application.
+ * @param[in]   args Argument list passed to child process.
+ *
+ * grepster can launch external applications and send them arguments as if it were a terminal.
+ *
+ * For example:
+ * @code
+ * C:\Users\Admin>psftp admin@127.0.0.1 -pw passwd
+ * @endcode
+ * can be launched with grepster code as:
+ * @code
+ * SpawnAndRun("C:\Program Files (x86)\PuTTY\psftp.exe", "psftp.exe admin@127.0.0.1 -pw passwd");
+ * @endcode
+ */
+void SpawnAndRun(wxString path, wxString args);
 
 /**
  * @brief       Casts a variable's identifier as a wxString for debugging/console reporting.
@@ -74,15 +92,15 @@ wxString RESOURCE_ID_TO_STRING(int id);
 /** Default height (pixels) of grepster's console control used when floating. */
 #define CONSOLE_DEFAULT_HEIGHT      140
 
-/* Server stack control settings. */
+/* Server Stacks tree control settings. */
 /** grepster's server stack's control ID. */
-#define SERVER_STACK_ID              1001
+#define SERVER_STACKS_ID              1001
 /** grepster's server stack's local name for wxWidgets. */
-#define SERVER_STACK_NAME            "server_stack"
+#define SERVER_STACKS_NAME            "server_stacks"
 /** grepster's server stack's control title. */
-#define SERVER_STACK_CTRL_TITLE      "Server Stacks"
+#define SERVER_STACKS_CTRL_TITLE      "Server Stacks"
 /** Default width (pixels) of grepster's tree list control used when floating. */
-#define SERVER_STACK_DEFAULT_WIDTH   200
+#define SERVER_STACKS_DEFAULT_WIDTH   200
 
 /* Grep Notebook control settings. */
 /** grepster's AUI notebook control ID. */

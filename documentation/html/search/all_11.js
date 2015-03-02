@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['xml_5fconfiguration_5fnode_5flabel',['XML_CONFIGURATION_NODE_LABEL',['../_c_app_init_8h.html#adb838a71d5e3ff123caaad5e461377ec',1,'CAppInit.h']]],
-  ['xml_5felement_5flabel',['XML_ELEMENT_LABEL',['../_c_app_init_8h.html#a2b91b4cfdd81a2c8651af3d6023cd006',1,'CAppInit.h']]],
-  ['xml_5fid_5flabel',['XML_ID_LABEL',['../_c_app_init_8h.html#ae3726bf586c15a069d9c170941833365',1,'CAppInit.h']]],
-  ['xml_5fvalue_5flabel',['XML_VALUE_LABEL',['../_c_app_init_8h.html#a0e231f5f5a9e6715add1ce1fd195d3df',1,'CAppInit.h']]]
+  ['updatestacks',['UpdateStacks',['../class_c_server_stacks.html#a35f5962e92f264d7982e9a2bb3849868',1,'CServerStacks']]],
+  ['username',['Username',['../class_c_app_init.html#ac4a968bec9b00d91f36c5a846f727da1',1,'CAppInit::Username()'],['../class_c_admin_account.html#a38c90def046e7275688ec50189dbbd55',1,'CAdminAccount::Username()']]]
 ];

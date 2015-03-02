@@ -16,6 +16,7 @@
 #include "CAppFrame.h"
 #include "CConsole.h"
 
+
 /*
     CConsole::CConsole(wxWindow*)
 */

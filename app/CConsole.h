@@ -16,6 +16,7 @@
 #include <wx/wx.h>
 #include <wx/aui/aui.h>
 
+
 /**
  * This object creates a wxTextCtrl which represents grepster's console for logging progress and returning results.
  * Due to wxTextCtrl's flexibility, you can use this like a standard iostream object by referencing its pointer.

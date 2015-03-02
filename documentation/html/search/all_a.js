@@ -1,28 +1,5 @@
 var searchData=
 [
-  ['m_5fbconfigurationloadedsuccessfully',['m_bConfigurationLoadedSuccessfully',['../class_c_app_init.html#a64d2a758646b43d34dd2c986f0854d13',1,'CAppInit::m_bConfigurationLoadedSuccessfully()'],['../class_c_admin_account.html#a29ef9103a45cfdfb971ff1a2e14c97d4',1,'CAdminAccount::m_bConfigurationLoadedSuccessfully()']]],
-  ['m_5fconsoleinf_5ft',['m_consoleInf_t',['../class_c_console.html#aa105d6d8ada4ba13cabadad7c712514f',1,'CConsole']]],
-  ['m_5fgrepnotebookinf_5ft',['m_grepNotebookInf_t',['../class_c_grep_notebook.html#a6c8d0bf38e146e0590998bd6da368f7c',1,'CGrepNotebook']]],
-  ['m_5fpadministrator',['m_pAdministrator',['../class_c_app_init.html#a10ad1620c5f77c3d359c9399f92fe34a',1,'CAppInit']]],
-  ['m_5fpaui',['m_pAui',['../class_c_app_frame.html#a3c2d134577e66b69a30a95804059f460',1,'CAppFrame']]],
-  ['m_5fpbrowser',['m_pBrowser',['../class_c_grep_notebook.html#ae483c5d7dc4fd79b613e8b1d61b96a0b',1,'CGrepNotebook::m_pBrowser()'],['../class_c_web_viewer.html#a185af0ae29681accdcac491d340c6f0d',1,'CWebViewer::m_pBrowser()']]],
-  ['m_5fpgrepsterframe',['m_pGrepsterFrame',['../class_c_app_entry.html#a4d16864cfac1ae915c4573837ea017a1',1,'CAppEntry']]],
-  ['m_5fpmenubar',['m_pMenubar',['../class_c_app_frame.html#a6150d7200092a62da02d80118397293e',1,'CAppFrame']]],
-  ['m_5fpmenufile',['m_pMenuFile',['../class_c_frame_menubar.html#aa44f5d891f62e9faeddaa53dc1dd7b1e',1,'CFrameMenubar']]],
-  ['m_5fpmenuhelp',['m_pMenuHelp',['../class_c_frame_menubar.html#a08c3626dc54cf03c73de83494c25ba94',1,'CFrameMenubar']]],
-  ['m_5fpmenuoptions',['m_pMenuOptions',['../class_c_frame_menubar.html#a7e359e1e46c859c46daae9d9751d1af9',1,'CFrameMenubar']]],
-  ['m_5fpmenutools',['m_pMenuTools',['../class_c_frame_menubar.html#a0ebeec67539798708025540e869a941c',1,'CFrameMenubar']]],
-  ['m_5fpstatusbar',['m_pStatusbar',['../class_c_app_frame.html#a215d9068460b42a395d050e68074312f',1,'CAppFrame']]],
-  ['m_5fserverstackinf_5ft',['m_serverStackInf_t',['../class_c_server_stack.html#a78ef464f875b62d2be0fc8a60bd48792',1,'CServerStack']]],
-  ['m_5fszusername',['m_szUsername',['../class_c_admin_account.html#a323e1d8f1df5d487ad037df8c4b5ac41',1,'CAdminAccount']]],
-  ['m_5ftreeadminitem',['m_treeAdminItem',['../class_c_server_stack.html#a838ed5c5af6d8fb2375b085217eaf30d',1,'CServerStack']]],
-  ['m_5ftreeroot',['m_treeRoot',['../class_c_server_stack.html#aca2c9e6eb5bd4560ea0fc1d7b7b4cd01',1,'CServerStack']]],
-  ['m_5fxmlfile',['m_XMLFile',['../class_c_app_init.html#a10f6a513346808f5189dad11abdcf8c1',1,'CAppInit']]],
-  ['m_5fxmlsettings',['m_XMLSettings',['../class_c_app_init.html#ad938844a3a5f4c332de8f82981e85967',1,'CAppInit']]],
-  ['mainpage_2emd',['mainpage.md',['../mainpage_8md.html',1,'']]],
-  ['menu_5ffunction_5fid_5ffile_5fchange_5fcredentials',['MENU_FUNCTION_ID_FILE_CHANGE_CREDENTIALS',['../_c_frame_menubar_8h.html#a0b5a7d57fdfdf224c7532732811c336fa671e05bdcd3a055e8b8cebe36eb3fa84',1,'CFrameMenubar.h']]],
-  ['menu_5ffunction_5fid_5ffile_5fquit',['MENU_FUNCTION_ID_FILE_QUIT',['../_c_frame_menubar_8h.html#a0b5a7d57fdfdf224c7532732811c336facd0a7a923ac36d6428e69d03713dbcde',1,'CFrameMenubar.h']]],
-  ['menu_5ffunction_5fid_5fhelp_5fabout',['MENU_FUNCTION_ID_HELP_ABOUT',['../_c_frame_menubar_8h.html#a0b5a7d57fdfdf224c7532732811c336fa0338e31fcca848cc9cc2bacb5c714e0c',1,'CFrameMenubar.h']]],
-  ['menu_5ffunction_5fid_5foptions_5ftoggle_5ffloatable',['MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE',['../_c_frame_menubar_8h.html#a0b5a7d57fdfdf224c7532732811c336fa24d6f6f4afd2bc40ff2453a4908b2d07',1,'CFrameMenubar.h']]],
-  ['menu_5ffunction_5fid_5ftools_5flaunch_5fputty',['MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY',['../_c_frame_menubar_8h.html#a0b5a7d57fdfdf224c7532732811c336fac43a70c2472bfc3742e754d8e24f49b3',1,'CFrameMenubar.h']]]
+  ['launchputty',['LaunchPuTTY',['../class_c_app_frame.html#ac19147712aadc47f1bf06930833c69eb',1,'CAppFrame']]],
+  ['loadconfiguration',['LoadConfiguration',['../class_c_app_entry.html#a93c8506ec79939fe9ea0b0e4522c2f6b',1,'CAppEntry']]]
 ];

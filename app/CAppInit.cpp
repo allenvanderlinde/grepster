@@ -15,6 +15,7 @@
 #include "../grepster.h"
 #include "CAppInit.h"
 
+
 /*
     CAppInit::CAppInit
 */

@@ -15,14 +15,20 @@
 
 #include <wx/wx.h>
 
+
 /* Dialog's globals. */
-#define DIALOG_TITLE    L"Change Administrator Credentials"
+#define DIALOG_TITLE    L"Administrator Default Credentials"
+
+#define DIALOG_WIDTH    300
+#define DIALOG_HEIGHT   260
 
 /* Dialog's control IDs. */
 enum {
-    BUTTON_OK           = 2101,
-    TEXTBOX_USERNAME    = 2102
+    BUTTON_OK = 2101,
+    INPUT_USERNAME,
+    INPUT_PASSWORD
 };
+
 
 /**
  * This object creates a dialog box to change the administrator's credentials.
@@ -33,21 +39,21 @@ enum {
  class CDialogChangeCredentials : public wxDialog {
  public:
      /**
-     * @brief       Default constructor which creates the dialog box.
-     * @param[in]   parentFrame The primary frame to which this dialog belongs.
-     */
+      * @brief       Default constructor which creates the dialog box.
+      * @param[in]   parentFrame The primary frame to which this dialog belongs.
+      */
      CDialogChangeCredentials(wxWindow* parentFrame);
 
  private:
-    /** Administrator's username. This will be used to populate the text control and to send back to CAppInit. */
-    wxString m_szUsername;
+    /** Primary box sizer for dialog. */
+    wxBoxSizer*         m_pSizer;
 
-    /** Dialog's box sizer for arranging controls. */
-    wxBoxSizer*     m_pSizer;
-    /** Dialog's text control used to grab new username. */
-    wxTextCtrl*     m_textbox_username;
+    /** Dialog's text control used to grab new default username. */
+    wxTextCtrl*         m_pInputUsername;
+    /** Dialog's text control used to grab new default password. */
+    wxTextCtrl*         m_pInputPassword;
     /** Dialog's button control used to save new credentials. */
-    wxButton*       m_button_ok;
+    wxButton*           m_pButtonOK;
 
     /**
      * @brief       Save new username to configuration.

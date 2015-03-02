@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;wx/wx.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_c_console_8h_source.html">app/CConsole.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_c_server_stack_8h_source.html">app/CServerStack.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_c_server_stacks_8h_source.html">app/CServerStacks.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_c_grep_notebook_8h_source.html">app/CGrepNotebook.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_c_app_init_8h_source.html">app/CAppInit.h</a>&quot;</code><br />
 <code>#include &quot;version.h&quot;</code><br />
@@ -116,14 +116,14 @@ Macros</h2></td></tr>
 <tr class="separator:a006d1c409c5f57e311db021017e8d670"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace37b2df2eebf832ed80faec7fd9a8db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#ace37b2df2eebf832ed80faec7fd9a8db">CONSOLE_DEFAULT_HEIGHT</a>&#160;&#160;&#160;140</td></tr>
 <tr class="separator:ace37b2df2eebf832ed80faec7fd9a8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98c3ad904ea343810f62faa14665c86c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a98c3ad904ea343810f62faa14665c86c">SERVER_STACK_ID</a>&#160;&#160;&#160;1001</td></tr>
-<tr class="separator:a98c3ad904ea343810f62faa14665c86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af19df9b4541f83b8e4d60b04a7f0ecd0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#af19df9b4541f83b8e4d60b04a7f0ecd0">SERVER_STACK_NAME</a>&#160;&#160;&#160;&quot;server_stack&quot;</td></tr>
-<tr class="separator:af19df9b4541f83b8e4d60b04a7f0ecd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe0d4632b7bac0589353c7dafc98025c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#afe0d4632b7bac0589353c7dafc98025c">SERVER_STACK_CTRL_TITLE</a>&#160;&#160;&#160;&quot;Server Stacks&quot;</td></tr>
-<tr class="separator:afe0d4632b7bac0589353c7dafc98025c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05977c285de3c0b06fc5812c134bad85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a05977c285de3c0b06fc5812c134bad85">SERVER_STACK_DEFAULT_WIDTH</a>&#160;&#160;&#160;200</td></tr>
-<tr class="separator:a05977c285de3c0b06fc5812c134bad85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a645678a2344831c3f0d09734f4b19032"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a645678a2344831c3f0d09734f4b19032">SERVER_STACKS_ID</a>&#160;&#160;&#160;1001</td></tr>
+<tr class="separator:a645678a2344831c3f0d09734f4b19032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef3f3454eb74302ee6475b6e1eb9b7ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#aef3f3454eb74302ee6475b6e1eb9b7ca">SERVER_STACKS_NAME</a>&#160;&#160;&#160;&quot;server_stacks&quot;</td></tr>
+<tr class="separator:aef3f3454eb74302ee6475b6e1eb9b7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b3792a26821ed1c5e652d7f0fe33699"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a8b3792a26821ed1c5e652d7f0fe33699">SERVER_STACKS_CTRL_TITLE</a>&#160;&#160;&#160;&quot;Server Stacks&quot;</td></tr>
+<tr class="separator:a8b3792a26821ed1c5e652d7f0fe33699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7293d10d90531879b1d04df1c82bda32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a7293d10d90531879b1d04df1c82bda32">SERVER_STACKS_DEFAULT_WIDTH</a>&#160;&#160;&#160;200</td></tr>
+<tr class="separator:a7293d10d90531879b1d04df1c82bda32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19eb389726e523e1180d22ff3c4cb405"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a19eb389726e523e1180d22ff3c4cb405">GREP_NOTEBOOK_ID</a>&#160;&#160;&#160;1002</td></tr>
 <tr class="separator:a19eb389726e523e1180d22ff3c4cb405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5042f8607c80fb476c55b5e235c8616c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a5042f8607c80fb476c55b5e235c8616c">GREP_NOTEBOOK_NAME</a>&#160;&#160;&#160;&quot;grep_notebook&quot;</td></tr>
@@ -140,6 +140,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a667b72a706bfbbfb8789a5ec7f0882ce"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a667b72a706bfbbfb8789a5ec7f0882ce">RESOURCE_ID_TO_STRING</a> (int id)</td></tr>
 <tr class="memdesc:a667b72a706bfbbfb8789a5ec7f0882ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate a resource integer ID into a wxWidgets readable string for calling resources.  <a href="#a667b72a706bfbbfb8789a5ec7f0882ce">More...</a><br /></td></tr>
 <tr class="separator:a667b72a706bfbbfb8789a5ec7f0882ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae64a9952f46d6d3ebae9507edb6903af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#ae64a9952f46d6d3ebae9507edb6903af">SpawnAndRun</a> (wxString path, wxString args)</td></tr>
+<tr class="memdesc:ae64a9952f46d6d3ebae9507edb6903af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a child process and sends it an argument list for remote commands. SpawnAndRun also records the child's stdout to grepster's console.  <a href="#ae64a9952f46d6d3ebae9507edb6903af">More...</a><br /></td></tr>
+<tr class="separator:ae64a9952f46d6d3ebae9507edb6903af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -148,9 +151,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a034ab9689fbe23cc500e603f1c0cf19d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_console.html">CConsole</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a034ab9689fbe23cc500e603f1c0cf19d">Console</a></td></tr>
 <tr class="memdesc:a034ab9689fbe23cc500e603f1c0cf19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">grepster's console.  <a href="#a034ab9689fbe23cc500e603f1c0cf19d">More...</a><br /></td></tr>
 <tr class="separator:a034ab9689fbe23cc500e603f1c0cf19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab64ac3cfb63db54df416aabb4c0af563"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_server_stack.html">CServerStack</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#ab64ac3cfb63db54df416aabb4c0af563">ServerStack</a></td></tr>
-<tr class="memdesc:ab64ac3cfb63db54df416aabb4c0af563"><td class="mdescLeft">&#160;</td><td class="mdescRight">grepster's Server Stack.  <a href="#ab64ac3cfb63db54df416aabb4c0af563">More...</a><br /></td></tr>
-<tr class="separator:ab64ac3cfb63db54df416aabb4c0af563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4050f062ea121119aa08ec79fd17874f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_server_stacks.html">CServerStacks</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a4050f062ea121119aa08ec79fd17874f">ServerStacks</a></td></tr>
+<tr class="memdesc:a4050f062ea121119aa08ec79fd17874f"><td class="mdescLeft">&#160;</td><td class="mdescRight">grepster's Server Stack.  <a href="#a4050f062ea121119aa08ec79fd17874f">More...</a><br /></td></tr>
+<tr class="separator:a4050f062ea121119aa08ec79fd17874f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36c8fcce03ea9e2ce59a8fc6869a5762"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_grep_notebook.html">CGrepNotebook</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a36c8fcce03ea9e2ce59a8fc6869a5762">GrepNotebook</a></td></tr>
 <tr class="memdesc:a36c8fcce03ea9e2ce59a8fc6869a5762"><td class="mdescLeft">&#160;</td><td class="mdescRight">grepster's grep Session Notebook.  <a href="#a36c8fcce03ea9e2ce59a8fc6869a5762">More...</a><br /></td></tr>
 <tr class="separator:a36c8fcce03ea9e2ce59a8fc6869a5762"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -311,12 +314,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afe0d4632b7bac0589353c7dafc98025c"></a>
+<a class="anchor" id="a8b3792a26821ed1c5e652d7f0fe33699"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SERVER_STACK_CTRL_TITLE&#160;&#160;&#160;&quot;Server Stacks&quot;</td>
+          <td class="memname">#define SERVER_STACKS_CTRL_TITLE&#160;&#160;&#160;&quot;Server Stacks&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -324,12 +327,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a05977c285de3c0b06fc5812c134bad85"></a>
+<a class="anchor" id="a7293d10d90531879b1d04df1c82bda32"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SERVER_STACK_DEFAULT_WIDTH&#160;&#160;&#160;200</td>
+          <td class="memname">#define SERVER_STACKS_DEFAULT_WIDTH&#160;&#160;&#160;200</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -337,12 +340,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a98c3ad904ea343810f62faa14665c86c"></a>
+<a class="anchor" id="a645678a2344831c3f0d09734f4b19032"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SERVER_STACK_ID&#160;&#160;&#160;1001</td>
+          <td class="memname">#define SERVER_STACKS_ID&#160;&#160;&#160;1001</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -350,12 +353,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af19df9b4541f83b8e4d60b04a7f0ecd0"></a>
+<a class="anchor" id="aef3f3454eb74302ee6475b6e1eb9b7ca"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SERVER_STACK_NAME&#160;&#160;&#160;&quot;server_stack&quot;</td>
+          <td class="memname">#define SERVER_STACKS_NAME&#160;&#160;&#160;&quot;server_stacks&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -386,6 +389,44 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
+</div>
+</div>
+<a class="anchor" id="ae64a9952f46d6d3ebae9507edb6903af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SpawnAndRun </td>
+          <td>(</td>
+          <td class="paramtype">wxString&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">wxString&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a child process and sends it an argument list for remote commands. SpawnAndRun also records the child's stdout to grepster's console. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>Local directory path to external application. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>Argument list passed to child process.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>grepster can launch external applications and send them arguments as if it were a terminal.</p>
+<p>For example: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;C:\Users\Admin&gt;psftp admin@127.0.0.1 -pw passwd</div>
+</div><!-- fragment --><p> can be launched with grepster code as: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;SpawnAndRun(&quot;C:\Program Files (x86)\PuTTY\psftp.exe&quot;, &quot;psftp.exe admin@127.0.0.1 -pw passwd&quot;);</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -447,25 +488,25 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab64ac3cfb63db54df416aabb4c0af563"></a>
+<a class="anchor" id="a4050f062ea121119aa08ec79fd17874f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_c_server_stack.html">CServerStack</a>* ServerStack</td>
+          <td class="memname"><a class="el" href="class_c_server_stacks.html">CServerStacks</a>* ServerStacks</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>grepster's Server Stack. </p>
-<p>This object holds the list of server's configured for grepping. </p>
+<p>This object holds the list of servers configured for grepping. </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 27 2015 23:39:31 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 2 2015 08:35:35 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_c_app_entry_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">    Copyright (C) 2014 by Allen Vanderlinde.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">    Copyright (C) 2014-2015 by Allen Vanderlinde.</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">    grepster and its source code is licensed under the GNU General Public License (GPL)</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">    and is subject to the terms and conditions provided in LICENSE.txt.</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*/</span></div>
@@ -103,35 +103,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_c_app_frame_8h.html">CAppFrame.h</a>&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_c_app_entry_8h.html#a5072b68c24aaa3e726e39ff4823d0b3a">   21</a></span>&#160;<span class="preprocessor">#define DISPLAY_SPLASH                  false</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="_c_app_entry_8h.html#acbfc704b0fe136fd8de9d48da09f5b28">   23</a></span>&#160;<span class="preprocessor">#define SPLASH_DURATION                 1700</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_c_app_entry.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_app_entry.html">CAppEntry</a> : <span class="keyword">public</span> wxApp {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_c_app_entry.html#a578cfd4a02e24ce7ceee08dba0e9fed2">OnInit</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1">ShowSplash</a>(<span class="keywordtype">int</span> resource_id);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_c_app_entry.html#a4d16864cfac1ae915c4573837ea017a1">   39</a></span>&#160;    <a class="code" href="class_c_app_frame.html">CAppFrame</a>* <a class="code" href="class_c_app_entry.html#a4d16864cfac1ae915c4573837ea017a1">m_pGrepsterFrame</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_app_entry.html#a93c8506ec79939fe9ea0b0e4522c2f6b">LoadConfiguration</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_app_entry.html#a6ad02b808b691f2bf25388a04b2c02d3">WriteDefaultConfiguration</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif  // _CAPPENTRY_H_</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_c_app_entry_8h.html#a5072b68c24aaa3e726e39ff4823d0b3a">   22</a></span>&#160;<span class="preprocessor">#define DISPLAY_SPLASH                  false</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="_c_app_entry_8h.html#acbfc704b0fe136fd8de9d48da09f5b28">   24</a></span>&#160;<span class="preprocessor">#define SPLASH_DURATION                 1700</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_c_app_entry.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_app_entry.html">CAppEntry</a> : <span class="keyword">public</span> wxApp {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_c_app_entry.html#a578cfd4a02e24ce7ceee08dba0e9fed2">OnInit</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1">ShowSplash</a>(<span class="keywordtype">int</span> resource_id);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_c_app_entry.html#a4d16864cfac1ae915c4573837ea017a1">   41</a></span>&#160;    <a class="code" href="class_c_app_frame.html">CAppFrame</a>* <a class="code" href="class_c_app_entry.html#a4d16864cfac1ae915c4573837ea017a1">m_pGrepsterFrame</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_app_entry.html#a93c8506ec79939fe9ea0b0e4522c2f6b">LoadConfiguration</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_app_entry.html#a6ad02b808b691f2bf25388a04b2c02d3">WriteDefaultConfiguration</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif  // _CAPPENTRY_H_</span></div>
 <div class="ttc" id="_c_app_frame_8h_html"><div class="ttname"><a href="_c_app_frame_8h.html">CAppFrame.h</a></div><div class="ttdoc">wxWidgets frame object which houses grepster. </div></div>
-<div class="ttc" id="class_c_app_frame_html"><div class="ttname"><a href="class_c_app_frame.html">CAppFrame</a></div><div class="ttdoc">Class definition for grepster&#39;s primary frame. </div><div class="ttdef"><b>Definition:</b> CAppFrame.h:50</div></div>
+<div class="ttc" id="class_c_app_frame_html"><div class="ttname"><a href="class_c_app_frame.html">CAppFrame</a></div><div class="ttdoc">Class definition for grepster&#39;s primary frame. </div><div class="ttdef"><b>Definition:</b> CAppFrame.h:56</div></div>
 <div class="ttc" id="class_c_app_entry_html_a6ad02b808b691f2bf25388a04b2c02d3"><div class="ttname"><a href="class_c_app_entry.html#a6ad02b808b691f2bf25388a04b2c02d3">CAppEntry::WriteDefaultConfiguration</a></div><div class="ttdeci">void WriteDefaultConfiguration()</div><div class="ttdoc">Write&#39;s grepster&#39;s default configuration file. </div></div>
-<div class="ttc" id="class_c_app_entry_html_a5a0fb76d45455bc6d173e9667d9260e1"><div class="ttname"><a href="class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1">CAppEntry::ShowSplash</a></div><div class="ttdeci">bool ShowSplash(int resource_id)</div><div class="ttdef"><b>Definition:</b> CAppEntry.cpp:59</div></div>
-<div class="ttc" id="class_c_app_entry_html_a4d16864cfac1ae915c4573837ea017a1"><div class="ttname"><a href="class_c_app_entry.html#a4d16864cfac1ae915c4573837ea017a1">CAppEntry::m_pGrepsterFrame</a></div><div class="ttdeci">CAppFrame * m_pGrepsterFrame</div><div class="ttdef"><b>Definition:</b> CAppEntry.h:39</div></div>
-<div class="ttc" id="class_c_app_entry_html"><div class="ttname"><a href="class_c_app_entry.html">CAppEntry</a></div><div class="ttdoc">Class definition for grepster&#39;s application execution. </div><div class="ttdef"><b>Definition:</b> CAppEntry.h:30</div></div>
-<div class="ttc" id="class_c_app_entry_html_a93c8506ec79939fe9ea0b0e4522c2f6b"><div class="ttname"><a href="class_c_app_entry.html#a93c8506ec79939fe9ea0b0e4522c2f6b">CAppEntry::LoadConfiguration</a></div><div class="ttdeci">void LoadConfiguration()</div><div class="ttdoc">Load grepster&#39;s configuration from file. </div><div class="ttdef"><b>Definition:</b> CAppEntry.cpp:82</div></div>
-<div class="ttc" id="class_c_app_entry_html_a578cfd4a02e24ce7ceee08dba0e9fed2"><div class="ttname"><a href="class_c_app_entry.html#a578cfd4a02e24ce7ceee08dba0e9fed2">CAppEntry::OnInit</a></div><div class="ttdeci">virtual bool OnInit()</div><div class="ttdef"><b>Definition:</b> CAppEntry.cpp:26</div></div>
+<div class="ttc" id="class_c_app_entry_html_a5a0fb76d45455bc6d173e9667d9260e1"><div class="ttname"><a href="class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1">CAppEntry::ShowSplash</a></div><div class="ttdeci">bool ShowSplash(int resource_id)</div><div class="ttdef"><b>Definition:</b> CAppEntry.cpp:60</div></div>
+<div class="ttc" id="class_c_app_entry_html_a4d16864cfac1ae915c4573837ea017a1"><div class="ttname"><a href="class_c_app_entry.html#a4d16864cfac1ae915c4573837ea017a1">CAppEntry::m_pGrepsterFrame</a></div><div class="ttdeci">CAppFrame * m_pGrepsterFrame</div><div class="ttdef"><b>Definition:</b> CAppEntry.h:41</div></div>
+<div class="ttc" id="class_c_app_entry_html"><div class="ttname"><a href="class_c_app_entry.html">CAppEntry</a></div><div class="ttdoc">Class definition for grepster&#39;s application execution. </div><div class="ttdef"><b>Definition:</b> CAppEntry.h:32</div></div>
+<div class="ttc" id="class_c_app_entry_html_a93c8506ec79939fe9ea0b0e4522c2f6b"><div class="ttname"><a href="class_c_app_entry.html#a93c8506ec79939fe9ea0b0e4522c2f6b">CAppEntry::LoadConfiguration</a></div><div class="ttdeci">void LoadConfiguration()</div><div class="ttdoc">Load grepster&#39;s configuration from file. </div><div class="ttdef"><b>Definition:</b> CAppEntry.cpp:83</div></div>
+<div class="ttc" id="class_c_app_entry_html_a578cfd4a02e24ce7ceee08dba0e9fed2"><div class="ttname"><a href="class_c_app_entry.html#a578cfd4a02e24ce7ceee08dba0e9fed2">CAppEntry::OnInit</a></div><div class="ttdeci">virtual bool OnInit()</div><div class="ttdef"><b>Definition:</b> CAppEntry.cpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 27 2015 23:39:31 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 2 2015 08:35:35 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

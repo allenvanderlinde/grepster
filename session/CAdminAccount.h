@@ -17,7 +17,6 @@
 
 #include "../pugixml-1.4/pugixml.hpp"
 
-/* Note: Should I store the administrator's user_id and passwd locally in a plain-text file with passwd SHA-2 encrypted? Is there such an API? */
 
 /**
 * This object represents an administrator's user account which houses the user-defined server stacks for each grepping session.
@@ -40,16 +39,24 @@ public:
      */
     wxString Username() { return m_szUsername; }
     /**
-     * @brief       Change the administrator's username.
+     * @brief       Query administrator's password. Note: This is a plaintext password and is saved only in memory until the user quits grepster.
+     * @retval      wxString This is the current session's administrator's password credential in plaintext.
      */
-    void ChangeUsername(wxString username) { m_szUsername = username; }
+    wxString Password() { return m_szPassword; }
+
+    /**
+     * @brief       Change the administrator's credentials.
+     */
+    void ChangeCredentials(wxString username, wxString password) { m_szUsername = username; m_szPassword = password; }
 
 private:
     /** Flag for successful loading of configuration. */
     bool m_bConfigurationLoadedSuccessfully;
 
-    /** Administrator's username for the current session. */
+    /** Administrator's username for the current job. */
     wxString m_szUsername;
+    /** Administrator's password for the current job. */
+    wxString m_szPassword;
  };
 
 #endif // _CADMINACCOUNT_H_

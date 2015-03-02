@@ -1,19 +1,4 @@
 var searchData=
 [
-  ['server_5fstack_5fctrl_5ftitle',['SERVER_STACK_CTRL_TITLE',['../grepster_8h.html#afe0d4632b7bac0589353c7dafc98025c',1,'grepster.h']]],
-  ['server_5fstack_5fdefault_5flabel',['SERVER_STACK_DEFAULT_LABEL',['../_c_server_stack_8h.html#a56235309f305f6ca134d7622a4c94ce0',1,'CServerStack.h']]],
-  ['server_5fstack_5fdefault_5fwidth',['SERVER_STACK_DEFAULT_WIDTH',['../grepster_8h.html#a05977c285de3c0b06fc5812c134bad85',1,'grepster.h']]],
-  ['server_5fstack_5fid',['SERVER_STACK_ID',['../grepster_8h.html#a98c3ad904ea343810f62faa14665c86c',1,'grepster.h']]],
-  ['server_5fstack_5fname',['SERVER_STACK_NAME',['../grepster_8h.html#af19df9b4541f83b8e4d60b04a7f0ecd0',1,'grepster.h']]],
-  ['serverstack',['ServerStack',['../grepster_8cpp.html#ab64ac3cfb63db54df416aabb4c0af563',1,'ServerStack():&#160;grepster.cpp'],['../grepster_8h.html#ab64ac3cfb63db54df416aabb4c0af563',1,'ServerStack():&#160;grepster.cpp']]],
-  ['showsplash',['ShowSplash',['../class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1',1,'CAppEntry']]],
-  ['splash_5fduration',['SPLASH_DURATION',['../_c_app_entry_8h.html#acbfc704b0fe136fd8de9d48da09f5b28',1,'CAppEntry.h']]],
-  ['statusbar_5fnote_5fwidth',['STATUSBAR_NOTE_WIDTH',['../_c_app_frame_8h.html#a6873edc266d9a65580a0cbc4228d6135',1,'CAppFrame.h']]],
-  ['statusbar_5fstring_5fid_5fabout',['STATUSBAR_STRING_ID_ABOUT',['../_c_frame_menubar_8h.html#a3bbfca883d79d914555bb24ad73d83bcaed28136accb0c1d641b49ca407037556',1,'CFrameMenubar.h']]],
-  ['statusbar_5fstring_5fid_5fchange_5fcredentials',['STATUSBAR_STRING_ID_CHANGE_CREDENTIALS',['../_c_frame_menubar_8h.html#a3bbfca883d79d914555bb24ad73d83bca3e6c461dd14e493a0fac8a72b5fb146d',1,'CFrameMenubar.h']]],
-  ['statusbar_5fstring_5fid_5flaunch_5fputty',['STATUSBAR_STRING_ID_LAUNCH_PUTTY',['../_c_frame_menubar_8h.html#a3bbfca883d79d914555bb24ad73d83bca97e10f31d6a99fb325a27a9fb4aaf3bd',1,'CFrameMenubar.h']]],
-  ['statusbar_5fstring_5fid_5fquit',['STATUSBAR_STRING_ID_QUIT',['../_c_frame_menubar_8h.html#a3bbfca883d79d914555bb24ad73d83bca6a467bd350ba76d5f8e0b0da52be591b',1,'CFrameMenubar.h']]],
-  ['statusbar_5fstring_5fid_5ftoggle_5fdockable',['STATUSBAR_STRING_ID_TOGGLE_DOCKABLE',['../_c_frame_menubar_8h.html#a3bbfca883d79d914555bb24ad73d83bca0883f5e1a510ac8e3192182bbafd9291',1,'CFrameMenubar.h']]],
-  ['statusbar_5fwelcome',['STATUSBAR_WELCOME',['../_c_app_frame_8h.html#a7eaedd0a5a26a658a7b9f3362c60e122',1,'CAppFrame.h']]],
-  ['success',['Success',['../class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366',1,'CAppInit']]]
+  ['password',['Password',['../class_c_app_init.html#aa0d6a7353c929bd7982d46df995def28',1,'CAppInit::Password()'],['../class_c_admin_account.html#aa1b441d7de4de5591d050cd7212aea2b',1,'CAdminAccount::Password()']]]
 ];

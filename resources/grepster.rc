@@ -15,3 +15,4 @@ aaaaappicon                         ICON        "grepster.ico"
 
 RESID_PNG_SPLASH                    RCDATA      "splash.png"
 RESID_PNG_ABOUT                     RCDATA      "about.png"
+RESID_PNG_CREDENTIALS               RCDATA      "credentials.png"

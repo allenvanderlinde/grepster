@@ -101,12 +101,12 @@ grepster uses the pugixml API for reading and processing of XML files. pugixml c
 <li>
 grepster's configuration methods <a class="el" href="class_c_app_init.html#a752bc94a59515fee8effef75d3ceb281" title="Reads XML data from file and applies its values to this class&#39;s members. ">CAppInit::ApplyXMLData</a> and <a class="el" href="class_c_app_init.html#ae48984d9e7a263d651bc68466c6f3e7e" title="Writes XML data to file from any configuration changes. ">CAppInit::WriteXMLData</a> must not be modified unless you are adding new data to be appended to the end of the file, or reading from the end of the file for new, custom configurations. This order is hard-coded within the methods themselves and grepster will not function or save configuration properly if this order is changed. </li>
 <li>
-The source code tries to maintain a standard but descriptive naming scheme for method variables whose scope does not leave the method in which it's declared. These variables usually will not have characters in their identifers that describe their datatype. Their names describe just what they are. For example, <code>wxButton button_ok</code>: <code>button_ok</code> will be found in each dialog's instantiation method which uses buttons, regardless of the kind of control or dialog box it's housed within. </li>
+The source code tries to maintain a standard but descriptive naming scheme for method variables whose scope does not leave the method in which it's declared. Their names describe just what they are. For example, <code>wxButton* pButtonOK</code>: <code>pButtonOK</code> will be found in each dialog's instantiation method which uses OK buttons, for example. </li>
 </ol>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 27 2015 23:39:31 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 2 2015 08:35:35 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

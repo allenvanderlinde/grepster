@@ -17,8 +17,10 @@
 #include <wx/webview.h>
 #include <wx/wfstream.h>
 
+
 /** Default home page URL. */
 #define HOME_PAGE   "file:///C:/grepster/welcome.html"
+
 
 /**
  * This object creates grepster's browser for the welcome page.

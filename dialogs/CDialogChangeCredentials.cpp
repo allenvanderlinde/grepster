@@ -12,12 +12,14 @@
 
 #include "../grepster.h"
 
+#include "../resources/grepster_rc.h"
+
 #include "CDialogChangeCredentials.h"
 #include "../app/CAppFrame.h"
 
+
 /* The dialog's event handler calls. */
 wxBEGIN_EVENT_TABLE(CDialogChangeCredentials, wxDialog)
-    //EVT_CLOSE(CAppFrame::OnExit)
     EVT_BUTTON(BUTTON_OK, CDialogChangeCredentials::OnOK)
 wxEND_EVENT_TABLE()
 
@@ -25,18 +27,45 @@ wxEND_EVENT_TABLE()
     CDialogChangeCredentials::CDialogChangeCredentials
 */
 CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame)
-    : wxDialog(parentFrame, DIALOG_ID_CHANGE_CREDENTIALS, DIALOG_TITLE, wxDefaultPosition, wxSize(400, 180)) {
-    /* Assign values. */
-    m_szUsername = Configuration->Username();
+    : wxDialog(parentFrame, DIALOG_ID_CHANGE_CREDENTIALS, DIALOG_TITLE, wxDefaultPosition, wxSize(DIALOG_WIDTH, DIALOG_HEIGHT)) {
+    SetIcon(wxICON(aaaaappicon));
+    CenterOnParent();
+    /* Dialog controls. */
+    wxBoxSizer* pSizerUsername, *pSizerPassword;
+    wxStaticText* pTextUsername, *pTextPassword;
 
+    pSizerUsername = new wxBoxSizer(wxHORIZONTAL);
+    pTextUsername = new wxStaticText(this, wxID_ANY, L"Username:");
+    m_pInputUsername = new wxTextCtrl(this, INPUT_USERNAME, Configuration->Username(), wxDefaultPosition, wxSize(200, -1));
+    pSizerUsername->Add(pTextUsername, wxSizerFlags().Center().Border(wxRIGHT, 10));
+    pSizerUsername->Add(m_pInputUsername, wxSizerFlags().Center());
+
+    pSizerPassword = new wxBoxSizer(wxHORIZONTAL);
+    pTextPassword = new wxStaticText(this, wxID_ANY, L"Password:");
+    m_pInputPassword = new wxTextCtrl(this, INPUT_PASSWORD, Configuration->Password(), wxDefaultPosition, wxSize(200, -1), wxTE_PASSWORD);
+    pSizerPassword->Add(pTextPassword, wxSizerFlags().Center().Border(wxRIGHT, 13));
+    pSizerPassword->Add(m_pInputPassword, wxSizerFlags().Center());
+
+    m_pButtonOK = new wxButton(this, BUTTON_OK, L"OK", wxPoint(0, 0), wxDefaultSize);
+    wxButton* pButtonCancel = new wxButton(this, wxID_CANCEL, L"Cancel", wxPoint(0, 0), wxDefaultSize); // Cancel button for convenience; catches ESC key
+    m_pButtonOK->SetDefault();
+
+    // Create dialog's banner
+    wxStaticBitmap* pPNGBanner = new wxStaticBitmap(this, wxID_ANY, wxBitmap(RESOURCE_ID_TO_STRING(RESID_PNG_CREDENTIALS), wxBITMAP_TYPE_PNG_RESOURCE), wxDefaultPosition, wxDefaultSize);
+
+    /* Set dialog's main sizers. */
     m_pSizer = new wxBoxSizer(wxVERTICAL);
-    /* Create and arrange dialog's controls. */
-    m_textbox_username    = new wxTextCtrl(this, TEXTBOX_USERNAME, m_szUsername, wxDefaultPosition, wxDefaultSize);
-    m_button_ok           = new wxButton(this, BUTTON_OK, L"OK", wxPoint(0, 0), wxDefaultSize);
+    wxStaticBoxSizer* pStaticSizer = new wxStaticBoxSizer(wxVERTICAL, this, L"Default Credentials");
 
-    /* Add controls to sizer. */
-    m_pSizer->Add(m_textbox_username, wxSizerFlags().Center());
-    m_pSizer->Add(m_button_ok, wxSizerFlags().Center());
+    pStaticSizer->Add(pSizerUsername, wxSizerFlags().Center());
+    pStaticSizer->Add(pSizerPassword, wxSizerFlags().Center().Border(wxUP, 10));//, wxSizerFlags().Border(wxUP, 10));
+    m_pSizer->Add(pPNGBanner);
+    m_pSizer->Add(pStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
+
+    wxBoxSizer* pSizerButtons = new wxBoxSizer(wxHORIZONTAL);
+    pSizerButtons->Add(m_pButtonOK, wxSizerFlags().Center());
+    pSizerButtons->Add(pButtonCancel, wxSizerFlags().Center());
+    m_pSizer->Add(pSizerButtons, wxSizerFlags().Center().Border(wxTOP, 5));
 
     SetSizer(m_pSizer);
 
@@ -48,18 +77,20 @@ CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame)
 */
 void CDialogChangeCredentials::OnOK(wxCommandEvent& event) {
     wxString szPrevUsername = Configuration->Username();
-    Configuration->ChangeUsername(m_textbox_username->GetLineText(0));  // Change the administrator's username and save to configuration for saving to XML
-    if(szPrevUsername.IsSameAs(Configuration->Username()))
-        Destroy();
-    else {
+    wxString szPrevPassword = Configuration->Password();
+
+    /* Change the administrator's credentials and update configuration for saving to XML. Note: The user's password is never saved to file. */
+    Configuration->ChangeCredentials(m_pInputUsername->GetLineText(0), m_pInputPassword->GetLineText(0));
+    if(!szPrevUsername.IsSameAs(Configuration->Username())) {
         *Console << L"\n\nChanging username from " + szPrevUsername + " to " + Configuration->Username() + ".";
         Configuration->WriteXMLData();
+        ServerStacks->UpdateStacks();
+    }
+    if(!szPrevPassword.IsSameAs(Configuration->Password())) {
+        Console->BlueText();
+        *Console << L"\n\nChanging password.";
+        Console->BlackText();
     }
 
-    // can't close with enter key
-    /* */
-    // UPDATE TREE CTRL WITH NEW USERNAME
-    /* */
-
-    Destroy();
+    EndModal(BUTTON_OK);    // End the dialog box with a specified successful return code
 }

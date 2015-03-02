@@ -13,14 +13,14 @@
 #ifndef _CAPPFRAME_H_
 #define _CAPPFRAME_H_
 
-#include "CFrameMenubar.h"
-
 #include <wx/wx.h>
 #include <wx/aui/framemanager.h>
 
 #include <wx/aui/auibook.h>
 
+#include "CAppMenubar.h"
 #include "../dialogs/CDialogChangeCredentials.h"
+
 
 /** Frame width (pixels). */
 #define FRAME_WIDTH                     1024
@@ -69,7 +69,7 @@ public:
 
 private:
     /** Frame's menu bar. */
-    CFrameMenubar*  m_pMenubar;
+    CAppMenubar*  m_pMenubar;
     /** Frame's status bar. */
     wxStatusBar*    m_pStatusbar;
 
@@ -81,16 +81,19 @@ private:
      */
     void RefreshConfiguration();
 
-    /* File menu methods. */
-    /**
-     * @brief       Change the administrator's credentials.
-     */
-    void ChangeAdminCredentials(wxCommandEvent& event);
     /**
      * @brief       Create new administrator XML configuration file. This will ask for the new admin's username only.
      *              Passwords will need to be entered with each new session.
      */
     void CreateAdminXMLConfiguration();
+
+    /* File menu methods. */
+
+    /* Session menu methods. */
+    /**
+     * @brief       Change the administrator's default credentials.
+     */
+    void ChangeDefaultCredentials(wxCommandEvent& event);
 
     /* Tools menu methods. */
     /**
@@ -117,10 +120,6 @@ private:
      * @brief       Exit grepster.
      */
     void OnExit(wxCloseEvent& event);
-
-    /* Dialog event handlers. */
-    /** Event handler for CAppFrame::ChangeAdminCredentials. */
-    void updateUsername(wxCommandEvent& event);
 
     /**
      * @brief       Initialize and call the primary frame's event handler.

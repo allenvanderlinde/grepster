@@ -17,11 +17,13 @@
 
 #include "../session/CAdminAccount.h"
 
+
 /** XML global definitions. */
 #define XML_CONFIGURATION_NODE_LABEL        L"grepster"
 #define XML_ELEMENT_LABEL                   L"setting"
 #define XML_ID_LABEL                        L"id"
 #define XML_VALUE_LABEL                     L"value"
+
 
 /**
  * This object opens grepster's XML configuration and populates the configuration structure with its settings.
@@ -55,9 +57,15 @@ public:
      */
     wxString Username() { return m_pAdministrator->Username(); }
     /**
-     * @brief       Change the administrator's username.
+     * @brief       Query administrator's password.
+     * @retval      wxString This is the administrator's default password stored as plaintext in memory only.
      */
-    void ChangeUsername(wxString username) { m_pAdministrator->ChangeUsername(username); }
+    wxString Password() { return m_pAdministrator->Password(); }
+
+    /**
+     * @brief       Change the administrator's credentials.
+     */
+    void ChangeCredentials(wxString username, wxString password) { m_pAdministrator->ChangeCredentials(username, password); }
 
     /* Session configuration flags/settings. */
     /** Toggle floating controls. */

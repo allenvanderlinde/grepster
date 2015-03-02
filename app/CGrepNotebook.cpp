@@ -17,6 +17,7 @@
 
 #include "CAppFrame.h"
 
+
 /* Construct the Grep Notebook's event table. */
 wxBEGIN_EVENT_TABLE(CGrepNotebook, wxAuiNotebook)
     EVT_AUINOTEBOOK_PAGE_CLOSED(wxID_ANY, CGrepNotebook::EmptyPage)
