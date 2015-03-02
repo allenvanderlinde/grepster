@@ -31,20 +31,17 @@ CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame)
     SetIcon(wxICON(aaaaappicon));
     CenterOnParent();
     /* Dialog controls. */
-    wxBoxSizer* pSizerUsername, *pSizerPassword;
     wxStaticText* pTextUsername, *pTextPassword;
+    wxFlexGridSizer* pSizerInput = new wxFlexGridSizer(2, 2, 5, 5);
 
-    pSizerUsername = new wxBoxSizer(wxHORIZONTAL);
     pTextUsername = new wxStaticText(this, wxID_ANY, L"Username:");
-    m_pInputUsername = new wxTextCtrl(this, INPUT_USERNAME, Configuration->Username(), wxDefaultPosition, wxSize(200, -1));
-    pSizerUsername->Add(pTextUsername, wxSizerFlags().Center().Border(wxRIGHT, 10));
-    pSizerUsername->Add(m_pInputUsername, wxSizerFlags().Center());
-
-    pSizerPassword = new wxBoxSizer(wxHORIZONTAL);
+    m_pInputUsername = new wxTextCtrl(this, INPUT_USERNAME, Configuration->Username(), wxDefaultPosition, wxSize(210, -1));
     pTextPassword = new wxStaticText(this, wxID_ANY, L"Password:");
-    m_pInputPassword = new wxTextCtrl(this, INPUT_PASSWORD, Configuration->Password(), wxDefaultPosition, wxSize(200, -1), wxTE_PASSWORD);
-    pSizerPassword->Add(pTextPassword, wxSizerFlags().Center().Border(wxRIGHT, 13));
-    pSizerPassword->Add(m_pInputPassword, wxSizerFlags().Center());
+    m_pInputPassword = new wxTextCtrl(this, INPUT_PASSWORD, Configuration->Password(), wxDefaultPosition, wxSize(210, -1), wxTE_PASSWORD);
+    pSizerInput->Add(pTextUsername, wxSizerFlags().Center());
+    pSizerInput->Add(m_pInputUsername, 1, wxEXPAND);
+    pSizerInput->Add(pTextPassword, wxSizerFlags().Center());
+    pSizerInput->Add(m_pInputPassword, 1, wxEXPAND);
 
     m_pButtonOK = new wxButton(this, BUTTON_OK, L"OK", wxPoint(0, 0), wxDefaultSize);
     wxButton* pButtonCancel = new wxButton(this, wxID_CANCEL, L"Cancel", wxPoint(0, 0), wxDefaultSize); // Cancel button for convenience; catches ESC key
@@ -57,10 +54,9 @@ CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame)
     m_pSizer = new wxBoxSizer(wxVERTICAL);
     wxStaticBoxSizer* pStaticSizer = new wxStaticBoxSizer(wxVERTICAL, this, L"Default Credentials");
 
-    pStaticSizer->Add(pSizerUsername, wxSizerFlags().Center());
-    pStaticSizer->Add(pSizerPassword, wxSizerFlags().Center().Border(wxUP, 10));//, wxSizerFlags().Border(wxUP, 10));
+    pStaticSizer->Add(pSizerInput);
     m_pSizer->Add(pPNGBanner);
-    m_pSizer->Add(pStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
+    m_pSizer->Add(pStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL | wxBOTTOM, 5));
 
     wxBoxSizer* pSizerButtons = new wxBoxSizer(wxHORIZONTAL);
     pSizerButtons->Add(m_pButtonOK, wxSizerFlags().Center());
