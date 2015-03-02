@@ -1,0 +1,2 @@
+get "/tmp/.avanderlinde/text.txt" "C:\Users\vanallen\Desktop\text_downloaded.txt"
+quit
