@@ -112,102 +112,25 @@ void CAppFrame::ToggleFloating(wxCommandEvent& event) {
     CAppFrame::LaunchPuTTY
 */
 void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
-    HANDLE hPSFTP_Read, hPSFTP_Write;
-    STARTUPINFO si;
-    PROCESS_INFORMATION pi;
+    Configuration->ChangeCredentials(Configuration->Username(), L"Coolsolid9");
 
-    /* Build handle to child process to capture stdout from. */
-    SECURITY_ATTRIBUTES sa;
-    sa.nLength = sizeof(SECURITY_ATTRIBUTES);
-    sa.bInheritHandle = true;
-    sa.lpSecurityDescriptor = NULL;
-
-    /* Create pipe to child process. */
-    if(!CreatePipe(&hPSFTP_Read, &hPSFTP_Write, &sa, 0)) {
-        wxMessageBox("Unable to create pipe!", "Error", wxOK | wxICON_EXCLAMATION);
-    } else if(!SetHandleInformation(hPSFTP_Read, HANDLE_FLAG_INHERIT, 0)) {
-        wxMessageBox("Unable to set handle information!", "Error", wxOK | wxICON_EXCLAMATION);
-    }
-
-    /* Build the command line arguments string. */
-    wxString szArgs(L"psftp.exe "); // Build new string to use as arguments list
+    wxString szArgs(L"psftp "); // Build new string to use as arguments list
     wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\script1.grep\""); // Call a user-saved grepster script to run on the server
-    szArgs += Configuration->Username() + L"@" + L"172.24.52.150" + L" -pw " + Configuration->Password() + L" -b " + szScriptPath;
 
+    szArgs += Configuration->Username() + L"@" + L"172.24.52.150" + L" -pw " + Configuration->Password() + L" -b " + szScriptPath;
 
     // REPLACE THE BELOW STRING LITERAL WITH WITH SAVED PATH TO PSFTP.EXE IN XML CONFIG, ALONG WITH PUTTY.EXE AND PLINK.EXE
     // CREATE A SETTING IN XML CONFIG, TOO, THAT IS THE STARTING DIRECTORY FOR GREPSTER FOR LOADING SCRIPTS
-    // ^^^^^BE ABLE TO EDIT THE ABOVE AS A GUI setting
+    // ----BE ABLE TO EDIT THE ABOVE AS A GUI setting
 
-    LPCWSTR pszPath = L"C:\\Program Files (x86)\\PuTTY\\psftp.exe";    // Path to psftp.exe which extends secured FTP downloading capabilities to grepster
-    //LPWSTR pszArgs = L"psftp.exe avanderlinde@172.24.52.150 -pw Coolsolid9 -b \"C:\\grepster\\user\\scripts\\script1.grep\"";
+    Console->BlueText();
+    *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
+    Console->BlackText();
+    *Console << (wxString)L"C:\\Program Files (x86)\\PuTTY\\psftp.exe" + L"\n\n";
 
+    SpawnAndRun(L"C:\\Program Files (x86)\\PuTTY\\psftp.exe", szArgs);
 
-    /* Execute child process and establish link to its handle to capture stdout. */
-
-    ZeroMemory(&si, sizeof(STARTUPINFO));
-    ZeroMemory(&pi, sizeof(PROCESS_INFORMATION));
-    si.cb = sizeof(STARTUPINFO);
-    si.hStdOutput = hPSFTP_Write;
-    si.dwFlags |= STARTF_USESTDHANDLES;
-
-    CreateProcessW(pszPath,
-                   szArgs.wchar_str(),
-                   NULL,
-                   NULL,
-                   true,
-                   CREATE_NO_WINDOW,
-                   NULL,
-                   NULL,
-                   &si,
-                   &pi);
-    CloseHandle(hPSFTP_Write);
-
-
-    /* Read from child process's stdout. */
-    DWORD dwRead;
-    CHAR chBuf[4096];
-    bool bSuccess = false;
-    std::string out = "";
-
-    for(;;) {
-        bSuccess = ReadFile(hPSFTP_Read, chBuf, 4096, &dwRead, NULL);
-        if(!bSuccess || dwRead == 0) break;
-
-        std:string s(chBuf, dwRead);
-        *Console << "\n\npsftp.exe:\n" << s;
-        out += s;
-    }
-    //*Console << "psftp: \n" << out;
-
-    /* */
-
-
-    CloseHandle(pi.hProcess);
-    CloseHandle(pi.hThread);
-
-    /* *** TRY READCONSOLEOUTPUT HERE AND print to CONSOLE to see what it grabs. Trying to be able to report to user when external processes succeed/fail. *** ^^^ ++ */
-    /*
-    bool move_rect(
-    int x,     int y,
-    int new_x, int new_y,
-    int width, int height
-    ) {
-    HANDLE     hStdOut      = GetStdHandle( STD_OUTPUT_HANDLE );
-    PCHAR_INFO buffer       = new CHAR_INFO[ width * height ];
-    COORD      buffer_size  = { width, height };
-    COORD      buffer_index = { 0, 0 };  // read/write rectangle has upper-right corner at upper-right corner of buffer
-    SMALL_RECT read_rect    = { x,     y,     x     + width - 1, y     + height - 1 };
-    SMALL_RECT write_rect   = { new_x, new_y, new_x + width - 1, new_y + height - 1 };
-
-    bool result = ReadConsoleOutput(  hStdOut, buffer, buffer_size, buffer_index, &read_rect )
-        && WriteConsoleOutput( hStdOut, buffer, buffer_size, buffer_index, &write_rect );
-
-    delete [] buffer;
-
-    return result;
-    }
-    */
+    *Console << L"\nFinished.";
 }
 
 /*

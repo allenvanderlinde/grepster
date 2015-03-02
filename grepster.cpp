@@ -14,6 +14,8 @@
 
 #include <wx/wx.h>
 
+#include <iostream>
+
 #include "grepster.h"
 
 
@@ -29,6 +31,78 @@ CAppInit*           Configuration;
 
 /* Utility function definitions. */
 wxString RESOURCE_ID_TO_STRING(int id) { return wxString::Format("#%i", id); }
+
+/*
+    SpawnAndRun
+*/
+bool SpawnAndRun(wxString path, wxString args) {
+    /* Declare objects for child process. */
+    HANDLE hRead, // Handle which reads stdout of child process
+           hWrite;  // Handle to write to stdout
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+    SECURITY_ATTRIBUTES sa;
+
+    /* Define the child's security attributes.
+        Note: This is used to establish inheritance between the parent and child via the application pipe. */
+    sa.nLength = sizeof(SECURITY_ATTRIBUTES);
+    sa.bInheritHandle = true;
+    sa.lpSecurityDescriptor = NULL;
+
+    /* Create pipe to child process. */
+    if(!CreatePipe(&hRead, &hWrite, &sa, 0)) {
+        wxMessageBox(L"Unable to create pipe!", L"Error", wxOK | wxICON_EXCLAMATION);
+        return false;
+    } else if(!SetHandleInformation(hRead, HANDLE_FLAG_INHERIT, 0)) {
+        wxMessageBox(L"Unable to set handle information!", L"Error", wxOK | wxICON_EXCLAMATION);
+        return false;
+    }
+
+    /* Build handle to child process to capture stdout from. */
+    ZeroMemory(&si, sizeof(STARTUPINFO));
+    ZeroMemory(&pi, sizeof(PROCESS_INFORMATION));
+    si.cb = sizeof(STARTUPINFO);
+    si.hStdOutput = hWrite;
+    si.dwFlags |= STARTF_USESTDHANDLES;
+
+    /* Execute child process and establish link to its handle to capture stdout. */
+    CreateProcessW(path.wchar_str(),
+                   args.wchar_str(),
+                   NULL,
+                   NULL,
+                   true,
+                   CREATE_NEW_CONSOLE,
+                   NULL,
+                   NULL,
+                   &si,
+                   &pi);
+    CloseHandle(hWrite);
+
+    /* Note: SpawnAndRun() currently captures standard library, non-Unicode strings.
+        Storing and/or typecasting to another string type might result in unpredictable behavior. */
+
+    /* Read from stdout and print to grepster's console. */
+    DWORD dwRead;   // Size of stdout being read
+    CHAR chBuf[CHAR_BUFFER_LENGTH]; // Buffer which stores child's stdout for printing to grepster's console
+    bool bSuccess = false;
+    std::string out = "";   // Using std::string to ensure accurate capture of stdout
+
+    for(;;) {   /* Continue reading from the stdout handle until the child quits. */
+        bSuccess = ReadFile(hRead, chBuf, CHAR_BUFFER_LENGTH, &dwRead, NULL);
+        if(!bSuccess || dwRead == 0) break;
+
+        std::string s(chBuf, dwRead);
+        *Console << s;  // Send buffer to grepster's console
+        //out += s;   // String copy of entire child's stdout up to CHAR_BUFFER_LENGTH. Currently not used.
+    }
+    //*Console << "psftp: \n" << out;
+
+    /* Clean up handles. */
+    CloseHandle(pi.hProcess);
+    CloseHandle(pi.hThread);
+
+    return true;
+}
 
 #include "app/CAppEntry.h"
 wxIMPLEMENT_APP(CAppEntry);

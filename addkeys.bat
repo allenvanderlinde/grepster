@@ -1,0 +1,1 @@
+echo y | "C:\Program Files (x86)\PuTTY\psftp.exe" 172.24.48.118

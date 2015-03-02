@@ -60,6 +60,7 @@ wxString RESOURCE_ID_TO_STRING(int id);
  * @brief       Creates a child process and sends it an argument list for remote commands. SpawnAndRun also records the child's stdout to grepster's console.
  * @param[in]   path Local directory path to external application.
  * @param[in]   args Argument list passed to child process.
+ * @retval      bool Returns true if successfully created child process.
  *
  * grepster can launch external applications and send them arguments as if it were a terminal.
  *
@@ -69,10 +70,10 @@ wxString RESOURCE_ID_TO_STRING(int id);
  * @endcode
  * can be launched with grepster code as:
  * @code
- * SpawnAndRun("C:\Program Files (x86)\PuTTY\psftp.exe", "psftp.exe admin@127.0.0.1 -pw passwd");
+ * SpawnAndRun("C:\Program Files (x86)\PuTTY\", "psftp.exe admin@127.0.0.1 -pw passwd");
  * @endcode
  */
-void SpawnAndRun(wxString path, wxString args);
+bool SpawnAndRun(wxString path, wxString args);
 
 /**
  * @brief       Casts a variable's identifier as a wxString for debugging/console reporting.
@@ -81,6 +82,9 @@ void SpawnAndRun(wxString path, wxString args);
 
 /** grepster's configuration file path. */
 #define CONFIGURATION_FILE_PATH     "grepster.xml"
+
+/** grepster's buffer length for sending remote commands. Measured in bytes. */
+#define CHAR_BUFFER_LENGTH          4096
 
 /* Console control settings. */
 /** grepster's console control ID. */
