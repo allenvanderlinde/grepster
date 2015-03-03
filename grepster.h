@@ -60,7 +60,7 @@ wxString RESOURCE_ID_TO_STRING(int id);
  * @brief       Creates a child process and sends it an argument list for remote commands. SpawnAndRun also records the child's stdout to grepster's console.
  * @param[in]   path Local directory path to external application.
  * @param[in]   args Argument list passed to child process.
- * @retval      bool Returns true if successfully created child process.
+ * @retval      std::string Returns the process's stdout buffer as a string.
  *
  * grepster can launch external applications and send them arguments as if it were a terminal.
  *
@@ -70,10 +70,10 @@ wxString RESOURCE_ID_TO_STRING(int id);
  * @endcode
  * can be launched with grepster code as:
  * @code
- * SpawnAndRun("C:\Program Files (x86)\PuTTY\", "psftp.exe admin@127.0.0.1 -pw passwd");
+ * *Console << SpawnAndRun("C:\Program Files (x86)\PuTTY\", "psftp.exe admin@127.0.0.1 -pw passwd");
  * @endcode
  */
-bool SpawnAndRun(wxString path, wxString args);
+std::string SpawnAndRun(wxString path, wxString args);
 
 /**
  * @brief       Casts a variable's identifier as a wxString for debugging/console reporting.
@@ -112,7 +112,7 @@ bool SpawnAndRun(wxString path, wxString args);
 /** grepster's notebook's local name for wxWidgets. */
 #define GREP_NOTEBOOK_NAME          "grep_notebook"
 /** grepster's notebook control title. */
-#define GREP_NOTEBOOK_CTRL_TITLE    "Grep Notebook"
+#define GREP_NOTEBOOK_CTRL_TITLE    "Notebook"
 
 /* Browser/web viewer control settings. */
 /** grepster's browser control ID. */

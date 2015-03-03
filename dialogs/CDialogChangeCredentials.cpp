@@ -54,14 +54,14 @@ CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame)
     m_pSizer = new wxBoxSizer(wxVERTICAL);
     wxStaticBoxSizer* pStaticSizer = new wxStaticBoxSizer(wxVERTICAL, this, L"Default Credentials");
 
-    pStaticSizer->Add(pSizerInput);
+    pStaticSizer->Add(pSizerInput, wxSizerFlags().Border(wxALL, 5));
     m_pSizer->Add(pPNGBanner);
-    m_pSizer->Add(pStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL | wxBOTTOM, 5));
+    m_pSizer->Add(pStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
 
     wxBoxSizer* pSizerButtons = new wxBoxSizer(wxHORIZONTAL);
     pSizerButtons->Add(m_pButtonOK, wxSizerFlags().Center());
     pSizerButtons->Add(pButtonCancel, wxSizerFlags().Center());
-    m_pSizer->Add(pSizerButtons, wxSizerFlags().Center().Border(wxTOP, 5));
+    m_pSizer->Add(pSizerButtons, wxSizerFlags().Center());
 
     SetSizer(m_pSizer);
 

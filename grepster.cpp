@@ -39,7 +39,7 @@ wxString RESOURCE_ID_TO_STRING(int id) { return wxString::Format("#%i", id); }
 /*
     SpawnAndRun
 */
-bool SpawnAndRun(wxString path, wxString args) {
+std::string SpawnAndRun(wxString path, wxString args) {
     /* Declare objects for child process. */
     HANDLE hRead, // Handle which reads stdout of child process
            hWrite;  // Handle to write to stdout
@@ -56,10 +56,10 @@ bool SpawnAndRun(wxString path, wxString args) {
     /* Create pipe to child process. */
     if(!CreatePipe(&hRead, &hWrite, &sa, 0)) {
         wxMessageBox(L"Unable to create pipe!", L"Error", wxOK | wxICON_EXCLAMATION);
-        return false;
+        //return false;
     } else if(!SetHandleInformation(hRead, HANDLE_FLAG_INHERIT, 0)) {
         wxMessageBox(L"Unable to set handle information!", L"Error", wxOK | wxICON_EXCLAMATION);
-        return false;
+        //return false;
     }
 
     /* Build handle to child process to capture stdout from. */
@@ -75,7 +75,7 @@ bool SpawnAndRun(wxString path, wxString args) {
                    NULL,
                    NULL,
                    true,
-                   CREATE_NEW_CONSOLE,
+                   CREATE_NO_WINDOW,//CREATE_NEW_CONSOLE,
                    NULL,
                    NULL,
                    &si,
@@ -96,8 +96,8 @@ bool SpawnAndRun(wxString path, wxString args) {
         if(!bSuccess || dwRead == 0) break;
 
         std::string s(chBuf, dwRead);
-        *Console << s;  // Send buffer to grepster's console
-        //out += s;   // String copy of entire child's stdout up to CHAR_BUFFER_LENGTH. Currently not used.
+        *Console << s;  // Send buffer to grepster's console one line at a time
+        out += s;   // String copy of entire child's stdout up to CHAR_BUFFER_LENGTH
     }
     //*Console << "psftp: \n" << out;
 
@@ -105,7 +105,7 @@ bool SpawnAndRun(wxString path, wxString args) {
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
 
-    return true;
+    return out;
 }
 
 #include "app/CAppEntry.h"

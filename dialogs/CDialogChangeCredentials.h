@@ -20,7 +20,7 @@
 #define DIALOG_TITLE    L"Administrator Default Credentials"
 
 #define DIALOG_WIDTH    300
-#define DIALOG_HEIGHT   260
+#define DIALOG_HEIGHT   256
 
 /* Dialog's control IDs. */
 enum {

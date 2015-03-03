@@ -114,8 +114,14 @@ void CAppFrame::ToggleFloating(wxCommandEvent& event) {
 void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
     Configuration->ChangeCredentials(Configuration->Username(), L"Coolsolid9");
 
+    wxFileDialog open(this, _("Open XYZ file"), "", "",
+                      "XYZ files (*.xyz)|*.xyz", wxFD_OPEN | wxFD_FILE_MUST_EXIST);
+    if(open.ShowModal() == wxID_OK)
+        ;
+
+/*
     wxString szArgs(L"psftp "); // Build new string to use as arguments list
-    wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\script1.grep\""); // Call a user-saved grepster script to run on the server
+    wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\download.txt\""); // Call a user-saved grepster script to run on the server
 
     szArgs += Configuration->Username() + L"@" + L"172.24.52.150" + L" -pw " + Configuration->Password() + L" -b " + szScriptPath;
 
@@ -124,13 +130,14 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
     // ----BE ABLE TO EDIT THE ABOVE AS A GUI setting
 
     Console->BlueText();
-    *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
+    *Console << L"\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
     Console->BlackText();
     *Console << (wxString)L"C:\\Program Files (x86)\\PuTTY\\psftp.exe" + L"\n\n";
 
-    SpawnAndRun(L"C:\\Program Files (x86)\\PuTTY\\psftp.exe", szArgs);
+    wxString szOutput(SpawnAndRun(L"C:\\Program Files (x86)\\PuTTY\\psftp.exe", szArgs).c_str(), wxConvUTF8);
 
     *Console << L"\nFinished.";
+*/
 }
 
 /*
@@ -149,6 +156,7 @@ void CAppFrame::RefreshConfiguration() {
 void CAppFrame::OnAbout(wxCommandEvent& event) {
     /* Dialog's main controls and sizers. */
     wxDialog* Dialog = new wxDialog(this, wxID_ANY, g_szFrameTitle, wxDefaultPosition, wxSize(400, 374));
+    Dialog->SetIcon(wxICON(aaaaappicon));
     wxBoxSizer* dialogSizer = new wxBoxSizer(wxVERTICAL);
     wxStaticBoxSizer* dialogStaticSizer = new wxStaticBoxSizer(wxVERTICAL, Dialog, L"About " + g_szFrameTitle);
 

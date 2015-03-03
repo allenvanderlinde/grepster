@@ -1,0 +1,2 @@
+get "/tmp/.avanderlinde/text.txt" "C:\Users\Arclain\Desktop\text_downloaded.txt"
+quit
