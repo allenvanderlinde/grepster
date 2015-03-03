@@ -25,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">grepster
    </div>
-   <div id="projectbrief">A streamlined grep utility for System Administrators</div>
+   <div id="projectbrief">A streamlined interface for faster grepping in UNIX environments from Windows PCs.</div>
   </td>
  </tr>
  </tbody>
@@ -108,6 +108,8 @@ Macros</h2></td></tr>
 <tr class="separator:ab814769b927f5ae072fd171b239b5b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a966421e8beed081c502732bce8066eb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a966421e8beed081c502732bce8066eb6">CONFIGURATION_FILE_PATH</a>&#160;&#160;&#160;&quot;grepster.xml&quot;</td></tr>
 <tr class="separator:a966421e8beed081c502732bce8066eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a742c63d9e85847705f1767862babc69b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a742c63d9e85847705f1767862babc69b">CHAR_BUFFER_LENGTH</a>&#160;&#160;&#160;4096</td></tr>
+<tr class="separator:a742c63d9e85847705f1767862babc69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af50d3a3a5589e846dca652a4fdbb51eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#af50d3a3a5589e846dca652a4fdbb51eb">CONSOLE_ID</a>&#160;&#160;&#160;1000</td></tr>
 <tr class="separator:af50d3a3a5589e846dca652a4fdbb51eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a50575d63bd0b03f886042abd532ef5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a1a50575d63bd0b03f886042abd532ef5">CONSOLE_NAME</a>&#160;&#160;&#160;&quot;the_con&quot;</td></tr>
@@ -128,7 +130,7 @@ Macros</h2></td></tr>
 <tr class="separator:a19eb389726e523e1180d22ff3c4cb405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5042f8607c80fb476c55b5e235c8616c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a5042f8607c80fb476c55b5e235c8616c">GREP_NOTEBOOK_NAME</a>&#160;&#160;&#160;&quot;grep_notebook&quot;</td></tr>
 <tr class="separator:a5042f8607c80fb476c55b5e235c8616c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3e5d57b661c402c7861ff8a2914aba7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#af3e5d57b661c402c7861ff8a2914aba7">GREP_NOTEBOOK_CTRL_TITLE</a>&#160;&#160;&#160;&quot;Grep Notebook&quot;</td></tr>
+<tr class="memitem:af3e5d57b661c402c7861ff8a2914aba7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#af3e5d57b661c402c7861ff8a2914aba7">GREP_NOTEBOOK_CTRL_TITLE</a>&#160;&#160;&#160;&quot;Notebook&quot;</td></tr>
 <tr class="separator:af3e5d57b661c402c7861ff8a2914aba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a927b43beb141a266bc6631f99b5e2074"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a927b43beb141a266bc6631f99b5e2074">BROWSER_ID</a>&#160;&#160;&#160;1003</td></tr>
 <tr class="separator:a927b43beb141a266bc6631f99b5e2074"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,9 +142,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a667b72a706bfbbfb8789a5ec7f0882ce"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a667b72a706bfbbfb8789a5ec7f0882ce">RESOURCE_ID_TO_STRING</a> (int id)</td></tr>
 <tr class="memdesc:a667b72a706bfbbfb8789a5ec7f0882ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate a resource integer ID into a wxWidgets readable string for calling resources.  <a href="#a667b72a706bfbbfb8789a5ec7f0882ce">More...</a><br /></td></tr>
 <tr class="separator:a667b72a706bfbbfb8789a5ec7f0882ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae64a9952f46d6d3ebae9507edb6903af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#ae64a9952f46d6d3ebae9507edb6903af">SpawnAndRun</a> (wxString path, wxString args)</td></tr>
-<tr class="memdesc:ae64a9952f46d6d3ebae9507edb6903af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a child process and sends it an argument list for remote commands. SpawnAndRun also records the child's stdout to grepster's console.  <a href="#ae64a9952f46d6d3ebae9507edb6903af">More...</a><br /></td></tr>
-<tr class="separator:ae64a9952f46d6d3ebae9507edb6903af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3031ede04721eaf7747d85423f6bfe5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#ad3031ede04721eaf7747d85423f6bfe5">SpawnAndRun</a> (wxString path, wxString args)</td></tr>
+<tr class="memdesc:ad3031ede04721eaf7747d85423f6bfe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a child process and sends it an argument list for remote commands. SpawnAndRun also records the child's stdout to grepster's console.  <a href="#ad3031ede04721eaf7747d85423f6bfe5">More...</a><br /></td></tr>
+<tr class="separator:ad3031ede04721eaf7747d85423f6bfe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -207,6 +209,19 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>grepster's browser's local name for wxWidgets. </p>
+
+</div>
+</div>
+<a class="anchor" id="a742c63d9e85847705f1767862babc69b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHAR_BUFFER_LENGTH&#160;&#160;&#160;4096</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>grepster's buffer length for sending remote commands. Measured in bytes. </p>
 
 </div>
 </div>
@@ -280,7 +295,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define GREP_NOTEBOOK_CTRL_TITLE&#160;&#160;&#160;&quot;Grep Notebook&quot;</td>
+          <td class="memname">#define GREP_NOTEBOOK_CTRL_TITLE&#160;&#160;&#160;&quot;Notebook&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -391,12 +406,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae64a9952f46d6d3ebae9507edb6903af"></a>
+<a class="anchor" id="ad3031ede04721eaf7747d85423f6bfe5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SpawnAndRun </td>
+          <td class="memname">std::string SpawnAndRun </td>
           <td>(</td>
           <td class="paramtype">wxString&#160;</td>
           <td class="paramname"><em>path</em>, </td>
@@ -419,13 +434,19 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>Local directory path to external application. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>Argument list passed to child process.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>Argument list passed to child process. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">std::string</td><td>Returns the process's stdout buffer as a string.</td></tr>
   </table>
   </dd>
 </dl>
 <p>grepster can launch external applications and send them arguments as if it were a terminal.</p>
 <p>For example: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;C:\Users\Admin&gt;psftp admin@127.0.0.1 -pw passwd</div>
-</div><!-- fragment --><p> can be launched with grepster code as: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;SpawnAndRun(&quot;C:\Program Files (x86)\PuTTY\psftp.exe&quot;, &quot;psftp.exe admin@127.0.0.1 -pw passwd&quot;);</div>
+</div><!-- fragment --><p> can be launched with grepster code as: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;*Console &lt;&lt; SpawnAndRun(&quot;C:\Program Files (x86)\PuTTY\&quot;, &quot;psftp.exe admin@127.0.0.1 -pw passwd&quot;);</div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -506,7 +527,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 2 2015 08:35:35 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 3 2015 09:31:50 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

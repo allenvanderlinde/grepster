@@ -7,7 +7,7 @@ var searchData=
   ['server_5fstacks_5fname',['SERVER_STACKS_NAME',['../grepster_8h.html#aef3f3454eb74302ee6475b6e1eb9b7ca',1,'grepster.h']]],
   ['serverstacks',['ServerStacks',['../grepster_8cpp.html#a4050f062ea121119aa08ec79fd17874f',1,'ServerStacks():&#160;grepster.cpp'],['../grepster_8h.html#a4050f062ea121119aa08ec79fd17874f',1,'ServerStacks():&#160;grepster.cpp']]],
   ['showsplash',['ShowSplash',['../class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1',1,'CAppEntry']]],
-  ['spawnandrun',['SpawnAndRun',['../grepster_8h.html#ae64a9952f46d6d3ebae9507edb6903af',1,'grepster.h']]],
+  ['spawnandrun',['SpawnAndRun',['../grepster_8cpp.html#ad3031ede04721eaf7747d85423f6bfe5',1,'SpawnAndRun(wxString path, wxString args):&#160;grepster.cpp'],['../grepster_8h.html#ad3031ede04721eaf7747d85423f6bfe5',1,'SpawnAndRun(wxString path, wxString args):&#160;grepster.cpp']]],
   ['splash_5fduration',['SPLASH_DURATION',['../_c_app_entry_8h.html#acbfc704b0fe136fd8de9d48da09f5b28',1,'CAppEntry.h']]],
   ['statusbar_5fnote_5fwidth',['STATUSBAR_NOTE_WIDTH',['../_c_app_frame_8h.html#a6873edc266d9a65580a0cbc4228d6135',1,'CAppFrame.h']]],
   ['statusbar_5fstring_5fid_5fabout',['STATUSBAR_STRING_ID_ABOUT',['../_c_app_menubar_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6aed28136accb0c1d641b49ca407037556',1,'CAppMenubar.h']]],
