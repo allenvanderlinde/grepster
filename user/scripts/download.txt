@@ -1,1 +1,2 @@
-grep 'allen' /tmp/.avanderlinde/test.txt > /tmp/.avanderlinde/new.txt
+echo "allen vanderlinde" > /tmp/.avanderlinde/new.txt
+grep 'van' /tmp/.avanderlinde/new.txt > /tmp/.avanderlinde/grepped.txt

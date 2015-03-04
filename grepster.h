@@ -86,13 +86,21 @@ std::string SpawnAndRun(wxString path, wxString args);
 /** grepster's buffer length for sending remote commands. Measured in bytes. */
 #define CHAR_BUFFER_LENGTH          4096
 
+/* These are globals which identify the various PuTTY programs grepster uses. */
+/** The default path to PuTTY. */
+#define DEFAULT_PATH_TO_PUTTY       L"C:\\Program Files (x86)\\PuTTY\\"
+/** Name of grepster's SFTP program. */
+#define SFTP_COMMAND_STRING         L"psftp "
+/** Name of grepster's SSH link program. */
+#define SSH_COMMAND_STRING          L"plink "
+
 /* Console control settings. */
 /** grepster's console control ID. */
 #define CONSOLE_ID                  1000
 /** grepster's console's local name for wxWidgets. */
 #define CONSOLE_NAME                "the_con"
 /** grepster's console's control title. */
-#define CONSOLE_CTRL_TITLE          "Console"
+#define CONSOLE_CTRL_TITLE          L"Console"
 /** Default height (pixels) of grepster's console control used when floating. */
 #define CONSOLE_DEFAULT_HEIGHT      140
 
@@ -102,7 +110,7 @@ std::string SpawnAndRun(wxString path, wxString args);
 /** grepster's server stack's local name for wxWidgets. */
 #define SERVER_STACKS_NAME            "server_stacks"
 /** grepster's server stack's control title. */
-#define SERVER_STACKS_CTRL_TITLE      "Server Stacks"
+#define SERVER_STACKS_CTRL_TITLE      L"Server Stacks"
 /** Default width (pixels) of grepster's tree list control used when floating. */
 #define SERVER_STACKS_DEFAULT_WIDTH   200
 
@@ -112,7 +120,7 @@ std::string SpawnAndRun(wxString path, wxString args);
 /** grepster's notebook's local name for wxWidgets. */
 #define GREP_NOTEBOOK_NAME          "grep_notebook"
 /** grepster's notebook control title. */
-#define GREP_NOTEBOOK_CTRL_TITLE    "Notebook"
+#define GREP_NOTEBOOK_CTRL_TITLE    L"Notebook"
 
 /* Browser/web viewer control settings. */
 /** grepster's browser control ID. */
