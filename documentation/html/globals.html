@@ -70,6 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="globals.html"><span>All</span></a></li>
       <li><a href="globals_func.html"><span>Functions</span></a></li>
       <li><a href="globals_vars.html"><span>Variables</span></a></li>
+      <li><a href="globals_type.html"><span>Typedefs</span></a></li>
       <li><a href="globals_enum.html"><span>Enumerations</span></a></li>
       <li><a href="globals_eval.html"><span>Enumerator</span></a></li>
       <li><a href="globals_defs.html"><span>Macros</span></a></li>
@@ -86,7 +87,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
-      <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -136,9 +136,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>BROWSER_NAME
 : <a class="el" href="grepster_8h.html#a574cfb7bb87e59e8b2ca1518f2efdf67">grepster.h</a>
 </li>
-<li>BUTTON_OK
-: <a class="el" href="_c_dialog_change_credentials_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba3534e510a800f1a3975a255756f0246d">CDialogChangeCredentials.h</a>
-</li>
 </ul>
 
 
@@ -173,17 +170,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>DEFAULT_PATH_TO_PUTTY
+: <a class="el" href="grepster_8h.html#aac73b817a51b76e8d8b96e6a5959ff9e">grepster.h</a>
+</li>
 <li>DIALOG_HEIGHT
 : <a class="el" href="_c_dialog_change_credentials_8h.html#abd50487d7ff696667868336dec01e77c">CDialogChangeCredentials.h</a>
 </li>
 <li>DIALOG_ID_CHANGE_CREDENTIALS
 : <a class="el" href="_c_app_frame_8h.html#aff87402edbb190b3cd20e2731bb944e6">CAppFrame.h</a>
 </li>
+<li>DIALOG_ID_SET_PATH_PUTTY
+: <a class="el" href="_c_app_frame_8h.html#a79ca8c4637958db51519ba73328af58c">CAppFrame.h</a>
+</li>
 <li>DIALOG_TITLE
 : <a class="el" href="_c_dialog_change_credentials_8h.html#a9159fda9dd5ccfaa7d15aec62df3611d">CDialogChangeCredentials.h</a>
 </li>
 <li>DIALOG_WIDTH
 : <a class="el" href="_c_dialog_change_credentials_8h.html#ad6c6785c3125b444182408c78080be44">CDialogChangeCredentials.h</a>
+</li>
+<li>dialogVars_t
+: <a class="el" href="_c_app_frame_8h.html#a776213dbad0eed1b2433ecab8c172a0a">CAppFrame.h</a>
 </li>
 <li>DISPLAY_SPLASH
 : <a class="el" href="_c_app_entry_8h.html#a5072b68c24aaa3e726e39ff4823d0b3a">CAppEntry.h</a>
@@ -241,6 +247,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>FRAME_MENU_STRING_ID_QUIT
 : <a class="el" href="_c_app_menubar_8h.html#af8640cb187926557eee03ae9124abc46af4c63ac58572d5d34e03b2e11e1e6e15">CAppMenubar.h</a>
 </li>
+<li>FRAME_MENU_STRING_ID_SET_PATH_PUTTY
+: <a class="el" href="_c_app_menubar_8h.html#af8640cb187926557eee03ae9124abc46a8c469e5684f312e480b7df407fc4fd78">CAppMenubar.h</a>
+</li>
 <li>FRAME_MENU_STRING_ID_TOGGLE_DOCKABLE
 : <a class="el" href="_c_app_menubar_8h.html#af8640cb187926557eee03ae9124abc46aba4934f0f8e9e90b2c49602f8d539ecb">CAppMenubar.h</a>
 </li>
@@ -293,16 +302,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 
 
-<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
-<li>INPUT_PASSWORD
-: <a class="el" href="_c_dialog_change_credentials_8h.html#a06fc87d81c62e9abb8790b6e5713c55bafb0aeee6604bd8bddce9b2c089af7b97">CDialogChangeCredentials.h</a>
-</li>
-<li>INPUT_USERNAME
-: <a class="el" href="_c_dialog_change_credentials_8h.html#a06fc87d81c62e9abb8790b6e5713c55baa5dcfd8a3b8568750001c5df3fe057d7">CDialogChangeCredentials.h</a>
-</li>
-</ul>
-
-
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>MENU_FUNCTION_ID_FILE_NEW_JOB
 : <a class="el" href="_c_app_menubar_8h.html#a0a74d218f380445ded1ec0d56f2a9eefab04c8862a67c0e12c015731d78e9978c">CAppMenubar.h</a>
@@ -312,6 +311,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>MENU_FUNCTION_ID_HELP_ABOUT
 : <a class="el" href="_c_app_menubar_8h.html#a0a74d218f380445ded1ec0d56f2a9eefa0338e31fcca848cc9cc2bacb5c714e0c">CAppMenubar.h</a>
+</li>
+<li>MENU_FUNCTION_ID_OPTIONS_SET_PATH_PUTTY
+: <a class="el" href="_c_app_menubar_8h.html#a0a74d218f380445ded1ec0d56f2a9eefade786c743497de92da30588423afcd98">CAppMenubar.h</a>
 </li>
 <li>MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE
 : <a class="el" href="_c_app_menubar_8h.html#a0a74d218f380445ded1ec0d56f2a9eefa24d6f6f4afd2bc40ff2453a4908b2d07">CAppMenubar.h</a>
@@ -362,12 +364,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="grepster_8cpp.html#a4050f062ea121119aa08ec79fd17874f">grepster.cpp</a>
 , <a class="el" href="grepster_8h.html#a4050f062ea121119aa08ec79fd17874f">grepster.h</a>
 </li>
+<li>SFTP_COMMAND_STRING
+: <a class="el" href="grepster_8h.html#aae68b443181a375fae914f2602e06a89">grepster.h</a>
+</li>
 <li>SpawnAndRun()
 : <a class="el" href="grepster_8cpp.html#ad3031ede04721eaf7747d85423f6bfe5">grepster.cpp</a>
 , <a class="el" href="grepster_8h.html#ad3031ede04721eaf7747d85423f6bfe5">grepster.h</a>
 </li>
 <li>SPLASH_DURATION
 : <a class="el" href="_c_app_entry_8h.html#acbfc704b0fe136fd8de9d48da09f5b28">CAppEntry.h</a>
+</li>
+<li>SSH_COMMAND_STRING
+: <a class="el" href="grepster_8h.html#acd0eb115167b67e30d663b8c33eef106">grepster.h</a>
 </li>
 <li>STATUSBAR_NOTE_WIDTH
 : <a class="el" href="_c_app_frame_8h.html#a6873edc266d9a65580a0cbc4228d6135">CAppFrame.h</a>
@@ -386,6 +394,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>STATUSBAR_STRING_ID_QUIT
 : <a class="el" href="_c_app_menubar_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a6a467bd350ba76d5f8e0b0da52be591b">CAppMenubar.h</a>
+</li>
+<li>STATUSBAR_STRING_ID_SET_PATH_PUTTY
+: <a class="el" href="_c_app_menubar_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a2138585f6a5e38a4c613a49035f1662d">CAppMenubar.h</a>
 </li>
 <li>STATUSBAR_STRING_ID_TOGGLE_DOCKABLE
 : <a class="el" href="_c_app_menubar_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a0883f5e1a510ac8e3192182bbafd9291">CAppMenubar.h</a>
@@ -431,7 +442,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 3 2015 09:31:50 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 5 2015 16:15:44 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

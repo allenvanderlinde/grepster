@@ -27,27 +27,37 @@
 extern wxString         g_szFrameTitle;
 
 /**
- * This object reports grepster's activity to a central text control for the user.
+ * This control reports grepster's activity and remote commands to the user.
  * @brief       grepster's console.
  */
 extern CConsole*        Console;
 /**
- * This object holds the list of servers configured for grepping.
+ * This control is the graphical list of servers configured for grepping.
  * @brief       grepster's Server Stack.
  */
 extern CServerStacks*     ServerStacks;
 /**
- * This object holds the user's book of grep session pages.
+ * This control holds the user's notebook of grep scripts and jobs.
  * @brief       grepster's grep Session Notebook.
  */
 extern CGrepNotebook*   GrepNotebook;
 
 /**
- * This structure contains each of grepster's configuration settings which are saved automatically file upon change.
+ * This object contains each of grepster's configuration settings which are saved automatically to file upon change.
  *
  * @brief       grepster's configuration object.
  */
 extern CAppInit*        Configuration;
+
+/**
+ * @brief       Structure which represents a dialog's basic control variables.
+ * Note: This is defined in each CDialog type class.
+ */
+struct dialogVars_t {
+    wxString title;
+    unsigned short width;
+    unsigned short height;
+};
 
 /* Utility functions. */
 /**
@@ -81,51 +91,51 @@ std::string SpawnAndRun(wxString path, wxString args);
 #define _cast(v) wxString(#v)
 
 /** grepster's configuration file path. */
-#define CONFIGURATION_FILE_PATH     "grepster.xml"
+#define CONFIGURATION_FILE_PATH             "grepster.xml"
 
 /** grepster's buffer length for sending remote commands. Measured in bytes. */
-#define CHAR_BUFFER_LENGTH          4096
+#define CHAR_BUFFER_LENGTH                  4096
 
 /* These are globals which identify the various PuTTY programs grepster uses. */
 /** The default path to PuTTY. */
-#define DEFAULT_PATH_TO_PUTTY       L"C:\\Program Files (x86)\\PuTTY\\"
+#define DEFAULT_PATH_TO_PUTTY               L"C:\\Program Files (x86)\\PuTTY\\"
 /** Name of grepster's SFTP program. */
-#define SFTP_COMMAND_STRING         L"psftp "
+#define SFTP_COMMAND_STRING                 L"psftp "
 /** Name of grepster's SSH link program. */
-#define SSH_COMMAND_STRING          L"plink "
+#define SSH_COMMAND_STRING                  L"plink "
 
 /* Console control settings. */
 /** grepster's console control ID. */
-#define CONSOLE_ID                  1000
+#define CONSOLE_ID                          1000
 /** grepster's console's local name for wxWidgets. */
-#define CONSOLE_NAME                "the_con"
+#define CONSOLE_NAME                        "the_con"
 /** grepster's console's control title. */
-#define CONSOLE_CTRL_TITLE          L"Console"
+#define CONSOLE_CTRL_TITLE                  L"Console"
 /** Default height (pixels) of grepster's console control used when floating. */
-#define CONSOLE_DEFAULT_HEIGHT      140
+#define CONSOLE_DEFAULT_HEIGHT              140
 
 /* Server Stacks tree control settings. */
 /** grepster's server stack's control ID. */
-#define SERVER_STACKS_ID              1001
+#define SERVER_STACKS_ID                    1001
 /** grepster's server stack's local name for wxWidgets. */
-#define SERVER_STACKS_NAME            "server_stacks"
+#define SERVER_STACKS_NAME                  "server_stacks"
 /** grepster's server stack's control title. */
-#define SERVER_STACKS_CTRL_TITLE      L"Server Stacks"
+#define SERVER_STACKS_CTRL_TITLE            L"Server Stacks"
 /** Default width (pixels) of grepster's tree list control used when floating. */
-#define SERVER_STACKS_DEFAULT_WIDTH   200
+#define SERVER_STACKS_DEFAULT_WIDTH         200
 
 /* Grep Notebook control settings. */
 /** grepster's AUI notebook control ID. */
-#define GREP_NOTEBOOK_ID            1002
+#define GREP_NOTEBOOK_ID                    1002
 /** grepster's notebook's local name for wxWidgets. */
-#define GREP_NOTEBOOK_NAME          "grep_notebook"
+#define GREP_NOTEBOOK_NAME                  "grep_notebook"
 /** grepster's notebook control title. */
-#define GREP_NOTEBOOK_CTRL_TITLE    L"Notebook"
+#define GREP_NOTEBOOK_CTRL_TITLE            L"Notebook"
 
 /* Browser/web viewer control settings. */
 /** grepster's browser control ID. */
-#define BROWSER_ID             1003
+#define BROWSER_ID                          1003
 /** grepster's browser's local name for wxWidgets. */
-#define BROWSER_NAME           "browser"
+#define BROWSER_NAME                        "browser"
 
 #endif

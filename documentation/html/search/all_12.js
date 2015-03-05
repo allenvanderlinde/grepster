@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['width',['width',['../structdialog_vars__t.html#a33356e9e0e1eb735ad02c16f3b113401',1,'dialogVars_t']]],
   ['writedefaultadminconfiguration',['WriteDefaultAdminConfiguration',['../class_c_app_init.html#aa4c84bdaff18c30206ec81481b866ca9',1,'CAppInit']]],
   ['writedefaultconfiguration',['WriteDefaultConfiguration',['../class_c_app_entry.html#a6ad02b808b691f2bf25388a04b2c02d3',1,'CAppEntry']]],
   ['writexmldata',['WriteXMLData',['../class_c_app_init.html#ae48984d9e7a263d651bc68466c6f3e7e',1,'CAppInit']]],

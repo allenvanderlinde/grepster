@@ -17,7 +17,7 @@ In most, if not all, of grepster's control methods you'll often see only a singl
 
 Some methods will have their own command event structure depending upon the type of wxWindow triggers the event.
 
-As these are always required parameters for custom control methods, they are not individually documented within the source code for the sake of preventing redundant documentation.
+As these are always required parameters for control event handling methods, they are not individually documented within the source code for the sake of preventing redundant documentation.
 <br>
 
 Source Code Notes

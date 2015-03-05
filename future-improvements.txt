@@ -1,0 +1,2 @@
+1. Capture resize events for the primary controls and save their dimensions to file, they should float with the same dimensions.
+2. Capture where controls are snapped to within the primary frame and save to file. This is set when defining each control's m_xxxInfo_t struct.

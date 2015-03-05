@@ -24,9 +24,10 @@ using namespace std;
 /* grepster's primary frame's event handler calls. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
     //EVT_MENU(MENU_FUNCTION_ID_FILE_NEW_JOB, //CAppFrame::ChangeDefaultCredentials)
-    EVT_MENU(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS, CAppFrame::ChangeDefaultCredentials)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::CloseFrame)
     EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
+    EVT_MENU(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS, CAppFrame::ChangeDefaultCredentials)
+    EVT_MENU(MENU_FUNCTION_ID_OPTIONS_SET_PATH_PUTTY, CAppFrame::SetPathToPuTTY)
     EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, CAppFrame::ToggleFloating)
     EVT_MENU(MENU_FUNCTION_ID_HELP_ABOUT, CAppFrame::OnAbout)
 
@@ -93,8 +94,17 @@ CAppFrame::~CAppFrame() {
 */
 void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
     CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this);
-    if(Dialog->ShowModal() == BUTTON_OK)
+    if(Dialog->ShowModal() == Dialog->BUTTON_OK)
         Dialog->Destroy();
+}
+
+/*
+    CAppFrame::SetPathToPuTTY
+*/
+void CAppFrame::SetPathToPuTTY(wxCommandEvent& event) {
+    // write class for this new dialog
+    //if(Dialog->ShowModal(0 == BUTTON_OK)
+    //Dialog->Destroy();
 }
 
 /*

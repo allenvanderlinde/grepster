@@ -10,8 +10,6 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
-#include "../grepster.h"
-
 #include "../resources/grepster_rc.h"
 
 #include "CDialogChangeCredentials.h"

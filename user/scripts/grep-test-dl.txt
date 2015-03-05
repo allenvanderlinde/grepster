@@ -1,2 +1,2 @@
-get /tmp/.avanderlinde/grepped-test.txt "C:\Users\Arclain\Desktop\grepped-test.txt"
+get /tmp/.avanderlinde/grepped-test.txt "C:\Users\vanallen\Desktop\grepped-test.txt"
 quit

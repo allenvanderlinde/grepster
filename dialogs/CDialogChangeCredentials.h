@@ -15,19 +15,13 @@
 
 #include <wx/wx.h>
 
+#include "../grepster.h"
 
 /* Dialog's globals. */
 #define DIALOG_TITLE    L"Administrator Default Credentials"
 
 #define DIALOG_WIDTH    300
 #define DIALOG_HEIGHT   256
-
-/* Dialog's control IDs. */
-enum {
-    BUTTON_OK = 2101,
-    INPUT_USERNAME,
-    INPUT_PASSWORD
-};
 
 
 /**
@@ -36,15 +30,33 @@ enum {
  * @class   CDialogChangeCredentials
  * @brief   Class definition for dialog box to change administrator's credentials.
  */
- class CDialogChangeCredentials : public wxDialog {
- public:
-     /**
-      * @brief       Default constructor which creates the dialog box.
-      * @param[in]   parentFrame The primary frame to which this dialog belongs.
-      */
-     CDialogChangeCredentials(wxWindow* parentFrame);
+class CDialogChangeCredentials : public wxDialog {
+public:
+    /**
+     * @brief       Default constructor which creates the dialog box.
+     * @param[in]   parentFrame The primary frame to which this dialog belongs.
+     */
+    CDialogChangeCredentials(wxWindow* parentFrame);
 
- private:
+    /**
+    * @enum        enum_DialogCtrlIDs
+    * @brief       Note: Each dialog class should have an enumeration which sets their controls' ID
+    * to match the major magnitude of the dialog's ID as defined in CAppFrame.h. This is done in order to take
+    * control away from wxWidgets when handling what dialogs should do when the user activates a control.
+    */
+    enum enum_DialogCtrlIDs {
+        /** Dialog's OK button. */
+        BUTTON_OK = 2001,
+        /** Text control which passes the user's username to CAppInit. */
+        INPUT_USERNAME,
+        /** Text control which passes the user's password to CAppInit. */
+        INPUT_PASSWORD
+    };
+
+private:
+    /** Dialog variables structure used to define basic properties of the dialog. */
+    dialogVars_t        m_dialogVars;
+
     /** Primary box sizer for dialog. */
     wxBoxSizer*         m_pSizer;
 
@@ -64,6 +76,6 @@ enum {
      * @brief       Initialize and call the primary object's event handler.
      */
     wxDECLARE_EVENT_TABLE();
- };
+};
 
 #endif // _CDIALOGCHANGECREDENTIALS_H_

@@ -2,6 +2,7 @@ var searchData=
 [
   ['m_5fbconfigurationloadedsuccessfully',['m_bConfigurationLoadedSuccessfully',['../class_c_app_init.html#a64d2a758646b43d34dd2c986f0854d13',1,'CAppInit::m_bConfigurationLoadedSuccessfully()'],['../class_c_admin_account.html#a29ef9103a45cfdfb971ff1a2e14c97d4',1,'CAdminAccount::m_bConfigurationLoadedSuccessfully()']]],
   ['m_5fconsoleinf_5ft',['m_consoleInf_t',['../class_c_console.html#aa105d6d8ada4ba13cabadad7c712514f',1,'CConsole']]],
+  ['m_5fdialogvars',['m_dialogVars',['../class_c_dialog_change_credentials.html#a728686a21d62cd634b4499a07b387b95',1,'CDialogChangeCredentials']]],
   ['m_5fgrepnotebookinf_5ft',['m_grepNotebookInf_t',['../class_c_grep_notebook.html#a6c8d0bf38e146e0590998bd6da368f7c',1,'CGrepNotebook']]],
   ['m_5fpadministrator',['m_pAdministrator',['../class_c_app_init.html#a10ad1620c5f77c3d359c9399f92fe34a',1,'CAppInit']]],
   ['m_5fpaui',['m_pAui',['../class_c_app_frame.html#a3c2d134577e66b69a30a95804059f460',1,'CAppFrame']]],
@@ -29,6 +30,7 @@ var searchData=
   ['menu_5ffunction_5fid_5ffile_5fnew_5fjob',['MENU_FUNCTION_ID_FILE_NEW_JOB',['../_c_app_menubar_8h.html#a0a74d218f380445ded1ec0d56f2a9eefab04c8862a67c0e12c015731d78e9978c',1,'CAppMenubar.h']]],
   ['menu_5ffunction_5fid_5ffile_5fquit',['MENU_FUNCTION_ID_FILE_QUIT',['../_c_app_menubar_8h.html#a0a74d218f380445ded1ec0d56f2a9eefacd0a7a923ac36d6428e69d03713dbcde',1,'CAppMenubar.h']]],
   ['menu_5ffunction_5fid_5fhelp_5fabout',['MENU_FUNCTION_ID_HELP_ABOUT',['../_c_app_menubar_8h.html#a0a74d218f380445ded1ec0d56f2a9eefa0338e31fcca848cc9cc2bacb5c714e0c',1,'CAppMenubar.h']]],
+  ['menu_5ffunction_5fid_5foptions_5fset_5fpath_5fputty',['MENU_FUNCTION_ID_OPTIONS_SET_PATH_PUTTY',['../_c_app_menubar_8h.html#a0a74d218f380445ded1ec0d56f2a9eefade786c743497de92da30588423afcd98',1,'CAppMenubar.h']]],
   ['menu_5ffunction_5fid_5foptions_5ftoggle_5ffloatable',['MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE',['../_c_app_menubar_8h.html#a0a74d218f380445ded1ec0d56f2a9eefa24d6f6f4afd2bc40ff2453a4908b2d07',1,'CAppMenubar.h']]],
   ['menu_5ffunction_5fid_5fsession_5fdefault_5fcredentials',['MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS',['../_c_app_menubar_8h.html#a0a74d218f380445ded1ec0d56f2a9eefa8a5582ec5e1c879dfb0ab4b6de299286',1,'CAppMenubar.h']]],
   ['menu_5ffunction_5fid_5ftools_5flaunch_5fputty',['MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY',['../_c_app_menubar_8h.html#a0a74d218f380445ded1ec0d56f2a9eefac43a70c2472bfc3742e754d8e24f49b3',1,'CAppMenubar.h']]]
