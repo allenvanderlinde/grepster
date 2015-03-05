@@ -28,13 +28,15 @@ const wxString FRAME_MENU_STRINGS[]         = {L"&New grepster job...\tCtrl+Shif
                                                L"&Quit\tCtrl+Q",
                                                L"&Default Credentials...\tCtrl+Shift+C",
                                                L"&Launch PuTTY\tCtrl+P",
-                                               L"Toggle Floating Controls",
-                                               L"About grepster..."};
+                                               L"&Set path to PuTTY...",
+                                               L"&Toggle Floating Controls",
+                                               L"&About grepster..."};
 /** Status bar strings. These are the labels displayed for each menu item. */
 const wxString FRAME_STATUSBAR_STRINGS[]    = {L"Create a new grep job for the currently selected stack.",
                                                L"Quit grepster.",
                                                L"Set the session's administrator default credentials.",
                                                L"Launch PuTTY.",
+                                               L"Set the default path to PuTTY.",
                                                L"Allow the server stack and console to be un-docked from grepster.",
                                                L"About grepster."};
 
@@ -53,6 +55,7 @@ enum enum_MenuStringIDs {
     FRAME_MENU_STRING_ID_QUIT,
     FRAME_MENU_STRING_ID_DEFAULT_CREDENTIALS,
     FRAME_MENU_STRING_ID_LAUNCH_PUTTY,
+    FRAME_MENU_STRING_ID_SET_PATH_PUTTY,
     FRAME_MENU_STRING_ID_TOGGLE_DOCKABLE,
     FRAME_MENU_STRING_ID_ABOUT
 };
@@ -63,6 +66,7 @@ enum enum_StatusbarStringIDs {
     STATUSBAR_STRING_ID_QUIT,
     STATUSBAR_STRING_ID_DEFAULT_CREDENTIALS,
     STATUSBAR_STRING_ID_LAUNCH_PUTTY,
+    STATUSBAR_STRING_ID_SET_PATH_PUTTY,
     STATUSBAR_STRING_ID_TOGGLE_DOCKABLE,
     STATUSBAR_STRING_ID_ABOUT
 };
@@ -75,6 +79,7 @@ enum enum_MenuFunctionIDs {
     MENU_FUNCTION_ID_FILE_QUIT,
     MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS,
     MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY,
+    MENU_FUNCTION_ID_OPTIONS_SET_PATH_PUTTY,
     MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE,
     MENU_FUNCTION_ID_HELP_ABOUT
 };

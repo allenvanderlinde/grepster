@@ -1,2 +1,0 @@
-echo "allen vanderlinde" > /tmp/.avanderlinde/new.txt
-grep 'van' /tmp/.avanderlinde/new.txt > /tmp/.avanderlinde/grepped.txt

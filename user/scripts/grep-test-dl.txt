@@ -1,0 +1,2 @@
+get /tmp/.avanderlinde/grepped-test.txt "C:\Users\Arclain\Desktop\grepped-test.txt"
+quit

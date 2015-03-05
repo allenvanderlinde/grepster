@@ -1,0 +1,3 @@
+echo "allen vanderlinde" > /tmp/.avanderlinde/grep-test.txt
+grep 'van' /tmp/.avanderlinde/grep-test.txt > /tmp/.avanderlinde/grepped-test.txt
+exit

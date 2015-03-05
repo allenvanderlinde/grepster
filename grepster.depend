@@ -6,7 +6,7 @@
 	"../resources/grepster_rc.h"
 	"CAppEntry.h"
 
-1425445140 c:\grepster\grepster.h
+1425445574 c:\grepster\grepster.h
 	<wx/wx.h>
 	"app/CConsole.h"
 	"app/CServerStacks.h"
@@ -3187,7 +3187,7 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1425445143 c:\grepster\version.h
+1425515095 c:\grepster\version.h
 
 1425252213 c:\grepster\resources\grepster_rc.h
 
@@ -3214,7 +3214,7 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1425429459 source:c:\grepster\app\cappframe.cpp
+1425514556 source:c:\grepster\app\cappframe.cpp
 	"../grepster.h"
 	"../resources/grepster_rc.h"
 	<wx/aui/dockart.h>
@@ -3342,7 +3342,7 @@
 	"CAppFrame.h"
 	"CServerStacks.h"
 
-1425270175 c:\grepster\app\cappmenubar.h
+1425515011 c:\grepster\app\cappmenubar.h
 	<wx/wx.h>
 
 1425269330 source:c:\grepster\app\cappmenubar.cpp

@@ -45,6 +45,10 @@ CAppMenubar::CAppMenubar()
 
     // Options menu
     m_pMenuOptions = new wxMenu;
+    m_pMenuOptions->Append(MENU_FUNCTION_ID_OPTIONS_SET_PATH_PUTTY,
+                           FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_SET_PATH_PUTTY],
+                           FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_SET_PATH_PUTTY]);
+    m_pMenuOptions->AppendSeparator();
     m_pMenuOptions->Append(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE,
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_TOGGLE_DOCKABLE],
                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_TOGGLE_DOCKABLE],

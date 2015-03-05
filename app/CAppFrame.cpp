@@ -112,7 +112,7 @@ void CAppFrame::ToggleFloating(wxCommandEvent& event) {
     CAppFrame::LaunchPuTTY
 */
 void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
-    Configuration->ChangeCredentials(Configuration->Username(), L"Coolsolid9");
+    Configuration->ChangeCredentials(Configuration->Username(), L"Elementbox10");
 
 
 
@@ -126,22 +126,33 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
 
 ///*
     wxString szArgs(L"plink "); // Build new string to use as arguments list
-    wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\download.txt\""); // Call a user-saved grepster script to run on the server
+    wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\grep-test.txt\""); // Call a user-saved grepster script to run on the server
 
     //szArgs += Configuration->Username() + L"@" + L"172.24.52.150" + L" -pw " + Configuration->Password() + L" -b " + szScriptPath;
-    szArgs += "-ssh avanderlinde@172.24.52.150 -pw Coolsolid9 -m C:\\grepster\\user\\scripts\\download.txt";
+    szArgs += "-ssh avanderlinde@172.24.52.150 -pw Elementbox10 -m " + szScriptPath;
 
     // REPLACE THE BELOW STRING LITERAL WITH WITH SAVED PATH TO PSFTP.EXE IN XML CONFIG, ALONG WITH PUTTY.EXE AND PLINK.EXE
     // CREATE A SETTING IN XML CONFIG, TOO, THAT IS THE STARTING DIRECTORY FOR GREPSTER FOR LOADING SCRIPTS
     // ----BE ABLE TO EDIT THE ABOVE AS A GUI setting
 
     Console->BlueText();
-    *Console << L"\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
+    *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
     Console->BlackText();
     *Console << (wxString)L"C:\\Program Files (x86)\\PuTTY\\plink.exe" + L"\n\n";
 
-    wxString szOutput(SpawnAndRun(L"C:\\Program Files (x86)\\PuTTY\\plink.exe", szArgs).c_str(), wxConvUTF8);
+    wxString szOutput;
 
+    szOutput = SpawnAndRun(L"C:\\Program Files (x86)\\PuTTY\\plink.exe", szArgs);
+    *Console << L"\nFinished.";
+
+
+    Console->BlueText();
+    *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
+    Console->BlackText();
+    *Console << (wxString)L"C:\\Program Files (x86)\\PuTTY\\psftp.exe" + L"\n\n";
+
+    wxString szArgsDownload(L"psftp " + Configuration->Username() + L"@172.24.52.150" + L" -pw " + Configuration->Password() + L" -b \"C:\\grepster\\user\\scripts\\grep-test-dl.txt\"");
+    szOutput = SpawnAndRun(L"C:\\Program Files (x86)\\PuTTY\\psftp.exe", szArgsDownload);
     *Console << L"\nFinished.";
 //*/
 }
