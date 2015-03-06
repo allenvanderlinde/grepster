@@ -17,3 +17,6 @@
 #include "CDialogSetPathToPuTTY.h"
 #include "../app/CAppFrame.h"
 
+
+/* The dialog's event handler calls. */
+//wBEGIN_EVENT_TABLE
