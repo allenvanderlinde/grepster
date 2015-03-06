@@ -13,9 +13,6 @@
 #ifndef _CCONSOLE_H_
 #define _CCONSOLE_H_
 
-#include <wx/wx.h>
-#include <wx/aui/aui.h>
-
 
 /**
  * This object creates a wxTextCtrl which represents grepster's console for logging progress and returning results.

@@ -12,8 +12,9 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
-#include "../grepster.h"
+#include "../precomp.h"
 
+#include "../grepster.h"
 #include "CWebViewer.h"
 
 

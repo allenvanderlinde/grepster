@@ -12,11 +12,10 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
-#include <wx/wx.h>
-
-#include <iostream>
+#include "precomp.h"
 
 #include "grepster.h"
+//#include <iostream>
 
 
 /* Frame globals definitions. */

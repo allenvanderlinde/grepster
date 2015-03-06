@@ -13,8 +13,6 @@
 #ifndef _CAPPMENUBAR_H_
 #define _CAPPMENUBAR_H_
 
-#include <wx/wx.h>
-
 
 /* Strings array. */
 /** Menu bar menu strings. */

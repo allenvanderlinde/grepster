@@ -13,10 +13,6 @@
 #ifndef _CADMINACCOUNT_H_
 #define _CADMINACCOUNT_H_
 
-#include <wx/wx.h>
-
-#include "../pugixml-1.4/pugixml.hpp"
-
 
 /**
 * This object represents an administrator's user account which houses the user-defined server stacks for each grepping session.

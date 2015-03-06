@@ -13,13 +13,7 @@
 #ifndef _CAPPFRAME_H_
 #define _CAPPFRAME_H_
 
-#include <wx/wx.h>
-#include <wx/aui/framemanager.h>
-
-#include <wx/aui/auibook.h>
-
 #include "CAppMenubar.h"
-#include "../dialogs/CDialogChangeCredentials.h"
 
 
 /** Frame width (pixels). */
@@ -43,7 +37,7 @@
 /** About grepster information string. */
 #define ABOUT_INFORMATION               "Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster allows System Administrators immediate and dynamic access to client servers for grepping various logs en masse.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.\n\nPuTTY and its companion tools are copyright 1997-2013 Simon Tatham."
 
-/* grepster's dialog box IDs. */
+/** grepster's dialog IDs. */
 #define DIALOG_ID_CHANGE_CREDENTIALS    2000
 #define DIALOG_ID_SET_PATH_PUTTY        3000
 
@@ -88,29 +82,29 @@ private:
      */
     void CreateAdminXMLConfiguration();
 
-    /* ****************** */
-    /* File menu methods. */
-    /* ****************** */
+    /* *************************** */
+    /* File menu methods.          */
+    /* *************************** */
 
-    /* ********************* */
-    /* Session menu methods. */
-    /* ********************* */
+    /* *************************** */
+    /* Session menu methods.       */
+    /* *************************** */
     /**
      * @brief       Change the administrator's default credentials.
      */
     void ChangeDefaultCredentials(wxCommandEvent& event);
 
-    /* ******************* */
-    /* Tools menu methods. */
-    /* ******************* */
+    /* *************************** */
+    /* Tools menu methods.         */
+    /* *************************** */
     /**
      * @brief       Launch PuTTY from within grepster.
      */
     void LaunchPuTTY(wxCommandEvent& event);
 
-    /* ********************* */
-    /* Options menu methods. */
-    /* ********************* */
+    /* *************************** */
+    /* Options menu methods.       */
+    /* *************************** */
     /**
      * @brief       Set grepster's default path to PuTTY.
      */

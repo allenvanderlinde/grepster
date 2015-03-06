@@ -13,8 +13,6 @@
 #ifndef _CAPPINIT_H_
 #define _CAPPINIT_H_
 
-#include "../pugixml-1.4/pugixml.hpp"
-
 #include "../session/CAdminAccount.h"
 
 

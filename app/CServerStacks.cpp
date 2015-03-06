@@ -12,7 +12,10 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
+#include "../precomp.h"
+
 #include "../grepster.h"
+
 #include "CAppFrame.h"
 #include "CServerStacks.h"
 

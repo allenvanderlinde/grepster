@@ -13,15 +13,7 @@
 #ifndef _CDIALOGCHANGECREDENTIALS_H_
 #define _CDIALOGCHANGECREDENTIALS_H_
 
-#include <wx/wx.h>
-
 #include "../grepster.h"
-
-/* Dialog's globals. */
-#define DIALOG_TITLE    L"Administrator Default Credentials"
-
-#define DIALOG_WIDTH    300
-#define DIALOG_HEIGHT   256
 
 
 /**
@@ -35,8 +27,9 @@ public:
     /**
      * @brief       Default constructor which creates the dialog box.
      * @param[in]   parentFrame The primary frame to which this dialog belongs.
+     * @param[in]   dialogVars The dialog's basic window properties.
      */
-    CDialogChangeCredentials(wxWindow* parentFrame);
+    CDialogChangeCredentials(wxWindow* parentFrame, dialogVars_t dialogVars);
 
     /**
     * @enum        enum_DialogCtrlIDs

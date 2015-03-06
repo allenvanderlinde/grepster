@@ -13,8 +13,6 @@
 #ifndef _CAPPENTRY_H_
 #define _CAPPENTRY_H_
 
-#include <wx/wx.h>
-
 #include "CAppFrame.h"
 
 

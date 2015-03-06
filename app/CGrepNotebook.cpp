@@ -12,9 +12,11 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
-#include "../grepster.h"
-#include "CGrepNotebook.h"
+#include "../precomp.h"
 
+#include "../grepster.h"
+
+#include "CGrepNotebook.h"
 #include "CAppFrame.h"
 
 

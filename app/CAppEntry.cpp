@@ -12,8 +12,7 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
-#include <wx/splash.h>
-#include <wx/icon.h>
+#include "../precomp.h"
 
 #include "../grepster.h"
 #include "../resources/grepster_rc.h"

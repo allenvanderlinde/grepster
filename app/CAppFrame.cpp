@@ -10,14 +10,14 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
-#include "../grepster.h"
-#include "../resources/grepster_rc.h"
+#include "../precomp.h"
 
-#include <wx/aui/dockart.h>
+#include "../resources/grepster_rc.h"
 
 #include "CAppFrame.h"
 
-#include <iostream>
+#include "../dialogs/CDialogChangeCredentials.h"
+
 using namespace std;
 
 
@@ -93,7 +93,7 @@ CAppFrame::~CAppFrame() {
     CAppFrame::ChangeDefaultCredentials
 */
 void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
-    CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this);
+    CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this, {L"Administrator Default Credentials", 300, 256});
     if(Dialog->ShowModal() == Dialog->BUTTON_OK)
         Dialog->Destroy();
 }

@@ -14,7 +14,10 @@
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
+					<Add option="-w" />
 					<Add option="-g" />
+					<Add option="-Winvalid-pch" />
+					<Add option='-include &quot;precomp.h&quot;' />
 					<Add option="-D__WXDEBUG__" />
 					<Add directory="C:/wxWidgets-3.0.2/lib/gcc_lib/mswud" />
 				</Compiler>
@@ -101,8 +104,14 @@
 		<Unit filename="app/CServerStacks.h" />
 		<Unit filename="dialogs/CDialogChangeCredentials.cpp" />
 		<Unit filename="dialogs/CDialogChangeCredentials.h" />
+		<Unit filename="dialogs/CDialogSetPathToPuTTY.cpp" />
+		<Unit filename="dialogs/CDialogSetPathToPuTTY.h" />
 		<Unit filename="grepster.cpp" />
 		<Unit filename="grepster.h" />
+		<Unit filename="precomp.h">
+			<Option compile="1" />
+			<Option weight="0" />
+		</Unit>
 		<Unit filename="pugixml-1.4/pugiconfig.hpp" />
 		<Unit filename="pugixml-1.4/pugixml.cpp" />
 		<Unit filename="pugixml-1.4/pugixml.hpp" />

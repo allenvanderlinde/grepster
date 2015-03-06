@@ -13,8 +13,6 @@
 #ifndef _GREPSTER_H_
 #define _GREPSTER_H_
 
-#include <wx/wx.h>
-
 #include "app/CConsole.h"
 #include "app/CServerStacks.h"
 #include "app/CGrepNotebook.h"

@@ -12,6 +12,8 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
+#include "../precomp.h"
+
 #include "CAdminAccount.h"
 
 

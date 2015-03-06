@@ -13,10 +13,6 @@
 #ifndef _CGREPNOTEBOOK_H
 #define _CGREPNOTEBOOK_H
 
-#include <wx/wx.h>
-#include <wx/aui/aui.h>
-#include <wx/aui/auibook.h>
-
 #include "../webviewer/CWebViewer.h"
 
 

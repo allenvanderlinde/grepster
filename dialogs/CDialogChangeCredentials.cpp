@@ -10,6 +10,8 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
+#include "../precomp.h"
+
 #include "../resources/grepster_rc.h"
 
 #include "CDialogChangeCredentials.h"
@@ -24,8 +26,8 @@ wxEND_EVENT_TABLE()
 /*
     CDialogChangeCredentials::CDialogChangeCredentials
 */
-CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame)
-    : wxDialog(parentFrame, DIALOG_ID_CHANGE_CREDENTIALS, DIALOG_TITLE, wxDefaultPosition, wxSize(DIALOG_WIDTH, DIALOG_HEIGHT)) {
+CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame, dialogVars_t dialogVars)
+    : wxDialog(parentFrame, DIALOG_ID_CHANGE_CREDENTIALS, dialogVars.title, wxDefaultPosition, wxSize(dialogVars.width, dialogVars.height)) {
     SetIcon(wxICON(aaaaappicon));
     CenterOnParent();
     /* Dialog controls. */

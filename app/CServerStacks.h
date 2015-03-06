@@ -13,10 +13,6 @@
 #ifndef _CSERVERSTACKS_H_
 #define _CSERVERSTACKS_H_
 
-#include <wx/wx.h>
-#include <wx/treectrl.h>
-#include <wx/aui/aui.h>
-
 
 /* CServerStack configuration definitions. */
 /** The server stacks control's root item label. */

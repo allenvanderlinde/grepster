@@ -1,13 +1,11 @@
 # depslib dependency file v1.0
-1425305176 source:c:\grepster\app\cappentry.cpp
-	<wx/splash.h>
-	<wx/icon.h>
+1425616776 source:c:\grepster\app\cappentry.cpp
+	"../precomp.h"
 	"../grepster.h"
 	"../resources/grepster_rc.h"
 	"CAppEntry.h"
 
-1425592251 c:\grepster\grepster.h
-	<wx/wx.h>
+1425616232 c:\grepster\grepster.h
 	"app/CConsole.h"
 	"app/CServerStacks.h"
 	"app/CGrepNotebook.h"
@@ -2933,9 +2931,7 @@
 1412627642 c:\wxwidgets-3.0.2\include\wx\cocoa\mdi.h
 	"wx/frame.h"
 
-1425305176 c:\grepster\app\cconsole.h
-	<wx/wx.h>
-	<wx/aui/aui.h>
+1425614350 c:\grepster\app\cconsole.h
 
 1412627642 c:\wxwidgets-3.0.2\include\wx\aui\aui.h
 	"wx/aui/framemanager.h"
@@ -3135,16 +3131,10 @@
 	"wx/treebase.h"
 	"wx/hashmap.h"
 
-1425305176 c:\grepster\app\cgrepnotebook.h
-	<wx/wx.h>
-	<wx/aui/aui.h>
-	<wx/aui/auibook.h>
+1425614429 c:\grepster\app\cgrepnotebook.h
 	"../webviewer/CWebViewer.h"
 
-1425305176 c:\grepster\webviewer\cwebviewer.h
-	<wx/wx.h>
-	<wx/webview.h>
-	<wx/wfstream.h>
+1425616489 c:\grepster\webviewer\cwebviewer.h
 
 1412627643 c:\wxwidgets-3.0.2\include\wx\webview.h
 	"wx/defs.h"
@@ -3187,20 +3177,15 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1425593997 c:\grepster\version.h
+1425620100 c:\grepster\version.h
 
-1425305176 c:\grepster\resources\grepster_rc.h
+1425252213 c:\grepster\resources\grepster_rc.h
 
-1425305176 c:\grepster\app\cappentry.h
-	<wx/wx.h>
+1425613806 c:\grepster\app\cappentry.h
 	"CAppFrame.h"
 
-1425592105 c:\grepster\app\cappframe.h
-	<wx/wx.h>
-	<wx/aui/framemanager.h>
-	<wx/aui/auibook.h>
+1425620099 c:\grepster\app\cappframe.h
 	"CAppMenubar.h"
-	"../dialogs/CDialogChangeCredentials.h"
 
 1425239474 c:\grepster\app\cframemenubar.h
 	<wx/wx.h>
@@ -3214,19 +3199,19 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1425586926 source:c:\grepster\app\cappframe.cpp
-	"../grepster.h"
+1425618140 source:c:\grepster\app\cappframe.cpp
+	"../precomp.h"
 	"../resources/grepster_rc.h"
-	<wx/aui/dockart.h>
 	"CAppFrame.h"
-	<iostream>
+	"../dialogs/CDialogChangeCredentials.h"
 
 1417221776 source:c:\grepster\app\cclientlist.cpp
 	"../grepster.h"
 	"CAppFrame.h"
 	"CClientList.h"
 
-1425305176 source:c:\grepster\app\cconsole.cpp
+1425616841 source:c:\grepster\app\cconsole.cpp
+	"../precomp.h"
 	"../grepster.h"
 	"CAppFrame.h"
 	"CConsole.h"
@@ -3235,18 +3220,18 @@
 	"../grepster.h"
 	"CFrameMenubar.h"
 
-1425305176 source:c:\grepster\app\cgrepnotebook.cpp
+1425616857 source:c:\grepster\app\cgrepnotebook.cpp
+	"../precomp.h"
 	"../grepster.h"
 	"CGrepNotebook.h"
 	"CAppFrame.h"
 
-1425392705 source:c:\grepster\grepster.cpp
-	<wx/wx.h>
-	<iostream>
+1425616932 source:c:\grepster\grepster.cpp
+	"precomp.h"
 	"grepster.h"
 	"app/CAppEntry.h"
 
-1425305176 source:c:\grepster\resources\grepster.rc
+1425251799 source:c:\grepster\resources\grepster.rc
 	<afxres.h>
 	"grepster_rc.h"
 	<wx/msw/wx.rc>
@@ -3268,11 +3253,12 @@
 
 1412627643 c:\wxwidgets-3.0.2\include\wx\msw\rcdefs.h
 
-1425305176 source:c:\grepster\webviewer\cwebviewer.cpp
+1425616976 source:c:\grepster\webviewer\cwebviewer.cpp
+	"../precomp.h"
 	"../grepster.h"
 	"CWebViewer.h"
 
-1425305176 c:\grepster\pugixml-1.4\pugixml.hpp
+1417743357 c:\grepster\pugixml-1.4\pugixml.hpp
 	"pugiconfig.hpp"
 	<stddef.h>
 	<exception>
@@ -3280,9 +3266,9 @@
 	<iosfwd>
 	<string>
 
-1425305176 c:\grepster\pugixml-1.4\pugiconfig.hpp
+1417743357 c:\grepster\pugixml-1.4\pugiconfig.hpp
 
-1425305176 source:c:\grepster\pugixml-1.4\pugixml.cpp
+1417743357 source:c:\grepster\pugixml-1.4\pugixml.cpp
 	"pugixml.hpp"
 	<stdlib.h>
 	<stdio.h>
@@ -3298,11 +3284,11 @@
 	<new>
 	<stdint.h>
 
-1425305176 c:\grepster\app\cappinit.h
-	"../pugixml-1.4/pugixml.hpp"
+1425614900 c:\grepster\app\cappinit.h
 	"../session/CAdminAccount.h"
 
-1425305176 source:c:\grepster\app\cappinit.cpp
+1425616818 source:c:\grepster\app\cappinit.cpp
+	"../precomp.h"
 	"../grepster.h"
 	"CAppInit.h"
 
@@ -3316,36 +3302,104 @@
 	"CAppFrame.h"
 	"CServerStack.h"
 
-1425305176 c:\grepster\session\cadminaccount.h
-	<wx/wx.h>
-	"../pugixml-1.4/pugixml.hpp"
+1425614913 c:\grepster\session\cadminaccount.h
 
-1425305176 source:c:\grepster\session\cadminaccount.cpp
+1425614733 source:c:\grepster\session\cadminaccount.cpp
+	"../precomp.h"
 	"CAdminAccount.h"
 
-1425574904 source:c:\grepster\dialogs\cdialogchangecredentials.cpp
+1425617808 source:c:\grepster\dialogs\cdialogchangecredentials.cpp
+	"../precomp.h"
 	"../resources/grepster_rc.h"
 	"CDialogChangeCredentials.h"
 	"../app/CAppFrame.h"
 
-1425593993 c:\grepster\dialogs\cdialogchangecredentials.h
-	<wx/wx.h>
+1425618075 c:\grepster\dialogs\cdialogchangecredentials.h
 	"../grepster.h"
 
-1425305176 c:\grepster\app\cserverstacks.h
-	<wx/wx.h>
-	<wx/treectrl.h>
-	<wx/aui/aui.h>
+1425614479 c:\grepster\app\cserverstacks.h
 
-1425305176 source:c:\grepster\app\cserverstacks.cpp
+1425616878 source:c:\grepster\app\cserverstacks.cpp
+	"../precomp.h"
 	"../grepster.h"
 	"CAppFrame.h"
 	"CServerStacks.h"
 
-1425564846 c:\grepster\app\cappmenubar.h
-	<wx/wx.h>
+1425614303 c:\grepster\app\cappmenubar.h
 
-1425564846 source:c:\grepster\app\cappmenubar.cpp
+1425616831 source:c:\grepster\app\cappmenubar.cpp
+	"../precomp.h"
 	"../grepster.h"
 	"CAppMenubar.h"
+
+1425616917 source:c:\grepster\precomp.h
+	<wx/wxprec.h>
+	<wx/treectrl.h>
+	<wx/aui/aui.h>
+	<wx/aui/framemanager.h>
+	<wx/aui/auibook.h>
+	<wx/aui/dockart.h>
+	<wx/webview.h>
+	<wx/wfstream.h>
+	<wx/splash.h>
+	<wx/icon.h>
+	<iostream>
+	<wx/wx.h>
+	"pugixml-1.4/pugixml.hpp"
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\wxprec.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/msw/wrapwin.h"
+	"wx/msw/private.h"
+	"wx/msw/wrapcctl.h"
+	"wx/msw/wrapcdlg.h"
+	"wx/msw/missing.h"
+	"wx/os2/private.h"
+	"wx/wx.h"
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\msw\wrapcctl.h
+	"wx/msw/wrapwin.h"
+	<commctrl.h>
+	"wx/msw/missing.h"
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\msw\missing.h
+	<windows.h>
+	"wx/msw/winundef.h"
+	"wx/msw/wince/missing.h"
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\msw\wince\missing.h
+	"wx/msw/private.h"
+	"shellapi.h"
+
+1412627643 c:\wxwidgets-3.0.2\include\wx\msw\wrapcdlg.h
+	"wx/defs.h"
+	"wx/msw/wrapwin.h"
+	"wx/msw/private.h"
+	"wx/msw/missing.h"
+	<commdlg.h>
+	"wx/msw/winundef.h"
+
+1425616917 c:\grepster\precomp.h
+	<wx/wxprec.h>
+	<wx/treectrl.h>
+	<wx/aui/aui.h>
+	<wx/aui/framemanager.h>
+	<wx/aui/auibook.h>
+	<wx/aui/dockart.h>
+	<wx/webview.h>
+	<wx/wfstream.h>
+	<wx/splash.h>
+	<wx/icon.h>
+	<iostream>
+	<wx/wx.h>
+	"pugixml-1.4/pugixml.hpp"
+
+1425617798 source:c:\grepster\dialogs\cdialogsetpathtoputty.cpp
+	"../precomp.h"
+	"../resources/grepster_rc.h"
+	"CDialogSetPathToPuTTY.h"
+	"../app/CAppFrame.h"
+
+1425617698 c:\grepster\dialogs\cdialogsetpathtoputty.h
 
