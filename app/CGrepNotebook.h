@@ -16,11 +16,9 @@
 #include "../webviewer/CWebViewer.h"
 
 
-/* CGrepNotebook configuration definitions. */
-/** @brief  These are defined here but not actually relevant because of a wxWidgets limitation being that wxAuiNotebook controls cannot yet float. */
-/** grepster's default notebook width. */
+/* Note: These are defined here but not actually relevant because
+    of a wxWidgets limitation being that wxAuiNotebook controls cannot yet float. */
 #define GREP_NOTEBOOK_DEFAULT_WIDTH         500
-/** grepster's default notebook height. */
 #define GREP_NOTEBOOK_DEFAULT_HEIGHT        540
 
 
@@ -39,19 +37,23 @@ public:
     CGrepNotebook(wxWindow* parentFrame);
 
     /**
-     * @brief   Get notebook control's pane information.
-     * @retval  wxAuiPaneInfo This is the notebook control's display configuration object.
+     * @brief       Get notebook control's pane information.
+     * @retval      wxAuiPaneInfo This is the notebook control's display configuration object.
      */
     wxAuiPaneInfo getPaneInfo() { return m_grepNotebookInf_t; }
-    /** Launch browser for welcome page. */
+
+    /**
+     * @brief       Creates a new CWebViewer object and opens grepster's home page.
+     */
     void OpenWelcomePage();
-    /** Open the welcome page when the user has closed all other open tabs. */
+    /**
+     * @brief       Open the welcome page when the user has closed all other open tabs.
+     */
     void EmptyPage(wxAuiNotebookEvent& event);
 
 private:
-    /** grepster's welcome page browser. */
     CWebViewer*     m_pBrowser;
-    /** AUI pane settings object. */
+
     wxAuiPaneInfo   m_grepNotebookInf_t;
 
     /**

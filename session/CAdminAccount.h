@@ -46,12 +46,9 @@ public:
     void ChangeCredentials(wxString username, wxString password) { m_szUsername = username; m_szPassword = password; }
 
 private:
-    /** Flag for successful loading of configuration. */
     bool m_bConfigurationLoadedSuccessfully;
 
-    /** Administrator's username for the current job. */
     wxString m_szUsername;
-    /** Administrator's password for the current job. */
     wxString m_szPassword;
  };
 

@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['statusbar_5fstring_5fid_5fabout',['STATUSBAR_STRING_ID_ABOUT',['../_c_app_menubar_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6aed28136accb0c1d641b49ca407037556',1,'CAppMenubar.h']]],
-  ['statusbar_5fstring_5fid_5fdefault_5fcredentials',['STATUSBAR_STRING_ID_DEFAULT_CREDENTIALS',['../_c_app_menubar_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a4573f752cbf580e6457b584716c4a2bc',1,'CAppMenubar.h']]],
-  ['statusbar_5fstring_5fid_5flaunch_5fputty',['STATUSBAR_STRING_ID_LAUNCH_PUTTY',['../_c_app_menubar_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a97e10f31d6a99fb325a27a9fb4aaf3bd',1,'CAppMenubar.h']]],
-  ['statusbar_5fstring_5fid_5fnew_5fjob',['STATUSBAR_STRING_ID_NEW_JOB',['../_c_app_menubar_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a3ac5b8160dbffe0a728ca66dd443861c',1,'CAppMenubar.h']]],
-  ['statusbar_5fstring_5fid_5fquit',['STATUSBAR_STRING_ID_QUIT',['../_c_app_menubar_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a6a467bd350ba76d5f8e0b0da52be591b',1,'CAppMenubar.h']]],
-  ['statusbar_5fstring_5fid_5fset_5fpath_5fputty',['STATUSBAR_STRING_ID_SET_PATH_PUTTY',['../_c_app_menubar_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a2138585f6a5e38a4c613a49035f1662d',1,'CAppMenubar.h']]],
-  ['statusbar_5fstring_5fid_5ftoggle_5fdockable',['STATUSBAR_STRING_ID_TOGGLE_DOCKABLE',['../_c_app_menubar_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a0883f5e1a510ac8e3192182bbafd9291',1,'CAppMenubar.h']]]
+  ['menu_5ffunction_5fid_5ffile_5fnew_5fjob',['MENU_FUNCTION_ID_FILE_NEW_JOB',['../_menubar_properties_8h.html#a0a74d218f380445ded1ec0d56f2a9eefab04c8862a67c0e12c015731d78e9978c',1,'MenubarProperties.h']]],
+  ['menu_5ffunction_5fid_5ffile_5fquit',['MENU_FUNCTION_ID_FILE_QUIT',['../_menubar_properties_8h.html#a0a74d218f380445ded1ec0d56f2a9eefacd0a7a923ac36d6428e69d03713dbcde',1,'MenubarProperties.h']]],
+  ['menu_5ffunction_5fid_5fhelp_5fabout',['MENU_FUNCTION_ID_HELP_ABOUT',['../_menubar_properties_8h.html#a0a74d218f380445ded1ec0d56f2a9eefa0338e31fcca848cc9cc2bacb5c714e0c',1,'MenubarProperties.h']]],
+  ['menu_5ffunction_5fid_5foptions_5fset_5fpath_5fputty',['MENU_FUNCTION_ID_OPTIONS_SET_PATH_PUTTY',['../_menubar_properties_8h.html#a0a74d218f380445ded1ec0d56f2a9eefade786c743497de92da30588423afcd98',1,'MenubarProperties.h']]],
+  ['menu_5ffunction_5fid_5foptions_5ftoggle_5ffloatable',['MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE',['../_menubar_properties_8h.html#a0a74d218f380445ded1ec0d56f2a9eefa24d6f6f4afd2bc40ff2453a4908b2d07',1,'MenubarProperties.h']]],
+  ['menu_5ffunction_5fid_5fsession_5fdefault_5fcredentials',['MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS',['../_menubar_properties_8h.html#a0a74d218f380445ded1ec0d56f2a9eefa8a5582ec5e1c879dfb0ab4b6de299286',1,'MenubarProperties.h']]],
+  ['menu_5ffunction_5fid_5ftools_5flaunch_5fputty',['MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY',['../_menubar_properties_8h.html#a0a74d218f380445ded1ec0d56f2a9eefac43a70c2472bfc3742e754d8e24f49b3',1,'MenubarProperties.h']]]
 ];

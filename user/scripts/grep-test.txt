@@ -1,4 +1,4 @@
-echo "allen vanderlinde" > /tmp/.avanderlinde/grep-test.txt
+echo 'allen vanderlinde' > /tmp/.avanderlinde/grep-test.txt
 grep 'van' /tmp/.avanderlinde/grep-test.txt > /tmp/.avanderlinde/grepped-test.txt
-top > /tmp/.avanderlinde/bbpatch-list.txt
+echo 'Hello, world!' > /tmp/.avanderlinde/test.txt
 exit

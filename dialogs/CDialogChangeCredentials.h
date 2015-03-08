@@ -30,7 +30,6 @@ public:
      * @param[in]   dialogVars The dialog's basic window properties.
      */
     CDialogChangeCredentials(wxWindow* parentFrame, dialogVars_t dialogVars);
-
     /**
     * @enum        enum_DialogCtrlIDs
     * @brief       Note: Each dialog class should have an enumeration which sets their controls' ID
@@ -38,30 +37,21 @@ public:
     * control away from wxWidgets when handling what dialogs should do when the user activates a control.
     */
     enum enum_DialogCtrlIDs {
-        /** Dialog's OK button. */
         BUTTON_OK = 2001,
-        /** Text control which passes the user's username to CAppInit. */
         INPUT_USERNAME,
-        /** Text control which passes the user's password to CAppInit. */
         INPUT_PASSWORD
     };
 
 private:
-    /** Dialog variables structure used to define basic properties of the dialog. */
-    dialogVars_t        m_dialogVars;
-
-    /** Primary box sizer for dialog. */
     wxBoxSizer*         m_pSizer;
 
-    /** Dialog's text control used to grab new default username. */
     wxTextCtrl*         m_pInputUsername;
-    /** Dialog's text control used to grab new default password. */
     wxTextCtrl*         m_pInputPassword;
-    /** Dialog's button control used to save new credentials. */
     wxButton*           m_pButtonOK;
 
     /**
-     * @brief       Save new username to configuration.
+     * @brief       Processes the user clicking the "OK" button.
+     *              Saves new username to configuration and sets password for the session.
      */
     void OnOK(wxCommandEvent& event);
 

@@ -47,7 +47,6 @@ public:
     wxAuiPaneInfo getPaneInfo() { return m_consoleInf_t; }
 
 private:
-    /** AUI pane settings object. */
     wxAuiPaneInfo m_consoleInf_t;
 
     /**

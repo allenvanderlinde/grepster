@@ -64,7 +64,6 @@ CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame, dialog
     m_pSizer->Add(pSizerButtons, wxSizerFlags().Center());
 
     SetSizer(m_pSizer);
-
     Show(true); // Display the dialog box
 }
 

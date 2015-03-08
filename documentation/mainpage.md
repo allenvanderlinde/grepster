@@ -7,7 +7,7 @@ grepster uses PuTTY for its SSH and SFTP capabilities. Refer to PUTTY LICENSE.tx
 Instructions
 ============
 
-<b>Note:</b> PuTTY must first be installed on the PC using grepster. grepster assumes PuTTY to be installed in "C:\Program Files (x86)\PuTTY\"" or the like. If your installation is in another location, update grepster.xml in grepster's application folder with the correct directory path.
+<b>Note:</b> PuTTY must first be installed on the PC using grepster. grepster assumes PuTTY to be installed in "C:\Program Files (x86)\PuTTY\"" or the like.
 <br>
 
 Design Notes

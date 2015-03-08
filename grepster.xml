@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <grepster>
 	<setting id="username" value="avanderlinde" />
-	<setting id="ToggleFloating" value="true" />
+	<setting id="ToggleFloating" value="false" />
+	<setting id="PathToPuTTY" value="C:\\Program Files (x86)\\PuTTY\\" />
 </grepster>

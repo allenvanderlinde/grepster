@@ -61,6 +61,10 @@ void CAppInit::ApplyXMLData() {
     m_XMLSettings = m_XMLSettings.next_sibling();
 
     // next
+    id = m_XMLSettings.attribute(XML_ID_LABEL).value();
+    value = m_XMLSettings.attribute(XML_VALUE_LABEL).value();
+    m_szPathToPuTTY = value;
+    m_XMLSettings = m_XMLSettings.next_sibling();
 }
 
 /*
@@ -81,6 +85,11 @@ void CAppInit::WriteXMLData() {
     param = node.append_child(XML_ELEMENT_LABEL);
     param.append_attribute(XML_ID_LABEL) = L"ToggleFloating";
     param.append_attribute(XML_VALUE_LABEL) = bToggleFloating;
+
+    // Path to PuTTY
+    param = node.append_child(XML_ELEMENT_LABEL);
+    param.append_attribute(XML_ID_LABEL) = L"PathToPuTTY";
+    param.append_attribute(XML_VALUE_LABEL) = m_szPathToPuTTY.wchar_str();
 
     // Save XML document to configuration file
     m_XMLFile.save_file(CONFIGURATION_FILE_PATH);

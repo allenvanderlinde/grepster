@@ -24,6 +24,7 @@
 #include <wx/wfstream.h>
 #include <wx/splash.h>
 #include <wx/icon.h>
+#include <wx/filepicker.h>
 
 #include <iostream>
 

@@ -16,9 +16,7 @@
 #include "CAppFrame.h"
 
 
-/** Option to display the splash screen. */
 #define DISPLAY_SPLASH                  false
-/** Splash screen duration in milliseconds. */
 #define SPLASH_DURATION                 1700
 
 
@@ -35,7 +33,6 @@ public:
     bool ShowSplash(int resource_id);
 
 private:
-    /** grepster's primary frame. */
     CAppFrame* m_pGrepsterFrame;
 
     /**

@@ -13,8 +13,6 @@
 #ifndef _CSERVERSTACKS_H_
 #define _CSERVERSTACKS_H_
 
-
-/* CServerStack configuration definitions. */
 /** The server stacks control's root item label. */
 #define SERVER_STACK_DEFAULT_LABEL          "default"
 
@@ -45,11 +43,9 @@ public:
     void UpdateStacks();
 
 private:
-    /** wxTreeCtrl root item. */
     wxTreeItemId    m_treeRoot;
-    /** wxTreeCtrl administrator item populated with the user's server stacks. */
     wxTreeItemId    m_treeAdminItem;
-    /** AUI pane settings object. */
+
     wxAuiPaneInfo   m_serverStacksInf_t;
 
     /**

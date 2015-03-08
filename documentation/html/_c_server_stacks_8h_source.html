@@ -99,39 +99,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef _CSERVERSTACKS_H_</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define _CSERVERSTACKS_H_</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/* CServerStack configuration definitions. */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="_c_server_stacks_8h.html#a56235309f305f6ca134d7622a4c94ce0">   19</a></span>&#160;<span class="preprocessor">#define SERVER_STACK_DEFAULT_LABEL          &quot;default&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_c_server_stacks.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_server_stacks.html">CServerStacks</a> : <span class="keyword">public</span> wxTreeCtrl {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_c_server_stacks.html#a15dc377b08f8d02f27ef99a121b17cf5">CServerStacks</a>(wxWindow* parentFrame);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_c_server_stacks.html#a3acde8d7c5fc1efa9a5455dce64091a4">   40</a></span>&#160;    wxAuiPaneInfo <a class="code" href="class_c_server_stacks.html#a3acde8d7c5fc1efa9a5455dce64091a4">getPaneInfo</a>() { <span class="keywordflow">return</span> <a class="code" href="class_c_server_stacks.html#a6d7148a2f33ce07cb28640dec90daac7">m_serverStacksInf_t</a>; }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_server_stacks.html#a35f5962e92f264d7982e9a2bb3849868">UpdateStacks</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_c_server_stacks.html#aac56837bdedf02a7b31061524efa52f4">   49</a></span>&#160;    wxTreeItemId    <a class="code" href="class_c_server_stacks.html#aac56837bdedf02a7b31061524efa52f4">m_treeRoot</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_c_server_stacks.html#afc0d3cc940813c4e1983e26d34df0199">   51</a></span>&#160;    wxTreeItemId    <a class="code" href="class_c_server_stacks.html#afc0d3cc940813c4e1983e26d34df0199">m_treeAdminItem</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_c_server_stacks.html#a6d7148a2f33ce07cb28640dec90daac7">   53</a></span>&#160;    wxAuiPaneInfo   <a class="code" href="class_c_server_stacks.html#a6d7148a2f33ce07cb28640dec90daac7">m_serverStacksInf_t</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">//wxDECLARE_EVENT_TABLE();</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="_c_server_stacks_8h.html#a56235309f305f6ca134d7622a4c94ce0">   17</a></span>&#160;<span class="preprocessor">#define SERVER_STACK_DEFAULT_LABEL          &quot;default&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_c_server_stacks.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_server_stacks.html">CServerStacks</a> : <span class="keyword">public</span> wxTreeCtrl {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_c_server_stacks.html#a15dc377b08f8d02f27ef99a121b17cf5">CServerStacks</a>(wxWindow* parentFrame);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_c_server_stacks.html#a3acde8d7c5fc1efa9a5455dce64091a4">   38</a></span>&#160;    wxAuiPaneInfo <a class="code" href="class_c_server_stacks.html#a3acde8d7c5fc1efa9a5455dce64091a4">getPaneInfo</a>() { <span class="keywordflow">return</span> <a class="code" href="class_c_server_stacks.html#a6d7148a2f33ce07cb28640dec90daac7">m_serverStacksInf_t</a>; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_server_stacks.html#a35f5962e92f264d7982e9a2bb3849868">UpdateStacks</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_c_server_stacks.html#aac56837bdedf02a7b31061524efa52f4">   46</a></span>&#160;    wxTreeItemId    <a class="code" href="class_c_server_stacks.html#aac56837bdedf02a7b31061524efa52f4">m_treeRoot</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_c_server_stacks.html#afc0d3cc940813c4e1983e26d34df0199">   47</a></span>&#160;    wxTreeItemId    <a class="code" href="class_c_server_stacks.html#afc0d3cc940813c4e1983e26d34df0199">m_treeAdminItem</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_c_server_stacks.html#a6d7148a2f33ce07cb28640dec90daac7">   49</a></span>&#160;    wxAuiPaneInfo   <a class="code" href="class_c_server_stacks.html#a6d7148a2f33ce07cb28640dec90daac7">m_serverStacksInf_t</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//wxDECLARE_EVENT_TABLE();</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_c_server_stacks_html_a15dc377b08f8d02f27ef99a121b17cf5"><div class="ttname"><a href="class_c_server_stacks.html#a15dc377b08f8d02f27ef99a121b17cf5">CServerStacks::CServerStacks</a></div><div class="ttdeci">CServerStacks(wxWindow *parentFrame)</div><div class="ttdoc">Default constructor which creates the tree control. </div><div class="ttdef"><b>Definition:</b> CServerStacks.cpp:26</div></div>
-<div class="ttc" id="class_c_server_stacks_html_afc0d3cc940813c4e1983e26d34df0199"><div class="ttname"><a href="class_c_server_stacks.html#afc0d3cc940813c4e1983e26d34df0199">CServerStacks::m_treeAdminItem</a></div><div class="ttdeci">wxTreeItemId m_treeAdminItem</div><div class="ttdef"><b>Definition:</b> CServerStacks.h:51</div></div>
-<div class="ttc" id="class_c_server_stacks_html_a6d7148a2f33ce07cb28640dec90daac7"><div class="ttname"><a href="class_c_server_stacks.html#a6d7148a2f33ce07cb28640dec90daac7">CServerStacks::m_serverStacksInf_t</a></div><div class="ttdeci">wxAuiPaneInfo m_serverStacksInf_t</div><div class="ttdef"><b>Definition:</b> CServerStacks.h:53</div></div>
+<div class="ttc" id="class_c_server_stacks_html_afc0d3cc940813c4e1983e26d34df0199"><div class="ttname"><a href="class_c_server_stacks.html#afc0d3cc940813c4e1983e26d34df0199">CServerStacks::m_treeAdminItem</a></div><div class="ttdeci">wxTreeItemId m_treeAdminItem</div><div class="ttdef"><b>Definition:</b> CServerStacks.h:47</div></div>
+<div class="ttc" id="class_c_server_stacks_html_a6d7148a2f33ce07cb28640dec90daac7"><div class="ttname"><a href="class_c_server_stacks.html#a6d7148a2f33ce07cb28640dec90daac7">CServerStacks::m_serverStacksInf_t</a></div><div class="ttdeci">wxAuiPaneInfo m_serverStacksInf_t</div><div class="ttdef"><b>Definition:</b> CServerStacks.h:49</div></div>
 <div class="ttc" id="class_c_server_stacks_html_a35f5962e92f264d7982e9a2bb3849868"><div class="ttname"><a href="class_c_server_stacks.html#a35f5962e92f264d7982e9a2bb3849868">CServerStacks::UpdateStacks</a></div><div class="ttdeci">void UpdateStacks()</div><div class="ttdoc">Update the current tree control associated with the administrator after configuration and server chan...</div><div class="ttdef"><b>Definition:</b> CServerStacks.cpp:50</div></div>
-<div class="ttc" id="class_c_server_stacks_html_a3acde8d7c5fc1efa9a5455dce64091a4"><div class="ttname"><a href="class_c_server_stacks.html#a3acde8d7c5fc1efa9a5455dce64091a4">CServerStacks::getPaneInfo</a></div><div class="ttdeci">wxAuiPaneInfo getPaneInfo()</div><div class="ttdoc">Get the control&#39;s pane information. </div><div class="ttdef"><b>Definition:</b> CServerStacks.h:40</div></div>
-<div class="ttc" id="class_c_server_stacks_html_aac56837bdedf02a7b31061524efa52f4"><div class="ttname"><a href="class_c_server_stacks.html#aac56837bdedf02a7b31061524efa52f4">CServerStacks::m_treeRoot</a></div><div class="ttdeci">wxTreeItemId m_treeRoot</div><div class="ttdef"><b>Definition:</b> CServerStacks.h:49</div></div>
-<div class="ttc" id="class_c_server_stacks_html"><div class="ttname"><a href="class_c_server_stacks.html">CServerStacks</a></div><div class="ttdoc">Class definition for grepster&#39;s tree control for housing server stacks. </div><div class="ttdef"><b>Definition:</b> CServerStacks.h:28</div></div>
+<div class="ttc" id="class_c_server_stacks_html_a3acde8d7c5fc1efa9a5455dce64091a4"><div class="ttname"><a href="class_c_server_stacks.html#a3acde8d7c5fc1efa9a5455dce64091a4">CServerStacks::getPaneInfo</a></div><div class="ttdeci">wxAuiPaneInfo getPaneInfo()</div><div class="ttdoc">Get the control&#39;s pane information. </div><div class="ttdef"><b>Definition:</b> CServerStacks.h:38</div></div>
+<div class="ttc" id="class_c_server_stacks_html_aac56837bdedf02a7b31061524efa52f4"><div class="ttname"><a href="class_c_server_stacks.html#aac56837bdedf02a7b31061524efa52f4">CServerStacks::m_treeRoot</a></div><div class="ttdeci">wxTreeItemId m_treeRoot</div><div class="ttdef"><b>Definition:</b> CServerStacks.h:46</div></div>
+<div class="ttc" id="class_c_server_stacks_html"><div class="ttname"><a href="class_c_server_stacks.html">CServerStacks</a></div><div class="ttdoc">Class definition for grepster&#39;s tree control for housing server stacks. </div><div class="ttdef"><b>Definition:</b> CServerStacks.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 6 2015 00:52:48 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 19:15:52 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

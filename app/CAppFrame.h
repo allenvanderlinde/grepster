@@ -16,28 +16,19 @@
 #include "CAppMenubar.h"
 
 
-/** Frame width (pixels). */
 #define FRAME_WIDTH                     1024
-/** Frame height (pixels). */
 #define FRAME_HEIGHT                    680
 
-/** Default frame background color. */
 #define BG_COLOR                        "#e1e6f6"
 
-/** wxWidgets color: light blue. */
 #define WXCOLOR_LT_BLUE                 wxColor(143,163,174)
-/** wxWidgets color: dark blue. */
 #define WXCOLOR_DK_BLUE                 wxColor(104,129,142)
 
-/** Status bar welcome label. */
 #define STATUSBAR_WELCOME               "Can we grep yet, user?"
-/** Width of the status bar note pane (pixels). */
 #define STATUSBAR_NOTE_WIDTH            120
 
-/** About grepster information string. */
 #define ABOUT_INFORMATION               "Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster allows System Administrators immediate and dynamic access to client servers for grepping various logs en masse.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.\n\nPuTTY and its companion tools are copyright 1997-2013 Simon Tatham."
 
-/** grepster's dialog IDs. */
 #define DIALOG_ID_CHANGE_CREDENTIALS    2000
 #define DIALOG_ID_SET_PATH_PUTTY        3000
 
@@ -63,59 +54,40 @@ public:
     ~CAppFrame();
 
 private:
-    /** Frame's menu bar. */
-    CAppMenubar*  m_pMenubar;
-    /** Frame's status bar. */
-    wxStatusBar*    m_pStatusbar;
+    CAppMenubar*    m_pMenubar;
 
-    /** wxWidgets Advanced UI Manager. */
+    wxStatusBar*    m_pStatusbar;
     wxAuiManager*   m_pAui;
 
     /**
      * @brief       Refreshes grepster's configuration when any change is made to update user's interface.
      */
     void RefreshConfiguration();
-
     /**
      * @brief       Create new administrator XML configuration file. This will ask for the new admin's username only.
      *              Passwords will need to be entered with each new session.
      */
     void CreateAdminXMLConfiguration();
 
-    /* *************************** */
-    /* File menu methods.          */
-    /* *************************** */
-
-    /* *************************** */
-    /* Session menu methods.       */
-    /* *************************** */
     /**
      * @brief       Change the administrator's default credentials.
      */
     void ChangeDefaultCredentials(wxCommandEvent& event);
 
-    /* *************************** */
-    /* Tools menu methods.         */
-    /* *************************** */
     /**
      * @brief       Launch PuTTY from within grepster.
      */
     void LaunchPuTTY(wxCommandEvent& event);
 
-    /* *************************** */
-    /* Options menu methods.       */
-    /* *************************** */
     /**
      * @brief       Set grepster's default path to PuTTY.
      */
     void SetPathToPuTTY(wxCommandEvent& event);
-
     /**
      * @brief       Toggle floating controls for user's current session and configuration.
      */
     void ToggleFloating(wxCommandEvent& event);
 
-    /* Standard frame functions. */
     /**
      * @brief       Display simple about dialog box.
      */

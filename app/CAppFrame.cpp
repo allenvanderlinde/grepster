@@ -17,6 +17,7 @@
 #include "CAppFrame.h"
 
 #include "../dialogs/CDialogChangeCredentials.h"
+#include "../dialogs/CDialogSetPathToPuTTY.h"
 
 using namespace std;
 
@@ -102,9 +103,9 @@ void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
     CAppFrame::SetPathToPuTTY
 */
 void CAppFrame::SetPathToPuTTY(wxCommandEvent& event) {
-    // write class for this new dialog
-    //if(Dialog->ShowModal(0 == BUTTON_OK)
-    //Dialog->Destroy();
+    CDialogSetPathToPuTTY* Dialog = new CDialogSetPathToPuTTY(this, {L"Path to PuTTY", 300, 150});
+    if(Dialog->ShowModal() == Dialog->BUTTON_OK)
+        Dialog->Destroy();
 }
 
 /*
@@ -122,10 +123,6 @@ void CAppFrame::ToggleFloating(wxCommandEvent& event) {
     CAppFrame::LaunchPuTTY
 */
 void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
-    Configuration->ChangeCredentials(Configuration->Username(), L"Elementbox10");
-
-
-
     /*
 
     wxFileDialog open(this, _("Open XYZ file"), "", "",
@@ -139,11 +136,7 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
     wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\grep-test.txt\""); // Call a user-saved grepster script to run on the server
 
     //szArgs += Configuration->Username() + L"@" + L"172.24.52.150" + L" -pw " + Configuration->Password() + L" -b " + szScriptPath;
-    szArgs += "-ssh avanderlinde@172.24.52.150 -pw Elementbox10 -m " + szScriptPath;
-
-    // REPLACE THE BELOW STRING LITERAL WITH WITH SAVED PATH TO PSFTP.EXE IN XML CONFIG, ALONG WITH PUTTY.EXE AND PLINK.EXE
-    // CREATE A SETTING IN XML CONFIG, TOO, THAT IS THE STARTING DIRECTORY FOR GREPSTER FOR LOADING SCRIPTS
-    // ----BE ABLE TO EDIT THE ABOVE AS A GUI setting
+    szArgs += "-ssh avanderlinde@172.24.52.150 -pw " + Configuration->Password() + " -m " + szScriptPath;
 
     Console->BlueText();
     *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";

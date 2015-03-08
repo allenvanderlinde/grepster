@@ -61,32 +61,41 @@ public:
     wxString Password() { return m_pAdministrator->Password(); }
 
     /**
+     * @brief       Query the path to PuTTY and its SSH/SFTP tools.
+     * @retval      wxString This is the current configuration's path to PuTTY.
+     */
+    wxString PathToPuTTY() { return m_szPathToPuTTY; }
+
+    /**
      * @brief       Change the administrator's credentials.
+     * @param[in]   username The administrator's new username.
+     * @param[in]   password The administrator's new password.
      */
     void ChangeCredentials(wxString username, wxString password) { m_pAdministrator->ChangeCredentials(username, password); }
 
-    /* Session configuration flags/settings. */
-    /** Toggle floating controls. */
+    /**
+     * @brief       Change the path grepster uses to access PuTTY and its tools.
+     * @param[in]   path The new directory path to PuTTY.
+     */
+    void ChangePathToPuTTY(wxString path);
+
     bool bToggleFloating;
 
 private:
+    CAdminAccount*      m_pAdministrator;
+
+    pugi::xml_document  m_XMLFile;
+    pugi::xml_node      m_XMLSettings;
+
+    wxString            m_szPathToPuTTY;
+
+    bool m_bConfigurationLoadedSuccessfully;
+
     /**
      * Note: The order in which elements are parsed and settings applied must not be changed. This processing order is hard-coded.
      * @brief       Reads XML data from file and applies its values to this class's members.
      */
     void ApplyXMLData();
-
-    /** Administrator account loaded upon entry. */
-    CAdminAccount*      m_pAdministrator;
-
-    /** XML file handle for reading. */
-    pugi::xml_document  m_XMLFile;
-    /** A pugixml parsing node used to read XML data. */
-    pugi::xml_node      m_XMLSettings;
-
-    /** Flag for successful loading of configuration. */
-    bool m_bConfigurationLoadedSuccessfully;
-
     /**
      * @brief       Write's grepster's default admin configuration file.
      */

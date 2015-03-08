@@ -38,7 +38,6 @@ public:
     wxWebView* getBrowser() { return m_pBrowser; }
 
 private:
-    /** grepster's wxWidgets web viewer. */
     wxWebView* m_pBrowser;
 };
 

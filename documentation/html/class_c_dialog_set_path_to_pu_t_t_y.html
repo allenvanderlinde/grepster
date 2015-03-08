@@ -83,6 +83,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="class_c_dialog_set_path_to_pu_t_t_y-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CDialogSetPathToPuTTY Class Reference</div>  </div>
 </div><!--header-->
@@ -100,16 +105,140 @@ Inheritance diagram for CDialogSetPathToPuTTY:</div>
   <map id="CDialogSetPathToPuTTY_map" name="CDialogSetPathToPuTTY_map">
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a337d52bbed5e5412d476e4ad89498d96"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_pu_t_t_y.html#a337d52bbed5e5412d476e4ad89498d96">enum_DialogCtrlIDs</a> { <a class="el" href="class_c_dialog_set_path_to_pu_t_t_y.html#a337d52bbed5e5412d476e4ad89498d96a04e36d92ccfa48f777a6df90ab6709da">BUTTON_OK</a> = 3001, 
+<a class="el" href="class_c_dialog_set_path_to_pu_t_t_y.html#a337d52bbed5e5412d476e4ad89498d96a1e539d17f405c87bfaaa41c92297807a">DIR_SEL_PUTTY_PATH</a>
+ }</td></tr>
+<tr class="memdesc:a337d52bbed5e5412d476e4ad89498d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Note: Each dialog class should have an enumeration which sets their controls' IDs to match the major magnitude of the dialog's ID as defined in <a class="el" href="_c_app_frame_8h.html" title="wxWidgets frame object which houses grepster. ">CAppFrame.h</a>. This is done in order to take control away from wxWidgets when handling what dialogs should do when the user activates a control.  <a href="class_c_dialog_set_path_to_pu_t_t_y.html#a337d52bbed5e5412d476e4ad89498d96">More...</a><br /></td></tr>
+<tr class="separator:a337d52bbed5e5412d476e4ad89498d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab1b708d706b2ed279463e70d1d4380a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_pu_t_t_y.html#ab1b708d706b2ed279463e70d1d4380a7">CDialogSetPathToPuTTY</a> (wxWindow *parentFrame, <a class="el" href="structdialog_vars__t.html">dialogVars_t</a> dialogVars)</td></tr>
+<tr class="memdesc:ab1b708d706b2ed279463e70d1d4380a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which creates the dialog box.  <a href="#ab1b708d706b2ed279463e70d1d4380a7">More...</a><br /></td></tr>
+<tr class="separator:ab1b708d706b2ed279463e70d1d4380a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:afff94b2833fe0d030c954976b061da20"><td class="memItemLeft" align="right" valign="top">wxBoxSizer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_pu_t_t_y.html#afff94b2833fe0d030c954976b061da20">m_pSizer</a></td></tr>
+<tr class="separator:afff94b2833fe0d030c954976b061da20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4e130f15eb0b271aa33d6b8d8793b4c"><td class="memItemLeft" align="right" valign="top">wxDirDialog *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_pu_t_t_y.html#af4e130f15eb0b271aa33d6b8d8793b4c">m_pDirSel</a></td></tr>
+<tr class="memdesc:af4e130f15eb0b271aa33d6b8d8793b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">wxWidgets directory selection widget which stores the chosen location.  <a href="#af4e130f15eb0b271aa33d6b8d8793b4c">More...</a><br /></td></tr>
+<tr class="separator:af4e130f15eb0b271aa33d6b8d8793b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for dialog box to set the default path to PuTTY and its SSH and SFTP tools. </p>
 <p>This object creates a dialog box to set the default path to PuTTY and its SSH and SFTP tools. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="a337d52bbed5e5412d476e4ad89498d96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_c_dialog_set_path_to_pu_t_t_y.html#a337d52bbed5e5412d476e4ad89498d96">CDialogSetPathToPuTTY::enum_DialogCtrlIDs</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Note: Each dialog class should have an enumeration which sets their controls' IDs to match the major magnitude of the dialog's ID as defined in <a class="el" href="_c_app_frame_8h.html" title="wxWidgets frame object which houses grepster. ">CAppFrame.h</a>. This is done in order to take control away from wxWidgets when handling what dialogs should do when the user activates a control. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a337d52bbed5e5412d476e4ad89498d96a04e36d92ccfa48f777a6df90ab6709da"></a>BUTTON_OK&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a337d52bbed5e5412d476e4ad89498d96a1e539d17f405c87bfaaa41c92297807a"></a>DIR_SEL_PUTTY_PATH&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab1b708d706b2ed279463e70d1d4380a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CDialogSetPathToPuTTY::CDialogSetPathToPuTTY </td>
+          <td>(</td>
+          <td class="paramtype">wxWindow *&#160;</td>
+          <td class="paramname"><em>parentFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdialog_vars__t.html">dialogVars_t</a>&#160;</td>
+          <td class="paramname"><em>dialogVars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default constructor which creates the dialog box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">parentFrame</td><td>The primary frame to which this dialog belongs. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dialogVars</td><td>The dialog's basic window properties. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="af4e130f15eb0b271aa33d6b8d8793b4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxDirDialog* CDialogSetPathToPuTTY::m_pDirSel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>wxWidgets directory selection widget which stores the chosen location. </p>
+
+</div>
+</div>
+<a class="anchor" id="afff94b2833fe0d030c954976b061da20"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxBoxSizer* CDialogSetPathToPuTTY::m_pSizer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/grepster/dialogs/<a class="el" href="_c_dialog_set_path_to_pu_t_t_y_8h_source.html">CDialogSetPathToPuTTY.h</a></li>
+<li>C:/grepster/dialogs/<a class="el" href="_c_dialog_set_path_to_pu_t_t_y_8cpp.html">CDialogSetPathToPuTTY.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 6 2015 00:52:48 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 19:15:52 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
