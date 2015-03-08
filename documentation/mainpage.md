@@ -2,13 +2,12 @@
 
 grepster's XML methods are built on the pugixml backbone. Please visit http://pugixml.org for more information. The license is included in pugixml-1.4/readme.txt.
 
-grepster uses PuTTY for its SSH and SFTP capabilities. Refer to PUTTY LICENSE.txt for more information.
-
 Instructions
 ============
 
 <b>Note:</b> PuTTY must first be installed on the PC using grepster. grepster assumes PuTTY to be installed in "C:\Program Files (x86)\PuTTY\"" or the like.
-<br>
+
+I suggest using PuTTY's SSH and SFTP tools with grepster as they were the tools tested during development.
 
 Design Notes
 ============

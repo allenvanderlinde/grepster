@@ -1,8 +1,8 @@
 /**
- * @file    CDialogSetPathToPuTTY.h
+ * @file    CDialogSetPathToTools.h
  * @author  Allen Vanderlinde
  * @date    March 5, 2015
- * @brief   Class which builds the dialog to set the default path to PuTTY and its SSH and SFTP tools.
+ * @brief   Class which builds the dialog to set the default path to grepster's SSH/SFTP tools.
  */
 /*
     Copyright (C) 2014-2015 by Allen Vanderlinde.
@@ -10,26 +10,26 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
-#ifndef _CDIALOGSETPATHTOPUTTY_H_
-#define _CDIALOGSETPATHTOPUTTY_H_
+#ifndef _CDialogSetPathToTools_H_
+#define _CDialogSetPathToTools_H_
 
 #include "../grepster.h"
 
 
 /**
- * This object creates a dialog box to set the default path to PuTTY and its SSH and SFTP tools.
+ * This object creates a dialog box to set the default path to grepster's SSH/SFTP tools.
  *
- * @class   CDialogSetPathToPuTTY
- * @brief   Class definition for dialog box to set the default path to PuTTY and its SSH and SFTP tools.
+ * @class   CDialogSetPathToTools
+ * @brief   Class definition for dialog box to set the default path to grepster's SSH/SFTP tools.
  */
-class CDialogSetPathToPuTTY : public wxDialog {
+class CDialogSetPathToTools : public wxDialog {
 public:
     /**
      * @brief       Default constructor which creates the dialog box.
      * @param[in]   parentFrame The primary frame to which this dialog belongs.
      * @param[in]   dialogVars The dialog's basic window properties.
      */
-    CDialogSetPathToPuTTY(wxWindow* parentFrame, dialogVars_t dialogVars);
+    CDialogSetPathToTools(wxWindow* parentFrame, dialogVars_t dialogVars);
     /**
     * @enum        enum_DialogCtrlIDs
     * @brief       Note: Each dialog class should have an enumeration which sets their controls' IDs
@@ -38,7 +38,7 @@ public:
     */
     enum enum_DialogCtrlIDs {
         BUTTON_OK = 3001,
-        DIR_SEL_PUTTY_PATH
+        BUTTON_BROWSE
     };
 
 private:
@@ -48,10 +48,27 @@ private:
      */
     wxDirDialog*        m_pDirSel;
 
+    wxTextCtrl*         m_pTextCurrentPath;
+
+    wxButton*           m_pButtonBrowse;
+    wxButton*           m_pButtonOK;
+
+    /**
+     * @brief       Opens a directory selection window to select a new path to grepster's SSH/SFTP tools
+     *              and saves it to configuration.
+     */
+    void OnBrowse(wxCommandEvent& event);
+
+    /**
+     * @brief       Processes the user clicking the "OK" button.
+     *              Closes dialog.
+     */
+    void OnOK(wxCommandEvent& event);
+
     /**
      * @brief       Initialize and call the primary object's event handler.
      */
-    //wxDECLARE_EVENT_TABLE();
+    wxDECLARE_EVENT_TABLE();
 };
 
-#endif // _CDIALOGSETPATHTOPUTTY_H_
+#endif // _CDialogSetPathToTools_H_

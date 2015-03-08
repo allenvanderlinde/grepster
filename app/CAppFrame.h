@@ -27,10 +27,10 @@
 #define STATUSBAR_WELCOME               "Can we grep yet, user?"
 #define STATUSBAR_NOTE_WIDTH            120
 
-#define ABOUT_INFORMATION               "Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster allows System Administrators immediate and dynamic access to client servers for grepping various logs en masse.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.\n\nPuTTY and its companion tools are copyright 1997-2013 Simon Tatham."
+#define ABOUT_INFORMATION               "Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster acts as an interface to SSH and SFTP tools for system administrators to easily grep logs and execute remote commands from a centralized utility.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details."
 
 #define DIALOG_ID_CHANGE_CREDENTIALS    2000
-#define DIALOG_ID_SET_PATH_PUTTY        3000
+#define DIALOG_ID_SET_PATH_TOOLS        3000
 
 
 /**
@@ -80,9 +80,9 @@ private:
     void LaunchPuTTY(wxCommandEvent& event);
 
     /**
-     * @brief       Set grepster's default path to PuTTY.
+     * @brief       Set grepster's default path to SSH/SFTP tools.
      */
-    void SetPathToPuTTY(wxCommandEvent& event);
+    void SetPathToTools(wxCommandEvent& event);
     /**
      * @brief       Toggle floating controls for user's current session and configuration.
      */

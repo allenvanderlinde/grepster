@@ -17,7 +17,7 @@
 #include "CAppFrame.h"
 
 #include "../dialogs/CDialogChangeCredentials.h"
-#include "../dialogs/CDialogSetPathToPuTTY.h"
+#include "../dialogs/CDialogSetPathToTools.h"
 
 using namespace std;
 
@@ -28,7 +28,7 @@ wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::CloseFrame)
     EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
     EVT_MENU(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS, CAppFrame::ChangeDefaultCredentials)
-    EVT_MENU(MENU_FUNCTION_ID_OPTIONS_SET_PATH_PUTTY, CAppFrame::SetPathToPuTTY)
+    EVT_MENU(MENU_FUNCTION_ID_OPTIONS_SET_PATH_TOOLS, CAppFrame::SetPathToTools)
     EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, CAppFrame::ToggleFloating)
     EVT_MENU(MENU_FUNCTION_ID_HELP_ABOUT, CAppFrame::OnAbout)
 
@@ -94,16 +94,47 @@ CAppFrame::~CAppFrame() {
     CAppFrame::ChangeDefaultCredentials
 */
 void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
-    CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this, {L"Administrator Default Credentials", 300, 256});
+    CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this, {L"Administrator Credentials", 300, 256});
     if(Dialog->ShowModal() == Dialog->BUTTON_OK)
         Dialog->Destroy();
 }
 
 /*
-    CAppFrame::SetPathToPuTTY
+    CAppFrame::LaunchPuTTY
 */
-void CAppFrame::SetPathToPuTTY(wxCommandEvent& event) {
-    CDialogSetPathToPuTTY* Dialog = new CDialogSetPathToPuTTY(this, {L"Path to PuTTY", 300, 150});
+void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
+    wxString szArgs(L"plink "); // Build new string to use as arguments list
+    wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\grep-test.txt\""); // Call a user-saved grepster script to run on the server
+
+
+    szArgs += "-ssh avanderlinde@172.24.52.150 -pw " + Configuration->Password() + " -m " + szScriptPath;
+
+    Console->BlueText();
+    *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
+    Console->BlackText();
+    *Console << Configuration->PathToSSHTool() + L"\n\n";
+
+    wxString szOutput;
+
+    szOutput = SpawnAndRun(Configuration->PathToSSHTool(), szArgs);
+    *Console << L"\nFinished.";
+
+
+    Console->BlueText();
+    *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
+    Console->BlackText();
+    *Console << Configuration->PathToSFTPTool() + L"\n\n";
+
+    wxString szArgsDownload(L"psftp " + Configuration->Username() + L"@172.24.52.150" + L" -pw " + Configuration->Password() + L" -b \"C:\\grepster\\user\\scripts\\grep-test-dl.txt\"");
+    szOutput = SpawnAndRun(Configuration->PathToSFTPTool(), szArgsDownload);
+    *Console << L"\nFinished.";
+}
+
+/*
+    CAppFrame::SetPathToTools
+*/
+void CAppFrame::SetPathToTools(wxCommandEvent& event) {
+    CDialogSetPathToTools* Dialog = new CDialogSetPathToTools(this, {L"Path to SSH/SFTP Tools", 300, 120});
     if(Dialog->ShowModal() == Dialog->BUTTON_OK)
         Dialog->Destroy();
 }
@@ -117,47 +148,6 @@ void CAppFrame::ToggleFloating(wxCommandEvent& event) {
     /* Refresh grepster's configuration to reflect local changes. */
     RefreshConfiguration();
     Configuration->WriteXMLData();
-}
-
-/*
-    CAppFrame::LaunchPuTTY
-*/
-void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
-    /*
-
-    wxFileDialog open(this, _("Open XYZ file"), "", "",
-                      "XYZ files (*.xyz)|*.xyz", wxFD_OPEN | wxFD_FILE_MUST_EXIST);
-    if(open.ShowModal() == wxID_OK)
-        ;
-    */
-
-///*
-    wxString szArgs(L"plink "); // Build new string to use as arguments list
-    wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\grep-test.txt\""); // Call a user-saved grepster script to run on the server
-
-    //szArgs += Configuration->Username() + L"@" + L"172.24.52.150" + L" -pw " + Configuration->Password() + L" -b " + szScriptPath;
-    szArgs += "-ssh avanderlinde@172.24.52.150 -pw " + Configuration->Password() + " -m " + szScriptPath;
-
-    Console->BlueText();
-    *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
-    Console->BlackText();
-    *Console << (wxString)L"C:\\Program Files (x86)\\PuTTY\\plink.exe" + L"\n\n";
-
-    wxString szOutput;
-
-    szOutput = SpawnAndRun(L"C:\\Program Files (x86)\\PuTTY\\plink.exe", szArgs);
-    *Console << L"\nFinished.";
-
-
-    Console->BlueText();
-    *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
-    Console->BlackText();
-    *Console << (wxString)L"C:\\Program Files (x86)\\PuTTY\\psftp.exe" + L"\n\n";
-
-    wxString szArgsDownload(L"psftp " + Configuration->Username() + L"@172.24.52.150" + L" -pw " + Configuration->Password() + L" -b \"C:\\grepster\\user\\scripts\\grep-test-dl.txt\"");
-    szOutput = SpawnAndRun(L"C:\\Program Files (x86)\\PuTTY\\psftp.exe", szArgsDownload);
-    *Console << L"\nFinished.";
-//*/
 }
 
 /*
@@ -175,7 +165,7 @@ void CAppFrame::RefreshConfiguration() {
 */
 void CAppFrame::OnAbout(wxCommandEvent& event) {
     /* Dialog's main controls and sizers. */
-    wxDialog* Dialog = new wxDialog(this, wxID_ANY, g_szFrameTitle, wxDefaultPosition, wxSize(400, 374));
+    wxDialog* Dialog = new wxDialog(this, wxID_ANY, g_szFrameTitle, wxDefaultPosition, wxSize(400, 372));
     Dialog->SetIcon(wxICON(aaaaappicon));
     wxBoxSizer* dialogSizer = new wxBoxSizer(wxVERTICAL);
     wxStaticBoxSizer* dialogStaticSizer = new wxStaticBoxSizer(wxVERTICAL, Dialog, L"About " + g_szFrameTitle);
@@ -184,7 +174,7 @@ void CAppFrame::OnAbout(wxCommandEvent& event) {
     wxTextCtrl* textAbout = new wxTextCtrl(Dialog, wxID_ANY, ABOUT_INFORMATION, wxDefaultPosition, wxSize(wxDefaultSize.GetWidth(), 120), wxTE_MULTILINE | wxTE_READONLY);
 
     /* Dialog's buttons. */
-    wxButton* pButtonOK = new wxButton(Dialog, wxID_OK, L"OK", wxPoint(0, 0), wxDefaultSize);
+    wxButton* pButtonOK = new wxButton(Dialog, wxID_OK, L"OK", wxDefaultPosition, wxDefaultSize);
     pButtonOK->SetDefault();
 
     /* Arrange dialog's controls. */

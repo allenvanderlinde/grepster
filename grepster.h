@@ -2,7 +2,7 @@
  * @file    grepster.h
  * @author  Allen Vanderlinde
  * @date    November 2, 2014
- * @brief   grepster's global definitions, main classes, and variables.
+ * @brief   grepster's global definitions, objects, and methods.
  */
 /*
     Copyright (C) 2014-2015 by Allen Vanderlinde.
@@ -78,8 +78,9 @@ wxString RESOURCE_ID_TO_STRING(int id);
  * @endcode
  * can be launched with grepster code as:
  * @code
- * *Console << SpawnAndRun("C:\Program Files (x86)\PuTTY\", "psftp.exe admin@127.0.0.1 -pw passwd");
+ * *Console << SpawnAndRun("C:\\Program Files (x86)\\PuTTY\\", "psftp.exe admin@127.0.0.1 -pw passwd");
  * @endcode
+ * grepster uses user-configured tools and an argument format for sending those tools remote commands for grepping and downloading operations.
  */
 std::string SpawnAndRun(wxString path, wxString args);
 
@@ -93,14 +94,6 @@ std::string SpawnAndRun(wxString path, wxString args);
 
 /** grepster's buffer length for sending remote commands. Measured in bytes. */
 #define CHAR_BUFFER_LENGTH                  4096
-
-/* These are globals which identify the various PuTTY programs grepster uses. */
-/** The default path to PuTTY. */
-#define DEFAULT_PATH_TO_PUTTY               L"C:\\Program Files (x86)\\PuTTY\\"
-/** Name of grepster's SFTP program. */
-#define SFTP_COMMAND_STRING                 L"psftp "
-/** Name of grepster's SSH link program. */
-#define SSH_COMMAND_STRING                  L"plink "
 
 /* Console control settings. */
 /** grepster's console control ID. */

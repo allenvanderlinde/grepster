@@ -201,8 +201,9 @@ Variables</h2></td></tr>
 </dl>
 <p>grepster can launch external applications and send them arguments as if it were a terminal.</p>
 <p>For example: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;C:\Users\Admin&gt;psftp admin@127.0.0.1 -pw passwd</div>
-</div><!-- fragment --><p> can be launched with grepster code as: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;*Console &lt;&lt; SpawnAndRun(&quot;C:\Program Files (x86)\PuTTY\&quot;, &quot;psftp.exe admin@127.0.0.1 -pw passwd&quot;);</div>
-</div><!-- fragment --> 
+</div><!-- fragment --><p> can be launched with grepster code as: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;*Console &lt;&lt; SpawnAndRun(&quot;C:\\Program Files (x86)\\PuTTY\\&quot;, &quot;psftp.exe admin@127.0.0.1 -pw passwd&quot;);</div>
+</div><!-- fragment --><p> grepster uses user-configured tools and an argument format for sending those tools remote commands for grepping and downloading operations. </p>
+
 </div>
 </div>
 <a class="anchor" id="aecc2a75bea36a4b283cc8b652c5bb5cb"></a>
@@ -285,7 +286,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 7 2015 19:15:52 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 21:43:12 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

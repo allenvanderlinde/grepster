@@ -102,10 +102,11 @@
 		<Unit filename="app/CGrepNotebook.h" />
 		<Unit filename="app/CServerStacks.cpp" />
 		<Unit filename="app/CServerStacks.h" />
+		<Unit filename="app/MenubarProperties.h" />
 		<Unit filename="dialogs/CDialogChangeCredentials.cpp" />
 		<Unit filename="dialogs/CDialogChangeCredentials.h" />
-		<Unit filename="dialogs/CDialogSetPathToPuTTY.cpp" />
-		<Unit filename="dialogs/CDialogSetPathToPuTTY.h" />
+		<Unit filename="dialogs/CDialogSetPathToTools.cpp" />
+		<Unit filename="dialogs/CDialogSetPathToTools.h" />
 		<Unit filename="grepster.cpp" />
 		<Unit filename="grepster.h" />
 		<Unit filename="precomp.h">

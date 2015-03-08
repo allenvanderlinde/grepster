@@ -5,7 +5,7 @@
 	"../resources/grepster_rc.h"
 	"CAppEntry.h"
 
-1425616232 c:\grepster\grepster.h
+1425782586 c:\grepster\grepster.h
 	"app/CConsole.h"
 	"app/CServerStacks.h"
 	"app/CGrepNotebook.h"
@@ -3177,14 +3177,14 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1425774118 c:\grepster\version.h
+1425782985 c:\grepster\version.h
 
 1425252213 c:\grepster\resources\grepster_rc.h
 
 1425772391 c:\grepster\app\cappentry.h
 	"CAppFrame.h"
 
-1425771508 c:\grepster\app\cappframe.h
+1425781752 c:\grepster\app\cappframe.h
 	"CAppMenubar.h"
 
 1425239474 c:\grepster\app\cframemenubar.h
@@ -3199,12 +3199,12 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1425691284 source:c:\grepster\app\cappframe.cpp
+1425781611 source:c:\grepster\app\cappframe.cpp
 	"../precomp.h"
 	"../resources/grepster_rc.h"
 	"CAppFrame.h"
 	"../dialogs/CDialogChangeCredentials.h"
-	"../dialogs/CDialogSetPathToPuTTY.h"
+	"../dialogs/CDialogSetPathToTools.h"
 
 1417221776 source:c:\grepster\app\cclientlist.cpp
 	"../grepster.h"
@@ -3285,10 +3285,10 @@
 	<new>
 	<stdint.h>
 
-1425772295 c:\grepster\app\cappinit.h
+1425782985 c:\grepster\app\cappinit.h
 	"../session/CAdminAccount.h"
 
-1425773922 source:c:\grepster\app\cappinit.cpp
+1425781952 source:c:\grepster\app\cappinit.cpp
 	"../precomp.h"
 	"../grepster.h"
 	"CAppInit.h"
@@ -3309,7 +3309,7 @@
 	"../precomp.h"
 	"CAdminAccount.h"
 
-1425691648 source:c:\grepster\dialogs\cdialogchangecredentials.cpp
+1425776378 source:c:\grepster\dialogs\cdialogchangecredentials.cpp
 	"../precomp.h"
 	"../resources/grepster_rc.h"
 	"CDialogChangeCredentials.h"
@@ -3329,7 +3329,7 @@
 1425773865 c:\grepster\app\cappmenubar.h
 	"MenubarProperties.h"
 
-1425773856 source:c:\grepster\app\cappmenubar.cpp
+1425782101 source:c:\grepster\app\cappmenubar.cpp
 	"../precomp.h"
 	"../grepster.h"
 	"CAppMenubar.h"
@@ -3399,13 +3399,13 @@
 	<wx/wx.h>
 	"pugixml-1.4/pugixml.hpp"
 
-1425773552 source:c:\grepster\dialogs\cdialogsetpathtoputty.cpp
+1425780258 source:c:\grepster\dialogs\cdialogsetpathtoputty.cpp
 	"../precomp.h"
 	"../resources/grepster_rc.h"
 	"CDialogSetPathToPuTTY.h"
 	"../app/CAppFrame.h"
 
-1425773778 c:\grepster\dialogs\cdialogsetpathtoputty.h
+1425777968 c:\grepster\dialogs\cdialogsetpathtoputty.h
 	"../grepster.h"
 
 1412627642 c:\wxwidgets-3.0.2\include\wx\filepicker.h
@@ -3428,5 +3428,14 @@
 	"wx/filedlg.h"
 	"wx/dirdlg.h"
 
-1425772159 c:\grepster\app\menubarproperties.h
+1425782144 c:\grepster\app\menubarproperties.h
+
+1425782163 source:c:\grepster\dialogs\cdialogsetpathtotools.cpp
+	"../precomp.h"
+	"../resources/grepster_rc.h"
+	"CDialogSetPathToTools.h"
+	"../app/CAppFrame.h"
+
+1425782331 c:\grepster\dialogs\cdialogsetpathtotools.h
+	"../grepster.h"
 

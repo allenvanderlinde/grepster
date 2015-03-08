@@ -61,10 +61,20 @@ public:
     wxString Password() { return m_pAdministrator->Password(); }
 
     /**
-     * @brief       Query the path to PuTTY and its SSH/SFTP tools.
-     * @retval      wxString This is the current configuration's path to PuTTY.
+     * @brief       Query the path to grepster's SSH/SFTP tools.
+     * @retval      wxString This is the current configuration's path to grepster's SSH/SFTP tools.
      */
-    wxString PathToPuTTY() { return m_szPathToPuTTY; }
+    wxString PathToTools() { return m_szPathToTools; }
+    /**
+     * @brief       Query the path to the SSH tool.
+     * @retval      wxString This is the path to grepster's SSH tool.
+     */
+    wxString PathToSSHTool() { return m_szPathToTools + L"\\" + m_szSSHTool; }
+    /**
+     * @brief       Query the path to the SFTP tool.
+     * @retval      wxString This is the path to grepster's SFTP tool.
+     */
+    wxString PathToSFTPTool() { return m_szPathToTools + L"\\" + m_szSFTPTool; }
 
     /**
      * @brief       Change the administrator's credentials.
@@ -74,10 +84,10 @@ public:
     void ChangeCredentials(wxString username, wxString password) { m_pAdministrator->ChangeCredentials(username, password); }
 
     /**
-     * @brief       Change the path grepster uses to access PuTTY and its tools.
-     * @param[in]   path The new directory path to PuTTY.
+     * @brief       Change the path grepster uses to its SSH/SFTP tools.
+     * @param[in]   path The new directory path which holds grepster's SSH/SFTP tools.
      */
-    void ChangePathToPuTTY(wxString path);
+    void ChangePathToTools(wxString path) { m_szPathToTools = path; };
 
     bool bToggleFloating;
 
@@ -87,7 +97,9 @@ private:
     pugi::xml_document  m_XMLFile;
     pugi::xml_node      m_XMLSettings;
 
-    wxString            m_szPathToPuTTY;
+    wxString            m_szPathToTools;
+    wxString            m_szSSHTool;
+    wxString            m_szSFTPTool;
 
     bool m_bConfigurationLoadedSuccessfully;
 

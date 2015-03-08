@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>grepster's global definitions, main classes, and variables.  
+<p>grepster's global definitions, objects, and methods.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_c_console_8h_source.html">app/CConsole.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_c_server_stacks_8h_source.html">app/CServerStacks.h</a>&quot;</code><br />
@@ -116,12 +116,6 @@ Macros</h2></td></tr>
 <tr class="separator:a966421e8beed081c502732bce8066eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a742c63d9e85847705f1767862babc69b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a742c63d9e85847705f1767862babc69b">CHAR_BUFFER_LENGTH</a>&#160;&#160;&#160;4096</td></tr>
 <tr class="separator:a742c63d9e85847705f1767862babc69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac73b817a51b76e8d8b96e6a5959ff9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#aac73b817a51b76e8d8b96e6a5959ff9e">DEFAULT_PATH_TO_PUTTY</a>&#160;&#160;&#160;L&quot;C:\\Program Files (x86)\\PuTTY\\&quot;</td></tr>
-<tr class="separator:aac73b817a51b76e8d8b96e6a5959ff9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae68b443181a375fae914f2602e06a89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#aae68b443181a375fae914f2602e06a89">SFTP_COMMAND_STRING</a>&#160;&#160;&#160;L&quot;psftp &quot;</td></tr>
-<tr class="separator:aae68b443181a375fae914f2602e06a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd0eb115167b67e30d663b8c33eef106"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#acd0eb115167b67e30d663b8c33eef106">SSH_COMMAND_STRING</a>&#160;&#160;&#160;L&quot;plink &quot;</td></tr>
-<tr class="separator:acd0eb115167b67e30d663b8c33eef106"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af50d3a3a5589e846dca652a4fdbb51eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#af50d3a3a5589e846dca652a4fdbb51eb">CONSOLE_ID</a>&#160;&#160;&#160;1000</td></tr>
 <tr class="separator:af50d3a3a5589e846dca652a4fdbb51eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a50575d63bd0b03f886042abd532ef5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grepster_8h.html#a1a50575d63bd0b03f886042abd532ef5">CONSOLE_NAME</a>&#160;&#160;&#160;&quot;the_con&quot;</td></tr>
@@ -176,7 +170,7 @@ Variables</h2></td></tr>
 <tr class="separator:a7171ec99e90e93dcc3cff9309a70abbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>grepster's global definitions, main classes, and variables. </p>
+<div class="textblock"><p>grepster's global definitions, objects, and methods. </p>
 <dl class="section author"><dt>Author</dt><dd>Allen Vanderlinde </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>November 2, 2014 </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -302,19 +296,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aac73b817a51b76e8d8b96e6a5959ff9e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEFAULT_PATH_TO_PUTTY&#160;&#160;&#160;L&quot;C:\\Program Files (x86)\\PuTTY\\&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The default path to PuTTY. </p>
-
-</div>
-</div>
 <a class="anchor" id="af3e5d57b661c402c7861ff8a2914aba7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -406,32 +387,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aae68b443181a375fae914f2602e06a89"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SFTP_COMMAND_STRING&#160;&#160;&#160;L&quot;psftp &quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Name of grepster's SFTP program. </p>
-
-</div>
-</div>
-<a class="anchor" id="acd0eb115167b67e30d663b8c33eef106"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SSH_COMMAND_STRING&#160;&#160;&#160;L&quot;plink &quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Name of grepster's SSH link program. </p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a667b72a706bfbbfb8789a5ec7f0882ce"></a>
 <div class="memitem">
@@ -497,8 +452,9 @@ Variables</h2></td></tr>
 </dl>
 <p>grepster can launch external applications and send them arguments as if it were a terminal.</p>
 <p>For example: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;C:\Users\Admin&gt;psftp admin@127.0.0.1 -pw passwd</div>
-</div><!-- fragment --><p> can be launched with grepster code as: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;*Console &lt;&lt; SpawnAndRun(&quot;C:\Program Files (x86)\PuTTY\&quot;, &quot;psftp.exe admin@127.0.0.1 -pw passwd&quot;);</div>
-</div><!-- fragment --> 
+</div><!-- fragment --><p> can be launched with grepster code as: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;*Console &lt;&lt; SpawnAndRun(&quot;C:\\Program Files (x86)\\PuTTY\\&quot;, &quot;psftp.exe admin@127.0.0.1 -pw passwd&quot;);</div>
+</div><!-- fragment --><p> grepster uses user-configured tools and an argument format for sending those tools remote commands for grepping and downloading operations. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -578,7 +534,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 7 2015 19:15:52 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 21:43:12 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
