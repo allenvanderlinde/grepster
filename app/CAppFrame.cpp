@@ -134,7 +134,7 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
     CAppFrame::SetPathToTools
 */
 void CAppFrame::SetPathToTools(wxCommandEvent& event) {
-    CDialogSetPathToTools* Dialog = new CDialogSetPathToTools(this, {L"Path to SSH/SFTP Tools", 300, 120});
+    CDialogSetPathToTools* Dialog = new CDialogSetPathToTools(this, {L"Path to SSH/SFTP Tools", 300, 282});
     if(Dialog->ShowModal() == Dialog->BUTTON_OK)
         Dialog->Destroy();
 }

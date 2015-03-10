@@ -43,6 +43,11 @@ CAppInit::CAppInit() {
     }
 }
 
+void CAppInit::ChangePathToTools(wxString sshPath, wxString sftpPath) {
+    m_szPathToSSHTool = sshPath;
+    m_szPathToSFTPTool = sftpPath;
+}
+
 /*
     CAppInit::ApplyXMLData
 */
@@ -60,22 +65,16 @@ void CAppInit::ApplyXMLData() {
     (value.IsSameAs("true")) ? bToggleFloating = true : bToggleFloating = false;
     m_XMLSettings = m_XMLSettings.next_sibling();
 
-    // Path to SSH/SFTP tools
+    // Path to SSH tool
     id = m_XMLSettings.attribute(XML_ID_LABEL).value();
     value = m_XMLSettings.attribute(XML_VALUE_LABEL).value();
-    m_szPathToTools = value;
+    m_szPathToSSHTool = value;
     m_XMLSettings = m_XMLSettings.next_sibling();
 
-    // SSH tool name
+    // Path to SFTP tool
     id = m_XMLSettings.attribute(XML_ID_LABEL).value();
     value = m_XMLSettings.attribute(XML_VALUE_LABEL).value();
-    m_szSSHTool = value;
-    m_XMLSettings = m_XMLSettings.next_sibling();
-
-    // SFTP tool name
-    id = m_XMLSettings.attribute(XML_ID_LABEL).value();
-    value = m_XMLSettings.attribute(XML_VALUE_LABEL).value();
-    m_szSFTPTool = value;
+    m_szPathToSFTPTool = value;
     m_XMLSettings = m_XMLSettings.next_sibling();
 }
 
@@ -98,20 +97,15 @@ void CAppInit::WriteXMLData() {
     param.append_attribute(XML_ID_LABEL) = L"ToggleFloating";
     param.append_attribute(XML_VALUE_LABEL) = bToggleFloating;
 
-    // Path to SSH/SFTP tools
-    param = node.append_child(XML_ELEMENT_LABEL);
-    param.append_attribute(XML_ID_LABEL) = L"PathToTools";
-    param.append_attribute(XML_VALUE_LABEL) = m_szPathToTools.wchar_str();
-
-    // SSH tool name
+    // Path to SSH tool
     param = node.append_child(XML_ELEMENT_LABEL);
     param.append_attribute(XML_ID_LABEL) = L"SSHTool";
-    param.append_attribute(XML_VALUE_LABEL) = m_szSSHTool.wchar_str();
+    param.append_attribute(XML_VALUE_LABEL) = m_szPathToSSHTool.wchar_str();
 
-    // Path to SSH/SFTP tools
+    // Path to SFTP tool
     param = node.append_child(XML_ELEMENT_LABEL);
     param.append_attribute(XML_ID_LABEL) = L"SFTPTool";
-    param.append_attribute(XML_VALUE_LABEL) = m_szSFTPTool.wchar_str();
+    param.append_attribute(XML_VALUE_LABEL) = m_szPathToSFTPTool.wchar_str();
 
     // Save XML document to configuration file
     m_XMLFile.save_file(CONFIGURATION_FILE_PATH);

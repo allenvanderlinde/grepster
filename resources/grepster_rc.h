@@ -8,3 +8,4 @@
 #define     RESID_PNG_SPLASH                    9001
 #define     RESID_PNG_ABOUT                     9002
 #define     RESID_PNG_CREDENTIALS               9003
+#define     RESID_PNG_TOOLS                     9004

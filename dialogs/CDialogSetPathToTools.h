@@ -29,7 +29,8 @@ public:
      * @param[in]   parentFrame The primary frame to which this dialog belongs.
      * @param[in]   dialogVars The dialog's basic window properties.
      */
-    CDialogSetPathToTools(wxWindow* parentFrame, dialogVars_t dialogVars);
+    CDialogSetPathToTools(wxWindow* parentFrame,
+                          dialogVars_t dialogVars);
     /**
     * @enum        enum_DialogCtrlIDs
     * @brief       Note: Each dialog class should have an enumeration which sets their controls' IDs
@@ -38,26 +39,24 @@ public:
     */
     enum enum_DialogCtrlIDs {
         BUTTON_OK = 3001,
-        BUTTON_BROWSE
+        DIALOG_BROWSE_SSH,
+        DIALOG_BROWSE_SFTP
     };
 
 private:
     wxBoxSizer*         m_pSizer;
     /**
-     * @brief       Directory selection widget which stores the chosen location.
+     * @brief       File selection widget used to select the SSH tool.
      */
-    wxDirDialog*        m_pDirSel;
-
-    wxTextCtrl*         m_pTextCurrentPath;
-
-    wxButton*           m_pButtonBrowse;
-    wxButton*           m_pButtonOK;
-
+    wxFilePickerCtrl*   m_pSSHToolSelect;
     /**
-     * @brief       Opens a directory selection window to select a new path to grepster's SSH/SFTP tools
-     *              and saves it to configuration.
+     * @brief       File selection widget used to select the SFTP tool.
      */
-    void OnBrowse(wxCommandEvent& event);
+    wxFilePickerCtrl*   m_pSFTPToolSelect;
+
+    wxButton*           m_pButtonBrowseSSH;
+    wxButton*           m_pButtonBrowseSFTP;
+    wxButton*           m_pButtonOK;
 
     /**
      * @brief       Processes the user clicking the "OK" button.

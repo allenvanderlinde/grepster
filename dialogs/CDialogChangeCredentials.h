@@ -29,7 +29,8 @@ public:
      * @param[in]   parentFrame The primary frame to which this dialog belongs.
      * @param[in]   dialogVars The dialog's basic window properties.
      */
-    CDialogChangeCredentials(wxWindow* parentFrame, dialogVars_t dialogVars);
+    CDialogChangeCredentials(wxWindow* parentFrame,
+                             dialogVars_t dialogVars);
     /**
     * @enum        enum_DialogCtrlIDs
     * @brief       Note: Each dialog class should have an enumeration which sets their controls' ID

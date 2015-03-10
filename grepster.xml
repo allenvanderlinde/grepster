@@ -2,7 +2,6 @@
 <grepster>
 	<setting id="Username" value="avanderlinde" />
 	<setting id="ToggleFloating" value="false" />
-	<setting id="PathToTools" value="C:\Program Files (x86)\PuTTY" />
-	<setting id="SSHTool" value="plink.exe" />
-	<setting id="SFTPTool" value="psftp.exe" />
+	<setting id="SSHTool" value="C:\Program Files (x86)\PuTTY\plink.exe" />
+	<setting id="SFTPTool" value="C:\Program Files (x86)\PuTTY\psftp.exe" />
 </grepster>

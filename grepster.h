@@ -82,7 +82,8 @@ wxString RESOURCE_ID_TO_STRING(int id);
  * @endcode
  * grepster uses user-configured tools and an argument format for sending those tools remote commands for grepping and downloading operations.
  */
-std::string SpawnAndRun(wxString path, wxString args);
+std::string SpawnAndRun(wxString path,
+                        wxString args);
 
 /**
  * @brief       Casts a variable's identifier as a wxString for debugging/console reporting.

@@ -15,7 +15,6 @@
 #include "precomp.h"
 
 #include "grepster.h"
-//#include <iostream>
 
 
 /* Frame globals definitions. */

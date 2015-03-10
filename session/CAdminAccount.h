@@ -43,7 +43,8 @@ public:
     /**
      * @brief       Change the administrator's credentials.
      */
-    void ChangeCredentials(wxString username, wxString password) { m_szUsername = username; m_szPassword = password; }
+    void ChangeCredentials(wxString username,
+                           wxString password) { m_szUsername = username; m_szPassword = password; }
 
 private:
     bool m_bConfigurationLoadedSuccessfully;

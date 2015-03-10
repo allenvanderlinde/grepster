@@ -61,33 +61,35 @@ public:
     wxString Password() { return m_pAdministrator->Password(); }
 
     /**
-     * @brief       Query the path to grepster's SSH/SFTP tools.
-     * @retval      wxString This is the current configuration's path to grepster's SSH/SFTP tools.
-     */
-    wxString PathToTools() { return m_szPathToTools; }
-    /**
      * @brief       Query the path to the SSH tool.
      * @retval      wxString This is the path to grepster's SSH tool.
      */
-    wxString PathToSSHTool() { return m_szPathToTools + L"\\" + m_szSSHTool; }
+    wxString PathToSSHTool() { return m_szPathToSSHTool; }
     /**
      * @brief       Query the path to the SFTP tool.
      * @retval      wxString This is the path to grepster's SFTP tool.
      */
-    wxString PathToSFTPTool() { return m_szPathToTools + L"\\" + m_szSFTPTool; }
+    wxString PathToSFTPTool() { return m_szPathToSFTPTool; }
+
+
+    wxString SSHTool();
+
 
     /**
      * @brief       Change the administrator's credentials.
      * @param[in]   username The administrator's new username.
      * @param[in]   password The administrator's new password.
      */
-    void ChangeCredentials(wxString username, wxString password) { m_pAdministrator->ChangeCredentials(username, password); }
+    void ChangeCredentials(wxString username,
+                           wxString password) { m_pAdministrator->ChangeCredentials(username, password); }
 
     /**
      * @brief       Change the path grepster uses to its SSH/SFTP tools.
-     * @param[in]   path The new directory path which holds grepster's SSH/SFTP tools.
+     * @param[in]   sshPath The path to the SSH tool grepster will use.
+     * @param[in]   sftpPath The path to the SFTP tool grepster will use.
      */
-    void ChangePathToTools(wxString path) { m_szPathToTools = path; };
+    void ChangePathToTools(wxString sshPath,
+                           wxString sftpPath); //{ m_szPathToSSHTool = sshPath; m_szPathToSFTPTool = sftpPath; }
 
     bool bToggleFloating;
 
@@ -97,8 +99,21 @@ private:
     pugi::xml_document  m_XMLFile;
     pugi::xml_node      m_XMLSettings;
 
-    wxString            m_szPathToTools;
+    /**
+     * @brief       Fully-qualified path to grepster's SSH tool.
+     */
+    wxString            m_szPathToSSHTool;
+    /**
+     * @brief       Fully-qualified path to grepster's SFTP tool.
+     */
+    wxString            m_szPathToSFTPTool;
+    /**
+     * @brief       String holding the actual name of the SSH executable.
+     */
     wxString            m_szSSHTool;
+    /**
+     * @brief       String holding the actual name of the SFTP executable.
+     */
     wxString            m_szSFTPTool;
 
     bool m_bConfigurationLoadedSuccessfully;

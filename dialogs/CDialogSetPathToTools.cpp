@@ -21,7 +21,8 @@
 /* The dialog's event handler calls. */
 wxBEGIN_EVENT_TABLE(CDialogSetPathToTools, wxDialog)
     EVT_BUTTON(CDialogSetPathToTools::BUTTON_OK, CDialogSetPathToTools::OnOK)
-    EVT_BUTTON(CDialogSetPathToTools::BUTTON_BROWSE, CDialogSetPathToTools::OnBrowse)
+    //EVT_BUTTON(CDialogSetPathToTools::BUTTON_BROWSE_SSH, CDialogSetPathToTools::OnBrowseSSH)
+    //EVT_BUTTON(CDialogSetPathToTools::BUTTON_BROWSE_SFTP, CDialogSetPathToTools::OnBrowseSFTP)
 wxEND_EVENT_TABLE()
 
 /*
@@ -32,43 +33,52 @@ CDialogSetPathToTools::CDialogSetPathToTools(wxWindow* parentFrame, dialogVars_t
     SetIcon(wxICON(aaaaappicon));
     CenterOnParent();
     /* Dialog controls. */
-    m_pTextCurrentPath = new wxTextCtrl(this, wxID_ANY, Configuration->PathToTools(), wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
-    m_pButtonBrowse = new wxButton(this, BUTTON_BROWSE, L"...", wxDefaultPosition, wxSize(36, 24));
-
+    m_pSSHToolSelect = new wxFilePickerCtrl(this, DIALOG_BROWSE_SSH, Configuration->PathToSSHTool(), L"SSH Tool Selection", L"Executable files (*.exe)|*.exe", wxDefaultPosition, wxDefaultSize, wxFLP_DEFAULT_STYLE | wxFLP_SMALL);
+    m_pSFTPToolSelect = new wxFilePickerCtrl(this, DIALOG_BROWSE_SFTP, Configuration->PathToSFTPTool(), L"SFTP Tool Selection", L"Executable files (*.exe)|*.exe", wxDefaultPosition, wxDefaultSize, wxFLP_DEFAULT_STYLE | wxFLP_SMALL);
     m_pButtonOK = new wxButton(this, BUTTON_OK, L"OK", wxDefaultPosition, wxDefaultSize);
     m_pButtonOK->SetDefault();
+    wxButton* pButtonCancel = new wxButton(this, wxID_CANCEL, L"Cancel", wxDefaultPosition, wxDefaultSize);
+
+    // Create dialog's banner
+    wxStaticBitmap* pPNGBanner = new wxStaticBitmap(this, wxID_ANY, wxBitmap(RESOURCE_ID_TO_STRING(RESID_PNG_TOOLS), wxBITMAP_TYPE_PNG_RESOURCE), wxDefaultPosition, wxDefaultSize);
 
     /* Set dialog's main sizers. */
     m_pSizer = new wxBoxSizer(wxVERTICAL);
-    wxStaticBoxSizer* pStaticSizer = new wxStaticBoxSizer(wxHORIZONTAL, this, L"Path");
+    wxStaticBoxSizer* pStaticSizerSSHTool = new wxStaticBoxSizer(wxVERTICAL, this, L"SSH Tool");
+    wxStaticBoxSizer* pStaticSizerSFTPTool = new wxStaticBoxSizer(wxVERTICAL, this, L"SFTP Tool");
+    wxBoxSizer* pSizerButtons = new wxBoxSizer(wxHORIZONTAL);
 
-    pStaticSizer->Add(m_pTextCurrentPath, 1, wxEXPAND);
-    pStaticSizer->Add(m_pButtonBrowse, wxSizerFlags().Center());
+    pStaticSizerSSHTool->Add(m_pSSHToolSelect, wxSizerFlags().Expand());
+    pStaticSizerSFTPTool->Add(m_pSFTPToolSelect, wxSizerFlags().Expand());
 
-    m_pSizer->Add(pStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
-    m_pSizer->Add(m_pButtonOK, wxSizerFlags().Center());
+    pSizerButtons->Add(m_pButtonOK, wxSizerFlags().Center());
+    pSizerButtons->Add(pButtonCancel, wxSizerFlags().Center());
+
+    m_pSizer->Add(pPNGBanner);
+    m_pSizer->Add(pStaticSizerSSHTool, wxSizerFlags().Center().Expand().Border(wxALL, 5));
+    m_pSizer->Add(pStaticSizerSFTPTool, wxSizerFlags().Center().Expand().Border(wxALL, 5));
+    m_pSizer->Add(pSizerButtons, wxSizerFlags().Center());
 
     SetSizer(m_pSizer);
     Show(true); // Display the dialog box
 }
 
 /*
-    CDialogSetPathToTools::OnBrowse
-*/
-void CDialogSetPathToTools::OnBrowse(wxCommandEvent& event) {
-    m_pDirSel = new wxDirDialog(NULL, "Select path to SSH/SFTP tools", Configuration->PathToTools(), wxDD_DEFAULT_STYLE, wxDefaultPosition, wxDefaultSize);
-    if(m_pDirSel->ShowModal() == wxID_OK ) {
-        m_pTextCurrentPath->Clear();
-        *m_pTextCurrentPath << m_pDirSel->GetPath();
-    }
-}
-
-/*
     CDialogSetPathToTools::OnOK
 */
 void CDialogSetPathToTools::OnOK(wxCommandEvent& event) {
-    Configuration->ChangePathToTools(m_pTextCurrentPath->GetLineText(0));
-    Configuration->WriteXMLData();
+    wxString szPrevSSHToolPath = Configuration->PathToSSHTool();
+    wxString szPrevSFTPToolPath = Configuration->PathToSFTPTool();
+    /* Change the paths to grepster's SSH and SFTP tools and update configuration. */
+    Configuration->ChangePathToTools(m_pSSHToolSelect->GetPath(), m_pSFTPToolSelect->GetPath());
+    if(!szPrevSSHToolPath.IsSameAs(Configuration->PathToSSHTool())) {
+       *Console << L"\n\nChanging grepster's SSH tool to: " + Configuration->PathToSSHTool();
+       Configuration->WriteXMLData();
+    }
+    if(!szPrevSFTPToolPath.IsSameAs(Configuration->PathToSFTPTool())) {
+       *Console << L"\n\nChanging grepster's SFTP tool to: " + Configuration->PathToSFTPTool();
+       Configuration->WriteXMLData();
+    }
 
     EndModal(BUTTON_OK);
 }

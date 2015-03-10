@@ -46,6 +46,7 @@ CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame, dialog
 
     /* Set dialog's main sizers. */
     m_pSizer = new wxBoxSizer(wxVERTICAL);
+    wxBoxSizer* pSizerButtons = new wxBoxSizer(wxHORIZONTAL);
     wxStaticBoxSizer* pStaticSizer = new wxStaticBoxSizer(wxVERTICAL, this, L"Credentials");
     wxFlexGridSizer* pSizerInput = new wxFlexGridSizer(2, 2, 5, 5);
 
@@ -55,12 +56,12 @@ CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame, dialog
     pSizerInput->Add(m_pInputPassword, 1, wxEXPAND);
 
     pStaticSizer->Add(pSizerInput, wxSizerFlags().Border(wxALL, 5));
-    m_pSizer->Add(pPNGBanner);
-    m_pSizer->Add(pStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
 
-    wxBoxSizer* pSizerButtons = new wxBoxSizer(wxHORIZONTAL);
     pSizerButtons->Add(m_pButtonOK, wxSizerFlags().Center());
     pSizerButtons->Add(pButtonCancel, wxSizerFlags().Center());
+
+    m_pSizer->Add(pPNGBanner);
+    m_pSizer->Add(pStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
     m_pSizer->Add(pSizerButtons, wxSizerFlags().Center());
 
     SetSizer(m_pSizer);
@@ -73,17 +74,16 @@ CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame, dialog
 void CDialogChangeCredentials::OnOK(wxCommandEvent& event) {
     wxString szPrevUsername = Configuration->Username();
     wxString szPrevPassword = Configuration->Password();
-
-    /* Change the administrator's credentials and update configuration for saving to XML. Note: The user's password is never saved to file. */
+    /* Change the administrator's credentials and update configuration. Note: The user's password is never saved to file. */
     Configuration->ChangeCredentials(m_pInputUsername->GetLineText(0), m_pInputPassword->GetLineText(0));
     if(!szPrevUsername.IsSameAs(Configuration->Username())) {
-        *Console << L"\nChanging username from " + szPrevUsername + " to " + Configuration->Username() + ".";
+        *Console << L"\n\nChanging username from " + szPrevUsername + " to " + Configuration->Username() + ".";
         Configuration->WriteXMLData();
         ServerStacks->UpdateStacks();
     }
     if(!szPrevPassword.IsSameAs(Configuration->Password())) {
         Console->BlueText();
-        *Console << L"\nChanging password.";
+        *Console << L"\n\nChanging password.";
         Console->BlackText();
     }
 

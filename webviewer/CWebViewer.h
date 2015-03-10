@@ -15,7 +15,8 @@
 
 
 /** Default home page URL. */
-#define HOME_PAGE   "file:///C:/grepster/welcome.html"
+
+#define HOME_PAGE       "https://raw.githubusercontent.com/allenvanderlinde/grepster/master/welcome.html"
 
 
 /**

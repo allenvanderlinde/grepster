@@ -47,7 +47,9 @@ public:
      * @param[in]   position Starting position of application.
      * @param[in]   size Starting size of frame in integer array wxSize.
      */
-    CAppFrame(const wxString& title, const wxPoint& position, const wxSize& size);
+    CAppFrame(const wxString& title,
+              const wxPoint& position,
+              const wxSize& size);
     /**
      * @brief       Default class destructor.
      */
