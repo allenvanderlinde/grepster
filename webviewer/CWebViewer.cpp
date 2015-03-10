@@ -26,7 +26,7 @@ CWebViewer::CWebViewer(wxWindow* parentFrame) {
     /* Initialize the browser. */
     m_pBrowser = wxWebView::New(parentFrame,
                                 BROWSER_ID,
-                                HOME_PAGE,
+                                WELCOME_PAGE,
                                 wxDefaultPosition,
                                 wxDefaultSize,
                                 wxWebViewBackendIE, // This uses the Microsoft Internet Explorer browser back-end

@@ -16,7 +16,7 @@
 
 /** Default home page URL. */
 
-#define HOME_PAGE       "https://rawgit.com/allenvanderlinde/grepster/master/welcome.html"
+#define WELCOME_PAGE       "https://rawgit.com/allenvanderlinde/grepster/master/welcome.html"
 
 
 /**
