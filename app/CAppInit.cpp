@@ -43,9 +43,19 @@ CAppInit::CAppInit() {
     }
 }
 
+/*
+    CAppInit::ChangePathToTools
+*/
 void CAppInit::ChangePathToTools(wxString sshPath, wxString sftpPath) {
     m_szPathToSSHTool = sshPath;
     m_szPathToSFTPTool = sftpPath;
+}
+
+/*
+    CAppInit::SSHTool
+*/
+wxString CAppInit::SSHTool() {
+    return m_szPathToSSHTool.AfterLast(L'\\');//.AfterFirst(L"\");
 }
 
 /*

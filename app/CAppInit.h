@@ -73,6 +73,7 @@ public:
 
 
     wxString SSHTool();
+    wxString SFTPTool();
 
 
     /**
