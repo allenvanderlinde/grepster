@@ -47,14 +47,16 @@ CAppInit::CAppInit() {
     CAppInit::SSHTool
 */
 wxString CAppInit::SSHTool() {
-    return m_szPathToSSHTool.AfterLast(L'\\');//.AfterFirst(L"\");
+    wxString szShort = m_szPathToSSHTool.AfterLast(L'\\');
+    return szShort.BeforeFirst(L'.');
 }
 
 /*
     CAppInit::SFTPTool
 */
 wxString CAppInit::SFTPTool() {
-    return L"Hello, world!";
+    wxString szShort = m_szPathToSFTPTool.AfterLast(L'\\');
+    return szShort.BeforeFirst(L'.');
 }
 
 /*
