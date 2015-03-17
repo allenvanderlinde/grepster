@@ -70,9 +70,15 @@ public:
      * @retval      wxString This is the path to grepster's SFTP tool.
      */
     wxString PathToSFTPTool() { return m_szPathToSFTPTool; }
-
-
+    /**
+     * @brief       Splits the SSH tool path string and returns only the tool's name.
+     * @retval      wxString This is the name of the SSH tool grepster uses.
+     */
     wxString SSHTool();
+    /**
+     * @brief       Splits the SFTP tool path string and returns only the tool's name.
+     * @retval      wxString This is the name of the SFTP tool grepster uses.
+     */
     wxString SFTPTool();
 
 

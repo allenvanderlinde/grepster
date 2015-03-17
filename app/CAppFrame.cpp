@@ -95,6 +95,7 @@ CAppFrame::~CAppFrame() {
 */
 void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
     wxMessageBox(Configuration->SSHTool(), "ssh-tool", wxOK);
+
     CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this, {L"Administrator Credentials", 300, 256});
     if(Dialog->ShowModal() == Dialog->BUTTON_OK)
         Dialog->Destroy();

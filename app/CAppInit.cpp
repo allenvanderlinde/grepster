@@ -44,18 +44,25 @@ CAppInit::CAppInit() {
 }
 
 /*
+    CAppInit::SSHTool
+*/
+wxString CAppInit::SSHTool() {
+    return m_szPathToSSHTool.AfterLast(L'\\');//.AfterFirst(L"\");
+}
+
+/*
+    CAppInit::SFTPTool
+*/
+wxString CAppInit::SFTPTool() {
+    return L"Hello, world!";
+}
+
+/*
     CAppInit::ChangePathToTools
 */
 void CAppInit::ChangePathToTools(wxString sshPath, wxString sftpPath) {
     m_szPathToSSHTool = sshPath;
     m_szPathToSFTPTool = sftpPath;
-}
-
-/*
-    CAppInit::SSHTool
-*/
-wxString CAppInit::SSHTool() {
-    return m_szPathToSSHTool.AfterLast(L'\\');//.AfterFirst(L"\");
 }
 
 /*
