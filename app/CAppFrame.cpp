@@ -19,6 +19,8 @@
 #include "../dialogs/CDialogChangeCredentials.h"
 #include "../dialogs/CDialogSetPathToTools.h"
 
+#include <thread>
+
 using namespace std;
 
 
@@ -105,9 +107,13 @@ void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
     CAppFrame::LaunchPuTTY
 */
 void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
+    /* testing out some lambda stuff. */
+    auto func = [](){ wxMessageBox("This was called from a lambda function!", "lambda", wxOK); };
+
+    func();
+
     wxString szArgs(L"plink "); // Build new string to use as arguments list
     wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\grep-test.txt\""); // Call a user-saved grepster script to run on the server
-
 
     szArgs += "-ssh avanderlinde@172.24.52.150 -pw " + Configuration->Password() + " -m " + szScriptPath;
 
@@ -120,7 +126,6 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
 
     szOutput = SpawnAndRun(Configuration->PathToSSHTool(), szArgs);
     *Console << L"\nFinished.";
-
 
     Console->BlueText();
     *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
