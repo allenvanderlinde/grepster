@@ -108,6 +108,8 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
     wxString szArgs(L"plink "); // Build new string to use as arguments list
     wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\grep-test.txt\""); // Call a user-saved grepster script to run on the server
 
+    std::thread t;
+
 
     szArgs += "-ssh avanderlinde@172.24.52.150 -pw " + Configuration->Password() + " -m " + szScriptPath;
 

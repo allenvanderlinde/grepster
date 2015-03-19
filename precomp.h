@@ -27,6 +27,7 @@
 #include <wx/filepicker.h>
 
 #include <iostream>
+#include <thread>
 
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
