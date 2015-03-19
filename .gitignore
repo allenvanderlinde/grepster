@@ -48,3 +48,4 @@ media/
 bin/
 obj/
 design.txt
+precomp.h.gch
