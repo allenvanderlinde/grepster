@@ -18,7 +18,6 @@
 					<Add option="-g" />
 					<Add option="-Winvalid-pch" />
 					<Add option='-include &quot;precomp.h&quot;' />
-					<Add option="-std=gnu++11" />
 					<Add option="-D__WXDEBUG__" />
 					<Add directory="C:/wxWidgets-3.0.2/lib/gcc_lib/mswud" />
 				</Compiler>
@@ -44,9 +43,6 @@
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add option="-Winvalid-pch" />
-					<Add option='-include &quot;precomp.h&quot;' />
-					<Add option="-std=gnu++11" />
 					<Add directory="C:/wxWidgets-3.0.0/lib/gcc_lib/mswu" />
 				</Compiler>
 				<ResourceCompiler>
