@@ -13,9 +13,6 @@
 #ifndef _CWEBVIEWER_H_
 #define _CWEBVIEWER_H_
 
-
-/** Default home page URL. */
-
 #define WELCOME_PAGE       "https://cdn.rawgit.com/allenvanderlinde/grepster/master/welcome.html"
 
 

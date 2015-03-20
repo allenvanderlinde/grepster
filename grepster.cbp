@@ -14,6 +14,7 @@
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-w" />
 					<Add option="-g" />
 					<Add option="-Winvalid-pch" />
@@ -43,6 +44,9 @@
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++11" />
+					<Add option="-Winvalid-pch" />
+					<Add option='-include &quot;precomp.h&quot;' />
 					<Add directory="C:/wxWidgets-3.0.0/lib/gcc_lib/mswu" />
 				</Compiler>
 				<ResourceCompiler>
@@ -61,6 +65,7 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-std=c++11" />
 			<Add option="-Wall" />
 			<Add option="-pipe" />
 			<Add option="-mthreads" />
