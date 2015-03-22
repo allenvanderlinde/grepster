@@ -82,8 +82,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p><b>Acknowledgements</b></p>
 <p>grepster's XML methods are built on the pugixml backbone. Please visit <a href="http://pugixml.org">http://pugixml.org</a> for more information. The license is included in pugixml-1.4/readme.txt.</p>
 <h1>Instructions </h1>
-<p><b>Note:</b> PuTTY must first be installed on the PC using grepster. grepster assumes PuTTY to be installed in "C:\Program Files (x86)\PuTTY\"" or the like.</p>
-<p>I suggest using PuTTY's SSH and SFTP tools with grepster as they were the tools tested during development.</p>
+<p><b>Note:</b> grepster uses standard SFTP commands for pulling down compiled results from each grep session. A SFTP and a SSH tool must be installed and grepster must be able to point to the directory paths which hold each tool's executable. These paths can be set from within grepster.</p>
+<p>I suggest using PuTTY's SSH and SFTP tools as they were the tools tested during development. Thanks to Simon Tatham and the PuTTY Team for creating such great tools! More information on PuTTY's license can be found <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/licence.html" target="_blank">here</a>.</p>
 <h1>Design Notes </h1>
 <p>In most, if not all, of grepster's control methods you'll often see only a single argument being passed: <code>wxCommandEvent&amp; event</code>. This is a reference to the wxWidgets command input structure. It is a record of the state of the method's parent frame at the time the event was triggered (i.e., which key on the keyboard was pressed; which button in the frame was clicked).</p>
 <p>Some methods will have their own command event structure depending upon the type of wxWindow triggers the event.</p>
@@ -105,7 +105,7 @@ The source code tries to maintain a standard but descriptive naming scheme for m
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 22 2015 13:37:29 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 22 2015 13:54:20 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

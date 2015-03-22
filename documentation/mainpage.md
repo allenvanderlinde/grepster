@@ -5,9 +5,9 @@ grepster's XML methods are built on the pugixml backbone. Please visit http://pu
 Instructions
 ============
 
-<b>Note:</b> PuTTY must first be installed on the PC using grepster. grepster assumes PuTTY to be installed in "C:\Program Files (x86)\PuTTY\"" or the like.
+<b>Note:</b> grepster uses standard SFTP commands for pulling down compiled results from each grep session. A SFTP and a SSH tool must be installed and grepster must be able to point to the directory paths which hold each tool's executable. These paths can be set from within grepster.
 
-I suggest using PuTTY's SSH and SFTP tools with grepster as they were the tools tested during development.
+I suggest using PuTTY's SSH and SFTP tools as they were the tools tested during development. Thanks to Simon Tatham and the PuTTY Team for creating such great tools! More information on PuTTY's license can be found <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/licence.html" target="_blank">here</a>.
 
 Design Notes
 ============
