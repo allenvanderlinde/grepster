@@ -10,7 +10,7 @@ var searchData=
   ['cgrepnotebook',['CGrepNotebook',['../class_c_grep_notebook.html#aa9fa53784a193a92c8ccf929dcf4a175',1,'CGrepNotebook']]],
   ['changecredentials',['ChangeCredentials',['../class_c_app_init.html#a42fd6c3795bb6170f86e3296d1ac0d5f',1,'CAppInit::ChangeCredentials()'],['../class_c_admin_account.html#ab4750a6a41701204ac847bb389ecda2e',1,'CAdminAccount::ChangeCredentials()']]],
   ['changedefaultcredentials',['ChangeDefaultCredentials',['../class_c_app_frame.html#acabf3ab614bbe25b720f26e28abe51db',1,'CAppFrame']]],
-  ['changepathtotools',['ChangePathToTools',['../class_c_app_init.html#a58834cd78820cab75fb852855ad140c8',1,'CAppInit']]],
+  ['changepathtotools',['ChangePathToTools',['../class_c_app_init.html#a0b931b17aaa8ca38e8942379bcfb8ed1',1,'CAppInit']]],
   ['closeframe',['CloseFrame',['../class_c_app_frame.html#a93b72eec6388f6c004de1f8ff4e4f8e8',1,'CAppFrame']]],
   ['createadminxmlconfiguration',['CreateAdminXMLConfiguration',['../class_c_app_frame.html#ad7eef5c8a99e0166451b1b6c6cd4e686',1,'CAppFrame']]],
   ['cserverstacks',['CServerStacks',['../class_c_server_stacks.html#a15dc377b08f8d02f27ef99a121b17cf5',1,'CServerStacks']]],

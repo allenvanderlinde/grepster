@@ -29,7 +29,7 @@ var searchData=
   ['cgrepnotebook_2eh',['CGrepNotebook.h',['../_c_grep_notebook_8h.html',1,'']]],
   ['changecredentials',['ChangeCredentials',['../class_c_app_init.html#a42fd6c3795bb6170f86e3296d1ac0d5f',1,'CAppInit::ChangeCredentials()'],['../class_c_admin_account.html#ab4750a6a41701204ac847bb389ecda2e',1,'CAdminAccount::ChangeCredentials()']]],
   ['changedefaultcredentials',['ChangeDefaultCredentials',['../class_c_app_frame.html#acabf3ab614bbe25b720f26e28abe51db',1,'CAppFrame']]],
-  ['changepathtotools',['ChangePathToTools',['../class_c_app_init.html#a58834cd78820cab75fb852855ad140c8',1,'CAppInit']]],
+  ['changepathtotools',['ChangePathToTools',['../class_c_app_init.html#a0b931b17aaa8ca38e8942379bcfb8ed1',1,'CAppInit']]],
   ['char_5fbuffer_5flength',['CHAR_BUFFER_LENGTH',['../grepster_8h.html#a742c63d9e85847705f1767862babc69b',1,'grepster.h']]],
   ['closeframe',['CloseFrame',['../class_c_app_frame.html#a93b72eec6388f6c004de1f8ff4e4f8e8',1,'CAppFrame']]],
   ['configuration',['Configuration',['../grepster_8cpp.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp'],['../grepster_8h.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp']]],

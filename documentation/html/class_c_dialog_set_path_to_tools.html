@@ -110,7 +110,8 @@ Inheritance diagram for CDialogSetPathToTools:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a95cefcd14341d3f97d905ef0c55b8d2d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2d">enum_DialogCtrlIDs</a> { <a class="el" href="class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2da607ae542d4edb8f4174fe4e06cf46798">BUTTON_OK</a> = 3001, 
-<a class="el" href="class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2dadb62741fad6adc184652622b895f0a4b">BUTTON_BROWSE</a>
+<a class="el" href="class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2da895334039de618c9c40a7598314e7719">DIALOG_BROWSE_SSH</a>, 
+<a class="el" href="class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2da943d3be6ef1825452cd95f94a0cfbf34">DIALOG_BROWSE_SFTP</a>
  }</td></tr>
 <tr class="memdesc:a95cefcd14341d3f97d905ef0c55b8d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Note: Each dialog class should have an enumeration which sets their controls' IDs to match the major magnitude of the dialog's ID as defined in <a class="el" href="_c_app_frame_8h.html" title="wxWidgets frame object which houses grepster. ">CAppFrame.h</a>. This is done in order to take control away from wxWidgets when handling what dialogs should do when the user activates a control.  <a href="class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2d">More...</a><br /></td></tr>
 <tr class="separator:a95cefcd14341d3f97d905ef0c55b8d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,9 +124,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a6edeb6b0de13f5ffc0b3776166ed17ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a6edeb6b0de13f5ffc0b3776166ed17ed">OnBrowse</a> (wxCommandEvent &amp;event)</td></tr>
-<tr class="memdesc:a6edeb6b0de13f5ffc0b3776166ed17ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a directory selection window to select a new path to grepster's SSH/SFTP tools and saves it to configuration.  <a href="#a6edeb6b0de13f5ffc0b3776166ed17ed">More...</a><br /></td></tr>
-<tr class="separator:a6edeb6b0de13f5ffc0b3776166ed17ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b3ce7fd87e7c964ff0cab48e620fc39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a6b3ce7fd87e7c964ff0cab48e620fc39">OnOK</a> (wxCommandEvent &amp;event)</td></tr>
 <tr class="memdesc:a6b3ce7fd87e7c964ff0cab48e620fc39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the user clicking the "OK" button. Closes dialog.  <a href="#a6b3ce7fd87e7c964ff0cab48e620fc39">More...</a><br /></td></tr>
 <tr class="separator:a6b3ce7fd87e7c964ff0cab48e620fc39"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,13 +135,16 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a6dfb4483bf331b6a6ab6926828bb2239"><td class="memItemLeft" align="right" valign="top">wxBoxSizer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a6dfb4483bf331b6a6ab6926828bb2239">m_pSizer</a></td></tr>
 <tr class="separator:a6dfb4483bf331b6a6ab6926828bb2239"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9985256370ded28e727c9065a29df0e"><td class="memItemLeft" align="right" valign="top">wxDirDialog *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#ad9985256370ded28e727c9065a29df0e">m_pDirSel</a></td></tr>
-<tr class="memdesc:ad9985256370ded28e727c9065a29df0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directory selection widget which stores the chosen location.  <a href="#ad9985256370ded28e727c9065a29df0e">More...</a><br /></td></tr>
-<tr class="separator:ad9985256370ded28e727c9065a29df0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75290189a496387f478949db90801c31"><td class="memItemLeft" align="right" valign="top">wxTextCtrl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a75290189a496387f478949db90801c31">m_pTextCurrentPath</a></td></tr>
-<tr class="separator:a75290189a496387f478949db90801c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed6e7ba3379262d28dd19ab31c357814"><td class="memItemLeft" align="right" valign="top">wxButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#aed6e7ba3379262d28dd19ab31c357814">m_pButtonBrowse</a></td></tr>
-<tr class="separator:aed6e7ba3379262d28dd19ab31c357814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03bdecd73c8c1f632820e4a56eb74f9e"><td class="memItemLeft" align="right" valign="top">wxFilePickerCtrl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a03bdecd73c8c1f632820e4a56eb74f9e">m_pSSHToolSelect</a></td></tr>
+<tr class="memdesc:a03bdecd73c8c1f632820e4a56eb74f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">File selection widget used to select the SSH tool.  <a href="#a03bdecd73c8c1f632820e4a56eb74f9e">More...</a><br /></td></tr>
+<tr class="separator:a03bdecd73c8c1f632820e4a56eb74f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e68b9a7e5b52ac15995abef71d1f82e"><td class="memItemLeft" align="right" valign="top">wxFilePickerCtrl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a4e68b9a7e5b52ac15995abef71d1f82e">m_pSFTPToolSelect</a></td></tr>
+<tr class="memdesc:a4e68b9a7e5b52ac15995abef71d1f82e"><td class="mdescLeft">&#160;</td><td class="mdescRight">File selection widget used to select the SFTP tool.  <a href="#a4e68b9a7e5b52ac15995abef71d1f82e">More...</a><br /></td></tr>
+<tr class="separator:a4e68b9a7e5b52ac15995abef71d1f82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac798cd05e3abca5c0a0dea286f1cec88"><td class="memItemLeft" align="right" valign="top">wxButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#ac798cd05e3abca5c0a0dea286f1cec88">m_pButtonBrowseSSH</a></td></tr>
+<tr class="separator:ac798cd05e3abca5c0a0dea286f1cec88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3879735915709750cf0ac143daf1d5cb"><td class="memItemLeft" align="right" valign="top">wxButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a3879735915709750cf0ac143daf1d5cb">m_pButtonBrowseSFTP</a></td></tr>
+<tr class="separator:a3879735915709750cf0ac143daf1d5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae98c1e82872178678671894e0af193d1"><td class="memItemLeft" align="right" valign="top">wxButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#ae98c1e82872178678671894e0af193d1">m_pButtonOK</a></td></tr>
 <tr class="separator:ae98c1e82872178678671894e0af193d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -165,7 +166,9 @@ Private Attributes</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a95cefcd14341d3f97d905ef0c55b8d2da607ae542d4edb8f4174fe4e06cf46798"></a>BUTTON_OK&#160;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a95cefcd14341d3f97d905ef0c55b8d2dadb62741fad6adc184652622b895f0a4b"></a>BUTTON_BROWSE&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a95cefcd14341d3f97d905ef0c55b8d2da895334039de618c9c40a7598314e7719"></a>DIALOG_BROWSE_SSH&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a95cefcd14341d3f97d905ef0c55b8d2da943d3be6ef1825452cd95f94a0cfbf34"></a>DIALOG_BROWSE_SFTP&#160;</td><td class="fielddoc">
 </td></tr>
 </table>
 
@@ -208,32 +211,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a6edeb6b0de13f5ffc0b3776166ed17ed"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CDialogSetPathToTools::OnBrowse </td>
-          <td>(</td>
-          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Opens a directory selection window to select a new path to grepster's SSH/SFTP tools and saves it to configuration. </p>
-
-</div>
-</div>
 <a class="anchor" id="a6b3ce7fd87e7c964ff0cab48e620fc39"></a>
 <div class="memitem">
 <div class="memproto">
@@ -286,7 +263,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aed6e7ba3379262d28dd19ab31c357814"></a>
+<a class="anchor" id="a3879735915709750cf0ac143daf1d5cb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -294,7 +271,27 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">wxButton* CDialogSetPathToTools::m_pButtonBrowse</td>
+          <td class="memname">wxButton* CDialogSetPathToTools::m_pButtonBrowseSFTP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac798cd05e3abca5c0a0dea286f1cec88"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxButton* CDialogSetPathToTools::m_pButtonBrowseSSH</td>
         </tr>
       </table>
   </td>
@@ -326,7 +323,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad9985256370ded28e727c9065a29df0e"></a>
+<a class="anchor" id="a4e68b9a7e5b52ac15995abef71d1f82e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -334,7 +331,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">wxDirDialog* CDialogSetPathToTools::m_pDirSel</td>
+          <td class="memname">wxFilePickerCtrl* CDialogSetPathToTools::m_pSFTPToolSelect</td>
         </tr>
       </table>
   </td>
@@ -344,7 +341,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Directory selection widget which stores the chosen location. </p>
+<p>File selection widget used to select the SFTP tool. </p>
 
 </div>
 </div>
@@ -368,7 +365,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a75290189a496387f478949db90801c31"></a>
+<a class="anchor" id="a03bdecd73c8c1f632820e4a56eb74f9e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -376,7 +373,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">wxTextCtrl* CDialogSetPathToTools::m_pTextCurrentPath</td>
+          <td class="memname">wxFilePickerCtrl* CDialogSetPathToTools::m_pSSHToolSelect</td>
         </tr>
       </table>
   </td>
@@ -385,6 +382,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>File selection widget used to select the SSH tool. </p>
 
 </div>
 </div>
@@ -395,7 +394,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 7 2015 21:43:12 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 22 2015 13:37:29 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

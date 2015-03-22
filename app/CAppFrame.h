@@ -13,6 +13,7 @@
 #ifndef _CAPPFRAME_H_
 #define _CAPPFRAME_H_
 
+#include "../grepster.h"
 #include "CAppMenubar.h"
 
 
@@ -51,15 +52,19 @@ public:
               const wxPoint& position,
               const wxSize& size);
     /**
-     * @brief       Default class destructor.
+     * @brief       Default class destructor. This joins all previously running threads
+     *              to grepster's primary process.
      */
     ~CAppFrame();
 
 private:
-    CAppMenubar*    m_pMenubar;
+    /** @brief Thread vector for keeping tracking of process spawns. */
+    std::vector<std::thread>    m_Spawns;
 
-    wxStatusBar*    m_pStatusbar;
-    wxAuiManager*   m_pAui;
+    CAppMenubar*                m_pMenubar;
+
+    wxStatusBar*                m_pStatusbar;
+    wxAuiManager*               m_pAui;
 
     /**
      * @brief       Refreshes grepster's configuration when any change is made to update user's interface.

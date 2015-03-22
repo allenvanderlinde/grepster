@@ -19,8 +19,6 @@
 #include "../dialogs/CDialogChangeCredentials.h"
 #include "../dialogs/CDialogSetPathToTools.h"
 
-using namespace std;
-
 
 /* grepster's primary frame's event handler calls. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
@@ -88,14 +86,14 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
 */
 CAppFrame::~CAppFrame() {
     m_pAui->UnInit();
+    /* Join all threads to primary process before closing grepster. */
+    for_each(m_Spawns.begin(), m_Spawns.end(), [](std::thread &t){ t.join(); });
 }
 
 /*
     CAppFrame::ChangeDefaultCredentials
 */
 void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
-    wxMessageBox(Configuration->SSHTool() + " and " + Configuration->SFTPTool(), "ssh-tool", wxOK);
-
     CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this, {L"Administrator Credentials", 300, 256});
     if(Dialog->ShowModal() == Dialog->BUTTON_OK)
         Dialog->Destroy();
@@ -105,35 +103,44 @@ void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
     CAppFrame::LaunchPuTTY
 */
 void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
-    wxString szArgs(L"plink "); // Build new string to use as arguments list
-    wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\grep-test.txt\""); // Call a user-saved grepster script to run on the server
+    //wxString szArgs(L"plink "); // Build new string to use as arguments list
+    //wxString szScriptPath(L"\"C:\\grepster\\user\\scripts\\grep-test.txt\""); // Call a user-saved grepster script to run on the server
 
-    //std::thread t;
+    //szArgs += "-ssh avanderlinde@172.24.52.150 -pw " + Configuration->Password() + " -m " + szScriptPath;
 
-
-    szArgs += "-ssh avanderlinde@172.24.52.150 -pw " + Configuration->Password() + " -m " + szScriptPath;
+    wxString szOutput(L""), szCommand;
 
     Console->BlueText();
-    *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
+    *Console << L"\n\nRunning script...\n" + Configuration->Username() + L"@grepster> ";
     Console->BlackText();
     *Console << Configuration->PathToSSHTool() + L"\n\n";
 
-    wxString szOutput;
+    szCommand = Configuration->SSHTool() + L" -ssh " + Configuration->Username() + L"@speights.pd.local -pw " + Configuration->Password() + " -m \"C:\\grepster\\user\\scripts\\grep-test.txt\"";
+
+    // will need to keep track of currently available thread's index
+    m_Spawns.push_back(std::thread(SpawnAndRun, Configuration->PathToSSHTool(), szCommand));
+
+    //std::thread t(&SpawnAndRun, Configuration->PathToSSHTool(), szCommand);
+    //SpawnAndRun(Configuration->PathToSSHTool(), szCommand);
+
+    // need to put in SpawnAndRun
 
     //szOutput = SpawnAndRun(Configuration->PathToSSHTool(), szArgs);
     //std::thread t(SpawnAndRun(Configuration->PathToSSHTool(), szArgs));
     //std::thread t(SpawnAndRun);
-    *Console << L"\nFinished.";
+    //*Console << L"\nFinished.";
 
 
-    Console->BlueText();
-    *Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
-    Console->BlackText();
-    *Console << Configuration->PathToSFTPTool() + L"\n\n";
+    //Console->BlueText();
+    //*Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
+    //Console->BlackText();
+    //*Console << Configuration->PathToSFTPTool() + L"\n\n";
 
-    wxString szArgsDownload(L"psftp " + Configuration->Username() + L"@172.24.52.150" + L" -pw " + Configuration->Password() + L" -b \"C:\\grepster\\user\\scripts\\grep-test-dl.txt\"");
-    szOutput = SpawnAndRun(Configuration->PathToSFTPTool(), szArgsDownload);
-    *Console << L"\nFinished.";
+    //wxString szArgsDownload(L"psftp " + Configuration->Username() + L"@172.24.52.150" + L" -pw " + Configuration->Password() + L" -b \"C:\\grepster\\user\\scripts\\grep-test-dl.txt\"");
+    //szOutput = SpawnAndRun(Configuration->PathToSFTPTool(), szArgsDownload);
+    //*Console << L"\nFinished.";
+
+    //m_Spawns[0].join();
 }
 
 /*

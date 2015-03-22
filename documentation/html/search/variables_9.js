@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['year',['YEAR',['../namespace_auto_version.html#ac6726fe1f27cfa5f70c5eb624c6095fc',1,'AutoVersion']]]
+  ['width',['width',['../structdialog_vars__t.html#a33356e9e0e1eb735ad02c16f3b113401',1,'dialogVars_t']]]
 ];

@@ -21,7 +21,7 @@
 #include "version.h"
 
 
-/** grepster's frame globals. */
+/** grepster's frame title. */
 extern wxString         g_szFrameTitle;
 
 /**

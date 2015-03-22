@@ -120,68 +120,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/* Utility functions. */</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;wxString <a class="code" href="grepster_8h.html#a667b72a706bfbbfb8789a5ec7f0882ce">RESOURCE_ID_TO_STRING</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;std::string <a class="code" href="grepster_8h.html#ad3031ede04721eaf7747d85423f6bfe5">SpawnAndRun</a>(wxString path, wxString args);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="grepster_8h.html#ab814769b927f5ae072fd171b239b5b1e">   90</a></span>&#160;<span class="preprocessor">#define _cast(v) wxString(#v)</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="grepster_8h.html#a966421e8beed081c502732bce8066eb6">   93</a></span>&#160;<span class="preprocessor">#define CONFIGURATION_FILE_PATH             &quot;grepster.xml&quot;</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="grepster_8h.html#a742c63d9e85847705f1767862babc69b">   96</a></span>&#160;<span class="preprocessor">#define CHAR_BUFFER_LENGTH                  4096</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">/* Console control settings. */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="grepster_8h.html#af50d3a3a5589e846dca652a4fdbb51eb">  100</a></span>&#160;<span class="preprocessor">#define CONSOLE_ID                          1000</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="grepster_8h.html#a1a50575d63bd0b03f886042abd532ef5">  102</a></span>&#160;<span class="preprocessor">#define CONSOLE_NAME                        &quot;the_con&quot;</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="grepster_8h.html#a006d1c409c5f57e311db021017e8d670">  104</a></span>&#160;<span class="preprocessor">#define CONSOLE_CTRL_TITLE                  L&quot;Console&quot;</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="grepster_8h.html#ace37b2df2eebf832ed80faec7fd9a8db">  106</a></span>&#160;<span class="preprocessor">#define CONSOLE_DEFAULT_HEIGHT              140</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">/* Server Stacks tree control settings. */</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="grepster_8h.html#a645678a2344831c3f0d09734f4b19032">  110</a></span>&#160;<span class="preprocessor">#define SERVER_STACKS_ID                    1001</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="grepster_8h.html#aef3f3454eb74302ee6475b6e1eb9b7ca">  112</a></span>&#160;<span class="preprocessor">#define SERVER_STACKS_NAME                  &quot;server_stacks&quot;</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="grepster_8h.html#a8b3792a26821ed1c5e652d7f0fe33699">  114</a></span>&#160;<span class="preprocessor">#define SERVER_STACKS_CTRL_TITLE            L&quot;Server Stacks&quot;</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="grepster_8h.html#a7293d10d90531879b1d04df1c82bda32">  116</a></span>&#160;<span class="preprocessor">#define SERVER_STACKS_DEFAULT_WIDTH         200</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">/* Grep Notebook control settings. */</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="grepster_8h.html#a19eb389726e523e1180d22ff3c4cb405">  120</a></span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_ID                    1002</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="grepster_8h.html#a5042f8607c80fb476c55b5e235c8616c">  122</a></span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_NAME                  &quot;grep_notebook&quot;</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="grepster_8h.html#af3e5d57b661c402c7861ff8a2914aba7">  124</a></span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_CTRL_TITLE            L&quot;Notebook&quot;</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">/* Browser/web viewer control settings. */</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="grepster_8h.html#a927b43beb141a266bc6631f99b5e2074">  128</a></span>&#160;<span class="preprocessor">#define BROWSER_ID                          1003</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="grepster_8h.html#a574cfb7bb87e59e8b2ca1518f2efdf67">  130</a></span>&#160;<span class="preprocessor">#define BROWSER_NAME                        &quot;browser&quot;</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;std::string <a class="code" href="grepster_8h.html#ad3031ede04721eaf7747d85423f6bfe5">SpawnAndRun</a>(wxString path,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        wxString args);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="grepster_8h.html#ab814769b927f5ae072fd171b239b5b1e">   91</a></span>&#160;<span class="preprocessor">#define _cast(v) wxString(#v)</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="grepster_8h.html#a966421e8beed081c502732bce8066eb6">   94</a></span>&#160;<span class="preprocessor">#define CONFIGURATION_FILE_PATH             &quot;grepster.xml&quot;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="grepster_8h.html#a742c63d9e85847705f1767862babc69b">   97</a></span>&#160;<span class="preprocessor">#define CHAR_BUFFER_LENGTH                  4096</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/* Console control settings. */</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="grepster_8h.html#af50d3a3a5589e846dca652a4fdbb51eb">  101</a></span>&#160;<span class="preprocessor">#define CONSOLE_ID                          1000</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="grepster_8h.html#a1a50575d63bd0b03f886042abd532ef5">  103</a></span>&#160;<span class="preprocessor">#define CONSOLE_NAME                        &quot;the_con&quot;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="grepster_8h.html#a006d1c409c5f57e311db021017e8d670">  105</a></span>&#160;<span class="preprocessor">#define CONSOLE_CTRL_TITLE                  L&quot;Console&quot;</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="grepster_8h.html#ace37b2df2eebf832ed80faec7fd9a8db">  107</a></span>&#160;<span class="preprocessor">#define CONSOLE_DEFAULT_HEIGHT              140</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">/* Server Stacks tree control settings. */</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="grepster_8h.html#a645678a2344831c3f0d09734f4b19032">  111</a></span>&#160;<span class="preprocessor">#define SERVER_STACKS_ID                    1001</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="grepster_8h.html#aef3f3454eb74302ee6475b6e1eb9b7ca">  113</a></span>&#160;<span class="preprocessor">#define SERVER_STACKS_NAME                  &quot;server_stacks&quot;</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="grepster_8h.html#a8b3792a26821ed1c5e652d7f0fe33699">  115</a></span>&#160;<span class="preprocessor">#define SERVER_STACKS_CTRL_TITLE            L&quot;Server Stacks&quot;</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="grepster_8h.html#a7293d10d90531879b1d04df1c82bda32">  117</a></span>&#160;<span class="preprocessor">#define SERVER_STACKS_DEFAULT_WIDTH         200</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">/* Grep Notebook control settings. */</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="grepster_8h.html#a19eb389726e523e1180d22ff3c4cb405">  121</a></span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_ID                    1002</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="grepster_8h.html#a5042f8607c80fb476c55b5e235c8616c">  123</a></span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_NAME                  &quot;grep_notebook&quot;</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="grepster_8h.html#af3e5d57b661c402c7861ff8a2914aba7">  125</a></span>&#160;<span class="preprocessor">#define GREP_NOTEBOOK_CTRL_TITLE            L&quot;Notebook&quot;</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">/* Browser/web viewer control settings. */</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="grepster_8h.html#a927b43beb141a266bc6631f99b5e2074">  129</a></span>&#160;<span class="preprocessor">#define BROWSER_ID                          1003</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="grepster_8h.html#a574cfb7bb87e59e8b2ca1518f2efdf67">  131</a></span>&#160;<span class="preprocessor">#define BROWSER_NAME                        &quot;browser&quot;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="_c_grep_notebook_8h_html"><div class="ttname"><a href="_c_grep_notebook_8h.html">CGrepNotebook.h</a></div><div class="ttdoc">wxWidgets AUI notebook control class definition. </div></div>
 <div class="ttc" id="_c_app_init_8h_html"><div class="ttname"><a href="_c_app_init_8h.html">CAppInit.h</a></div><div class="ttdoc">This object loads and populates grepster&#39;s configuration settings. </div></div>
 <div class="ttc" id="class_c_app_init_html"><div class="ttname"><a href="class_c_app_init.html">CAppInit</a></div><div class="ttdoc">Class definition for grepster&#39;s configuration. </div><div class="ttdef"><b>Definition:</b> CAppInit.h:33</div></div>
 <div class="ttc" id="class_c_grep_notebook_html"><div class="ttname"><a href="class_c_grep_notebook.html">CGrepNotebook</a></div><div class="ttdoc">Class definition for grepster&#39;s notebook control. </div><div class="ttdef"><b>Definition:</b> CGrepNotebook.h:31</div></div>
-<div class="ttc" id="grepster_8h_html_ad3031ede04721eaf7747d85423f6bfe5"><div class="ttname"><a href="grepster_8h.html#ad3031ede04721eaf7747d85423f6bfe5">SpawnAndRun</a></div><div class="ttdeci">std::string SpawnAndRun(wxString path, wxString args)</div><div class="ttdoc">Creates a child process and sends it an argument list for remote commands. SpawnAndRun also records t...</div><div class="ttdef"><b>Definition:</b> grepster.cpp:41</div></div>
-<div class="ttc" id="grepster_8h_html_a36c8fcce03ea9e2ce59a8fc6869a5762"><div class="ttname"><a href="grepster_8h.html#a36c8fcce03ea9e2ce59a8fc6869a5762">GrepNotebook</a></div><div class="ttdeci">CGrepNotebook * GrepNotebook</div><div class="ttdoc">grepster&#39;s grep Session Notebook. </div><div class="ttdef"><b>Definition:</b> grepster.cpp:26</div></div>
+<div class="ttc" id="grepster_8h_html_ad3031ede04721eaf7747d85423f6bfe5"><div class="ttname"><a href="grepster_8h.html#ad3031ede04721eaf7747d85423f6bfe5">SpawnAndRun</a></div><div class="ttdeci">std::string SpawnAndRun(wxString path, wxString args)</div><div class="ttdoc">Creates a child process and sends it an argument list for remote commands. SpawnAndRun also records t...</div><div class="ttdef"><b>Definition:</b> grepster.cpp:50</div></div>
+<div class="ttc" id="grepster_8h_html_a36c8fcce03ea9e2ce59a8fc6869a5762"><div class="ttname"><a href="grepster_8h.html#a36c8fcce03ea9e2ce59a8fc6869a5762">GrepNotebook</a></div><div class="ttdeci">CGrepNotebook * GrepNotebook</div><div class="ttdoc">grepster&#39;s grep Session Notebook. </div><div class="ttdef"><b>Definition:</b> grepster.cpp:31</div></div>
 <div class="ttc" id="structdialog_vars__t_html_a60dafd7f6b63c608846d8a06d6af1c5b"><div class="ttname"><a href="structdialog_vars__t.html#a60dafd7f6b63c608846d8a06d6af1c5b">dialogVars_t::height</a></div><div class="ttdeci">unsigned short height</div><div class="ttdef"><b>Definition:</b> grepster.h:57</div></div>
 <div class="ttc" id="class_c_console_html"><div class="ttname"><a href="class_c_console.html">CConsole</a></div><div class="ttdoc">Class definition for grepster&#39;s console. </div><div class="ttdef"><b>Definition:</b> CConsole.h:26</div></div>
-<div class="ttc" id="grepster_8h_html_a667b72a706bfbbfb8789a5ec7f0882ce"><div class="ttname"><a href="grepster_8h.html#a667b72a706bfbbfb8789a5ec7f0882ce">RESOURCE_ID_TO_STRING</a></div><div class="ttdeci">wxString RESOURCE_ID_TO_STRING(int id)</div><div class="ttdoc">Translate a resource integer ID into a wxWidgets readable string for calling resources. </div><div class="ttdef"><b>Definition:</b> grepster.cpp:36</div></div>
+<div class="ttc" id="grepster_8h_html_a667b72a706bfbbfb8789a5ec7f0882ce"><div class="ttname"><a href="grepster_8h.html#a667b72a706bfbbfb8789a5ec7f0882ce">RESOURCE_ID_TO_STRING</a></div><div class="ttdeci">wxString RESOURCE_ID_TO_STRING(int id)</div><div class="ttdoc">Translate a resource integer ID into a wxWidgets readable string for calling resources. </div><div class="ttdef"><b>Definition:</b> grepster.cpp:41</div></div>
 <div class="ttc" id="structdialog_vars__t_html"><div class="ttname"><a href="structdialog_vars__t.html">dialogVars_t</a></div><div class="ttdoc">Structure which represents a dialog&#39;s basic control variables. Note: This is defined in each CDialog ...</div><div class="ttdef"><b>Definition:</b> grepster.h:54</div></div>
 <div class="ttc" id="structdialog_vars__t_html_a9d2e27f6cba04e7af4c956088ad71407"><div class="ttname"><a href="structdialog_vars__t.html#a9d2e27f6cba04e7af4c956088ad71407">dialogVars_t::title</a></div><div class="ttdeci">wxString title</div><div class="ttdef"><b>Definition:</b> grepster.h:55</div></div>
 <div class="ttc" id="_c_server_stacks_8h_html"><div class="ttname"><a href="_c_server_stacks_8h.html">CServerStacks.h</a></div><div class="ttdoc">wxWidgets tree control class definition which displays user&#39;s server stacks. </div></div>
 <div class="ttc" id="grepster_8h_html_a9d3817a89291d52180e5e4b5291e9628"><div class="ttname"><a href="grepster_8h.html#a9d3817a89291d52180e5e4b5291e9628">g_szFrameTitle</a></div><div class="ttdeci">wxString g_szFrameTitle</div></div>
 <div class="ttc" id="_c_console_8h_html"><div class="ttname"><a href="_c_console_8h.html">CConsole.h</a></div><div class="ttdoc">wxWidgets read-only text control class definition used as grepster&#39;s console. </div></div>
-<div class="ttc" id="grepster_8h_html_a034ab9689fbe23cc500e603f1c0cf19d"><div class="ttname"><a href="grepster_8h.html#a034ab9689fbe23cc500e603f1c0cf19d">Console</a></div><div class="ttdeci">CConsole * Console</div><div class="ttdoc">grepster&#39;s console. </div><div class="ttdef"><b>Definition:</b> grepster.cpp:24</div></div>
+<div class="ttc" id="grepster_8h_html_a034ab9689fbe23cc500e603f1c0cf19d"><div class="ttname"><a href="grepster_8h.html#a034ab9689fbe23cc500e603f1c0cf19d">Console</a></div><div class="ttdeci">CConsole * Console</div><div class="ttdoc">grepster&#39;s console. </div><div class="ttdef"><b>Definition:</b> grepster.cpp:29</div></div>
 <div class="ttc" id="class_c_server_stacks_html"><div class="ttname"><a href="class_c_server_stacks.html">CServerStacks</a></div><div class="ttdoc">Class definition for grepster&#39;s tree control for housing server stacks. </div><div class="ttdef"><b>Definition:</b> CServerStacks.h:26</div></div>
-<div class="ttc" id="grepster_8h_html_a7171ec99e90e93dcc3cff9309a70abbb"><div class="ttname"><a href="grepster_8h.html#a7171ec99e90e93dcc3cff9309a70abbb">Configuration</a></div><div class="ttdeci">CAppInit * Configuration</div><div class="ttdoc">grepster&#39;s configuration object. </div><div class="ttdef"><b>Definition:</b> grepster.cpp:29</div></div>
+<div class="ttc" id="grepster_8h_html_a7171ec99e90e93dcc3cff9309a70abbb"><div class="ttname"><a href="grepster_8h.html#a7171ec99e90e93dcc3cff9309a70abbb">Configuration</a></div><div class="ttdeci">CAppInit * Configuration</div><div class="ttdoc">grepster&#39;s configuration object. </div><div class="ttdef"><b>Definition:</b> grepster.cpp:34</div></div>
 <div class="ttc" id="structdialog_vars__t_html_a33356e9e0e1eb735ad02c16f3b113401"><div class="ttname"><a href="structdialog_vars__t.html#a33356e9e0e1eb735ad02c16f3b113401">dialogVars_t::width</a></div><div class="ttdeci">unsigned short width</div><div class="ttdef"><b>Definition:</b> grepster.h:56</div></div>
-<div class="ttc" id="grepster_8h_html_a4050f062ea121119aa08ec79fd17874f"><div class="ttname"><a href="grepster_8h.html#a4050f062ea121119aa08ec79fd17874f">ServerStacks</a></div><div class="ttdeci">CServerStacks * ServerStacks</div><div class="ttdoc">grepster&#39;s Server Stack. </div><div class="ttdef"><b>Definition:</b> grepster.cpp:25</div></div>
+<div class="ttc" id="grepster_8h_html_a4050f062ea121119aa08ec79fd17874f"><div class="ttname"><a href="grepster_8h.html#a4050f062ea121119aa08ec79fd17874f">ServerStacks</a></div><div class="ttdeci">CServerStacks * ServerStacks</div><div class="ttdoc">grepster&#39;s Server Stack. </div><div class="ttdef"><b>Definition:</b> grepster.cpp:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 7 2015 21:43:12 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 22 2015 13:37:29 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

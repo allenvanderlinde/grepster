@@ -112,7 +112,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2fc146905ed09967d872e330f494d37b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which creates grepster's primary frame.  <a href="#a2fc146905ed09967d872e330f494d37b">More...</a><br /></td></tr>
 <tr class="separator:a2fc146905ed09967d872e330f494d37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7656741c72ceb3574ba9d66da65c6c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#af7656741c72ceb3574ba9d66da65c6c9">~CAppFrame</a> ()</td></tr>
-<tr class="memdesc:af7656741c72ceb3574ba9d66da65c6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default class destructor.  <a href="#af7656741c72ceb3574ba9d66da65c6c9">More...</a><br /></td></tr>
+<tr class="memdesc:af7656741c72ceb3574ba9d66da65c6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default class destructor. This joins all previously running threads to grepster's primary process.  <a href="#af7656741c72ceb3574ba9d66da65c6c9">More...</a><br /></td></tr>
 <tr class="separator:af7656741c72ceb3574ba9d66da65c6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -150,6 +150,9 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:afabaa81e81e97443b1156ce36ad2eec6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::thread &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#afabaa81e81e97443b1156ce36ad2eec6">m_Spawns</a></td></tr>
+<tr class="memdesc:afabaa81e81e97443b1156ce36ad2eec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread vector for keeping tracking of process spawns.  <a href="#afabaa81e81e97443b1156ce36ad2eec6">More...</a><br /></td></tr>
+<tr class="separator:afabaa81e81e97443b1156ce36ad2eec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f02100e4bacbb5fb8c72d731075a20d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_app_menubar.html">CAppMenubar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a5f02100e4bacbb5fb8c72d731075a20d">m_pMenubar</a></td></tr>
 <tr class="separator:a5f02100e4bacbb5fb8c72d731075a20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a215d9068460b42a395d050e68074312f"><td class="memItemLeft" align="right" valign="top">wxStatusBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a215d9068460b42a395d050e68074312f">m_pStatusbar</a></td></tr>
@@ -216,7 +219,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Default class destructor. </p>
+<p>Default class destructor. This joins all previously running threads to grepster's primary process. </p>
 
 </div>
 </div>
@@ -539,6 +542,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="afabaa81e81e97443b1156ce36ad2eec6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::thread&gt; CAppFrame::m_Spawns</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thread vector for keeping tracking of process spawns. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/grepster/app/<a class="el" href="_c_app_frame_8h_source.html">CAppFrame.h</a></li>
 <li>C:/grepster/app/<a class="el" href="_c_app_frame_8cpp.html">CAppFrame.cpp</a></li>
@@ -546,7 +571,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 7 2015 21:43:12 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 22 2015 13:37:29 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

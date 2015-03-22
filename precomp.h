@@ -28,6 +28,8 @@
 
 #include <iostream>
 #include <thread>
+#include <vector>
+#include <algorithm>
 
 #ifndef WX_PRECOMP
     #include <wx/wx.h>

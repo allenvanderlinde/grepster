@@ -15,7 +15,13 @@
 #include "precomp.h"
 
 #include "grepster.h"
+#include "app/CAppEntry.h"
 
+#include <mutex>
+
+/* Global mutex used to lock access to shared resources
+   during the execution of multiple threads on SpawnAndRun(). */
+std::mutex          g_Mutex;
 
 /* Frame globals definitions. */
 wxString            g_szFrameTitle("grepster alpha v");
@@ -37,7 +43,13 @@ wxString RESOURCE_ID_TO_STRING(int id) { return wxString::Format("#%i", id); }
 /*
     SpawnAndRun
 */
+/* Maybe I can also pass a struct here that contains information about the current grep
+script, the server stack, the ip, the alias, etc... and this is how grepster will ID the end
+of each grep. */
+
 std::string SpawnAndRun(wxString path, wxString args) {
+    /* This locks access to these possibly shared resources to the current thread. */
+    std::lock_guard<std::mutex> ResourceGuard(g_Mutex);
     /* Declare objects for child process. */
     HANDLE hRead, // Handle which reads stdout of child process
            hWrite;  // Handle to write to stdout
@@ -97,14 +109,16 @@ std::string SpawnAndRun(wxString path, wxString args) {
         *Console << s;  // Send buffer to grepster's console one line at a time
         out += s;   // String copy of entire child's stdout up to CHAR_BUFFER_LENGTH
     }
-    //*Console << "psftp: \n" << out;
 
     /* Clean up handles. */
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
 
+    Console->BlueText();
+    *Console << "\nFinished.";
+    Console->BlackText();
+
     return out;
 }
 
-#include "app/CAppEntry.h"
 wxIMPLEMENT_APP(CAppEntry);
