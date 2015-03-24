@@ -115,7 +115,7 @@ std::string SpawnAndRun(wxString path, wxString args) {
     CloseHandle(pi.hThread);
 
     Console->BlueText();
-    *Console << "\nFinished.";
+    *Console << "\nFinished.\n";
     Console->BlackText();
 
     return out;

@@ -108,39 +108,34 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
 
     //szArgs += "-ssh avanderlinde@172.24.52.150 -pw " + Configuration->Password() + " -m " + szScriptPath;
 
+    // SSH
     wxString szOutput(L""), szCommand;
 
     Console->BlueText();
-    *Console << L"\n\nRunning script...\n" + Configuration->Username() + L"@grepster> ";
+    *Console << L"\n\nRunning script (SSH)...\n" + Configuration->Username() + L"@grepster> ";
     Console->BlackText();
     *Console << Configuration->PathToSSHTool() + L"\n\n";
 
     szCommand = Configuration->SSHTool() + L" -ssh " + Configuration->Username() + L"@speights.pd.local -pw " + Configuration->Password() + " -m \"C:\\grepster\\user\\scripts\\grep-test.txt\"";
 
+    ////////
     // will need to keep track of currently available thread's index
+    //
+    // get current size of m_Spawns and use that to ID each thread by integer <-- should that be a struct element?
+    //
+    ////////
     m_Spawns.push_back(std::thread(SpawnAndRun, Configuration->PathToSSHTool(), szCommand));
 
-    //std::thread t(&SpawnAndRun, Configuration->PathToSSHTool(), szCommand);
-    //SpawnAndRun(Configuration->PathToSSHTool(), szCommand);
 
-    // need to put in SpawnAndRun
+    // SFTP
+    Console->BlueText();
+    *Console << L"\n\nRunning script (SFTP)...\n" + Configuration->Username() + L"@grepster> ";
+    Console->BlackText();
+    *Console << Configuration->PathToSFTPTool() + L"\n\n";
 
-    //szOutput = SpawnAndRun(Configuration->PathToSSHTool(), szArgs);
-    //std::thread t(SpawnAndRun(Configuration->PathToSSHTool(), szArgs));
-    //std::thread t(SpawnAndRun);
-    //*Console << L"\nFinished.";
+    szCommand = Configuration->SFTPTool() + L" " + Configuration->Username() + L"@speights.pd.local" + L" -pw " + Configuration->Password() + L" -b \"C:\\grepster\\user\\scripts\\grep-test-dl.txt\"";
 
-
-    //Console->BlueText();
-    //*Console << L"\n\nRunning command...\n" + Configuration->Username() + L"@grepster> ";
-    //Console->BlackText();
-    //*Console << Configuration->PathToSFTPTool() + L"\n\n";
-
-    //wxString szArgsDownload(L"psftp " + Configuration->Username() + L"@172.24.52.150" + L" -pw " + Configuration->Password() + L" -b \"C:\\grepster\\user\\scripts\\grep-test-dl.txt\"");
-    //szOutput = SpawnAndRun(Configuration->PathToSFTPTool(), szArgsDownload);
-    //*Console << L"\nFinished.";
-
-    //m_Spawns[0].join();
+    m_Spawns.push_back(std::thread(SpawnAndRun, Configuration->PathToSFTPTool(), szCommand));
 }
 
 /*

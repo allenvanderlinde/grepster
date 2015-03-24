@@ -32,9 +32,11 @@ public:
     CConsole(wxWindow* parentFrame);
 
     /**
-     * @brief       Set the text color to blue.
+     * @brief       Set the text color to light cobalt blue.
      */
-    void BlueText() { SetDefaultStyle(wxTextAttr(*wxBLUE)); }
+    void BlueText() { SetDefaultStyle(wxColour(0,
+                                               102,
+                                               153)); }
     /**
      * @brief       Set the text color to default black.
      */
