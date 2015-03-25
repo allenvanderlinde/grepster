@@ -27,7 +27,7 @@ wxEND_EVENT_TABLE()
     CDialogChangeCredentials::CDialogChangeCredentials
 */
 CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame, dialogVars_t dialogVars)
-    : wxDialog(parentFrame, DIALOG_ID_CHANGE_CREDENTIALS, dialogVars.title, wxDefaultPosition, wxSize(dialogVars.width, dialogVars.height)) {
+    : wxDialog(parentFrame, wxID_ANY, dialogVars.title, wxDefaultPosition, wxSize(dialogVars.width, dialogVars.height)) {
     SetIcon(wxICON(aaaaappicon));
     CenterOnParent();
     /* Dialog controls. */

@@ -46,7 +46,7 @@ public:
      * @brief       Get the console control's pane information.
      * @retval      wxAuiPaneInfo This is the text control's display configuration object.
      */
-    wxAuiPaneInfo getPaneInfo() { return m_consoleInf_t; }
+    wxAuiPaneInfo GetPaneInfo() { return m_consoleInf_t; }
 
 private:
     wxAuiPaneInfo m_consoleInf_t;

@@ -1,5 +1,5 @@
 /**
- * @file    CGrepNotebook.h
+ * @file    CSessionNotebook.h
  * @author  Allen Vanderlinde
  * @date    November 20, 2014
  * @brief   wxWidgets AUI notebook control class definition.
@@ -18,29 +18,29 @@
 
 /* Note: These are defined here but not actually relevant because
     of a wxWidgets limitation being that wxAuiNotebook controls cannot yet float. */
-#define GREP_NOTEBOOK_DEFAULT_WIDTH         500
-#define GREP_NOTEBOOK_DEFAULT_HEIGHT        540
+#define SESSION_NOTEBOOK_DEFAULT_WIDTH         500
+#define SESSION_NOTEBOOK_DEFAULT_HEIGHT        540
 
 
 /**
  * This object creates grepster's grep job notebook for data entry, search terms and command execution.
  *
- * @class   CGrepNotebook
+ * @class   CSessionNotebook
  * @brief   Class definition for grepster's notebook control.
  */
-class CGrepNotebook : public wxAuiNotebook {
+class CSessionNotebook : public wxAuiNotebook {
 public:
     /**
      * @brief       Default constructor which produces the notebook.
      * @param[in]   parentFrame The primary frame to which this control belongs.
      */
-    CGrepNotebook(wxWindow* parentFrame);
+    CSessionNotebook(wxWindow* parentFrame);
 
     /**
      * @brief       Get notebook control's pane information.
      * @retval      wxAuiPaneInfo This is the notebook control's display configuration object.
      */
-    wxAuiPaneInfo getPaneInfo() { return m_grepNotebookInf_t; }
+    wxAuiPaneInfo GetPaneInfo() { return m_grepNotebookInf_t; }
 
     /**
      * @brief       Creates a new CWebViewer object and opens grepster's home page.
@@ -55,6 +55,7 @@ private:
     CWebViewer*     m_pBrowser;
 
     wxAuiPaneInfo   m_grepNotebookInf_t;
+
 
     /**
      * @brief       Initialize and call the primary object's event handler.

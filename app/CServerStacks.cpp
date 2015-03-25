@@ -18,10 +18,19 @@
 
 #include "CAppFrame.h"
 #include "CServerStacks.h"
+#include "../webviewer/CWebViewer.h"
+
+
+/* Construct the Server Stacks' event handler calls. */
+wxBEGIN_EVENT_TABLE(CServerStacks, wxTreeCtrl)
+    EVT_TREE_ITEM_ACTIVATED(wxID_ANY, CServerStacks::OpenScript)
+
+    EVT_TREE_ITEM_MENU(wxID_ANY, CServerStacks::ServerOptions)
+wxEND_EVENT_TABLE()
 
 
 /*
-    CServerStacks::CServerStacks(wxWindow*)
+    CServerStacks::CServerStacks
 */
 CServerStacks::CServerStacks(wxWindow* parentFrame)
     : wxTreeCtrl(parentFrame, SERVER_STACKS_ID, wxDefaultPosition, wxDefaultSize, wxTR_DEFAULT_STYLE | wxTR_HIDE_ROOT) {
@@ -38,11 +47,34 @@ CServerStacks::CServerStacks(wxWindow* parentFrame)
 
     /* Initialize server stack from administrator account. */
     m_treeRoot = AddRoot(wxEmptyString);
-    m_treeAdminItem = AppendItem(m_treeRoot, Configuration->Username());//SERVER_STACK_DEFAULT_LABEL);
+    m_treeAdminItem = AppendItem(m_treeRoot, Configuration->Username());//SERVER_STACKS_DEFAULT_LABEL);
 
-    wxTreeItemId item = AppendItem(m_treeAdminItem, "blackboard-grepper");
+    m_treeServerItem = AppendItem(m_treeAdminItem, L"blackboard-grepper");
 }
 
+/*
+    CServerStacks::OpenScript
+*/
+void CServerStacks::OpenScript(wxTreeEvent &event) {
+    // search through entire vector of items
+    // and do switch on the ID?
+    if(event.GetItem().GetID() == m_treeAdminItem.GetID()) {
+        /* Expand or collapse the user's server list and associated scripts
+            if they double-click on their username in the Server Stacks control. */
+        if(IsExpanded(m_treeAdminItem))
+            Collapse(m_treeAdminItem);
+        else
+            Expand(m_treeAdminItem);
+    } else {//(event.GetItem().GetID() != m_treeAdminItem.GetID()) {
+        CWebViewer* pBrowser = new CWebViewer(this);
+        SessionNotebook->AddPage(pBrowser->GetBrowser(), L"Welcome to grepster!");
+
+        /* Set focus to newly opened page. */
+        size_t nNewPageIndex = SessionNotebook->GetPageCount();
+        SessionNotebook->SetSelection(nNewPageIndex - 1);
+        delete pBrowser;
+    }
+}
 
 /*
     CServerStacks::UpdateStacks
@@ -50,4 +82,20 @@ CServerStacks::CServerStacks(wxWindow* parentFrame)
 void CServerStacks::UpdateStacks() {
     /* Update grepster's Server Stacks control after changes. */
     SetItemText(m_treeAdminItem, Configuration->Username());
+}
+
+/*
+    CServerStacks::ServerOptions
+*/
+void CServerStacks::ServerOptions(wxTreeEvent& event) {
+    wxMenu* pContext = new wxMenu();
+    pContext->Append(wxID_ANY, L"string");
+
+    // if(event.GetItem().GetID() == ITEM_CONTEXT_MENU_OPEN)..... <= works?
+    if(event.GetItem().GetID() == m_treeServerItem.GetID()) {
+
+        PopupMenu(pContext);
+    }
+    delete pContext;
+    //wxMessageBox("menu", "menu", wxOK);
 }

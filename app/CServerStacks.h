@@ -13,8 +13,9 @@
 #ifndef _CSERVERSTACKS_H_
 #define _CSERVERSTACKS_H_
 
-/** The server stacks control's root item label. */
-#define SERVER_STACK_DEFAULT_LABEL          "default"
+#define SERVER_STACKS_DEFAULT_LABEL          "default"
+
+#define SERVER_STACKS_OPEN_SCRIPT            0x0B01
 
 
 /**
@@ -35,7 +36,12 @@ public:
      * @brief       Get the control's pane information.
      * @retval      wxAuiPaneInfo This is the tree control's display configuration object.
      */
-    wxAuiPaneInfo getPaneInfo() { return m_serverStacksInf_t; }
+    wxAuiPaneInfo GetPaneInfo() { return m_serverStacksInf_t; }
+
+    /**
+     * @brief       Open the currently selected user script from the Server Stack into a new page.
+     */
+    void OpenScript(wxTreeEvent &event);
 
     /**
      * @brief       Update the current tree control associated with the administrator after configuration and server changes.
@@ -46,12 +52,24 @@ private:
     wxTreeItemId    m_treeRoot;
     wxTreeItemId    m_treeAdminItem;
 
+    wxTreeItemId    m_treeServerItem;
+
     wxAuiPaneInfo   m_serverStacksInf_t;
+
+    /** @brief      Vector of tree items each representing one of the
+     *              user's servers to run grep on.
+     */
+    std::vector<wxTreeItemId>   m_Servers;
+
+    /**
+     * @brief       Context menu for an individual server.
+     */
+    void ServerOptions(wxTreeEvent& event);
 
     /**
      * @brief       Initialize and call the primary object's event handler.
      */
-    //wxDECLARE_EVENT_TABLE();
+    wxDECLARE_EVENT_TABLE();
 };
 
 #endif

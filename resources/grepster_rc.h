@@ -5,7 +5,7 @@
 */
 
 /** grepster's resource ID definitions. */
-#define     RESID_PNG_SPLASH                    9001
-#define     RESID_PNG_ABOUT                     9002
-#define     RESID_PNG_CREDENTIALS               9003
-#define     RESID_PNG_TOOLS                     9004
+#define     RESID_PNG_SPLASH                    0x0F00
+#define     RESID_PNG_ABOUT                     0x0F01
+#define     RESID_PNG_CREDENTIALS               0x0F02
+#define     RESID_PNG_TOOLS                     0x0F03

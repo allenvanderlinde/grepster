@@ -38,7 +38,7 @@ public:
     * control away from wxWidgets when handling what dialogs should do when the user activates a control.
     */
     enum enum_DialogCtrlIDs {
-        BUTTON_OK = 2001,
+        BUTTON_OK = wxID_ANY,
         INPUT_USERNAME,
         INPUT_PASSWORD
     };

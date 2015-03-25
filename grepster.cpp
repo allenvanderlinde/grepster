@@ -28,7 +28,7 @@ wxString            g_szFrameTitle("grepster alpha v");
 /* Frame control definitions. These are global. */
 CConsole*           Console;
 CServerStacks*      ServerStacks;
-CGrepNotebook*      GrepNotebook;
+CSessionNotebook*      SessionNotebook;
 
 /* grepster configuration object. This is global. */
 CAppInit*           Configuration;

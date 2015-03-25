@@ -33,7 +33,7 @@ public:
     /**
      * @brief       Get the web viewer object.
      */
-    wxWebView* getBrowser() { return m_pBrowser; }
+    wxWebView* GetBrowser() { return m_pBrowser; }
 
 private:
     wxWebView* m_pBrowser;

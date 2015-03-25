@@ -16,7 +16,6 @@
 #include "../grepster.h"
 #include "CAppMenubar.h"
 
-
 #define FRAME_WIDTH                     1024
 #define FRAME_HEIGHT                    680
 
@@ -29,9 +28,6 @@
 #define STATUSBAR_NOTE_WIDTH            120
 
 #define ABOUT_INFORMATION               "Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster acts as an interface to SSH and SFTP tools for system administrators to easily grep logs and execute remote commands from a centralized utility.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details."
-
-#define DIALOG_ID_CHANGE_CREDENTIALS    2000
-#define DIALOG_ID_SET_PATH_TOOLS        3000
 
 
 /**
@@ -58,7 +54,7 @@ public:
     ~CAppFrame();
 
 private:
-    /** @brief Thread vector for keeping tracking of process spawns. */
+    /** @brief      Thread vector for keeping tracking of process spawns. */
     std::vector<std::thread>    m_Spawns;
 
     CAppMenubar*                m_pMenubar;

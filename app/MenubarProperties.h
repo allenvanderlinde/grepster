@@ -71,6 +71,10 @@ enum enum_StatusbarStringIDs {
 
 /** Menu bar function IDs used to decide which function should handle the event. */
 enum enum_MenuFunctionIDs {
+    /** @brief      This must start at a high enough number as to
+     *              not get confused with what wxWidgets thinks should
+     *              be the default action for enter. If it's too low,
+     *              hitting enter could quit the application. */
     MENU_FUNCTION_ID_FILE_NEW_JOB = 9000,
     MENU_FUNCTION_ID_FILE_QUIT,
     MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS,

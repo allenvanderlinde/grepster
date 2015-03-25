@@ -103,10 +103,10 @@
 		<Unit filename="app/CAppMenubar.h" />
 		<Unit filename="app/CConsole.cpp" />
 		<Unit filename="app/CConsole.h" />
-		<Unit filename="app/CGrepNotebook.cpp" />
-		<Unit filename="app/CGrepNotebook.h" />
 		<Unit filename="app/CServerStacks.cpp" />
 		<Unit filename="app/CServerStacks.h" />
+		<Unit filename="app/CSessionNotebook.cpp" />
+		<Unit filename="app/CSessionNotebook.h" />
 		<Unit filename="app/MenubarProperties.h" />
 		<Unit filename="dialogs/CDialogChangeCredentials.cpp" />
 		<Unit filename="dialogs/CDialogChangeCredentials.h" />

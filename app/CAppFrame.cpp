@@ -56,17 +56,17 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     /* Create and initialize primary frame controls. */
     Console = new CConsole(this);
     ServerStacks = new CServerStacks(this);
-    GrepNotebook = new CGrepNotebook(this);
-    GrepNotebook->OpenWelcomePage();
+    SessionNotebook = new CSessionNotebook(this);
+    SessionNotebook->OpenWelcomePage();
 
     /* Create wxWidgets AUI object for managing frame controls. */
     m_pAui = new wxAuiManager(this);
     // Set AUI flags for display
     m_pAui->SetFlags(wxAUI_MGR_ALLOW_ACTIVE_PANE | wxAUI_MGR_LIVE_RESIZE | wxAUI_MGR_ALLOW_FLOATING | wxAUI_MGR_VENETIAN_BLINDS_HINT);
 
-    m_pAui->AddPane(Console, Console->getPaneInfo());
-    m_pAui->AddPane(ServerStacks, ServerStacks->getPaneInfo());
-    m_pAui->AddPane(GrepNotebook, GrepNotebook->getPaneInfo());
+    m_pAui->AddPane(Console, Console->GetPaneInfo());
+    m_pAui->AddPane(ServerStacks, ServerStacks->GetPaneInfo());
+    m_pAui->AddPane(SessionNotebook, SessionNotebook->GetPaneInfo());
 
     // Set pane colors for controls
     wxAuiDockArt* art = m_pAui->GetArtProvider();
@@ -165,7 +165,7 @@ void CAppFrame::RefreshConfiguration() {
     // Floating controls
     m_pAui->GetPane(Console).Floatable(Configuration->bToggleFloating);
     m_pAui->GetPane(ServerStacks).Floatable(Configuration->bToggleFloating);
-    m_pAui->GetPane(GrepNotebook).Floatable(Configuration->bToggleFloating);
+    m_pAui->GetPane(SessionNotebook).Floatable(Configuration->bToggleFloating);
 }
 
 /*
@@ -201,6 +201,7 @@ void CAppFrame::OnAbout(wxCommandEvent& event) {
     CAppFrame::CloseFrame
 */
 void CAppFrame::CloseFrame(wxCommandEvent& event) {
+    wxMessageBox("hello", "hello", wxOK);
     AddPendingEvent(wxCloseEvent(wxEVT_CLOSE_WINDOW, wxID_ANY));
 }
 
