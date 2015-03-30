@@ -50,7 +50,7 @@ CServerStacks::CServerStacks(wxWindow* parentFrame)
     m_treeAdminItem = AppendItem(m_treeRoot, Configuration->Username());//SERVER_STACKS_DEFAULT_LABEL);
 
     // Default empty session upon starting
-    m_treeServerItem = AppendItem(m_treeAdminItem, L"empty");
+    m_treeServerStack = AppendItem(m_treeAdminItem, L"empty");
 }
 
 /*
@@ -93,7 +93,7 @@ void CServerStacks::ServerOptions(wxTreeEvent& event) {
     pContext->Append(wxID_ANY, L"string");
 
     // if(event.GetItem().GetID() == ITEM_CONTEXT_MENU_OPEN)..... <= works?
-    if(event.GetItem().GetID() == m_treeServerItem.GetID()) {
+    if(event.GetItem().GetID() == m_treeServerStack.GetID()) {
 
         PopupMenu(pContext);
     }

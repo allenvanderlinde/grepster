@@ -39,6 +39,12 @@ public:
     wxAuiPaneInfo GetPaneInfo() { return m_serverStacksInf_t; }
 
     /**
+     * @brief       Get the chosen server stack's tree item.
+     * @retval      wxTreeItemId Object which holds the tree item.
+     */
+    wxTreeItemId GetServerStackTreeItem() { return m_treeServerStack; }
+
+    /**
      * @brief       Open the currently selected user script from the Server Stack into a new page.
      */
     void OpenScript(wxTreeEvent &event);
@@ -52,7 +58,7 @@ private:
     wxTreeItemId    m_treeRoot;
     wxTreeItemId    m_treeAdminItem;
 
-    wxTreeItemId    m_treeServerItem;
+    wxTreeItemId    m_treeServerStack;
 
     wxAuiPaneInfo   m_serverStacksInf_t;
 

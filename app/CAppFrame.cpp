@@ -23,6 +23,7 @@
 /* grepster's primary frame's event handler calls. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::CloseFrame)
+    EVT_MENU(MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACK, CAppFrame::AddServerStack)
     EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
     EVT_MENU(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS, CAppFrame::ChangeDefaultCredentials)
     EVT_MENU(MENU_FUNCTION_ID_OPTIONS_SET_PATH_TOOLS, CAppFrame::SetPathToTools)
@@ -87,6 +88,32 @@ CAppFrame::~CAppFrame() {
     m_pAui->UnInit();
     /* Join all threads to primary process before closing grepster. */
     for_each(m_Spawns.begin(), m_Spawns.end(), [](std::thread &t){ t.join(); });
+}
+
+/*
+    CAppFrame::AddServerStack
+*/
+void CAppFrame::AddServerStack(wxCommandEvent& event) {
+    /* Create a new file picker dialog to grab the .servers file
+        to add to the current session's server stacks. */
+    wxFileDialog* pServerStackSelect = new wxFileDialog(this, L"Server Stack Selection", DEFAULT_SERVER_STACKS_PATH, L"", L".SERVERS files (*.servers)|*.servers", wxFD_OPEN | wxFD_FILE_MUST_EXIST);
+    pServerStackSelect->CenterOnParent();
+    if(pServerStackSelect->ShowModal() == wxID_CANCEL)
+        pServerStackSelect->Destroy();
+    /* Open file and create a new CAdminServerStack object
+        to hold the server stack's IP addresses and other
+        information. */
+    static int nIPAddresses = 0;    // The number of addresses to add to CAdminServerStack's string vector
+    wxTextFile fileServerStack;
+    fileServerStack.Open(pServerStackSelect->GetPath());
+
+    // "name=" should always precede the name of a server stack in the .servers file
+    wxString szServerStackName = fileServerStack.GetFirstLine().Mid(5);
+
+    ServerStacks->SetItemText(ServerStacks->GetServerStackTreeItem(), szServerStackName);
+
+    /* Add the newly opened server stack to the control. */
+
 }
 
 /*

@@ -25,6 +25,8 @@
 #include <wx/splash.h>
 #include <wx/icon.h>
 #include <wx/filepicker.h>
+#include <wx/textfile.h>
+#include <wx/tokenzr.h>
 
 #include <iostream>
 #include <thread>
