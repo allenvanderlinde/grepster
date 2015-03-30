@@ -22,20 +22,22 @@ const wxString FRAME_MENUBAR_STRINGS[]      = {L"&File",
                                                L"&Options",
                                                L"&Help"};
 /** Menu bar menu item strings. */
-const wxString FRAME_MENU_STRINGS[]         = {L"&New grepster job...\tCtrl+Shift+N",
-                                               L"&Quit\tCtrl+Q",
-                                               L"&Admin Credentials...\tCtrl+Shift+C",
+const wxString FRAME_MENU_STRINGS[]         = {L"&Quit\tCtrl+Q",
+                                               L"&New grepster session...\tCtrl+N",
+                                               L"&New server stack...\tCtrl+Shift+N",
+                                               L"&Admin credentials...\tCtrl+Shift+C",
                                                L"&Launch PuTTY\tCtrl+P",
                                                L"&Set path to SSH/SFTP tools...",
-                                               L"&Toggle Floating Controls",
+                                               L"&Toggle floating controls",
                                                L"&About grepster..."};
 /** Status bar strings. These are the labels displayed for each menu item. */
-const wxString FRAME_STATUSBAR_STRINGS[]    = {L"Create a new grep job for the currently selected stack.",
-                                               L"Quit grepster.",
+const wxString FRAME_STATUSBAR_STRINGS[]    = {L"Quit grepster.",
+                                               L"Create a new session of configured server stacks for grepping and running remote commands.",
+                                               L"Create and add a new server stack to the current session.",
                                                L"Set the session's administrator credentials.",
                                                L"Launch PuTTY.",
                                                L"Set the default path to grepster's SSH/SFTP tools.",
-                                               L"Allow the server stack and console to be un-docked from grepster.",
+                                               L"Allow grepster's server stacks and console controls to be un-docked.",
                                                L"About grepster."};
 
 /** Menubar menu IDs. */
@@ -49,8 +51,9 @@ enum enum_FrameMenuIDs {
 
 /** Menu string IDs. */
 enum enum_MenuStringIDs {
-    FRAME_MENU_STRING_ID_NEW_JOB = 0,
-    FRAME_MENU_STRING_ID_QUIT,
+    FRAME_MENU_STRING_ID_QUIT = 0,
+    FRAME_MENU_STRING_ID_NEW_SESSION,
+    FRAME_MENU_STRING_ID_NEW_SERVER_STACK,
     FRAME_MENU_STRING_ID_DEFAULT_CREDENTIALS,
     FRAME_MENU_STRING_ID_LAUNCH_PUTTY,
     FRAME_MENU_STRING_ID_SET_PATH_TOOLS,
@@ -60,8 +63,9 @@ enum enum_MenuStringIDs {
 
 /** Status bar string IDs. */
 enum enum_StatusbarStringIDs {
-    STATUSBAR_STRING_ID_NEW_JOB = 0,
-    STATUSBAR_STRING_ID_QUIT,
+    STATUSBAR_STRING_ID_QUIT = 0,
+    STATUSBAR_STRING_ID_NEW_SESSION,
+    STATUSBAR_STRING_ID_NEW_SERVER_STACK,
     STATUSBAR_STRING_ID_DEFAULT_CREDENTIALS,
     STATUSBAR_STRING_ID_LAUNCH_PUTTY,
     STATUSBAR_STRING_ID_SET_PATH_TOOLS,
@@ -75,8 +79,9 @@ enum enum_MenuFunctionIDs {
      *              not get confused with what wxWidgets thinks should
      *              be the default action for enter. If it's too low,
      *              hitting enter could quit the application. */
-    MENU_FUNCTION_ID_FILE_NEW_JOB = 9000,
-    MENU_FUNCTION_ID_FILE_QUIT,
+    MENU_FUNCTION_ID_FILE_QUIT = 9000,
+    MENU_FUNCTION_ID_SESSION_NEW,
+    MENU_FUNCTION_ID_SESSION_NEW_SERVER_STACK,
     MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS,
     MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY,
     MENU_FUNCTION_ID_OPTIONS_SET_PATH_TOOLS,

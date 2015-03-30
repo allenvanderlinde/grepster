@@ -26,16 +26,19 @@ CAppMenubar::CAppMenubar()
     : wxMenuBar() {
     // File menu
     m_pMenuFile = new wxMenu;
-    m_pMenuFile->Append(MENU_FUNCTION_ID_FILE_NEW_JOB,
-                        FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_NEW_JOB],
-                        FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_NEW_JOB]);
-    m_pMenuFile->AppendSeparator();
     m_pMenuFile->Append(MENU_FUNCTION_ID_FILE_QUIT,
                         FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_QUIT],
                         FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_QUIT]);
 
     // Session menu
     m_pMenuSession = new wxMenu;
+    m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_NEW,
+                           FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_NEW_SESSION],
+                           FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_NEW_SESSION]);
+    m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_NEW_SERVER_STACK,
+                           FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_NEW_SERVER_STACK],
+                           FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_NEW_SERVER_STACK]);
+    m_pMenuSession->AppendSeparator();
     m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS,
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_DEFAULT_CREDENTIALS],
                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_DEFAULT_CREDENTIALS]);

@@ -1,3 +1,3 @@
-get /tmp/.avanderlinde/grep-test.txt "C:\Users\Arclain\Desktop\grep-test.txt"
-get /tmp/.avanderlinde/test.txt "C:\Users\Arclain\Desktop\test.txt"
+get /tmp/.avanderlinde/grep-test.txt "C:\Users\Vanallen\Desktop\grep-test.txt"
+get /tmp/.avanderlinde/test.txt "C:\Users\Vanallen\Desktop\test.txt"
 quit

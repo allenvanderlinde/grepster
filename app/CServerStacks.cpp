@@ -49,7 +49,8 @@ CServerStacks::CServerStacks(wxWindow* parentFrame)
     m_treeRoot = AddRoot(wxEmptyString);
     m_treeAdminItem = AppendItem(m_treeRoot, Configuration->Username());//SERVER_STACKS_DEFAULT_LABEL);
 
-    m_treeServerItem = AppendItem(m_treeAdminItem, L"blackboard-grepper");
+    // Default empty session upon starting
+    m_treeServerItem = AppendItem(m_treeAdminItem, L"empty");
 }
 
 /*
