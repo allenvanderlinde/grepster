@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <grepster>
-	<setting id="Username" value="root" />
+	<setting id="Username" value="avanderlinde" />
 	<setting id="ToggleFloating" value="false" />
 	<setting id="SSHTool" value="C:\Program Files (x86)\PuTTY\plink.exe" />
 	<setting id="SFTPTool" value="C:\Program Files (x86)\PuTTY\psftp.exe" />

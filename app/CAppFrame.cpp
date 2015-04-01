@@ -94,6 +94,8 @@ CAppFrame::~CAppFrame() {
     CAppFrame::AddServerStack
 */
 void CAppFrame::AddServerStack(wxCommandEvent& event) {
+    // Should some other central location handle this action for right-clicking from the tree control and the menu?
+
     /* Create a new file picker dialog to grab the .servers file
         to add to the current session's server stacks. */
     wxFileDialog* pServerStackSelect = new wxFileDialog(this, L"Server Stack Selection", DEFAULT_SERVER_STACKS_PATH, L"", L".SERVERS files (*.servers)|*.servers", wxFD_OPEN | wxFD_FILE_MUST_EXIST);
