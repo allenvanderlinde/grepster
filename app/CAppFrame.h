@@ -60,7 +60,6 @@ private:
     std::vector<std::thread>    m_Spawns;
 
     CAppMenubar*                m_pMenubar;
-
     wxStatusBar*                m_pStatusbar;
     wxAuiManager*               m_pAui;
 

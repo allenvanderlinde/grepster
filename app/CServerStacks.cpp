@@ -25,7 +25,7 @@
 wxBEGIN_EVENT_TABLE(CServerStacks, wxTreeCtrl)
     EVT_TREE_ITEM_ACTIVATED(wxID_ANY, CServerStacks::OpenScript)
 
-    EVT_TREE_ITEM_MENU(wxID_ANY, CServerStacks::ServerOptions)
+    EVT_TREE_ITEM_MENU(wxID_ANY, CServerStacks::PopupStackOptions)
 wxEND_EVENT_TABLE()
 
 
@@ -86,9 +86,9 @@ void CServerStacks::UpdateStacks() {
 }
 
 /*
-    CServerStacks::ServerOptions
+    CServerStacks::PopupStackOptions
 */
-void CServerStacks::ServerOptions(wxTreeEvent& event) {
+void CServerStacks::PopupStackOptions(wxTreeEvent& event) {
     wxMenu* pContext = new wxMenu();
     pContext->Append(wxID_ANY, L"string");
 

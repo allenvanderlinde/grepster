@@ -13,6 +13,9 @@
 #ifndef _CSERVERSTACKS_H_
 #define _CSERVERSTACKS_H_
 
+#include "../session/CAdminStack.h"
+
+
 #define SERVER_STACKS_DEFAULT_LABEL          "default"
 
 #define SERVER_STACKS_OPEN_SCRIPT            0x0B01
@@ -67,10 +70,12 @@ private:
      */
     std::vector<wxTreeItemId>   m_Servers;
 
+    std::vector<CAdminStack>    m_Stacks;   // will this be where the actual string vectors are kept? then updatestacks() can stay to calling only members?
+
     /**
-     * @brief       Context menu for an individual server.
+     * @brief       Context menu for an individual server stack.
      */
-    void ServerOptions(wxTreeEvent& event);
+    void PopupStackOptions(wxTreeEvent& event);
 
     /**
      * @brief       Initialize and call the primary object's event handler.

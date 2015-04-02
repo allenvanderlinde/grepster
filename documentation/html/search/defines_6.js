@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['grep_5fnotebook_5fctrl_5ftitle',['GREP_NOTEBOOK_CTRL_TITLE',['../grepster_8h.html#af3e5d57b661c402c7861ff8a2914aba7',1,'grepster.h']]],
-  ['grep_5fnotebook_5fdefault_5fheight',['GREP_NOTEBOOK_DEFAULT_HEIGHT',['../_c_grep_notebook_8h.html#a7c0bbd607b5b1bd620f8b89d7b646d5f',1,'CGrepNotebook.h']]],
-  ['grep_5fnotebook_5fdefault_5fwidth',['GREP_NOTEBOOK_DEFAULT_WIDTH',['../_c_grep_notebook_8h.html#ab1e6cbaa1802e09b17da2e48b0f62203',1,'CGrepNotebook.h']]],
-  ['grep_5fnotebook_5fid',['GREP_NOTEBOOK_ID',['../grepster_8h.html#a19eb389726e523e1180d22ff3c4cb405',1,'grepster.h']]],
-  ['grep_5fnotebook_5fname',['GREP_NOTEBOOK_NAME',['../grepster_8h.html#a5042f8607c80fb476c55b5e235c8616c',1,'grepster.h']]]
+  ['resid_5fpng_5fabout',['RESID_PNG_ABOUT',['../grepster__rc_8h.html#af17a2755e08232ebacc78edf545d5448',1,'grepster_rc.h']]],
+  ['resid_5fpng_5fcredentials',['RESID_PNG_CREDENTIALS',['../grepster__rc_8h.html#a4215bd8941968f33d03200c541f47f96',1,'grepster_rc.h']]],
+  ['resid_5fpng_5fsplash',['RESID_PNG_SPLASH',['../grepster__rc_8h.html#a806b6e806a03c79e28cb5245e5401eec',1,'grepster_rc.h']]],
+  ['resid_5fpng_5ftools',['RESID_PNG_TOOLS',['../grepster__rc_8h.html#a5e8c2153f4c5f4a4f578bf0cda7b56fd',1,'grepster_rc.h']]]
 ];

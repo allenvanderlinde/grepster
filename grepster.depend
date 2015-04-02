@@ -3177,14 +3177,14 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1427841172 c:\grepster\version.h
+1427934832 c:\grepster\version.h
 
 1427241688 c:\grepster\resources\grepster_rc.h
 
 1426736723 c:\grepster\app\cappentry.h
 	"CAppFrame.h"
 
-1427755809 c:\grepster\app\cappframe.h
+1427929647 c:\grepster\app\cappframe.h
 	"../grepster.h"
 	"CAppMenubar.h"
 
@@ -3200,10 +3200,11 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1427758542 source:c:\grepster\app\cappframe.cpp
+1427934151 source:c:\grepster\app\cappframe.cpp
 	"../precomp.h"
 	"../resources/grepster_rc.h"
 	"CAppFrame.h"
+	"../session/CAdminStack.h"
 	"../dialogs/CDialogChangeCredentials.h"
 	"../dialogs/CDialogSetPathToTools.h"
 
@@ -3307,7 +3308,7 @@
 
 1426736724 c:\grepster\session\cadminaccount.h
 
-1426736724 source:c:\grepster\session\cadminaccount.cpp
+1427933908 source:c:\grepster\session\cadminaccount.cpp
 	"../precomp.h"
 	"CAdminAccount.h"
 
@@ -3320,9 +3321,10 @@
 1427244266 c:\grepster\dialogs\cdialogchangecredentials.h
 	"../grepster.h"
 
-1427758463 c:\grepster\app\cserverstacks.h
+1427934828 c:\grepster\app\cserverstacks.h
+	"../session/CAdminStack.h"
 
-1427758572 source:c:\grepster\app\cserverstacks.cpp
+1427930157 source:c:\grepster\app\cserverstacks.cpp
 	"../precomp.h"
 	"../grepster.h"
 	"CAppFrame.h"
@@ -3482,4 +3484,11 @@
 	"CAdminServerStack.h"
 
 1427758846 c:\grepster\session\cadminserverstack.h
+
+1427934780 c:\grepster\session\cadminstack.h
+
+1427933831 source:c:\grepster\session\cadminstack.cpp
+	"../precomp.h"
+	"CAdminStack.h"
+	"../grepster.h"
 

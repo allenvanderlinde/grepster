@@ -16,6 +16,8 @@
 
 #include "CAppFrame.h"
 
+#include "../session/CAdminStack.h"
+
 #include "../dialogs/CDialogChangeCredentials.h"
 #include "../dialogs/CDialogSetPathToTools.h"
 
@@ -98,24 +100,25 @@ void CAppFrame::AddServerStack(wxCommandEvent& event) {
 
     /* Create a new file picker dialog to grab the .servers file
         to add to the current session's server stacks. */
-    wxFileDialog* pServerStackSelect = new wxFileDialog(this, L"Server Stack Selection", DEFAULT_SERVER_STACKS_PATH, L"", L".SERVERS files (*.servers)|*.servers", wxFD_OPEN | wxFD_FILE_MUST_EXIST);
+    wxFileDialog* pServerStackSelect = new wxFileDialog(this,
+                                                        L"Server Stack Selection",
+                                                        DEFAULT_SERVER_STACKS_PATH,
+                                                        L"",    // Starting path
+                                                        L".SERVERS files (*.servers)|*.servers",
+                                                        wxFD_OPEN | wxFD_FILE_MUST_EXIST);  // File must exist to be valid
     pServerStackSelect->CenterOnParent();
     if(pServerStackSelect->ShowModal() == wxID_CANCEL)
         pServerStackSelect->Destroy();
-    /* Open file and create a new CAdminServerStack object
-        to hold the server stack's IP addresses and other
-        information. */
-    static int nIPAddresses = 0;    // The number of addresses to add to CAdminServerStack's string vector
-    wxTextFile fileServerStack;
-    fileServerStack.Open(pServerStackSelect->GetPath());
+    else {
+        /* Open file and create a new CAdminStack object
+            to hold the server stack's hosts/IP addresses and other
+            information. */
+        static int nIPAddresses = 0;    // The number of hosts/addresses to add to CAdminStack's string vector
+        CAdminStack* pNewStack = new CAdminStack(pServerStackSelect->GetPath());
+        // put vector of CAdminStack in CServerStacks
 
-    // "name=" should always precede the name of a server stack in the .servers file
-    wxString szServerStackName = fileServerStack.GetFirstLine().Mid(5);
-
-    ServerStacks->SetItemText(ServerStacks->GetServerStackTreeItem(), szServerStackName);
-
-    /* Add the newly opened server stack to the control. */
-
+        /* Add the newly opened server stack to the control. */
+    }
 }
 
 /*

@@ -2,6 +2,8 @@ var searchData=
 [
   ['cadminaccount_2ecpp',['CAdminAccount.cpp',['../_c_admin_account_8cpp.html',1,'']]],
   ['cadminaccount_2eh',['CAdminAccount.h',['../_c_admin_account_8h.html',1,'']]],
+  ['cadminstack_2ecpp',['CAdminStack.cpp',['../_c_admin_stack_8cpp.html',1,'']]],
+  ['cadminstack_2eh',['CAdminStack.h',['../_c_admin_stack_8h.html',1,'']]],
   ['cappentry_2ecpp',['CAppEntry.cpp',['../_c_app_entry_8cpp.html',1,'']]],
   ['cappentry_2eh',['CAppEntry.h',['../_c_app_entry_8h.html',1,'']]],
   ['cappframe_2ecpp',['CAppFrame.cpp',['../_c_app_frame_8cpp.html',1,'']]],
@@ -16,10 +18,10 @@ var searchData=
   ['cdialogchangecredentials_2eh',['CDialogChangeCredentials.h',['../_c_dialog_change_credentials_8h.html',1,'']]],
   ['cdialogsetpathtotools_2ecpp',['CDialogSetPathToTools.cpp',['../_c_dialog_set_path_to_tools_8cpp.html',1,'']]],
   ['cdialogsetpathtotools_2eh',['CDialogSetPathToTools.h',['../_c_dialog_set_path_to_tools_8h.html',1,'']]],
-  ['cgrepnotebook_2ecpp',['CGrepNotebook.cpp',['../_c_grep_notebook_8cpp.html',1,'']]],
-  ['cgrepnotebook_2eh',['CGrepNotebook.h',['../_c_grep_notebook_8h.html',1,'']]],
   ['cserverstacks_2ecpp',['CServerStacks.cpp',['../_c_server_stacks_8cpp.html',1,'']]],
   ['cserverstacks_2eh',['CServerStacks.h',['../_c_server_stacks_8h.html',1,'']]],
+  ['csessionnotebook_2ecpp',['CSessionNotebook.cpp',['../_c_session_notebook_8cpp.html',1,'']]],
+  ['csessionnotebook_2eh',['CSessionNotebook.h',['../_c_session_notebook_8h.html',1,'']]],
   ['cwebviewer_2ecpp',['CWebViewer.cpp',['../_c_web_viewer_8cpp.html',1,'']]],
   ['cwebviewer_2eh',['CWebViewer.h',['../_c_web_viewer_8h.html',1,'']]]
 ];

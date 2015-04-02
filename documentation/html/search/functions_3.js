@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['emptypage',['EmptyPage',['../class_c_grep_notebook.html#a9280a4a2977e2ed4d5b60ffa26ff0166',1,'CGrepNotebook']]],
-  ['evt_5fmenu',['EVT_MENU',['../_c_app_frame_8cpp.html#a0b7106c57ba297720871639dfa8c50b2',1,'EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY) EVT_MENU(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS:&#160;CAppFrame.cpp'],['../_c_app_frame_8cpp.html#a4b1b00aa48ae25133e4db35ffa4c32c8',1,'EVT_MENU(MENU_FUNCTION_ID_OPTIONS_SET_PATH_TOOLS, CAppFrame::SetPathToTools) EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE:&#160;CAppFrame.cpp'],['../_c_app_frame_8cpp.html#a3abdbe3b8aa437f4a0dd97ea38d0252d',1,'EVT_MENU(MENU_FUNCTION_ID_HELP_ABOUT, CAppFrame::OnAbout) EVT_CLOSE(CAppFrame:&#160;CAppFrame.cpp']]]
+  ['emptypage',['EmptyPage',['../class_c_session_notebook.html#afe7489b97d53bf5a6324b7b749b96bb8',1,'CSessionNotebook']]],
+  ['evt_5fclose',['EVT_CLOSE',['../_c_app_frame_8cpp.html#a34c72713ecbd8074e6671e2460f20c39',1,'CAppFrame.cpp']]],
+  ['evt_5fmenu',['EVT_MENU',['../_c_app_frame_8cpp.html#aaceaeade9ca8036917cbee07153493de',1,'EVT_MENU(MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACK, CAppFrame::AddServerStack) EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY:&#160;CAppFrame.cpp'],['../_c_app_frame_8cpp.html#a89ac1d5ff394573d2bec41032ae6ef0c',1,'EVT_MENU(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS, CAppFrame::ChangeDefaultCredentials) EVT_MENU(MENU_FUNCTION_ID_OPTIONS_SET_PATH_TOOLS:&#160;CAppFrame.cpp'],['../_c_app_frame_8cpp.html#a0cb1eb51e3ad6a4d2d37f28bc2423620',1,'EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, CAppFrame::ToggleFloating) EVT_MENU(MENU_FUNCTION_ID_HELP_ABOUT:&#160;CAppFrame.cpp']]],
+  ['evt_5ftree_5fitem_5fmenu',['EVT_TREE_ITEM_MENU',['../_c_server_stacks_8cpp.html#a880a716db940aaa3e06d2ae306ca49f8',1,'CServerStacks.cpp']]]
 ];
