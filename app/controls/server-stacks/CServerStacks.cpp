@@ -51,15 +51,19 @@ CServerStacks::CServerStacks(wxWindow* parentFrame)
     m_treeAdminItem = AppendItem(m_treeRoot, Configuration->Username());
 
     // Default empty session upon starting
-    //InitializeStacks();
+    //AddServerStack(CAdminStack(EMPTY_STACK));
     //m_treeServerStack = AppendItem(m_treeAdminItem, L"empty");
 }
 
 /*
-    CServerStacks::InitializeStacks
+    CServerStacks::FindInStacks
 */
-void CServerStacks::InitializeStacks() {
-    m_Stacks.push_back(CAdminStack(L"empty"));
+int CServerStacks::FindInStacks(wxString str) {
+    wxArrayString Stacks;
+    for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
+        Stacks.Add(itr->Name());
+    }
+    return Stacks.Index(str);
 }
 
 /*
@@ -67,15 +71,10 @@ void CServerStacks::InitializeStacks() {
 */
 void CServerStacks::AddServerStack(CAdminStack serverStack) {
     m_Stacks.push_back(serverStack);
-    // Note: Might need to change this to be a more dynamic selection.
-    size_t nCurrentStack = m_Stacks.size() - 1;
-    wxTreeItemId newStack = AppendItem(m_treeAdminItem, m_Stacks[nCurrentStack].Name());;
-
-    //m_treeStackRoots.push_back(AppendItem(m_treeAdminItem, m_Stacks[nCurrentStack].Name()));
-
+    wxTreeItemId newStack = AppendItem(m_treeAdminItem, serverStack.Name());;
     /* Build host/IP list from server stack. */
-    for(int i = 0; i < m_Stacks[nCurrentStack].Size(); i++)
-        m_treeIPItems.push_back(AppendItem(newStack, m_Stacks[nCurrentStack].IP(i)));
+    for(int i = 0; i < serverStack.Size(); i++)
+        m_treeIPItems.push_back(AppendItem(newStack, serverStack.IP(i)));
     if(IsExpanded(m_treeAdminItem) == false)
         Expand(m_treeAdminItem);
     Expand(newStack);    // Expand the newly added stack

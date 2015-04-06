@@ -37,11 +37,6 @@ public:
     wxAuiPaneInfo GetPaneInfo() { return m_serverStacksInf_t; }
 
     /**
-     * @brief       Initializes server stacks members if empty in current session.
-     */
-    void InitializeStacks();
-
-    /**
      * @brief       Add a built CAdminStack to the tree control for user interaction.
      * @param[in]   serverStack CAdminStack object from which CServerStacks builds its tree items.
      */
@@ -52,6 +47,14 @@ public:
      * @retval      std::vector<CAdminStack> The vector of server stacks in the current session.
      */
     std::vector<CAdminStack> GetStacks() { return m_Stacks; }
+
+    /**
+     * @brief       Look for a match in the current list of server stacks.
+     * @param[in]   str String of server stack name to look for in current list.
+     * @retval      int The index in the current list where the string is. This
+     *              can also be wxNOT_FOUND as it uses a temporary wxArrayString.
+     */
+    int FindInStacks(wxString);
 
     /**
      * @brief       Open the currently selected item from the server stack.

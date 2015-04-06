@@ -13,6 +13,7 @@
 #ifndef _CADMINSTACK_H_
 #define _CADMINSTACK_H_
 
+
 /**
  * This object represents a user's stack or list of hosts or
  * IP addresses in strings to be passed to the SSH/SFTP

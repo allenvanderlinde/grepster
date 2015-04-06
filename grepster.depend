@@ -3177,7 +3177,7 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1428293479 c:\grepster\version.h
+1428342427 c:\grepster\version.h
 
 1427241688 c:\grepster\resources\grepster_rc.h
 
@@ -3200,7 +3200,7 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1428293479 source:c:\grepster\app\cappframe.cpp
+1428342426 source:c:\grepster\app\cappframe.cpp
 	"../precomp.h"
 	"../resources/grepster_rc.h"
 	"CAppFrame.h"
@@ -3485,9 +3485,9 @@
 
 1427758846 c:\grepster\session\cadminserverstack.h
 
-1428107662 c:\grepster\session\cadminstack.h
+1428341177 c:\grepster\session\cadminstack.h
 
-1428289206 source:c:\grepster\session\cadminstack.cpp
+1428341162 source:c:\grepster\session\cadminstack.cpp
 	"../precomp.h"
 	"CAdminStack.h"
 	"../grepster.h"
@@ -3557,7 +3557,7 @@
 	"../../grepster.h"
 	"CWebViewer.h"
 
-1428293059 c:\grepster\app\controls\server-stacks\cserverstacks.h
+1428339974 c:\grepster\app\controls\server-stacks\cserverstacks.h
 	"../../../session/CAdminStack.h"
 
 1428278591 c:\grepster\app\controls\session-notebook\csessionnotebook.h
@@ -3565,7 +3565,7 @@
 
 1427242828 c:\grepster\app\web-viewer\cwebviewer.h
 
-1428289941 source:c:\grepster\app\controls\server-stacks\cserverstacks.cpp
+1428340131 source:c:\grepster\app\controls\server-stacks\cserverstacks.cpp
 	"../../../precomp.h"
 	"../../../grepster.h"
 	"../../CAppFrame.h"
