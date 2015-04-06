@@ -52,7 +52,7 @@ private:
     wxAuiPaneInfo m_consoleInf_t;
 
     /**
-     * @brief       Initialize and call the primary object's event handler.
+     * @brief       Initialize and call the object's event handler.
      */
     //wxDECLARE_EVENT_TABLE();
 };

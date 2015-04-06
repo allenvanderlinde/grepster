@@ -13,7 +13,7 @@
 #ifndef _CGREPNOTEBOOK_H
 #define _CGREPNOTEBOOK_H
 
-#include "../webviewer/CWebViewer.h"
+#include "../../web-viewer/CWebViewer.h"
 
 
 /* Note: These are defined here but not actually relevant because
@@ -58,7 +58,7 @@ private:
 
 
     /**
-     * @brief       Initialize and call the primary object's event handler.
+     * @brief       Initialize and call the object's event handler.
      */
     wxDECLARE_EVENT_TABLE();
 };

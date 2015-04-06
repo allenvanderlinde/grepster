@@ -35,6 +35,19 @@ public:
      */
     int Size() { return (int)m_Hosts.size(); }
 
+    /**
+     * @brief       Return the name of this stack.
+     * @retval      wxString The name of this stack as loaded from file.
+     */
+    wxString Name() { return m_szServerStackName; }
+
+    /**
+     * @brief       Return's the string of the host/IP address at the current index.
+     * @param[in]   index The location of the m_Hosts vector to get the string from.
+     * @retval      wxString The string form of the chosen host/IP address.
+     */
+    wxString IP(int index) { return m_Hosts[index]; }
+
 private:
     wxString        m_szFilePath;
     wxString        m_szServerStackName;

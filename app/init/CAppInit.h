@@ -13,7 +13,7 @@
 #ifndef _CAPPINIT_H_
 #define _CAPPINIT_H_
 
-#include "../session/CAdminAccount.h"
+#include "../../session/CAdminAccount.h"
 
 
 /** XML global definitions. */

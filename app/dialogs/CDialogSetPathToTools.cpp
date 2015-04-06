@@ -10,12 +10,12 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
-#include "../precomp.h"
+#include "../../precomp.h"
 
-#include "../resources/grepster_rc.h"
+#include "../../resources/grepster_rc.h"
 
 #include "CDialogSetPathToTools.h"
-#include "../app/CAppFrame.h"
+#include "../CAppFrame.h"
 
 
 /* The dialog's event handler calls. */

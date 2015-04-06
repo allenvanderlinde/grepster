@@ -18,8 +18,8 @@
 
 #include "../session/CAdminStack.h"
 
-#include "../dialogs/CDialogChangeCredentials.h"
-#include "../dialogs/CDialogSetPathToTools.h"
+#include "dialogs/CDialogChangeCredentials.h"
+#include "dialogs/CDialogSetPathToTools.h"
 
 
 /* grepster's primary frame's event handler calls. */
@@ -96,8 +96,6 @@ CAppFrame::~CAppFrame() {
     CAppFrame::AddServerStack
 */
 void CAppFrame::AddServerStack(wxCommandEvent& event) {
-    // Should some other central location handle this action for right-clicking from the tree control and the menu?
-
     /* Create a new file picker dialog to grab the .servers file
         to add to the current session's server stacks. */
     wxFileDialog* pServerStackSelect = new wxFileDialog(this,
@@ -105,19 +103,118 @@ void CAppFrame::AddServerStack(wxCommandEvent& event) {
                                                         DEFAULT_SERVER_STACKS_PATH,
                                                         L"",    // Starting path
                                                         L".SERVERS files (*.servers)|*.servers",
-                                                        wxFD_OPEN | wxFD_FILE_MUST_EXIST);  // File must exist to be valid
+                                                        wxFD_OPEN | wxFD_FILE_MUST_EXIST | wxFD_MULTIPLE);  // File must exist to be valid
     pServerStackSelect->CenterOnParent();
     if(pServerStackSelect->ShowModal() == wxID_CANCEL)
         pServerStackSelect->Destroy();
     else {
         /* Open file and create a new CAdminStack object
             to hold the server stack's hosts/IP addresses and other
-            information. */
-        static int nIPAddresses = 0;    // The number of hosts/addresses to add to CAdminStack's string vector
-        CAdminStack* pNewStack = new CAdminStack(pServerStackSelect->GetPath());
-        // put vector of CAdminStack in CServerStacks
+            information. This will also build the list in the tree control. */
+        wxArrayString FilePaths;
+        pServerStackSelect->GetPaths(FilePaths);
+        /* Check to see if this is the first stack of the session. */
+        //if(ServerStacks->GetStacks().empty()) {
+            /* Initialize the "empty" stack's strings so that the following string
+                comparisons don't fail. */
+        //}
+        /* Take a snapshot of the current server stacks tree. */
+        //std::vector<CAdminStack> stacks = ServerStacks->GetStacks();
 
-        /* Add the newly opened server stack to the control. */
+        wxTextFile file;
+        wxArrayString StackStrings;
+        for(int i = 0; i < ServerStacks->Count(); i++) {
+            StackStrings.Add(ServerStacks->GetStacks()[i].Name());
+        }
+
+        /*
+        std::vector<bool> MatchList;  // List to check if the file contains a stack that is already open.
+
+        for(int i = 0; i < FilePaths.GetCount(); i++) {
+            file.Open(FilePaths[i]);
+            szStackName = file.GetFirstLine();
+            for(int j = 0; j < (int)ServerStacks->GetStacks().size(); j++) {
+                if(szStackName.IsSameAs(ServerStacks->GetStacks()[j]))
+                    MatchList.push_back(true);
+                else MatchList.push_back(false);
+            }
+            for(int h = 0; h < (int)MatchList.size(); j++) {
+
+            }
+
+        }
+
+        for(int i = 0; i < (int)ServerStacks->GetStacks().size(); i++) {
+            if(!bCanBuild)
+                break;
+            for(int j = 0; j < pszFilePaths.GetCount(); j++) {
+                file.Open(pszFilePaths[i]);
+                szStackName = file.GetFirstLine();
+                if(ServerStacks->GetStacks()[i].Name().IsSameAs(szStackName)) {
+                    file.Close();
+                    bCanBuild = false;
+                    break;
+                }
+            }
+        }
+        ServerStacks->AddServerStack(CAdminStack(psz))
+
+        /*
+        wxTextFile file;
+        wxString szStackName;
+        bool bCanBuild = false;
+        for(int i = 0; i < pszFilePaths.GetCount(); i++) {
+            file.Open(pszFilePaths[i]);
+            szStackName = file.GetFirstLine();
+            for(int j = 0; j < (int)ServerStacks->GetStacks().size(); j++) {
+                if(!szStackName.IsSameAs(ServerStacks->GetStacks()[j].Name()))
+                    bCanBuild = true;
+                else if(szStackName.IsSameAs(ServerStacks->GetStacks()[j].Name()))
+                    bCanBuild = false;
+            }
+            if(bCanBuild)
+                ServerStacks->AddServerStack(CAdminStack(pszFilePaths[i]));
+            file.Close();
+        }
+        */
+
+        /*
+        bool bNewStack = false;
+        for(int i = 0; i < pszFilePaths.GetCount(); i++) {
+            //CAdminStack newStack(pszFilePaths[i]);
+            for(int j = 0; j < ServerStacks->GetStacks().size(); j++) {
+                if(newStack.Name().IsSameAs(stacks[j].Name())) {
+                    //ServerStacks->AddServerStack(newStack);
+                }
+            }
+            CAdminStack newStack(pszFilePaths[i]);
+            //if(newStack.Name().IsSameAs(stacks[i].Name())) { // If the stack doesn't already exist in the session, add it
+            ServerStacks->AddServerStack(newStack);
+            if(newStack.Name().IsSameAs(stacks[i].Name())) {
+                wxMessageBox("match", newStack.Name(), wxOK);
+            }
+                //wxMessageBox(L"match", L"Match", wxOK);
+            //}
+        }
+        */
+        //}
+        /*
+        if(&(ServerStacks->GetStacks()) != nullptr) {
+            for(int i = 0; i < (int)pszFilePaths.GetCount(); i++) {
+                CAdminStack newStack(pszFilePaths[i]);
+                //auto itr = pszFilePaths.begin(); itr != pszFilePaths.end(); ++itr) {
+                //if(!ServerStacks->GetStacks()[i].Name().IsSameAs(newStack.Name()))
+                    //ServerStacks->AddServerStack(newStack);
+                CAdminStack currentStack(ServerStacks->GetStacks()[i]);
+                //if((ServerStacks->GetStacks()[i]).Name.IsSameAs(newStack.Name())) {
+                if(currentStack.Name().IsSameAs(newStack.Name()))
+                    wxMessageBox(L"match", L"match", wxOK);
+                //}
+                ServerStacks->AddServerStack(newStack);
+            }
+        }
+        */
+        //ServerStacks->AddServerStack(CAdminStack(pServerStackSelect->GetPath()));
     }
 }
 

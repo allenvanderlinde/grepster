@@ -10,10 +10,10 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
-#ifndef _CDialogSetPathToTools_H_
-#define _CDialogSetPathToTools_H_
+#ifndef _CDIALOGSETPATHTOTOOLS_H_
+#define _CDIALOGSETPATHTOTOOLS_H_
 
-#include "../grepster.h"
+#include "../../grepster.h"
 
 
 /**
@@ -65,7 +65,7 @@ private:
     void OnOK(wxCommandEvent& event);
 
     /**
-     * @brief       Initialize and call the primary object's event handler.
+     * @brief       Initialize and call the object's event handler.
      */
     wxDECLARE_EVENT_TABLE();
 };

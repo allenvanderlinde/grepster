@@ -13,10 +13,10 @@
 #ifndef _GREPSTER_H_
 #define _GREPSTER_H_
 
-#include "app/CConsole.h"
-#include "app/CServerStacks.h"
-#include "app/CSessionNotebook.h"
-#include "app/CAppInit.h"
+#include "app/controls/console/CConsole.h"
+#include "app/controls/server-stacks/CServerStacks.h"
+#include "app/controls/session-notebook/CSessionNotebook.h"
+#include "app/init/CAppInit.h"
 
 #include "version.h"
 
@@ -104,7 +104,7 @@ std::string SpawnAndRun(wxString path,
 /** grepster's console's control title. */
 #define CONSOLE_CTRL_TITLE                  L"Console"
 /** Default height (pixels) of grepster's console control used when floating. */
-#define CONSOLE_DEFAULT_HEIGHT              140
+#define CONSOLE_DEFAULT_HEIGHT              200
 
 /* Server Stacks tree control settings. */
 /** grepster's server stack's control ID. */
@@ -114,7 +114,7 @@ std::string SpawnAndRun(wxString path,
 /** grepster's server stack's control title. */
 #define SERVER_STACKS_CTRL_TITLE            L"Server Stacks"
 /** Default width (pixels) of grepster's tree list control used when floating. */
-#define SERVER_STACKS_DEFAULT_WIDTH         200
+#define SERVER_STACKS_DEFAULT_WIDTH         240
 
 /* Session Notebook control settings. */
 /** grepster's AUI notebook control ID. */

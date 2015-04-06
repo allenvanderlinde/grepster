@@ -97,21 +97,25 @@
 		<Unit filename="app/CAppEntry.h" />
 		<Unit filename="app/CAppFrame.cpp" />
 		<Unit filename="app/CAppFrame.h" />
-		<Unit filename="app/CAppInit.cpp" />
-		<Unit filename="app/CAppInit.h" />
-		<Unit filename="app/CAppMenubar.cpp" />
-		<Unit filename="app/CAppMenubar.h" />
-		<Unit filename="app/CConsole.cpp" />
-		<Unit filename="app/CConsole.h" />
-		<Unit filename="app/CServerStacks.cpp" />
-		<Unit filename="app/CServerStacks.h" />
-		<Unit filename="app/CSessionNotebook.cpp" />
-		<Unit filename="app/CSessionNotebook.h" />
-		<Unit filename="app/MenubarProperties.h" />
-		<Unit filename="dialogs/CDialogChangeCredentials.cpp" />
-		<Unit filename="dialogs/CDialogChangeCredentials.h" />
-		<Unit filename="dialogs/CDialogSetPathToTools.cpp" />
-		<Unit filename="dialogs/CDialogSetPathToTools.h" />
+		<Unit filename="app/controls/console/CConsole.cpp" />
+		<Unit filename="app/controls/console/CConsole.h" />
+		<Unit filename="app/controls/server-stacks/CServerStacks.cpp" />
+		<Unit filename="app/controls/server-stacks/CServerStacks.h" />
+		<Unit filename="app/controls/session-notebook/CSessionNotebook.cpp" />
+		<Unit filename="app/controls/session-notebook/CSessionNotebook.h" />
+		<Unit filename="app/dialogs/CDialogChangeCredentials.cpp" />
+		<Unit filename="app/dialogs/CDialogChangeCredentials.h" />
+		<Unit filename="app/dialogs/CDialogSetPathToTools.cpp" />
+		<Unit filename="app/dialogs/CDialogSetPathToTools.h" />
+		<Unit filename="app/init/CAppInit.cpp" />
+		<Unit filename="app/init/CAppInit.h" />
+		<Unit filename="app/menubar/CAppMenubar.cpp" />
+		<Unit filename="app/menubar/CAppMenubar.h" />
+		<Unit filename="app/menubar/MenubarProperties.h" />
+		<Unit filename="app/menus/CCMenuStack.cpp" />
+		<Unit filename="app/menus/CCMenuStack.h" />
+		<Unit filename="app/web-viewer/CWebViewer.cpp" />
+		<Unit filename="app/web-viewer/CWebViewer.h" />
 		<Unit filename="grepster.cpp" />
 		<Unit filename="grepster.h" />
 		<Unit filename="precomp.h">
@@ -130,8 +134,6 @@
 		<Unit filename="session/CAdminStack.cpp" />
 		<Unit filename="session/CAdminStack.h" />
 		<Unit filename="version.h" />
-		<Unit filename="webviewer/CWebViewer.cpp" />
-		<Unit filename="webviewer/CWebViewer.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

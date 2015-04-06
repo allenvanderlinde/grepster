@@ -13,12 +13,7 @@
 #ifndef _CSERVERSTACKS_H_
 #define _CSERVERSTACKS_H_
 
-#include "../session/CAdminStack.h"
-
-
-#define SERVER_STACKS_DEFAULT_LABEL          "default"
-
-#define SERVER_STACKS_OPEN_SCRIPT            0x0B01
+#include "../../../session/CAdminStack.h"
 
 
 /**
@@ -42,43 +37,68 @@ public:
     wxAuiPaneInfo GetPaneInfo() { return m_serverStacksInf_t; }
 
     /**
-     * @brief       Get the chosen server stack's tree item.
-     * @retval      wxTreeItemId Object which holds the tree item.
+     * @brief       Initializes server stacks members if empty in current session.
      */
-    wxTreeItemId GetServerStackTreeItem() { return m_treeServerStack; }
+    void InitializeStacks();
 
     /**
-     * @brief       Open the currently selected user script from the Server Stack into a new page.
+     * @brief       Add a built CAdminStack to the tree control for user interaction.
+     * @param[in]   serverStack CAdminStack object from which CServerStacks builds its tree items.
      */
-    void OpenScript(wxTreeEvent &event);
+    void AddServerStack(CAdminStack serverStack);
+
+    /**
+     * @brief       Return the vector of server stacks.
+     * @retval      std::vector<CAdminStack> The vector of server stacks in the current session.
+     */
+    std::vector<CAdminStack> GetStacks() { return m_Stacks; }
+
+    /**
+     * @brief       Open the currently selected item from the server stack.
+     */
+    void OpenItem(wxTreeEvent &event);
 
     /**
      * @brief       Update the current tree control associated with the administrator after configuration and server changes.
      */
     void UpdateStacks();
 
+    /**
+     * @brief       Return the number of stacks in the control.
+     * @retval      int The number of stacks currently added to the control in the session.
+     */
+    int Count() { return (int)m_Stacks.size(); }
+
+    /**
+     * @brief       Close the currently selected stack.
+     * @param[in]   name This is the identifying string of the selected stack.
+     */
+    void CloseStack(wxString name);
+
 private:
     wxTreeItemId    m_treeRoot;
+    /** @brief      This tree item will be replaced with the administrator's username. */
     wxTreeItemId    m_treeAdminItem;
-
-    wxTreeItemId    m_treeServerStack;
 
     wxAuiPaneInfo   m_serverStacksInf_t;
 
+    /** @brief      Vector of server stack roots for tree control. */
+    //std::vector<wxTreeItemId>   m_treeStackRoots;
     /** @brief      Vector of tree items each representing one of the
      *              user's servers to run grep on.
      */
-    std::vector<wxTreeItemId>   m_Servers;
-
+    std::vector<wxTreeItemId>   m_treeIPItems;
+    /** @brief      Vector of CAdminStack from which the tree control builds its server list. */
     std::vector<CAdminStack>    m_Stacks;   // will this be where the actual string vectors are kept? then updatestacks() can stay to calling only members?
 
     /**
      * @brief       Context menu for an individual server stack.
      */
+     //RENAME this ContextMenu() to be more general??
     void PopupStackOptions(wxTreeEvent& event);
 
     /**
-     * @brief       Initialize and call the primary object's event handler.
+     * @brief       Initialize and call the object's event handler.
      */
     wxDECLARE_EVENT_TABLE();
 };

@@ -14,10 +14,10 @@
 #define _CAPPFRAME_H_
 
 #include "../grepster.h"
-#include "CAppMenubar.h"
+#include "menubar/CAppMenubar.h"
 
-#define FRAME_WIDTH                     1024
-#define FRAME_HEIGHT                    680
+#define FRAME_WIDTH                     1280
+#define FRAME_HEIGHT                    720
 
 #define BG_COLOR                        "#e1e6f6"
 
@@ -29,7 +29,7 @@
 
 #define ABOUT_INFORMATION               L"Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster acts as an interface to SSH and SFTP tools for system administrators to easily grep logs and execute remote commands from a centralized utility.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details."
 
-#define DEFAULT_SERVER_STACKS_PATH      L"C:\\grepster\\serverstacks\\"
+#define DEFAULT_SERVER_STACKS_PATH      L"C:\\grepster\\stacks\\"
 
 
 /**
@@ -61,6 +61,8 @@ private:
 
     CAppMenubar*                m_pMenubar;
     wxStatusBar*                m_pStatusbar;
+    /** @brief      wxWidgets' advanced UI manager. This object gives more
+     *              options for widget appearance and customization. */
     wxAuiManager*               m_pAui;
 
     /**

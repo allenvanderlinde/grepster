@@ -12,12 +12,12 @@
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
-#include "../precomp.h"
+#include "../../../precomp.h"
 
-#include "../grepster.h"
+#include "../../../grepster.h"
 
-#include "CSessionNotebook.h"
-#include "CAppFrame.h"
+#include "../session-notebook/CSessionNotebook.h"
+#include "../../CAppFrame.h"
 
 
 /* Construct the Session Notebook's event handler calls. */
