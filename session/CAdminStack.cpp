@@ -27,7 +27,7 @@ CAdminStack::CAdminStack(wxString filePath) {
         current session. */
     m_szFilePath = filePath;
     /* Open the text file at the given path and read
-        its list of hosts/IP addresses. The file should be
+        its list of servers. The file should be
         guaranteed to exist by this point. */
     wxTextFile file;
     file.Open(filePath);
@@ -40,7 +40,7 @@ CAdminStack::CAdminStack(wxString filePath) {
     while(!file.Eof()) {
         szHost = file.GetNextLine();
         if(!szHost.IsEmpty()) {
-            m_Hosts.push_back(szHost);
+            m_Servers.push_back(szHost);
             *Console << L"\nServer: " + szHost;
         }
     }
@@ -48,4 +48,18 @@ CAdminStack::CAdminStack(wxString filePath) {
     /* Write some basic information to the console. */
     *Console << L"\nNumber of servers in stack: " + wxString::Format(L"%i", Size());
     *Console << L"\n";
+}
+
+/*
+    CAdminStack::RemoveServer
+*/
+void CAdminStack::RemoveServer(wxString name) {
+    /* Find the matching server in the vector
+        and remove it. */
+    for(auto itr = m_Servers.begin(); itr != m_Servers.end(); ++itr) {
+        if(name.IsSameAs(*itr)) {
+            m_Servers.erase(itr);
+            return;
+        }
+    }
 }

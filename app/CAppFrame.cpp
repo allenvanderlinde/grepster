@@ -114,7 +114,6 @@ void CAppFrame::AddServerStack(wxCommandEvent& event) {
         /* Check to see if the selected server stacks are already added to the session
             by doing a simple search in the current list. */
         for(auto itr = FilePaths.begin(); itr != FilePaths.end(); ++itr) {  /* Compare the current server stack list to each saved stack in file. */
-            int nFound; // A value of wxNOT_FOUND means the stack can be added to the list
             if(ServerStacks->GetStacks().empty()) {   // If the server stacks are empty, add the new stack
                 CAdminStack newStack(*itr);
                 ServerStacks->AddServerStack(newStack);
@@ -124,6 +123,12 @@ void CAppFrame::AddServerStack(wxCommandEvent& event) {
             }
             else {
                 CAdminStack newStack(*itr); // Build stack from file
+                //
+                // NOTE: Need to have way to load the stack when a server is removed from the original
+                // which is already in the session!
+                //
+                // NOTE: Need to have way to remove the stack when its last server is removed.
+                //
                 if(ServerStacks->FindInStacks(newStack.Name()) == wxNOT_FOUND) {    // If the stack isn't already added to the session
                     ServerStacks->AddServerStack(newStack); // Add the new stack to the server stacks control
                     Console->BlueText();

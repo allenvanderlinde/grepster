@@ -2,7 +2,9 @@
  * @file    CAdminStack.h
  * @author  Allen Vanderlinde
  * @date    March 30, 2015
- * @brief   Object which holds the strings of hosts or IP addresses to grep in and/or run a remote command from.
+ * @brief   Object which holds the strings of servers to grep in and/or run a remote command from.
+ *          The strings are then passed as part of a user-defined command string to the selected
+ *          SSH/SFTP tools.
  */
 /*
     Copyright (C) 2014-2015 by Allen Vanderlinde.
@@ -15,9 +17,8 @@
 
 
 /**
- * This object represents a user's stack or list of hosts or
- * IP addresses in strings to be passed to the SSH/SFTP
- * tools.
+ * This object represents a user's stack of server IP addresses
+ * in strings to be passed to the SSH/SFTP tools.
  *
  * @class   CAdminStack
  * @brief   Class definition for grepster's server stack data object.
@@ -32,9 +33,9 @@ public:
 
     /**
      * @brief       Return the size of the server stack.
-     * @retval      int The number of entries in the string vector of hosts.
+     * @retval      int The number of entries in the string vector of servers.
      */
-    int Size() { return (int)m_Hosts.size(); }
+    int Size() { return (int)m_Servers.size(); }
 
     /**
      * @brief       Return the name of this stack.
@@ -43,18 +44,24 @@ public:
     wxString Name() { return m_szServerStackName; }
 
     /**
-     * @brief       Return's the string of the host/IP address at the current index.
-     * @param[in]   index The location of the m_Hosts vector to get the string from.
-     * @retval      wxString The string form of the chosen host/IP address.
+     * @brief       Return's the string of the server at the current index.
+     * @param[in]   index The location of the string in the m_Servers vector.
+     * @retval      wxString The string of the chosen server.
      */
-    wxString IP(int index) { return m_Hosts[index]; }
+    wxString IP(int index) { return m_Servers[index]; }
+
+    /**
+     * @brief       Remove the server string from the vector.
+     * @param[in]   name The string of the server to remove from the m_Servers vector.
+     */
+    void RemoveServer(wxString name);
 
 private:
     wxString        m_szFilePath;
     wxString        m_szServerStackName;
 
-    /** @brief      String vector for holding list of hosts/IP addresses. */
-    std::vector<wxString>       m_Hosts;
+    /** @brief      String vector for holding list of servers. */
+    std::vector<wxString>       m_Servers;
 };
 
 #endif // _CADMINSTACK_H_

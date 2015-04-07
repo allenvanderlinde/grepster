@@ -78,6 +78,13 @@ public:
      */
     void CloseStack(wxString name);
 
+    /**
+     * @brief       Remove the currently selected server from its stack.
+     * @param[in]   name This is the identifying string of the selected server.
+     * @param[in]   parent This is the string of the server's parent stack.
+     */
+    void RemoveServer(wxString name, wxString parent);
+
 private:
     wxTreeItemId    m_treeRoot;
     /** @brief      This tree item will be replaced with the administrator's username. */
@@ -85,19 +92,13 @@ private:
 
     wxAuiPaneInfo   m_serverStacksInf_t;
 
-    /** @brief      Vector of server stack roots for tree control. */
-    //std::vector<wxTreeItemId>   m_treeStackRoots;
-    /** @brief      Vector of tree items each representing one of the
-     *              user's servers to run grep on.
-     */
-    //std::vector<wxTreeItemId>   m_treeIPItems;
     /** @brief      Vector of CAdminStack from which the tree control builds its server list. */
     std::vector<CAdminStack>    m_Stacks;   // will this be where the actual string vectors are kept? then updatestacks() can stay to calling only members?
 
     /**
      * @brief       Context menu for an individual server stack.
      */
-    void PopupStackOptions(wxTreeEvent& event);
+    void ContextMenu(wxTreeEvent& event);
 
     /**
      * @brief       Initialize and call the object's event handler.

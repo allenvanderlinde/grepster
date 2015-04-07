@@ -18,6 +18,7 @@
 
 #include "../../CAppFrame.h"
 #include "../../menus/CCMenuStack.h"
+#include "../../menus/CCMenuServer.h"
 #include "../server-stacks/CServerStacks.h"
 #include "../../web-viewer/CWebViewer.h"
 
@@ -26,7 +27,7 @@
 wxBEGIN_EVENT_TABLE(CServerStacks, wxTreeCtrl)
     EVT_TREE_ITEM_ACTIVATED(wxID_ANY, CServerStacks::OpenItem)
     // User right-clicks on an item to access its contextual menu
-    EVT_TREE_ITEM_RIGHT_CLICK(wxID_ANY, CServerStacks::PopupStackOptions)
+    EVT_TREE_ITEM_RIGHT_CLICK(wxID_ANY, CServerStacks::ContextMenu)
 wxEND_EVENT_TABLE()
 
 
@@ -72,12 +73,12 @@ int CServerStacks::FindInStacks(wxString str) {
 void CServerStacks::AddServerStack(CAdminStack serverStack) {
     m_Stacks.push_back(serverStack);
     wxTreeItemId newStack = AppendItem(m_treeAdminItem, serverStack.Name());;
-    /* Build host/IP list from server stack. */
+    /* Build server list from server stack. */
     for(int i = 0; i < serverStack.Size(); i++)
         AppendItem(newStack, serverStack.IP(i));
     if(IsExpanded(m_treeAdminItem) == false)
         Expand(m_treeAdminItem);
-    Expand(newStack);    // Expand the newly added stack
+    //Expand(newStack);    // Expand the newly added stack
 }
 
 /*
@@ -108,33 +109,30 @@ void CServerStacks::UpdateStacks() {
 }
 
 /*
-    CServerStacks::PopupStackOptions
+    CServerStacks::ContextMenu
 */
-void CServerStacks::PopupStackOptions(wxTreeEvent& event) {
-    SelectItem(event.GetItem());    // Make sure the item user selected is focused
-    wxString szItemText(GetItemText(event.GetItem()));    // Capture item's string that the user selected
-    CCMenuStack* contextMenu;  // Build menu object to display as the item's contextual menu
+void CServerStacks::ContextMenu(wxTreeEvent& event) {
+    wxTreeItemId item = event.GetItem();  // The control's selected tree item
+    SelectItem(item);    // Make sure the item user selected is focused
+    wxString szItemText(GetItemText(item));    // Capture item's string that the user selected
     /* Decide what menu options should be displayed
         depending upon what item is selected. */
     for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
-        if(szItemText.IsSameAs(itr->Name())) {  // If selecting a server stack root
-            /* Build menu. */
-            contextMenu = new CCMenuStack(szItemText);
-            PopupMenu(contextMenu);
-            break;
-        } else {    // Search through stack's host/IP list for a match
+        if(szItemText.IsSameAs(itr->Name())) {  // If selecting a server stack
+            CCMenuStack* menu = new CCMenuStack(szItemText);
+            PopupMenu(menu);
+            return;
+        } else {    // Check if a server was selected
+            wxString szServerText(GetItemText(GetItemParent(item)));
             for(int i = 0; i < itr->Size(); i++) {
-                if(szItemText.IsSameAs(itr->IP(i))) {
-                    // Need to write context menu for the host/IP items
-                    // contextMenu = new CCMenuStack(L"This is a host/IP address: " + szItemText);
-                    // PopupMenu(contextMenu);
-                    break;
+                if(szItemText.IsSameAs(itr->IP(i))) {   // If selecting a server
+                    CCMenuServer* menu = new CCMenuServer(szItemText, szServerText);
+                    PopupMenu(menu);
+                    return;
                 }
             }
         }
     }
-    if(&contextMenu != nullptr)
-        delete contextMenu;    // Clean up temporary menu
 }
 
 /*
@@ -145,10 +143,33 @@ void CServerStacks::CloseStack(wxString name) {
         name. */
     for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
         if(name.IsSameAs(itr->Name())) {
+            Console->BlueText();
+            *Console << L"\nClosing stack " + name + L".";
             m_Stacks.erase(itr);
-            break;
+            *Console << L"\nStack " + name + L" closed.\n";
+            Console->BlackText();
+            Delete(GetFocusedItem());
+            return;
         }
     }
-    //*/
-    Delete(GetFocusedItem());
+}
+
+/*
+    CServerStacks::RemoveServer
+*/
+void CServerStacks::RemoveServer(wxString name, wxString parent) {
+    /* Crawl through the server stacks and identify
+        by the server's parent, which server to
+        remove from which stack. */
+    for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
+        if(parent.IsSameAs(itr->Name())) {  // Found the parent stack
+            for(int i = 0; i < itr->Size(); i++) {
+                if(name.IsSameAs(itr->IP(i))) { // Found the server
+                    itr->RemoveServer(name);    // Remove the server from the corresponding stack object
+                    Delete(GetFocusedItem());
+                    return;
+                }
+            }
+        }
+    }
 }
