@@ -26,7 +26,7 @@
 wxBEGIN_EVENT_TABLE(CServerStacks, wxTreeCtrl)
     EVT_TREE_ITEM_ACTIVATED(wxID_ANY, CServerStacks::OpenItem)
     // User right-clicks on an item to access its contextual menu
-    EVT_TREE_ITEM_MENU(wxID_ANY, CServerStacks::PopupStackOptions)
+    EVT_TREE_ITEM_RIGHT_CLICK(wxID_ANY, CServerStacks::PopupStackOptions)
 wxEND_EVENT_TABLE()
 
 
@@ -74,7 +74,7 @@ void CServerStacks::AddServerStack(CAdminStack serverStack) {
     wxTreeItemId newStack = AppendItem(m_treeAdminItem, serverStack.Name());;
     /* Build host/IP list from server stack. */
     for(int i = 0; i < serverStack.Size(); i++)
-        m_treeIPItems.push_back(AppendItem(newStack, serverStack.IP(i)));
+        AppendItem(newStack, serverStack.IP(i));
     if(IsExpanded(m_treeAdminItem) == false)
         Expand(m_treeAdminItem);
     Expand(newStack);    // Expand the newly added stack
@@ -111,7 +111,8 @@ void CServerStacks::UpdateStacks() {
     CServerStacks::PopupStackOptions
 */
 void CServerStacks::PopupStackOptions(wxTreeEvent& event) {
-    wxString szItemText(GetItemText(event.GetItem()));    // Capture item's string that the user right-clicked on
+    SelectItem(event.GetItem());    // Make sure the item user selected is focused
+    wxString szItemText(GetItemText(event.GetItem()));    // Capture item's string that the user selected
     CCMenuStack* contextMenu;  // Build menu object to display as the item's contextual menu
     /* Decide what menu options should be displayed
         depending upon what item is selected. */
@@ -119,17 +120,15 @@ void CServerStacks::PopupStackOptions(wxTreeEvent& event) {
         if(szItemText.IsSameAs(itr->Name())) {  // If selecting a server stack root
             /* Build menu. */
             contextMenu = new CCMenuStack(szItemText);
-            //pContext->Append(wxID_ANY, L"This is a server stack root: " + szItemText);
-            PopupMenu(contextMenu);    // Display the contextual menu
-            break;//return;
+            PopupMenu(contextMenu);
+            break;
         } else {    // Search through stack's host/IP list for a match
             for(int i = 0; i < itr->Size(); i++) {
                 if(szItemText.IsSameAs(itr->IP(i))) {
-                        // Need to write context menu for the host/IP items
-                    //contextMenu = new CCMenuStack(L"This is a host/IP address: " + szItemText);
-                    //PopupMenu(contextMenu);
-                    break;//return;
-                    // DELETE CCMenuStack manually??
+                    // Need to write context menu for the host/IP items
+                    // contextMenu = new CCMenuStack(L"This is a host/IP address: " + szItemText);
+                    // PopupMenu(contextMenu);
+                    break;
                 }
             }
         }
@@ -142,11 +141,14 @@ void CServerStacks::PopupStackOptions(wxTreeEvent& event) {
     CServerStacks::CloseStack
 */
 void CServerStacks::CloseStack(wxString name) {
-    //need to also delete cadminstack from vector!
-    //wxTreeItemId selectedStack = GetFocusedItem();
+    /* Crawl through current server stacks to match to
+        name. */
     for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
-        if(name.IsSameAs(itr->Name()))
+        if(name.IsSameAs(itr->Name())) {
             m_Stacks.erase(itr);
+            break;
+        }
     }
+    //*/
     Delete(GetFocusedItem());
 }

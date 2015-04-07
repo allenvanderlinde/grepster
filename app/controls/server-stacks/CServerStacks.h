@@ -90,14 +90,13 @@ private:
     /** @brief      Vector of tree items each representing one of the
      *              user's servers to run grep on.
      */
-    std::vector<wxTreeItemId>   m_treeIPItems;
+    //std::vector<wxTreeItemId>   m_treeIPItems;
     /** @brief      Vector of CAdminStack from which the tree control builds its server list. */
     std::vector<CAdminStack>    m_Stacks;   // will this be where the actual string vectors are kept? then updatestacks() can stay to calling only members?
 
     /**
      * @brief       Context menu for an individual server stack.
      */
-     //RENAME this ContextMenu() to be more general??
     void PopupStackOptions(wxTreeEvent& event);
 
     /**
