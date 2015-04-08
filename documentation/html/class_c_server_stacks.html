@@ -114,23 +114,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aafe5c73b5f7d229c31b6cdfac1845517"><td class="memItemLeft" align="right" valign="top">wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#aafe5c73b5f7d229c31b6cdfac1845517">GetPaneInfo</a> ()</td></tr>
 <tr class="memdesc:aafe5c73b5f7d229c31b6cdfac1845517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the control's pane information.  <a href="#aafe5c73b5f7d229c31b6cdfac1845517">More...</a><br /></td></tr>
 <tr class="separator:aafe5c73b5f7d229c31b6cdfac1845517"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad347a5766d2818c23db1e9fef362fcf9"><td class="memItemLeft" align="right" valign="top">wxTreeItemId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#ad347a5766d2818c23db1e9fef362fcf9">GetServerStackTreeItem</a> ()</td></tr>
-<tr class="memdesc:ad347a5766d2818c23db1e9fef362fcf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the chosen server stack's tree item.  <a href="#ad347a5766d2818c23db1e9fef362fcf9">More...</a><br /></td></tr>
-<tr class="separator:ad347a5766d2818c23db1e9fef362fcf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c437adfa4340fc2173d618c3931306b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a9c437adfa4340fc2173d618c3931306b">OpenScript</a> (wxTreeEvent &amp;event)</td></tr>
-<tr class="memdesc:a9c437adfa4340fc2173d618c3931306b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the currently selected user script from the Server Stack into a new page.  <a href="#a9c437adfa4340fc2173d618c3931306b">More...</a><br /></td></tr>
-<tr class="separator:a9c437adfa4340fc2173d618c3931306b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b73736f0fe76cb025796513b8808489"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a3b73736f0fe76cb025796513b8808489">AddServerStack</a> (<a class="el" href="class_c_admin_stack.html">CAdminStack</a> serverStack)</td></tr>
+<tr class="memdesc:a3b73736f0fe76cb025796513b8808489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a built <a class="el" href="class_c_admin_stack.html" title="Class definition for grepster&#39;s server stack data object. ">CAdminStack</a> to the tree control for user interaction.  <a href="#a3b73736f0fe76cb025796513b8808489">More...</a><br /></td></tr>
+<tr class="separator:a3b73736f0fe76cb025796513b8808489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ea98deef821229338cc4cfa6f0096b7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_c_admin_stack.html">CAdminStack</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a5ea98deef821229338cc4cfa6f0096b7">GetStacks</a> ()</td></tr>
+<tr class="memdesc:a5ea98deef821229338cc4cfa6f0096b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the vector of server stacks.  <a href="#a5ea98deef821229338cc4cfa6f0096b7">More...</a><br /></td></tr>
+<tr class="separator:a5ea98deef821229338cc4cfa6f0096b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc6499183c3f93cba6217f8502ba1010"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#abc6499183c3f93cba6217f8502ba1010">FindInStacks</a> (wxString)</td></tr>
+<tr class="memdesc:abc6499183c3f93cba6217f8502ba1010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look for a match in the current list of server stacks.  <a href="#abc6499183c3f93cba6217f8502ba1010">More...</a><br /></td></tr>
+<tr class="separator:abc6499183c3f93cba6217f8502ba1010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf4ee82a910474f853159f6eee3d3ba0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#acf4ee82a910474f853159f6eee3d3ba0">OpenItem</a> (wxTreeEvent &amp;event)</td></tr>
+<tr class="memdesc:acf4ee82a910474f853159f6eee3d3ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the currently selected item from the server stack.  <a href="#acf4ee82a910474f853159f6eee3d3ba0">More...</a><br /></td></tr>
+<tr class="separator:acf4ee82a910474f853159f6eee3d3ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35f5962e92f264d7982e9a2bb3849868"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a35f5962e92f264d7982e9a2bb3849868">UpdateStacks</a> ()</td></tr>
 <tr class="memdesc:a35f5962e92f264d7982e9a2bb3849868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the current tree control associated with the administrator after configuration and server changes.  <a href="#a35f5962e92f264d7982e9a2bb3849868">More...</a><br /></td></tr>
 <tr class="separator:a35f5962e92f264d7982e9a2bb3849868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf75cd777231e8fa61d938ecd468a6f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#adf75cd777231e8fa61d938ecd468a6f7">Count</a> ()</td></tr>
+<tr class="memdesc:adf75cd777231e8fa61d938ecd468a6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of stacks in the control.  <a href="#adf75cd777231e8fa61d938ecd468a6f7">More...</a><br /></td></tr>
+<tr class="separator:adf75cd777231e8fa61d938ecd468a6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d2f5f2c72f7c94e17ed98a02688445e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a5d2f5f2c72f7c94e17ed98a02688445e">CloseStack</a> (wxString name)</td></tr>
+<tr class="memdesc:a5d2f5f2c72f7c94e17ed98a02688445e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the currently selected stack.  <a href="#a5d2f5f2c72f7c94e17ed98a02688445e">More...</a><br /></td></tr>
+<tr class="separator:a5d2f5f2c72f7c94e17ed98a02688445e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5a09bd434fb894e715668b1f57c3822"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#ad5a09bd434fb894e715668b1f57c3822">RemoveServer</a> (wxString name, wxString parent)</td></tr>
+<tr class="memdesc:ad5a09bd434fb894e715668b1f57c3822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the currently selected server from its stack.  <a href="#ad5a09bd434fb894e715668b1f57c3822">More...</a><br /></td></tr>
+<tr class="separator:ad5a09bd434fb894e715668b1f57c3822"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aaba10be753185932d1d4caeecb20a35f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#aaba10be753185932d1d4caeecb20a35f">PopupStackOptions</a> (wxTreeEvent &amp;event)</td></tr>
-<tr class="memdesc:aaba10be753185932d1d4caeecb20a35f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Context menu for an individual server stack.  <a href="#aaba10be753185932d1d4caeecb20a35f">More...</a><br /></td></tr>
-<tr class="separator:aaba10be753185932d1d4caeecb20a35f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57b2a2bc38f9b1b5d7157407a7de707f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a57b2a2bc38f9b1b5d7157407a7de707f">ContextMenu</a> (wxTreeEvent &amp;event)</td></tr>
+<tr class="memdesc:a57b2a2bc38f9b1b5d7157407a7de707f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Context menu for an individual server stack.  <a href="#a57b2a2bc38f9b1b5d7157407a7de707f">More...</a><br /></td></tr>
+<tr class="separator:a57b2a2bc38f9b1b5d7157407a7de707f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e72d52ea02d62a211c8486b58ddbfc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a3e72d52ea02d62a211c8486b58ddbfc3">wxDECLARE_EVENT_TABLE</a> ()</td></tr>
-<tr class="memdesc:a3e72d52ea02d62a211c8486b58ddbfc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize and call the primary object's event handler.  <a href="#a3e72d52ea02d62a211c8486b58ddbfc3">More...</a><br /></td></tr>
+<tr class="memdesc:a3e72d52ea02d62a211c8486b58ddbfc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize and call the object's event handler.  <a href="#a3e72d52ea02d62a211c8486b58ddbfc3">More...</a><br /></td></tr>
 <tr class="separator:a3e72d52ea02d62a211c8486b58ddbfc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -138,15 +153,12 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aac56837bdedf02a7b31061524efa52f4"><td class="memItemLeft" align="right" valign="top">wxTreeItemId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#aac56837bdedf02a7b31061524efa52f4">m_treeRoot</a></td></tr>
 <tr class="separator:aac56837bdedf02a7b31061524efa52f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc0d3cc940813c4e1983e26d34df0199"><td class="memItemLeft" align="right" valign="top">wxTreeItemId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#afc0d3cc940813c4e1983e26d34df0199">m_treeAdminItem</a></td></tr>
+<tr class="memdesc:afc0d3cc940813c4e1983e26d34df0199"><td class="mdescLeft">&#160;</td><td class="mdescRight">This tree item will be replaced with the administrator's username.  <a href="#afc0d3cc940813c4e1983e26d34df0199">More...</a><br /></td></tr>
 <tr class="separator:afc0d3cc940813c4e1983e26d34df0199"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68f3b3d17ea37147905f83ee17d1dd35"><td class="memItemLeft" align="right" valign="top">wxTreeItemId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a68f3b3d17ea37147905f83ee17d1dd35">m_treeServerStack</a></td></tr>
-<tr class="separator:a68f3b3d17ea37147905f83ee17d1dd35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d7148a2f33ce07cb28640dec90daac7"><td class="memItemLeft" align="right" valign="top">wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a6d7148a2f33ce07cb28640dec90daac7">m_serverStacksInf_t</a></td></tr>
 <tr class="separator:a6d7148a2f33ce07cb28640dec90daac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c1fbfc880a955b6cbe933a2e9d28a87"><td class="memItemLeft" align="right" valign="top">std::vector&lt; wxTreeItemId &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a1c1fbfc880a955b6cbe933a2e9d28a87">m_Servers</a></td></tr>
-<tr class="memdesc:a1c1fbfc880a955b6cbe933a2e9d28a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of tree items each representing one of the user's servers to run grep on.  <a href="#a1c1fbfc880a955b6cbe933a2e9d28a87">More...</a><br /></td></tr>
-<tr class="separator:a1c1fbfc880a955b6cbe933a2e9d28a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a779a2d6fdd13b44f5f1e64a5ec2d4dd8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_c_admin_stack.html">CAdminStack</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a779a2d6fdd13b44f5f1e64a5ec2d4dd8">m_Stacks</a></td></tr>
+<tr class="memdesc:a779a2d6fdd13b44f5f1e64a5ec2d4dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of <a class="el" href="class_c_admin_stack.html" title="Class definition for grepster&#39;s server stack data object. ">CAdminStack</a> from which the tree control builds its server list.  <a href="#a779a2d6fdd13b44f5f1e64a5ec2d4dd8">More...</a><br /></td></tr>
 <tr class="separator:a779a2d6fdd13b44f5f1e64a5ec2d4dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -178,6 +190,141 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a3b73736f0fe76cb025796513b8808489"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CServerStacks::AddServerStack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c_admin_stack.html">CAdminStack</a>&#160;</td>
+          <td class="paramname"><em>serverStack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a built <a class="el" href="class_c_admin_stack.html" title="Class definition for grepster&#39;s server stack data object. ">CAdminStack</a> to the tree control for user interaction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">serverStack</td><td><a class="el" href="class_c_admin_stack.html" title="Class definition for grepster&#39;s server stack data object. ">CAdminStack</a> object from which <a class="el" href="class_c_server_stacks.html" title="Class definition for grepster&#39;s tree control for housing server stacks. ">CServerStacks</a> builds its tree items. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5d2f5f2c72f7c94e17ed98a02688445e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CServerStacks::CloseStack </td>
+          <td>(</td>
+          <td class="paramtype">wxString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Close the currently selected stack. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>This is the identifying string of the selected stack. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a57b2a2bc38f9b1b5d7157407a7de707f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CServerStacks::ContextMenu </td>
+          <td>(</td>
+          <td class="paramtype">wxTreeEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Context menu for an individual server stack. </p>
+
+</div>
+</div>
+<a class="anchor" id="adf75cd777231e8fa61d938ecd468a6f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CServerStacks::Count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the number of stacks in the control. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>The number of stacks currently added to the control in the session. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abc6499183c3f93cba6217f8502ba1010"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CServerStacks::FindInStacks </td>
+          <td>(</td>
+          <td class="paramtype">wxString&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Look for a match in the current list of server stacks. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>String of server stack name to look for in current list. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>The index in the current list where the string is. This can also be wxNOT_FOUND as it uses a temporary wxArrayString. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="aafe5c73b5f7d229c31b6cdfac1845517"></a>
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +356,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad347a5766d2818c23db1e9fef362fcf9"></a>
+<a class="anchor" id="a5ea98deef821229338cc4cfa6f0096b7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -217,7 +364,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">wxTreeItemId CServerStacks::GetServerStackTreeItem </td>
+          <td class="memname">std::vector&lt;<a class="el" href="class_c_admin_stack.html">CAdminStack</a>&gt; CServerStacks::GetStacks </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -230,22 +377,22 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the chosen server stack's tree item. </p>
+<p>Return the vector of server stacks. </p>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">wxTreeItemId</td><td>Object which holds the tree item. </td></tr>
+    <tr><td class="paramname">std::vector&lt;CAdminStack&gt;</td><td>The vector of server stacks in the current session. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a9c437adfa4340fc2173d618c3931306b"></a>
+<a class="anchor" id="acf4ee82a910474f853159f6eee3d3ba0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CServerStacks::OpenScript </td>
+          <td class="memname">void CServerStacks::OpenItem </td>
           <td>(</td>
           <td class="paramtype">wxTreeEvent &amp;&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
@@ -254,33 +401,42 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Open the currently selected user script from the Server Stack into a new page. </p>
+<p>Open the currently selected item from the server stack. </p>
 
 </div>
 </div>
-<a class="anchor" id="aaba10be753185932d1d4caeecb20a35f"></a>
+<a class="anchor" id="ad5a09bd434fb894e715668b1f57c3822"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CServerStacks::PopupStackOptions </td>
+          <td class="memname">void CServerStacks::RemoveServer </td>
           <td>(</td>
-          <td class="paramtype">wxTreeEvent &amp;&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
+          <td class="paramtype">wxString&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">wxString&#160;</td>
+          <td class="paramname"><em>parent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Context menu for an individual server stack. </p>
+<p>Remove the currently selected server from its stack. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>This is the identifying string of the selected server. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parent</td><td>This is the string of the server's parent stack. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -322,33 +478,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initialize and call the primary object's event handler. </p>
+<p>Initialize and call the object's event handler. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a1c1fbfc880a955b6cbe933a2e9d28a87"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;wxTreeItemId&gt; CServerStacks::m_Servers</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Vector of tree items each representing one of the user's servers to run grep on. </p>
-
-</div>
-</div>
 <a class="anchor" id="a6d7148a2f33ce07cb28640dec90daac7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -387,6 +521,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Vector of <a class="el" href="class_c_admin_stack.html" title="Class definition for grepster&#39;s server stack data object. ">CAdminStack</a> from which the tree control builds its server list. </p>
+
 </div>
 </div>
 <a class="anchor" id="afc0d3cc940813c4e1983e26d34df0199"></a>
@@ -406,6 +542,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This tree item will be replaced with the administrator's username. </p>
 
 </div>
 </div>
@@ -429,34 +567,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a68f3b3d17ea37147905f83ee17d1dd35"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">wxTreeItemId CServerStacks::m_treeServerStack</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/grepster/app/<a class="el" href="_c_server_stacks_8h_source.html">CServerStacks.h</a></li>
-<li>C:/grepster/app/<a class="el" href="_c_server_stacks_8cpp.html">CServerStacks.cpp</a></li>
+<li>C:/grepster/app/controls/server-stacks/<a class="el" href="_c_server_stacks_8h_source.html">CServerStacks.h</a></li>
+<li>C:/grepster/app/controls/server-stacks/<a class="el" href="_c_server_stacks_8cpp.html">CServerStacks.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 1 2015 20:34:15 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 8 2015 03:05:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

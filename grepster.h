@@ -47,16 +47,6 @@ extern CSessionNotebook*   SessionNotebook;
  */
 extern CAppInit*        Configuration;
 
-/**
- * @brief       Structure which represents a dialog's basic control variables.
- * Note: This is defined in each CDialog type class.
- */
-struct dialogVars_t {
-    wxString title;
-    unsigned short width;
-    unsigned short height;
-};
-
 /* Utility functions. */
 /**
  * @brief       Translate a resource integer ID into a wxWidgets readable string for calling resources.

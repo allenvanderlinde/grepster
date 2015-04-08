@@ -105,6 +105,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aefa93258ba6d1f99a746ec3e15ec1913"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_stack.html#aefa93258ba6d1f99a746ec3e15ec1913">Size</a> ()</td></tr>
 <tr class="memdesc:aefa93258ba6d1f99a746ec3e15ec1913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the size of the server stack.  <a href="#aefa93258ba6d1f99a746ec3e15ec1913">More...</a><br /></td></tr>
 <tr class="separator:aefa93258ba6d1f99a746ec3e15ec1913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4665a0c759b8653f87874a66553ebdc9"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_stack.html#a4665a0c759b8653f87874a66553ebdc9">Name</a> ()</td></tr>
+<tr class="memdesc:a4665a0c759b8653f87874a66553ebdc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the name of this stack.  <a href="#a4665a0c759b8653f87874a66553ebdc9">More...</a><br /></td></tr>
+<tr class="separator:a4665a0c759b8653f87874a66553ebdc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac69520756889cc1f877de84bb71e7b4"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_stack.html#aac69520756889cc1f877de84bb71e7b4">IP</a> (int index)</td></tr>
+<tr class="memdesc:aac69520756889cc1f877de84bb71e7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return's the string of the server at the current index.  <a href="#aac69520756889cc1f877de84bb71e7b4">More...</a><br /></td></tr>
+<tr class="separator:aac69520756889cc1f877de84bb71e7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3393c50321db8bfd7c413ccd01c3cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_stack.html#a9d3393c50321db8bfd7c413ccd01c3cf">RemoveServer</a> (wxString name)</td></tr>
+<tr class="memdesc:a9d3393c50321db8bfd7c413ccd01c3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the server string from the vector.  <a href="#a9d3393c50321db8bfd7c413ccd01c3cf">More...</a><br /></td></tr>
+<tr class="separator:a9d3393c50321db8bfd7c413ccd01c3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -112,13 +121,13 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ad17453a3ee77212e79bf7238d6a45cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c45840891010e8856f1537ae1f67309"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_stack.html#a6c45840891010e8856f1537ae1f67309">m_szServerStackName</a></td></tr>
 <tr class="separator:a6c45840891010e8856f1537ae1f67309"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f6311cb5f99e0c3875d545f3ef66bbf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; wxString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_stack.html#a2f6311cb5f99e0c3875d545f3ef66bbf">m_Hosts</a></td></tr>
-<tr class="memdesc:a2f6311cb5f99e0c3875d545f3ef66bbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">String vector for holding list of hosts/IP addresses.  <a href="#a2f6311cb5f99e0c3875d545f3ef66bbf">More...</a><br /></td></tr>
-<tr class="separator:a2f6311cb5f99e0c3875d545f3ef66bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb26e34ae0894798898cc73375f67c96"><td class="memItemLeft" align="right" valign="top">std::vector&lt; wxString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_admin_stack.html#aeb26e34ae0894798898cc73375f67c96">m_Servers</a></td></tr>
+<tr class="memdesc:aeb26e34ae0894798898cc73375f67c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">String vector for holding list of servers.  <a href="#aeb26e34ae0894798898cc73375f67c96">More...</a><br /></td></tr>
+<tr class="separator:aeb26e34ae0894798898cc73375f67c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for grepster's server stack data object. </p>
-<p>This object represents a user's stack or list of hosts or IP addresses in strings to be passed to the SSH/SFTP tools. </p>
+<p>This object represents a user's stack of server IP addresses in strings to be passed to the SSH/SFTP tools. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="acbb2754839612ae41ae6587fb0d6c609"></a>
 <div class="memitem">
@@ -145,6 +154,99 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aac69520756889cc1f877de84bb71e7b4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString CAdminStack::IP </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return's the string of the server at the current index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The location of the string in the m_Servers vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">wxString</td><td>The string of the chosen server. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4665a0c759b8653f87874a66553ebdc9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString CAdminStack::Name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the name of this stack. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">wxString</td><td>The name of this stack as loaded from file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9d3393c50321db8bfd7c413ccd01c3cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAdminStack::RemoveServer </td>
+          <td>(</td>
+          <td class="paramtype">wxString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove the server string from the vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The string of the server to remove from the m_Servers vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="aefa93258ba6d1f99a746ec3e15ec1913"></a>
 <div class="memitem">
 <div class="memproto">
@@ -169,7 +271,7 @@ Private Attributes</h2></td></tr>
 <p>Return the size of the server stack. </p>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>The number of entries in the string vector of hosts. </td></tr>
+    <tr><td class="paramname">int</td><td>The number of entries in the string vector of servers. </td></tr>
   </table>
   </dd>
 </dl>
@@ -177,7 +279,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a2f6311cb5f99e0c3875d545f3ef66bbf"></a>
+<a class="anchor" id="aeb26e34ae0894798898cc73375f67c96"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -185,7 +287,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;wxString&gt; CAdminStack::m_Hosts</td>
+          <td class="memname">std::vector&lt;wxString&gt; CAdminStack::m_Servers</td>
         </tr>
       </table>
   </td>
@@ -195,7 +297,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>String vector for holding list of hosts/IP addresses. </p>
+<p>String vector for holding list of servers. </p>
 
 </div>
 </div>
@@ -246,7 +348,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 1 2015 20:34:15 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 8 2015 03:05:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

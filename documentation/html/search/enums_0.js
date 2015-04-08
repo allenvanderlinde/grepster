@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['enum_5fdialogctrlids',['enum_DialogCtrlIDs',['../class_c_dialog_change_credentials.html#a580d98af272faa4b7dbfcd33d3e245fa',1,'CDialogChangeCredentials::enum_DialogCtrlIDs()'],['../class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2d',1,'CDialogSetPathToTools::enum_DialogCtrlIDs()']]],
+  ['enum_5fcontextmenuitemids',['enum_ContextMenuItemIDs',['../class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addf',1,'CCMenuServer::enum_ContextMenuItemIDs()'],['../class_c_c_menu_stack.html#a9a0535464306578b36d281d1b0bb398b',1,'CCMenuStack::enum_ContextMenuItemIDs()']]],
+  ['enum_5fdialogctrlids',['enum_DialogCtrlIDs',['../class_c_dialog_change_credentials.html#a580d98af272faa4b7dbfcd33d3e245fa',1,'CDialogChangeCredentials::enum_DialogCtrlIDs()'],['../class_c_dialog_new_server_stack.html#aeae96a2a4cad4e4ca0d44cc277bc702c',1,'CDialogNewServerStack::enum_DialogCtrlIDs()'],['../class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2d',1,'CDialogSetPathToTools::enum_DialogCtrlIDs()']]],
   ['enum_5fframemenuids',['enum_FrameMenuIDs',['../_menubar_properties_8h.html#a40ab2e23e12feb2cb6a15824d7d504d6',1,'MenubarProperties.h']]],
   ['enum_5fmenufunctionids',['enum_MenuFunctionIDs',['../_menubar_properties_8h.html#a0a74d218f380445ded1ec0d56f2a9eef',1,'MenubarProperties.h']]],
   ['enum_5fmenustringids',['enum_MenuStringIDs',['../_menubar_properties_8h.html#af8640cb187926557eee03ae9124abc46',1,'MenubarProperties.h']]],

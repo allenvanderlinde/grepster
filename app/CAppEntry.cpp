@@ -44,7 +44,7 @@ bool CAppEntry::OnInit() {
     /* Load grepster's configuration. */
     LoadConfiguration();
 
-    m_pGrepsterFrame = new CAppFrame(g_szFrameTitle, wxPoint(50, 50), wxSize(FRAME_WIDTH, FRAME_HEIGHT));
+    m_pGrepsterFrame = new CAppFrame(g_szFrameTitle, wxDefaultPosition, wxDefaultSize);//wxPoint(50, 50), wxSize(FRAME_WIDTH, FRAME_HEIGHT));
     /* Set grepster's window icon. */
     m_pGrepsterFrame->SetIcon(wxICON(aaaaappicon));
     SetTopWindow(m_pGrepsterFrame);

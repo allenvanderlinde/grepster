@@ -123,6 +123,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ad7eef5c8a99e0166451b1b6c6cd4e686"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#ad7eef5c8a99e0166451b1b6c6cd4e686">CreateAdminXMLConfiguration</a> ()</td></tr>
 <tr class="memdesc:ad7eef5c8a99e0166451b1b6c6cd4e686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new administrator XML configuration file. This will ask for the new admin's username only. Passwords will need to be entered with each new session.  <a href="#ad7eef5c8a99e0166451b1b6c6cd4e686">More...</a><br /></td></tr>
 <tr class="separator:ad7eef5c8a99e0166451b1b6c6cd4e686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9564987106b9679d7c86dff33e71eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#ab9564987106b9679d7c86dff33e71eed">NewServerStack</a> (wxCommandEvent &amp;event)</td></tr>
+<tr class="memdesc:ab9564987106b9679d7c86dff33e71eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and add a new server stack to the session.  <a href="#ab9564987106b9679d7c86dff33e71eed">More...</a><br /></td></tr>
+<tr class="separator:ab9564987106b9679d7c86dff33e71eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82d07ac9011f19c265307cfd4dd333c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a82d07ac9011f19c265307cfd4dd333c1">AddServerStack</a> (wxCommandEvent &amp;event)</td></tr>
 <tr class="memdesc:a82d07ac9011f19c265307cfd4dd333c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a saved server stack to the current session.  <a href="#a82d07ac9011f19c265307cfd4dd333c1">More...</a><br /></td></tr>
 <tr class="separator:a82d07ac9011f19c265307cfd4dd333c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,6 +164,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a215d9068460b42a395d050e68074312f"><td class="memItemLeft" align="right" valign="top">wxStatusBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a215d9068460b42a395d050e68074312f">m_pStatusbar</a></td></tr>
 <tr class="separator:a215d9068460b42a395d050e68074312f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c2d134577e66b69a30a95804059f460"><td class="memItemLeft" align="right" valign="top">wxAuiManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a3c2d134577e66b69a30a95804059f460">m_pAui</a></td></tr>
+<tr class="memdesc:a3c2d134577e66b69a30a95804059f460"><td class="mdescLeft">&#160;</td><td class="mdescRight">wxWidgets' advanced UI manager. This object gives more options for widget appearance and customization.  <a href="#a3c2d134577e66b69a30a95804059f460">More...</a><br /></td></tr>
 <tr class="separator:a3c2d134577e66b69a30a95804059f460"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -356,6 +360,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab9564987106b9679d7c86dff33e71eed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppFrame::NewServerStack </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create and add a new server stack to the session. </p>
+
+</div>
+</div>
 <a class="anchor" id="aa48a100858c263b6cc998ecd096f3338"></a>
 <div class="memitem">
 <div class="memproto">
@@ -529,6 +559,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>wxWidgets' advanced UI manager. This object gives more options for widget appearance and customization. </p>
+
 </div>
 </div>
 <a class="anchor" id="a5f02100e4bacbb5fb8c72d731075a20d"></a>
@@ -600,7 +632,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 1 2015 20:34:15 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 8 2015 03:05:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

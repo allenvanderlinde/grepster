@@ -35,12 +35,12 @@ CAppMenubar::CAppMenubar()
     m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_NEW,
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_NEW_SESSION],
                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_NEW_SESSION]);
-    m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_NEW_SERVER_STACK,
-                           FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_NEW_SERVER_STACK],
-                           FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_NEW_SERVER_STACK]);
-    m_pMenuSession->AppendSeparator();
     m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_OPEN,
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_OPEN_SESSION],
+                           FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_OPEN_SESSION]);
+    m_pMenuSession->AppendSeparator();
+    m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_NEW_SERVER_STACK,
+                           FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_NEW_SERVER_STACK],
                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_OPEN_SESSION]);
     m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACK,
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_ADD_SERVER_STACK],

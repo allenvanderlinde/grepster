@@ -15,7 +15,6 @@
 #include "../../resources/grepster_rc.h"
 
 #include "CDialogChangeCredentials.h"
-#include "../CAppFrame.h"
 
 
 /* The dialog's event handler calls. */
@@ -26,45 +25,45 @@ wxEND_EVENT_TABLE()
 /*
     CDialogChangeCredentials::CDialogChangeCredentials
 */
-CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame, dialogVars_t dialogVars)
-    : wxDialog(parentFrame, wxID_ANY, dialogVars.title, wxDefaultPosition, wxSize(dialogVars.width, dialogVars.height)) {
+CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame)
+    : wxDialog(parentFrame, wxID_ANY, L"Change Credentials", wxDefaultPosition, wxDefaultSize) {
     SetIcon(wxICON(aaaaappicon));
     CenterOnParent();
     /* Dialog controls. */
-    wxStaticText* pTextUsername, *pTextPassword;
-    pTextUsername = new wxStaticText(this, wxID_ANY, L"Username:");
+    m_pTextUsername = new wxStaticText(this, wxID_ANY, L"Username:");
     m_pInputUsername = new wxTextCtrl(this, INPUT_USERNAME, Configuration->Username(), wxDefaultPosition, wxSize(210, -1));
-    pTextPassword = new wxStaticText(this, wxID_ANY, L"Password:");
+    m_pTextPassword = new wxStaticText(this, wxID_ANY, L"Password:");
     m_pInputPassword = new wxTextCtrl(this, INPUT_PASSWORD, Configuration->Password(), wxDefaultPosition, wxSize(210, -1), wxTE_PASSWORD);
 
     m_pButtonOK = new wxButton(this, BUTTON_OK, L"OK", wxDefaultPosition, wxDefaultSize);
-    wxButton* pButtonCancel = new wxButton(this, wxID_CANCEL, L"Cancel", wxPoint(0, 0), wxDefaultSize); // Cancel button for convenience; catches ESC key
+    m_pButtonCancel = new wxButton(this, wxID_CANCEL, L"Cancel", wxPoint(0, 0), wxDefaultSize); // Cancel button for convenience; catches ESC key
     m_pButtonOK->SetDefault();
 
     // Create dialog's banner
-    wxStaticBitmap* pPNGBanner = new wxStaticBitmap(this, wxID_ANY, wxBitmap(RESOURCE_ID_TO_STRING(RESID_PNG_CREDENTIALS), wxBITMAP_TYPE_PNG_RESOURCE), wxDefaultPosition, wxDefaultSize);
+    m_pPNGBanner = new wxStaticBitmap(this, wxID_ANY, wxBitmap(RESOURCE_ID_TO_STRING(RESID_PNG_CREDENTIALS), wxBITMAP_TYPE_PNG_RESOURCE), wxDefaultPosition, wxDefaultSize);
 
     /* Set dialog's main sizers. */
     m_pSizer = new wxBoxSizer(wxVERTICAL);
-    wxBoxSizer* pSizerButtons = new wxBoxSizer(wxHORIZONTAL);
-    wxStaticBoxSizer* pStaticSizer = new wxStaticBoxSizer(wxVERTICAL, this, L"Credentials");
-    wxFlexGridSizer* pSizerInput = new wxFlexGridSizer(2, 2, 5, 5);
+    m_pSizerButtons = new wxBoxSizer(wxHORIZONTAL);
+    m_pStaticSizer = new wxStaticBoxSizer(wxVERTICAL, this, L"Credentials");
+    m_pSizerInput = new wxFlexGridSizer(2, 2, 5, 5);
 
-    pSizerInput->Add(pTextUsername, wxSizerFlags().Center());
-    pSizerInput->Add(m_pInputUsername, 1, wxEXPAND);
-    pSizerInput->Add(pTextPassword, wxSizerFlags().Center());
-    pSizerInput->Add(m_pInputPassword, 1, wxEXPAND);
+    m_pSizerInput->Add(m_pTextUsername, wxSizerFlags().Center());
+    m_pSizerInput->Add(m_pInputUsername, wxSizerFlags().Expand());  //1, wxEXPAND);
+    m_pSizerInput->Add(m_pTextPassword, wxSizerFlags().Center());
+    m_pSizerInput->Add(m_pInputPassword, wxSizerFlags().Expand());  //1, wxEXPAND);
 
-    pStaticSizer->Add(pSizerInput, wxSizerFlags().Border(wxALL, 5));
+    m_pStaticSizer->Add(m_pSizerInput, wxSizerFlags().Border(wxALL, 5));
 
-    pSizerButtons->Add(m_pButtonOK, wxSizerFlags().Center());
-    pSizerButtons->Add(pButtonCancel, wxSizerFlags().Center());
+    m_pSizerButtons->Add(m_pButtonOK, wxSizerFlags().Center());
+    m_pSizerButtons->Add(m_pButtonCancel, wxSizerFlags().Center());
 
-    m_pSizer->Add(pPNGBanner);
-    m_pSizer->Add(pStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
-    m_pSizer->Add(pSizerButtons, wxSizerFlags().Center());
+    m_pSizer->Add(m_pPNGBanner);
+    m_pSizer->Add(m_pStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
+    m_pSizer->Add(m_pSizerButtons, wxSizerFlags().Center().Border(wxLEFT | wxRIGHT | wxDOWN, 5));
 
     SetSizer(m_pSizer);
+    SetSize(GetBestSize());
     Show(true); // Display the dialog box
 }
 

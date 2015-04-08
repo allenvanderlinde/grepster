@@ -27,16 +27,13 @@ public:
     /**
      * @brief       Default constructor which creates the dialog box.
      * @param[in]   parentFrame The primary frame to which this dialog belongs.
-     * @param[in]   dialogVars The dialog's basic window properties.
      */
-    CDialogSetPathToTools(wxWindow* parentFrame,
-                          dialogVars_t dialogVars);
+    CDialogSetPathToTools(wxWindow* parentFrame);
+
     /**
-    * @enum        enum_DialogCtrlIDs
-    * @brief       Note: Each dialog class should have an enumeration which sets their controls' IDs
-    * to match the major magnitude of the dialog's ID as defined in CAppFrame.h. This is done in order to take
-    * control away from wxWidgets when handling what dialogs should do when the user activates a control.
-    */
+     * @enum        enum_DialogCtrlIDs
+     * @brief       These represent the dialog's individual function call IDs.
+     */
     enum enum_DialogCtrlIDs {
         BUTTON_OK = wxID_ANY,
         DIALOG_BROWSE_SSH,
@@ -45,18 +42,17 @@ public:
 
 private:
     wxBoxSizer*         m_pSizer;
-    /**
-     * @brief       File selection widget used to select the SSH tool.
-     */
+    wxStaticBoxSizer*   m_pStaticSizerSSHTool;
+    wxStaticBoxSizer*   m_pStaticSizerSFTPTool;
+    wxBoxSizer*         m_pSizerButtons;
+
     wxFilePickerCtrl*   m_pSSHToolSelect;
-    /**
-     * @brief       File selection widget used to select the SFTP tool.
-     */
     wxFilePickerCtrl*   m_pSFTPToolSelect;
 
-    wxButton*           m_pButtonBrowseSSH;
-    wxButton*           m_pButtonBrowseSFTP;
     wxButton*           m_pButtonOK;
+    wxButton*           m_pButtonCancel;
+
+    wxStaticBitmap*     m_pPNGBanner;
 
     /**
      * @brief       Processes the user clicking the "OK" button.

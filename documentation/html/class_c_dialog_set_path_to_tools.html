@@ -113,14 +113,14 @@ Public Types</h2></td></tr>
 <a class="el" href="class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2da895334039de618c9c40a7598314e7719">DIALOG_BROWSE_SSH</a>, 
 <a class="el" href="class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2da943d3be6ef1825452cd95f94a0cfbf34">DIALOG_BROWSE_SFTP</a>
  }</td></tr>
-<tr class="memdesc:a95cefcd14341d3f97d905ef0c55b8d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Note: Each dialog class should have an enumeration which sets their controls' IDs to match the major magnitude of the dialog's ID as defined in <a class="el" href="_c_app_frame_8h.html" title="wxWidgets frame object which houses grepster. ">CAppFrame.h</a>. This is done in order to take control away from wxWidgets when handling what dialogs should do when the user activates a control.  <a href="class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2d">More...</a><br /></td></tr>
+<tr class="memdesc:a95cefcd14341d3f97d905ef0c55b8d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">These represent the dialog's individual function call IDs.  <a href="class_c_dialog_set_path_to_tools.html#a95cefcd14341d3f97d905ef0c55b8d2d">More...</a><br /></td></tr>
 <tr class="separator:a95cefcd14341d3f97d905ef0c55b8d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a50896a20ef637e5014401b7bd44ecdc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a50896a20ef637e5014401b7bd44ecdc9">CDialogSetPathToTools</a> (wxWindow *parentFrame, <a class="el" href="structdialog_vars__t.html">dialogVars_t</a> dialogVars)</td></tr>
-<tr class="memdesc:a50896a20ef637e5014401b7bd44ecdc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which creates the dialog box.  <a href="#a50896a20ef637e5014401b7bd44ecdc9">More...</a><br /></td></tr>
-<tr class="separator:a50896a20ef637e5014401b7bd44ecdc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a939201a7df97a0a152f8b09c99600c34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a939201a7df97a0a152f8b09c99600c34">CDialogSetPathToTools</a> (wxWindow *parentFrame)</td></tr>
+<tr class="memdesc:a939201a7df97a0a152f8b09c99600c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which creates the dialog box.  <a href="#a939201a7df97a0a152f8b09c99600c34">More...</a><br /></td></tr>
+<tr class="separator:a939201a7df97a0a152f8b09c99600c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -128,25 +128,29 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a6b3ce7fd87e7c964ff0cab48e620fc39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the user clicking the "OK" button. Closes dialog.  <a href="#a6b3ce7fd87e7c964ff0cab48e620fc39">More...</a><br /></td></tr>
 <tr class="separator:a6b3ce7fd87e7c964ff0cab48e620fc39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66d283ed1f06512609d8d2533acdc6ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a66d283ed1f06512609d8d2533acdc6ee">wxDECLARE_EVENT_TABLE</a> ()</td></tr>
-<tr class="memdesc:a66d283ed1f06512609d8d2533acdc6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize and call the primary object's event handler.  <a href="#a66d283ed1f06512609d8d2533acdc6ee">More...</a><br /></td></tr>
+<tr class="memdesc:a66d283ed1f06512609d8d2533acdc6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize and call the object's event handler.  <a href="#a66d283ed1f06512609d8d2533acdc6ee">More...</a><br /></td></tr>
 <tr class="separator:a66d283ed1f06512609d8d2533acdc6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a6dfb4483bf331b6a6ab6926828bb2239"><td class="memItemLeft" align="right" valign="top">wxBoxSizer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a6dfb4483bf331b6a6ab6926828bb2239">m_pSizer</a></td></tr>
 <tr class="separator:a6dfb4483bf331b6a6ab6926828bb2239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e9801e26502bdac14f6027498cfe23a"><td class="memItemLeft" align="right" valign="top">wxStaticBoxSizer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a3e9801e26502bdac14f6027498cfe23a">m_pStaticSizerSSHTool</a></td></tr>
+<tr class="separator:a3e9801e26502bdac14f6027498cfe23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d2be3eb5efe64a219ace990e6300bce"><td class="memItemLeft" align="right" valign="top">wxStaticBoxSizer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a7d2be3eb5efe64a219ace990e6300bce">m_pStaticSizerSFTPTool</a></td></tr>
+<tr class="separator:a7d2be3eb5efe64a219ace990e6300bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f7b7fedabb0893e51528ccb1c7cddae"><td class="memItemLeft" align="right" valign="top">wxBoxSizer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a7f7b7fedabb0893e51528ccb1c7cddae">m_pSizerButtons</a></td></tr>
+<tr class="separator:a7f7b7fedabb0893e51528ccb1c7cddae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03bdecd73c8c1f632820e4a56eb74f9e"><td class="memItemLeft" align="right" valign="top">wxFilePickerCtrl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a03bdecd73c8c1f632820e4a56eb74f9e">m_pSSHToolSelect</a></td></tr>
-<tr class="memdesc:a03bdecd73c8c1f632820e4a56eb74f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">File selection widget used to select the SSH tool.  <a href="#a03bdecd73c8c1f632820e4a56eb74f9e">More...</a><br /></td></tr>
 <tr class="separator:a03bdecd73c8c1f632820e4a56eb74f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e68b9a7e5b52ac15995abef71d1f82e"><td class="memItemLeft" align="right" valign="top">wxFilePickerCtrl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a4e68b9a7e5b52ac15995abef71d1f82e">m_pSFTPToolSelect</a></td></tr>
-<tr class="memdesc:a4e68b9a7e5b52ac15995abef71d1f82e"><td class="mdescLeft">&#160;</td><td class="mdescRight">File selection widget used to select the SFTP tool.  <a href="#a4e68b9a7e5b52ac15995abef71d1f82e">More...</a><br /></td></tr>
 <tr class="separator:a4e68b9a7e5b52ac15995abef71d1f82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac798cd05e3abca5c0a0dea286f1cec88"><td class="memItemLeft" align="right" valign="top">wxButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#ac798cd05e3abca5c0a0dea286f1cec88">m_pButtonBrowseSSH</a></td></tr>
-<tr class="separator:ac798cd05e3abca5c0a0dea286f1cec88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3879735915709750cf0ac143daf1d5cb"><td class="memItemLeft" align="right" valign="top">wxButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a3879735915709750cf0ac143daf1d5cb">m_pButtonBrowseSFTP</a></td></tr>
-<tr class="separator:a3879735915709750cf0ac143daf1d5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae98c1e82872178678671894e0af193d1"><td class="memItemLeft" align="right" valign="top">wxButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#ae98c1e82872178678671894e0af193d1">m_pButtonOK</a></td></tr>
 <tr class="separator:ae98c1e82872178678671894e0af193d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50bc4987fa2f99a24fe95cc472e0d6ce"><td class="memItemLeft" align="right" valign="top">wxButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#a50bc4987fa2f99a24fe95cc472e0d6ce">m_pButtonCancel</a></td></tr>
+<tr class="separator:a50bc4987fa2f99a24fe95cc472e0d6ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0902730c120d4d1e70384229ee65346"><td class="memItemLeft" align="right" valign="top">wxStaticBitmap *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_dialog_set_path_to_tools.html#ad0902730c120d4d1e70384229ee65346">m_pPNGBanner</a></td></tr>
+<tr class="separator:ad0902730c120d4d1e70384229ee65346"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for dialog box to set the default path to grepster's SSH/SFTP tools. </p>
@@ -162,7 +166,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Note: Each dialog class should have an enumeration which sets their controls' IDs to match the major magnitude of the dialog's ID as defined in <a class="el" href="_c_app_frame_8h.html" title="wxWidgets frame object which houses grepster. ">CAppFrame.h</a>. This is done in order to take control away from wxWidgets when handling what dialogs should do when the user activates a control. </p>
+<p>These represent the dialog's individual function call IDs. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a95cefcd14341d3f97d905ef0c55b8d2da607ae542d4edb8f4174fe4e06cf46798"></a>BUTTON_OK&#160;</td><td class="fielddoc">
 </td></tr>
@@ -175,7 +179,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a50896a20ef637e5014401b7bd44ecdc9"></a>
+<a class="anchor" id="a939201a7df97a0a152f8b09c99600c34"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -183,18 +187,8 @@ Private Attributes</h2></td></tr>
           <td class="memname">CDialogSetPathToTools::CDialogSetPathToTools </td>
           <td>(</td>
           <td class="paramtype">wxWindow *&#160;</td>
-          <td class="paramname"><em>parentFrame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>parentFrame</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structdialog_vars__t.html">dialogVars_t</a>&#160;</td>
-          <td class="paramname"><em>dialogVars</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -203,7 +197,6 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">parentFrame</td><td>The primary frame to which this dialog belongs. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dialogVars</td><td>The dialog's basic window properties. </td></tr>
   </table>
   </dd>
 </dl>
@@ -258,12 +251,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initialize and call the primary object's event handler. </p>
+<p>Initialize and call the object's event handler. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a3879735915709750cf0ac143daf1d5cb"></a>
+<a class="anchor" id="a50bc4987fa2f99a24fe95cc472e0d6ce"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -271,27 +264,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">wxButton* CDialogSetPathToTools::m_pButtonBrowseSFTP</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac798cd05e3abca5c0a0dea286f1cec88"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">wxButton* CDialogSetPathToTools::m_pButtonBrowseSSH</td>
+          <td class="memname">wxButton* CDialogSetPathToTools::m_pButtonCancel</td>
         </tr>
       </table>
   </td>
@@ -323,6 +296,26 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad0902730c120d4d1e70384229ee65346"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxStaticBitmap* CDialogSetPathToTools::m_pPNGBanner</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a4e68b9a7e5b52ac15995abef71d1f82e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -341,8 +334,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>File selection widget used to select the SFTP tool. </p>
-
 </div>
 </div>
 <a class="anchor" id="a6dfb4483bf331b6a6ab6926828bb2239"></a>
@@ -354,6 +345,26 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">wxBoxSizer* CDialogSetPathToTools::m_pSizer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7f7b7fedabb0893e51528ccb1c7cddae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxBoxSizer* CDialogSetPathToTools::m_pSizerButtons</td>
         </tr>
       </table>
   </td>
@@ -383,18 +394,56 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>File selection widget used to select the SSH tool. </p>
+</div>
+</div>
+<a class="anchor" id="a7d2be3eb5efe64a219ace990e6300bce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxStaticBoxSizer* CDialogSetPathToTools::m_pStaticSizerSFTPTool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3e9801e26502bdac14f6027498cfe23a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxStaticBoxSizer* CDialogSetPathToTools::m_pStaticSizerSSHTool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/grepster/dialogs/<a class="el" href="_c_dialog_set_path_to_tools_8h_source.html">CDialogSetPathToTools.h</a></li>
-<li>C:/grepster/dialogs/<a class="el" href="_c_dialog_set_path_to_tools_8cpp.html">CDialogSetPathToTools.cpp</a></li>
+<li>C:/grepster/app/dialogs/<a class="el" href="_c_dialog_set_path_to_tools_8h_source.html">CDialogSetPathToTools.h</a></li>
+<li>C:/grepster/app/dialogs/<a class="el" href="_c_dialog_set_path_to_tools_8cpp.html">CDialogSetPathToTools.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 1 2015 20:34:15 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 8 2015 03:05:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

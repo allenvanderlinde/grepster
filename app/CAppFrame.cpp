@@ -18,6 +18,7 @@
 
 #include "../session/CAdminStack.h"
 
+#include "dialogs/CDialogNewServerStack.h"
 #include "dialogs/CDialogChangeCredentials.h"
 #include "dialogs/CDialogSetPathToTools.h"
 
@@ -25,6 +26,7 @@
 /* grepster's primary frame's event handler calls. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::CloseFrame)
+    EVT_MENU(MENU_FUNCTION_ID_SESSION_NEW_SERVER_STACK, CAppFrame::NewServerStack)
     EVT_MENU(MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACK, CAppFrame::AddServerStack)
     EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
     EVT_MENU(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS, CAppFrame::ChangeDefaultCredentials)
@@ -93,6 +95,15 @@ CAppFrame::~CAppFrame() {
 }
 
 /*
+    CAppFrame::NewServerStack
+*/
+void CAppFrame::NewServerStack(wxCommandEvent& event) {
+    CDialogNewServerStack* Dialog = new CDialogNewServerStack(this);
+    if(Dialog->ShowModal() == Dialog->BUTTON_SAVE)
+        Dialog->Destroy();
+}
+
+/*
     CAppFrame::AddServerStack
 */
 void CAppFrame::AddServerStack(wxCommandEvent& event) {
@@ -145,7 +156,7 @@ void CAppFrame::AddServerStack(wxCommandEvent& event) {
     CAppFrame::ChangeDefaultCredentials
 */
 void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
-    CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this, {L"Administrator Credentials", 300, 256});
+    CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this);
     if(Dialog->ShowModal() == Dialog->BUTTON_OK)
         Dialog->Destroy();
 }
@@ -193,7 +204,7 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
     CAppFrame::SetPathToTools
 */
 void CAppFrame::SetPathToTools(wxCommandEvent& event) {
-    CDialogSetPathToTools* Dialog = new CDialogSetPathToTools(this, {L"Path to SSH/SFTP Tools", 300, 282});
+    CDialogSetPathToTools* Dialog = new CDialogSetPathToTools(this);
     if(Dialog->ShowModal() == Dialog->BUTTON_OK)
         Dialog->Destroy();
 }
@@ -224,25 +235,26 @@ void CAppFrame::RefreshConfiguration() {
 */
 void CAppFrame::OnAbout(wxCommandEvent& event) {
     /* Dialog's main controls and sizers. */
-    wxDialog* Dialog = new wxDialog(this, wxID_ANY, g_szFrameTitle, wxDefaultPosition, wxSize(400, 372));
+    wxDialog* Dialog = new wxDialog(this, wxID_ANY, g_szFrameTitle, wxDefaultPosition, wxDefaultSize);
     Dialog->SetIcon(wxICON(aaaaappicon));
-    wxBoxSizer* dialogSizer = new wxBoxSizer(wxVERTICAL);
-    wxStaticBoxSizer* dialogStaticSizer = new wxStaticBoxSizer(wxVERTICAL, Dialog, L"About " + g_szFrameTitle);
+    wxBoxSizer* pSizer = new wxBoxSizer(wxVERTICAL);
+    wxStaticBoxSizer* pStaticSizer = new wxStaticBoxSizer(wxVERTICAL, Dialog, L"About " + g_szFrameTitle);
 
-    wxStaticBitmap* bannerImg = new wxStaticBitmap(Dialog, wxID_ANY, wxBitmap(RESOURCE_ID_TO_STRING(RESID_PNG_ABOUT), wxBITMAP_TYPE_PNG_RESOURCE), wxDefaultPosition, wxDefaultSize);
-    wxTextCtrl* textAbout = new wxTextCtrl(Dialog, wxID_ANY, ABOUT_INFORMATION, wxDefaultPosition, wxSize(wxDefaultSize.GetWidth(), 120), wxTE_MULTILINE | wxTE_READONLY);
+    wxStaticBitmap* pPNGBanner = new wxStaticBitmap(Dialog, wxID_ANY, wxBitmap(RESOURCE_ID_TO_STRING(RESID_PNG_ABOUT), wxBITMAP_TYPE_PNG_RESOURCE), wxDefaultPosition, wxDefaultSize);
+    wxTextCtrl* pTextAbout = new wxTextCtrl(Dialog, wxID_ANY, ABOUT_INFORMATION, wxDefaultPosition, wxSize(wxDefaultSize.GetWidth(), 120), wxTE_MULTILINE | wxTE_READONLY);
 
     /* Dialog's buttons. */
     wxButton* pButtonOK = new wxButton(Dialog, wxID_OK, L"OK", wxDefaultPosition, wxDefaultSize);
     pButtonOK->SetDefault();
 
     /* Arrange dialog's controls. */
-    dialogStaticSizer->Add(textAbout, wxSizerFlags().Expand().Center().Border(wxALL, 5));
-    dialogSizer->Add(bannerImg, 0);
-    dialogSizer->Add(dialogStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
-    dialogSizer->Add(pButtonOK, wxSizerFlags().Center());
+    pStaticSizer->Add(pTextAbout, wxSizerFlags().Expand().Center().Border(wxALL, 5));
+    pSizer->Add(pPNGBanner, 0);
+    pSizer->Add(pStaticSizer, wxSizerFlags().Center().Expand().Border(wxALL, 5));
+    pSizer->Add(pButtonOK, wxSizerFlags().Center().Border(wxLEFT | wxRIGHT | wxDOWN, 5));
 
-    Dialog->SetSizer(dialogSizer);
+    Dialog->SetSizer(pSizer);
+    Dialog->SetSize(Dialog->GetBestSize());
     Dialog->Center();
     if(Dialog->ShowModal() == wxID_OK)
         Dialog->Destroy();

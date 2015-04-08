@@ -79,6 +79,7 @@ void CServerStacks::AddServerStack(CAdminStack serverStack) {
     if(IsExpanded(m_treeAdminItem) == false)
         Expand(m_treeAdminItem);
     //Expand(newStack);    // Expand the newly added stack
+    SortChildren(m_treeAdminItem);
 }
 
 /*
@@ -166,6 +167,8 @@ void CServerStacks::RemoveServer(wxString name, wxString parent) {
             for(int i = 0; i < itr->Size(); i++) {
                 if(name.IsSameAs(itr->IP(i))) { // Found the server
                     itr->RemoveServer(name);    // Remove the server from the corresponding stack object
+                    if(itr->Size() < 1)
+                        CloseStack(parent);
                     Delete(GetFocusedItem());
                     return;
                 }

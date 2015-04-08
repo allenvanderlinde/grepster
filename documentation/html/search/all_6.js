@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['findinstacks',['FindInStacks',['../class_c_server_stacks.html#abc6499183c3f93cba6217f8502ba1010',1,'CServerStacks']]],
   ['frame_5fheight',['FRAME_HEIGHT',['../_c_app_frame_8h.html#a915e7581e140dd2d625fa1cfca365100',1,'CAppFrame.h']]],
   ['frame_5fid_5ffile_5fmenu',['FRAME_ID_FILE_MENU',['../_menubar_properties_8h.html#a40ab2e23e12feb2cb6a15824d7d504d6ad10cc6a68b75cd3ebb224d81e3ce3f2d',1,'MenubarProperties.h']]],
   ['frame_5fid_5fhelp_5fmenu',['FRAME_ID_HELP_MENU',['../_menubar_properties_8h.html#a40ab2e23e12feb2cb6a15824d7d504d6abd7522db598694a70ed0f55405d0d1e8',1,'MenubarProperties.h']]],

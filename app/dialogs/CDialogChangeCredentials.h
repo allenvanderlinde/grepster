@@ -27,16 +27,13 @@ public:
     /**
      * @brief       Default constructor which creates the dialog box.
      * @param[in]   parentFrame The primary frame to which this dialog belongs.
-     * @param[in]   dialogVars The dialog's basic window properties.
      */
-    CDialogChangeCredentials(wxWindow* parentFrame,
-                             dialogVars_t dialogVars);
+    CDialogChangeCredentials(wxWindow* parentFrame);
+
     /**
-    * @enum        enum_DialogCtrlIDs
-    * @brief       Note: Each dialog class should have an enumeration which sets their controls' ID
-    * to match the major magnitude of the dialog's ID as defined in CAppFrame.h. This is done in order to take
-    * control away from wxWidgets when handling what dialogs should do when the user activates a control.
-    */
+     * @enum        enum_DialogCtrlIDs
+     * @brief       These represent the dialog's individual function call IDs.
+     */
     enum enum_DialogCtrlIDs {
         BUTTON_OK = wxID_ANY,
         INPUT_USERNAME,
@@ -45,10 +42,18 @@ public:
 
 private:
     wxBoxSizer*         m_pSizer;
+    wxBoxSizer*         m_pSizerButtons;
+    wxStaticBoxSizer*   m_pStaticSizer;
+    wxFlexGridSizer*    m_pSizerInput;
 
+    wxStaticText*       m_pTextUsername;
+    wxStaticText*       m_pTextPassword;
     wxTextCtrl*         m_pInputUsername;
     wxTextCtrl*         m_pInputPassword;
     wxButton*           m_pButtonOK;
+    wxButton*           m_pButtonCancel;
+
+    wxStaticBitmap*     m_pPNGBanner;
 
     /**
      * @brief       Processes the user clicking the "OK" button.

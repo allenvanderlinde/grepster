@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="resources\grepster.rc" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="app\dialogs\CDialogChangeCredentials.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="762" topLine="0" />
+			<Cursor1 position="831" topLine="9" />
 		</Cursor>
 	</File>
-	<File name="app\CAppEntry.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="app\controls\server-stacks\CServerStacks.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2714" topLine="60" />
+			<Cursor1 position="3903" topLine="105" />
 		</Cursor>
 	</File>
-	<File name="resources\grepster_rc.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="grepster.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="489" topLine="0" />
+			<Cursor1 position="895" topLine="35" />
 		</Cursor>
 	</File>
-	<File name="app\CAppEntry.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="app\controls\server-stacks\CServerStacks.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="531" topLine="8" />
+			<Cursor1 position="2828" topLine="53" />
 		</Cursor>
 	</File>
-	<File name="session\CAdminAccount.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="grepster.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="454" topLine="0" />
+			<Cursor1 position="1455" topLine="34" />
 		</Cursor>
 	</File>
 	<File name="app\controls\session-notebook\CSessionNotebook.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -31,17 +31,72 @@
 			<Cursor1 position="513" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="precomp.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="475" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="app\dialogs\CDialogSetPathToTools.h" open="1" top="1" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="986" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="app\dialogs\CDialogNewServerStack.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="914" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="pugixml-1.4\pugixml.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="100844" topLine="3571" />
+		</Cursor>
+	</File>
+	<File name="app\controls\console\CConsole.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1845" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="pugixml-1.4\pugixml.hpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13334" topLine="345" />
+		</Cursor>
+	</File>
+	<File name="app\CAppEntry.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1447" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="resources\grepster.rc" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="701" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="app\CAppEntry.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="531" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="resources\grepster_rc.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="545" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="session\CAdminAccount.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="454" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="session\CAdminAccount.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1946" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="session\CAdminStack.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="session\CAdminStack.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1895" topLine="27" />
 		</Cursor>
 	</File>
-	<File name="session\CAdminStack.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="session\CAdminStack.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1995" topLine="31" />
 		</Cursor>
@@ -51,24 +106,19 @@
 			<Cursor1 position="47" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="app\menus\CCMenuServer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="app\init\CAppInit.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1533" topLine="17" />
+			<Cursor1 position="540" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="app\menus\CCMenuServer.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="app\menubar\CAppMenubar.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1218" topLine="15" />
+			<Cursor1 position="1357" topLine="25" />
 		</Cursor>
 	</File>
-	<File name="app\dialogs\CDialogSetPathToTools.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="app\dialogs\CDialogNewServerStack.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="834" topLine="19" />
-		</Cursor>
-	</File>
-	<File name="app\dialogs\CDialogSetPathToTools.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3468" topLine="48" />
+			<Cursor1 position="802" topLine="21" />
 		</Cursor>
 	</File>
 	<File name="app\menubar\CAppMenubar.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -76,99 +126,59 @@
 			<Cursor1 position="0" topLine="3" />
 		</Cursor>
 	</File>
-	<File name="app\CAppFrame.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="app\dialogs\CDialogChangeCredentials.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="577" topLine="3" />
+			<Cursor1 position="968" topLine="12" />
 		</Cursor>
 	</File>
 	<File name="app\menubar\MenubarProperties.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3854" topLine="66" />
+			<Cursor1 position="3620" topLine="48" />
 		</Cursor>
 	</File>
-	<File name="app\menus\CCMenuStack.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="app\CAppFrame.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="917" topLine="14" />
+			<Cursor1 position="3319" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="app\menus\CCMenuServer.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1218" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="app\dialogs\CDialogSetPathToTools.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="860" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="app\menus\CCMenuServer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1533" topLine="17" />
 		</Cursor>
 	</File>
 	<File name="app\controls\console\CConsole.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="576" topLine="0" />
+			<Cursor1 position="1116" topLine="8" />
 		</Cursor>
 	</File>
-	<File name="app\menus\CCMenuStack.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="app\menus\CCMenuStack.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="917" topLine="14" />
+		</Cursor>
+	</File>
+	<File name="app\CAppFrame.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9613" topLine="228" />
+		</Cursor>
+	</File>
+	<File name="app\menus\CCMenuStack.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="961" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="app\CAppFrame.cpp" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5639" topLine="104" />
-		</Cursor>
-	</File>
-	<File name="app\dialogs\CDialogChangeCredentials.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="510" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="app\dialogs\CDialogChangeCredentials.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2121" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="grepster.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="895" topLine="35" />
-		</Cursor>
-	</File>
-	<File name="app\controls\server-stacks\CServerStacks.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6017" topLine="139" />
-		</Cursor>
-	</File>
-	<File name="grepster.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4281" topLine="93" />
-		</Cursor>
-	</File>
-	<File name="app\controls\server-stacks\CServerStacks.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3402" topLine="73" />
-		</Cursor>
-	</File>
-	<File name="precomp.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="453" topLine="8" />
 		</Cursor>
 	</File>
 	<File name="app\controls\session-notebook\CSessionNotebook.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1937" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="app\menubar\CAppMenubar.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="480" topLine="49" />
-		</Cursor>
-	</File>
-	<File name="pugixml-1.4\pugixml.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="220375" topLine="8282" />
-		</Cursor>
-	</File>
-	<File name="app\init\CAppInit.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3365" topLine="74" />
-		</Cursor>
-	</File>
-	<File name="pugixml-1.4\pugixml.hpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="13334" topLine="345" />
-		</Cursor>
-	</File>
-	<File name="app\controls\console\CConsole.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1845" topLine="20" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

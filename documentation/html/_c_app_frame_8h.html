@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>wxWidgets frame object which houses grepster.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="grepster_8h_source.html">../grepster.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_c_app_menubar_8h_source.html">CAppMenubar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_c_app_menubar_8h_source.html">menubar/CAppMenubar.h</a>&quot;</code><br />
 </div>
 <p><a href="_c_app_frame_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -108,9 +108,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:af193f69a079134ae165cc495b9b62d70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#af193f69a079134ae165cc495b9b62d70">FRAME_WIDTH</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="memitem:af193f69a079134ae165cc495b9b62d70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#af193f69a079134ae165cc495b9b62d70">FRAME_WIDTH</a>&#160;&#160;&#160;1280</td></tr>
 <tr class="separator:af193f69a079134ae165cc495b9b62d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a915e7581e140dd2d625fa1cfca365100"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#a915e7581e140dd2d625fa1cfca365100">FRAME_HEIGHT</a>&#160;&#160;&#160;680</td></tr>
+<tr class="memitem:a915e7581e140dd2d625fa1cfca365100"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#a915e7581e140dd2d625fa1cfca365100">FRAME_HEIGHT</a>&#160;&#160;&#160;800</td></tr>
 <tr class="separator:a915e7581e140dd2d625fa1cfca365100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7ed5ea1d43fb2b71b3eaea2397fb5ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#ae7ed5ea1d43fb2b71b3eaea2397fb5ca">BG_COLOR</a>&#160;&#160;&#160;&quot;#e1e6f6&quot;</td></tr>
 <tr class="separator:ae7ed5ea1d43fb2b71b3eaea2397fb5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,7 +124,7 @@ Macros</h2></td></tr>
 <tr class="separator:a6873edc266d9a65580a0cbc4228d6135"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5048d2447c9dcbe465cfb22755418d5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#a5048d2447c9dcbe465cfb22755418d5f">ABOUT_INFORMATION</a>&#160;&#160;&#160;L&quot;Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster acts as an interface to SSH and SFTP tools for system administrators to easily grep logs and execute remote commands from a centralized utility.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details.&quot;</td></tr>
 <tr class="separator:a5048d2447c9dcbe465cfb22755418d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff09db625f5bb869b4d444f5ec458715"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#aff09db625f5bb869b4d444f5ec458715">DEFAULT_SERVER_STACKS_PATH</a>&#160;&#160;&#160;L&quot;C:\\grepster\\serverstacks\\&quot;</td></tr>
+<tr class="memitem:aff09db625f5bb869b4d444f5ec458715"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_frame_8h.html#aff09db625f5bb869b4d444f5ec458715">DEFAULT_SERVER_STACKS_PATH</a>&#160;&#160;&#160;L&quot;\\stacks\\&quot;</td></tr>
 <tr class="separator:aff09db625f5bb869b4d444f5ec458715"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -161,7 +161,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEFAULT_SERVER_STACKS_PATH&#160;&#160;&#160;L&quot;C:\\grepster\\serverstacks\\&quot;</td>
+          <td class="memname">#define DEFAULT_SERVER_STACKS_PATH&#160;&#160;&#160;L&quot;\\stacks\\&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -173,7 +173,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FRAME_HEIGHT&#160;&#160;&#160;680</td>
+          <td class="memname">#define FRAME_HEIGHT&#160;&#160;&#160;800</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -185,7 +185,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FRAME_WIDTH&#160;&#160;&#160;1024</td>
+          <td class="memname">#define FRAME_WIDTH&#160;&#160;&#160;1280</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -243,7 +243,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 1 2015 20:34:15 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 8 2015 03:05:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

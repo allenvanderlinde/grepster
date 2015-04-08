@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['writedefaultadminconfiguration',['WriteDefaultAdminConfiguration',['../class_c_app_init.html#aa4c84bdaff18c30206ec81481b866ca9',1,'CAppInit']]],
-  ['writedefaultconfiguration',['WriteDefaultConfiguration',['../class_c_app_entry.html#a6ad02b808b691f2bf25388a04b2c02d3',1,'CAppEntry']]],
-  ['writexmldata',['WriteXMLData',['../class_c_app_init.html#ae48984d9e7a263d651bc68466c6f3e7e',1,'CAppInit']]],
-  ['wxbegin_5fevent_5ftable',['wxBEGIN_EVENT_TABLE',['../_c_app_frame_8cpp.html#aeda269d9e590ec13b5236272cbdb8e27',1,'wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame) EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT:&#160;CAppFrame.cpp'],['../_c_server_stacks_8cpp.html#a2b2313a73594873cf93441a746aa9d58',1,'wxBEGIN_EVENT_TABLE(CServerStacks, wxTreeCtrl) EVT_TREE_ITEM_ACTIVATED(wxID_ANY:&#160;CServerStacks.cpp'],['../_c_session_notebook_8cpp.html#a3990b2532cb3cd21ebad1d05dba1008b',1,'wxBEGIN_EVENT_TABLE(CSessionNotebook, wxAuiNotebook) EVT_AUINOTEBOOK_PAGE_CLOSED(wxID_ANY:&#160;CSessionNotebook.cpp'],['../_c_dialog_change_credentials_8cpp.html#a4f8ed18e588d795450e1e6c3be271621',1,'wxBEGIN_EVENT_TABLE(CDialogChangeCredentials, wxDialog) EVT_BUTTON(CDialogChangeCredentials:&#160;CDialogChangeCredentials.cpp'],['../_c_dialog_set_path_to_tools_8cpp.html#a73c30950c80a56c31c278c844dd75d27',1,'wxBEGIN_EVENT_TABLE(CDialogSetPathToTools, wxDialog) EVT_BUTTON(CDialogSetPathToTools:&#160;CDialogSetPathToTools.cpp']]],
-  ['wxdeclare_5fevent_5ftable',['wxDECLARE_EVENT_TABLE',['../class_c_app_frame.html#a65bda3db59444d6ff73b4bbca62a2dd9',1,'CAppFrame::wxDECLARE_EVENT_TABLE()'],['../class_c_server_stacks.html#a3e72d52ea02d62a211c8486b58ddbfc3',1,'CServerStacks::wxDECLARE_EVENT_TABLE()'],['../class_c_session_notebook.html#ad1cdfdde81d650eb91a9971fb4720941',1,'CSessionNotebook::wxDECLARE_EVENT_TABLE()'],['../class_c_dialog_change_credentials.html#adbcd8c7aacffacacf20714e39d1d25a7',1,'CDialogChangeCredentials::wxDECLARE_EVENT_TABLE()'],['../class_c_dialog_set_path_to_tools.html#a66d283ed1f06512609d8d2533acdc6ee',1,'CDialogSetPathToTools::wxDECLARE_EVENT_TABLE()']]],
-  ['wxend_5fevent_5ftable',['wxEND_EVENT_TABLE',['../_c_session_notebook_8cpp.html#a3ad0d83b1bef133c3faf54f9d3c11d79',1,'CSessionNotebook.cpp']]],
-  ['wximplement_5fapp',['wxIMPLEMENT_APP',['../grepster_8cpp.html#aecc2a75bea36a4b283cc8b652c5bb5cb',1,'grepster.cpp']]]
+  ['setpathtotools',['SetPathToTools',['../class_c_app_frame.html#a47be431fad9cb1f83e14cde41f4ad68f',1,'CAppFrame']]],
+  ['sftptool',['SFTPTool',['../class_c_app_init.html#af495d6a3150a9c68f33e8f9594e1e2e4',1,'CAppInit']]],
+  ['showsplash',['ShowSplash',['../class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1',1,'CAppEntry']]],
+  ['size',['Size',['../class_c_admin_stack.html#aefa93258ba6d1f99a746ec3e15ec1913',1,'CAdminStack']]],
+  ['spawnandrun',['SpawnAndRun',['../grepster_8cpp.html#ad3031ede04721eaf7747d85423f6bfe5',1,'SpawnAndRun(wxString path, wxString args):&#160;grepster.cpp'],['../grepster_8h.html#ad3031ede04721eaf7747d85423f6bfe5',1,'SpawnAndRun(wxString path, wxString args):&#160;grepster.cpp']]],
+  ['sshtool',['SSHTool',['../class_c_app_init.html#a183ff6042f6e58189b73ec8c6bd806b5',1,'CAppInit']]],
+  ['success',['Success',['../class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366',1,'CAppInit']]]
 ];
