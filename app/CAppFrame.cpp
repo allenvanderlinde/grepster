@@ -43,6 +43,12 @@ wxEND_EVENT_TABLE()
 */
 CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSize& size)
     : wxFrame(NULL, wxID_ANY, title, position, size) {
+    /* Decide if the frame should be maximized based upon
+        frame's last maximized state. */
+    bool maximized;
+    Configuration->Read(CONFIG_LABEL_FRAME_MAX, &maximized);
+    if(maximized)
+        Maximize(maximized);
     // Set background color
     SetBackgroundColour(BG_COLOR);
 
@@ -284,6 +290,7 @@ void CAppFrame::OnExit(wxCloseEvent& event) {
     GetSize(&w, &h);
     Configuration->Write(CONFIG_LABEL_FRAME_WIDTH, w);
     Configuration->Write(CONFIG_LABEL_FRAME_HEIGHT, h);
+    (IsMaximized()) ? Configuration->Write(CONFIG_LABEL_FRAME_MAX, true) : Configuration->Write(CONFIG_LABEL_FRAME_MAX, false);
     delete Configuration;
     Destroy();
     /* NOTE: Do not call wxFrame::Close() here! It's called before CAppInit::WriteXMLData() is called. */

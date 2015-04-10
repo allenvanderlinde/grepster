@@ -19,8 +19,8 @@
 /* Configuration definitions. */
 #define CONFIG_LABEL_FRAME_WIDTH            "width"
 #define CONFIG_LABEL_FRAME_HEIGHT           "height"
+#define CONFIG_LABEL_FRAME_MAX              "framemax"
 /* NOTE:
-    NEED TO WRITE LABELS FOR MAXIMIZED
     CONSOLE WIDTH, HEIGHT
     SERVER STACKS WIDTH, HEIGHT
     ARRANGEMENT OF CONTROLS.

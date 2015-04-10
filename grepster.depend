@@ -3177,7 +3177,7 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1428668737 c:\grepster\version.h
+1428682724 c:\grepster\version.h
 
 1428471686 c:\grepster\resources\grepster_rc.h
 
@@ -3200,7 +3200,7 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1428668485 source:c:\grepster\app\cappframe.cpp
+1428682724 source:c:\grepster\app\cappframe.cpp
 	"../precomp.h"
 	"../resources/grepster_rc.h"
 	"CAppFrame.h"
@@ -3519,7 +3519,7 @@
 
 1427242828 c:\grepster\app\webviewer\cwebviewer.h
 
-1428668733 c:\grepster\app\init\cappinit.h
+1428681746 c:\grepster\app\init\cappinit.h
 	"../../session/CAdminAccount.h"
 
 1426736723 c:\grepster\app\menubar\cappmenubar.h
