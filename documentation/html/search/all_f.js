@@ -29,6 +29,5 @@ var searchData=
   ['statusbar_5fstring_5fid_5fquit',['STATUSBAR_STRING_ID_QUIT',['../_menubar_properties_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a6a467bd350ba76d5f8e0b0da52be591b',1,'MenubarProperties.h']]],
   ['statusbar_5fstring_5fid_5fset_5fpath_5ftools',['STATUSBAR_STRING_ID_SET_PATH_TOOLS',['../_menubar_properties_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a42491d9df5920a06edf7bdf714593c52',1,'MenubarProperties.h']]],
   ['statusbar_5fstring_5fid_5ftoggle_5fdockable',['STATUSBAR_STRING_ID_TOGGLE_DOCKABLE',['../_menubar_properties_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a0883f5e1a510ac8e3192182bbafd9291',1,'MenubarProperties.h']]],
-  ['statusbar_5fwelcome',['STATUSBAR_WELCOME',['../_c_app_frame_8h.html#a7eaedd0a5a26a658a7b9f3362c60e122',1,'CAppFrame.h']]],
-  ['success',['Success',['../class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366',1,'CAppInit']]]
+  ['statusbar_5fwelcome',['STATUSBAR_WELCOME',['../_c_app_frame_8h.html#a7eaedd0a5a26a658a7b9f3362c60e122',1,'CAppFrame.h']]]
 ];

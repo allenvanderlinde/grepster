@@ -127,9 +127,6 @@
 			<Option compile="1" />
 			<Option weight="0" />
 		</Unit>
-		<Unit filename="pugixml-1.4/pugiconfig.hpp" />
-		<Unit filename="pugixml-1.4/pugixml.cpp" />
-		<Unit filename="pugixml-1.4/pugixml.hpp" />
 		<Unit filename="resources/grepster.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>

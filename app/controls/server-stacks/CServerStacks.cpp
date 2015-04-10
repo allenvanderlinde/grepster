@@ -38,13 +38,13 @@ CServerStacks::CServerStacks(wxWindow* parentFrame)
     : wxTreeCtrl(parentFrame, SERVER_STACKS_ID, wxDefaultPosition, wxDefaultSize, wxTR_DEFAULT_STYLE | wxTR_HIDE_ROOT) {
     /* Configure server stack's display settings. */
     m_serverStacksInf_t.PaneBorder(true);
-    m_serverStacksInf_t.BestSize(SERVER_STACKS_DEFAULT_WIDTH, FRAME_HEIGHT);
+    m_serverStacksInf_t.BestSize(SERVER_STACKS_DEFAULT_WIDTH, Configuration->Read(CONFIG_LABEL_FRAME_HEIGHT, DEFAULT_FRAME_HEIGHT));
     m_serverStacksInf_t.Name(SERVER_STACKS_NAME);
     m_serverStacksInf_t.Caption(SERVER_STACKS_CTRL_TITLE);
     m_serverStacksInf_t.CaptionVisible();
     m_serverStacksInf_t.Left();
     m_serverStacksInf_t.CloseButton(false);
-    m_serverStacksInf_t.Floatable(Configuration->bToggleFloating);
+    m_serverStacksInf_t.Floatable(Configuration->Floating());
     m_serverStacksInf_t.Show(true);
 
     /* Initialize server stack from administrator account. */
@@ -73,12 +73,13 @@ int CServerStacks::FindInStacks(wxString str) {
 void CServerStacks::AddServerStack(CAdminStack serverStack) {
     m_Stacks.push_back(serverStack);
     wxTreeItemId newStack = AppendItem(m_treeAdminItem, serverStack.Name());;
+    m_TreeStacks.push_back(newStack);
     /* Build server list from server stack. */
     for(int i = 0; i < serverStack.Size(); i++)
         AppendItem(newStack, serverStack.IP(i));
     if(IsExpanded(m_treeAdminItem) == false)
         Expand(m_treeAdminItem);
-    //Expand(newStack);    // Expand the newly added stack
+    Expand(newStack);    // Expand the newly added stack
     SortChildren(m_treeAdminItem);
 }
 
@@ -94,11 +95,13 @@ void CServerStacks::OpenItem(wxTreeEvent &event) {
     else
         Expand(item);
 
+    /*
     CWebViewer* pBrowser = new CWebViewer(this);    // does belonging to this item eat up more memory than belonging to CAppFrame? should that be extern global?
     SessionNotebook->AddPage(pBrowser->GetBrowser(), GetItemText(item));
     size_t nNewPageIndex = SessionNotebook->GetPageCount();
     SessionNotebook->SetSelection(nNewPageIndex - 1);
     delete pBrowser;
+    */
 }
 
 /*
@@ -118,18 +121,22 @@ void CServerStacks::ContextMenu(wxTreeEvent& event) {
     wxString szItemText(GetItemText(item));    // Capture item's string that the user selected
     /* Decide what menu options should be displayed
         depending upon what item is selected. */
-    for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
-        if(szItemText.IsSameAs(itr->Name())) {  // If selecting a server stack
-            CCMenuStack* menu = new CCMenuStack(szItemText);
-            PopupMenu(menu);
-            return;
-        } else {    // Check if a server was selected
-            wxString szServerText(GetItemText(GetItemParent(item)));
-            for(int i = 0; i < itr->Size(); i++) {
-                if(szItemText.IsSameAs(itr->IP(i))) {   // If selecting a server
-                    CCMenuServer* menu = new CCMenuServer(szItemText, szServerText);
-                    PopupMenu(menu);
-                    return;
+    if(szItemText.IsSameAs(GetItemText(m_treeAdminItem))) {
+        return;
+    } else {
+        for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
+            if(szItemText.IsSameAs(itr->Name())) {  // If selecting a server stack
+                CCMenuStack* menu = new CCMenuStack(szItemText);
+                PopupMenu(menu);
+                return;
+            } else {    // Check if a server was selected
+                wxString szServerText(GetItemText(GetItemParent(item)));
+                for(int i = 0; i < itr->Size(); i++) {
+                    if(szItemText.IsSameAs(itr->IP(i))) {   // If selecting a server
+                        CCMenuServer* menu = new CCMenuServer(szItemText, szServerText);
+                        PopupMenu(menu);
+                        return;
+                    }
                 }
             }
         }
@@ -146,10 +153,17 @@ void CServerStacks::CloseStack(wxString name) {
         if(name.IsSameAs(itr->Name())) {
             Console->BlueText();
             *Console << L"\nClosing stack " + name + L".";
+            /* Crawl through current tree items representing stacks
+                to select and remove the match. */
+            for(auto itrt = m_TreeStacks.begin(); itrt != m_TreeStacks.end(); ++itrt) {
+                if(name.IsSameAs(GetItemText(*itrt))) {
+                    Delete(*itrt);
+                    break;
+                }
+            }
             m_Stacks.erase(itr);
             *Console << L"\nStack " + name + L" closed.\n";
             Console->BlackText();
-            Delete(GetFocusedItem());
             return;
         }
     }
@@ -170,9 +184,9 @@ void CServerStacks::RemoveServer(wxString name, wxString parent) {
                     Console->BlueText();
                     *Console << L"\nRemoving server " + name + L" from stack " + itr->Name() + L".\n";
                     Console->BlackText();
+                    Delete(GetFocusedItem());
                     if(itr->Size() < 1)
                         CloseStack(parent);
-                    Delete(GetFocusedItem());
                     return;
                 }
             }

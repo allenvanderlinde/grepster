@@ -30,13 +30,13 @@ CConsole::CConsole(wxWindow* parentFrame)
 
     /* Configure console's display settings. */
     m_consoleInf_t.PaneBorder(true);
-    m_consoleInf_t.BestSize(FRAME_WIDTH, CONSOLE_DEFAULT_HEIGHT);
+    m_consoleInf_t.BestSize(Configuration->Read(CONFIG_LABEL_FRAME_WIDTH, DEFAULT_FRAME_WIDTH), CONSOLE_DEFAULT_HEIGHT);
     m_consoleInf_t.Name(CONSOLE_NAME);
     m_consoleInf_t.Caption(CONSOLE_CTRL_TITLE);
     m_consoleInf_t.CaptionVisible();
     m_consoleInf_t.Bottom();
     m_consoleInf_t.CloseButton(false);
-    m_consoleInf_t.Floatable(Configuration->bToggleFloating);
+    m_consoleInf_t.Floatable(Configuration->Floating());
     m_consoleInf_t.Show(true);
 
     /* Set the console's font. */

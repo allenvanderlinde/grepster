@@ -67,7 +67,7 @@ CAppMenubar::CAppMenubar()
                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_TOGGLE_DOCKABLE],
                            wxITEM_CHECK);
     /* Check activated items set from configuration. */
-    m_pMenuOptions->Check(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, Configuration->bToggleFloating);
+    m_pMenuOptions->Check(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, Configuration->Floating());
 
     // Help menu
     m_pMenuHelp = new wxMenu;

@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>This object loads and populates grepster's configuration settings.  
+<p>This object loads grepster's configuration from the Windows registry.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_c_admin_account_8h_source.html">../../session/CAdminAccount.h</a>&quot;</code><br />
 </div>
@@ -107,63 +107,90 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:adb838a71d5e3ff123caaad5e461377ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_init_8h.html#adb838a71d5e3ff123caaad5e461377ec">XML_CONFIGURATION_NODE_LABEL</a>&#160;&#160;&#160;L&quot;grepster&quot;</td></tr>
-<tr class="separator:adb838a71d5e3ff123caaad5e461377ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b91b4cfdd81a2c8651af3d6023cd006"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_init_8h.html#a2b91b4cfdd81a2c8651af3d6023cd006">XML_ELEMENT_LABEL</a>&#160;&#160;&#160;L&quot;setting&quot;</td></tr>
-<tr class="separator:a2b91b4cfdd81a2c8651af3d6023cd006"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3726bf586c15a069d9c170941833365"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_init_8h.html#ae3726bf586c15a069d9c170941833365">XML_ID_LABEL</a>&#160;&#160;&#160;L&quot;id&quot;</td></tr>
-<tr class="separator:ae3726bf586c15a069d9c170941833365"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e231f5f5a9e6715add1ce1fd195d3df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_init_8h.html#a0e231f5f5a9e6715add1ce1fd195d3df">XML_VALUE_LABEL</a>&#160;&#160;&#160;L&quot;value&quot;</td></tr>
-<tr class="separator:a0e231f5f5a9e6715add1ce1fd195d3df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b608d2b062d73fd75a8e696c5d7b94f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_init_8h.html#a2b608d2b062d73fd75a8e696c5d7b94f">CONFIG_LABEL_FRAME_WIDTH</a>&#160;&#160;&#160;&quot;width&quot;</td></tr>
+<tr class="separator:a2b608d2b062d73fd75a8e696c5d7b94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9a927c3914c4be1c518456f6d7a6cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_init_8h.html#aab9a927c3914c4be1c518456f6d7a6cc">CONFIG_LABEL_FRAME_HEIGHT</a>&#160;&#160;&#160;&quot;height&quot;</td></tr>
+<tr class="separator:aab9a927c3914c4be1c518456f6d7a6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d919df6e97bad79b4e7b610da3a407f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_init_8h.html#a6d919df6e97bad79b4e7b610da3a407f">CONFIG_LABEL_USERNAME</a>&#160;&#160;&#160;&quot;username&quot;</td></tr>
+<tr class="separator:a6d919df6e97bad79b4e7b610da3a407f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a02d7287c3f0950a68e5ea4e96b62a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_init_8h.html#a85a02d7287c3f0950a68e5ea4e96b62a">CONFIG_LABEL_PATH_SSH_TOOL</a>&#160;&#160;&#160;&quot;pathssh&quot;</td></tr>
+<tr class="separator:a85a02d7287c3f0950a68e5ea4e96b62a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a083115684cc4ec8773f89242c83cb857"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_init_8h.html#a083115684cc4ec8773f89242c83cb857">CONFIG_LABEL_PATH_SFTP_TOOL</a>&#160;&#160;&#160;&quot;pathsftp&quot;</td></tr>
+<tr class="separator:a083115684cc4ec8773f89242c83cb857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a725e77be88291a8bb8119e87c262d53b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_app_init_8h.html#a725e77be88291a8bb8119e87c262d53b">CONFIG_LABEL_TOGGLE_FLOATING</a>&#160;&#160;&#160;&quot;togglefloating&quot;</td></tr>
+<tr class="separator:a725e77be88291a8bb8119e87c262d53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This object loads and populates grepster's configuration settings. </p>
+<div class="textblock"><p>This object loads grepster's configuration from the Windows registry. </p>
 <dl class="section author"><dt>Author</dt><dd>Allen Vanderlinde </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>November 27, 2014 </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="adb838a71d5e3ff123caaad5e461377ec"></a>
+<a class="anchor" id="aab9a927c3914c4be1c518456f6d7a6cc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XML_CONFIGURATION_NODE_LABEL&#160;&#160;&#160;L&quot;grepster&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>XML global definitions. </p>
-
-</div>
-</div>
-<a class="anchor" id="a2b91b4cfdd81a2c8651af3d6023cd006"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XML_ELEMENT_LABEL&#160;&#160;&#160;L&quot;setting&quot;</td>
+          <td class="memname">#define CONFIG_LABEL_FRAME_HEIGHT&#160;&#160;&#160;&quot;height&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ae3726bf586c15a069d9c170941833365"></a>
+<a class="anchor" id="a2b608d2b062d73fd75a8e696c5d7b94f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XML_ID_LABEL&#160;&#160;&#160;L&quot;id&quot;</td>
+          <td class="memname">#define CONFIG_LABEL_FRAME_WIDTH&#160;&#160;&#160;&quot;width&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a0e231f5f5a9e6715add1ce1fd195d3df"></a>
+<a class="anchor" id="a083115684cc4ec8773f89242c83cb857"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XML_VALUE_LABEL&#160;&#160;&#160;L&quot;value&quot;</td>
+          <td class="memname">#define CONFIG_LABEL_PATH_SFTP_TOOL&#160;&#160;&#160;&quot;pathsftp&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a85a02d7287c3f0950a68e5ea4e96b62a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LABEL_PATH_SSH_TOOL&#160;&#160;&#160;&quot;pathssh&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a725e77be88291a8bb8119e87c262d53b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LABEL_TOGGLE_FLOATING&#160;&#160;&#160;&quot;togglefloating&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6d919df6e97bad79b4e7b610da3a407f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LABEL_USERNAME&#160;&#160;&#160;&quot;username&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -173,7 +200,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 8 2015 03:05:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 10 2015 08:26:00 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

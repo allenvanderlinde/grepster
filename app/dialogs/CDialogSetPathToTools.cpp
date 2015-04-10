@@ -71,11 +71,11 @@ void CDialogSetPathToTools::OnOK(wxCommandEvent& event) {
     Configuration->ChangePathToTools(m_pSSHToolSelect->GetPath(), m_pSFTPToolSelect->GetPath());
     if(!szPrevSSHToolPath.IsSameAs(Configuration->PathToSSHTool())) {
        *Console << L"\n\nChanging grepster's SSH tool to: " + Configuration->PathToSSHTool();
-       Configuration->WriteXMLData();
+       //Configuration->WriteXMLData();
     }
     if(!szPrevSFTPToolPath.IsSameAs(Configuration->PathToSFTPTool())) {
        *Console << L"\n\nChanging grepster's SFTP tool to: " + Configuration->PathToSFTPTool();
-       Configuration->WriteXMLData();
+       //Configuration->WriteXMLData();
     }
 
     EndModal(BUTTON_OK);

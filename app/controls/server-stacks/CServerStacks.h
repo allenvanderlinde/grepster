@@ -86,14 +86,17 @@ public:
     void RemoveServer(wxString name, wxString parent);
 
 private:
+    /** @brief      This is the tree control's required root item. */
     wxTreeItemId    m_treeRoot;
     /** @brief      This tree item will be replaced with the administrator's username. */
     wxTreeItemId    m_treeAdminItem;
-
+    /** @brief      This object holds wxWidgets AUI settings for the control. */
     wxAuiPaneInfo   m_serverStacksInf_t;
 
     /** @brief      Vector of CAdminStack from which the tree control builds its server list. */
-    std::vector<CAdminStack>    m_Stacks;   // will this be where the actual string vectors are kept? then updatestacks() can stay to calling only members?
+    std::vector<CAdminStack>    m_Stacks;
+    /** @brief      Vector of wxTreeCtrlId which corresponds to m_Stacks for item selection comparison. */
+    std::vector<wxTreeItemId>   m_TreeStacks;
 
     /**
      * @brief       Context menu for an individual server stack.

@@ -2,7 +2,7 @@
  * @file    MenubarProperties.h
  * @author  Allen Vanderlinde
  * @date    March 7, 2015
- * @brief   Definitions for grepster's menu bar, including strings, ids, and enumerations for use by CAppMenubar.
+ * @brief   Definitions for grepster's menubar, including strings, ids, and enumerations for use by CAppMenubar.
  */
 /*
     Copyright (C) 2014-2015 by Allen Vanderlinde.
@@ -14,14 +14,17 @@
 #define _MENUBARPROPERTIES_H_
 
 
-/* Strings array. */
-/** Menu bar menu strings. */
-const wxString FRAME_MENUBAR_STRINGS[]      = {L"&File",
+/**
+ * @brief       Menubar menu strings.
+ */
+const wxString FRAME_MENUBAR_STRINGS[]      = {L"&grepster",
                                                L"&Session",
                                                L"&Tools",
                                                L"&Options",
                                                L"&Help"};
-/** Menu bar menu item strings. */
+/**
+ * @brief       Menubar menu item strings.
+ */
 const wxString FRAME_MENU_STRINGS[]         = {L"&Quit\tCtrl+Q",
                                                L"&New grepster session...\tCtrl+N",
                                                L"&Open grepster session...\tCtrl+O",
@@ -32,7 +35,9 @@ const wxString FRAME_MENU_STRINGS[]         = {L"&Quit\tCtrl+Q",
                                                L"&Set path to SSH/SFTP tools...",
                                                L"&Toggle floating controls",
                                                L"&About grepster..."};
-/** Status bar strings. These are the labels displayed for each menu item. */
+/**
+ * @brief       Status bar strings. These are the labels displayed for each menu item.
+ */
 const wxString FRAME_STATUSBAR_STRINGS[]    = {L"Quit grepster.",
                                                L"Create a new session of configured server stacks for grepping and running remote commands.",
                                                L"Open a saved session.",
@@ -44,7 +49,9 @@ const wxString FRAME_STATUSBAR_STRINGS[]    = {L"Quit grepster.",
                                                L"Allow grepster's server stacks and console controls to be un-docked.",
                                                L"About grepster."};
 
-/** Menubar menu IDs. */
+/**
+ * @brief       Menubar menu IDs.
+ */
 enum enum_FrameMenuIDs {
     FRAME_ID_FILE_MENU = 0,
     FRAME_ID_SESSION_MENU,
@@ -53,7 +60,9 @@ enum enum_FrameMenuIDs {
     FRAME_ID_HELP_MENU
 };
 
-/** Menu string IDs. */
+/**
+ * @brief       Menu string IDs.
+ */
 enum enum_MenuStringIDs {
     FRAME_MENU_STRING_ID_QUIT = 0,
     FRAME_MENU_STRING_ID_NEW_SESSION,
@@ -67,7 +76,9 @@ enum enum_MenuStringIDs {
     FRAME_MENU_STRING_ID_ABOUT
 };
 
-/** Status bar string IDs. */
+/**
+ * @brief       Status bar string IDs.
+ */
 enum enum_StatusbarStringIDs {
     STATUSBAR_STRING_ID_QUIT = 0,
     STATUSBAR_STRING_ID_NEW_SESSION,
@@ -81,12 +92,14 @@ enum enum_StatusbarStringIDs {
     STATUSBAR_STRING_ID_ABOUT
 };
 
-/** Menu bar function IDs used to decide which function should handle the event. */
+/**
+ * @brief       Menu bar function IDs used to decide which function should handle the event.
+ *              This must start at a high enough number as to
+ *              not get confused with what wxWidgets thinks should
+ *              be the default action for ENTER. If it's too low,
+ *              hitting enter could quit the application.
+ */
 enum enum_MenuFunctionIDs {
-    /** @brief      This must start at a high enough number as to
-     *              not get confused with what wxWidgets thinks should
-     *              be the default action for enter. If it's too low,
-     *              hitting enter could quit the application. */
     MENU_FUNCTION_ID_FILE_QUIT = 9000,
     MENU_FUNCTION_ID_SESSION_NEW,
     MENU_FUNCTION_ID_SESSION_OPEN,

@@ -15,6 +15,7 @@
 
 /* Include the most frequently used and unchanging headers here. */
 #include <wx/wxprec.h>
+#include <wx/config.h>
 #include <wx/treectrl.h>
 #include <wx/aui/aui.h>
 #include <wx/aui/framemanager.h>
@@ -36,7 +37,5 @@
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
 #endif // WX_PRECOMP
-
-#include "pugixml-1.4/pugixml.hpp"
 
 #endif // _PRECOMP_H_

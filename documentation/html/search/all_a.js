@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['m_5fbconfigurationloadedsuccessfully',['m_bConfigurationLoadedSuccessfully',['../class_c_app_init.html#a64d2a758646b43d34dd2c986f0854d13',1,'CAppInit::m_bConfigurationLoadedSuccessfully()'],['../class_c_admin_account.html#a29ef9103a45cfdfb971ff1a2e14c97d4',1,'CAdminAccount::m_bConfigurationLoadedSuccessfully()']]],
+  ['m_5fbtogglefloating',['m_bToggleFloating',['../class_c_app_init.html#a59b1461e26ce561a989084c526f0ca99',1,'CAppInit']]],
   ['m_5fconsoleinf_5ft',['m_consoleInf_t',['../class_c_console.html#aa105d6d8ada4ba13cabadad7c712514f',1,'CConsole']]],
   ['m_5fgrepnotebookinf_5ft',['m_grepNotebookInf_t',['../class_c_session_notebook.html#a15c9f38a9766e728b63d63d126aec1a4',1,'CSessionNotebook']]],
   ['m_5fpadministrator',['m_pAdministrator',['../class_c_app_init.html#a10ad1620c5f77c3d359c9399f92fe34a',1,'CAppInit']]],
@@ -48,8 +48,7 @@ var searchData=
   ['m_5fszusername',['m_szUsername',['../class_c_admin_account.html#a323e1d8f1df5d487ad037df8c4b5ac41',1,'CAdminAccount']]],
   ['m_5ftreeadminitem',['m_treeAdminItem',['../class_c_server_stacks.html#afc0d3cc940813c4e1983e26d34df0199',1,'CServerStacks']]],
   ['m_5ftreeroot',['m_treeRoot',['../class_c_server_stacks.html#aac56837bdedf02a7b31061524efa52f4',1,'CServerStacks']]],
-  ['m_5fxmlfile',['m_XMLFile',['../class_c_app_init.html#a10f6a513346808f5189dad11abdcf8c1',1,'CAppInit']]],
-  ['m_5fxmlsettings',['m_XMLSettings',['../class_c_app_init.html#ad938844a3a5f4c332de8f82981e85967',1,'CAppInit']]],
+  ['m_5ftreestacks',['m_TreeStacks',['../class_c_server_stacks.html#a3d315850b8642cc67ed4e565c3cdd148',1,'CServerStacks']]],
   ['mainpage_2emd',['mainpage.md',['../mainpage_8md.html',1,'']]],
   ['menu_5ffunction_5fid_5ffile_5fquit',['MENU_FUNCTION_ID_FILE_QUIT',['../_menubar_properties_8h.html#a0a74d218f380445ded1ec0d56f2a9eefacd0a7a923ac36d6428e69d03713dbcde',1,'MenubarProperties.h']]],
   ['menu_5ffunction_5fid_5fhelp_5fabout',['MENU_FUNCTION_ID_HELP_ABOUT',['../_menubar_properties_8h.html#a0a74d218f380445ded1ec0d56f2a9eefa0338e31fcca848cc9cc2bacb5c714e0c',1,'MenubarProperties.h']]],

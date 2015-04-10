@@ -3,7 +3,7 @@ var searchData=
   ['cadminaccount',['CAdminAccount',['../class_c_admin_account.html#a4cf2c2c1517e66216fd5127fef2e3c8e',1,'CAdminAccount']]],
   ['cadminstack',['CAdminStack',['../class_c_admin_stack.html#acbb2754839612ae41ae6587fb0d6c609',1,'CAdminStack']]],
   ['cappframe',['CAppFrame',['../class_c_app_frame.html#a2fc146905ed09967d872e330f494d37b',1,'CAppFrame']]],
-  ['cappinit',['CAppInit',['../class_c_app_init.html#a9d0827f6b41a56fed151a780011ac12e',1,'CAppInit']]],
+  ['cappinit',['CAppInit',['../class_c_app_init.html#a90fd7460085d48f908394c70c28516ce',1,'CAppInit']]],
   ['cappmenubar',['CAppMenubar',['../class_c_app_menubar.html#a2904572f733dc0a89f517605ea5ee7bb',1,'CAppMenubar']]],
   ['ccmenuserver',['CCMenuServer',['../class_c_c_menu_server.html#ab1e2108835e3e3b96299b644f3292dd2',1,'CCMenuServer']]],
   ['ccmenustack',['CCMenuStack',['../class_c_c_menu_stack.html#ae6815bcddce2fa1759a8741b8aaeb2c9',1,'CCMenuStack']]],
@@ -19,7 +19,6 @@ var searchData=
   ['closestack',['CloseStack',['../class_c_server_stacks.html#a5d2f5f2c72f7c94e17ed98a02688445e',1,'CServerStacks']]],
   ['contextmenu',['ContextMenu',['../class_c_server_stacks.html#a57b2a2bc38f9b1b5d7157407a7de707f',1,'CServerStacks']]],
   ['count',['Count',['../class_c_server_stacks.html#adf75cd777231e8fa61d938ecd468a6f7',1,'CServerStacks']]],
-  ['createadminxmlconfiguration',['CreateAdminXMLConfiguration',['../class_c_app_frame.html#ad7eef5c8a99e0166451b1b6c6cd4e686',1,'CAppFrame']]],
   ['cserverstacks',['CServerStacks',['../class_c_server_stacks.html#a15dc377b08f8d02f27ef99a121b17cf5',1,'CServerStacks']]],
   ['csessionnotebook',['CSessionNotebook',['../class_c_session_notebook.html#aa1289054a191f47349822f9b8a5ea5c4',1,'CSessionNotebook']]],
   ['cwebviewer',['CWebViewer',['../class_c_web_viewer.html#ae0a7b1fec636891b9485d6278e6a2c1e',1,'CWebViewer']]]

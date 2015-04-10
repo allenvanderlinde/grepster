@@ -151,15 +151,20 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aac56837bdedf02a7b31061524efa52f4"><td class="memItemLeft" align="right" valign="top">wxTreeItemId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#aac56837bdedf02a7b31061524efa52f4">m_treeRoot</a></td></tr>
+<tr class="memdesc:aac56837bdedf02a7b31061524efa52f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the tree control's required root item.  <a href="#aac56837bdedf02a7b31061524efa52f4">More...</a><br /></td></tr>
 <tr class="separator:aac56837bdedf02a7b31061524efa52f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc0d3cc940813c4e1983e26d34df0199"><td class="memItemLeft" align="right" valign="top">wxTreeItemId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#afc0d3cc940813c4e1983e26d34df0199">m_treeAdminItem</a></td></tr>
 <tr class="memdesc:afc0d3cc940813c4e1983e26d34df0199"><td class="mdescLeft">&#160;</td><td class="mdescRight">This tree item will be replaced with the administrator's username.  <a href="#afc0d3cc940813c4e1983e26d34df0199">More...</a><br /></td></tr>
 <tr class="separator:afc0d3cc940813c4e1983e26d34df0199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d7148a2f33ce07cb28640dec90daac7"><td class="memItemLeft" align="right" valign="top">wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a6d7148a2f33ce07cb28640dec90daac7">m_serverStacksInf_t</a></td></tr>
+<tr class="memdesc:a6d7148a2f33ce07cb28640dec90daac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This object holds wxWidgets AUI settings for the control.  <a href="#a6d7148a2f33ce07cb28640dec90daac7">More...</a><br /></td></tr>
 <tr class="separator:a6d7148a2f33ce07cb28640dec90daac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a779a2d6fdd13b44f5f1e64a5ec2d4dd8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_c_admin_stack.html">CAdminStack</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a779a2d6fdd13b44f5f1e64a5ec2d4dd8">m_Stacks</a></td></tr>
 <tr class="memdesc:a779a2d6fdd13b44f5f1e64a5ec2d4dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of <a class="el" href="class_c_admin_stack.html" title="Class definition for grepster&#39;s server stack data object. ">CAdminStack</a> from which the tree control builds its server list.  <a href="#a779a2d6fdd13b44f5f1e64a5ec2d4dd8">More...</a><br /></td></tr>
 <tr class="separator:a779a2d6fdd13b44f5f1e64a5ec2d4dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d315850b8642cc67ed4e565c3cdd148"><td class="memItemLeft" align="right" valign="top">std::vector&lt; wxTreeItemId &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_server_stacks.html#a3d315850b8642cc67ed4e565c3cdd148">m_TreeStacks</a></td></tr>
+<tr class="memdesc:a3d315850b8642cc67ed4e565c3cdd148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of wxTreeCtrlId which corresponds to m_Stacks for item selection comparison.  <a href="#a3d315850b8642cc67ed4e565c3cdd148">More...</a><br /></td></tr>
+<tr class="separator:a3d315850b8642cc67ed4e565c3cdd148"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for grepster's tree control for housing server stacks. </p>
@@ -501,6 +506,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>This object holds wxWidgets AUI settings for the control. </p>
+
 </div>
 </div>
 <a class="anchor" id="a779a2d6fdd13b44f5f1e64a5ec2d4dd8"></a>
@@ -565,6 +572,30 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>This is the tree control's required root item. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3d315850b8642cc67ed4e565c3cdd148"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;wxTreeItemId&gt; CServerStacks::m_TreeStacks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vector of wxTreeCtrlId which corresponds to m_Stacks for item selection comparison. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -574,7 +605,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 8 2015 03:05:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 10 2015 08:26:00 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

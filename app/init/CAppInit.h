@@ -2,7 +2,7 @@
  * @file    CAppInit.h
  * @author  Allen Vanderlinde
  * @date    November 27, 2014
- * @brief   This object loads and populates grepster's configuration settings.
+ * @brief   This object loads grepster's configuration from the Windows registry.
  */
 /*
     Copyright (C) 2014-2015 by Allen Vanderlinde.
@@ -16,38 +16,35 @@
 #include "../../session/CAdminAccount.h"
 
 
-/** XML global definitions. */
-#define XML_CONFIGURATION_NODE_LABEL        L"grepster"
-#define XML_ELEMENT_LABEL                   L"setting"
-#define XML_ID_LABEL                        L"id"
-#define XML_VALUE_LABEL                     L"value"
+/* Configuration definitions. */
+#define CONFIG_LABEL_FRAME_WIDTH            "width"
+#define CONFIG_LABEL_FRAME_HEIGHT           "height"
+/* NOTE:
+    NEED TO WRITE LABELS FOR MAXIMIZED
+    CONSOLE WIDTH, HEIGHT
+    SERVER STACKS WIDTH, HEIGHT
+    ARRANGEMENT OF CONTROLS.
+    */
+#define CONFIG_LABEL_USERNAME               "username"
+#define CONFIG_LABEL_PATH_SSH_TOOL          "pathssh"
+#define CONFIG_LABEL_PATH_SFTP_TOOL         "pathsftp"
+#define CONFIG_LABEL_TOGGLE_FLOATING        "togglefloating"
 
 
 /**
- * This object opens grepster's XML configuration and populates the configuration structure with its settings.
- * Variables which control grepster's current usage are public within this class so that they can be easily modified by other grepster objects.
+ * This object reads grepster's configuration from the Windows registry and populates
+ * its members with its values.
  *
  * @class   CAppInit
  * @brief   Class definition for grepster's configuration.
  */
-class CAppInit {
+class CAppInit : public wxConfig {
 public:
     /**
-     * @brief       Default constructor loads grepster's configuration from file and populates the configuration structure with its settings.
+     * @brief       Default constructor loads grepster's configuration from registry.
+     * @param[in]   label Label for grepster's configuration in Windows registry.
      */
-    CAppInit();
-
-    /**
-     * Note: The order in which configuration settings are written to file must not be changed. This processing order is hard-coded.
-     * @brief       Writes XML data to file from any configuration changes.
-     */
-    void WriteXMLData();
-
-    /**
-     * @brief       Query successful loading of configuration.
-     * @retval      bool Returns true if XML configuration loaded successfully.
-     */
-    bool Success() { return m_bConfigurationLoadedSuccessfully; }
+    CAppInit(wxString label);
 
     /**
      * @brief       Query administrator's username.
@@ -81,7 +78,6 @@ public:
      */
     wxString SFTPTool();
 
-
     /**
      * @brief       Change the administrator's credentials.
      * @param[in]   username The administrator's new username.
@@ -96,15 +92,22 @@ public:
      * @param[in]   sftpPath The path to the SFTP tool grepster will use.
      */
     void ChangePathToTools(wxString sshPath,
-                           wxString sftpPath); //{ m_szPathToSSHTool = sshPath; m_szPathToSFTPTool = sftpPath; }
+                           wxString sftpPath) { m_szPathToSSHTool = sshPath; m_szPathToSFTPTool = sftpPath; }
 
-    bool bToggleFloating;
+    /**
+     * @brief       Find out if grepster's controls are currently set to float.
+     * @retval      bool True if grepster's controls are currently set to float.
+     */
+    bool Floating() { return m_bToggleFloating; }
+    /**
+     * @brief       Set grepster's controls to float or to be fixed.
+     * @param[in]   floating Allows the user to set grepster's controls to float (true)
+     *              or to be fixed (false). */
+    void Floating(bool floating) { m_bToggleFloating = floating; }
 
 private:
+    /** @brief      Object which stores all the user's administrator information. */
     CAdminAccount*      m_pAdministrator;
-
-    pugi::xml_document  m_XMLFile;
-    pugi::xml_node      m_XMLSettings;
 
     /**
      * @brief       Fully-qualified path to grepster's SSH tool.
@@ -123,17 +126,8 @@ private:
      */
     wxString            m_szSFTPTool;
 
-    bool m_bConfigurationLoadedSuccessfully;
-
-    /**
-     * Note: The order in which elements are parsed and settings applied must not be changed. This processing order is hard-coded.
-     * @brief       Reads XML data from file and applies its values to this class's members.
-     */
-    void ApplyXMLData();
-    /**
-     * @brief       Write's grepster's default admin configuration file.
-     */
-    void WriteDefaultAdminConfiguration();
+    /** @brief      Toggle floating controls. */
+    bool m_bToggleFloating;
 };
 
 #endif // _CAPPINIT_H_

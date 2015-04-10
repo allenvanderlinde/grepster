@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['configuration',['Configuration',['../grepster_8cpp.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp'],['../grepster_8h.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp']]],
-  ['console',['Console',['../grepster_8cpp.html#a034ab9689fbe23cc500e603f1c0cf19d',1,'Console():&#160;grepster.cpp'],['../grepster_8h.html#a034ab9689fbe23cc500e603f1c0cf19d',1,'Console():&#160;grepster.cpp']]]
+  ['frame_5fmenu_5fstrings',['FRAME_MENU_STRINGS',['../_menubar_properties_8h.html#a5971b8e78636afc6a02522675973c0d8',1,'MenubarProperties.h']]],
+  ['frame_5fmenubar_5fstrings',['FRAME_MENUBAR_STRINGS',['../_menubar_properties_8h.html#a3e1e9806fc3f980326a2232229bd5aad',1,'MenubarProperties.h']]],
+  ['frame_5fstatusbar_5fstrings',['FRAME_STATUSBAR_STRINGS',['../_menubar_properties_8h.html#add51008434435a251ab4fa1301a04c67',1,'MenubarProperties.h']]]
 ];

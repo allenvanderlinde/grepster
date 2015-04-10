@@ -49,9 +49,9 @@ CDialogChangeCredentials::CDialogChangeCredentials(wxWindow* parentFrame)
     m_pSizerInput = new wxFlexGridSizer(2, 2, 5, 5);
 
     m_pSizerInput->Add(m_pTextUsername, wxSizerFlags().Center());
-    m_pSizerInput->Add(m_pInputUsername, wxSizerFlags().Expand());  //1, wxEXPAND);
+    m_pSizerInput->Add(m_pInputUsername, wxSizerFlags().Expand());
     m_pSizerInput->Add(m_pTextPassword, wxSizerFlags().Center());
-    m_pSizerInput->Add(m_pInputPassword, wxSizerFlags().Expand());  //1, wxEXPAND);
+    m_pSizerInput->Add(m_pInputPassword, wxSizerFlags().Expand());
 
     m_pStaticSizer->Add(m_pSizerInput, wxSizerFlags().Border(wxALL, 5));
 
@@ -77,7 +77,6 @@ void CDialogChangeCredentials::OnOK(wxCommandEvent& event) {
     Configuration->ChangeCredentials(m_pInputUsername->GetLineText(0), m_pInputPassword->GetLineText(0));
     if(!szPrevUsername.IsSameAs(Configuration->Username())) {
         *Console << L"\n\nChanging username from " + szPrevUsername + " to " + Configuration->Username() + ".";
-        Configuration->WriteXMLData();
         ServerStacks->UpdateStacks();
     }
     if(!szPrevPassword.IsSameAs(Configuration->Password())) {
@@ -85,6 +84,5 @@ void CDialogChangeCredentials::OnOK(wxCommandEvent& event) {
         *Console << L"\n\nChanging password.";
         Console->BlackText();
     }
-
     EndModal(BUTTON_OK);    // End the dialog box with a specified successful return code
 }

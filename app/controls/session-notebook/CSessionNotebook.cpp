@@ -40,7 +40,7 @@ CSessionNotebook::CSessionNotebook(wxWindow* parentFrame)
     m_grepNotebookInf_t.CaptionVisible(false);
     m_grepNotebookInf_t.Center();
     m_grepNotebookInf_t.CloseButton(false);
-    //m_grepNotebookInf_t.Floatable(Configuration->bToggleFloating);
+    //m_grepNotebookInf_t.Floatable(Configuration->m_bToggleFloating);
     m_grepNotebookInf_t.Show(true);
 
     /* Customize the tab color. */

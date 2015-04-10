@@ -117,12 +117,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ad564731060174c0a7fa267221c17637d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#ad564731060174c0a7fa267221c17637d">RefreshConfiguration</a> ()</td></tr>
-<tr class="memdesc:ad564731060174c0a7fa267221c17637d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes grepster's configuration when any change is made to update user's interface.  <a href="#ad564731060174c0a7fa267221c17637d">More...</a><br /></td></tr>
-<tr class="separator:ad564731060174c0a7fa267221c17637d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7eef5c8a99e0166451b1b6c6cd4e686"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#ad7eef5c8a99e0166451b1b6c6cd4e686">CreateAdminXMLConfiguration</a> ()</td></tr>
-<tr class="memdesc:ad7eef5c8a99e0166451b1b6c6cd4e686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new administrator XML configuration file. This will ask for the new admin's username only. Passwords will need to be entered with each new session.  <a href="#ad7eef5c8a99e0166451b1b6c6cd4e686">More...</a><br /></td></tr>
-<tr class="separator:ad7eef5c8a99e0166451b1b6c6cd4e686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bfd8c3a33407e2c47fde3cc7fc985d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a5bfd8c3a33407e2c47fde3cc7fc985d5">UpdateControls</a> ()</td></tr>
+<tr class="memdesc:a5bfd8c3a33407e2c47fde3cc7fc985d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates grepster's controls after configuration changes.  <a href="#a5bfd8c3a33407e2c47fde3cc7fc985d5">More...</a><br /></td></tr>
+<tr class="separator:a5bfd8c3a33407e2c47fde3cc7fc985d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9564987106b9679d7c86dff33e71eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#ab9564987106b9679d7c86dff33e71eed">NewServerStack</a> (wxCommandEvent &amp;event)</td></tr>
 <tr class="memdesc:ab9564987106b9679d7c86dff33e71eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and add a new server stack to the session.  <a href="#ab9564987106b9679d7c86dff33e71eed">More...</a><br /></td></tr>
 <tr class="separator:ab9564987106b9679d7c86dff33e71eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,8 +157,10 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:afabaa81e81e97443b1156ce36ad2eec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread vector for keeping tracking of process spawns.  <a href="#afabaa81e81e97443b1156ce36ad2eec6">More...</a><br /></td></tr>
 <tr class="separator:afabaa81e81e97443b1156ce36ad2eec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f02100e4bacbb5fb8c72d731075a20d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_app_menubar.html">CAppMenubar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a5f02100e4bacbb5fb8c72d731075a20d">m_pMenubar</a></td></tr>
+<tr class="memdesc:a5f02100e4bacbb5fb8c72d731075a20d"><td class="mdescLeft">&#160;</td><td class="mdescRight">grepster's menubar object.  <a href="#a5f02100e4bacbb5fb8c72d731075a20d">More...</a><br /></td></tr>
 <tr class="separator:a5f02100e4bacbb5fb8c72d731075a20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a215d9068460b42a395d050e68074312f"><td class="memItemLeft" align="right" valign="top">wxStatusBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a215d9068460b42a395d050e68074312f">m_pStatusbar</a></td></tr>
+<tr class="memdesc:a215d9068460b42a395d050e68074312f"><td class="mdescLeft">&#160;</td><td class="mdescRight">grepster's statusbar object.  <a href="#a215d9068460b42a395d050e68074312f">More...</a><br /></td></tr>
 <tr class="separator:a215d9068460b42a395d050e68074312f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c2d134577e66b69a30a95804059f460"><td class="memItemLeft" align="right" valign="top">wxAuiManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a3c2d134577e66b69a30a95804059f460">m_pAui</a></td></tr>
 <tr class="memdesc:a3c2d134577e66b69a30a95804059f460"><td class="mdescLeft">&#160;</td><td class="mdescRight">wxWidgets' advanced UI manager. This object gives more options for widget appearance and customization.  <a href="#a3c2d134577e66b69a30a95804059f460">More...</a><br /></td></tr>
@@ -309,31 +308,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad7eef5c8a99e0166451b1b6c6cd4e686"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CAppFrame::CreateAdminXMLConfiguration </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Create new administrator XML configuration file. This will ask for the new admin's username only. Passwords will need to be entered with each new session. </p>
-
-</div>
-</div>
 <a class="anchor" id="ac19147712aadc47f1bf06930833c69eb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -438,31 +412,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad564731060174c0a7fa267221c17637d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CAppFrame::RefreshConfiguration </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Refreshes grepster's configuration when any change is made to update user's interface. </p>
-
-</div>
-</div>
 <a class="anchor" id="a47be431fad9cb1f83e14cde41f4ad68f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -512,6 +461,31 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Toggle floating controls for user's current session and configuration. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5bfd8c3a33407e2c47fde3cc7fc985d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppFrame::UpdateControls </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates grepster's controls after configuration changes. </p>
 
 </div>
 </div>
@@ -581,6 +555,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>grepster's menubar object. </p>
+
 </div>
 </div>
 <a class="anchor" id="a215d9068460b42a395d050e68074312f"></a>
@@ -600,6 +576,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>grepster's statusbar object. </p>
 
 </div>
 </div>
@@ -632,7 +610,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 8 2015 03:05:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 10 2015 08:26:00 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

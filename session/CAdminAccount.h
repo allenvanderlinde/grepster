@@ -15,12 +15,12 @@
 
 
 /**
-* This object represents an administrator's user account which houses the user-defined server stacks for each grepping session.
-* Administrator account information is written/read from a single representative XML file.
-*
-* @class   CAdminAccount
-* @brief   Class definition for grepster's administrator accounts.
-*/
+ * This object represents an administrator's user account which houses the user-defined server stacks for each grepping session.
+ * Administrator account information is written/read from a single representative XML file.
+ *
+ * @class   CAdminAccount
+ * @brief   Class definition for grepster's administrator accounts.
+ */
 class CAdminAccount {
 public:
     /**
@@ -47,9 +47,11 @@ public:
                            wxString password) { m_szUsername = username; m_szPassword = password; }
 
 private:
-    bool m_bConfigurationLoadedSuccessfully;
-
+    /** @brief      Administrator username passed to backend tools
+     *              for authentication. */
     wxString m_szUsername;
+    /** @brief      Administrator password passed to backend tools
+     *              for authentication. */
     wxString m_szPassword;
  };
 

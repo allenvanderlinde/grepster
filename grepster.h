@@ -80,8 +80,8 @@ std::string SpawnAndRun(wxString path,
  */
 #define _cast(v) wxString(#v)
 
-/** grepster's configuration file path. */
-#define CONFIGURATION_FILE_PATH             "grepster.xml"
+/** grepster's configuration label in Windows registry. */
+#define CONFIG_REG_LABEL                    "grepster"
 
 /** grepster's buffer length for sending remote commands. Measured in bytes. */
 #define CHAR_BUFFER_LENGTH                  4096

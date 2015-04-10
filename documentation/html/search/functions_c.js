@@ -5,6 +5,5 @@ var searchData=
   ['showsplash',['ShowSplash',['../class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1',1,'CAppEntry']]],
   ['size',['Size',['../class_c_admin_stack.html#aefa93258ba6d1f99a746ec3e15ec1913',1,'CAdminStack']]],
   ['spawnandrun',['SpawnAndRun',['../grepster_8cpp.html#ad3031ede04721eaf7747d85423f6bfe5',1,'SpawnAndRun(wxString path, wxString args):&#160;grepster.cpp'],['../grepster_8h.html#ad3031ede04721eaf7747d85423f6bfe5',1,'SpawnAndRun(wxString path, wxString args):&#160;grepster.cpp']]],
-  ['sshtool',['SSHTool',['../class_c_app_init.html#a183ff6042f6e58189b73ec8c6bd806b5',1,'CAppInit']]],
-  ['success',['Success',['../class_c_app_init.html#ad7d1fe4cce9b2da9ff9041444ad84366',1,'CAppInit']]]
+  ['sshtool',['SSHTool',['../class_c_app_init.html#a183ff6042f6e58189b73ec8c6bd806b5',1,'CAppInit']]]
 ];

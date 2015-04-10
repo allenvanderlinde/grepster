@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['btogglefloating',['bToggleFloating',['../class_c_app_init.html#a0cc6b234885facdf9c3f07ad88ac2017',1,'CAppInit']]]
+  ['configuration',['Configuration',['../grepster_8cpp.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp'],['../grepster_8h.html#a7171ec99e90e93dcc3cff9309a70abbb',1,'Configuration():&#160;grepster.cpp']]],
+  ['console',['Console',['../grepster_8cpp.html#a034ab9689fbe23cc500e603f1c0cf19d',1,'Console():&#160;grepster.cpp'],['../grepster_8h.html#a034ab9689fbe23cc500e603f1c0cf19d',1,'Console():&#160;grepster.cpp']]]
 ];

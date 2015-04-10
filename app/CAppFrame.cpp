@@ -82,7 +82,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     m_pAui->Update();
 
     /* Set grepster's initial configuration. */
-    RefreshConfiguration();
+    UpdateControls();
 }
 
 /*
@@ -134,19 +134,23 @@ void CAppFrame::AddServerStack(wxCommandEvent& event) {
             }
             else {
                 CAdminStack newStack(*itr); // Build stack from file
-                //
-                // NOTE: Need to have way to load the stack when a server is removed from the original
-                // which is already in the session!
-                //
-                // NOTE: Need to have way to remove the stack when its last server is removed.
-                //
-                if(ServerStacks->FindInStacks(newStack.Name()) == wxNOT_FOUND) {    // If the stack isn't already added to the session
+                int index = ServerStacks->FindInStacks(newStack.Name());
+                if(index == wxNOT_FOUND) {    // If the stack isn't already added to the session
                     ServerStacks->AddServerStack(newStack); // Add the new stack to the server stacks control
                     Console->BlueText();
                     *Console << L"\nAdding " + newStack.Name() + " to session.\n";
                     Console->BlackText();
+                } else {    // Check to see if the stack should be reloaded
+                    if(newStack.Size() > ServerStacks->GetStacks()[index].Size()) {
+                        ServerStacks->CloseStack(ServerStacks->GetStacks()[index].Name());
+                        ServerStacks->AddServerStack(newStack);
+                        Console->BlueText();
+                        *Console << L"\nAdding " + newStack.Name() + " to session.\n";
+                        Console->BlackText();
+                    } else {
+                        *Console << L"\nStack already in session.\n";
+                    }
                 }
-                else *Console << L"\nStack already in session.\n";
             }
         }
     }
@@ -157,8 +161,10 @@ void CAppFrame::AddServerStack(wxCommandEvent& event) {
 */
 void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
     CDialogChangeCredentials* Dialog = new CDialogChangeCredentials(this);
-    if(Dialog->ShowModal() == Dialog->BUTTON_OK)
+    if(Dialog->ShowModal() == Dialog->BUTTON_OK) {
+        Configuration->Write(CONFIG_LABEL_USERNAME, Configuration->Username());
         Dialog->Destroy();
+    }
 }
 
 /*
@@ -205,29 +211,31 @@ void CAppFrame::LaunchPuTTY(wxCommandEvent& event ) {
 */
 void CAppFrame::SetPathToTools(wxCommandEvent& event) {
     CDialogSetPathToTools* Dialog = new CDialogSetPathToTools(this);
-    if(Dialog->ShowModal() == Dialog->BUTTON_OK)
+    if(Dialog->ShowModal() == Dialog->BUTTON_OK) {
+        Configuration->Write(CONFIG_LABEL_PATH_SSH_TOOL, Configuration->PathToSSHTool());
+        Configuration->Write(CONFIG_LABEL_PATH_SFTP_TOOL, Configuration->PathToSFTPTool());
         Dialog->Destroy();
+    }
 }
 
 /*
     CAppFrame::ToggleFloating
 */
 void CAppFrame::ToggleFloating(wxCommandEvent& event) {
-    (Configuration->bToggleFloating) ? Configuration->bToggleFloating = false : Configuration->bToggleFloating = true;
-
-    /* Refresh grepster's configuration to reflect local changes. */
-    RefreshConfiguration();
-    Configuration->WriteXMLData();
+    (Configuration->Floating()) ? Configuration->Floating(false) : Configuration->Floating(true);
+    Configuration->Write(CONFIG_LABEL_TOGGLE_FLOATING, Configuration->Floating());
+    /* Refresh grepster's settings to reflect local changes. */
+    UpdateControls();
 }
 
 /*
-    CAppFrame::RefreshConfiguration
+    CAppFrame::UpdateControls
 */
-void CAppFrame::RefreshConfiguration() {
+void CAppFrame::UpdateControls() {
     // Floating controls
-    m_pAui->GetPane(Console).Floatable(Configuration->bToggleFloating);
-    m_pAui->GetPane(ServerStacks).Floatable(Configuration->bToggleFloating);
-    m_pAui->GetPane(SessionNotebook).Floatable(Configuration->bToggleFloating);
+    m_pAui->GetPane(Console).Floatable(Configuration->Floating());
+    m_pAui->GetPane(ServerStacks).Floatable(Configuration->Floating());
+    m_pAui->GetPane(SessionNotebook).Floatable(Configuration->Floating());
 }
 
 /*
@@ -271,7 +279,12 @@ void CAppFrame::CloseFrame(wxCommandEvent& event) {
     CAppFrame::OnExit
 */
 void CAppFrame::OnExit(wxCloseEvent& event) {
-    Configuration->WriteXMLData();
+    /* Write any frame changes to Windows registry. */
+    int w, h;
+    GetSize(&w, &h);
+    Configuration->Write(CONFIG_LABEL_FRAME_WIDTH, w);
+    Configuration->Write(CONFIG_LABEL_FRAME_HEIGHT, h);
+    delete Configuration;
     Destroy();
     /* NOTE: Do not call wxFrame::Close() here! It's called before CAppInit::WriteXMLData() is called. */
 }

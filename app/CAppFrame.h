@@ -16,8 +16,8 @@
 #include "../grepster.h"
 #include "menubar/CAppMenubar.h"
 
-#define FRAME_WIDTH                     1280
-#define FRAME_HEIGHT                    800
+#define DEFAULT_FRAME_WIDTH             1280
+#define DEFAULT_FRAME_HEIGHT            800
 
 #define BG_COLOR                        "#e1e6f6"
 
@@ -59,21 +59,18 @@ private:
     /** @brief      Thread vector for keeping tracking of process spawns. */
     std::vector<std::thread>    m_Spawns;
 
+    /** @brief      grepster's menubar object. */
     CAppMenubar*                m_pMenubar;
+    /** @brief      grepster's statusbar object. */
     wxStatusBar*                m_pStatusbar;
     /** @brief      wxWidgets' advanced UI manager. This object gives more
      *              options for widget appearance and customization. */
     wxAuiManager*               m_pAui;
 
     /**
-     * @brief       Refreshes grepster's configuration when any change is made to update user's interface.
+     * @brief       Updates grepster's controls after configuration changes.
      */
-    void RefreshConfiguration();
-    /**
-     * @brief       Create new administrator XML configuration file. This will ask for the new admin's username only.
-     *              Passwords will need to be entered with each new session.
-     */
-    void CreateAdminXMLConfiguration();
+    void UpdateControls();
 
     /**
      * @brief       Create and add a new server stack to the session.

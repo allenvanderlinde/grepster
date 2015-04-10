@@ -80,7 +80,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><b>Acknowledgements</b></p>
-<p>grepster's XML methods are built on the pugixml backbone. Please visit <a href="http://pugixml.org">http://pugixml.org</a> for more information. The license is included in pugixml-1.4/readme.txt.</p>
 <h1>Instructions </h1>
 <p><b>Note:</b> grepster uses standard SFTP commands for pulling down compiled results from each grep session. A SFTP and a SSH tool must be installed and grepster must be able to point to the directory paths which hold each tool's executable. These paths can be set from within grepster.</p>
 <p>I suggest using PuTTY's SSH and SFTP tools as they were the tools tested during development. Thanks to Simon Tatham and the PuTTY Team for creating such great tools! More information on PuTTY's license can be found <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/licence.html" target="_blank">here</a>.</p>
@@ -92,20 +91,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>Source Code Notes </h1>
 <ol>
 <li>
-<a class="el" href="class_c_app_frame.html#ad564731060174c0a7fa267221c17637d" title="Refreshes grepster&#39;s configuration when any change is made to update user&#39;s interface. ">CAppFrame::RefreshConfiguration</a> is always called after a user changes one of grepster's control's options (such as setting a control to float). Essentially this saves all new changes to grepster's interface and configuration in real-time. </li>
-<li>
-<a class="el" href="class_c_app_frame.html" title="Class definition for grepster&#39;s primary frame. ">CAppFrame</a> houses grepster's control methods and only refreshes grepster's configuration as changes are made, using <a class="el" href="class_c_app_init.html" title="Class definition for grepster&#39;s configuration. ">CAppInit</a> to then write the new settings to file. <a class="el" href="class_c_app_init.html" title="Class definition for grepster&#39;s configuration. ">CAppInit</a> is the only class which holds grepster's actual configuration flags and members. </li>
-<li>
-grepster uses the pugixml API for reading and processing of XML files. pugixml code is not documented here and is sparsly documented in the source. Please visit: <a href="http://pugixml.org/">http://pugixml.org</a> for information and tutorials on the API. </li>
-<li>
-grepster's configuration methods <a class="el" href="class_c_app_init.html#a752bc94a59515fee8effef75d3ceb281" title="Reads XML data from file and applies its values to this class&#39;s members. ">CAppInit::ApplyXMLData</a> and <a class="el" href="class_c_app_init.html#ae48984d9e7a263d651bc68466c6f3e7e" title="Writes XML data to file from any configuration changes. ">CAppInit::WriteXMLData</a> must not be modified unless you are adding new data to be appended to the end of the file, or reading from the end of the file for new, custom configurations. This order is hard-coded within the methods themselves and grepster will not function or save configuration properly if this order is changed. </li>
-<li>
 The source code tries to maintain a standard but descriptive naming scheme for method variables whose scope does not leave the method in which it's declared. Their names describe just what they are. For example, <code>wxButton* pButtonOK</code>: <code>pButtonOK</code> will be found in each dialog's instantiation method which uses OK buttons, for example. </li>
 </ol>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 8 2015 03:05:43 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 10 2015 08:26:01 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

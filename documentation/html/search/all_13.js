@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['xml_5fconfiguration_5fnode_5flabel',['XML_CONFIGURATION_NODE_LABEL',['../_c_app_init_8h.html#adb838a71d5e3ff123caaad5e461377ec',1,'CAppInit.h']]],
-  ['xml_5felement_5flabel',['XML_ELEMENT_LABEL',['../_c_app_init_8h.html#a2b91b4cfdd81a2c8651af3d6023cd006',1,'CAppInit.h']]],
-  ['xml_5fid_5flabel',['XML_ID_LABEL',['../_c_app_init_8h.html#ae3726bf586c15a069d9c170941833365',1,'CAppInit.h']]],
-  ['xml_5fvalue_5flabel',['XML_VALUE_LABEL',['../_c_app_init_8h.html#a0e231f5f5a9e6715add1ce1fd195d3df',1,'CAppInit.h']]]
+  ['_7ecappframe',['~CAppFrame',['../class_c_app_frame.html#af7656741c72ceb3574ba9d66da65c6c9',1,'CAppFrame']]],
+  ['_7eccmenuserver',['~CCMenuServer',['../class_c_c_menu_server.html#a4e43bf3d92c2d15c54dbd916858a6a5d',1,'CCMenuServer']]],
+  ['_7eccmenustack',['~CCMenuStack',['../class_c_c_menu_stack.html#afc00e3fca310c7e5e90a2cb8ae3a5a50',1,'CCMenuStack']]]
 ];

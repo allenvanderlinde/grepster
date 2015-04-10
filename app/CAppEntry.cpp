@@ -43,8 +43,11 @@ bool CAppEntry::OnInit() {
 
     /* Load grepster's configuration. */
     LoadConfiguration();
-
-    m_pGrepsterFrame = new CAppFrame(g_szFrameTitle, wxDefaultPosition, wxDefaultSize);//wxPoint(50, 50), wxSize(FRAME_WIDTH, FRAME_HEIGHT));
+    /* Build grepster's primary frame. */
+    m_pGrepsterFrame = new CAppFrame(g_szFrameTitle,
+                                     wxDefaultPosition,
+                                     wxSize(Configuration->Read(CONFIG_LABEL_FRAME_WIDTH, DEFAULT_FRAME_WIDTH),
+                                            Configuration->Read(CONFIG_LABEL_FRAME_HEIGHT, DEFAULT_FRAME_HEIGHT)));
     /* Set grepster's window icon. */
     m_pGrepsterFrame->SetIcon(wxICON(aaaaappicon));
     SetTopWindow(m_pGrepsterFrame);
@@ -80,15 +83,5 @@ bool CAppEntry::ShowSplash(int resource_id) {
     CAppEntry::LoadConfiguration
 */
 void CAppEntry::LoadConfiguration() {
-    // MAKE SURE TO UPDATE CONSOLE AFTER APPENTRY SUCCEEDS
-    Configuration = new CAppInit();
-    if(!Configuration->Success()) {
-        wxMessageBox("grepster's configuration was unable to be loaded. Verify grepster.xml exists and its elements are intact.", "Using Default Configuration", wxICON_WARNING | wxOK);
-        // Write default configuration method to call here, create grepster.xml
-        // WriteDefaultConfiguration();
-        // delete Configuration;
-        // Configuration = new CAppInit();
-
-        // NOTE: m_pAdministrator must now exist and be correct.
-    }
+    Configuration = new CAppInit(CONFIG_REG_LABEL);
 }
