@@ -49,6 +49,4 @@ bin/
 obj/
 design.txt
 precomp.h.gch
-welcome.html
-welcome/welcome.html
-welcome.png
+welcome/
