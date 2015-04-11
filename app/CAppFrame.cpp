@@ -74,9 +74,9 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     // Set AUI flags for display
     m_pAui->SetFlags(wxAUI_MGR_ALLOW_ACTIVE_PANE | wxAUI_MGR_LIVE_RESIZE | wxAUI_MGR_ALLOW_FLOATING | wxAUI_MGR_VENETIAN_BLINDS_HINT);
 
-    m_pAui->AddPane(Console, Console->GetPaneInfo());
     m_pAui->AddPane(ServerStacks, ServerStacks->GetPaneInfo());
     m_pAui->AddPane(SessionNotebook, SessionNotebook->GetPaneInfo());
+    m_pAui->AddPane(Console, Console->GetPaneInfo());
 
     // Set pane colors for controls
     wxAuiDockArt* art = m_pAui->GetArtProvider();
@@ -87,7 +87,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
 
     m_pAui->Update();
 
-    /* Set grepster's initial configuration. */
+    /* Apply initial settings to controls. */
     UpdateControls();
 }
 
