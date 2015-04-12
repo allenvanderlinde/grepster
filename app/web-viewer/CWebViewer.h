@@ -13,7 +13,7 @@
 #ifndef _CWEBVIEWER_H_
 #define _CWEBVIEWER_H_
 
-#define WELCOME_PAGE       "http://allenvanderlinde.github.io/grepster/welcome.html"
+#define WELCOME_PAGE       "http://cdn.rawgit.com/allenvanderlinde/grepster/master/welcome/index.html"
 
 
 /**
