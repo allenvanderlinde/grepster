@@ -34,7 +34,7 @@ public:
      * @brief       Get the control's pane information.
      * @retval      wxAuiPaneInfo This is the tree control's display configuration object.
      */
-    wxAuiPaneInfo GetPaneInfo() { return m_serverStacksInf_t; }
+    wxAuiPaneInfo Info() { return m_serverStacksInf_t; }
 
     /**
      * @brief       Add a built CAdminStack to the tree control for user interaction.

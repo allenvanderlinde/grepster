@@ -32,6 +32,12 @@ public:
     CConsole(wxWindow* parentFrame);
 
     /**
+     * @brief       Get the console control's pane information.
+     * @retval      wxAuiPaneInfo This is the text control's display configuration object.
+     */
+    wxAuiPaneInfo Info() { return m_consoleInf_t; }
+
+    /**
      * @brief       Set the text color to light cobalt blue.
      */
     void BlueText() { SetDefaultStyle(wxColour(0,
@@ -41,12 +47,6 @@ public:
      * @brief       Set the text color to default black.
      */
     void BlackText() { SetDefaultStyle(wxTextAttr(*wxBLACK)); }
-
-    /**
-     * @brief       Get the console control's pane information.
-     * @retval      wxAuiPaneInfo This is the text control's display configuration object.
-     */
-    wxAuiPaneInfo GetPaneInfo() { return m_consoleInf_t; }
 
 private:
     wxAuiPaneInfo m_consoleInf_t;

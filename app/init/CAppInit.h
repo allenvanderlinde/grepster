@@ -17,18 +17,19 @@
 
 
 /* Configuration definitions. */
-#define CONFIG_LABEL_FRAME_WIDTH            "width"
-#define CONFIG_LABEL_FRAME_HEIGHT           "height"
-#define CONFIG_LABEL_FRAME_MAX              "framemax"
-/* NOTE:
-    CONSOLE WIDTH, HEIGHT
-    SERVER STACKS WIDTH, HEIGHT
-    ARRANGEMENT OF CONTROLS.
-    */
-#define CONFIG_LABEL_USERNAME               "username"
-#define CONFIG_LABEL_PATH_SSH_TOOL          "pathssh"
-#define CONFIG_LABEL_PATH_SFTP_TOOL         "pathsftp"
-#define CONFIG_LABEL_TOGGLE_FLOATING        "togglefloating"
+#define CONFIG_LABEL_FRAME_WIDTH            "grepster-width"
+#define CONFIG_LABEL_FRAME_HEIGHT           "grepster-height"
+#define CONFIG_LABEL_FRAME_X                "grepster-x"
+#define CONFIG_LABEL_FRAME_Y                "grepster-y"
+#define CONFIG_LABEL_FRAME_MAX              "grepster-frame-maximized"
+#define CONFIG_LABEL_STACKS_WIDTH           "grepster-stacks-width"
+#define CONFIG_LABEL_STACKS_HEIGHT          "grepster-stacks-height"
+#define CONFIG_LABEL_CONSOLE_WIDTH          "grepster-console-width"
+#define CONFIG_LABEL_CONSOLE_HEIGHT         "grepster-console-height"
+#define CONFIG_LABEL_USERNAME               "grepster-username"
+#define CONFIG_LABEL_PATH_SSH_TOOL          "grepster-pathssh"
+#define CONFIG_LABEL_PATH_SFTP_TOOL         "grepster-pathsftp"
+#define CONFIG_LABEL_TOGGLE_FLOATING        "grepster-togglefloating"
 
 
 /**

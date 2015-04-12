@@ -31,16 +31,13 @@ wxEND_EVENT_TABLE()
 CSessionNotebook::CSessionNotebook(wxWindow* parentFrame)
     : wxAuiNotebook(parentFrame, SESSION_NOTEBOOK_ID) {
     /* Configure the Session Notebook's display settings. */
+    /* Miscellaneous settings. */
     m_grepNotebookInf_t.PaneBorder(true);
     m_grepNotebookInf_t.BestSize(SESSION_NOTEBOOK_DEFAULT_WIDTH, SESSION_NOTEBOOK_DEFAULT_HEIGHT);
     m_grepNotebookInf_t.Name(SESSION_NOTEBOOK_NAME);
-    /* wxWidgets does not yet allow notebook controls to float,
-    so there is no need for it to have a title bar. */
-    //m_grepNotebookInf_t.Caption(SESSION_NOTEBOOK_CTRL_TITLE);
     m_grepNotebookInf_t.CaptionVisible(false);
     m_grepNotebookInf_t.Center();
     m_grepNotebookInf_t.CloseButton(false);
-    //m_grepNotebookInf_t.Floatable(Configuration->m_bToggleFloating);
     m_grepNotebookInf_t.Show(true);
 
     /* Customize the tab color. */

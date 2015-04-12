@@ -37,12 +37,17 @@ wxEND_EVENT_TABLE()
 CServerStacks::CServerStacks(wxWindow* parentFrame)
     : wxTreeCtrl(parentFrame, SERVER_STACKS_ID, wxDefaultPosition, wxDefaultSize, wxTR_DEFAULT_STYLE | wxTR_HIDE_ROOT) {
     /* Configure server stack's display settings. */
+    /* Set the initial size of the control when it's un-docked. */
+    int nStacksWidth = Configuration->ReadLong(CONFIG_LABEL_STACKS_WIDTH, SERVER_STACKS_DEFAULT_WIDTH);
+    int nStacksHeight = Configuration->ReadLong(CONFIG_LABEL_STACKS_HEIGHT, DEFAULT_FRAME_HEIGHT);
+    SetSize(nStacksWidth, nStacksHeight);
+    m_serverStacksInf_t.BestSize(nStacksWidth, nStacksHeight);
+    m_serverStacksInf_t.Left();
+    /* Miscellaneous settings. */
     m_serverStacksInf_t.PaneBorder(true);
-    m_serverStacksInf_t.BestSize(SERVER_STACKS_DEFAULT_WIDTH, Configuration->Read(CONFIG_LABEL_FRAME_HEIGHT, DEFAULT_FRAME_HEIGHT));
     m_serverStacksInf_t.Name(SERVER_STACKS_NAME);
     m_serverStacksInf_t.Caption(SERVER_STACKS_CTRL_TITLE);
     m_serverStacksInf_t.CaptionVisible();
-    m_serverStacksInf_t.Left();
     m_serverStacksInf_t.CloseButton(false);
     m_serverStacksInf_t.Floatable(Configuration->Floating());
     m_serverStacksInf_t.Show(true);
@@ -126,15 +131,15 @@ void CServerStacks::ContextMenu(wxTreeEvent& event) {
     } else {
         for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
             if(szItemText.IsSameAs(itr->Name())) {  // If selecting a server stack
-                CCMenuStack* menu = new CCMenuStack(szItemText);
-                PopupMenu(menu);
+                CCMenuStack* pMenu = new CCMenuStack(szItemText);
+                PopupMenu(pMenu);
                 return;
             } else {    // Check if a server was selected
                 wxString szServerText(GetItemText(GetItemParent(item)));
                 for(int i = 0; i < itr->Size(); i++) {
                     if(szItemText.IsSameAs(itr->IP(i))) {   // If selecting a server
-                        CCMenuServer* menu = new CCMenuServer(szItemText, szServerText);
-                        PopupMenu(menu);
+                        CCMenuServer* pMenu = new CCMenuServer(szItemText, szServerText);
+                        PopupMenu(pMenu);
                         return;
                     }
                 }

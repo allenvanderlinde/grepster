@@ -64,8 +64,8 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     SetStatusText(STATUSBAR_WELCOME);
 
     /* Create and initialize primary frame controls. */
-    Console = new CConsole(this);
     ServerStacks = new CServerStacks(this);
+    Console = new CConsole(this);
     SessionNotebook = new CSessionNotebook(this);
     SessionNotebook->OpenWelcomePage();
 
@@ -74,9 +74,9 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     // Set AUI flags for display
     m_pAui->SetFlags(wxAUI_MGR_ALLOW_ACTIVE_PANE | wxAUI_MGR_LIVE_RESIZE | wxAUI_MGR_ALLOW_FLOATING | wxAUI_MGR_VENETIAN_BLINDS_HINT);
 
-    m_pAui->AddPane(ServerStacks, ServerStacks->GetPaneInfo());
-    m_pAui->AddPane(SessionNotebook, SessionNotebook->GetPaneInfo());
-    m_pAui->AddPane(Console, Console->GetPaneInfo());
+    m_pAui->AddPane(ServerStacks, ServerStacks->Info());
+    m_pAui->AddPane(Console, Console->Info());
+    m_pAui->AddPane(SessionNotebook, SessionNotebook->Info());
 
     // Set pane colors for controls
     wxAuiDockArt* art = m_pAui->GetArtProvider();
@@ -285,12 +285,26 @@ void CAppFrame::CloseFrame(wxCommandEvent& event) {
     CAppFrame::OnExit
 */
 void CAppFrame::OnExit(wxCloseEvent& event) {
-    /* Write any frame changes to Windows registry. */
-    int w, h;
-    GetSize(&w, &h);
-    Configuration->Write(CONFIG_LABEL_FRAME_WIDTH, w);
-    Configuration->Write(CONFIG_LABEL_FRAME_HEIGHT, h);
+    /* Write frame position. */
+    int nX, nY;
+    GetPosition(&nX, &nY);
+    Configuration->Write(CONFIG_LABEL_FRAME_X, nX);
+    Configuration->Write(CONFIG_LABEL_FRAME_Y, nY);
+    /* Write frame size. */
+    int nWidth, nHeight;
+    GetSize(&nWidth, &nHeight);
+    Configuration->Write(CONFIG_LABEL_FRAME_WIDTH, nWidth);
+    Configuration->Write(CONFIG_LABEL_FRAME_HEIGHT, nHeight);
+    /* Write maximized state. */
     (IsMaximized()) ? Configuration->Write(CONFIG_LABEL_FRAME_MAX, true) : Configuration->Write(CONFIG_LABEL_FRAME_MAX, false);
+    /* Write control sizes. */
+    int nConsoleWidth, nConsoleHeight, nStacksWidth, nStacksHeight;
+    ServerStacks->GetSize(&nStacksWidth, &nStacksHeight);
+    Console->GetSize(&nConsoleWidth, &nConsoleHeight);
+    Configuration->Write(CONFIG_LABEL_STACKS_WIDTH, nStacksWidth);
+    Configuration->Write(CONFIG_LABEL_STACKS_HEIGHT, nStacksHeight);
+    Configuration->Write(CONFIG_LABEL_CONSOLE_WIDTH, nConsoleWidth);
+    Configuration->Write(CONFIG_LABEL_CONSOLE_HEIGHT, nConsoleHeight);
     delete Configuration;
     Destroy();
     /* NOTE: Do not call wxFrame::Close() here! It's called before CAppInit::WriteXMLData() is called. */

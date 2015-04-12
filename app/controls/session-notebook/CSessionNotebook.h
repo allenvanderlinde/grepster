@@ -40,7 +40,7 @@ public:
      * @brief       Get notebook control's pane information.
      * @retval      wxAuiPaneInfo This is the notebook control's display configuration object.
      */
-    wxAuiPaneInfo GetPaneInfo() { return m_grepNotebookInf_t; }
+    wxAuiPaneInfo Info() { return m_grepNotebookInf_t; }
 
     /**
      * @brief       Creates a new CWebViewer object and opens grepster's home page.
