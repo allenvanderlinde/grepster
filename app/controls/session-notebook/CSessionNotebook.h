@@ -46,7 +46,7 @@ public:
     /**
      * @brief       Open the contents of a server stack into a new page
      *              for editing.
-     * @param[in]   stack The CAdminStack object to read and edit.
+     * @param[in]   stack The string name of the CAdminStack object to read and edit.
      */
     void OpenServerStack(CAdminStack stack);
 

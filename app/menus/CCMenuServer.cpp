@@ -19,6 +19,7 @@
 
 /* Construct the menu's event handler calls. */
 wxBEGIN_EVENT_TABLE(CCMenuServer, wxMenu)
+    EVT_MENU(CCMenuServer::OPEN, CCMenuServer::Open)
     EVT_MENU(CCMenuServer::REMOVE, CCMenuServer::Remove)
 wxEND_EVENT_TABLE()
 
@@ -31,6 +32,8 @@ CCMenuServer::CCMenuServer(wxString name, wxString parent)
     m_szName = name;
     m_szParent = parent;
     /* Build context menu items. */
+    Append(OPEN, L"Open " + name, L"Open the selected server stack into the notebook.");
+    AppendSeparator();
     Append(REMOVE, L"Remove", L"Remove this server from the stack.");
 }
 
@@ -39,6 +42,13 @@ CCMenuServer::CCMenuServer(wxString name, wxString parent)
 */
 CCMenuServer::~CCMenuServer() {
 
+}
+
+/*
+    CCMenuServer::Open
+*/
+void CCMenuServer::Open(wxCommandEvent& event) {
+    //ServerStack->OpenServerStack
 }
 
 /*

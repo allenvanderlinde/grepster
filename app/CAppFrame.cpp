@@ -151,6 +151,8 @@ void CAppFrame::NewServerStack(wxCommandEvent& event) {
         ServerStacks->AddServerStack(newStack);
         /* Enable item(s) in Session menu. */
         m_pMenubar->GetMenu(FRAME_ID_SESSION_MENU)->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, true);
+        /* Open the new stack in the session notebook. */
+        SessionNotebook->OpenServerStack(newStack);
     }
     Dialog->Destroy();
 }

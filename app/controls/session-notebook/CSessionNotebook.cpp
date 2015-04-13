@@ -49,7 +49,29 @@ CSessionNotebook::CSessionNotebook(wxWindow* parentFrame)
     CSessionNotebook::OpenServerStack
 */
 void CSessionNotebook::OpenServerStack(CAdminStack stack) {
+    /* Open server stack's file into a new wxTextFile and
+        load its contents into a new wxTextCtrl. */
 
+        /* NOTE: Don't reload stack from file? Is that a waste?
+            NOTE: CAdminStack is built in the order which lines are read,
+            so these lines could just be read from the object and its
+            strings added to the text ctrl. */
+    wxTextFile file;
+    file.Open(stack.Path());
+    wxTextCtrl* pOutput = new wxTextCtrl(this,
+                                         wxID_ANY,
+                                         wxEmptyString,
+                                         wxDefaultPosition,
+                                         wxDefaultSize,
+                                         wxTE_MULTILINE | wxTE_RICH2);
+
+    /* Grab each line from the server stack's file
+        and add it to the control. */
+    while(!file.Eof()) {
+        *pOutput << file.GetNextLine();
+    }
+    file.Close();   // Close file
+    AddPage(pOutput, stack.Name());
 }
 
 /*

@@ -115,6 +115,8 @@
 		<Unit filename="app/menubar/CAppMenubar.cpp" />
 		<Unit filename="app/menubar/CAppMenubar.h" />
 		<Unit filename="app/menubar/MenubarProperties.h" />
+		<Unit filename="app/menus/CCMenuAdminRoot.cpp" />
+		<Unit filename="app/menus/CCMenuAdminRoot.h" />
 		<Unit filename="app/menus/CCMenuServer.cpp" />
 		<Unit filename="app/menus/CCMenuServer.h" />
 		<Unit filename="app/menus/CCMenuStack.cpp" />
