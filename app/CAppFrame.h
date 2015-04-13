@@ -5,15 +5,14 @@
  * @brief   wxWidgets frame object which houses grepster.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #ifndef _CAPPFRAME_H_
 #define _CAPPFRAME_H_
 
-#include "../grepster.h"
 #include "menubar/CAppMenubar.h"
 
 #define DEFAULT_FRAME_WIDTH             1280
@@ -27,7 +26,7 @@
 #define STATUSBAR_WELCOME               L"Can we grep yet, user?"
 #define STATUSBAR_NOTE_WIDTH            120
 
-#define ABOUT_INFORMATION               L"Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster acts as an interface to SSH and SFTP tools for system administrators to easily grep logs and execute remote commands from a centralized utility.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details."
+#define ABOUT_INFORMATION               L"Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3 license.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster acts as an interface to SSH and SFTP tools for system administrators to easily grep logs and execute remote commands from a centralized utility.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details."
 
 #define DEFAULT_SERVER_STACKS_PATH      L"\\stacks\\"
 
@@ -55,32 +54,18 @@ public:
      */
     ~CAppFrame();
 
-private:
-    /** @brief      Thread vector for keeping tracking of process spawns. */
-    std::vector<std::thread>    m_Spawns;
-
-    /** @brief      grepster's menubar object. */
-    CAppMenubar*                m_pMenubar;
-    /** @brief      grepster's statusbar object. */
-    wxStatusBar*                m_pStatusbar;
-    /** @brief      wxWidgets' advanced UI manager. This object gives more
-     *              options for widget appearance and customization. */
-    wxAuiManager*               m_pAui;
-
-    /**
-     * @brief       Updates grepster's controls after configuration changes.
-     */
-    void UpdateControls();
-
     /**
      * @brief       Create and add a new server stack to the session.
      */
     void NewServerStack(wxCommandEvent& event);
-
     /**
-     * @brief       Adds a saved server stack to the current session.
+     * @brief       Add one or more saved server stacks to the current session.
      */
-    void AddServerStack(wxCommandEvent &event);
+    void AddServerStacks(wxCommandEvent &event);
+    /**
+     * @brief       Close all server stacks in current session.
+     */
+    void CloseServerStacks(wxCommandEvent& event);
 
     /**
      * @brief       Change the administrator's default credentials.
@@ -109,6 +94,24 @@ private:
      * @brief       Close the primary frame.
      */
     void CloseFrame(wxCommandEvent& event);
+
+private:
+    /** @brief      Thread vector for keeping tracking of process spawns. */
+    std::vector<std::thread>    m_Spawns;
+
+    /** @brief      grepster's menubar object. */
+    CAppMenubar*                m_pMenubar;
+    /** @brief      grepster's statusbar object. */
+    wxStatusBar*                m_pStatusbar;
+    /** @brief      wxWidgets' advanced UI manager. This object gives more
+     *              options for widget appearance and customization. */
+    wxAuiManager*               m_pAui;
+
+    /**
+     * @brief       Updates grepster's controls after configuration changes.
+     */
+    void UpdateControls();
+
     /**
      * @brief       Exit grepster.
      */

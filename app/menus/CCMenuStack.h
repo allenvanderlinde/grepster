@@ -5,8 +5,8 @@
  * @brief   wxMenu object used as the context menu for a server stack.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -26,8 +26,10 @@ public:
     /**
      * @brief       Default constructor which creates the context menu.
      * @param[in]   name The string/label of the selected server stack.
+     * @param[in]   path The string of the path of the server stack.
      */
-    CCMenuStack(wxString name);
+    CCMenuStack(wxString name,
+                wxString path);
     /**
      * @brief       Default destructor.
      */
@@ -38,12 +40,14 @@ public:
     * @brief       These represent the context menu's individual function call IDs.
     */
     enum enum_ContextMenuItemIDs {
-        CLOSE_STACK = wxID_ANY
+        CLOSE_STACK = 11005
     };
 
 private:
     /** @brief      Name of the selected server stack which owns this context menu. */
     wxString        m_szName;
+    /** @brief      String of the server stack's file path. */
+    wxString        m_szPath;
 
     /**
      * @brief       Close the selected stack.

@@ -6,6 +6,7 @@ var searchData=
   ['cappframe',['CAppFrame',['../class_c_app_frame.html',1,'']]],
   ['cappinit',['CAppInit',['../class_c_app_init.html',1,'']]],
   ['cappmenubar',['CAppMenubar',['../class_c_app_menubar.html',1,'']]],
+  ['ccmenuadminroot',['CCMenuAdminRoot',['../class_c_c_menu_admin_root.html',1,'']]],
   ['ccmenuserver',['CCMenuServer',['../class_c_c_menu_server.html',1,'']]],
   ['ccmenustack',['CCMenuStack',['../class_c_c_menu_stack.html',1,'']]],
   ['cconsole',['CConsole',['../class_c_console.html',1,'']]],

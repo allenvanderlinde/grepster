@@ -7,8 +7,8 @@
  *          SSH/SFTP tools.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -30,6 +30,12 @@ public:
      * @param[in]   filePath Path to the file where the user's server stack is stored.
      */
     CAdminStack(wxString filePath);
+
+    /**
+     * @brief       Get the path to this server stack's file.
+     * @retval      wxString The string of the path to this stack's file.
+     */
+    wxString Path() { return m_szFilePath; }
 
     /**
      * @brief       Return the size of the server stack.

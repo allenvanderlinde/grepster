@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1428829743 source:c:\grepster\app\cappentry.cpp
+1428885850 source:c:\grepster\app\cappentry.cpp
 	"../precomp.h"
-	"../grepster.h"
 	"../resources/grepster_rc.h"
 	"CAppEntry.h"
 
-1428828557 c:\grepster\grepster.h
+1428888433 c:\grepster\grepster.h
+	"app/CAppFrame.h"
+	"app/init/CAppInit.h"
 	"app/controls/console/CConsole.h"
 	"app/controls/server-stacks/CServerStacks.h"
 	"app/controls/session-notebook/CSessionNotebook.h"
-	"app/init/CAppInit.h"
 	"version.h"
 
 1412631243 c:\wxwidgets-3.0.2\include\wx\wx.h
@@ -3177,15 +3177,14 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1428830537 c:\grepster\version.h
+1428902322 c:\grepster\version.h
 
-1428802751 c:\grepster\resources\grepster_rc.h
+1428885850 c:\grepster\resources\grepster_rc.h
 
-1428802751 c:\grepster\app\cappentry.h
+1428885850 c:\grepster\app\cappentry.h
 	"CAppFrame.h"
 
-1428802751 c:\grepster\app\cappframe.h
-	"../grepster.h"
+1428885849 c:\grepster\app\cappframe.h
 	"menubar/CAppMenubar.h"
 
 1425239474 c:\grepster\app\cframemenubar.h
@@ -3200,7 +3199,7 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1428830125 source:c:\grepster\app\cappframe.cpp
+1428902120 source:c:\grepster\app\cappframe.cpp
 	"../precomp.h"
 	"../resources/grepster_rc.h"
 	"CAppFrame.h"
@@ -3230,13 +3229,13 @@
 	"CGrepNotebook.h"
 	"CAppFrame.h"
 
-1428802751 source:c:\grepster\grepster.cpp
+1428885850 source:c:\grepster\grepster.cpp
 	"precomp.h"
 	"grepster.h"
 	"app/CAppEntry.h"
 	<mutex>
 
-1428802751 source:c:\grepster\resources\grepster.rc
+1428885850 source:c:\grepster\resources\grepster.rc
 	<afxres.h>
 	"grepster_rc.h"
 	<wx/msw/wx.rc>
@@ -3307,9 +3306,9 @@
 	"CAppFrame.h"
 	"CServerStack.h"
 
-1428802751 c:\grepster\session\cadminaccount.h
+1428885850 c:\grepster\session\cadminaccount.h
 
-1428802751 source:c:\grepster\session\cadminaccount.cpp
+1428885850 source:c:\grepster\session\cadminaccount.cpp
 	"../precomp.h"
 	"CAdminAccount.h"
 
@@ -3340,8 +3339,9 @@
 	"../grepster.h"
 	"CAppMenubar.h"
 
-1428802751 source:c:\grepster\precomp.h
+1428897521 source:c:\grepster\precomp.h
 	<wx/wxprec.h>
+	<wx/utils.h>
 	<wx/config.h>
 	<wx/treectrl.h>
 	<wx/aui/aui.h>
@@ -3360,6 +3360,7 @@
 	<vector>
 	<algorithm>
 	<wx/wx.h>
+	"grepster.h"
 
 1412631243 c:\wxwidgets-3.0.2\include\wx\wxprec.h
 	"wx/defs.h"
@@ -3394,8 +3395,9 @@
 	<commdlg.h>
 	"wx/msw/winundef.h"
 
-1428802751 c:\grepster\precomp.h
+1428897521 c:\grepster\precomp.h
 	<wx/wxprec.h>
+	<wx/utils.h>
 	<wx/config.h>
 	<wx/treectrl.h>
 	<wx/aui/aui.h>
@@ -3414,6 +3416,7 @@
 	<vector>
 	<algorithm>
 	<wx/wx.h>
+	"grepster.h"
 
 1425780258 source:c:\grepster\dialogs\cdialogsetpathtoputty.cpp
 	"../precomp.h"
@@ -3486,30 +3489,27 @@
 
 1427758846 c:\grepster\session\cadminserverstack.h
 
-1428802751 c:\grepster\session\cadminstack.h
+1428894603 c:\grepster\session\cadminstack.h
 
-1428802751 source:c:\grepster\session\cadminstack.cpp
+1428885850 source:c:\grepster\session\cadminstack.cpp
 	"../precomp.h"
 	"CAdminStack.h"
-	"../grepster.h"
 
-1428802751 source:c:\grepster\app\dialogs\cdialogchangecredentials.cpp
+1428885850 source:c:\grepster\app\dialogs\cdialogchangecredentials.cpp
 	"../../precomp.h"
 	"../../resources/grepster_rc.h"
 	"CDialogChangeCredentials.h"
 
-1428802751 c:\grepster\app\dialogs\cdialogchangecredentials.h
-	"../../grepster.h"
+1428888630 c:\grepster\app\dialogs\cdialogchangecredentials.h
 
-1428802751 c:\grepster\app\dialogs\cdialogsetpathtotools.h
-	"../../grepster.h"
+1428888728 c:\grepster\app\dialogs\cdialogsetpathtotools.h
 
-1428802751 source:c:\grepster\app\dialogs\cdialogsetpathtotools.cpp
+1428887408 source:c:\grepster\app\dialogs\cdialogsetpathtotools.cpp
 	"../../precomp.h"
 	"../../resources/grepster_rc.h"
 	"CDialogSetPathToTools.h"
 
-1428809862 c:\grepster\app\controls\console\cconsole.h
+1428885850 c:\grepster\app\controls\console\cconsole.h
 
 1428275629 c:\grepster\app\controls\serverstacks\cserverstacks.h
 	"../../../session/CAdminStack.h"
@@ -3519,17 +3519,16 @@
 
 1427242828 c:\grepster\app\webviewer\cwebviewer.h
 
-1428830004 c:\grepster\app\init\cappinit.h
+1428885850 c:\grepster\app\init\cappinit.h
 	"../../session/CAdminAccount.h"
 
-1428802751 c:\grepster\app\menubar\cappmenubar.h
+1428885850 c:\grepster\app\menubar\cappmenubar.h
 	"MenubarProperties.h"
 
-1428802751 c:\grepster\app\menubar\menubarproperties.h
+1428885850 c:\grepster\app\menubar\menubarproperties.h
 
-1428830194 source:c:\grepster\app\controls\console\cconsole.cpp
+1428885850 source:c:\grepster\app\controls\console\cconsole.cpp
 	"../../../precomp.h"
-	"../../../grepster.h"
 	"../../CAppFrame.h"
 	"CConsole.h"
 
@@ -3546,9 +3545,8 @@
 	"../sessionnotebook/CSessionNotebook.h"
 	"../../CAppFrame.h"
 
-1428802751 source:c:\grepster\app\menubar\cappmenubar.cpp
+1428901647 source:c:\grepster\app\menubar\cappmenubar.cpp
 	"../../precomp.h"
-	"../../grepster.h"
 	"CAppMenubar.h"
 
 1428275850 source:c:\grepster\app\webviewer\cwebviewer.cpp
@@ -3556,32 +3554,31 @@
 	"../../grepster.h"
 	"CWebViewer.h"
 
-1428810381 c:\grepster\app\controls\server-stacks\cserverstacks.h
+1428898821 c:\grepster\app\controls\server-stacks\cserverstacks.h
 	"../../../session/CAdminStack.h"
 
-1428809874 c:\grepster\app\controls\session-notebook\csessionnotebook.h
+1428891751 c:\grepster\app\controls\session-notebook\csessionnotebook.h
 	"../../web-viewer/CWebViewer.h"
+	"../../../session/CAdminStack.h"
 
-1428807420 c:\grepster\app\web-viewer\cwebviewer.h
+1428885850 c:\grepster\app\web-viewer\cwebviewer.h
 
-1428830350 source:c:\grepster\app\controls\server-stacks\cserverstacks.cpp
+1428900642 source:c:\grepster\app\controls\server-stacks\cserverstacks.cpp
 	"../../../precomp.h"
-	"../../../grepster.h"
 	"../../CAppFrame.h"
+	"../../menus/CCMenuAdminRoot.h"
 	"../../menus/CCMenuStack.h"
 	"../../menus/CCMenuServer.h"
 	"../server-stacks/CServerStacks.h"
 	"../../web-viewer/CWebViewer.h"
 
-1428829233 source:c:\grepster\app\controls\session-notebook\csessionnotebook.cpp
+1428891817 source:c:\grepster\app\controls\session-notebook\csessionnotebook.cpp
 	"../../../precomp.h"
-	"../../../grepster.h"
 	"../session-notebook/CSessionNotebook.h"
 	"../../CAppFrame.h"
 
-1428802751 source:c:\grepster\app\init\cappinit.cpp
+1428885850 source:c:\grepster\app\init\cappinit.cpp
 	"../../precomp.h"
-	"../../grepster.h"
 	"CAppInit.h"
 
 1428278033 c:\grepster\app\menus\ccontextmenu.h
@@ -3591,36 +3588,32 @@
 	"../../grepster.h"
 	"CContextMenu.h"
 
-1428802751 source:c:\grepster\app\web-viewer\cwebviewer.cpp
+1428885850 source:c:\grepster\app\web-viewer\cwebviewer.cpp
 	"../../precomp.h"
-	"../../grepster.h"
 	"CWebViewer.h"
 
-1428802751 c:\grepster\app\menus\ccmenustack.h
+1428895692 c:\grepster\app\menus\ccmenustack.h
 
-1428802751 source:c:\grepster\app\menus\ccmenustack.cpp
+1428898792 source:c:\grepster\app\menus\ccmenustack.cpp
 	"../../precomp.h"
-	"../../grepster.h"
 	"CCMenuStack.h"
 
-1428802751 c:\grepster\app\menus\ccmenuserver.h
+1428888811 c:\grepster\app\menus\ccmenuserver.h
 
-1428802751 source:c:\grepster\app\menus\ccmenuserver.cpp
+1428885850 source:c:\grepster\app\menus\ccmenuserver.cpp
 	"../../precomp.h"
-	"../../grepster.h"
 	"CCMenuServer.h"
 
 1412631243 c:\wxwidgets-3.0.2\include\wx\setup.h
 
 1412631243 c:\wxwidgets-3.0.2\lib\gcc_lib\mswu\wx\setup.h
 
-1428802751 source:c:\grepster\app\dialogs\cdialognewserverstack.cpp
+1428899887 source:c:\grepster\app\dialogs\cdialognewserverstack.cpp
 	"../../precomp.h"
 	"../../resources/grepster_rc.h"
 	"CDialogNewServerStack.h"
 
-1428802751 c:\grepster\app\dialogs\cdialognewserverstack.h
-	"../../grepster.h"
+1428889366 c:\grepster\app\dialogs\cdialognewserverstack.h
 
 1412631242 c:\wxwidgets-3.0.2\include\wx\config.h
 	"wx/confbase.h"
@@ -3656,4 +3649,10 @@
 	"wx/string.h"
 	"wx/confbase.h"
 	"wx/filename.h"
+
+1428888784 c:\grepster\app\menus\ccmenuadminroot.h
+
+1428901513 source:c:\grepster\app\menus\ccmenuadminroot.cpp
+	"../../precomp.h"
+	"CCMenuAdminRoot.h"
 

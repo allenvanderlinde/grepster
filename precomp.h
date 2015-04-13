@@ -1,6 +1,6 @@
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -15,6 +15,7 @@
 
 /* Include the most frequently used and unchanging headers here. */
 #include <wx/wxprec.h>
+#include <wx/utils.h>
 #include <wx/config.h>
 #include <wx/treectrl.h>
 #include <wx/aui/aui.h>
@@ -37,5 +38,7 @@
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
 #endif // WX_PRECOMP
+
+#include "grepster.h"
 
 #endif // _PRECOMP_H_

@@ -5,8 +5,8 @@
  * @brief   wxMenu object used as the context menu for a server stack's individual server.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -38,7 +38,7 @@ public:
     * @brief       These represent the context menu's individual function call IDs.
     */
     enum enum_ContextMenuItemIDs {
-        REMOVE = wxID_ANY
+        REMOVE = 11006
     };
 
 private:

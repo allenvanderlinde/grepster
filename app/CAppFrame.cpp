@@ -5,8 +5,8 @@
  * @brief   wxWidgets frame object methods.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -27,9 +27,13 @@
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::CloseFrame)
     EVT_MENU(MENU_FUNCTION_ID_SESSION_NEW_SERVER_STACK, CAppFrame::NewServerStack)
-    EVT_MENU(MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACK, CAppFrame::AddServerStack)
-    EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
+    EVT_MENU(MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACKS, CAppFrame::AddServerStacks)
+    EVT_MENU(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, CAppFrame::CloseServerStacks)
+
     EVT_MENU(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS, CAppFrame::ChangeDefaultCredentials)
+
+    EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
+
     EVT_MENU(MENU_FUNCTION_ID_OPTIONS_SET_PATH_TOOLS, CAppFrame::SetPathToTools)
     EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, CAppFrame::ToggleFloating)
     EVT_MENU(MENU_FUNCTION_ID_HELP_ABOUT, CAppFrame::OnAbout)
@@ -105,22 +109,64 @@ CAppFrame::~CAppFrame() {
 */
 void CAppFrame::NewServerStack(wxCommandEvent& event) {
     CDialogNewServerStack* Dialog = new CDialogNewServerStack(this);
-    if(Dialog->ShowModal() == Dialog->BUTTON_SAVE)
-        Dialog->Destroy();
+    wxString szStackName(Dialog->GetStackName());
+    if(Dialog->ShowModal() == Dialog->BUTTON_SAVE) {
+        /* Create a new file picker dialog to save the new
+            server stack to. */
+        wxFileDialog* pNewServerStack = new wxFileDialog(this,
+                                                         L"New Server Stack",
+                                                         DEFAULT_SERVER_STACKS_PATH,
+                                                         szStackName,
+                                                         L".servers files (*.servers)|*.servers",
+                                                         wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
+        pNewServerStack->CenterOnParent();
+        if(pNewServerStack->ShowModal() == wxID_CANCEL) {
+            pNewServerStack->Destroy();
+            return;
+        }
+        /* Create new file and write server stack name
+            to it. */
+        wxTextFile file;
+        wxString szFilePath(pNewServerStack->GetPath());
+        pNewServerStack->Destroy();
+        /* If the file already exists, overwrite it. */
+        if(!file.Create(szFilePath)) {
+            file.Open(szFilePath);
+            file.Clear();
+            /*If the session has at least one stack, check to see if the
+                user's new stack was previously added. */
+            if(!ServerStacks->GetStacks().empty()) {
+                for(auto itr = ServerStacks->GetStacks().begin(); itr != ServerStacks->GetStacks().end(); ++itr) {
+                    if(szFilePath.IsSameAs(itr->Name())) {
+                        ServerStacks->CloseStack(itr->Name());  // Close the stack to be overwritten
+                    }
+                }
+            }
+        }
+        file.AddLine(Dialog->GetStackName());
+        file.Write();
+        file.Close();
+        /* Add the newly created stack to the control. */
+        CAdminStack newStack(pNewServerStack->GetPath());
+        ServerStacks->AddServerStack(newStack);
+        /* Enable item(s) in Session menu. */
+        m_pMenubar->GetMenu(FRAME_ID_SESSION_MENU)->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, true);
+    }
+    Dialog->Destroy();
 }
 
 /*
     CAppFrame::AddServerStack
 */
-void CAppFrame::AddServerStack(wxCommandEvent& event) {
+void CAppFrame::AddServerStacks(wxCommandEvent& event) {
     /* Create a new file picker dialog to grab the .servers file
         to add to the current session's server stacks. Note: The file
         type is arbitrary as essentially these files are plain-text. */
     wxFileDialog* pServerStackSelect = new wxFileDialog(this,
                                                         L"Server Stack Selection",
                                                         DEFAULT_SERVER_STACKS_PATH,
-                                                        L"",    // Starting path
-                                                        L".SERVERS files (*.servers)|*.servers",
+                                                        L"",    // Default file
+                                                        L".servers files (*.servers)|*.servers",
                                                         wxFD_OPEN | wxFD_FILE_MUST_EXIST | wxFD_MULTIPLE);  // File must exist to be valid
     pServerStackSelect->CenterOnParent();
     if(pServerStackSelect->ShowModal() == wxID_CANCEL)
@@ -134,25 +180,18 @@ void CAppFrame::AddServerStack(wxCommandEvent& event) {
             if(ServerStacks->GetStacks().empty()) {   // If the server stacks are empty, add the new stack
                 CAdminStack newStack(*itr);
                 ServerStacks->AddServerStack(newStack);
-                Console->BlueText();
-                *Console << L"\nAdding " + newStack.Name() + " to session.\n";
-                Console->BlackText();
             }
             else {
                 CAdminStack newStack(*itr); // Build stack from file
-                int index = ServerStacks->FindInStacks(newStack.Name());
-                if(index == wxNOT_FOUND) {    // If the stack isn't already added to the session
+                int index = ServerStacks->FindPath(newStack.Path());
+                if(index == wxNOT_FOUND)    // If the stack isn't already added to the session
                     ServerStacks->AddServerStack(newStack); // Add the new stack to the server stacks control
-                    Console->BlueText();
-                    *Console << L"\nAdding " + newStack.Name() + " to session.\n";
-                    Console->BlackText();
-                } else {    // Check to see if the stack should be reloaded
+                else {    // Check to see if the stack should be reloaded
+                    /* NOTE: Need to ask if user wants to ignore any changes to the stack already
+                        in the session. */
                     if(newStack.Size() > ServerStacks->GetStacks()[index].Size()) {
                         ServerStacks->CloseStack(ServerStacks->GetStacks()[index].Name());
                         ServerStacks->AddServerStack(newStack);
-                        Console->BlueText();
-                        *Console << L"\nAdding " + newStack.Name() + " to session.\n";
-                        Console->BlackText();
                     } else {
                         *Console << L"\nStack already in session.\n";
                     }
@@ -160,6 +199,26 @@ void CAppFrame::AddServerStack(wxCommandEvent& event) {
             }
         }
     }
+    /* Enable item(s) in Session menu. */
+    m_pMenubar->GetMenu(FRAME_ID_SESSION_MENU)->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, true);
+}
+
+/*
+    CAppFrame::CloseServerStacks
+*/
+void CAppFrame::CloseServerStacks(wxCommandEvent& event) {
+    if(!ServerStacks->GetStacks().empty()) {    // Check to see if there are any stacks in the session
+        if(wxMessageBox(L"Are you sure you want to close all the stacks in the session?",
+                        L"Close Server Stacks",
+                        wxICON_QUESTION | wxOK | wxCANCEL) == wxOK) {
+            Console->BlueText();
+            *Console << L"\nClosing all stacks in the session...\n";
+            Console->BlackText();
+            ServerStacks->CloseAll();
+        } else return;
+    }
+    /* Disable item in Session menu. */
+    m_pMenubar->GetMenu(FRAME_ID_SESSION_MENU)->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, false);
 }
 
 /*

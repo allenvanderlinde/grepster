@@ -5,7 +5,7 @@
  * @brief   wxWidgets AUI notebook control class definition.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
     Songbird and its source code is licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
@@ -14,6 +14,7 @@
 #define _CGREPNOTEBOOK_H
 
 #include "../../web-viewer/CWebViewer.h"
+#include "../../../session/CAdminStack.h"
 
 
 /* Note: These are defined here but not actually relevant because
@@ -41,6 +42,13 @@ public:
      * @retval      wxAuiPaneInfo This is the notebook control's display configuration object.
      */
     wxAuiPaneInfo Info() { return m_grepNotebookInf_t; }
+
+    /**
+     * @brief       Open the contents of a server stack into a new page
+     *              for editing.
+     * @param[in]   stack The CAdminStack object to read and edit.
+     */
+    void OpenServerStack(CAdminStack stack);
 
     /**
      * @brief       Creates a new CWebViewer object and opens grepster's home page.

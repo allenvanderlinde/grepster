@@ -7,16 +7,15 @@
 
     Created:    11/21/14
 
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #include "../../../precomp.h"
 
-#include "../../../grepster.h"
-
 #include "../../CAppFrame.h"
+#include "../../menus/CCMenuAdminRoot.h"
 #include "../../menus/CCMenuStack.h"
 #include "../../menus/CCMenuServer.h"
 #include "../server-stacks/CServerStacks.h"
@@ -25,8 +24,8 @@
 
 /* Construct the Server Stacks' event handler calls. */
 wxBEGIN_EVENT_TABLE(CServerStacks, wxTreeCtrl)
-    EVT_TREE_ITEM_ACTIVATED(wxID_ANY, CServerStacks::OpenItem)
-    // User right-clicks on an item to access its contextual menu
+    EVT_TREE_ITEM_ACTIVATED(wxID_ANY, CServerStacks::ExpandItem)
+    /* Handle server stack's context menus. */
     EVT_TREE_ITEM_RIGHT_CLICK(wxID_ANY, CServerStacks::ContextMenu)
 wxEND_EVENT_TABLE()
 
@@ -57,14 +56,14 @@ CServerStacks::CServerStacks(wxWindow* parentFrame)
     m_treeAdminItem = AppendItem(m_treeRoot, Configuration->Username());
 
     // Default empty session upon starting
-    //AddServerStack(CAdminStack(EMPTY_STACK));
+    //AddServerStacks(CAdminStack(EMPTY_STACK));
     //m_treeServerStack = AppendItem(m_treeAdminItem, L"empty");
 }
 
 /*
-    CServerStacks::FindInStacks
+    CServerStacks::FindName
 */
-int CServerStacks::FindInStacks(wxString str) {
+int CServerStacks::FindName(wxString str) {
     wxArrayString Stacks;
     for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
         Stacks.Add(itr->Name());
@@ -73,9 +72,26 @@ int CServerStacks::FindInStacks(wxString str) {
 }
 
 /*
+    CServerStacks::FindPath
+*/
+int CServerStacks::FindPath(wxString str) {
+    wxArrayString Stacks;
+    for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
+        Stacks.Add(itr->Path());
+    }
+    return Stacks.Index(str);
+}
+
+/*
     CServerStacks::AddServerStack
 */
 void CServerStacks::AddServerStack(CAdminStack serverStack) {
+    /* Check to see if there is a stack name conflict. */
+    if(FindName(serverStack.Name()) != wxNOT_FOUND) {
+        wxMessageBox(L"The stack " + serverStack.Name() + " in " + serverStack.Path() + " matches one already in the session. Please rename the original stack before adding this one.",
+                     L"Server Stack Conflict", wxICON_INFORMATION | wxOK);
+        return;
+    }
     m_Stacks.push_back(serverStack);
     wxTreeItemId newStack = AppendItem(m_treeAdminItem, serverStack.Name());;
     m_TreeStacks.push_back(newStack);
@@ -86,27 +102,21 @@ void CServerStacks::AddServerStack(CAdminStack serverStack) {
         Expand(m_treeAdminItem);
     Expand(newStack);    // Expand the newly added stack
     SortChildren(m_treeAdminItem);
+    /* Update console with stack addition. */
+    Console->BlueText();
+    *Console << L"\nAdding " + serverStack.Name() + " to session.\n";
+    Console->BlackText();
 }
 
 /*
     CServerStacks::OpenItem
 */
-void CServerStacks::OpenItem(wxTreeEvent &event) {
+void CServerStacks::ExpandItem(wxTreeEvent &event) {
     wxTreeItemId item = event.GetItem();  // The currently selected tree item
-    /* Expand or collapse the user's server list and associated scripts
-        if they double-click on their username in the Server Stacks control. */
     if(IsExpanded(item))
         Collapse(item);
     else
         Expand(item);
-
-    /*
-    CWebViewer* pBrowser = new CWebViewer(this);    // does belonging to this item eat up more memory than belonging to CAppFrame? should that be extern global?
-    SessionNotebook->AddPage(pBrowser->GetBrowser(), GetItemText(item));
-    size_t nNewPageIndex = SessionNotebook->GetPageCount();
-    SessionNotebook->SetSelection(nNewPageIndex - 1);
-    delete pBrowser;
-    */
 }
 
 /*
@@ -127,11 +137,13 @@ void CServerStacks::ContextMenu(wxTreeEvent& event) {
     /* Decide what menu options should be displayed
         depending upon what item is selected. */
     if(szItemText.IsSameAs(GetItemText(m_treeAdminItem))) {
+        CCMenuAdminRoot* pMenu = new CCMenuAdminRoot();
+        PopupMenu(pMenu);
         return;
     } else {
         for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
             if(szItemText.IsSameAs(itr->Name())) {  // If selecting a server stack
-                CCMenuStack* pMenu = new CCMenuStack(szItemText);
+                CCMenuStack* pMenu = new CCMenuStack(szItemText, itr->Path());
                 PopupMenu(pMenu);
                 return;
             } else {    // Check if a server was selected
@@ -152,12 +164,12 @@ void CServerStacks::ContextMenu(wxTreeEvent& event) {
     CServerStacks::CloseStack
 */
 void CServerStacks::CloseStack(wxString name) {
-    /* Crawl through current server stacks to match to
-        name. */
+    /* Crawl through current server stacks and find match
+        with the stack's name. */
     for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
         if(name.IsSameAs(itr->Name())) {
             Console->BlueText();
-            *Console << L"\nClosing stack " + name + L".";
+            *Console << L"\nClosing stack " + itr->Name() + L".";
             /* Crawl through current tree items representing stacks
                 to select and remove the match. */
             for(auto itrt = m_TreeStacks.begin(); itrt != m_TreeStacks.end(); ++itrt) {
@@ -167,11 +179,19 @@ void CServerStacks::CloseStack(wxString name) {
                 }
             }
             m_Stacks.erase(itr);
-            *Console << L"\nStack " + name + L" closed.\n";
+            *Console << L"\nStack closed.\n";
             Console->BlackText();
             return;
         }
     }
+}
+
+/*
+    CServerStacks::CloseAll
+*/
+void CServerStacks::CloseAll() {
+    m_Stacks.clear();
+    DeleteChildren(m_treeAdminItem);
 }
 
 /*

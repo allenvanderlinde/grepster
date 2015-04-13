@@ -7,14 +7,12 @@
 
     Created:    11/5/14
 
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #include "../../precomp.h"
-
-#include "../../grepster.h"
 
 #include "CAppMenubar.h"
 
@@ -42,9 +40,14 @@ CAppMenubar::CAppMenubar()
     m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_NEW_SERVER_STACK,
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_NEW_SERVER_STACK],
                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_OPEN_SESSION]);
-    m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACK,
-                           FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_ADD_SERVER_STACK],
-                           FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_ADD_SERVER_STACK]);
+    m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACKS,
+                           FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_ADD_SERVER_STACKS],
+                           FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_ADD_SERVER_STACKS]);
+    m_pMenuSession->AppendSeparator();
+    m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS,
+                           FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_CLOSE_SERVER_STACKS],
+                           FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_CLOSE_SERVER_STACKS]);
+    m_pMenuSession->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, false);    // Disable on startup
     m_pMenuSession->AppendSeparator();
     m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS,
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_DEFAULT_CREDENTIALS],

@@ -7,8 +7,8 @@
 
     Created:    11/2/14
 
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -24,11 +24,12 @@
 std::mutex          g_Mutex;
 
 /* Frame globals definitions. */
+CAppFrame*          GrepsterFrame;
 wxString            g_szFrameTitle("grepster alpha v");
 /* Frame control definitions. These are global. */
 CConsole*           Console;
 CServerStacks*      ServerStacks;
-CSessionNotebook*      SessionNotebook;
+CSessionNotebook*   SessionNotebook;
 
 /* grepster configuration object. This is global. */
 CAppInit*           Configuration;

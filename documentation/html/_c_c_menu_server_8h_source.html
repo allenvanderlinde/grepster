@@ -91,8 +91,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_c_c_menu_server_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">    Copyright (C) 2014-2015 by Allen Vanderlinde.</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">    grepster and its source code is licensed under the GNU General Public License (GPL)</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">    Copyleft (C) 2014-2015 by Allen Vanderlinde.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">    grepster and its source code are licensed under the GNU General Public License (GPL)</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">    and is subject to the terms and conditions provided in LICENSE.txt.</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_c_c_menu_server.html#a4e43bf3d92c2d15c54dbd916858a6a5d">~CCMenuServer</a>();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addf">   40</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addf">enum_ContextMenuItemIDs</a> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addfa1c8a8fc45f55fa14790a1c18872b0ef6">   41</a></span>&#160;        <a class="code" href="class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addfa1c8a8fc45f55fa14790a1c18872b0ef6">REMOVE</a> = wxID_ANY</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addfa1c8a8fc45f55fa14790a1c18872b0ef6">   41</a></span>&#160;        <a class="code" href="class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addfa1c8a8fc45f55fa14790a1c18872b0ef6">REMOVE</a> = 0x00B4</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
@@ -121,16 +121,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_c_c_menu_server_html_af15742d93577f650d7ceaaafd3e8addf"><div class="ttname"><a href="class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addf">CCMenuServer::enum_ContextMenuItemIDs</a></div><div class="ttdeci">enum_ContextMenuItemIDs</div><div class="ttdoc">These represent the context menu&#39;s individual function call IDs. </div><div class="ttdef"><b>Definition:</b> CCMenuServer.h:40</div></div>
 <div class="ttc" id="class_c_c_menu_server_html_a031aa957f658b9f656a44720bc048d5f"><div class="ttname"><a href="class_c_c_menu_server.html#a031aa957f658b9f656a44720bc048d5f">CCMenuServer::wxDECLARE_EVENT_TABLE</a></div><div class="ttdeci">wxDECLARE_EVENT_TABLE()</div><div class="ttdoc">Initialize and call the object&#39;s event handler. </div></div>
 <div class="ttc" id="class_c_c_menu_server_html_a0a17db70dccbe2eef32f8e5dd2dbf591"><div class="ttname"><a href="class_c_c_menu_server.html#a0a17db70dccbe2eef32f8e5dd2dbf591">CCMenuServer::m_szName</a></div><div class="ttdeci">wxString m_szName</div><div class="ttdoc">Name of the selected server which owns this context menu. </div><div class="ttdef"><b>Definition:</b> CCMenuServer.h:46</div></div>
-<div class="ttc" id="class_c_c_menu_server_html_af975ba4a6c90511b72d0086f596b4b56"><div class="ttname"><a href="class_c_c_menu_server.html#af975ba4a6c90511b72d0086f596b4b56">CCMenuServer::Remove</a></div><div class="ttdeci">void Remove(wxCommandEvent &amp;event)</div><div class="ttdoc">Remove the selected server from the stack. </div><div class="ttdef"><b>Definition:</b> CCMenuServer.cpp:49</div></div>
+<div class="ttc" id="class_c_c_menu_server_html_af975ba4a6c90511b72d0086f596b4b56"><div class="ttname"><a href="class_c_c_menu_server.html#af975ba4a6c90511b72d0086f596b4b56">CCMenuServer::Remove</a></div><div class="ttdeci">void Remove(wxCommandEvent &amp;event)</div><div class="ttdoc">Remove the selected server from the stack. </div><div class="ttdef"><b>Definition:</b> CCMenuServer.cpp:47</div></div>
 <div class="ttc" id="class_c_c_menu_server_html_af15742d93577f650d7ceaaafd3e8addfa1c8a8fc45f55fa14790a1c18872b0ef6"><div class="ttname"><a href="class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addfa1c8a8fc45f55fa14790a1c18872b0ef6">CCMenuServer::REMOVE</a></div><div class="ttdef"><b>Definition:</b> CCMenuServer.h:41</div></div>
 <div class="ttc" id="class_c_c_menu_server_html"><div class="ttname"><a href="class_c_c_menu_server.html">CCMenuServer</a></div><div class="ttdoc">Class definition for this context menu object. </div><div class="ttdef"><b>Definition:</b> CCMenuServer.h:23</div></div>
 <div class="ttc" id="class_c_c_menu_server_html_a3aa2757bc38a81eb9c1ed49adc9122e1"><div class="ttname"><a href="class_c_c_menu_server.html#a3aa2757bc38a81eb9c1ed49adc9122e1">CCMenuServer::m_szParent</a></div><div class="ttdeci">wxString m_szParent</div><div class="ttdoc">Name of the server&#39;s parent stack. </div><div class="ttdef"><b>Definition:</b> CCMenuServer.h:48</div></div>
 <div class="ttc" id="class_c_c_menu_server_html_ab1e2108835e3e3b96299b644f3292dd2"><div class="ttname"><a href="class_c_c_menu_server.html#ab1e2108835e3e3b96299b644f3292dd2">CCMenuServer::CCMenuServer</a></div><div class="ttdeci">CCMenuServer(wxString name, wxString parent)</div><div class="ttdoc">Default constructor which creates the context menu. </div></div>
-<div class="ttc" id="class_c_c_menu_server_html_a4e43bf3d92c2d15c54dbd916858a6a5d"><div class="ttname"><a href="class_c_c_menu_server.html#a4e43bf3d92c2d15c54dbd916858a6a5d">CCMenuServer::~CCMenuServer</a></div><div class="ttdeci">~CCMenuServer()</div><div class="ttdoc">Default destructor. </div><div class="ttdef"><b>Definition:</b> CCMenuServer.cpp:42</div></div>
+<div class="ttc" id="class_c_c_menu_server_html_a4e43bf3d92c2d15c54dbd916858a6a5d"><div class="ttname"><a href="class_c_c_menu_server.html#a4e43bf3d92c2d15c54dbd916858a6a5d">CCMenuServer::~CCMenuServer</a></div><div class="ttdeci">~CCMenuServer()</div><div class="ttdoc">Default destructor. </div><div class="ttdef"><b>Definition:</b> CCMenuServer.cpp:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2015 08:26:00 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 12 2015 20:53:36 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

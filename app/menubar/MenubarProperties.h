@@ -5,8 +5,8 @@
  * @brief   Definitions for grepster's menubar, including strings, ids, and enumerations for use by CAppMenubar.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -26,14 +26,15 @@ const wxString FRAME_MENUBAR_STRINGS[]      = {L"&grepster",
  * @brief       Menubar menu item strings.
  */
 const wxString FRAME_MENU_STRINGS[]         = {L"&Quit\tCtrl+Q",
-                                               L"&New grepster session...\tCtrl+N",
-                                               L"&Open grepster session...\tCtrl+O",
-                                               L"&New server stack...\tCtrl+Shift+N",
-                                               L"&Add server stacks...\tCtrl+Shift+O",
-                                               L"&Admin credentials...\tCtrl+Shift+C",
+                                               L"&New grepster Session...\tCtrl+N",
+                                               L"&Open grepster Session...\tCtrl+O",
+                                               L"&New Server Stack...\tCtrl+Shift+N",
+                                               L"&Add Server Stacks...\tCtrl+Shift+O",
+                                               L"&Close All Stacks\tCtrl+C",
+                                               L"&Admin Credentials...\tCtrl+Shift+C",
                                                L"&Launch PuTTY\tCtrl+P",
-                                               L"&Set path to SSH/SFTP tools...",
-                                               L"&Toggle floating controls",
+                                               L"&Set Path to SSH/SFTP Tools...",
+                                               L"&Toggle Floating Controls",
                                                L"&About grepster..."};
 /**
  * @brief       Status bar strings. These are the labels displayed for each menu item.
@@ -43,6 +44,7 @@ const wxString FRAME_STATUSBAR_STRINGS[]    = {L"Quit grepster.",
                                                L"Open a saved session.",
                                                L"Create and add a new server stack to the current session.",
                                                L"Add one or multiple saved server stacks to the current session.",
+                                               L"Close all server stacks in current session.",
                                                L"Set the session's administrator credentials.",
                                                L"Launch PuTTY.",
                                                L"Set the default path to grepster's SSH/SFTP tools.",
@@ -68,7 +70,8 @@ enum enum_MenuStringIDs {
     FRAME_MENU_STRING_ID_NEW_SESSION,
     FRAME_MENU_STRING_ID_OPEN_SESSION,
     FRAME_MENU_STRING_ID_NEW_SERVER_STACK,
-    FRAME_MENU_STRING_ID_ADD_SERVER_STACK,
+    FRAME_MENU_STRING_ID_ADD_SERVER_STACKS,
+    FRAME_MENU_STRING_ID_CLOSE_SERVER_STACKS,
     FRAME_MENU_STRING_ID_DEFAULT_CREDENTIALS,
     FRAME_MENU_STRING_ID_LAUNCH_PUTTY,
     FRAME_MENU_STRING_ID_SET_PATH_TOOLS,
@@ -84,7 +87,8 @@ enum enum_StatusbarStringIDs {
     STATUSBAR_STRING_ID_NEW_SESSION,
     STATUSBAR_STRING_ID_OPEN_SESSION,
     STATUSBAR_STRING_ID_NEW_SERVER_STACK,
-    STATUSBAR_STRING_ID_ADD_SERVER_STACK,
+    STATUSBAR_STRING_ID_ADD_SERVER_STACKS,
+    STATUSBAR_STRING_ID_CLOSE_SERVER_STACKS,
     STATUSBAR_STRING_ID_DEFAULT_CREDENTIALS,
     STATUSBAR_STRING_ID_LAUNCH_PUTTY,
     STATUSBAR_STRING_ID_SET_PATH_TOOLS,
@@ -104,7 +108,8 @@ enum enum_MenuFunctionIDs {
     MENU_FUNCTION_ID_SESSION_NEW,
     MENU_FUNCTION_ID_SESSION_OPEN,
     MENU_FUNCTION_ID_SESSION_NEW_SERVER_STACK,
-    MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACK,
+    MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACKS,
+    MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS,
     MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS,
     MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY,
     MENU_FUNCTION_ID_OPTIONS_SET_PATH_TOOLS,

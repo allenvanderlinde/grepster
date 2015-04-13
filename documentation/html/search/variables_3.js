@@ -9,7 +9,6 @@ var searchData=
   ['m_5fpbuttoncancel',['m_pButtonCancel',['../class_c_dialog_change_credentials.html#ab910de3b2ff421c3370d76cafa4158ce',1,'CDialogChangeCredentials::m_pButtonCancel()'],['../class_c_dialog_new_server_stack.html#a7d0d6f17a27305ab1165837367676a80',1,'CDialogNewServerStack::m_pButtonCancel()'],['../class_c_dialog_set_path_to_tools.html#a50bc4987fa2f99a24fe95cc472e0d6ce',1,'CDialogSetPathToTools::m_pButtonCancel()']]],
   ['m_5fpbuttonok',['m_pButtonOK',['../class_c_dialog_change_credentials.html#a45761c197075864f1bdb31f969cd44fc',1,'CDialogChangeCredentials::m_pButtonOK()'],['../class_c_dialog_set_path_to_tools.html#ae98c1e82872178678671894e0af193d1',1,'CDialogSetPathToTools::m_pButtonOK()']]],
   ['m_5fpbuttonsave',['m_pButtonSave',['../class_c_dialog_new_server_stack.html#ace553a0218df5f6db0ca72638ed6d25f',1,'CDialogNewServerStack']]],
-  ['m_5fpgrepsterframe',['m_pGrepsterFrame',['../class_c_app_entry.html#a4d16864cfac1ae915c4573837ea017a1',1,'CAppEntry']]],
   ['m_5fpinputpassword',['m_pInputPassword',['../class_c_dialog_change_credentials.html#ad32a3e880f386b03c8226913a029aaab',1,'CDialogChangeCredentials']]],
   ['m_5fpinputstackname',['m_pInputStackName',['../class_c_dialog_new_server_stack.html#a8e91f054d08c806a7a77613d6323c8e0',1,'CDialogNewServerStack']]],
   ['m_5fpinputusername',['m_pInputUsername',['../class_c_dialog_change_credentials.html#a9f428c7421e58dfe7e2440eeaab7193b',1,'CDialogChangeCredentials']]],

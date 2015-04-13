@@ -1,10 +1,17 @@
 var searchData=
 [
   ['char_5fbuffer_5flength',['CHAR_BUFFER_LENGTH',['../grepster_8h.html#a742c63d9e85847705f1767862babc69b',1,'grepster.h']]],
+  ['config_5flabel_5fconsole_5fheight',['CONFIG_LABEL_CONSOLE_HEIGHT',['../_c_app_init_8h.html#a752657c6bc4bd063b78837994dc81263',1,'CAppInit.h']]],
+  ['config_5flabel_5fconsole_5fwidth',['CONFIG_LABEL_CONSOLE_WIDTH',['../_c_app_init_8h.html#a0dfd725325bc8ab196905f42ed1c9875',1,'CAppInit.h']]],
   ['config_5flabel_5fframe_5fheight',['CONFIG_LABEL_FRAME_HEIGHT',['../_c_app_init_8h.html#aab9a927c3914c4be1c518456f6d7a6cc',1,'CAppInit.h']]],
+  ['config_5flabel_5fframe_5fmax',['CONFIG_LABEL_FRAME_MAX',['../_c_app_init_8h.html#ae7677d97c18b43d3242b5ac7a681948d',1,'CAppInit.h']]],
   ['config_5flabel_5fframe_5fwidth',['CONFIG_LABEL_FRAME_WIDTH',['../_c_app_init_8h.html#a2b608d2b062d73fd75a8e696c5d7b94f',1,'CAppInit.h']]],
+  ['config_5flabel_5fframe_5fx',['CONFIG_LABEL_FRAME_X',['../_c_app_init_8h.html#a823573e1777cfd7063d3354c2b253c96',1,'CAppInit.h']]],
+  ['config_5flabel_5fframe_5fy',['CONFIG_LABEL_FRAME_Y',['../_c_app_init_8h.html#a9c89b765c533e625bcbc89eb0732037d',1,'CAppInit.h']]],
   ['config_5flabel_5fpath_5fsftp_5ftool',['CONFIG_LABEL_PATH_SFTP_TOOL',['../_c_app_init_8h.html#a083115684cc4ec8773f89242c83cb857',1,'CAppInit.h']]],
   ['config_5flabel_5fpath_5fssh_5ftool',['CONFIG_LABEL_PATH_SSH_TOOL',['../_c_app_init_8h.html#a85a02d7287c3f0950a68e5ea4e96b62a',1,'CAppInit.h']]],
+  ['config_5flabel_5fstacks_5fheight',['CONFIG_LABEL_STACKS_HEIGHT',['../_c_app_init_8h.html#aa7c5ad054df13a8a35697479b8818da9',1,'CAppInit.h']]],
+  ['config_5flabel_5fstacks_5fwidth',['CONFIG_LABEL_STACKS_WIDTH',['../_c_app_init_8h.html#aa7c6a01bce419f4f413d3a60093750c4',1,'CAppInit.h']]],
   ['config_5flabel_5ftoggle_5ffloating',['CONFIG_LABEL_TOGGLE_FLOATING',['../_c_app_init_8h.html#a725e77be88291a8bb8119e87c262d53b',1,'CAppInit.h']]],
   ['config_5flabel_5fusername',['CONFIG_LABEL_USERNAME',['../_c_app_init_8h.html#a6d919df6e97bad79b4e7b610da3a407f',1,'CAppInit.h']]],
   ['config_5freg_5flabel',['CONFIG_REG_LABEL',['../grepster_8h.html#a0102e69c72fb05bf24a7cb670ec9350e',1,'grepster.h']]],

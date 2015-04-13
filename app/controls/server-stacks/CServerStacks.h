@@ -5,8 +5,8 @@
  * @brief   wxWidgets tree control class definition which displays user's server stacks.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -54,12 +54,19 @@ public:
      * @retval      int The index in the current list where the string is. This
      *              can also be wxNOT_FOUND as it uses a temporary wxArrayString.
      */
-    int FindInStacks(wxString);
+    int FindName(wxString);
+    /**
+     * @brief       Look for a match in the current list of server stacks.
+     * @param[in]   str String of server stack's file path to look for in current list.
+     * @retval      int The index in the current list where the string is. This
+     *              can also be wxNOT_FOUND as it uses a temporary wxArrayString.
+     */
+    int FindPath(wxString);
 
     /**
-     * @brief       Open the currently selected item from the server stack.
+     * @brief       Expands the currently selected item from the server stack.
      */
-    void OpenItem(wxTreeEvent &event);
+    void ExpandItem(wxTreeEvent &event);
 
     /**
      * @brief       Update the current tree control associated with the administrator after configuration and server changes.
@@ -74,9 +81,13 @@ public:
 
     /**
      * @brief       Close the currently selected stack.
-     * @param[in]   name This is the identifying string of the selected stack.
+     * @param[in]   name This is the name of the stack to close.
      */
     void CloseStack(wxString name);
+    /**
+     * @brief       Removes all stacks from the control and from memory.
+     */
+    void CloseAll();
 
     /**
      * @brief       Remove the currently selected server from its stack.

@@ -7,14 +7,13 @@
 
     Created:    11/2/14
 
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #include "../precomp.h"
 
-#include "../grepster.h"
 #include "../resources/grepster_rc.h"
 
 #include "CAppEntry.h"
@@ -44,15 +43,15 @@ bool CAppEntry::OnInit() {
     /* Load grepster's configuration. */
     LoadConfiguration();
     /* Build grepster's primary frame. */
-    m_pGrepsterFrame = new CAppFrame(g_szFrameTitle,
-                                     wxPoint(Configuration->ReadLong(CONFIG_LABEL_FRAME_X, 20),
-                                             Configuration->ReadLong(CONFIG_LABEL_FRAME_Y, 20)),
-                                     wxSize(Configuration->ReadLong(CONFIG_LABEL_FRAME_WIDTH, DEFAULT_FRAME_WIDTH),
-                                            Configuration->ReadLong(CONFIG_LABEL_FRAME_HEIGHT, DEFAULT_FRAME_HEIGHT)));
+    GrepsterFrame = new CAppFrame(g_szFrameTitle,
+                                  wxPoint(Configuration->ReadLong(CONFIG_LABEL_FRAME_X, 20),
+                                          Configuration->ReadLong(CONFIG_LABEL_FRAME_Y, 20)),
+                                  wxSize(Configuration->ReadLong(CONFIG_LABEL_FRAME_WIDTH, DEFAULT_FRAME_WIDTH),
+                                         Configuration->ReadLong(CONFIG_LABEL_FRAME_HEIGHT, DEFAULT_FRAME_HEIGHT)));
     /* Set grepster's window icon. */
-    m_pGrepsterFrame->SetIcon(wxICON(aaaaappicon));
-    SetTopWindow(m_pGrepsterFrame);
-    m_pGrepsterFrame->Show(true);
+    GrepsterFrame->SetIcon(wxICON(aaaaappicon));
+    SetTopWindow(GrepsterFrame);
+    GrepsterFrame->Show(true);
 
     return true;
 }

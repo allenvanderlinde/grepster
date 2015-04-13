@@ -5,15 +5,13 @@
  * @brief   Class which builds the dialog to change the administrator's credentials.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #ifndef _CDIALOGCHANGECREDENTIALS_H_
 #define _CDIALOGCHANGECREDENTIALS_H_
-
-#include "../../grepster.h"
 
 
 /**
@@ -35,7 +33,7 @@ public:
      * @brief       These represent the dialog's individual function call IDs.
      */
     enum enum_DialogCtrlIDs {
-        BUTTON_OK = wxID_ANY,
+        BUTTON_OK = 9100,
         INPUT_USERNAME,
         INPUT_PASSWORD
     };

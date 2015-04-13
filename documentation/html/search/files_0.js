@@ -12,6 +12,8 @@ var searchData=
   ['cappinit_2eh',['CAppInit.h',['../_c_app_init_8h.html',1,'']]],
   ['cappmenubar_2ecpp',['CAppMenubar.cpp',['../_c_app_menubar_8cpp.html',1,'']]],
   ['cappmenubar_2eh',['CAppMenubar.h',['../_c_app_menubar_8h.html',1,'']]],
+  ['ccmenuadminroot_2ecpp',['CCMenuAdminRoot.cpp',['../_c_c_menu_admin_root_8cpp.html',1,'']]],
+  ['ccmenuadminroot_2eh',['CCMenuAdminRoot.h',['../_c_c_menu_admin_root_8h.html',1,'']]],
   ['ccmenuserver_2ecpp',['CCMenuServer.cpp',['../_c_c_menu_server_8cpp.html',1,'']]],
   ['ccmenuserver_2eh',['CCMenuServer.h',['../_c_c_menu_server_8h.html',1,'']]],
   ['ccmenustack_2ecpp',['CCMenuStack.cpp',['../_c_c_menu_stack_8cpp.html',1,'']]],

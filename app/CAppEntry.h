@@ -5,8 +5,8 @@
  * @brief   wxWidgets application execution class definition.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -33,8 +33,6 @@ public:
     bool ShowSplash(int resource_id);
 
 private:
-    CAppFrame* m_pGrepsterFrame;
-
     /**
      * @brief       Load grepster's configuration from file.
      */

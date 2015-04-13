@@ -5,21 +5,25 @@
  * @brief   grepster's global definitions, objects, and methods.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #ifndef _GREPSTER_H_
 #define _GREPSTER_H_
 
+#include "app/CAppFrame.h"
+#include "app/init/CAppInit.h"
 #include "app/controls/console/CConsole.h"
 #include "app/controls/server-stacks/CServerStacks.h"
 #include "app/controls/session-notebook/CSessionNotebook.h"
-#include "app/init/CAppInit.h"
 
 #include "version.h"
 
+
+/** grepster's primary frame object. */
+extern CAppFrame*       GrepsterFrame;
 
 /** grepster's frame title. */
 extern wxString         g_szFrameTitle;
@@ -88,7 +92,7 @@ std::string SpawnAndRun(wxString path,
 
 /* Console control settings. */
 /** grepster's console control ID. */
-#define CONSOLE_ID                          0x00A0
+#define CONSOLE_ID                          10000
 /** grepster's console's local name for wxWidgets. */
 #define CONSOLE_NAME                        "the_con"
 /** grepster's console's control title. */
@@ -98,7 +102,7 @@ std::string SpawnAndRun(wxString path,
 
 /* Server Stacks tree control settings. */
 /** grepster's server stack's control ID. */
-#define SERVER_STACKS_ID                    0x00B0
+#define SERVER_STACKS_ID                    11000
 /** grepster's server stack's local name for wxWidgets. */
 #define SERVER_STACKS_NAME                  "server_stacks"
 /** grepster's server stack's control title. */
@@ -108,15 +112,15 @@ std::string SpawnAndRun(wxString path,
 
 /* Session Notebook control settings. */
 /** grepster's AUI notebook control ID. */
-#define SESSION_NOTEBOOK_ID                    0x00C0
+#define SESSION_NOTEBOOK_ID                 12000
 /** grepster's notebook's local name for wxWidgets. */
-#define SESSION_NOTEBOOK_NAME                  "grep_notebook"
+#define SESSION_NOTEBOOK_NAME               "grep_notebook"
 /** grepster's notebook control title. */
-#define SESSION_NOTEBOOK_CTRL_TITLE            L"Notebook"
+#define SESSION_NOTEBOOK_CTRL_TITLE         L"Notebook"
 
 /* Browser/web viewer control settings. */
 /** grepster's browser control ID. */
-#define BROWSER_ID                          0x00D0
+#define BROWSER_ID                          13000
 /** grepster's browser's local name for wxWidgets. */
 #define BROWSER_NAME                        "browser"
 

@@ -7,16 +7,14 @@
 
     Created:    3/30/15
 
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #include "../precomp.h"
 
 #include "CAdminStack.h"
-
-#include "../grepster.h"
 
 
 /*

@@ -5,15 +5,13 @@
  * @brief   Class which builds the dialog to create a new server stack.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #ifndef _CDIALOGNEWSERVERSTACK_H_
 #define _CDIALOGNEWSERVERSTACK_H_
-
-#include "../../grepster.h"
 
 
 /**
@@ -31,11 +29,17 @@ public:
     CDialogNewServerStack(wxWindow* parentFrame);
 
     /**
+     * @brief       Get the name of the new server stack.
+     * @retval      wxString The string of the new server stack's name.
+     */
+    wxString GetStackName() { return m_pInputStackName->GetLineText(0); }
+
+    /**
      * @enum        enum_DialogCtrlIDs
      * @brief       These represent the dialog's individual function call IDs.
      */
     enum enum_DialogCtrlIDs {
-        BUTTON_SAVE = wxID_ANY,
+        BUTTON_SAVE = 11001,
         INPUT_STACK_NAME
     };
 

@@ -5,8 +5,8 @@
  * @brief   Dialog box's methods.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -61,5 +61,9 @@ CDialogNewServerStack::CDialogNewServerStack(wxWindow* parentFrame)
     CDialogNewServerStack::OnSave
 */
 void CDialogNewServerStack::OnSave(wxCommandEvent& event) {
-    EndModal(BUTTON_SAVE);
+    if(ServerStacks->FindName(m_pInputStackName->GetLineText(0)) != wxNOT_FOUND) {
+        wxMessageBox(L"The chosen stack name exists in the current session. Please chose another name.",
+                     L"Server Stack Conflict", wxICON_INFORMATION | wxOK);
+        return;
+    } else EndModal(BUTTON_SAVE);
 }

@@ -114,18 +114,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af7656741c72ceb3574ba9d66da65c6c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#af7656741c72ceb3574ba9d66da65c6c9">~CAppFrame</a> ()</td></tr>
 <tr class="memdesc:af7656741c72ceb3574ba9d66da65c6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default class destructor. This joins all previously running threads to grepster's primary process.  <a href="#af7656741c72ceb3574ba9d66da65c6c9">More...</a><br /></td></tr>
 <tr class="separator:af7656741c72ceb3574ba9d66da65c6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a5bfd8c3a33407e2c47fde3cc7fc985d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a5bfd8c3a33407e2c47fde3cc7fc985d5">UpdateControls</a> ()</td></tr>
-<tr class="memdesc:a5bfd8c3a33407e2c47fde3cc7fc985d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates grepster's controls after configuration changes.  <a href="#a5bfd8c3a33407e2c47fde3cc7fc985d5">More...</a><br /></td></tr>
-<tr class="separator:a5bfd8c3a33407e2c47fde3cc7fc985d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9564987106b9679d7c86dff33e71eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#ab9564987106b9679d7c86dff33e71eed">NewServerStack</a> (wxCommandEvent &amp;event)</td></tr>
 <tr class="memdesc:ab9564987106b9679d7c86dff33e71eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and add a new server stack to the session.  <a href="#ab9564987106b9679d7c86dff33e71eed">More...</a><br /></td></tr>
 <tr class="separator:ab9564987106b9679d7c86dff33e71eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82d07ac9011f19c265307cfd4dd333c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a82d07ac9011f19c265307cfd4dd333c1">AddServerStack</a> (wxCommandEvent &amp;event)</td></tr>
-<tr class="memdesc:a82d07ac9011f19c265307cfd4dd333c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a saved server stack to the current session.  <a href="#a82d07ac9011f19c265307cfd4dd333c1">More...</a><br /></td></tr>
-<tr class="separator:a82d07ac9011f19c265307cfd4dd333c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529c2d9fed02c3ee40fe44f901ce1647"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a529c2d9fed02c3ee40fe44f901ce1647">AddServerStacks</a> (wxCommandEvent &amp;event)</td></tr>
+<tr class="memdesc:a529c2d9fed02c3ee40fe44f901ce1647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add one or more saved server stacks to the current session.  <a href="#a529c2d9fed02c3ee40fe44f901ce1647">More...</a><br /></td></tr>
+<tr class="separator:a529c2d9fed02c3ee40fe44f901ce1647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e42228241a396f77804fa2c0e9ddee0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a3e42228241a396f77804fa2c0e9ddee0">CloseServerStacks</a> (wxCommandEvent &amp;event)</td></tr>
+<tr class="memdesc:a3e42228241a396f77804fa2c0e9ddee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close all server stacks in current session.  <a href="#a3e42228241a396f77804fa2c0e9ddee0">More...</a><br /></td></tr>
+<tr class="separator:a3e42228241a396f77804fa2c0e9ddee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acabf3ab614bbe25b720f26e28abe51db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#acabf3ab614bbe25b720f26e28abe51db">ChangeDefaultCredentials</a> (wxCommandEvent &amp;event)</td></tr>
 <tr class="memdesc:acabf3ab614bbe25b720f26e28abe51db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the administrator's default credentials.  <a href="#acabf3ab614bbe25b720f26e28abe51db">More...</a><br /></td></tr>
 <tr class="separator:acabf3ab614bbe25b720f26e28abe51db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,6 +141,12 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a93b72eec6388f6c004de1f8ff4e4f8e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a93b72eec6388f6c004de1f8ff4e4f8e8">CloseFrame</a> (wxCommandEvent &amp;event)</td></tr>
 <tr class="memdesc:a93b72eec6388f6c004de1f8ff4e4f8e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the primary frame.  <a href="#a93b72eec6388f6c004de1f8ff4e4f8e8">More...</a><br /></td></tr>
 <tr class="separator:a93b72eec6388f6c004de1f8ff4e4f8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a5bfd8c3a33407e2c47fde3cc7fc985d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#a5bfd8c3a33407e2c47fde3cc7fc985d5">UpdateControls</a> ()</td></tr>
+<tr class="memdesc:a5bfd8c3a33407e2c47fde3cc7fc985d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates grepster's controls after configuration changes.  <a href="#a5bfd8c3a33407e2c47fde3cc7fc985d5">More...</a><br /></td></tr>
+<tr class="separator:a5bfd8c3a33407e2c47fde3cc7fc985d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab32daeb6453234eb7ef29289117343d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_app_frame.html#ab32daeb6453234eb7ef29289117343d4">OnExit</a> (wxCloseEvent &amp;event)</td></tr>
 <tr class="memdesc:ab32daeb6453234eb7ef29289117343d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exit grepster.  <a href="#ab32daeb6453234eb7ef29289117343d4">More...</a><br /></td></tr>
 <tr class="separator:ab32daeb6453234eb7ef29289117343d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,38 +233,27 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a82d07ac9011f19c265307cfd4dd333c1"></a>
+<a class="anchor" id="a529c2d9fed02c3ee40fe44f901ce1647"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CAppFrame::AddServerStack </td>
+          <td class="memname">void CAppFrame::AddServerStacks </td>
           <td>(</td>
           <td class="paramtype">wxCommandEvent &amp;&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Adds a saved server stack to the current session. </p>
+<p>Add one or more saved server stacks to the current session. </p>
 
 </div>
 </div>
 <a class="anchor" id="acabf3ab614bbe25b720f26e28abe51db"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void CAppFrame::ChangeDefaultCredentials </td>
@@ -271,11 +263,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Change the administrator's default credentials. </p>
@@ -285,9 +272,6 @@ Private Attributes</h2></td></tr>
 <a class="anchor" id="a93b72eec6388f6c004de1f8ff4e4f8e8"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void CAppFrame::CloseFrame </td>
@@ -297,23 +281,33 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Close the primary frame. </p>
 
 </div>
 </div>
+<a class="anchor" id="a3e42228241a396f77804fa2c0e9ddee0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAppFrame::CloseServerStacks </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Close all server stacks in current session. </p>
+
+</div>
+</div>
 <a class="anchor" id="ac19147712aadc47f1bf06930833c69eb"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void CAppFrame::LaunchPuTTY </td>
@@ -323,11 +317,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Launch PuTTY from within grepster. </p>
@@ -337,9 +326,6 @@ Private Attributes</h2></td></tr>
 <a class="anchor" id="ab9564987106b9679d7c86dff33e71eed"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void CAppFrame::NewServerStack </td>
@@ -349,11 +335,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Create and add a new server stack to the session. </p>
@@ -363,9 +344,6 @@ Private Attributes</h2></td></tr>
 <a class="anchor" id="aa48a100858c263b6cc998ecd096f3338"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void CAppFrame::OnAbout </td>
@@ -375,11 +353,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Display simple about dialog box. </p>
@@ -415,9 +388,6 @@ Private Attributes</h2></td></tr>
 <a class="anchor" id="a47be431fad9cb1f83e14cde41f4ad68f"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void CAppFrame::SetPathToTools </td>
@@ -427,11 +397,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Set grepster's default path to SSH/SFTP tools. </p>
@@ -441,9 +406,6 @@ Private Attributes</h2></td></tr>
 <a class="anchor" id="a3ec58b11a1645bd2679924486da86c93"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void CAppFrame::ToggleFloating </td>
@@ -453,11 +415,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Toggle floating controls for user's current session and configuration. </p>
@@ -610,7 +567,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2015 08:26:00 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 12 2015 20:53:36 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

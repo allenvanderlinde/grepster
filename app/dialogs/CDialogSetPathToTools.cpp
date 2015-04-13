@@ -5,8 +5,8 @@
  * @brief   Dialog box's methods.
  */
 /*
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
@@ -69,14 +69,10 @@ void CDialogSetPathToTools::OnOK(wxCommandEvent& event) {
     wxString szPrevSFTPToolPath = Configuration->PathToSFTPTool();
     /* Change the paths to grepster's SSH and SFTP tools and update configuration. */
     Configuration->ChangePathToTools(m_pSSHToolSelect->GetPath(), m_pSFTPToolSelect->GetPath());
-    if(!szPrevSSHToolPath.IsSameAs(Configuration->PathToSSHTool())) {
+    if(!szPrevSSHToolPath.IsSameAs(Configuration->PathToSSHTool()))
        *Console << L"\n\nChanging grepster's SSH tool to: " + Configuration->PathToSSHTool();
-       //Configuration->WriteXMLData();
-    }
-    if(!szPrevSFTPToolPath.IsSameAs(Configuration->PathToSFTPTool())) {
+    if(!szPrevSFTPToolPath.IsSameAs(Configuration->PathToSFTPTool()))
        *Console << L"\n\nChanging grepster's SFTP tool to: " + Configuration->PathToSFTPTool();
-       //Configuration->WriteXMLData();
-    }
 
     EndModal(BUTTON_OK);
 }

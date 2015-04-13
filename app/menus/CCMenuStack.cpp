@@ -7,14 +7,12 @@
 
     Created:    4/5/2015
 
-    Copyright (C) 2014-2015 by Allen Vanderlinde.
-    grepster and its source code is licensed under the GNU General Public License (GPL)
+    Copyleft (C) 2014-2015 by Allen Vanderlinde.
+    grepster and its source code are licensed under the GNU General Public License (GPL)
     and is subject to the terms and conditions provided in LICENSE.txt.
 */
 
 #include "../../precomp.h"
-
-#include "../../grepster.h"
 
 #include "CCMenuStack.h"
 
@@ -28,9 +26,10 @@ wxEND_EVENT_TABLE()
 /*
     CCMenuStack::CCMenuStack
 */
-CCMenuStack::CCMenuStack(wxString name)
+CCMenuStack::CCMenuStack(wxString name, wxString path)
     : wxMenu() {
     m_szName = name;
+    m_szPath = path;
     /* Build context menu items. */
     Append(CLOSE_STACK, L"Close", L"Close this server stack.");
 }
