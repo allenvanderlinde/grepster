@@ -24,6 +24,7 @@ CAppInit::CAppInit(wxString label)
     : wxConfig(label) {
     /* Read basic session configuration from registry. */
     m_pAdministrator = new CAdminAccount(Read(CONFIG_LABEL_USERNAME, "Administrator"));
+    /* Note: grepster attempts to use PuTTY's SSH and SFTP tools as default. */
     m_szPathToSSHTool = Read(CONFIG_LABEL_PATH_SSH_TOOL, "C:\\Program Files (x86)\\PuTTY\\plink.exe");
     m_szPathToSFTPTool = Read(CONFIG_LABEL_PATH_SFTP_TOOL, "C:\\Program Files (x86)\\PuTTY\\psftp.exe");
     Read(CONFIG_LABEL_TOGGLE_FLOATING, &m_bToggleFloating);
