@@ -55,6 +55,12 @@ public:
     ~CAppFrame();
 
     /**
+     * @brief       Returns the CAppMenubar object of the frame.
+     * @retval      CAppMenubar The primary frame's menubar object.
+     */
+    CAppMenubar* Menubar() { return m_pMenubar; }
+
+    /**
      * @brief       Create and add a new server stack to the session.
      */
     void NewServerStack(wxCommandEvent& event);
@@ -73,6 +79,12 @@ public:
     void ChangeDefaultCredentials(wxCommandEvent& event);
 
     /**
+     * @brief       Save the current page in the notebook back
+     *              to its original file.
+     */
+    void SavePage(wxCommandEvent& event);
+
+    /**
      * @brief       Launch PuTTY from within grepster.
      */
     void LaunchPuTTY(wxCommandEvent& event);
@@ -87,9 +99,14 @@ public:
     void ToggleFloating(wxCommandEvent& event);
 
     /**
+     * @brief       Open grepster's welcome and updates page in a new notebook page.
+     */
+    void Welcome(wxCommandEvent& event);
+    /**
      * @brief       Display simple about dialog box.
      */
     void OnAbout(wxCommandEvent& event);
+
     /**
      * @brief       Close the primary frame.
      */

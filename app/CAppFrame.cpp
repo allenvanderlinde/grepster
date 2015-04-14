@@ -32,10 +32,14 @@ wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
 
     EVT_MENU(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS, CAppFrame::ChangeDefaultCredentials)
 
+    EVT_MENU(MENU_FUNCTION_ID_NOTEBOOK_SAVE_PAGE, CAppFrame::SavePage)
+
     EVT_MENU(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY, CAppFrame::LaunchPuTTY)
 
     EVT_MENU(MENU_FUNCTION_ID_OPTIONS_SET_PATH_TOOLS, CAppFrame::SetPathToTools)
     EVT_MENU(MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE, CAppFrame::ToggleFloating)
+
+    EVT_MENU(MENU_FUNCTION_ID_HELP_WELCOME_PAGE, CAppFrame::Welcome)
     EVT_MENU(MENU_FUNCTION_ID_HELP_ABOUT, CAppFrame::OnAbout)
 
     EVT_CLOSE(CAppFrame::OnExit)
@@ -70,8 +74,8 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
     /* Create and initialize primary frame controls. */
     ServerStacks = new CServerStacks(this);
     Console = new CConsole(this);
-    SessionNotebook = new CSessionNotebook(this);
-    SessionNotebook->OpenWelcomePage();
+    Notebook = new CNotebook(this);
+    Notebook->OpenWelcomePage();
 
     /* Create wxWidgets AUI object for managing frame controls. */
     m_pAui = new wxAuiManager(this);
@@ -80,7 +84,7 @@ CAppFrame::CAppFrame(const wxString& title, const wxPoint& position, const wxSiz
 
     m_pAui->AddPane(ServerStacks, ServerStacks->Info());
     m_pAui->AddPane(Console, Console->Info());
-    m_pAui->AddPane(SessionNotebook, SessionNotebook->Info());
+    m_pAui->AddPane(Notebook, Notebook->Info());
 
     // Set pane colors for controls
     wxAuiDockArt* art = m_pAui->GetArtProvider();
@@ -151,8 +155,8 @@ void CAppFrame::NewServerStack(wxCommandEvent& event) {
         ServerStacks->AddServerStack(newStack);
         /* Enable item(s) in Session menu. */
         m_pMenubar->GetMenu(FRAME_ID_SESSION_MENU)->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, true);
-        /* Open the new stack in the session notebook. */
-        SessionNotebook->OpenServerStack(newStack);
+        /* Open the new stack in the notebook. */
+        Notebook->OpenPage(newStack);
     }
     Dialog->Destroy();
 }
@@ -171,8 +175,10 @@ void CAppFrame::AddServerStacks(wxCommandEvent& event) {
                                                         L".servers files (*.servers)|*.servers",
                                                         wxFD_OPEN | wxFD_FILE_MUST_EXIST | wxFD_MULTIPLE);  // File must exist to be valid
     pServerStackSelect->CenterOnParent();
-    if(pServerStackSelect->ShowModal() == wxID_CANCEL)
+    if(pServerStackSelect->ShowModal() == wxID_CANCEL) {
         pServerStackSelect->Destroy();
+        return;
+    }
     else {  // The user pressed OK
         wxArrayString FilePaths;
         pServerStackSelect->GetPaths(FilePaths);
@@ -232,6 +238,19 @@ void CAppFrame::ChangeDefaultCredentials(wxCommandEvent& event) {
         Configuration->Write(CONFIG_LABEL_USERNAME, Configuration->Username());
         Dialog->Destroy();
     }
+}
+
+/*
+    CAppFrame::SavePage
+*/
+void CAppFrame::SavePage(wxCommandEvent& event) {
+    // need to decide which SavePage to call
+    // admin stack?
+    // remote command?
+    // script?
+    wxWindow* currentPage = Notebook->GetCurrentPage();
+    wxMessageBox(Notebook->GetPageText(Notebook->GetSelection()), "ok", wxOK);
+    //Notebook->SavePage();
 }
 
 /*
@@ -302,7 +321,14 @@ void CAppFrame::UpdateControls() {
     // Floating controls
     m_pAui->GetPane(Console).Floatable(Configuration->Floating());
     m_pAui->GetPane(ServerStacks).Floatable(Configuration->Floating());
-    m_pAui->GetPane(SessionNotebook).Floatable(Configuration->Floating());
+    m_pAui->GetPane(Notebook).Floatable(Configuration->Floating());
+}
+
+/*
+    CAppFrame::Welcome
+*/
+void CAppFrame::Welcome(wxCommandEvent& event) {
+    Notebook->OpenWelcomePage();
 }
 
 /*

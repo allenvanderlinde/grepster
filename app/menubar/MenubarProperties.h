@@ -19,6 +19,7 @@
  */
 const wxString FRAME_MENUBAR_STRINGS[]      = {L"&grepster",
                                                L"&Session",
+                                               L"&Notebook",
                                                L"&Tools",
                                                L"&Options",
                                                L"&Help"};
@@ -32,9 +33,11 @@ const wxString FRAME_MENU_STRINGS[]         = {L"&Quit\tCtrl+Q",
                                                L"&Add Server Stacks...\tCtrl+Shift+O",
                                                L"&Close All Stacks\tCtrl+C",
                                                L"&Admin Credentials...\tCtrl+Shift+C",
+                                               L"&Save Page\tCtrl+S",
                                                L"&Launch PuTTY\tCtrl+P",
                                                L"&Set Path to SSH/SFTP Tools...",
                                                L"&Toggle Floating Controls",
+                                               L"Open &Welcome Page",
                                                L"&About grepster..."};
 /**
  * @brief       Status bar strings. These are the labels displayed for each menu item.
@@ -46,9 +49,11 @@ const wxString FRAME_STATUSBAR_STRINGS[]    = {L"Quit grepster.",
                                                L"Add one or multiple saved server stacks to the current session.",
                                                L"Close all server stacks in current session.",
                                                L"Set the session's administrator credentials.",
+                                               L"Save the current page.",
                                                L"Launch PuTTY.",
                                                L"Set the default path to grepster's SSH/SFTP tools.",
                                                L"Allow grepster's server stacks and console controls to be un-docked.",
+                                               L"Open grepster's welcome and updates page.",
                                                L"About grepster."};
 
 /**
@@ -57,6 +62,7 @@ const wxString FRAME_STATUSBAR_STRINGS[]    = {L"Quit grepster.",
 enum enum_FrameMenuIDs {
     FRAME_ID_FILE_MENU = 0,
     FRAME_ID_SESSION_MENU,
+    FRAME_ID_NOTEBOOK_MENU,
     FRAME_ID_TOOLS_MENU,
     FRAME_ID_OPTIONS_MENU,
     FRAME_ID_HELP_MENU
@@ -73,9 +79,11 @@ enum enum_MenuStringIDs {
     FRAME_MENU_STRING_ID_ADD_SERVER_STACKS,
     FRAME_MENU_STRING_ID_CLOSE_SERVER_STACKS,
     FRAME_MENU_STRING_ID_DEFAULT_CREDENTIALS,
+    FRAME_MENU_STRING_ID_SAVE_PAGE,
     FRAME_MENU_STRING_ID_LAUNCH_PUTTY,
     FRAME_MENU_STRING_ID_SET_PATH_TOOLS,
     FRAME_MENU_STRING_ID_TOGGLE_DOCKABLE,
+    FRAME_MENU_STRING_ID_WELCOME_PAGE,
     FRAME_MENU_STRING_ID_ABOUT
 };
 
@@ -90,9 +98,11 @@ enum enum_StatusbarStringIDs {
     STATUSBAR_STRING_ID_ADD_SERVER_STACKS,
     STATUSBAR_STRING_ID_CLOSE_SERVER_STACKS,
     STATUSBAR_STRING_ID_DEFAULT_CREDENTIALS,
+    STATUSBAR_STRING_ID_SAVE_PAGE,
     STATUSBAR_STRING_ID_LAUNCH_PUTTY,
     STATUSBAR_STRING_ID_SET_PATH_TOOLS,
     STATUSBAR_STRING_ID_TOGGLE_DOCKABLE,
+    STATUSBAR_STRING_ID_WELCOME_PAGE,
     STATUSBAR_STRING_ID_ABOUT
 };
 
@@ -111,9 +121,11 @@ enum enum_MenuFunctionIDs {
     MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACKS,
     MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS,
     MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS,
+    MENU_FUNCTION_ID_NOTEBOOK_SAVE_PAGE,
     MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY,
     MENU_FUNCTION_ID_OPTIONS_SET_PATH_TOOLS,
     MENU_FUNCTION_ID_OPTIONS_TOGGLE_FLOATABLE,
+    MENU_FUNCTION_ID_HELP_WELCOME_PAGE,
     MENU_FUNCTION_ID_HELP_ABOUT
 };
 

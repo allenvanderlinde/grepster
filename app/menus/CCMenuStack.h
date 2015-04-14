@@ -40,7 +40,8 @@ public:
     * @brief       These represent the context menu's individual function call IDs.
     */
     enum enum_ContextMenuItemIDs {
-        CLOSE_STACK = 11005
+        OPEN_STACK = 11005,
+        CLOSE_STACK
     };
 
 private:
@@ -49,6 +50,10 @@ private:
     /** @brief      String of the server stack's file path. */
     wxString        m_szPath;
 
+    /**
+     * @brief       Open the selected server stack into the session notebook.
+     */
+    void Open(wxCommandEvent& event);
     /**
      * @brief       Close the selected stack.
      */

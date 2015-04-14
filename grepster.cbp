@@ -100,10 +100,10 @@
 		<Unit filename="app/CAppFrame.h" />
 		<Unit filename="app/controls/console/CConsole.cpp" />
 		<Unit filename="app/controls/console/CConsole.h" />
+		<Unit filename="app/controls/notebook/CNotebook.cpp" />
+		<Unit filename="app/controls/notebook/CNotebook.h" />
 		<Unit filename="app/controls/server-stacks/CServerStacks.cpp" />
 		<Unit filename="app/controls/server-stacks/CServerStacks.h" />
-		<Unit filename="app/controls/session-notebook/CSessionNotebook.cpp" />
-		<Unit filename="app/controls/session-notebook/CSessionNotebook.h" />
 		<Unit filename="app/dialogs/CDialogChangeCredentials.cpp" />
 		<Unit filename="app/dialogs/CDialogChangeCredentials.h" />
 		<Unit filename="app/dialogs/CDialogNewServerStack.cpp" />

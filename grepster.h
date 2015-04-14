@@ -17,7 +17,7 @@
 #include "app/init/CAppInit.h"
 #include "app/controls/console/CConsole.h"
 #include "app/controls/server-stacks/CServerStacks.h"
-#include "app/controls/session-notebook/CSessionNotebook.h"
+#include "app/controls/notebook/CNotebook.h"
 
 #include "version.h"
 
@@ -30,19 +30,19 @@ extern wxString         g_szFrameTitle;
 
 /**
  * This control reports grepster's activity and remote commands to the user.
- * @brief       grepster's console.
+ * @brief       grepster's Console control.
  */
 extern CConsole*        Console;
 /**
  * This control is the graphical list of servers configured for grepping.
- * @brief       grepster's Server Stack.
+ * @brief       grepster's Server Stack control.
  */
 extern CServerStacks*     ServerStacks;
 /**
  * This control holds the user's notebook of remote commands and grep scripts.
- * @brief       grepster's Session Notebook.
+ * @brief       grepster's Notebook control.
  */
-extern CSessionNotebook*   SessionNotebook;
+extern CNotebook*   Notebook;
 
 /**
  * This object contains each of grepster's configuration settings which are saved automatically to file upon change.
@@ -110,13 +110,13 @@ std::string SpawnAndRun(wxString path,
 /** Default width (pixels) of grepster's tree list control used when floating. */
 #define SERVER_STACKS_DEFAULT_WIDTH         240
 
-/* Session Notebook control settings. */
+/* Notebook control settings. */
 /** grepster's AUI notebook control ID. */
-#define SESSION_NOTEBOOK_ID                 12000
+#define NOTEBOOK_ID                 12000
 /** grepster's notebook's local name for wxWidgets. */
-#define SESSION_NOTEBOOK_NAME               "grep_notebook"
+#define NOTEBOOK_NAME               "grep_notebook"
 /** grepster's notebook control title. */
-#define SESSION_NOTEBOOK_CTRL_TITLE         L"Notebook"
+#define NOTEBOOK_CTRL_TITLE         L"Notebook"
 
 /* Browser/web viewer control settings. */
 /** grepster's browser control ID. */

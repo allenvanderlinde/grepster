@@ -38,8 +38,7 @@ public:
     * @brief       These represent the context menu's individual function call IDs.
     */
     enum enum_ContextMenuItemIDs {
-        OPEN = 11006,
-        REMOVE
+        REMOVE = 11007
     };
 
 private:
@@ -48,10 +47,6 @@ private:
     /** @brief      Name of the server's parent stack. */
     wxString        m_szParent;
 
-    /**
-     * @brief       Open the selected server stack into the session notebook.
-     */
-    void Open(wxCommandEvent& event);
     /**
      * @brief       Remove the selected server from the stack.
      */

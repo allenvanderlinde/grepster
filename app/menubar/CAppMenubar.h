@@ -32,6 +32,7 @@ public:
 private:
     wxMenu* m_pMenuFile;
     wxMenu* m_pMenuSession;
+    wxMenu* m_pMenuNotebook;
     wxMenu* m_pMenuTools;
     wxMenu* m_pMenuOptions;
     wxMenu* m_pMenuHelp;

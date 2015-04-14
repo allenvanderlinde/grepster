@@ -22,7 +22,7 @@
 #include "../../web-viewer/CWebViewer.h"
 
 
-/* Construct the Server Stacks' event handler calls. */
+/* Construct event handler calls. */
 wxBEGIN_EVENT_TABLE(CServerStacks, wxTreeCtrl)
     EVT_TREE_ITEM_ACTIVATED(wxID_ANY, CServerStacks::ExpandItem)
     /* Handle server stack's context menus. */
@@ -109,7 +109,7 @@ void CServerStacks::AddServerStack(CAdminStack serverStack) {
 }
 
 /*
-    CServerStacks::OpenItem
+    CServerStacks::ExpandItem
 */
 void CServerStacks::ExpandItem(wxTreeEvent &event) {
     wxTreeItemId item = event.GetItem();  // The currently selected tree item

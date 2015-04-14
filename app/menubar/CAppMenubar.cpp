@@ -53,6 +53,12 @@ CAppMenubar::CAppMenubar()
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_DEFAULT_CREDENTIALS],
                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_DEFAULT_CREDENTIALS]);
 
+    // Notebook menu
+    m_pMenuNotebook = new wxMenu;
+    m_pMenuNotebook->Append(MENU_FUNCTION_ID_NOTEBOOK_SAVE_PAGE,
+                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_SAVE_PAGE],
+                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_SAVE_PAGE]);
+
     // Tools menu
     m_pMenuTools = new wxMenu;
     m_pMenuTools->Append(MENU_FUNCTION_ID_TOOLS_LAUNCH_PUTTY,
@@ -74,6 +80,10 @@ CAppMenubar::CAppMenubar()
 
     // Help menu
     m_pMenuHelp = new wxMenu;
+    m_pMenuHelp->Append(MENU_FUNCTION_ID_HELP_WELCOME_PAGE,
+                        FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_WELCOME_PAGE],
+                        FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_WELCOME_PAGE]);
+    m_pMenuHelp->AppendSeparator();
     m_pMenuHelp->Append(MENU_FUNCTION_ID_HELP_ABOUT,
                         FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_ABOUT],
                         FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_ABOUT]);
@@ -81,8 +91,8 @@ CAppMenubar::CAppMenubar()
     // Add menus to menu bar
     Append(m_pMenuFile, FRAME_MENUBAR_STRINGS[FRAME_ID_FILE_MENU]);
     Append(m_pMenuSession, FRAME_MENUBAR_STRINGS[FRAME_ID_SESSION_MENU]);
+    Append(m_pMenuNotebook, FRAME_MENUBAR_STRINGS[FRAME_ID_NOTEBOOK_MENU]);
     Append(m_pMenuTools, FRAME_MENUBAR_STRINGS[FRAME_ID_TOOLS_MENU]);
-
     Append(m_pMenuOptions, FRAME_MENUBAR_STRINGS[FRAME_ID_OPTIONS_MENU]);
     Append(m_pMenuHelp, FRAME_MENUBAR_STRINGS[FRAME_ID_HELP_MENU]);
 }
