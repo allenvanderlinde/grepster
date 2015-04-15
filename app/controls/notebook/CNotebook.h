@@ -61,7 +61,7 @@ public:
      */
     void SavePage();
     /**
-     * @brief       Resize the m_Pages vector when a page is closed. If the last
+     * @brief       Close the selected page. If the last
      *              page was closed, open the welcome page.
      */
     void ClosePage(wxAuiNotebookEvent& event);
@@ -79,10 +79,6 @@ private:
     CWebViewer*             m_pBrowser;
     /** @brief      This object holds wxWidgets AUI settings for the control. */
     wxAuiPaneInfo           m_NotebookInf_t;
-
-    /** @brief      The vector of wxWindow objects which each represent
-     *              a page in the notebook. */
-    std::vector<wxWindow*>   m_Pages;
 
     /**
      * @brief       Initialize and call the object's event handler.

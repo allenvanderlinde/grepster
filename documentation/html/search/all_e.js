@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['remove',['REMOVE',['../class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addfa1c8a8fc45f55fa14790a1c18872b0ef6',1,'CCMenuServer::REMOVE()'],['../class_c_c_menu_server.html#af975ba4a6c90511b72d0086f596b4b56',1,'CCMenuServer::Remove(wxCommandEvent &amp;event)']]],
+  ['remove',['Remove',['../class_c_c_menu_server.html#af975ba4a6c90511b72d0086f596b4b56',1,'CCMenuServer::Remove(wxCommandEvent &amp;event)'],['../class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addfa1c8a8fc45f55fa14790a1c18872b0ef6',1,'CCMenuServer::REMOVE()']]],
   ['removeserver',['RemoveServer',['../class_c_server_stacks.html#ad5a09bd434fb894e715668b1f57c3822',1,'CServerStacks::RemoveServer()'],['../class_c_admin_stack.html#a9d3393c50321db8bfd7c413ccd01c3cf',1,'CAdminStack::RemoveServer()']]],
   ['resid_5fpng_5fabout',['RESID_PNG_ABOUT',['../grepster__rc_8h.html#af17a2755e08232ebacc78edf545d5448',1,'grepster_rc.h']]],
   ['resid_5fpng_5fcredentials',['RESID_PNG_CREDENTIALS',['../grepster__rc_8h.html#a4215bd8941968f33d03200c541f47f96',1,'grepster_rc.h']]],

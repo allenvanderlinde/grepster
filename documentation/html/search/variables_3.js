@@ -4,7 +4,6 @@ var searchData=
   ['m_5fconsoleinf_5ft',['m_ConsoleInf_t',['../class_c_console.html#af5025686b6dd009afd012e7bb1e49464',1,'CConsole']]],
   ['m_5fnotebookinf_5ft',['m_NotebookInf_t',['../class_c_notebook.html#a4a2d442d8e4d1acd081d35eb7ed39a07',1,'CNotebook']]],
   ['m_5fpadministrator',['m_pAdministrator',['../class_c_app_init.html#a10ad1620c5f77c3d359c9399f92fe34a',1,'CAppInit']]],
-  ['m_5fpages',['m_Pages',['../class_c_notebook.html#a86940afcad15bc97a793f4aa0c7728a0',1,'CNotebook']]],
   ['m_5fpaui',['m_pAui',['../class_c_app_frame.html#a3c2d134577e66b69a30a95804059f460',1,'CAppFrame']]],
   ['m_5fpbrowser',['m_pBrowser',['../class_c_notebook.html#a488795034c12a926d48974c178532bae',1,'CNotebook::m_pBrowser()'],['../class_c_web_viewer.html#a185af0ae29681accdcac491d340c6f0d',1,'CWebViewer::m_pBrowser()']]],
   ['m_5fpbuttoncancel',['m_pButtonCancel',['../class_c_dialog_change_credentials.html#ab910de3b2ff421c3370d76cafa4158ce',1,'CDialogChangeCredentials::m_pButtonCancel()'],['../class_c_dialog_new_server_stack.html#a7d0d6f17a27305ab1165837367676a80',1,'CDialogNewServerStack::m_pButtonCancel()'],['../class_c_dialog_set_path_to_tools.html#a50bc4987fa2f99a24fe95cc472e0d6ce',1,'CDialogSetPathToTools::m_pButtonCancel()']]],

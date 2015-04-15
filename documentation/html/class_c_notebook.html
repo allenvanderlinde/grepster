@@ -132,7 +132,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac59a45da70c59f284dbac50495a51d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the selected server stack to its original file.  <a href="#ac59a45da70c59f284dbac50495a51d0c">More...</a><br /></td></tr>
 <tr class="separator:ac59a45da70c59f284dbac50495a51d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae49762210af2b6b1f6339b48ddb224e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_notebook.html#ae49762210af2b6b1f6339b48ddb224e6">ClosePage</a> (wxAuiNotebookEvent &amp;event)</td></tr>
-<tr class="memdesc:ae49762210af2b6b1f6339b48ddb224e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the m_Pages vector when a page is closed. If the last page was closed, open the welcome page.  <a href="#ae49762210af2b6b1f6339b48ddb224e6">More...</a><br /></td></tr>
+<tr class="memdesc:ae49762210af2b6b1f6339b48ddb224e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the selected page. If the last page was closed, open the welcome page.  <a href="#ae49762210af2b6b1f6339b48ddb224e6">More...</a><br /></td></tr>
 <tr class="separator:ae49762210af2b6b1f6339b48ddb224e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -149,9 +149,6 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a4a2d442d8e4d1acd081d35eb7ed39a07"><td class="memItemLeft" align="right" valign="top">wxAuiPaneInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_notebook.html#a4a2d442d8e4d1acd081d35eb7ed39a07">m_NotebookInf_t</a></td></tr>
 <tr class="memdesc:a4a2d442d8e4d1acd081d35eb7ed39a07"><td class="mdescLeft">&#160;</td><td class="mdescRight">This object holds wxWidgets AUI settings for the control.  <a href="#a4a2d442d8e4d1acd081d35eb7ed39a07">More...</a><br /></td></tr>
 <tr class="separator:a4a2d442d8e4d1acd081d35eb7ed39a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86940afcad15bc97a793f4aa0c7728a0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; wxWindow * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_notebook.html#a86940afcad15bc97a793f4aa0c7728a0">m_Pages</a></td></tr>
-<tr class="memdesc:a86940afcad15bc97a793f4aa0c7728a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector of wxWindow objects which each represent a page in the notebook.  <a href="#a86940afcad15bc97a793f4aa0c7728a0">More...</a><br /></td></tr>
-<tr class="separator:a86940afcad15bc97a793f4aa0c7728a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for grepster's notebook control. </p>
@@ -215,7 +212,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resize the m_Pages vector when a page is closed. If the last page was closed, open the welcome page. </p>
+<p>Close the selected page. If the last page was closed, open the welcome page. </p>
 
 </div>
 </div>
@@ -356,28 +353,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a86940afcad15bc97a793f4aa0c7728a0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;wxWindow*&gt; CNotebook::m_Pages</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The vector of wxWindow objects which each represent a page in the notebook. </p>
-
-</div>
-</div>
 <a class="anchor" id="a488795034c12a926d48974c178532bae"></a>
 <div class="memitem">
 <div class="memproto">
@@ -407,7 +382,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 14 2015 22:49:10 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 14 2015 22:53:41 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
