@@ -1,16 +1,11 @@
 var searchData=
 [
+  ['savepage',['SavePage',['../class_c_app_frame.html#a40fb6fa3a29e440d26add952df51aebf',1,'CAppFrame::SavePage()'],['../class_c_notebook.html#ac59a45da70c59f284dbac50495a51d0c',1,'CNotebook::SavePage()']]],
   ['server_5fstacks_5fctrl_5ftitle',['SERVER_STACKS_CTRL_TITLE',['../grepster_8h.html#a8b3792a26821ed1c5e652d7f0fe33699',1,'grepster.h']]],
   ['server_5fstacks_5fdefault_5fwidth',['SERVER_STACKS_DEFAULT_WIDTH',['../grepster_8h.html#a7293d10d90531879b1d04df1c82bda32',1,'grepster.h']]],
   ['server_5fstacks_5fid',['SERVER_STACKS_ID',['../grepster_8h.html#a645678a2344831c3f0d09734f4b19032',1,'grepster.h']]],
   ['server_5fstacks_5fname',['SERVER_STACKS_NAME',['../grepster_8h.html#aef3f3454eb74302ee6475b6e1eb9b7ca',1,'grepster.h']]],
   ['serverstacks',['ServerStacks',['../grepster_8cpp.html#a4050f062ea121119aa08ec79fd17874f',1,'ServerStacks():&#160;grepster.cpp'],['../grepster_8h.html#a4050f062ea121119aa08ec79fd17874f',1,'ServerStacks():&#160;grepster.cpp']]],
-  ['session_5fnotebook_5fctrl_5ftitle',['SESSION_NOTEBOOK_CTRL_TITLE',['../grepster_8h.html#a86f5b95d73cf9e2c926f40f72e875490',1,'grepster.h']]],
-  ['session_5fnotebook_5fdefault_5fheight',['SESSION_NOTEBOOK_DEFAULT_HEIGHT',['../_c_session_notebook_8h.html#a8b2010dff0bf2c714f50e7d0f7f97b27',1,'CSessionNotebook.h']]],
-  ['session_5fnotebook_5fdefault_5fwidth',['SESSION_NOTEBOOK_DEFAULT_WIDTH',['../_c_session_notebook_8h.html#a79a2db328fa8add8feee6f1e37ad0af1',1,'CSessionNotebook.h']]],
-  ['session_5fnotebook_5fid',['SESSION_NOTEBOOK_ID',['../grepster_8h.html#afa5e04f5c9a4def791dc1118dccbd02c',1,'grepster.h']]],
-  ['session_5fnotebook_5fname',['SESSION_NOTEBOOK_NAME',['../grepster_8h.html#a9d894df132a856b6e273ef4084044062',1,'grepster.h']]],
-  ['sessionnotebook',['SessionNotebook',['../grepster_8cpp.html#a4c6b508312117edf3bed5a602f54098b',1,'SessionNotebook():&#160;grepster.cpp'],['../grepster_8h.html#a4c6b508312117edf3bed5a602f54098b',1,'SessionNotebook():&#160;grepster.cpp']]],
   ['setpathtotools',['SetPathToTools',['../class_c_app_frame.html#a47be431fad9cb1f83e14cde41f4ad68f',1,'CAppFrame']]],
   ['sftptool',['SFTPTool',['../class_c_app_init.html#af495d6a3150a9c68f33e8f9594e1e2e4',1,'CAppInit']]],
   ['showsplash',['ShowSplash',['../class_c_app_entry.html#a5a0fb76d45455bc6d173e9667d9260e1',1,'CAppEntry']]],
@@ -28,7 +23,9 @@ var searchData=
   ['statusbar_5fstring_5fid_5fnew_5fsession',['STATUSBAR_STRING_ID_NEW_SESSION',['../_menubar_properties_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a3b70c5d2c1c620bb8311e35e58870aed',1,'MenubarProperties.h']]],
   ['statusbar_5fstring_5fid_5fopen_5fsession',['STATUSBAR_STRING_ID_OPEN_SESSION',['../_menubar_properties_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a02b6340bbf4204d9b3bc334b23eff3c1',1,'MenubarProperties.h']]],
   ['statusbar_5fstring_5fid_5fquit',['STATUSBAR_STRING_ID_QUIT',['../_menubar_properties_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a6a467bd350ba76d5f8e0b0da52be591b',1,'MenubarProperties.h']]],
+  ['statusbar_5fstring_5fid_5fsave_5fpage',['STATUSBAR_STRING_ID_SAVE_PAGE',['../_menubar_properties_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a47dcd1409e21bb95b412dd63381985c8',1,'MenubarProperties.h']]],
   ['statusbar_5fstring_5fid_5fset_5fpath_5ftools',['STATUSBAR_STRING_ID_SET_PATH_TOOLS',['../_menubar_properties_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a42491d9df5920a06edf7bdf714593c52',1,'MenubarProperties.h']]],
   ['statusbar_5fstring_5fid_5ftoggle_5fdockable',['STATUSBAR_STRING_ID_TOGGLE_DOCKABLE',['../_menubar_properties_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6a0883f5e1a510ac8e3192182bbafd9291',1,'MenubarProperties.h']]],
+  ['statusbar_5fstring_5fid_5fwelcome_5fpage',['STATUSBAR_STRING_ID_WELCOME_PAGE',['../_menubar_properties_8h.html#a9d5d195219dfeb9e2d669fe76fa91ba6af3ba4d7d4a2a93fbc449f8fed215daef',1,'MenubarProperties.h']]],
   ['statusbar_5fwelcome',['STATUSBAR_WELCOME',['../_c_app_frame_8h.html#a7eaedd0a5a26a658a7b9f3362c60e122',1,'CAppFrame.h']]]
 ];

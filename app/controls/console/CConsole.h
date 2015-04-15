@@ -35,7 +35,7 @@ public:
      * @brief       Get the console control's pane information.
      * @retval      wxAuiPaneInfo This is the text control's display configuration object.
      */
-    wxAuiPaneInfo Info() { return m_consoleInf_t; }
+    wxAuiPaneInfo Info() { return m_ConsoleInf_t; }
 
     /**
      * @brief       Set the text color to light cobalt blue.
@@ -49,7 +49,7 @@ public:
     void BlackText() { SetDefaultStyle(wxTextAttr(*wxBLACK)); }
 
 private:
-    wxAuiPaneInfo m_consoleInf_t;
+    wxAuiPaneInfo m_ConsoleInf_t;
 
     /**
      * @brief       Initialize and call the object's event handler.

@@ -47,7 +47,6 @@ CAppMenubar::CAppMenubar()
     m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS,
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_CLOSE_SERVER_STACKS],
                            FRAME_STATUSBAR_STRINGS[STATUSBAR_STRING_ID_CLOSE_SERVER_STACKS]);
-    m_pMenuSession->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, false);    // Disable on startup
     m_pMenuSession->AppendSeparator();
     m_pMenuSession->Append(MENU_FUNCTION_ID_SESSION_DEFAULT_CREDENTIALS,
                            FRAME_MENU_STRINGS[FRAME_MENU_STRING_ID_DEFAULT_CREDENTIALS],

@@ -26,10 +26,10 @@ var searchData=
   ['cdialognewserverstack_2eh',['CDialogNewServerStack.h',['../_c_dialog_new_server_stack_8h.html',1,'']]],
   ['cdialogsetpathtotools_2ecpp',['CDialogSetPathToTools.cpp',['../_c_dialog_set_path_to_tools_8cpp.html',1,'']]],
   ['cdialogsetpathtotools_2eh',['CDialogSetPathToTools.h',['../_c_dialog_set_path_to_tools_8h.html',1,'']]],
+  ['cnotebook_2ecpp',['CNotebook.cpp',['../_c_notebook_8cpp.html',1,'']]],
+  ['cnotebook_2eh',['CNotebook.h',['../_c_notebook_8h.html',1,'']]],
   ['cserverstacks_2ecpp',['CServerStacks.cpp',['../_c_server_stacks_8cpp.html',1,'']]],
   ['cserverstacks_2eh',['CServerStacks.h',['../_c_server_stacks_8h.html',1,'']]],
-  ['csessionnotebook_2ecpp',['CSessionNotebook.cpp',['../_c_session_notebook_8cpp.html',1,'']]],
-  ['csessionnotebook_2eh',['CSessionNotebook.h',['../_c_session_notebook_8h.html',1,'']]],
   ['cwebviewer_2ecpp',['CWebViewer.cpp',['../_c_web_viewer_8cpp.html',1,'']]],
   ['cwebviewer_2eh',['CWebViewer.h',['../_c_web_viewer_8h.html',1,'']]]
 ];

@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['resid_5fpng_5fabout',['RESID_PNG_ABOUT',['../grepster__rc_8h.html#af17a2755e08232ebacc78edf545d5448',1,'grepster_rc.h']]],
-  ['resid_5fpng_5fcredentials',['RESID_PNG_CREDENTIALS',['../grepster__rc_8h.html#a4215bd8941968f33d03200c541f47f96',1,'grepster_rc.h']]],
-  ['resid_5fpng_5fserver_5fstack',['RESID_PNG_SERVER_STACK',['../grepster__rc_8h.html#a28862b716348426902d4eb0204cdc3a2',1,'grepster_rc.h']]],
-  ['resid_5fpng_5fsplash',['RESID_PNG_SPLASH',['../grepster__rc_8h.html#a806b6e806a03c79e28cb5245e5401eec',1,'grepster_rc.h']]],
-  ['resid_5fpng_5ftools',['RESID_PNG_TOOLS',['../grepster__rc_8h.html#a5e8c2153f4c5f4a4f578bf0cda7b56fd',1,'grepster_rc.h']]]
+  ['notebook_5fctrl_5ftitle',['NOTEBOOK_CTRL_TITLE',['../grepster_8h.html#aaa73936b9b8b206f25aaebcf0e44c522',1,'grepster.h']]],
+  ['notebook_5fdefault_5fheight',['NOTEBOOK_DEFAULT_HEIGHT',['../_c_notebook_8h.html#ae4cbf359e02fb9a805efe3a29215261c',1,'CNotebook.h']]],
+  ['notebook_5fdefault_5fwidth',['NOTEBOOK_DEFAULT_WIDTH',['../_c_notebook_8h.html#a5bdc7226e0bdd9486e98b2db7f2d9f37',1,'CNotebook.h']]],
+  ['notebook_5fgreeting',['NOTEBOOK_GREETING',['../_c_notebook_8h.html#a24134a1a068e836d7880175a17b1bf44',1,'CNotebook.h']]],
+  ['notebook_5fid',['NOTEBOOK_ID',['../grepster_8h.html#a0823cffc2dad818f3995a09e65e84f6e',1,'grepster.h']]],
+  ['notebook_5fname',['NOTEBOOK_NAME',['../grepster_8h.html#a55a71e604272d221e02a77bb22b40f9d',1,'grepster.h']]]
 ];

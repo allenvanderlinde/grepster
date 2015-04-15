@@ -25,6 +25,8 @@
 
 /* grepster's primary frame's event handler calls. */
 wxBEGIN_EVENT_TABLE(CAppFrame, wxFrame)
+    EVT_MENU_OPEN(CAppFrame::CheckMenu)
+
     EVT_MENU(MENU_FUNCTION_ID_FILE_QUIT, CAppFrame::CloseFrame)
     EVT_MENU(MENU_FUNCTION_ID_SESSION_NEW_SERVER_STACK, CAppFrame::NewServerStack)
     EVT_MENU(MENU_FUNCTION_ID_SESSION_ADD_SERVER_STACKS, CAppFrame::AddServerStacks)
@@ -153,8 +155,6 @@ void CAppFrame::NewServerStack(wxCommandEvent& event) {
         /* Add the newly created stack to the control. */
         CAdminStack newStack(pNewServerStack->GetPath());
         ServerStacks->AddServerStack(newStack);
-        /* Enable item(s) in Session menu. */
-        m_pMenubar->GetMenu(FRAME_ID_SESSION_MENU)->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, true);
         /* Open the new stack in the notebook. */
         Notebook->OpenPage(newStack);
     }
@@ -207,8 +207,6 @@ void CAppFrame::AddServerStacks(wxCommandEvent& event) {
             }
         }
     }
-    /* Enable item(s) in Session menu. */
-    m_pMenubar->GetMenu(FRAME_ID_SESSION_MENU)->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, true);
 }
 
 /*
@@ -225,8 +223,6 @@ void CAppFrame::CloseServerStacks(wxCommandEvent& event) {
             ServerStacks->CloseAll();
         } else return;
     }
-    /* Disable item in Session menu. */
-    m_pMenubar->GetMenu(FRAME_ID_SESSION_MENU)->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, false);
 }
 
 /*
@@ -248,9 +244,9 @@ void CAppFrame::SavePage(wxCommandEvent& event) {
     // admin stack?
     // remote command?
     // script?
-    wxWindow* currentPage = Notebook->GetCurrentPage();
-    wxMessageBox(Notebook->GetPageText(Notebook->GetSelection()), "ok", wxOK);
-    //Notebook->SavePage();
+    //wxWindow* currentPage = Notebook->GetCurrentPage();
+    //wxMessageBox(Notebook->GetPageText(Notebook->GetSelection()), "ok", wxOK);
+    Notebook->SavePage();
 }
 
 /*
@@ -322,6 +318,17 @@ void CAppFrame::UpdateControls() {
     m_pAui->GetPane(Console).Floatable(Configuration->Floating());
     m_pAui->GetPane(ServerStacks).Floatable(Configuration->Floating());
     m_pAui->GetPane(Notebook).Floatable(Configuration->Floating());
+}
+
+/*
+    CAppFrame::CheckMenu
+*/
+void CAppFrame::CheckMenu(wxMenuEvent& event) {
+    if(event.GetMenu()->GetTitle().IsSameAs(FRAME_MENUBAR_STRINGS[FRAME_ID_SESSION_MENU])) {
+        if(ServerStacks->GetStacks().empty())
+            m_pMenubar->GetMenu(FRAME_ID_SESSION_MENU)->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, false);
+        else m_pMenubar->GetMenu(FRAME_ID_SESSION_MENU)->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, true);
+    }
 }
 
 /*

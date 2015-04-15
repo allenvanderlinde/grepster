@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remove',['REMOVE',['../class_c_c_menu_server.html#af15742d93577f650d7ceaaafd3e8addfa1c8a8fc45f55fa14790a1c18872b0ef6',1,'CCMenuServer']]]
+  ['new_5fpage',['NEW_PAGE',['../class_c_notebook.html#acbf844d897dfe433338f4e807dcd5014a258ba71f3f03fd5a138782be62a33b70',1,'CNotebook']]]
 ];

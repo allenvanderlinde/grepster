@@ -35,7 +35,6 @@ CCMenuStack::CCMenuStack(wxString name, wxString path)
     Append(OPEN_STACK, L"Open " + name, L"Open this server stack into the session notebook." );
     AppendSeparator();
     Append(CLOSE_STACK, L"Close " + name, L"Close this server stack.");
-
 }
 
 /*
@@ -49,8 +48,16 @@ CCMenuStack::~CCMenuStack() {
     CCMenuStack::Open
 */
 void CCMenuStack::Open(wxCommandEvent& event) {
+    /* Check to see if the stack has already been opened
+        in the notebook. */
+    for(int i = 0; i < Notebook->GetPageCount(); i++) {
+        if(m_szName.IsSameAs(Notebook->GetPageText(i))) {
+            Notebook->SetSelection(i);
+            return;
+        }
+    }
+    /* Open the selected server stack into the notebook. */
     int nIndex = ServerStacks->FindName(m_szName);
-
     Notebook->OpenPage(ServerStacks->GetStacks()[nIndex]);
 }
 
@@ -59,8 +66,15 @@ void CCMenuStack::Open(wxCommandEvent& event) {
 */
 void CCMenuStack::Close(wxCommandEvent& event) {
     if(wxMessageBox(L"Are you sure you want to close " + m_szName + "?", L"Close Server Stack?", wxOK | wxCANCEL | wxICON_QUESTION) == wxOK) {
-        ServerStacks->CloseStack(m_szName);
-        if(ServerStacks->GetStacks().empty())
-            GrepsterFrame->Menubar()->GetMenu(FRAME_ID_SESSION_MENU)->Enable(MENU_FUNCTION_ID_SESSION_CLOSE_SERVER_STACKS, false);
+        ServerStacks->CloseStack(m_szName); // Close the selected stack
+        /* If the stack has already been opened, close its
+            page in the notebook. */
+        for(int i = 0; i < Notebook->GetPageCount(); i++) {
+            if(m_szName.IsSameAs(Notebook->GetPageText(i))) {
+                Notebook->SetSelection(i);
+                Notebook->DeletePage(Notebook->GetSelection());
+                return;
+            }
+        }
     }
 }

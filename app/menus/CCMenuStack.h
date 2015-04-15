@@ -36,9 +36,9 @@ public:
     ~CCMenuStack();
 
     /**
-    * @enum        enum_ContextMenuItemIDs
-    * @brief       These represent the context menu's individual function call IDs.
-    */
+     * @enum        enum_ContextMenuItemIDs
+     * @brief       These represent the context menu's individual function call IDs.
+     */
     enum enum_ContextMenuItemIDs {
         OPEN_STACK = 11005,
         CLOSE_STACK

@@ -130,6 +130,11 @@ private:
     void UpdateControls();
 
     /**
+     * @brief       Check to see if a menu's items should be activated.
+     */
+    void CheckMenu(wxMenuEvent& event);
+
+    /**
      * @brief       Exit grepster.
      */
     void OnExit(wxCloseEvent& event);

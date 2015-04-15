@@ -19,8 +19,10 @@
 
 /* Note: These are defined here but not actually relevant because
     of a wxWidgets limitation being that wxAuiNotebook controls can not yet float. */
-#define NOTEBOOK_DEFAULT_WIDTH         500
-#define NOTEBOOK_DEFAULT_HEIGHT        540
+#define NOTEBOOK_DEFAULT_WIDTH      500
+#define NOTEBOOK_DEFAULT_HEIGHT     540
+/** Welcome page's caption. */
+#define NOTEBOOK_GREETING           L"Welcome to grepster!"
 
 
 /**
@@ -41,7 +43,7 @@ public:
      * @brief       Get notebook control's pane information.
      * @retval      wxAuiPaneInfo This is the notebook control's display configuration object.
      */
-    wxAuiPaneInfo Info() { return m_grepNotebookInf_t; }
+    wxAuiPaneInfo Info() { return m_NotebookInf_t; }
 
     /**
      * @brief       Opens the contents of a server stack into a new page
@@ -51,16 +53,13 @@ public:
     void OpenPage(CAdminStack stack);
 
     /**
-     * @brief       Return the m_Pages object.
-     * @retval      std::vector<wxWindow*> The vector of objects which the
-     *              notebook currently has opened.
-     */
-    std::vector<wxWindow*> Pages() { return m_Pages; }
-
-    /**
      * @brief       Creates a new CWebViewer object and opens grepster's home page.
      */
     void OpenWelcomePage();
+    /**
+     * @brief       Saves the selected server stack to its original file.
+     */
+    void SavePage();
     /**
      * @brief       Resize the m_Pages vector when a page is closed. If the last
      *              page was closed, open the welcome page.
@@ -68,16 +67,18 @@ public:
     void ClosePage(wxAuiNotebookEvent& event);
 
     /**
-     * @brief       Saves the selected server stack to its original file.
-     * @param[in]   stack The CAdminStack object to save to file.
+     * @enum        enum_NotebookPageIDs
+     * @brief       These represent the pages added to the notebook.
      */
-    void SavePage(CAdminStack stack);
+    enum enum_NotebookPageIDs {
+        NEW_PAGE = 12001
+    };
 
 private:
     /** @brief      The browser control to use for grepster's welcome and updates page. */
     CWebViewer*             m_pBrowser;
     /** @brief      This object holds wxWidgets AUI settings for the control. */
-    wxAuiPaneInfo           m_grepNotebookInf_t;
+    wxAuiPaneInfo           m_NotebookInf_t;
 
     /** @brief      The vector of wxWindow objects which each represent
      *              a page in the notebook. */

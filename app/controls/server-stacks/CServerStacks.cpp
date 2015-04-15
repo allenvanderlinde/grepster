@@ -40,16 +40,16 @@ CServerStacks::CServerStacks(wxWindow* parentFrame)
     int nStacksWidth = Configuration->ReadLong(CONFIG_LABEL_STACKS_WIDTH, SERVER_STACKS_DEFAULT_WIDTH);
     int nStacksHeight = Configuration->ReadLong(CONFIG_LABEL_STACKS_HEIGHT, DEFAULT_FRAME_HEIGHT);
     SetSize(nStacksWidth, nStacksHeight);
-    m_serverStacksInf_t.BestSize(nStacksWidth, nStacksHeight);
-    m_serverStacksInf_t.Left();
+    m_ServerStacksInf_t.BestSize(nStacksWidth, nStacksHeight);
+    m_ServerStacksInf_t.Left();
     /* Miscellaneous settings. */
-    m_serverStacksInf_t.PaneBorder(true);
-    m_serverStacksInf_t.Name(SERVER_STACKS_NAME);
-    m_serverStacksInf_t.Caption(SERVER_STACKS_CTRL_TITLE);
-    m_serverStacksInf_t.CaptionVisible();
-    m_serverStacksInf_t.CloseButton(false);
-    m_serverStacksInf_t.Floatable(Configuration->Floating());
-    m_serverStacksInf_t.Show(true);
+    m_ServerStacksInf_t.PaneBorder(true);
+    m_ServerStacksInf_t.Name(SERVER_STACKS_NAME);
+    m_ServerStacksInf_t.Caption(SERVER_STACKS_CTRL_TITLE);
+    m_ServerStacksInf_t.CaptionVisible();
+    m_ServerStacksInf_t.CloseButton(false);
+    m_ServerStacksInf_t.Floatable(Configuration->Floating());
+    m_ServerStacksInf_t.Show(true);
 
     /* Initialize server stack from administrator account. */
     m_treeRoot = AddRoot(wxEmptyString);
@@ -170,15 +170,8 @@ void CServerStacks::CloseStack(wxString name) {
         if(name.IsSameAs(itr->Name())) {
             Console->BlueText();
             *Console << L"\nClosing stack " + itr->Name() + L".";
-            /* Crawl through current tree items representing stacks
-                to select and remove the match. */
-            for(auto itrt = m_TreeStacks.begin(); itrt != m_TreeStacks.end(); ++itrt) {
-                if(name.IsSameAs(GetItemText(*itrt))) {
-                    Delete(*itrt);
-                    break;
-                }
-            }
             m_Stacks.erase(itr);
+            Delete(GetFocusedItem());
             *Console << L"\nStack closed.\n";
             Console->BlackText();
             return;
@@ -190,8 +183,18 @@ void CServerStacks::CloseStack(wxString name) {
     CServerStacks::CloseAll
 */
 void CServerStacks::CloseAll() {
-    m_Stacks.clear();
+    /* If the stack has already been opened, close its
+        page in the notebook. */
+    for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
+        for(int i = 0; i < Notebook->GetPageCount(); i++) {
+            if(itr->Name().IsSameAs(Notebook->GetPageText(i))) {
+                Notebook->SetSelection(i);
+                Notebook->DeletePage(Notebook->GetSelection());
+            }
+        }
+    }
     DeleteChildren(m_treeAdminItem);
+    m_Stacks.clear();
 }
 
 /*

@@ -109,22 +109,26 @@ Inheritance diagram for CCMenuStack:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a9a0535464306578b36d281d1b0bb398b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_menu_stack.html#a9a0535464306578b36d281d1b0bb398b">enum_ContextMenuItemIDs</a> { <a class="el" href="class_c_c_menu_stack.html#a9a0535464306578b36d281d1b0bb398ba5b361977c01d1e81e16689c43b5dba73">CLOSE_STACK</a> = 0x00B3
+<tr class="memitem:a9a0535464306578b36d281d1b0bb398b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_menu_stack.html#a9a0535464306578b36d281d1b0bb398b">enum_ContextMenuItemIDs</a> { <a class="el" href="class_c_c_menu_stack.html#a9a0535464306578b36d281d1b0bb398ba8143973af45ffef5f006feba9591b551">OPEN_STACK</a> = 11005, 
+<a class="el" href="class_c_c_menu_stack.html#a9a0535464306578b36d281d1b0bb398ba5b361977c01d1e81e16689c43b5dba73">CLOSE_STACK</a>
  }</td></tr>
 <tr class="memdesc:a9a0535464306578b36d281d1b0bb398b"><td class="mdescLeft">&#160;</td><td class="mdescRight">These represent the context menu's individual function call IDs.  <a href="class_c_c_menu_stack.html#a9a0535464306578b36d281d1b0bb398b">More...</a><br /></td></tr>
 <tr class="separator:a9a0535464306578b36d281d1b0bb398b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae6815bcddce2fa1759a8741b8aaeb2c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_menu_stack.html#ae6815bcddce2fa1759a8741b8aaeb2c9">CCMenuStack</a> (wxString name)</td></tr>
-<tr class="memdesc:ae6815bcddce2fa1759a8741b8aaeb2c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which creates the context menu.  <a href="#ae6815bcddce2fa1759a8741b8aaeb2c9">More...</a><br /></td></tr>
-<tr class="separator:ae6815bcddce2fa1759a8741b8aaeb2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af226ca51663d89721d2f590a3a88a52b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_menu_stack.html#af226ca51663d89721d2f590a3a88a52b">CCMenuStack</a> (wxString name, wxString path)</td></tr>
+<tr class="memdesc:af226ca51663d89721d2f590a3a88a52b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which creates the context menu.  <a href="#af226ca51663d89721d2f590a3a88a52b">More...</a><br /></td></tr>
+<tr class="separator:af226ca51663d89721d2f590a3a88a52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc00e3fca310c7e5e90a2cb8ae3a5a50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_menu_stack.html#afc00e3fca310c7e5e90a2cb8ae3a5a50">~CCMenuStack</a> ()</td></tr>
 <tr class="memdesc:afc00e3fca310c7e5e90a2cb8ae3a5a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#afc00e3fca310c7e5e90a2cb8ae3a5a50">More...</a><br /></td></tr>
 <tr class="separator:afc00e3fca310c7e5e90a2cb8ae3a5a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a45a6584eae8d6596efa3ad80e5cf11ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_menu_stack.html#a45a6584eae8d6596efa3ad80e5cf11ab">Open</a> (wxCommandEvent &amp;event)</td></tr>
+<tr class="memdesc:a45a6584eae8d6596efa3ad80e5cf11ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the selected server stack into the session notebook.  <a href="#a45a6584eae8d6596efa3ad80e5cf11ab">More...</a><br /></td></tr>
+<tr class="separator:a45a6584eae8d6596efa3ad80e5cf11ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73c11f27dd481cbdc75a9f3617f1dbd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_menu_stack.html#a73c11f27dd481cbdc75a9f3617f1dbd9">Close</a> (wxCommandEvent &amp;event)</td></tr>
 <tr class="memdesc:a73c11f27dd481cbdc75a9f3617f1dbd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the selected stack.  <a href="#a73c11f27dd481cbdc75a9f3617f1dbd9">More...</a><br /></td></tr>
 <tr class="separator:a73c11f27dd481cbdc75a9f3617f1dbd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,6 +141,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ab9e40b4019ca9f66724b60e998926560"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_menu_stack.html#ab9e40b4019ca9f66724b60e998926560">m_szName</a></td></tr>
 <tr class="memdesc:ab9e40b4019ca9f66724b60e998926560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the selected server stack which owns this context menu.  <a href="#ab9e40b4019ca9f66724b60e998926560">More...</a><br /></td></tr>
 <tr class="separator:ab9e40b4019ca9f66724b60e998926560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4b091be604e76bd84bd583aa58fef3f"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_menu_stack.html#ab4b091be604e76bd84bd583aa58fef3f">m_szPath</a></td></tr>
+<tr class="memdesc:ab4b091be604e76bd84bd583aa58fef3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">String of the server stack's file path.  <a href="#ab4b091be604e76bd84bd583aa58fef3f">More...</a><br /></td></tr>
+<tr class="separator:ab4b091be604e76bd84bd583aa58fef3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for this context menu object. </p>
@@ -154,14 +161,16 @@ Private Attributes</h2></td></tr>
 
 <p>These represent the context menu's individual function call IDs. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a9a0535464306578b36d281d1b0bb398ba5b361977c01d1e81e16689c43b5dba73"></a>CLOSE_STACK&#160;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a9a0535464306578b36d281d1b0bb398ba8143973af45ffef5f006feba9591b551"></a>OPEN_STACK&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a9a0535464306578b36d281d1b0bb398ba5b361977c01d1e81e16689c43b5dba73"></a>CLOSE_STACK&#160;</td><td class="fielddoc">
 </td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ae6815bcddce2fa1759a8741b8aaeb2c9"></a>
+<a class="anchor" id="af226ca51663d89721d2f590a3a88a52b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -169,8 +178,18 @@ Private Attributes</h2></td></tr>
           <td class="memname">CCMenuStack::CCMenuStack </td>
           <td>(</td>
           <td class="paramtype">wxString&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">wxString&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -179,6 +198,7 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The string/label of the selected server stack. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>The string of the path of the server stack. </td></tr>
   </table>
   </dd>
 </dl>
@@ -226,6 +246,32 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Close the selected stack. </p>
+
+</div>
+</div>
+<a class="anchor" id="a45a6584eae8d6596efa3ad80e5cf11ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCMenuStack::Open </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Open the selected server stack into the session notebook. </p>
 
 </div>
 </div>
@@ -277,6 +323,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab4b091be604e76bd84bd583aa58fef3f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString CCMenuStack::m_szPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>String of the server stack's file path. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/grepster/app/menus/<a class="el" href="_c_c_menu_stack_8h_source.html">CCMenuStack.h</a></li>
 <li>C:/grepster/app/menus/<a class="el" href="_c_c_menu_stack_8cpp.html">CCMenuStack.cpp</a></li>
@@ -284,7 +352,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 12 2015 20:53:36 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 14 2015 22:49:10 for grepster by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

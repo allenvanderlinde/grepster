@@ -1,15 +1,8 @@
 var searchData=
 [
-  ['server_5fstacks_5fctrl_5ftitle',['SERVER_STACKS_CTRL_TITLE',['../grepster_8h.html#a8b3792a26821ed1c5e652d7f0fe33699',1,'grepster.h']]],
-  ['server_5fstacks_5fdefault_5fwidth',['SERVER_STACKS_DEFAULT_WIDTH',['../grepster_8h.html#a7293d10d90531879b1d04df1c82bda32',1,'grepster.h']]],
-  ['server_5fstacks_5fid',['SERVER_STACKS_ID',['../grepster_8h.html#a645678a2344831c3f0d09734f4b19032',1,'grepster.h']]],
-  ['server_5fstacks_5fname',['SERVER_STACKS_NAME',['../grepster_8h.html#aef3f3454eb74302ee6475b6e1eb9b7ca',1,'grepster.h']]],
-  ['session_5fnotebook_5fctrl_5ftitle',['SESSION_NOTEBOOK_CTRL_TITLE',['../grepster_8h.html#a86f5b95d73cf9e2c926f40f72e875490',1,'grepster.h']]],
-  ['session_5fnotebook_5fdefault_5fheight',['SESSION_NOTEBOOK_DEFAULT_HEIGHT',['../_c_session_notebook_8h.html#a8b2010dff0bf2c714f50e7d0f7f97b27',1,'CSessionNotebook.h']]],
-  ['session_5fnotebook_5fdefault_5fwidth',['SESSION_NOTEBOOK_DEFAULT_WIDTH',['../_c_session_notebook_8h.html#a79a2db328fa8add8feee6f1e37ad0af1',1,'CSessionNotebook.h']]],
-  ['session_5fnotebook_5fid',['SESSION_NOTEBOOK_ID',['../grepster_8h.html#afa5e04f5c9a4def791dc1118dccbd02c',1,'grepster.h']]],
-  ['session_5fnotebook_5fname',['SESSION_NOTEBOOK_NAME',['../grepster_8h.html#a9d894df132a856b6e273ef4084044062',1,'grepster.h']]],
-  ['splash_5fduration',['SPLASH_DURATION',['../_c_app_entry_8h.html#acbfc704b0fe136fd8de9d48da09f5b28',1,'CAppEntry.h']]],
-  ['statusbar_5fnote_5fwidth',['STATUSBAR_NOTE_WIDTH',['../_c_app_frame_8h.html#a6873edc266d9a65580a0cbc4228d6135',1,'CAppFrame.h']]],
-  ['statusbar_5fwelcome',['STATUSBAR_WELCOME',['../_c_app_frame_8h.html#a7eaedd0a5a26a658a7b9f3362c60e122',1,'CAppFrame.h']]]
+  ['resid_5fpng_5fabout',['RESID_PNG_ABOUT',['../grepster__rc_8h.html#af17a2755e08232ebacc78edf545d5448',1,'grepster_rc.h']]],
+  ['resid_5fpng_5fcredentials',['RESID_PNG_CREDENTIALS',['../grepster__rc_8h.html#a4215bd8941968f33d03200c541f47f96',1,'grepster_rc.h']]],
+  ['resid_5fpng_5fserver_5fstack',['RESID_PNG_SERVER_STACK',['../grepster__rc_8h.html#a28862b716348426902d4eb0204cdc3a2',1,'grepster_rc.h']]],
+  ['resid_5fpng_5fsplash',['RESID_PNG_SPLASH',['../grepster__rc_8h.html#a806b6e806a03c79e28cb5245e5401eec',1,'grepster_rc.h']]],
+  ['resid_5fpng_5ftools',['RESID_PNG_TOOLS',['../grepster__rc_8h.html#a5e8c2153f4c5f4a4f578bf0cda7b56fd',1,'grepster_rc.h']]]
 ];

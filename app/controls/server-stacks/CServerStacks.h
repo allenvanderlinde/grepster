@@ -34,7 +34,7 @@ public:
      * @brief       Get the control's pane information.
      * @retval      wxAuiPaneInfo This is the tree control's display configuration object.
      */
-    wxAuiPaneInfo Info() { return m_serverStacksInf_t; }
+    wxAuiPaneInfo Info() { return m_ServerStacksInf_t; }
 
     /**
      * @brief       Add a built CAdminStack to the tree control for user interaction.
@@ -102,7 +102,7 @@ private:
     /** @brief      This tree item will be replaced with the administrator's username. */
     wxTreeItemId    m_treeAdminItem;
     /** @brief      This object holds wxWidgets AUI settings for the control. */
-    wxAuiPaneInfo   m_serverStacksInf_t;
+    wxAuiPaneInfo   m_ServerStacksInf_t;
 
     /** @brief      Vector of CAdminStack from which the tree control builds its server list. */
     std::vector<CAdminStack>    m_Stacks;

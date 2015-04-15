@@ -20,7 +20,7 @@
 
 /* Construct event handler calls. */
 wxBEGIN_EVENT_TABLE(CNotebook, wxAuiNotebook)
-    EVT_AUINOTEBOOK_PAGE_CLOSE(wxID_ANY, CNotebook::ClosePage)
+    EVT_AUINOTEBOOK_PAGE_CLOSED(wxID_ANY, CNotebook::ClosePage)
 wxEND_EVENT_TABLE()
 
 /*
@@ -30,13 +30,13 @@ CNotebook::CNotebook(wxWindow* parentFrame)
     : wxAuiNotebook(parentFrame, NOTEBOOK_ID) {
     /* Configure the Notebook's display settings. */
     /* Miscellaneous settings. */
-    m_grepNotebookInf_t.PaneBorder(true);
-    m_grepNotebookInf_t.BestSize(NOTEBOOK_DEFAULT_WIDTH, NOTEBOOK_DEFAULT_HEIGHT);
-    m_grepNotebookInf_t.Name(NOTEBOOK_NAME);
-    m_grepNotebookInf_t.CaptionVisible(false);
-    m_grepNotebookInf_t.Center();
-    m_grepNotebookInf_t.CloseButton(false);
-    m_grepNotebookInf_t.Show(true);
+    m_NotebookInf_t.PaneBorder(true);
+    m_NotebookInf_t.BestSize(NOTEBOOK_DEFAULT_WIDTH, NOTEBOOK_DEFAULT_HEIGHT);
+    m_NotebookInf_t.Name(NOTEBOOK_NAME);
+    m_NotebookInf_t.CaptionVisible(false);
+    m_NotebookInf_t.Center();
+    m_NotebookInf_t.CloseButton(false);
+    m_NotebookInf_t.Show(true);
 
     /* Customize the tab color. */
     //wxAuiGenericTabArt* art = new wxAuiGenericTabArt();
@@ -46,18 +46,16 @@ CNotebook::CNotebook(wxWindow* parentFrame)
 }
 
 /*
-    CNotebook::OpenServerStack(CAdminStack)
+    CNotebook::OpenPage(CAdminStack)
 */
 void CNotebook::OpenPage(CAdminStack stack) {
-    /* Open server stack's file into a new wxTextFile and
-        load its contents into a new wxTextCtrl. */
-
-        /* NOTE: Don't reload stack from file? Is that a waste?
-            NOTE: CAdminStack is built in the order which lines are read,
-            so these lines could just be read from the object and its
-            strings added to the text ctrl. */
+    /* NOTE: Don't reload stack from file? Is that a waste?
+        NOTE: CAdminStack is built in the order which lines are read,
+        so these lines could just be read from the object and its
+        strings added to the text ctrl. */
+    int nNewId = GetPageCount() + 1;
     wxTextCtrl* pOutput = new wxTextCtrl(this,
-                                         wxID_ANY,
+                                         NEW_PAGE + nNewId,
                                          wxEmptyString,
                                          wxDefaultPosition,
                                          wxDefaultSize,
@@ -71,13 +69,7 @@ void CNotebook::OpenPage(CAdminStack stack) {
     for(int i = 0; i < stack.Size(); i++) {
         *pOutput << stack.IP(i) << L"\n";
     }
-    AddPage(pOutput, stack.Name());
-    SetSelection(GetPageCount() - 1);
-
-    /* Add the object to the notebook's vector. */
-    m_Pages.push_back(pOutput);
-    wxMessageBox(wxString::Format("%i", (int)m_Pages.size()), "ok", wxOK);
-    // what about the welcome page? should it go into the vector??
+    AddPage(pOutput, stack.Name(), true);
 }
 
 /*
@@ -85,31 +77,29 @@ void CNotebook::OpenPage(CAdminStack stack) {
 */
 void CNotebook::OpenWelcomePage() {
     m_pBrowser = new CWebViewer(this);
-    m_Pages.push_back(m_pBrowser->GetBrowser());
-    AddPage(m_pBrowser->GetBrowser(), L"Welcome to grepster!");
-    SetSelection(GetPageCount() - 1);
+    AddPage(m_pBrowser->GetBrowser(), L"Welcome to grepster!", true);
+}
+
+/*
+    CNotebook::SavePage
+*/
+void CNotebook::SavePage() {
+    /* If this is the welcome page, return. */
+    if(GetPageText(GetSelection()).IsSameAs(NOTEBOOK_GREETING))
+        return;
+    /* Save the current page's text back to its file. */
+    *(wxTextCtrl*)GetPage(GetSelection()) << L"\n\nSaving this...\n";
 }
 
 /*
     CNotebook::ClosePage
 */
 void CNotebook::ClosePage(wxAuiNotebookEvent& event) {
-// need to delete current page
-    wxString str(GetPageText(GetSelection()));
-    wxMessageBox(str, "what?", wxOK);
-    //DeletePage(GetSelection());
     /* This checks to see if there would be no pages
         opened in the notebook. If so, it opens the welcome
         page for grepster. */
-    if(GetPageCount() < 1)
+    if(GetPageCount() < 1) {
         OpenWelcomePage();
-}
-
-/*
-    CNotebook::SavePage(CAdminStack)
-*/
-void CNotebook::SavePage(CAdminStack stack) {
-    // get the title of the current tab
-    // match this name to the stack's name
-    wxMessageBox("this works", "yeah", wxOK);
+        return;
+    }
 }
