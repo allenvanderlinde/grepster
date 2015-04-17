@@ -28,7 +28,7 @@ CAdminStack::CAdminStack(wxString filePath) {
         its list of servers. The file should be
         guaranteed to exist by this point. */
     wxTextFile file;
-    file.Open(filePath);
+    file.Open(m_szFilePath);
 
     /* Read data until end of file and populate vector
         with each line. */
@@ -46,6 +46,7 @@ CAdminStack::CAdminStack(wxString filePath) {
     /* Write some basic information to the console. */
     *Console << L"\nNumber of servers in stack: " + wxString::Format(L"%i", Size());
     *Console << L"\n";
+    wxMessageBox(m_szFilePath, "ok", wxOK);
 }
 
 /*
