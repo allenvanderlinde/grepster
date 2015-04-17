@@ -143,7 +143,7 @@ void CAppFrame::NewServerStack(wxCommandEvent& event) {
                 user's new stack was previously added. */
             if(!ServerStacks->GetStacks().empty()) {
                 for(auto itr = ServerStacks->GetStacks().begin(); itr != ServerStacks->GetStacks().end(); ++itr) {
-                    if(szFilePath.IsSameAs(itr->Name())) {
+                    if(szFilePath.IsSameAs(itr->Path())) {
                         ServerStacks->CloseStack(itr->Name());  // Close the stack to be overwritten
                     }
                 }
