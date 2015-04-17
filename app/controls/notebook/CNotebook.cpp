@@ -88,31 +88,7 @@ void CNotebook::SavePage() {
     if(GetPageText(GetSelection()).IsSameAs(NOTEBOOK_GREETING))
         return;
     /* Save the current page's text back to its file. */
-    //wxTextCtrl currentPage((wxTextCtrl)GetPage(GetSelection()));
-    wxTextCtrl* pCurrentPage = (wxTextCtrl*)GetPage(GetSelection());
-    //wxTextFile file;
-    //wxString szPath;
-    /* Find if page belongs to a server stack. */
-    for(auto itr = ServerStacks->GetStacks().begin(); itr != ServerStacks->GetStacks().end(); ++itr) {
-        wxMessageBox(itr->Path(), "ok", wxOK);
-        //if(itr->Name().IsSameAs(GetPageText(GetSelection()))) {
-            /* Is the user certain they wish to overwrite the file? */
-            //if(wxMessageBox(L"Are you certain you want to overwrite " + itr->Path() + "?", L"Save Page", wxOK | wxCANCEL | wxICON_QUESTION) == wxCANCEL)
-                //return;
-            //break;  // Found a match, no need to continue searching
-        //}
-    }
-    //ServerStacks->CloseStack(GetPageText(GetSelection()));
-    /* Grab each line in the text control
-        and write it to file. */
-    //file.Open(szPath);
-    //file.Clear();
-    //for(int i = 0; i < pCurrentPage->GetNumberOfLines(); i++)
-        //file.AddLine(pCurrentPage->GetLineText(i));
-    //file.Write();   // Save lines to file
-    //file.Close();
-    //ServerStacks->AddServerStack(CAdminStack(szPath));
-    //delete pCurrentPage;
+    *(wxTextCtrl*)GetPage(GetSelection()) << L"\n\nSaving this...\n";
 }
 
 /*
