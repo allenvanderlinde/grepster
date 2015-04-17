@@ -171,8 +171,8 @@ void CAppFrame::AddServerStacks(wxCommandEvent& event) {
     wxFileDialog* pServerStackSelect = new wxFileDialog(this,
                                                         L"Server Stack Selection",
                                                         DEFAULT_SERVER_STACKS_PATH,
-                                                        L"",    // Default file
-                                                        L".servers files (*.servers)|*.servers",
+                                                        "",    // Default file
+                                                        L"Server Stacks and Text files (*.servers;*.txt)|*.servers;*.txt",
                                                         wxFD_OPEN | wxFD_FILE_MUST_EXIST | wxFD_MULTIPLE);  // File must exist to be valid
     pServerStackSelect->CenterOnParent();
     if(pServerStackSelect->ShowModal() == wxID_CANCEL) {

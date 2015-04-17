@@ -50,13 +50,14 @@ CCMenuStack::~CCMenuStack() {
 void CCMenuStack::Open(wxCommandEvent& event) {
     /* Check to see if the stack has already been opened
         in the notebook. */
-    for(int i = 0; i < Notebook->GetPageCount(); i++) {
+    for(unsigned int i = 0; i < Notebook->GetPageCount(); i++) {
         if(m_szName.IsSameAs(Notebook->GetPageText(i))) {
             Notebook->SetSelection(i);
             return;
         }
     }
-    /* Open the selected server stack into the notebook. */
+    /* Otherwise open the selected server
+        stack into the notebook. */
     int nIndex = ServerStacks->FindName(m_szName);
     Notebook->OpenPage(ServerStacks->GetStacks()[nIndex]);
 }
@@ -69,7 +70,7 @@ void CCMenuStack::Close(wxCommandEvent& event) {
         ServerStacks->CloseStack(m_szName); // Close the selected stack
         /* If the stack has already been opened, close its
             page in the notebook. */
-        for(int i = 0; i < Notebook->GetPageCount(); i++) {
+        for(unsigned int i = 0; i < Notebook->GetPageCount(); i++) {
             if(m_szName.IsSameAs(Notebook->GetPageText(i))) {
                 Notebook->SetSelection(i);
                 Notebook->DeletePage(Notebook->GetSelection());

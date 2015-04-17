@@ -84,40 +84,38 @@ void CNotebook::OpenWelcomePage() {
     CNotebook::SavePage
 */
 void CNotebook::SavePage() {
+    wxString szName(GetPageText(GetSelection()));
     /* If this is the welcome page, return. */
-    if(GetPageText(GetSelection()).IsSameAs(NOTEBOOK_GREETING))
+    if(szName.IsSameAs(NOTEBOOK_GREETING))
         return;
     /* Save the current page's text back to its file. */
-    //*(wxTextCtrl*)GetPage(GetSelection()) << L"\n\nSaving this...\n";
-
-    //wxTextCtrl currentPage((wxTextCtrl)GetPage(GetSelection()));
     wxTextCtrl* pCurrentPage = (wxTextCtrl*)GetPage(GetSelection());
-    //wxTextFile file;
-    //wxString szPath;
+    wxTextFile file;
+    wxString szPath;
     /* Find if page belongs to a server stack. */
-    for(auto itr = ServerStacks->GetStacks().begin(); itr != ServerStacks->GetStacks().end(); ++itr) {
-        wxMessageBox(itr->Path(), "ok", wxOK);
-        //if(itr->Name().IsSameAs(GetPageText(GetSelection()))) {
-            /* Is the user certain they wish to overwrite the file? */
-            //if(wxMessageBox(L"Are you certain you want to overwrite " + itr->Path() + "?", L"Save Page", wxOK | wxCANCEL | wxICON_QUESTION) == wxCANCEL)
-                //return;
-            //break;  // Found a match, no need to continue searching
-        //}
+    /* NOTE: I'm not sure why iterating through m_Stacks with auto
+        corrupts the m_szFilePath string of the CAdminStack object,
+        but integer iteration works. */
+    for(int i = 0; i < (int)ServerStacks->GetStacks().size(); i++) {
+        /* Is the user certain they wish to overwrite the file? */
+        if(ServerStacks->GetStacks()[i].Name().IsSameAs(szName)) {
+            if(wxMessageBox(L"Are you certain you want to overwrite " + szName + "?", L"Save Page", wxOK | wxCANCEL | wxICON_QUESTION) == wxOK) {
+                szPath = ServerStacks->GetStacks()[i].Path();
+                ServerStacks->CloseStack(szName);
+                break;  // Found a match, no need to continue searching
+            }
+            else return;
+        }
     }
-    //ServerStacks->CloseStack(GetPageText(GetSelection()));
     /* Grab each line in the text control
         and write it to file. */
-    //file.Open(szPath);
-    //file.Clear();
-    //for(int i = 0; i < pCurrentPage->GetNumberOfLines(); i++)
-        //file.AddLine(pCurrentPage->GetLineText(i));
-    //file.Write();   // Save lines to file
-    //file.Close();
-    //ServerStacks->AddServerStack(CAdminStack(szPath));
-    //delete pCurrentPage;
-}
-
-/*
+    pCurrentPage->SaveFile(szPath);
+    /* Reopen the page and add the newly saved
+        stack to the notebook. */
+    CAdminStack newStack(szPath);    // Overwritten stack to reload
+    ServerStacks->AddServerStack(CAdminStack(szPath));
+    Notebook->OpenPage(newStack);
+    //DeletePage(GetSelection()); // Remove the current page from the notebook
 }
 
 /*

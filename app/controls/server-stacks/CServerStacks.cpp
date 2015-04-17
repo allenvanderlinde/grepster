@@ -94,6 +94,7 @@ void CServerStacks::AddServerStack(CAdminStack serverStack) {
     }
     m_Stacks.push_back(serverStack);
     wxTreeItemId newStack = AppendItem(m_treeAdminItem, serverStack.Name());;
+    wxMessageBox(serverStack.Name());
     m_TreeStacks.push_back(newStack);
     /* Build server list from server stack. */
     for(int i = 0; i < serverStack.Size(); i++)
@@ -186,7 +187,7 @@ void CServerStacks::CloseAll() {
     /* If the stack has already been opened, close its
         page in the notebook. */
     for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
-        for(int i = 0; i < Notebook->GetPageCount(); i++) {
+        for(unsigned int i = 0; i < Notebook->GetPageCount(); i++) {
             if(itr->Name().IsSameAs(Notebook->GetPageText(i))) {
                 Notebook->SetSelection(i);
                 Notebook->DeletePage(Notebook->GetSelection());

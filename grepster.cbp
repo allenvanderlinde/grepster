@@ -15,7 +15,6 @@
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-std=c++11" />
-					<Add option="-w" />
 					<Add option="-g" />
 					<Add option='-include &quot;precomp.h&quot;' />
 					<Add option="-Winvalid-pch" />
