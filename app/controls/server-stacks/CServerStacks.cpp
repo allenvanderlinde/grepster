@@ -93,12 +93,12 @@ void CServerStacks::AddServerStack(CAdminStack serverStack) {
         return;
     }
     m_Stacks.push_back(serverStack);
-    wxTreeItemId newStack = AppendItem(m_treeAdminItem, serverStack.Name());;
+    wxTreeItemId newStack = PrependItem(m_treeAdminItem, serverStack.Name());
     m_TreeStacks.push_back(newStack);
     /* Build server list from server stack. */
     for(int i = 0; i < serverStack.Size(); i++)
         AppendItem(newStack, serverStack.IP(i));
-    if(IsExpanded(m_treeAdminItem) == false)
+    if(!IsExpanded(m_treeAdminItem))
         Expand(m_treeAdminItem);
     Expand(newStack);    // Expand the newly added stack
     SortChildren(m_treeAdminItem);
@@ -166,12 +166,14 @@ void CServerStacks::ContextMenu(wxTreeEvent& event) {
 void CServerStacks::CloseStack(wxString name) {
     /* Crawl through current server stacks and find match
         with the stack's name. */
-    for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
-        if(name.IsSameAs(itr->Name())) {
+    for(int i = 0; i < (int)m_Stacks.size(); i++) {
+        if(name.IsSameAs(m_Stacks[i].Name())) {
             Console->BlueText();
-            *Console << L"\nClosing stack " + itr->Name() + L".";
-            m_Stacks.erase(itr);
-            Delete(GetFocusedItem());
+            *Console << L"\nClosing stack " + m_Stacks[i].Name() + L".";
+            m_Stacks.erase(m_Stacks.begin() + i);
+            m_TreeStacks.erase(m_TreeStacks.begin() + i);
+            //Delete(GetFocusedItem());
+            // NOTE: need to locate stack in tree manually and
             *Console << L"\nStack closed.\n";
             Console->BlackText();
             return;
