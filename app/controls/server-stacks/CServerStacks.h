@@ -49,6 +49,13 @@ public:
     std::vector<CAdminStack> GetStacks() { return m_Stacks; }
 
     /**
+     * @brief       Return the vector of wxTreeItemIds.
+     * @retval      std::vector<wxTreeItemId> The vector of tree items in the control
+     *              which represent the server stacks.
+     */
+    std::vector<wxTreeItemId> GetTreeStacks() { return m_TreeStacks; }
+
+    /**
      * @brief       Look for a match in the current list of server stacks.
      * @param[in]   str String of server stack name to look for in current list.
      * @retval      int The index in the current list where the string is. This

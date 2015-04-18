@@ -94,7 +94,6 @@ void CServerStacks::AddServerStack(CAdminStack serverStack) {
     }
     m_Stacks.push_back(serverStack);
     wxTreeItemId newStack = AppendItem(m_treeAdminItem, serverStack.Name());;
-    wxMessageBox(serverStack.Name());
     m_TreeStacks.push_back(newStack);
     /* Build server list from server stack. */
     for(int i = 0; i < serverStack.Size(); i++)
