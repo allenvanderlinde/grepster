@@ -108,16 +108,9 @@ void CNotebook::SavePage() {
     }
     ServerStacks->CloseStack(szName);
     if(pCurrentPage->SaveFile(szPath)) { // Save the contents of the control to file
-    /* Reopen the page and add the newly saved
+        /* Reopen the page and add the newly saved
         stack to the notebook. */
-    //CAdminStack newStack(szPath);    // Overwritten stack to reload
-    ServerStacks->AddServerStack(CAdminStack(szPath));
-    //NEED TO CHANGE SELECTION/FOCUS of the TREE ITEM back to the reopened STACK
-    //for(auto itr = ServerStacks->GetTreeStacks().begin(); itr != ServerStacks->GetTreeStacks().end(); ++itr) {
-        // search through tree item vector to find the newly opened stack to save
-    //}
-    //Notebook->OpenPage(newStack);
-    //DeletePage(GetSelection());
+        ServerStacks->AddServerStack(CAdminStack(szPath));
     }
 }
 

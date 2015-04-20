@@ -168,11 +168,12 @@ void CServerStacks::CloseStack(wxString name) {
         with the stack's name. */
     for(int i = 0; i < (int)m_Stacks.size(); i++) {
         if(name.IsSameAs(m_Stacks[i].Name())) {
+            SetFocusedItem(*(m_TreeStacks.begin() + i));
             Console->BlueText();
             *Console << L"\nClosing stack " + m_Stacks[i].Name() + L".";
             m_Stacks.erase(m_Stacks.begin() + i);
             m_TreeStacks.erase(m_TreeStacks.begin() + i);
-            //Delete(GetFocusedItem());
+            Delete(GetFocusedItem());
             // NOTE: need to locate stack in tree manually and
             *Console << L"\nStack closed.\n";
             Console->BlackText();
