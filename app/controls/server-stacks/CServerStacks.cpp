@@ -24,7 +24,7 @@
 
 /* Construct event handler calls. */
 wxBEGIN_EVENT_TABLE(CServerStacks, wxTreeCtrl)
-    EVT_TREE_ITEM_ACTIVATED(wxID_ANY, CServerStacks::ExpandItem)
+    //EVT_TREE_ITEM_ACTIVATED(wxID_ANY, CServerStacks::ExpandItem)
     /* Handle server stack's context menus. */
     EVT_TREE_ITEM_RIGHT_CLICK(wxID_ANY, CServerStacks::ContextMenu)
 wxEND_EVENT_TABLE()
@@ -93,8 +93,11 @@ void CServerStacks::AddServerStack(CAdminStack serverStack) {
         return;
     }
     m_Stacks.push_back(serverStack);
+    /* Must prepend item here to avoid invalidating
+        the m_treeAdminItem object as the root item
+        when adding or reloading stacks. */
     wxTreeItemId newStack = PrependItem(m_treeAdminItem, serverStack.Name());
-    m_TreeStacks.push_back(newStack);
+    m_TreeStacks.push_back(newStack);   // Note: m_TreeStacks must be aligned with m_Stacks
     /* Build server list from server stack. */
     for(int i = 0; i < serverStack.Size(); i++)
         AppendItem(newStack, serverStack.IP(i));
@@ -166,13 +169,14 @@ void CServerStacks::ContextMenu(wxTreeEvent& event) {
 void CServerStacks::CloseStack(wxString name) {
     /* Crawl through current server stacks and find match
         with the stack's name. */
+    auto sel = m_TreeStacks.begin();    // Note: m_TreeStacks must be aligned with m_Stacks
     for(int i = 0; i < (int)m_Stacks.size(); i++) {
         if(name.IsSameAs(m_Stacks[i].Name())) {
-            SetFocusedItem(*(m_TreeStacks.begin() + i));
+            SetFocusedItem(*(sel + i));
             Console->BlueText();
             *Console << L"\nClosing stack " + m_Stacks[i].Name() + L".";
             m_Stacks.erase(m_Stacks.begin() + i);
-            m_TreeStacks.erase(m_TreeStacks.begin() + i);
+            m_TreeStacks.erase(sel + i);
             Delete(GetFocusedItem());
             // NOTE: need to locate stack in tree manually and
             *Console << L"\nStack closed.\n";

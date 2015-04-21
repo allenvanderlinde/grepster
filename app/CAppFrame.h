@@ -26,7 +26,7 @@
 #define STATUSBAR_WELCOME               L"Can we grep yet, user?"
 #define STATUSBAR_NOTE_WIDTH            120
 
-#define ABOUT_INFORMATION               L"Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3 license.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster acts as an interface to SSH and SFTP tools for system administrators to easily grep logs and execute remote commands from a centralized utility.\n\ngrepster may not be sold commercially and all source code is the intellectual property of Allen Vanderlinde. The source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. Read LICENSE.txt for details."
+#define ABOUT_INFORMATION               L"Written by Allen Vanderlinde, 2014-2015.\nLicensed under the GNU GPL version 3 license.\n\nInspired by Socrates Maura's ZGREP-UTILITY.\n\ngrepster acts as an interface to SSH and SFTP tools for system administrators to easily grep logs and execute remote commands from a centralized utility.\n\nThe source code may be used for educational purposes and/or re-purposed with the explicit understanding that the same license will be used. To do this, please fork grepster by visiting https://github.com/allenvanderlinde/grepster. Read LICENSE.txt for details."
 
 #define DEFAULT_SERVER_STACKS_PATH      L"\\stacks\\"
 

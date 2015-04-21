@@ -62,14 +62,13 @@ void CNotebook::OpenPage(CAdminStack stack) {
                                          wxTE_MULTILINE | wxTE_RICH2);
     /* Set the text control's font. */
     pOutput->SetFont(wxFont(wxFontInfo(10).FaceName("Courier New")));
+    //*pOutput << stack.Name() << L"\n";
+    // Open file into text control
+    pOutput->LoadFile(stack.Path());
 
-    *pOutput << stack.Name() << L"\n";  // Okay to combine UTF with ASCII strings here?
-    /* Grab each line from the server stack's file
-        and add it to the control. */
-    for(int i = 0; i < stack.Size(); i++) {
-        *pOutput << stack.IP(i) << L"\n";
-    }
-    AddPage(pOutput, stack.Name(), true);
+    /*  NOTE: NEED TO OPEN PAGE MANUALLY, LINE-BY-LINE. */
+
+    AddPage(pOutput, stack.Name(), true);   // Add a new page to the notebook
 }
 
 /*
@@ -107,6 +106,9 @@ void CNotebook::SavePage() {
         }
     }
     ServerStacks->CloseStack(szName);
+
+    /*  NOTE: NEED TO SAVE PAGE MANUALLY, LINE-BY-LINE. */
+
     if(pCurrentPage->SaveFile(szPath)) { // Save the contents of the control to file
         /* Reopen the page and add the newly saved
         stack to the notebook. */

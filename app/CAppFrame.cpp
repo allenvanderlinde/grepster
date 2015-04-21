@@ -246,6 +246,7 @@ void CAppFrame::SavePage(wxCommandEvent& event) {
     // script?
     //wxWindow* currentPage = Notebook->GetCurrentPage();
     //wxMessageBox(Notebook->GetPageText(Notebook->GetSelection()), "ok", wxOK);
+
     Notebook->SavePage();
 }
 

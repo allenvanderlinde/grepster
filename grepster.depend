@@ -3177,14 +3177,14 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1429554717 c:\grepster\version.h
+1429652122 c:\grepster\version.h
 
 1428926713 c:\grepster\resources\grepster_rc.h
 
 1428926713 c:\grepster\app\cappentry.h
 	"CAppFrame.h"
 
-1429185964 c:\grepster\app\cappframe.h
+1429650593 c:\grepster\app\cappframe.h
 	"menubar/CAppMenubar.h"
 
 1425239474 c:\grepster\app\cframemenubar.h
@@ -3199,7 +3199,7 @@
 	"wx/frame.h"
 	"wx/timer.h"
 
-1429278701 source:c:\grepster\app\cappframe.cpp
+1429652010 source:c:\grepster\app\cappframe.cpp
 	"../precomp.h"
 	"../resources/grepster_rc.h"
 	"CAppFrame.h"
@@ -3563,7 +3563,7 @@
 
 1428926713 c:\grepster\app\web-viewer\cwebviewer.h
 
-1429554716 source:c:\grepster\app\controls\server-stacks\cserverstacks.cpp
+1429628619 source:c:\grepster\app\controls\server-stacks\cserverstacks.cpp
 	"../../../precomp.h"
 	"../../CAppFrame.h"
 	"../../menus/CCMenuAdminRoot.h"
@@ -3660,7 +3660,7 @@
 	"../../web-viewer/CWebViewer.h"
 	"../../../session/CAdminStack.h"
 
-1429531521 source:c:\grepster\app\controls\notebook\cnotebook.cpp
+1429628093 source:c:\grepster\app\controls\notebook\cnotebook.cpp
 	"../../../precomp.h"
 	"../notebook/CNotebook.h"
 	"../../CAppFrame.h"
