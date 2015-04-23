@@ -113,7 +113,7 @@ private:
 
     /** @brief      Vector of CAdminStack from which the tree control builds its server list. */
     std::vector<CAdminStack>    m_Stacks;
-    /** @brief      Vector of wxTreeCtrlId which corresponds to m_Stacks for item selection comparison. */
+    /** @brief      Vector of wxTreeItemId which corresponds to m_Stacks for item selection comparison. */
     std::vector<wxTreeItemId>   m_TreeStacks;
 
     /**

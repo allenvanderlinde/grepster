@@ -87,11 +87,13 @@ int CServerStacks::FindPath(wxString str) {
 */
 void CServerStacks::AddServerStack(CAdminStack serverStack) {
     /* Check to see if there is a stack name conflict. */
+    /*
     if(FindName(serverStack.Name()) != wxNOT_FOUND) {
         wxMessageBox(L"The stack " + serverStack.Name() + " in " + serverStack.Path() + " matches one already in the session. Please rename the original stack before adding this one.",
                      L"Server Stack Conflict", wxICON_INFORMATION | wxOK);
         return;
     }
+    */
     m_Stacks.push_back(serverStack);
     /* Must prepend item here to avoid invalidating
         the m_treeAdminItem object as the root item
@@ -172,12 +174,20 @@ void CServerStacks::CloseStack(wxString name) {
     auto sel = m_TreeStacks.begin();    // Note: m_TreeStacks must be aligned with m_Stacks
     for(int i = 0; i < (int)m_Stacks.size(); i++) {
         if(name.IsSameAs(m_Stacks[i].Name())) {
-            SetFocusedItem(*(sel + i));
+            //SetFocusedItem(*(sel + i));
+
+            //wxMessageBox(GetItemText(*(sel+i)));
+
             Console->BlueText();
             *Console << L"\nClosing stack " + m_Stacks[i].Name() + L".";
-            m_Stacks.erase(m_Stacks.begin() + i);
-            m_TreeStacks.erase(sel + i);
-            Delete(GetFocusedItem());
+            /* The admin root item is never stored in m_Stacks as it is a label,
+                so when closing a stack, only the control's tree item should be adjusted
+                by 1 when searching. */
+            m_Stacks.erase(m_Stacks.begin());
+            //m_TreeStacks.erase(sel + i);
+
+            //Delete(GetFocusedItem());
+
             // NOTE: need to locate stack in tree manually and
             *Console << L"\nStack closed.\n";
             Console->BlackText();
@@ -190,18 +200,11 @@ void CServerStacks::CloseStack(wxString name) {
     CServerStacks::CloseAll
 */
 void CServerStacks::CloseAll() {
-    /* If the stack has already been opened, close its
-        page in the notebook. */
-    for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
-        for(unsigned int i = 0; i < Notebook->GetPageCount(); i++) {
-            if(itr->Name().IsSameAs(Notebook->GetPageText(i))) {
-                Notebook->SetSelection(i);
-                Notebook->DeletePage(Notebook->GetSelection());
-            }
-        }
-    }
     DeleteChildren(m_treeAdminItem);
+    Notebook->DeleteAllPages();
     m_Stacks.clear();
+    /* Open welcome page for user. */
+    Notebook->OpenWelcomePage();
 }
 
 /*
