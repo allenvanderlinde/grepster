@@ -3177,7 +3177,7 @@
 	"wx/convauto.h"
 	<stdio.h>
 
-1429815826 c:\grepster\version.h
+1430240121 c:\grepster\version.h
 
 1428926713 c:\grepster\resources\grepster_rc.h
 
@@ -3563,7 +3563,7 @@
 
 1428926713 c:\grepster\app\web-viewer\cwebviewer.h
 
-1429814635 source:c:\grepster\app\controls\server-stacks\cserverstacks.cpp
+1430240115 source:c:\grepster\app\controls\server-stacks\cserverstacks.cpp
 	"../../../precomp.h"
 	"../../CAppFrame.h"
 	"../../menus/CCMenuAdminRoot.h"

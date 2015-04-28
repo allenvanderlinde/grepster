@@ -174,9 +174,13 @@ void CServerStacks::CloseStack(wxString name) {
     auto sel = m_TreeStacks.begin();    // Note: m_TreeStacks must be aligned with m_Stacks
     for(int i = 0; i < (int)m_Stacks.size(); i++) {
         if(name.IsSameAs(m_Stacks[i].Name())) {
+            /* Remove item from the tree control. */
+            SelectItem(*(sel + i), true);
+            Delete(GetSelection());
             //SetFocusedItem(*(sel + i));
+            //Delete(GetFocusedItem());
 
-            //wxMessageBox(GetItemText(*(sel+i)));
+            wxMessageBox(GetItemText(GetFocusedItem()));
 
             Console->BlueText();
             *Console << L"\nClosing stack " + m_Stacks[i].Name() + L".";
@@ -184,9 +188,8 @@ void CServerStacks::CloseStack(wxString name) {
                 so when closing a stack, only the control's tree item should be adjusted
                 by 1 when searching. */
             m_Stacks.erase(m_Stacks.begin());
-            //m_TreeStacks.erase(sel + i);
+            m_TreeStacks.erase(sel + i);
 
-            //Delete(GetFocusedItem());
 
             // NOTE: need to locate stack in tree manually and
             *Console << L"\nStack closed.\n";
