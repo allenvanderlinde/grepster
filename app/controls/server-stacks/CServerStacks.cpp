@@ -95,11 +95,8 @@ void CServerStacks::AddServerStack(CAdminStack serverStack) {
     }
     */
     m_Stacks.push_back(serverStack);
-    /* Must prepend item here to avoid invalidating
-        the m_treeAdminItem object as the root item
-        when adding or reloading stacks. */
-    wxTreeItemId newStack = PrependItem(m_treeAdminItem, serverStack.Name());
-    m_TreeStacks.push_back(newStack);   // Note: m_TreeStacks must be aligned with m_Stacks
+    wxTreeItemId newStack = AppendItem(m_treeAdminItem, serverStack.Name());
+
     /* Build server list from server stack. */
     for(int i = 0; i < serverStack.Size(); i++)
         AppendItem(newStack, serverStack.IP(i));
@@ -171,25 +168,28 @@ void CServerStacks::ContextMenu(wxTreeEvent& event) {
 void CServerStacks::CloseStack(wxString name) {
     /* Crawl through current server stacks and find match
         with the stack's name. */
-    auto sel = m_TreeStacks.begin();    // Note: m_TreeStacks must be aligned with m_Stacks
-    for(int i = 0; i < (int)m_Stacks.size(); i++) {
-        if(name.IsSameAs(m_Stacks[i].Name())) {
+    //for(int i = 0; i < (int)m_Stacks.size(); i++) {
+    for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
+        if(name.IsSameAs(itr->Name())) {
             /* Remove item from the tree control. */
-            SelectItem(*(sel + i), true);
-            Delete(GetSelection());
+            wxString szNotebookPageTitle(Notebook->GetPageText(1));
+            //SelectItem(*(sel + i), true);
+            //Delete(GetSelection());
             //SetFocusedItem(*(sel + i));
             //Delete(GetFocusedItem());
 
-            wxMessageBox(GetItemText(GetFocusedItem()));
+            /* Note: The idea here is to avoid using a wxTreeItem vector and use the current
+                tree item selection as a starting point to compare to the root item's other children and/or
+                neighboring siblings. Then, once the matching item to the page is found, delete it. */
+
+            wxMessageBox(GetItemText(GetFocusedItem()) + Notebook->GetPageText(1));
 
             Console->BlueText();
-            *Console << L"\nClosing stack " + m_Stacks[i].Name() + L".";
+            *Console << L"\nClosing stack " + itr->Name() + L".";
             /* The admin root item is never stored in m_Stacks as it is a label,
                 so when closing a stack, only the control's tree item should be adjusted
                 by 1 when searching. */
-            m_Stacks.erase(m_Stacks.begin());
-            m_TreeStacks.erase(sel + i);
-
+            m_Stacks.erase(itr);
 
             // NOTE: need to locate stack in tree manually and
             *Console << L"\nStack closed.\n";
