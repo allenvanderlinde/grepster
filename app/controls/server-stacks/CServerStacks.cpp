@@ -168,32 +168,31 @@ void CServerStacks::ContextMenu(wxTreeEvent& event) {
 void CServerStacks::CloseStack(wxString name) {
     /* Crawl through current server stacks and find match
         with the stack's name. */
-    //for(int i = 0; i < (int)m_Stacks.size(); i++) {
     for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
         if(name.IsSameAs(itr->Name())) {
-            /* Remove item from the tree control. */
-            wxString szNotebookPageTitle(Notebook->GetPageText(1));
-            //SelectItem(*(sel + i), true);
-            //Delete(GetSelection());
-            //SetFocusedItem(*(sel + i));
-            //Delete(GetFocusedItem());
-
-            /* Note: The idea here is to avoid using a wxTreeItem vector and use the current
-                tree item selection as a starting point to compare to the root item's other children and/or
-                neighboring siblings. Then, once the matching item to the page is found, delete it. */
-
-            wxMessageBox(GetItemText(GetFocusedItem()) + Notebook->GetPageText(1));
+            /* Find tree item in Server Stacks control. */
+            wxTreeItemIdValue cookie;
+            wxTreeItemId FirstChild = GetFirstChild(m_treeAdminItem, cookie);
+            wxString szFirstItemName(GetItemText(FirstChild));
+            if(szFirstItemName.IsSameAs(name)) {    // If the first tree item matches the stack to be closed
+                Delete(FirstChild);
+            } else {    // Crawl through the remaining tree items in the control
+                for(unsigned int i = 1; i < m_Stacks.size(); i++) {
+                    wxTreeItemId NextChild = GetNextChild(m_treeAdminItem, cookie);
+                    wxString szNextItemName(GetItemText(NextChild));
+                    if(szNextItemName.IsSameAs(name)) {
+                        Delete(NextChild);
+                        break;
+                    }
+                }
+            }
 
             Console->BlueText();
             *Console << L"\nClosing stack " + itr->Name() + L".";
-            /* The admin root item is never stored in m_Stacks as it is a label,
-                so when closing a stack, only the control's tree item should be adjusted
-                by 1 when searching. */
             m_Stacks.erase(itr);
-
-            // NOTE: need to locate stack in tree manually and
             *Console << L"\nStack closed.\n";
             Console->BlackText();
+
             return;
         }
     }
