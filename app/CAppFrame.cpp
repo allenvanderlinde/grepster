@@ -130,6 +130,11 @@ void CAppFrame::NewServerStack(wxCommandEvent& event) {
             pNewServerStack->Destroy();
             return;
         }
+        /* If the stack already exists in the control, close it
+            since the user has already agreed to overwrite the file. */
+        if(ServerStacks->FindName(szStackName) != wxNOT_FOUND) {
+            ServerStacks->CloseStack(szStackName);
+        }
         /* Create new file and write server stack name
             to it. */
         wxTextFile file;
@@ -162,7 +167,7 @@ void CAppFrame::NewServerStack(wxCommandEvent& event) {
 }
 
 /*
-    CAppFrame::AddServerStack
+    CAppFrame::AddServerStacks
 */
 void CAppFrame::AddServerStacks(wxCommandEvent& event) {
     /* Create a new file picker dialog to grab the .servers file

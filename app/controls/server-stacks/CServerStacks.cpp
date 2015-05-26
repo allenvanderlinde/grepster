@@ -87,13 +87,11 @@ int CServerStacks::FindPath(wxString str) {
 */
 void CServerStacks::AddServerStack(CAdminStack serverStack) {
     /* Check to see if there is a stack name conflict. */
-    /*
     if(FindName(serverStack.Name()) != wxNOT_FOUND) {
-        wxMessageBox(L"The stack " + serverStack.Name() + " in " + serverStack.Path() + " matches one already in the session. Please rename the original stack before adding this one.",
+        wxMessageBox(L"The stack " + serverStack.Name() + " in " + serverStack.Path() + " matches a file name already in the session. Please save the original stack under a new name before adding this one.",
                      L"Server Stack Conflict", wxICON_INFORMATION | wxOK);
         return;
     }
-    */
     m_Stacks.push_back(serverStack);
     wxTreeItemId newStack = AppendItem(m_treeAdminItem, serverStack.Name());
 
