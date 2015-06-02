@@ -83,36 +83,41 @@ void CNotebook::OpenWelcomePage() {
     CNotebook::SavePage
 */
 void CNotebook::SavePage() {
-    wxString szName(GetPageText(GetSelection()));
+    wxString szPageName(GetPageText(GetSelection()));
     /* If this is the welcome page, return. */
-    if(szName.IsSameAs(NOTEBOOK_GREETING))
+    if(szPageName.IsSameAs(NOTEBOOK_GREETING))
         return;
-    /* Save the current page's text back to its file. */
+    /* Gather properties of selected page to save. */
     wxTextCtrl* pCurrentPage = (wxTextCtrl*)GetPage(GetSelection());
+    int nPageIndex = GetPageIndex(GetPage(GetSelection()));
     wxTextFile file;
     wxString szPath;
     /* Find if page belongs to a server stack. */
     /* NOTE: I'm not sure why iterating through m_Stacks with auto
         corrupts the m_szFilePath string of the CAdminStack object,
         but integer iteration works. */
+    bool bFound;    // Identify if the page was found in the server stacks control
     for(int i = 0; i < (int)ServerStacks->GetStacks().size(); i++) {
         /* Is the user certain they wish to overwrite the file? */
-        if(ServerStacks->GetStacks()[i].Name().IsSameAs(szName)) {
-            if(wxMessageBox(L"Are you certain you want to overwrite " + szName + "?", L"Save Page", wxOK | wxCANCEL | wxICON_QUESTION) == wxOK) {
+        if(ServerStacks->GetStacks()[i].Name().IsSameAs(szPageName)) {
+            if(wxMessageBox(L"Are you certain you want to overwrite " + szPageName + "?", L"Save Page", wxOK | wxCANCEL | wxICON_QUESTION) == wxOK) {
                 szPath = ServerStacks->GetStacks()[i].Path();
+                bFound = true;
                 break;  // Found a match, no need to continue searching
             }
             else return;
         }
     }
-    ServerStacks->CloseStack(szName);
-
-    /*  NOTE: NEED TO SAVE PAGE MANUALLY, LINE-BY-LINE. */
-
-    if(pCurrentPage->SaveFile(szPath)) { // Save the contents of the control to file
-        /* Reopen the page and add the newly saved
-        stack to the notebook. */
-        ServerStacks->AddServerStack(CAdminStack(szPath));
+    if(bFound) {    // If found, close stack, save page to file, reload stack
+        if(pCurrentPage->SaveFile(szPath)) {
+            CAdminStack newStack(szPath);   // Create new stack from saved changes
+            /* grepster is designed so that the title of the notebook
+                tab is also the name given to the server stack. */
+            ServerStacks->CloseStack(szPageName);
+            DeletePage(nPageIndex);
+            ServerStacks->AddServerStack(newStack);
+            OpenPage(newStack);
+        }
     }
 }
 

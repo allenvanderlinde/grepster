@@ -35,7 +35,7 @@ extern wxString         g_szFrameTitle;
 extern CConsole*        Console;
 /**
  * This control is the graphical list of servers configured for grepping.
- * @brief       grepster's Server Stack control.
+ * @brief       grepster's server stack control.
  */
 extern CServerStacks*     ServerStacks;
 /**
@@ -100,7 +100,7 @@ std::string SpawnAndRun(wxString path,
 /** Default height (pixels) of grepster's console control used when floating. */
 #define CONSOLE_DEFAULT_HEIGHT              200
 
-/* Server Stacks tree control settings. */
+/* Server stacks tree control settings. */
 /** grepster's server stack's control ID. */
 #define SERVER_STACKS_ID                    11000
 /** grepster's server stack's local name for wxWidgets. */

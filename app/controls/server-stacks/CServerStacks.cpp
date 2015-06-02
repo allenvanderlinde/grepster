@@ -123,7 +123,7 @@ void CServerStacks::ExpandItem(wxTreeEvent &event) {
     CServerStacks::UpdateStacks
 */
 void CServerStacks::UpdateStacks() {
-    /* Update grepster's Server Stacks control after changes. */
+    /* Update grepster's server stacks control after changes. */
     SetItemText(m_treeAdminItem, Configuration->Username());
 }
 
@@ -168,7 +168,7 @@ void CServerStacks::CloseStack(wxString name) {
         with the stack's name. */
     for(auto itr = m_Stacks.begin(); itr != m_Stacks.end(); ++itr) {
         if(name.IsSameAs(itr->Name())) {
-            /* Find tree item in Server Stacks control. */
+            /* Find tree item in server stacks control. */
             wxTreeItemIdValue cookie;
             wxTreeItemId FirstChild = GetFirstChild(m_treeAdminItem, cookie);
             wxString szFirstItemName(GetItemText(FirstChild));
