@@ -62,6 +62,13 @@ public:
      *              can also be wxNOT_FOUND as it uses a temporary wxArrayString.
      */
     int FindPath(wxString);
+    /**
+     * @brief       Find the name of a stack that matches a file path.
+     * @param[in]   str String of the path to search with.
+     * @retval      wxString The name of the stack at the file path.
+     *
+     */
+    wxString FindNameAtPath(wxString);
 
     /**
      * @brief       Expands the currently selected item from the server stack.

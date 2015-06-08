@@ -123,18 +123,28 @@ void CAppFrame::NewServerStack(wxCommandEvent& event) {
                                                          L"New Server Stack",
                                                          DEFAULT_SERVER_STACKS_PATH,
                                                          szStackName,
-                                                         L".servers files (*.servers)|*.servers",
+                                                         L"Server Stacks and Text files (*.servers;*.txt)|*.servers;*.txt",
                                                          wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
         pNewServerStack->CenterOnParent();
         if(pNewServerStack->ShowModal() == wxID_CANCEL) {
             pNewServerStack->Destroy();
             return;
         }
+
+        /* If the new stack is being saved to a path that is
+            equal to a currently loaded stack, prevent it from
+            being saved. */
+        if(ServerStacks->FindPath(pNewServerStack->GetPath()) != wxNOT_FOUND) {
+            ServerStacks->CloseStack(ServerStacks->FindNameAtPath(pNewServerStack->GetPath()));
+            /* Note: Can choose to also close the notebook page here.
+                Leaving it open can also be used as a failsafe in case
+                a stack really was not meant to be overwritten. */
+        }
+
         /* If the stack already exists in the control, close it
             since the user has already agreed to overwrite the file. */
-        if(ServerStacks->FindName(szStackName) != wxNOT_FOUND) {
+        if(ServerStacks->FindPath(pNewServerStack->GetPath()) != wxNOT_FOUND)
             ServerStacks->CloseStack(szStackName);
-        }
         /* Create new file and write server stack name
             to it. */
         wxTextFile file;
